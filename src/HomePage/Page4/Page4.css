@@ -1,0 +1,103 @@
+.getin {
+  margin-left: 150px;
+}
+.heading_1 {
+  margin-left: 10%;
+  font-size: 48px;
+}
+.heading_1span {
+  margin-left: 0;
+  font-size: 48px;
+  color: grey;
+}
+.heading_2 {
+  margin-left: 450px;
+  font-size: 50px;
+}
+.learn_heading {
+  text-indent: 20px;
+  color: #f26c4f;
+}
+.grid_imgs {
+  border-radius: 15px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.col {
+  width: 63%;
+  height: 63%;
+}
+.layer {
+  background: transparent;
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.layer:hover {
+  background: rgba(5, 5, 5, 0.5);
+}
+
+.layer h3 {
+  width: 100%;
+  font-weight: 500;
+  font-size: 22px;
+  position: absolute;
+  align-items: center;
+  bottom: 0;
+  left: 75%;
+  transform: translate(-50%);
+  transition: 0.5s;
+  color: grey;
+}
+
+.layer:hover h3 {
+  bottom: 49%;
+  opacity: 1;
+}
+.grid_imgs:hover .myimg {
+  transform: rotateZ(20deg);
+  transition: 0.5s;
+}
+.row1,
+.row2,
+.row3 {
+  display: flex;
+  flex-direction: row;
+}
+.myimg {
+  width: 63%;
+}
+
+@media screen and (max-width: 768px) {
+  .layer h3 {
+    font-size: 15px;
+    left: 65%;
+  }
+  .heading_2 {
+    margin-left: 30px;
+    font-size: 30px;
+  }
+  .heading_1 {
+    margin-left: 20px;
+    font-size: 30px;
+  }
+  .heading_1span {
+    font-size: 30px;
+  }
+  .getin {
+    margin-left: 20px;
+  }
+  .img-grid_row {
+    position: relative;
+    margin-top: 10%;
+  }
+  .layer h3 {
+    font-size: 12px;
+  }
+}

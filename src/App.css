@@ -1,0 +1,66 @@
+/* MAIN TOP WHITE BOX HEADING COMMON CSS */
+
+.getin {
+  margin: auto;
+  margin-left:10%;
+}
+
+svg#rectangle #stroke {
+  width: 100%;
+  height: 50%;
+  stroke: white;
+  stroke-width: 5px;
+  stroke-dasharray: 920;
+  fill: none;
+  animation: sketchIn 5s 0.3s cubic-bezier(0.19, 1, 0.22, 1) forwards infinite,
+    fillIn 1s 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes sketchIn {
+  0% {
+    stroke-dashoffset: 920;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* MAIN BOTTOM BUTTON COMMON CSS */
+
+.button_slide {
+  font-family: "Open Sans", sans-serif !important;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #f26c4f;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+  padding: 18px 36px;
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_right:hover {
+  box-shadow: inset 400px 0 0 0 rgb(212, 71, 41);
+}
+
+.button_arrow {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 50px;
+  height: 50px;
+  color: rgb(212, 71, 41);
+  background: #000000;
+  border: 1px solid #f26c4f;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25);
+}
+
+
+

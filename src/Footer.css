@@ -1,0 +1,15 @@
+.footer-link {
+  color: grey;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.footer-link a:hover {
+  color: white;
+  transition: 200ms ease-in;
+}
+
+.footer-link a {
+  color: grey;
+  text-decoration: none;
+}

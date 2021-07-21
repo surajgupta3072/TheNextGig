@@ -1,0 +1,44 @@
+button.rec-dot {
+  display: none;
+}
+.rec.rec-arrow {
+  border-radius: 50%;
+  color: #f26c4f;
+  border-width: 1px;
+  border-color: #f26c4f;
+  border-style: solid;
+}
+.rec.rec-arrow:hover {
+  color: white;
+  background-color: #f26c4f;
+}
+
+.page3_subtitle {
+  margin-top: -63px;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1.3rem;
+  margin-bottom: -60px;
+}
+.Item_component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 580px;
+  width: 300px;
+  color: #f26c4f;
+}
+.page3_orange {
+  color: #f26c4f;
+}
+
+@media only screen and (max-width: 503px) {
+  .rec.rec-arrow {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .page3_subtitle {
+    margin-bottom: -40px;
+  }
+}
