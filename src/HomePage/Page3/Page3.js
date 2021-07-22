@@ -22,7 +22,7 @@ function Page3() {
             <rect id='stroke' rx='3' ry='3' height="50"/>
             <text fontSize="40px" fill="white" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">MASTERCLASS</text>
         </svg>
-        <h4 className="page3_subtitle">By experts. To make <span className="page3_orange"><em> you </em></span> an expert.</h4>
+        <h4 className="page3_subtitle">By experts. To make <span className="page3_orange"> you </span> an expert.</h4>
       </div>
       <div className="App1">
         <div className="carousel-wrapper">
@@ -42,7 +42,7 @@ function Page3() {
           </Carousel>
         </div>
       </div>
-      <button style={{marginTop:"-20%", marginLeft: "43%", marginBottom:"5%"}} type="submit" className="button_slide slide_right">Check ‘em out<ArrowRight className="button_arrow"/></button>
+      <button style={{ marginLeft: "43%" }} type="submit" className="button_slide slide_right orange_button_page3">Check ‘em out<ArrowRight className="button_arrow"/></button>
     </div>
     );
   }

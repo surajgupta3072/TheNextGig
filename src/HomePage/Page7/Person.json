@@ -1,0 +1,24 @@
+[
+    {
+        "id":1,
+        "img":"https://www.tutorialrepublic.com/examples/images/clients/3.jpg",
+        "quotes":"It was a great learning experience with TheNextGig. I had a chance to explore various jobs",
+        "name":"Dhariya Shah",
+        "post":"IIM-Ahmedabad, ‘18-20"
+    },
+    {
+        "id":2,
+        "img":"https://www.tutorialrepublic.com/examples/images/clients/2.jpg",
+        "quotes":"I learned alot of thing but the hands on project helped me alot",
+        "name":"Nikhil Agarwal",
+        "post":"IIT-Kharagpur, ‘18-22"
+
+    },
+    {
+      "id":3,
+      "img":"https://www.tutorialrepublic.com/examples/images/clients/1.jpg",
+      "quotes":"Internship was great",
+      "name":"Shanya Singh",
+      "post":"IIM-Delhi, ‘18-20"
+    }
+]

@@ -7,7 +7,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 
 function Page4() {
     return (
-    <div>
+    <div style={{marginTop:"5%"}}>
         <div className="getin" >
             <svg id='rectangle' style={{marginBottom: "-60px"}}>
                 <rect id='stroke' rx='3' ry='3' height="50"/>

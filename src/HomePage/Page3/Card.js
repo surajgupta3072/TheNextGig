@@ -2,7 +2,7 @@ import React from "react";
 import "./Card.css";
 export default function CardX(props) {
   return (
-    <div>
+    <div className="container_card">
       <div className="cardpage3">
         <div className="card-header">
           <div className="card-title-group"></div>

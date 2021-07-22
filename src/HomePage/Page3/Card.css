@@ -9,7 +9,6 @@
   animation: slider 3s;
   height: 380px;
   cursor: pointer;
-  box-shadow: inset -5px -5px 10px #f26c4f;
 }
 .company_image {
   margin-right: 0.8rem;
@@ -27,7 +26,6 @@
   width: 318px;
   height: 210px;
 }
-
 .lowertext2 {
   margin-left: 10rem;
   color: grey;
@@ -77,7 +75,7 @@
     transform: translateY(0px);
   }
 }
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1400px) {
   .cardpage3 {
     width: 400px;
   }
@@ -107,6 +105,9 @@
   .texting {
     margin-top: 2rem;
     font-size: 2.2rem;
+  }
+  .container_card {
+    margin-top: 10px;
   }
   .like-text {
     font-size: 1.6rem;
@@ -150,7 +151,7 @@
 }
 @media only screen and (max-width: 430px) {
   .cardpage3 {
-    margin-top: -120px;
+    margin-top: -100px;
     width: 250px;
     height: 400px;
   }
@@ -181,7 +182,7 @@
 }
 @media only screen and (max-width: 320px) {
   .cardpage3 {
-    margin-top: -120px;
+    margin-top: -110px;
     width: 200px;
     height: 350px;
   }

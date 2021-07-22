@@ -1,0 +1,45 @@
+.reactangle_page7 {
+  margin-left: 48%;
+}
+.triangle_page7 {
+  margin-top: 65px;
+  margin-left: -40px;
+}
+.Quotes_page7 {
+  position: absolute;
+  margin-left: -48px;
+  color: white;
+  font-size: 3rem;
+  margin-top: 40px;
+}
+.page7_subtitle {
+  margin-top: -50px;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1.3rem;
+}
+.testimonial .slick-arrow.slick-prev,
+.testimonial .slick-arrow.slick-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  border-radius: 5px;
+}
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
+.slick-arrow.slick-next {
+  right: -70px;
+}
+.slick-arrow.slick-prev {
+  left: -70px;
+}
+.testimonial .slick-dots li button:before {
+  font-size: 15px;
+}
+.testimonial .slick-dots li {
+  top: 15px;
+}

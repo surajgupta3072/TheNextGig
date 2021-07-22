@@ -1,6 +1,10 @@
 button.rec-dot {
   display: none;
 }
+.orange_button_page3 {
+  position: absolute;
+  margin-top: -90px;
+}
 .rec.rec-arrow {
   border-radius: 50%;
   color: #f26c4f;
@@ -40,5 +44,8 @@ button.rec-dot {
 @media only screen and (max-width: 1024px) {
   .page3_subtitle {
     margin-bottom: -40px;
+  }
+  .orange_button_page3 {
+    position: relative;
   }
 }

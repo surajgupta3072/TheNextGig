@@ -9,7 +9,7 @@ function Page6() {
         <div className="getin">
             <svg id='rectangle'>
                 <rect id='stroke' rx='3' ry='3' height="50"/>
-                <text fontSize="40px" fill="white" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">STORIES</text>
+                <text fontSize="40px" fill="white" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">STATISTICS</text>
             </svg>
         </div>
     </div>
