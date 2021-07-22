@@ -33,6 +33,7 @@ function Page4() {
                         <Row className="row1">
                             <Col></Col>                       
                             <Col></Col> 
+                            <Col></Col>
                             <Col style={{width: "20"}}>
                                 <div class="grid_imgs">
                                 <img src="google_logo.jpg" alt="" class="myimg" />
@@ -43,7 +44,8 @@ function Page4() {
                             </Col>
                         </Row >
                         <Row className="row2" >
-                            <Col></Col>                      
+                            <Col></Col>  
+                            <Col></Col>                    
                             <Col>
                                 <div class="grid_imgs">
                                 <img src="google_logo.jpg" alt="" class="myimg" />
@@ -62,6 +64,7 @@ function Page4() {
                             </Col>
                         </Row>
                         <Row className="row3" >
+                        <Col></Col>
                             <Col>
                                 <div class="grid_imgs">
                                 <img src="google_logo.jpg" alt="" class="myimg" />

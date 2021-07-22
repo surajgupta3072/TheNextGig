@@ -6,10 +6,10 @@ function Header() {
   return (
     <Navbar style={{background:"white", padding:"0px", width:"100%", position:"sticky", top:"0", zIndex:"100"}} expand="lg">
         <Navbar.Brand href="/">
-            <img style={{height: "60px", width: "80px", marginLeft: "140%", position:"relative", top:"35px"}} src="logo192.png" alt="logo"/>
+            <img style={{height: "60px", width: "80px", marginLeft: "100%"}} src="logo192.png" alt="logo"/>
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end" style={{paddingRight:"15%"}}>
+        <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
             <Nav>
                 <Nav.Link style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
                     <Link to="courses" spy={true} smooth={true}>SESSIONS</Link>
