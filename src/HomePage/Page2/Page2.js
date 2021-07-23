@@ -5,13 +5,14 @@ import { ArrowRight } from "react-bootstrap-icons";
 import '../../App.css'
 import Card from 'react-bootstrap/Card'
 import './Page2.css'
+
 function Page2() {
     return (
     <div style={{marginTop:"5%"}}>
-      <p style={{fontSize:"32px", fontWeight:"600",marginLeft:"11%",marginTop:"20px",marginBottom:"3%"}}>
-        Its 2021. Un-Chatur yourself. Become a <em style={{color:"#f26c4f"}}>Rancho.</em> 
-      </p>
-      <div>
+      <div className="page2_laptop_view">
+        <p style={{fontSize:"32px", fontWeight:"600",marginLeft:"11%",marginTop:"20px",marginBottom:"3%"}}>
+          Its 2021. Un-Chatur yourself. Become a <em style={{color:"#f26c4f"}}>Rancho.</em> 
+        </p>
         <Container>
           <Row>
             <Card style={{ width: "27%", marginLeft:"5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
@@ -47,15 +48,20 @@ function Page2() {
                 <ArrowRight className="card_arrow1"/>
             </Card>
           </Row>
-          <Row style={{width:"600px",height:"70px",border:"1px solid #534D4D",marginTop:"5%",marginLeft:"50%", paddingTop:"25px"}}>
-            <Col lg={2}>O</Col>
-            <Col lg={2}>O</Col>
-            <Col lg={2}>O</Col>
-            <Col>2000+ Learners on TheNextGig</Col>
+          <Row style={{width:"600px",height:"70px",border:"1px solid #534D4D", marginTop:"5%",marginLeft:"50%", paddingTop:"20px"}}>
+            <Col lg={1}>O</Col>
+            <Col lg={1}>O</Col>
+            <Col lg={1}>O</Col>
+            <Col><p style={{fontSize:"24px", textAlign:"center"}}>2000+ Learners on TheNextGig</p></Col>
           </Row>
         </Container>
       </div>
-    </div>
+
+      <div className="page2_mobile_view">
+        {/* Harsh your mobile view starts here */}
+      </div>
+      
+    </div> 
     );
   }
   
