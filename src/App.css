@@ -55,6 +55,7 @@ svg#rectangle #stroke {
   margin-left: 10px;
   width: 40px;
   height: 40px;
+  padding: 7px;
   color: rgb(212, 71, 41);
   background: #000000;
   border: 1px solid #f26c4f;

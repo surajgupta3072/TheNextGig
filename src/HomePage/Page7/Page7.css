@@ -1,16 +1,24 @@
 .reactangle_page7 {
   margin-left: 48%;
+  width: 68px;
+  height: 51px;
+}
+.testimonial {
+  margin-top: 50px;
 }
 .triangle_page7 {
   margin-top: 65px;
   margin-left: -40px;
+  width: 35px;
+  height: 30px;
 }
 .Quotes_page7 {
   position: absolute;
   margin-left: -48px;
   color: white;
-  font-size: 3rem;
   margin-top: 40px;
+  width: 26px;
+  height: 22px;
 }
 .page7_subtitle {
   margin-top: -50px;
@@ -42,4 +50,30 @@
 }
 .testimonial .slick-dots li {
   top: 15px;
+}
+@media only screen and (max-width: 550px) {
+  .reactangle_page7 {
+    margin-left: 42%;
+    width: 40px;
+    height: 30px;
+  }
+  .quoter {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+  .triangle_page7 {
+    margin-top: 40px;
+    margin-left: -30px;
+    width: 28px;
+    height: 23px;
+  }
+  .testimonial {
+    margin-top: 20px;
+  }
+  .Quotes_page7 {
+    margin-top: 25px;
+    width: 20px;
+    height: 16px;
+    margin-left: -32px;
+  }
 }

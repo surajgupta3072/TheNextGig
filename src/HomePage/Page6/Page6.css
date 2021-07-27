@@ -1,0 +1,183 @@
+.page6_maindiv{
+  margin-top: 10%;
+  margin-bottom: 8%;
+}
+.image_page6
+{
+    background-image: url("https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-man-sitting.jpg");
+    background-size: cover;
+    background-position: center;
+   height:55vh;
+   width:100%;
+   margin-bottom:110px;
+}
+@property --num1 {
+    syntax: "<integer>";
+    initial-value: 43;
+    inherits: false;
+  }
+  @property --num2 {
+    syntax: "<integer>";
+    initial-value: 68;
+    inherits: false;
+  }
+  @property --num3 {
+    syntax: "<integer>";
+    initial-value: 17;
+    inherits: false;
+  }
+  @property --num4 {
+    syntax: "<integer>";
+    initial-value: 12;
+    inherits: false;
+  }
+  .number1 {
+    animation: counter 5s  alternate ease-in-out;
+    counter-reset: num1 var(--num1);
+  }
+  .number2 {
+    animation: counter1 5s  alternate ease-in-out;
+    counter-reset: num2 var(--num2);
+  }
+  .number3 {
+    animation: counter2 5s  alternate ease-in-out;
+    counter-reset: num3 var(--num3);
+  }
+  .number4 {
+    animation: counter3 5s  alternate ease-in-out;
+    counter-reset: num4 var(--num4);
+  }
+  .number1::after {
+    content: counter(num1);
+  }
+  .number2::after {
+    content: counter(num2);
+  }
+  .number3::after {
+    content: counter(num3);
+  } 
+  .number4::after {
+    content: counter(num4);
+  }
+  @keyframes counter {
+    from {
+      --num1: 0;
+    }
+    to {
+      --num1:43;
+    }
+  }
+  @keyframes counter1 {
+    from {
+      --num2: 0;
+    }
+    to {
+      --num2:68;
+    }
+  }
+  @keyframes counter2{
+    from {
+      --num3: 0;
+    }
+    to {
+      --num3:17;
+    }
+  }
+  @keyframes counter3 {
+    from {
+      --num4: 0;
+    }
+    to {
+      --num4:12;
+    }
+  }
+.numbers_page6_mobile,.numbers_page6_tab
+{
+    display: none;
+}
+.liner_page6
+{   margin-left:50px;
+     color:rgba(255, 255, 255, .5);
+     font-size:4rem;
+}
+.client_number,.projects_number,.awards_number,.experience_number
+{
+    font-size:3.3rem;
+}
+.numbers_page6:nth-child(1)
+{
+    
+    color: #f26c4f;
+}
+.numbers_page6
+{   padding-right:250px;
+    padding-left:250px;
+    padding-top:200px; 
+    display: flex;
+    justify-content:space-around;
+}
+@media only screen and (max-width:1150px)
+{    .numbers_page6,.numbers_page6_mobile
+    {
+        display: none;
+    }
+    .numbers_page6_tab
+    {   display:flex;
+        justify-content: space-around;
+        color:#f26c4f;
+    }
+   .projects_number
+   {
+       padding-top:90px;
+   }
+   .experience_number
+   {
+    padding-top:90px;
+   }
+    .liner_page6
+    {  position: absolute;
+        transform: rotate(45deg);
+        margin-top:60px;
+        margin-left:-68px;
+    }
+    .liner_3
+    {
+        margin-left:-55px;
+    }
+}
+@media only screen and (max-width:575px)
+{
+    .numbers_page6,.numbers_page6_tab
+    {
+        display: none;
+    }
+    .numbers_page6_mobile
+    {  color: #f26c4f;
+        display:flex;
+        flex-direction: column;
+        margin-left:50%;
+    }
+    
+    .client_number,.projects_number,.awards_number,.experience_number
+    { padding-top:30px;
+    font-size:1.5rem;
+    font-weight:0.5rem;
+    }
+    .liner_page6
+    {
+        margin-top:20px;
+         margin-left:-48px;
+    }
+    .page6_maindiv{
+      margin-top: 15%;
+    }
+    .image_page6{
+      margin-top: 25%;
+      margin-bottom: 35%;
+      
+    }
+    .page6_maindiv{
+      
+      margin-bottom: 15%;
+    }
+}

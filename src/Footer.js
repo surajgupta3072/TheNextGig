@@ -1,52 +1,61 @@
 import React  from 'react';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Facebook, Linkedin, Twitter, Instagram } from 'react-bootstrap-icons';
+import {Linkedin, Instagram, Whatsapp } from 'react-bootstrap-icons';
 import './Footer.css';
+import MyVerticallyCenteredModal from './Modal.js'
+import { ArrowLeft } from "react-bootstrap-icons";
 
 function Footer(){
+    const [modalShow, setModalShow] = React.useState(false);
+
     return(
-        <div style={{backgroundColor:"black"}}>
-        <Container style={{backgroundColor:"black",paddingTop:"5%"}}>
-            <Row>
+        <div style={{background: "rgba(255, 255, 255, 0.1)", paddingTop:"3%"}}>
+        
+            <Row style={{marginLeft: "9%", marginRight: "9%", paddingTop:"2%"}}>
                 <Col md={7} style={{marginBottom:"3%"}}>
-                    <h2 style={{color:"white"}}>Subsribe to our</h2>
-                    <h2 style={{color:"white", marginBottom:"3%"}}>newsletter</h2>
-                    <input style={{width:'250px', height:'50px', backgroundColor:'#0A0C18',color:"white"}} name='email' type='email' placeholder='Email Address'/>
-                    &nbsp;&nbsp;
-                    <button style={{backgroundColor:"grey", height:"50px", width:"100px"}}>Subscribe</button>
+                    <h2 className="footer_heading1">We're here</h2>
+                    <h2 className="footer_heading2">Let's talk</h2>
+                    <button style={{ marginLeft: "0%"}} type="submit" className="button_slide slide_right" onClick={() => setModalShow(true)}>
+                        Get in Touch <ArrowLeft className="button_arrow_footer"/></button>
+                        <MyVerticallyCenteredModal
+                          show={modalShow}
+                          onHide={() => setModalShow(false)}
+                        />
                 </Col>
                 <Col>
-                    <h3 style={{marginBottom:"7%"}}>The NextGig</h3>
+                    <h3 style={{marginBottom:"7%", fontSize:"20px"}}>About Us</h3>
                     <div className='footer-link'>
-                        <a href="#" style={{display:"block", marginBottom:"5%"}}>Community</a>
-                        <a href="#" style={{display:"block", marginBottom:"5%"}}>Our Vision</a>
-                        <a href="#" style={{display:"block", marginBottom:"5%"}}>Login</a>
+                        <a href="#" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Team</a>
+                        <a href="#" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Vision</a>
                     </div>
                 </Col>
                 <Col>
-                    <h3 style={{marginBottom:"7%"}}>Legal</h3>
+                    <h3 style={{marginBottom:"7%", fontSize:"20px"}}>Legal</h3>
                     <div className='footer-link'>
-                        <a href="#" style={{display:"block", marginBottom:"5%"}}>Terms</a>
-                        <a href="#" style={{display:"block", marginBottom:"5%"}}>Privacy</a>
+                        <a href="#" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>T&C</a>
+                        <a href="#" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Privacy</a>
                     </div>
                 </Col>
             </Row>
-            <Row style={{marginTop: "7%", border:"1px solid white", padding:"2%"}}>
+            
+            <div className="footer_div2">
+            <Row style={{marginTop: "6%", border:"1px solid white", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
                 <h6 style={{fontSize:"15px",color:"grey"}}>
-                    2021 © The NextGig.All Rights Reserved
+                © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
                 <Col md={2}>
-                    <Facebook style={{color: "white"}}/>&nbsp;&nbsp;
-                    <Linkedin style={{color: "white"}}/>&nbsp;&nbsp;
-                    <Instagram style={{color: "white"}}/>&nbsp;&nbsp;
-                    <Twitter style={{color: "white"}}/>
+                    <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    
                 </Col>
             </Row>
-        </Container>
+            </div>
+            
+        
     </div>
     );
 }

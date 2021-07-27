@@ -2,7 +2,7 @@
   background-color: #06050b;
   color: #272727;
   border: 1px;
-  border-color: white;
+  border-color: #f26c4f;
   border-style: solid;
   transition: 200ms;
   width: 320px;
@@ -104,7 +104,7 @@
   }
   .texting {
     margin-top: 2rem;
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .container_card {
     margin-top: 10px;
@@ -124,7 +124,7 @@
     font-size: 1.8rem;
   }
   .like-text {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .line {
     margin-bottom: 1rem;
@@ -146,10 +146,10 @@
     margin-top: -0.5rem;
   }
   .like-text {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 670px) {
   .cardpage3 {
     margin-top: -100px;
     width: 250px;
@@ -180,7 +180,7 @@
     font-size: 0.9rem;
   }
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 576px) {
   .cardpage3 {
     margin-top: -110px;
     width: 200px;

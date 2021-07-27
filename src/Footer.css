@@ -3,7 +3,26 @@
   margin-bottom: 20px;
   font-size: 18px;
 }
+.button_arrow{
 
+  margin-bottom: -5%;
+}
+.footer_linespace{
+  display: none;
+}
+.button_arrow_footer {
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  padding: 7px;
+  color: rgb(212, 71, 41);
+  background: #000000;
+  border: 1px solid #f26c4f;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25);
+}
 .footer-link a:hover {
   color: white;
   transition: 200ms ease-in;
@@ -12,4 +31,33 @@
 .footer-link a {
   color: grey;
   text-decoration: none;
+}
+.footer_heading1{
+  color: #fff;
+  font-size: 48px;
+}
+.footer_heading2{
+  color: #F26C4F;
+  font-size: 38px;
+  margin-bottom: 3%;
+}
+
+@media screen and (max-width: 768px) {
+  .footer_heading1{
+    font-size: 28px;
+    margin-top: 18%;
+  }
+  .footer_heading2{
+    font-size: 28px;
+    margin-bottom: 18%;
+  }
+  .button_slide{
+    margin-bottom: 18%;
+  }
+  .footer-link {
+    margin-bottom: 38%;
+  }
+  .footer_linespace{
+    display: inline;
+  }
 }

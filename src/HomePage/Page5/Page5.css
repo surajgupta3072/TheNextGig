@@ -1,13 +1,22 @@
+.page5_maindiv{
+  margin-top: 10%;
+}
+.line_space{
+  display: none;
+}
 .rectangle-box {
   margin-top: 5%;
-  margin-left: 10%;
+  margin-left: 9.5%;
   width: 80%;
   height: 300px;
   overflow: hidden;
   border: 1px solid rgb(212, 71, 41);
   background: transparent;
 }
-
+.button_div_page5{
+  margin-top: 5%;
+  margin-left: 44.3%;
+}
 .text1 {
   padding-top: 13%;
   padding-right: 7%;
@@ -32,7 +41,9 @@
   height: 300px;
   width: 100%;
 }
-
+.page5_linespace{
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .rectangle-box {
     margin-left: 15%;
@@ -42,7 +53,9 @@
     border: 1px solid rgb(212, 71, 41);
     background: transparent
   }
-
+  .line_space{
+    display: inline;
+  }
   .discord_img {
     height: 150px;
     width: 260px;
@@ -50,19 +63,31 @@
 
   .text1 {
     padding-top: 10%;
-    padding-left: 0px;
     font-size: 24px;
-    text-align: center;
+    text-align: center;  
+    padding-right: 0%;  
   }
 
   .text2 {
     padding-top: 10%;
-    padding-left: 0px;
+    padding-right: 0%;
     font-size: 16px;
     text-align: center;
   }
 
   .text3 {
-    font-size: 18px;
+    font-size: 15px;
+  }
+  .page5_maindiv{
+    margin-top: 18%;
+  }
+  .rectangle-box{
+    margin-top: 18%;
+  }
+  .button_div_page5{
+    margin-left: 45.5%;
+  }
+  .page5_linespace{
+    display: inline;
   }
 }

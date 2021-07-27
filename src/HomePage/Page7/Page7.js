@@ -35,7 +35,7 @@ function Card(props) {
         textAlign: "center",
         color: "white",
       }}
-    > <h5 style={{paddingBottom:"20px"}}>{props.quote}</h5>
+    > <h5 className="quoter" style={{paddingBottom:"20px"}}>{props.quote}</h5>
       <Avatar
         imgProps={{ style: { borderRadius: "50%" } }}
         src={props.img}
@@ -56,19 +56,26 @@ function Card(props) {
 function Page7() {
     return (
     <div style={{marginTop:"5%"}}>
-        <div className="getin">
-            <svg id='rectangle'>
-                <rect id='stroke' rx='3' ry='3' height="50"/>
-                <text fontSize="40px" fill="white" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">STORIES</text>
-            </svg>
-            <h4 className="page7_subtitle">This is why we do what we do!</h4>
-        </div>
+        <div className="heading_box" style={{marginBottom: "10%"}}>
+      <div>
+        <a class="btn">
+          <span>
+            <span>
+              <span className="border_box">SUCCESS STORIES</span>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div style={{marginTop: "70px"}}>
+        <h4 className="page3_subtitle text3">This is why we do what we do.</h4>
+      </div>
+      </div>
         {/* The svg below is for orange rectangle */}
-        <svg  className="reactangle_page7" width="68" height="51" viewBox="0 0 68 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg  className="reactangle_page7"  viewBox="0 0 68 51" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="68" height="51" fill="#F26C4F"/>
 </svg>
 {/*The svg below is for Quotes */}
-<svg className="Quotes_page7" width="26" height="22" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg className="Quotes_page7" viewBox="0 0 26 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d)">
 <path d="M11.8475 0.727272H7.55202V4.25568C7.55202 7.09375 6.17134 9.54829 4.56055 11.8494L7.01509 13.8438C10.0833 11.3892 11.8475 7.32386 11.8475 4.17898V0.727272ZM21.6657 0.727272H17.3702V4.25568C17.3702 7.09375 15.9895 9.54829 14.3787 11.8494L16.8333 13.8438C19.9015 11.3892 21.6657 7.32386 21.6657 4.17898V0.727272Z" fill="white"/>
 </g>
@@ -85,13 +92,13 @@ function Page7() {
 </defs>
 </svg>
 {/*This Svg below is for Lower orange traingle below rectangle*/}
-<svg className="triangle_page7" width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg className="triangle_page7" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.4296 28.4794L2.75692 0.932941L34.6779 3.72567L16.4296 28.4794Z" fill="#F26C4F"/>
 </svg>
 
         <div
       className="testimonial"
-      style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
+      style={{ display: "flex", justifyContent: "center" }}
     >
       <div style={{ paddingBottom:"80px",width: "50%", textAlign: "center" }}>
         <Slider prevArrow={<PreviousBtn />} nextArrow={<NextBtn />} dots>

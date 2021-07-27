@@ -16,14 +16,23 @@ const breakPoints = [
 function Page3() {
   var i=1;
     return (
-    <div style={{marginTop:"5%"}}>
-      <div className="getin">
-        <svg id='rectangle'>
-            <rect id='stroke' rx='3' ry='3' height="50"/>
-            <text fontSize="40px" fill="white" x="50%" y="25%" dominant-baseline="middle" text-anchor="middle">MASTERCLASS</text>
-        </svg>
+    <div style={{marginTop:"8%"}}>
+
+      <div className="heading_box">
+      <div>
+        <a class="btn">
+          <span>
+            <span>
+              <span className="border_box">MASTERCLASSES</span>
+            </span>
+          </span>
+        </a>
+      </div>
+      <div style={{marginTop: "70px"}}>
         <h4 className="page3_subtitle">By experts. To make <span className="page3_orange"> you </span> an expert.</h4>
       </div>
+      </div>
+
       <div className="App1">
         <div className="carousel-wrapper">
           <Carousel breakPoints={breakPoints}>
@@ -42,7 +51,10 @@ function Page3() {
           </Carousel>
         </div>
       </div>
-      <button style={{ marginLeft: "43%" }} type="submit" className="button_slide slide_right orange_button_page3">Check ‘em out<ArrowRight className="button_arrow"/></button>
+      
+      <div className="button_div_page3">
+          <button type="submit" className="button_slide slide_right">Check ‘em out<ArrowRight className="button_arrow"/></button>
+        </div>
     </div>
     );
   }

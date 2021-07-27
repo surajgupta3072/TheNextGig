@@ -12,8 +12,10 @@
 
 .card_arrow1 {
   margin-left: 100%;
+  margin-bottom: -4%;
   width: 40px;
   height: 40px;
+  padding: 7px;
   color: rgb(212, 71, 41);
   background: #000000;
   border: 1px solid #f26c4f;
@@ -31,5 +33,9 @@
   }
   .page2_laptop_view {
     display: none;
+  }
+  .card_arrow1{
+    margin-bottom: -7%;
+    margin-left: 90%;
   }
 }
