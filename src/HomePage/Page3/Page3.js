@@ -53,8 +53,8 @@ function Page3() {
       </div>
       
       <div className="button_div_page3">
-          <button type="submit" className="button_slide slide_right">Check ‘em out<ArrowRight className="button_arrow"/></button>
-        </div>
+        <a href="/masterclass"><button type="submit" className="button_slide slide_right">Check ‘em out<ArrowRight className="button_arrow"/></button></a>
+      </div>
     </div>
     );
   }

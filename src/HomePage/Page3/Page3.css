@@ -46,6 +46,7 @@ button.rec-dot {
   overflow: hidden;
 }
 .border_box{
+  font-weight: 600;
   font-size: 40px;
   color: #fff;
 }

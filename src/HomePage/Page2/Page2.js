@@ -23,7 +23,7 @@ function Page2() {
                     Some quirky text over here  
                   </Card.Text>
                 </Card.Body>
-                <ArrowRight className="card_arrow1" size="1x"/>
+                <a href="/masterclass"><ArrowRight className="card_arrow1" size="1x"/></a>
             </Card>
             
             <Card style={{ width: "27%", marginLeft:"7%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>

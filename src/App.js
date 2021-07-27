@@ -1,9 +1,20 @@
-import HomePage from './HomePage/HomePage';
+import HomePage from "./HomePage/HomePage";
+import MasterClassPage from "./MasterClassPage/MasterClassPage";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <HomePage/>
+      <Router>
+        <Switch>
+          <Route path="/masterclass">
+            <MasterClassPage />
+          </Route>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
