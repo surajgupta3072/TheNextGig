@@ -8,9 +8,9 @@ import Data from "./Data.json"
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 1},
-  { width: 768, itemsToShow: 2 },
-  { width: 1200, itemsToShow: 3 }
+  { width: 500, itemsToShow: 1},
+  { width: 750, itemsToShow: 2 },
+  { width: 1080, itemsToShow: 3 }
 ];
 
 function Page3() {
@@ -29,13 +29,12 @@ function Page3() {
         </a>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle">By experts. To make <span className="page3_orange"> you </span> an expert.</h4>
+        <h4 className="page3_subtitle">By experts. To make <span className="page3_orange"> <em>you</em> </span> an expert.</h4>
       </div>
       </div>
-
       <div className="App1">
         <div className="carousel-wrapper">
-          <Carousel breakPoints={breakPoints}>
+          <Carousel  breakPoints={breakPoints}>
             {Data.map((detail,item_no) => (
             <div className="Item_component">
               <CardX
@@ -55,7 +54,7 @@ function Page3() {
       <div className="button_div_page3">
         <a href="/masterclass"><button type="submit" className="button_slide slide_right">Check ‘em out<ArrowRight className="button_arrow"/></button></a>
       </div>
-    </div>
+      </div>
     );
   }
   

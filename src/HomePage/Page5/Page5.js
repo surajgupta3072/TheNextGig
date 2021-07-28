@@ -24,12 +24,12 @@ function Page5() {
         
         <div className="rectangle-box">
           <Row style={{height:"130%"}}>
-            <Col  style={{padding:"0px"}} md={4}>
+            <Col style={{padding:"0px"}} md={4}>
               <img src="discord.jpg" className="discord_img"  alt="img1"/>
             </Col>
-            <Col md={7}>
-              <p className="text1">We're on Slack.<br className="page5_linespace" /> Not Slacking.</p>
-              <p className="text2">Most Probably Discussing conspirancy theories though.</p>
+            <Col md={8}>
+              <p className="text1">We're on Slack.<br className="page5_linespace"/> Not Slacking.</p>
+              <p className="text2">Most probably discussing conspiracy theories though.</p>
             </Col>
           </Row>  
         </div>

@@ -1,24 +1,35 @@
 .reactangle_page7 {
   margin-left: 48%;
-  width: 68px;
-  height: 51px;
+  width: 62px;
+  height: 45px;
+  margin-top: -24px;
 }
 .testimonial {
   margin-top: 50px;
 }
+.arrower1 {
+  color: #f26c4f;
+}
+.arrower1:hover {
+  background-color: #f26c4f;
+  color: white;
+}
+.pather:hover {
+  color: white;
+}
 .triangle_page7 {
-  margin-top: 65px;
-  margin-left: -40px;
-  width: 35px;
-  height: 30px;
+  margin-top: 30px;
+  margin-left: -38px;
+  width: 30px;
+  height: 25px;
 }
 .Quotes_page7 {
   position: absolute;
-  margin-left: -48px;
+  margin-left: -40px;
   color: white;
-  margin-top: 40px;
-  width: 26px;
-  height: 22px;
+  margin-top: 10px;
+  width: 24px;
+  height: 20px;
 }
 .page7_subtitle {
   margin-top: -50px;

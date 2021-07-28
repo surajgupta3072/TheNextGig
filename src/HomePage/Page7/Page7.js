@@ -12,7 +12,7 @@ const PreviousBtn = (props) => {
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <ArrowBackIos style={{ paddingLeft:"7px",border:"1px solid #f26c4f", borderRadius:"50%",color: "#f26c4f",fontSize: "35px" }} />
+      <ArrowBackIos className="arrower1" style={{ paddingLeft:"9.3px",border:"2px solid #f26c4f", borderRadius:"50%",fontSize: "35px" }} />
     </div>
   );
 };
@@ -20,7 +20,7 @@ const NextBtn = (props) => {
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <ArrowForwardIos style={{ paddingLeft:"7px",border:"1px solid #f26c4f",borderRadius:"50%",color: "#f26c4f", fontSize: "35px" }} />
+      <ArrowForwardIos className="arrower1" style={{ paddingLeft:"7px",paddingRight:"4px",border:"2px solid #f26c4f",borderRadius:"50%", fontSize: "35px" }} />
     </div>
   );
 };

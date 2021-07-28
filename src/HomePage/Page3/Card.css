@@ -5,9 +5,9 @@
   border-color: #f26c4f;
   border-style: solid;
   transition: 200ms;
-  width: 320px;
+  width: 360px;
   animation: slider 3s;
-  height: 380px;
+  height: 430px;
   cursor: pointer;
 }
 .company_image {
@@ -23,7 +23,7 @@
   box-shadow: 0 10px 20px rgba(134, 50, 50, 0.8), 0 4px 8px #f26c4f;
 }
 .card-image {
-  width: 318px;
+  width: 358px;
   height: 210px;
 }
 .lowertext2 {
@@ -62,7 +62,7 @@
 }
 .line {
   color: aliceblue;
-  margin-top: -1.8rem;
+  margin-top: 1.2rem;
 }
 @keyframes slider {
   0% {
@@ -73,14 +73,6 @@
   }
   100% {
     transform: translateY(0px);
-  }
-}
-@media only screen and (max-width: 1400px) {
-  .cardpage3 {
-    width: 400px;
-  }
-  .card-image {
-    width: 398px;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -149,6 +141,64 @@
     font-size: 1.3rem;
   }
 }
+@media only screen and (max-width: 768px) {
+  .cardpage3 {
+    margin-top: -100px;
+    width: 250px;
+    height: 400px;
+  }
+  .card-image {
+    width: 248px;
+    height: 200px;
+  }
+  .join {
+    margin-left: 28px;
+  }
+  .soon {
+    margin-left: 110px;
+    font-size: 1.3rem;
+  }
+  .texting,
+  .like-text {
+    margin-left: 20px;
+  }
+  .line {
+    margin-top: 0.5rem;
+  }
+  .texting {
+    font-size: 1.2rem;
+  }
+  .like-text {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .cardpage3 {
+    margin-top: -110px;
+    width: 200px;
+    height: 350px;
+  }
+  .card-image {
+    width: 198px;
+    height: 200px;
+  }
+  .like-text {
+    font-size: 0.7rem;
+  }
+  .texting {
+    font-size: 1rem;
+  }
+  .line {
+    margin-top: -3rem;
+  }
+  .join {
+    font-size: 1rem;
+  }
+  .soon {
+    margin-left: 90px;
+    font-size: 1rem;
+  }
+}
 @media only screen and (max-width: 670px) {
   .cardpage3 {
     margin-top: -100px;
@@ -205,5 +255,13 @@
   .soon {
     margin-left: 90px;
     font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .like-text {
+    font-size: 0.9rem;
+  }
+  .texting {
+    font-size: 0.9rem;
   }
 }

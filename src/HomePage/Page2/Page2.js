@@ -10,16 +10,16 @@ function Page2() {
     return (
     <div style={{marginTop:"5%"}}>
       <div className="page2_laptop_view">
-        <p style={{fontSize:"32px", fontWeight:"600",marginLeft:"9.4%",marginTop:"20px",marginBottom:"3%"}}>
+        <Container>
+        <p style={{fontSize:"32px", fontWeight:"600",marginLeft:"1.5%",marginTop:"20px",marginBottom:"3%"}}>
           Its 2021. Un-Chatur yourself. Become a <em style={{color:"#f26c4f"}}>Rancho.</em> 
         </p>
-        <Container>
           <Row>
             <Card style={{ width: "27%", marginLeft:"1.5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px"}} variant="top" src="holder.svg"/>
-                <Card.Body style={{marginTop:"90px"}}>
+                <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >MASTERCLASSES</Card.Title>
-                  <Card.Text class="opensans_text" style={{fontSize:"23px",textAlign:"center"}}>
+                  <Card.Text class="opensans_text" style={{fontSize:"20px",textAlign:"center"}}>
                     Some quirky text over here  
                   </Card.Text>
                 </Card.Body>
@@ -29,7 +29,7 @@ function Page2() {
             <Card style={{ width: "27%", marginLeft:"7%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
                 <Card.Body style={{marginTop:"90px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >GIGS</Card.Title>
-                  <Card.Text class="opensans_text" style={{fontSize:"23px",textAlign:"center"}}>
+                  <Card.Text class="opensans_text" style={{fontSize:"20px",textAlign:"center"}}>
                   Some quirky text over here 
                   </Card.Text>
                 </Card.Body>
@@ -41,7 +41,7 @@ function Page2() {
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px"}} variant="top" src="holder.svg"/>
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >PEER LEARNING</Card.Title>
-                  <Card.Text class="opensans_text" style={{fontSize:"23px",textAlign:"center"}}>
+                  <Card.Text class="opensans_text" style={{fontSize:"20px",textAlign:"center"}}>
                   Some quirky text over here 
                   </Card.Text>
                 </Card.Body >
@@ -52,7 +52,7 @@ function Page2() {
             <Col md={1}>O</Col>
             <Col md={1}>O</Col>
             <Col md={1}>O</Col>
-            <Col><p style={{fontSize:"24px", textAlign:"center"}}>2000+ Learners on TheNextGig</p></Col>
+            <Col><p style={{fontSize:"20px", textAlign:"center"}}>2000+ Learners on TheNextGig</p></Col>
           </Row>
         </Container>
       </div>

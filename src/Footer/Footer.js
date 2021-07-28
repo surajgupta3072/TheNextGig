@@ -40,7 +40,7 @@ function Footer(){
             </Row>
             
             <div className="footer_div2">
-            <Row style={{marginTop: "6%", border:"1px solid white", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
+            <Row style={{marginTop: "6%", border:"1px solid grey", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
                 <h6 style={{fontSize:"15px",color:"grey"}}>
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
