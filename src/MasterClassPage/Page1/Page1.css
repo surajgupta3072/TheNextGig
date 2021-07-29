@@ -1,0 +1,111 @@
+.orange_text_masterclass {
+  color: #f26c4f;
+}
+.header_masterclass {
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 2.3%;
+}
+.slider_mobile {
+  display: none;
+}
+.top_masterclass {
+  padding-top: 20px;
+}
+.subtitle_masterclass {
+  padding-bottom: 20px;
+}
+.card_mastercard {
+  width: 45vh;
+  height: 28rem;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+.button_masterclass1 {
+  display: flex;
+  margin-top: 43px;
+  justify-content: center;
+}
+.Mastercards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.Course_name {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+.image_card {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image_logo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -40px;
+}
+.image_logo1,
+.image_logo2 {
+  height: 2rem;
+  width: 2rem;
+}
+.image_logo1 {
+  margin-left: 35px;
+}
+.rec.rec-arrow:hover {
+  color: white;
+  background-color: #f26c4f;
+}
+.image_logo2 {
+  margin-right: 35px;
+}
+.course_line {
+  margin-top: 5px;
+  overflow: hidden;
+}
+.instruct_time {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.post_episode {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  opacity: 0.75;
+  margin-top: 0.3rem;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 850px) {
+  .Mastercards {
+    display: none;
+  }
+  .slider_mobile {
+    display: inline;
+  }
+}
+@media only screen and (max-width: 786px) {
+  .button_masterclass {
+    display: flex;
+    justify-self: center;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .instruct_time {
+    font-size: 0.9rem;
+  }
+  .post_episode {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 385px) {
+  .instruct_time {
+    font-size: 0.8rem;
+  }
+  .post_episode {
+    font-size: 0.75rem;
+  }
+}

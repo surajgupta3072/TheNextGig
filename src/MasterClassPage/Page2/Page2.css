@@ -1,0 +1,90 @@
+.rectangle-box2 {
+  width: 105%;
+  height: 175px;
+  border: 1px solid rgb(212, 71, 41);
+  background: transparent;
+}
+
+.mast_page2_p1 {
+  font-size: 48px;
+}
+
+.mast_page2_p2 {
+  font-size: 24px;
+}
+
+.mast_page2_row {
+  padding-left: 30%;
+}
+.mast_page2_row1 {
+  padding-left: 72%;
+}
+.mast_page2_p3 {
+  font-size: 36px;
+}
+
+.mast_page2_p4 {
+  font-size: 36px;
+  padding-top: 10%;
+}
+
+.mast_page2_p5 {
+  font-size: 20px;
+}
+
+.top-container {
+  margin-top: 7%;
+}
+
+.col-container {
+  height: 280px;
+}
+
+.col-button {
+  padding-top: 50px;
+  padding-left: 12%;
+}
+
+@media screen and (max-width: 768px) {
+  .mast_page2_p1 {
+    font-size: 24px;
+  }
+  .mast_page2_p2 {
+    font-size: 16px;
+  }
+  .mast_page2_p3 {
+    font-size: 16px;
+  }
+  .mast_page2_p4 {
+    padding-left: 30%;
+    font-size: 18px;
+    padding-top: 10%;
+  }
+  .mast_page2_row {
+    padding-left: 30%;
+  }
+  .mast_page2_row1 {
+    padding-left: 45%;
+  }
+  .mast_page2_p5 {
+    font-size: 12px;
+    padding-top: 10%;
+  }
+
+  .mast_page2_row {
+    padding-left: 45%;
+  }
+
+  .top-container {
+    margin-top: 10%;
+    margin-left: 10%;
+  }
+  .col-container {
+    height: 160px;
+  }
+
+  .col-button {
+    padding-left: 100%;
+    padding-top: 0;
+  }
+}

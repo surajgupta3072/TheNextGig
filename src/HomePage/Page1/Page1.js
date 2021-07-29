@@ -28,7 +28,7 @@ function Page1() {
                   </p>
                 </div>
               </div>
-              <h1 className="subheading">the right way.</h1>
+              <h1 className="subheading slide-down">the right way.</h1>
             </div>
           </Col>
           

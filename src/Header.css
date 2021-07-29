@@ -1,13 +1,13 @@
-.header_img{
-    height: 60px;
-    width: 80px;
-    margin-left: 100%;
+.header_img {
+  height: 60px;
+  width: 80px;
+  margin-left: 100%;
 }
 
 @media screen and (max-width: 768px) {
-    .header_img{
-        margin-left: 50%;
-        height: 60px;
-        width: 80px;
-    }
+  .header_img {
+    margin-left: 50%;
+    height: 60px;
+    width: 80px;
+  }
 }

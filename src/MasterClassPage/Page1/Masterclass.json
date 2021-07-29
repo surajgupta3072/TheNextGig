@@ -1,0 +1,92 @@
+[
+    {
+        "id":1,
+        "course_name":"Course1",
+        "course_image":"https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y291cnNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
+        "course_instructor":"Urmil Vakhariya",
+        "course_instructor_post":"Founder_next_gig",
+        "course_timing":"1hour 26 mins",
+        "course_episode":"14 episodes"
+    },
+    {
+        "id":2,
+        "course_name":"Course2",
+        "course_image":"https://images.indianexpress.com/2020/04/online759.jpg",
+        "course_instructor":"Nikhil Agarwal",
+        "course_instructor_post":"Next_gig intern",
+        "course_timing":"2hour 26 mins",
+        "course_episode":"18 episodes"
+    },
+    {
+        "id":3,
+        "course_name":"Course3",
+        "course_image":"https://www.nirmalacollegeranchi.com/images/courses.jpg",
+        "course_instructor":"Suraj Gupta",
+        "course_instructor_post":"Next_gig intern",
+        "course_timing":"2hour 10 mins",
+        "course_episode":"16 episodes"
+    },
+    {
+        "id":4,
+        "course_name":"Course4",
+        "course_image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWgxNnkxXySUXM3BjTBffeQBr1yjmwMQvf2AYHuFqyQ1o2ZsvXVywiAfF_Ww8Xi3ckbsk&usqp=CAU",
+        "course_instructor":"Harsh Lohiya",
+        "course_instructor_post":"Next_gig intern",
+        "course_timing":"1hour 56 mins",
+        "course_episode":"20 episodes"
+    },
+    {
+        "id":5,
+        "course_name":"Course5",
+        "course_image":"https://learnenglish.britishcouncil.org/sites/podcasts/files/styles/article/public/GettyImages-1072206958.png?itok=lUNSIqVR",
+        "course_instructor":"Anurag Vaibhav",
+        "course_instructor_post":"Next_gig intern",
+        "course_timing":"1hour 16 mins",
+        "course_episode":"15 episodes"
+    },
+    {
+        "id":6,
+        "course_name":"Course6",
+        "course_image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXrs_aNmhXY2Pi0UYDkb4Mb6GfKhXkOK2Crg&usqp=CAU",
+        "course_instructor":"Jai Chand",
+        "course_instructor_post":"Next_gig intern",
+        "course_timing":"2hour 26 mins",
+        "course_episode":"18 episodes"
+    },
+    {
+        "id":7,
+        "course_name":"Course7",
+        "course_image":"https://learnenglish.britishcouncil.org/sites/podcasts/files/image/GettyImages-1138008061.jpg",
+        "course_instructor":"debdoot sheet",
+        "course_instructor_post":"IIT Kgp prof",
+        "course_timing":"36 mins",
+        "course_episode":"5 episodes"
+    },
+    {
+        "id":8,
+        "course_name":"Course8",
+        "course_image":"https://akm-img-a-in.tosshub.com/indiatoday/images/story/202106/online-4727942_1280__1__1200x768.jpeg?ZfqOecIFMsk3B7A6UBks.hm1Ltf4xm4I&size=770:433",
+        "course_instructor":"Samanta Ray",
+        "course_instructor_post":"IIT KGP prof",
+        "course_timing":"3hour 26 mins",
+        "course_episode":"24 episodes"
+    },
+    {
+        "id":9,
+        "course_name":"Course9",
+        "course_image":"https://ugc.futurelearn.com/uploads/images/ac/8b/thumbnail_ac8b5ba7-45d2-4b16-b64f-63b0063e3c6e.jpg",
+        "course_instructor":"Dhariya shah",
+        "course_instructor_post":"Next_gig",
+        "course_timing":"4hour 26 mins",
+        "course_episode":"40 episodes"
+    },
+    {
+        "id":10,
+        "course_name":"Course10",
+        "course_image":"https://leverageedu.com/blog/wp-content/uploads/2020/03/Psychology_Courses.jpg",
+        "course_instructor":"Harry",
+        "course_instructor_post":"Software Developer",
+        "course_timing":"10hour 26 mins",
+        "course_episode":"100 episodes"
+    }
+]
