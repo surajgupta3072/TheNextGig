@@ -11,6 +11,7 @@
 
 .mast_page2_p2 {
   font-size: 24px;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 .mast_page2_row {
@@ -30,6 +31,7 @@
 
 .mast_page2_p5 {
   font-size: 20px;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 .top-container {
@@ -51,6 +53,7 @@
   }
   .mast_page2_p2 {
     font-size: 16px;
+    font-family: "Open Sans", sans-serif !important;
   }
   .mast_page2_p3 {
     font-size: 16px;
@@ -67,8 +70,9 @@
     padding-left: 45%;
   }
   .mast_page2_p5 {
-    font-size: 12px;
+    font-size: 14px;
     padding-top: 10%;
+    font-family: "Open Sans", sans-serif !important;
   }
 
   .mast_page2_row {

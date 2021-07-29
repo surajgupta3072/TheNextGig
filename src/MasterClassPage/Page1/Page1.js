@@ -1,10 +1,8 @@
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import master from './Masterclass.json';
 import Carousel from "react-elastic-carousel";
 import { ArrowRight } from "react-bootstrap-icons";
-import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage } from 'mdb-react-ui-kit';
+import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
 import '../../App.css';
 import './Page1.css';
 const breakPoints = [
@@ -17,9 +15,11 @@ function Page1() {
     return (
       <div>
         <div className="header_masterclass">
-        <Container><div className="top_masterclass"><h1>ALL MASTERCLASSES</h1>
-        <h4 className="subtitle_masterclass">Short,but meant to stay with you for a <span className="orange_text_masterclass">long time</span>.</h4>
-        </div></Container>
+        <Container>
+          <div className="top_masterclass"><h1>ALL MASTERCLASSES</h1>
+            <p className="subtitle_masterclass">Short, but meant to stay with you for a <span className="orange_text_masterclass">long time</span>.</p>
+          </div>
+        </Container>
         </div>
         <div className="Mastercards">
           {master.map(carder=>
@@ -54,7 +54,7 @@ function Page1() {
         <div className="slider_mobile">
         <Carousel  breakPoints={breakPoints}>
             {master.map((carder) => (
-             <MDBCard className="mbd_card" style={{borderRadius:"0px", margin:"4%" ,border:"2px solid rgba(242, 108, 79, 0.6)" , backgroundColor:"#020312"}} className="card_mastercard">
+             <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={carder.course_image} alt='...' /></div>
              <div className="image_logo">
              <img className="image_logo1" src="logo192.png"/>

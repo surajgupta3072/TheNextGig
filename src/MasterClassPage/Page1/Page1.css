@@ -12,6 +12,8 @@
   padding-top: 20px;
 }
 .subtitle_masterclass {
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 20px;
   padding-bottom: 20px;
 }
 .card_mastercard {
@@ -88,6 +90,11 @@
   }
 }
 @media only screen and (max-width: 786px) {
+  .subtitle_masterclass {
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 15px;
+    padding-bottom: 20px;
+  }
   .button_masterclass {
     display: flex;
     justify-self: center;
