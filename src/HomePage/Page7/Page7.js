@@ -58,13 +58,13 @@ function Page7() {
     <div style={{marginTop:"5%"}}>
         <div className="heading_box" style={{marginBottom: "10%"}}>
       <div>
-        <a class="btn">
+        <p class="btn">
           <span>
             <span>
               <span className="border_box">SUCCESS STORIES</span>
             </span>
           </span>
-        </a>
+        </p>
       </div>
       <div style={{marginTop: "70px"}}>
         <h4 className="page3_subtitle text3">This is why we do what we do.</h4>

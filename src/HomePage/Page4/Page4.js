@@ -12,13 +12,13 @@ function Page4() {
         
         <div className="heading_box">
       <div>
-        <a class="btn">
+        <p class="btn">
           <span>
             <span>
               <span className="border_box">GIGS. PROJECTS. INTERNSHIPS.</span>
             </span>
           </span>
-        </a>
+        </p>
       </div>
       <div style={{marginTop: "70px"}}>
         <h4 className="page3_subtitle"><span class="h3_live" style={{color: "#F26C4F"}}>Live</span>. At your doorstep.</h4>

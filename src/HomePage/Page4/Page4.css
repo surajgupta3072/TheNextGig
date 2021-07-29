@@ -104,17 +104,14 @@
   .layer h3 {
     font-size: 12px;
   }
-  .button_div_page4 {
-    margin-top: -30%;
-  }
   .page4_maindiv {
     position: relative;
     margin-top: 15%;
   }
   .button_div_page4 {
     position: relative;
-    margin-top: 0%;
-    margin-left: 46%;
+    margin-top: -5%;
+    margin-left: 49%;
   }
   .img-grid_row {
     position: relative;
@@ -124,6 +121,6 @@
     display: none;
   }
   .mobile_view {
-    display: block;
+    display: inline;
   }
 }

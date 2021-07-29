@@ -9,13 +9,13 @@ function Page5() {
     <div className="page5_maindiv" >
         <div className="heading_box" style={{marginBottom: "10%"}}>
       <div>
-        <a class="btn">
+        <p class="btn">
           <span>
             <span>
               <span className="border_box">JOIN THE FAMILY</span>
             </span>
           </span>
-        </a>
+        </p>
       </div>
       <div style={{marginTop: "70px"}}>
         <h4 className="page3_subtitle text3">Learn from your <text style={{color:"#f26c4f"}}>peers</text>.<br className="line_space"/> They're smarter than you think.</h4>

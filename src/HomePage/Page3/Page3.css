@@ -169,19 +169,8 @@ button.rec-dot {
     font-size: 15px;
   }
   .button_div_page3 {
-    margin-top: -15%;
-    margin-left: 51%;
-  }
-}
-@media screen and (max-width: 541px) {
-  .button_div_page3 {
-    margin-top: -30%;
-    margin-left: 51%;
-  }
-}
-@media screen and (max-width: 400px) {
-  .button_div_page3 {
     margin-top: -38%;
-    margin-left: 51%;
+    margin-left: 48%;
   }
 }
+

@@ -20,13 +20,13 @@ function Page3() {
 
       <div className="heading_box">
       <div>
-        <a class="btn">
+        <p class="btn">
           <span>
             <span>
               <span className="border_box">MASTERCLASSES</span>
             </span>
           </span>
-        </a>
+        </p>
       </div>
       <div style={{marginTop: "70px"}}>
         <h4 className="page3_subtitle">By experts. To make <span className="page3_orange"> <em>you</em> </span> an expert.</h4>
