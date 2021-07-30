@@ -20,7 +20,7 @@ function Page2() {
        <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
          <Container>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the experts!</p></Row>
-            <Row style={{paddingLeft:"45%"}}><p className="mast_page2_p5">Superwomen. Supermen.</p></Row>
+            <Row style={{paddingLeft:"45%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
             <Row className="mast_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="mast_page2_p5">Stalk them.</p></Row>
          </Container>
          
@@ -29,8 +29,8 @@ function Page2() {
       <Container className="rectangle-box2" style={{marginTop:"5%"}}>
         <Row >
           <Col style={{padding:"2%"}} md={8}>
-            <p className="mast_page2_p3">Want to learn from a specific expert?</p>
-            <p className="mast_page2_p3">Want to learn a session in a specific domain?</p>
+            <p style={{marginBottom:"0%"}} className="mast_page2_p3">Want to learn from a specific expert?</p>
+            <p  className="mast_page2_p3">Want to learn a session in a specific domain?</p>
           </Col>
           <Col style={{paddingLeft:"12%"}} className="col-button">
             <button style={{marginLeft:"20%"}} className="button_slide slide_right" onClick={() => setModalShow(true)}>Recommend 

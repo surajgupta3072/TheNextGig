@@ -1,11 +1,11 @@
 import Page3 from './Page3/Page3';
-import Page4 from './Page4/Page4';
+import {useParams} from "react-router-dom";
 
 function MasterClassDetails() {
+  let { id } = useParams();
   return (
     <div>
-      <Page3/>
-      <Page4/>
+      <Page3 id={id}/>
     </div>
   );
 }

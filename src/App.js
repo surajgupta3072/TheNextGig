@@ -10,7 +10,7 @@ function App() {
       <Header/>
       <Router>
         <Switch>
-          <Route path="/masterclass/id">
+          <Route path="/masterclass/:id">
             <MasterClassDetails/>
           </Route>
           <Route path="/masterclass">

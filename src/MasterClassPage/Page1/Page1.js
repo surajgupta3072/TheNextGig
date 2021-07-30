@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/Container'
-import master from './Masterclass.json';
+import master from '../Masterclass.json';
 import Carousel from "react-elastic-carousel";
 import { ArrowRight } from "react-bootstrap-icons";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
@@ -44,7 +44,7 @@ function Page1() {
           <div className="episode_course">{carder.course_episode}</div>
         </div>
         <div className="button_masterclass1">
-        <a href="/masterclass/id"><button style={{padding:"8px 14px"}} type="submit" className="button_slide slide_right">Let's go<ArrowRight style={{width:"30px",height:"30px",marginTop:"-3px"}} className="button_arrow"/></button></a>
+        <a href={"/masterclass/"+carder.id}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px",marginTop:"-3px"}} className="button_arrow_new"/></button></a>
       </div>
       </MDBCardBody>
     </MDBCard>
@@ -72,7 +72,7 @@ function Page1() {
                  <div className="episode_course">{carder.course_episode}</div>
                </div>
                <div className="button_masterclass1">
-               <a href="/masterclass/id"><button style={{padding:"8px 14px"}} type="submit" className="button_slide slide_right">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow"/></button></a>
+               <a href={"/masterclass/"+carder.id}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
              </div>
              </MDBCardBody>
            </MDBCard>

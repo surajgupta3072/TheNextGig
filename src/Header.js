@@ -7,7 +7,7 @@ function Header() {
   return (
     <Navbar style={{background:"white", padding:"0px", width:"100%", position:"sticky", top:"0", zIndex:"100"}} expand="lg">
         <Navbar.Brand href="/">
-            <img className= "header_img" src="logo192.png" alt="logo"/>
+            <img className= "header_img" src="/logo192.png" alt="logo"/>
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end" style={{paddingRight:"6%"}}>

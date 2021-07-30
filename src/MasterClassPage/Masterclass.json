@@ -79,14 +79,5 @@
         "course_instructor_post":"Next_gig",
         "course_timing":"4hour 26 mins",
         "course_episode":"40 episodes"
-    },
-    {
-        "id":10,
-        "course_name":"Course10",
-        "course_image":"https://leverageedu.com/blog/wp-content/uploads/2020/03/Psychology_Courses.jpg",
-        "course_instructor":"Harry",
-        "course_instructor_post":"Software Developer",
-        "course_timing":"10hour 26 mins",
-        "course_episode":"100 episodes"
     }
 ]

@@ -1,7 +1,7 @@
 .header_img {
   height: 60px;
   width: 80px;
-  margin-left: 100%;
+  margin-left: 80%;
 }
 
 @media screen and (max-width: 768px) {
