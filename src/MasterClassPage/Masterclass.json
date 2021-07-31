@@ -6,7 +6,33 @@
         "course_instructor":"Urmil Vakhariya",
         "course_instructor_post":"Founder_next_gig",
         "course_timing":"1hour 26 mins",
-        "course_episode":"14 episodes"
+        "course_episode":"14 episodes",
+        "episodes": [
+            {
+                "id":1,
+                "title": "HTML",
+                "description": "abguaebguebgrsgoirsngoringoirngorenhoeirnhoet",
+                "thumbnail": "/loger1.svg"
+            },
+            {
+                "id":2,
+                "title": "CSS",
+                "description": "abguaebguebgrsgoirsngoringoirngorenhoeirnhoet 2 lines description to be shown",
+                "thumbnail": "/loger1.svg"
+            },
+            {
+                "id":3,
+                "title": "JS",
+                "description": "abguaebguebgrsgoirsngoringoirngorenhoeirnhoet",
+                "thumbnail": "/loger1.svg"
+            },
+            {
+                "id":4,
+                "title": "React",
+                "description": "abguaebguebgrsgoirsngoringoirngorenhoeirnhoet",
+                "thumbnail": "/loger1.svg"
+            }
+        ]
     },
     {
         "id":2,
