@@ -31,6 +31,62 @@
                 "title": "React",
                 "description": "abguaebguebgrsgoirsngoringoirngorenhoeirnhoet",
                 "thumbnail": "/loger1.svg"
+            },
+            {
+                "id":5,
+                "title": "HTML",
+                "description": "abguaebguebgrsgoirsngoringoirngorenhoeirnhoet",
+                "thumbnail": "/loger1.svg"
+            },
+            {
+                "id":6,
+                "title": "CSS",
+                "description": "abguaebguebgrsgoirsngoringoirngorenhoeirnhoet 2 lines description to be shown",
+                "thumbnail": "/loger1.svg"
+            },
+            {
+                "id":7,
+                "title": "JS",
+                "description": "abguaebguebgrsgoirsngoringoirngorenhoeirnhoet",
+                "thumbnail": "/loger1.svg"
+            },
+            {
+                "id":8,
+                "title": "React",
+                "description": "abguaebguebgrsgoirsngoringoirngorenhoeirnhoet",
+                "thumbnail": "/loger1.svg"
+            }
+        ],
+        "gigs": [
+            {
+                "logo":"/loger1.svg",
+                "brief":"Web Developer",
+                "duration":"2 months",
+                "stipend":"40000 INR"
+            },
+            {
+                "logo":"/loger1.svg",
+                "brief":"Web Developer",
+                "duration":"2 months",
+                "stipend":"40000 INR"
+            },
+            {
+                "logo":"/loger1.svg",
+                "brief":"Web Developer",
+                "duration":"2 months",
+                "stipend":"40000 INR"
+            },
+            {
+                "logo":"/loger1.svg",
+                "brief":"Web Developer",
+                "duration":"2 months",
+                "stipend":"40000 INR"
+            },
+            {
+                "logo":"/loger1.svg",
+                "brief":"Web Developer",
+                "duration":"2 months",
+                "stipend":"40000 INR"
             }
         ]
     },
