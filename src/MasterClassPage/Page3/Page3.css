@@ -6,6 +6,16 @@
   height: 80%;
   overflow-y: auto;
 }
+@media only screen and (min-width: 500px) {
+  .rec.rec-arrow-left {
+    margin-left: 30px;
+    margin-right: -22px;
+  }
+  .rec.rec-arrow-right {
+    margin-right: 30px;
+    margin-left: -22px;
+  }
+}
 .vertical-menu a {
   padding: 22px;
   padding-top: 10px;

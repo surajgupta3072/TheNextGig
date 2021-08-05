@@ -72,7 +72,7 @@ function Page3(props) {
               </Col>
               <Col>
                 <button type="submit" className="button_slide_page3 slide_right">
-                Invest xxx in <br /> your future <ArrowLeft className="button_arrow_footer"/>
+                Invest {session.fees} in <br /> your future <ArrowLeft className="button_arrow_footer"/>
                 </button>
               </Col>
             </Row>
@@ -155,7 +155,7 @@ function Page3(props) {
           <div className="header_masterclass">
           <Container>
           <div className="top_masterclass"><h1>OTHER SESSIONS</h1>
-            <p className="subtitle_masterclass">Want to learn <span className="orange_text_masterclass">something else?<span style={{marginLeft:"62.1%"}}>Explore all sessions</span></span></p>
+            <p className="subtitle_masterclass">Want to learn <span className="orange_text_masterclass">something else?<span style={{marginLeft:"62.1%"}}><a style={{textDecoration:"none", color:"#f26c4f"}} href="/masterclass">Explore all sessions</a></span></span></p>
           </div>
           </Container>
           </div>
@@ -169,8 +169,8 @@ function Page3(props) {
                <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={details.course_image} alt='...' /></div>
              <div className="image_logo">
-             <img className="image_logo1" src="logo192.png"/>
-             <img className="image_logo2" src="logo192.png"/>
+             <img className="image_logo1" src="/logo192.png"/>
+             <img className="image_logo2" src="/logo192.png"/>
              </div>
              <MDBCardBody>
                <div className="Course_name">{details.course_name}</div>

@@ -7,6 +7,7 @@
         "course_instructor_post":"Founder_next_gig",
         "course_timing":"1hour 26 mins",
         "course_episode":"14 episodes",
+        "fees": "499",
         "episodes": [
             {
                 "id":1,
@@ -111,7 +112,7 @@
     {
         "id":3,
         "course_name":"Course3",
-        "course_image":"https://www.nirmalacollegeranchi.com/images/courses.jpg",
+        "course_image":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png",
         "course_instructor":"Suraj Gupta",
         "course_instructor_post":"Next_gig intern",
         "course_timing":"2hour 10 mins",
