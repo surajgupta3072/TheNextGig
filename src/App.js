@@ -1,6 +1,8 @@
 import HomePage from "./HomePage/HomePage";
+import GigsPage from "./GigsPage/GigsPage";
 import MasterClassPage from "./MasterClassPage/MasterClassPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import GigsDetails from "./GigsPage/GigsDetails";
 import MasterClassDetails from "./MasterClassPage/MasterClassDetails";
 import Header from "./Header";
 
@@ -10,6 +12,12 @@ function App() {
       <Header/>
       <Router>
         <Switch>
+          <Route path="/gigs/:id">
+            <GigsDetails/>
+          </Route>
+          <Route path="/gigs">
+            <GigsPage />
+          </Route>
           <Route path="/masterclass/:id">
             <MasterClassDetails/>
           </Route>

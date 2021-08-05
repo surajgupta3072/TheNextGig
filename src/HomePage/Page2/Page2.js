@@ -23,7 +23,7 @@ function Page2() {
                     Some quirky text over here  
                   </Card.Text>
                 </Card.Body>
-                <a href="/masterclass"><ArrowRight className="card_arrow1" size="1x"/></a>
+                <a href="/masterclass"><ArrowRight className="card_arrow1"/></a>
             </Card>
             
             <Card style={{ width: "27%", marginLeft:"7%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
@@ -34,7 +34,7 @@ function Page2() {
                   </Card.Text>
                 </Card.Body>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px"}} variant="top" src="holder.svg"/>
-                <ArrowRight className="card_arrow1"/>
+                <a href="/gigs"><ArrowRight className="card_arrow1"/></a>
             </Card>
 
             <Card style={{ width: "27%", marginLeft:"7%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px" }}>
@@ -45,7 +45,7 @@ function Page2() {
                   Some quirky text over here 
                   </Card.Text>
                 </Card.Body >
-                <ArrowRight className="card_arrow1"/>
+                <a href="/community"><ArrowRight className="card_arrow1"/></a>
             </Card>
           </Row>
           <Row style={{width:"600px",height:"70px",border:"1px solid #534D4D", marginTop:"5%",marginLeft:"50%", paddingTop:"20px"}}>
@@ -80,7 +80,7 @@ function Page2() {
             </Col>
           </Row>
         </Card.Body>
-        <ArrowRight className="card_arrow1"/>
+        <a href="/masterclass"><ArrowRight className="card_arrow1"/></a>
       </Card>
       <Card style={{ width: '18rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%",marginLeft:"5%" }}>
         <Card.Body>
@@ -96,7 +96,7 @@ function Page2() {
             </Col>
           </Row>
         </Card.Body>
-        <ArrowRight className="card_arrow1"/>
+        <a href="/gigs"><ArrowRight className="card_arrow1"/></a>
       </Card>
       <Card style={{ width: '18rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "20%", marginLeft:"5%" }}>
         <Card.Body>
@@ -112,7 +112,7 @@ function Page2() {
             </Col>
           </Row>
         </Card.Body>
-        <ArrowRight className="card_arrow1"/>
+        <a href="/community"><ArrowRight className="card_arrow1"/></a>
       </Card>
       <div style={{width:"300px",height:"50px",border:"1px solid #534D4D", marginTop:"2%",marginLeft:"5%", paddingTop:"20px"}}>
              

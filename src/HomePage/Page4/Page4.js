@@ -102,9 +102,9 @@ function Page4() {
                 </Col>
             </Row>
             <div className="button_div_page4">
-      <button type="submit" className="button_slide slide_right orange_button_page3">Check ‘em out<ArrowRight className="button_arrow"/></button>
-      </div>
-      </Container>
+                <a href="/gigs"><button type="submit" className="button_slide slide_right orange_button_page3">Check ‘em out<ArrowRight className="button_arrow"/></button></a>
+            </div>
+        </Container>
     </div>
 
 
@@ -205,9 +205,9 @@ function Page4() {
                 </Col>
             </Row>
             <div className="button_div_page4">
-      <button type="submit" className="button_slide slide_right orange_button_page3">Check ‘em out<ArrowRight className="button_arrow"/></button>
-      </div>
-      </Container>
+                <a href="/gigs"><button type="submit" className="button_slide slide_right orange_button_page3">Check ‘em out<ArrowRight className="button_arrow"/></button></a>
+            </div>
+        </Container>
     </div>
 
 

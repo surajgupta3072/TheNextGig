@@ -1,11 +1,10 @@
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import { ArrowLeft } from "react-bootstrap-icons";
+import { ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram } from "react-bootstrap-icons";
 import master from '../Masterclass.json';
 import './Page3.css'
 import Carousel from "react-elastic-carousel";
-import { ArrowRight } from "react-bootstrap-icons";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
 import { useState } from 'react';
 const breakPoints = [
@@ -77,7 +76,7 @@ function Page3(props) {
               </Col>
             </Row>
           </Col>
-          <Col class="col_img" style={{padding:"0px"}} md={6}>            
+          <Col style={{padding:"0px"}} md={6}>            
               <img src={session.course_image} className="anim_img"/>        
           </Col>
           </Row>
@@ -195,6 +194,33 @@ function Page3(props) {
           </Carousel>
           </div>
           </div>
+          <Container className="container2_page3">
+          <Container className="rectangle-box3" style={{marginTop:"7%"}}>
+            <Row >
+              <Col style={{padding:"3%"}} md={8}>
+                <p  className="mast_page2_p3">Want to provide feeback on the session!</p>
+              </Col>
+              <Col style={{paddingLeft:"12%",paddingTop:"3%"}} className="col-button">
+                <button style={{marginLeft:"20%"}} className="button_slide slide_right">We're listening
+                <ArrowLeft className="button_arrow"/></button>
+              </Col>
+            </Row>
+          </Container>
+          </Container>
+          <div >
+            <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
+                <Col md={10}>
+                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}}>
+                © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
+                </h6>
+                </Col> 
+                <Col md={2}>
+                    <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                </Col>
+            </Row>
+            </div>
     </div>
     );
   }
