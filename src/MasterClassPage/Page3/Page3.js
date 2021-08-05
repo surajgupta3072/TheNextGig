@@ -25,15 +25,15 @@ function Page3(props) {
   };
     return (
     <div>
-      <Container>
+      <Container style={{padding: "0%", maxWidth: "94%", marginBottom: "0%"}} className= "container1">
         <Row>
-          <Col md={6}>
-            <Row style={{marginTop:"15%"}}>
+          <Col md={6} >
+            <Row style={{marginTop:"12%"}}>
               <h1  className="page3_heading1">{session.course_name}</h1>
             </Row>
             <Row style={{marginTop:"5%"}}>
               <p className="page3_3linetext">Some text will span across three lines<br/> AAAAAA <br/> BBBBBBB</p>
-              <p className="page3_3linetext2">Lifetime access to {session.course_timing} of Learning experience</p>
+              <p className="page3_3linetext2">Lifetime access to <span style={{color: "#f26c4f"}}>{session.course_timing}</span>  of Learning experience</p>
             </Row>
             <Row className="card1_page3"  style={{marginLeft: "0", marginTop: "6%"}}>
             <div >
@@ -82,23 +82,25 @@ function Page3(props) {
           </Col>
           </Row>
       </Container>
-      <Container className="container2_page3">
+      <Container className="container2_page3" style={{padding: "0%", maxWidth: "94.25%",  marginBottom: "0%"}}>
         <Row className="main_cardbody_row" style={{marginLeft: "2%"}}>
         <div className="main_card" >               
                 <div className="main_cardbody"> 
                   <Row >
-                    <Col md={6} className="col1_cardbody">
+                    <Col md={7} className="col1_cardbody">
                       <img src={session.course_image} className="img_letsgo"/>
                       <p className="twoline_desc">{des}</p>
                     </Col >
-                    <Col md={6}>
+                    <Col md={5}>
                       <div className="menu_card">   
                         <h1 style={{marginTop: "2%", marginLeft: "2%"}}>Episodes</h1>   
                         <div className="vertical-menu">
                         {session["episodes"].map(topic=>(
-                          <span>
-                            <a style={{cursor:"pointer"}} onClick={() => {showDescription(topic.id)}}>{topic.title}</a><br/>
+                          <div className="menu_list" style={{cursor:"pointer"}} onClick={() => {showDescription(topic.id)}}>
+                          <span >
+                            <a style={{textDecoration: "none"}} >{topic.title}</a><br/>
                           </span>
+                          </div>
                         ))}
                         </div>      
                       </div>
