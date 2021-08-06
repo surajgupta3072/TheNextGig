@@ -42,6 +42,7 @@ function Page1() {
       <div className="Mastercards">
         {gigs.map((carder) => (
           <MDBCard
+            key={carder.GigId}
             style={{
               borderRadius: "0px",
               marginTop: "2%",
@@ -72,22 +73,22 @@ function Page1() {
               <img className="image_logo2" src="logo192.png" />
             </div>
             <MDBCardBody>
-              <div className="Course_name">{carder.GigFunction}</div>
+              <div className="Course_name">{carder.GigName}</div>
               <hr
                 className="course_line"
                 style={{ height: "0.13rem", color: "#f26c4f" }}
               />
               <div className="instruct_time">
                 <div className="instructor_name">
-                  {carder.GigStipend}
+                  {carder.CompanyName}
                 </div>
-                <div className="time_course">{carder.GigStartDate}</div>
+                <div className="time_course">{carder.GigDuration}</div>
               </div>
               <div className="post_episode">
                 <div className="instructor_post">
-                  {carder.GigPOCname}
+                  {carder.GigFunction}
                 </div>
-                <div className="episode_course">{carder.GigPOCcontact}</div>
+                <div className="episode_course">{carder.GigStipend}</div>
               </div>
               <div className="button_masterclass1">
                 <a href={"/gigs/" + carder.GigId}>
@@ -116,6 +117,7 @@ function Page1() {
         <Carousel breakPoints={breakPoints}>
           {gigs.map((carder) => (
             <MDBCard
+              key={carder.GigId}
               className="mbd_card card_mastercard"
               style={{
                 borderRadius: "0px",

@@ -8,6 +8,15 @@
         "course_timing":"1hour 26 mins",
         "course_episode":"14 episodes",
         "fees": "499",
+        "expert": {
+            "ExpertName": "Sundar Pichai",
+            "ExpertPic": "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+            "ExpertDesignation": "CEO",
+            "ExpertCompany": "Google",
+            "ExpertCompaniesLogo": ["/loger1.svg", "/loger1.svg", "/loger1.svg", "/loger1.svg"],
+            "ExpertDescription": "IIT KGP MT Passout",
+            "ExpertLinkedIn": "https://www.linkedin.com/in/nikhil-agarwal-85a203189/"
+        },
         "episodes": [
             {
                 "id":1,
