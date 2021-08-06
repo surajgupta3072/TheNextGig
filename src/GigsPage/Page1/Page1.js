@@ -1,9 +1,10 @@
 import Container from "react-bootstrap/Container";
-import master from "../../MasterClassPage/Masterclass.json";
 import Carousel from "react-elastic-carousel";
 import { ArrowRight } from "react-bootstrap-icons";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
+import docClient from '../GigsAWS'
 import "../../App.css";
+import { useState } from "react";
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -11,6 +12,17 @@ const breakPoints = [
   { width: 1080, itemsToShow: 3 },
 ];
 function Page1() {
+  const [gigs,setGigs]=useState([])
+  let params = {
+    TableName: "GigsTable"
+};
+docClient.scan(params, function(err, data) {
+if (err) {
+    console.log(err);
+} else {
+  setGigs(data.Items)
+}
+});
   return (
     <div>
       <div className="header_masterclass">
@@ -25,7 +37,7 @@ function Page1() {
         </Container>
       </div>
       <div className="Mastercards">
-        {master.map((carder) => (
+        {gigs.map((carder) => (
           <MDBCard
             style={{
               borderRadius: "0px",
@@ -48,7 +60,7 @@ function Page1() {
                   paddingLeft: "20px",
                   paddingRight: "20px",
                 }}
-                src={carder.course_image}
+                src={carder.GigName}
                 alt="..."
               />
             </div>
@@ -57,25 +69,25 @@ function Page1() {
               <img className="image_logo2" src="logo192.png" />
             </div>
             <MDBCardBody>
-              <div className="Course_name">{carder.course_name}</div>
+              <div className="Course_name">{carder.GigFunction}</div>
               <hr
                 className="course_line"
                 style={{ height: "0.13rem", color: "#f26c4f" }}
               />
               <div className="instruct_time">
                 <div className="instructor_name">
-                  {carder.course_instructor}
+                  {carder.GigStipend}
                 </div>
-                <div className="time_course">{carder.course_timing}</div>
+                <div className="time_course">{carder.GigStartDate}</div>
               </div>
               <div className="post_episode">
                 <div className="instructor_post">
-                  {carder.course_instructor_post}
+                  {carder.GigPOCname}
                 </div>
-                <div className="episode_course">{carder.course_episode}</div>
+                <div className="episode_course">{carder.GigPOCcontact}</div>
               </div>
               <div className="button_masterclass1">
-                <a href={"/gigs/" + carder.id}>
+                <a href={"/gigs/" + carder.GigId}>
                   <button
                     style={{ padding: "8px 14px" }}
                     type="submit"
@@ -99,7 +111,7 @@ function Page1() {
       </div>
       <div className="slider_mobile">
         <Carousel breakPoints={breakPoints}>
-          {master.map((carder) => (
+          {gigs.map((carder) => (
             <MDBCard
               className="mbd_card card_mastercard"
               style={{
@@ -119,7 +131,7 @@ function Page1() {
                     paddingLeft: "20px",
                     paddingRight: "20px",
                   }}
-                  src={carder.course_image}
+                  src={carder.GigName}
                   alt="..."
                 />
               </div>
@@ -128,25 +140,25 @@ function Page1() {
                 <img className="image_logo2" src="logo192.png" />
               </div>
               <MDBCardBody>
-                <div className="Course_name">{carder.course_name}</div>
+                <div className="Course_name">{carder.GigFunction}</div>
                 <hr
                   className="course_line"
                   style={{ height: "0.13rem", color: "#f26c4f" }}
                 />
                 <div className="instruct_time">
                   <div className="instructor_name">
-                    {carder.course_instructor}
+                    {carder.GigStipend}
                   </div>
-                  <div className="time_course">{carder.course_timing}</div>
+                  <div className="time_course">{carder.GigStartDate}</div>
                 </div>
                 <div className="post_episode">
                   <div className="instructor_post">
-                    {carder.course_instructor_post}
+                    {carder.GigPOCname}
                   </div>
-                  <div className="episode_course">{carder.course_episode}</div>
+                  <div className="episode_course">{carder.GigPOCcontact}</div>
                 </div>
                 <div className="button_masterclass1">
-                  <a href={"/gigs/" + carder.id}>
+                  <a href={"/gigs/" + carder.GigId}>
                     <button
                       style={{ padding: "8px 14px" }}
                       type="submit"
