@@ -3,8 +3,8 @@ import Carousel from "react-elastic-carousel";
 import { ArrowRight } from "react-bootstrap-icons";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from '../GigsAWS'
-import "../../App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -12,17 +12,20 @@ const breakPoints = [
   { width: 1080, itemsToShow: 3 },
 ];
 function Page1() {
-  const [gigs,setGigs]=useState([])
-  let params = {
-    TableName: "GigsTable"
-};
-docClient.scan(params, function(err, data) {
-if (err) {
-    console.log(err);
-} else {
-  setGigs(data.Items)
-}
-});
+  const [gigs, setGigs]=useState([]);
+  useEffect(() => {
+    let params = {
+      TableName: "GigsTable"
+    };
+    docClient.scan(params, function(err, data) {
+    if (err) {
+      console.log(err);
+    } 
+    else {
+      setGigs(data.Items);
+    }
+    });
+  }, []);
   return (
     <div>
       <div className="header_masterclass">
