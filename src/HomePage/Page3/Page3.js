@@ -1,4 +1,3 @@
-import '../../App.css'
 import React from 'react';
 import './Page3.css';
 import CardX from'./Card';

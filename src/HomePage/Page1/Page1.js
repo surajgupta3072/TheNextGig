@@ -1,9 +1,8 @@
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import '../../App.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { ArrowDown } from "react-bootstrap-icons";
-import './Page1.css'
+import './Page1.css';
 
 function Page1() {
     return (

@@ -1,5 +1,4 @@
 import Person from './Person.json';
-import '../../App.css'
 import './Page7.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

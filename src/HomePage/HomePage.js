@@ -6,7 +6,6 @@ import Page5 from './Page5/Page5';
 import Page6 from './Page6/Page6';
 import Page7 from './Page7/Page7';
 import Footer from '../Footer/Footer';
-import '../App.css';
 
 function HomePage() {
   return (

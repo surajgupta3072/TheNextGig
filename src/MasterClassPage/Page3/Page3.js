@@ -3,10 +3,11 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import { ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram } from "react-bootstrap-icons";
 import master from '../Masterclass.json';
-import './Page3.css'
+import './Page3.css';
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
 import { useState } from 'react';
+
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1},
@@ -28,7 +29,7 @@ function Page3(props) {
         <Row>
           <Col md={6} >
             <Row style={{marginTop:"12%"}}>
-              <h1  className="page3_heading1">{session.course_name}</h1>
+              <h1 className="page3_heading1">{session.course_name}</h1>
             </Row>
             <Row style={{marginTop:"5%"}}>
               <p className="page3_3linetext">Some text will span across three lines<br/> AAAAAA <br/> BBBBBBB</p>
@@ -65,9 +66,9 @@ function Page3(props) {
             </Row>
             <Row style={{marginTop: "5%", paddingBottom: "1%"}}>
               <Col>
-                <button type="submit" className="button_slide_page3 slide_right">
+                <a href={"/expert/"+session.ExpertId}><button type="submit" className="button_slide_page3 slide_right">
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_footer"/>
-                </button>
+                </button></a>
               </Col>
               <Col>
                 <button type="submit" className="button_slide_page3 slide_right">

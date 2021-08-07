@@ -4,8 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
 import MyVerticallyPopUp  from './popup';
-import '../../App.css';
-import './Page2.css'
+import './Page2.css';
 
 function Page2() {
   const [modalShow, setModalShow] = React.useState(false);
@@ -14,14 +13,14 @@ function Page2() {
       <Row>
        <Col md={7}>
          <p className="mast_page2_p1">Already skilled enough?</p>
-         <p className="mast_page2_p2">Stop dreaming<ArrowRight className="button_arrow"/></p>
+         <p className="mast_page2_p2">Stop dreaming<a href="/gigs"><ArrowRight className="button_arrow"/></a></p>
          <p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Start gigging </p>
        </Col> 
        <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
          <Container>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the experts!</p></Row>
             <Row style={{paddingLeft:"45%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
-            <Row className="mast_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="mast_page2_p5">Stalk them.</p></Row>
+            <Row className="mast_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="mast_page2_p5"><a href="/experts" style={{textDecoration:"none", color:"#f26c4f"}}>Stalk them.</a></p></Row>
          </Container>
          
        </Col>

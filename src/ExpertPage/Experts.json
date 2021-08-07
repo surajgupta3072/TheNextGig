@@ -1,0 +1,35 @@
+[
+    {
+        "ExpertId": "1",
+        "ExpertName": "Sundar Pichai 1",
+        "ExpertPic": "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+        "ExpertDesignation": "CEO 1",
+        "ExpertCompany": "Google 1",
+        "ExpertCompaniesLogo": ["/loger1.svg", "/loger1.svg", "/loger1.svg", "/loger1.svg"],
+        "ExpertDescription": "IIT KGP MT Passout",
+        "ExpertLinkedIn": "https://www.linkedin.com/in/nikhil-agarwal-85a203189/",
+        "ExpertMasterClass": [1, 3]
+    },
+    {
+        "ExpertId": "2",
+        "ExpertName": "Sundar Pichai 2",
+        "ExpertPic": "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+        "ExpertDesignation": "CEO 2",
+        "ExpertCompany": "Google 2",
+        "ExpertCompaniesLogo": ["/loger1.svg", "/loger1.svg"],
+        "ExpertDescription": "IIT KGP MT Passout",
+        "ExpertLinkedIn": "https://www.linkedin.com/in/nikhil-agarwal-85a203189/",
+        "ExpertMasterClass": [5, 6]
+    },
+    {
+        "ExpertId": "3",
+        "ExpertName": "Sundar Pichai 3",
+        "ExpertPic": "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
+        "ExpertDesignation": "CEO 3",
+        "ExpertCompany": "Google 3",
+        "ExpertCompaniesLogo": ["/loger1.svg", "/loger1.svg", "/loger1.svg", "/loger1.svg", "/loger1.svg", "/loger1.svg"],
+        "ExpertDescription": "IIT KGP MT Passout",
+        "ExpertLinkedIn": "https://www.linkedin.com/in/nikhil-agarwal-85a203189/",
+        "ExpertMasterClass": [2, 4]
+    }
+]

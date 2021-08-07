@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GigsDetails from "./GigsPage/GigsDetails";
 import MasterClassDetails from "./MasterClassPage/MasterClassDetails";
 import Header from "./Header";
+import Page2 from './ExpertPage/Page2/Page2';
+import ExpertPage from './ExpertPage/ExpertPage';
+import './App.css';
 
 function App() {
   return (
@@ -12,6 +15,12 @@ function App() {
       <Header/>
       <Router>
         <Switch>
+          <Route path="/expert/:id">
+            <ExpertPage/>
+          </Route>
+          <Route path="/experts">
+            <Page2/>
+          </Route>
           <Route path="/gigs/:id">
             <GigsDetails/>
           </Route>

@@ -1,6 +1,6 @@
-import '../../App.css'
 import './Page6.css';
 import {BsSlash} from 'react-icons/bs';
+
 function Page6() {
     return (
     <div className="page6_maindiv">

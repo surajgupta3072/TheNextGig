@@ -1,10 +1,9 @@
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { ArrowRight } from "react-bootstrap-icons";
-import '../../App.css'
-import Card from 'react-bootstrap/Card'
-import './Page2.css'
+import Card from 'react-bootstrap/Card';
+import './Page2.css';
 
 function Page2() {
     return (

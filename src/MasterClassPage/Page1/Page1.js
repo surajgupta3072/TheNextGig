@@ -3,8 +3,8 @@ import master from '../Masterclass.json';
 import Carousel from "react-elastic-carousel";
 import { ArrowRight } from "react-bootstrap-icons";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
-import '../../App.css';
 import './Page1.css';
+
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1},
