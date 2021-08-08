@@ -21,9 +21,7 @@ function Page2() {
          <Container>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the experts!</p></Row>
             <Row style={{paddingLeft:"45%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
-            {master.map(carder=>
-            <Row className="mast_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="mast_page2_p5"><a href={"/experts/"+carder.id} style={{textDecoration:"none", color:"#f26c4f"}}>Stalk them.</a></p></Row>
-            )}
+            <Row className="mast_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="mast_page2_p5"><a href="/experts" style={{textDecoration:"none", color:"#f26c4f"}}>Stalk them.</a></p></Row>
          </Container>
          
        </Col>
