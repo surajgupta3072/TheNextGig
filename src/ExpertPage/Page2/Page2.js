@@ -29,7 +29,38 @@ function Page2(props) {
               </div>
             </Container>
         </div>
-        <div>
+        <div className="Mastercards">
+          {expertData.map(expertDetails=>(
+               <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
+                    <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src="https://www.clipartkey.com/mpngs/m/153-1539728_cartoon-person-waving-cartoon-person-png.png" alt='...' /></div>
+                    <MDBCardBody>
+                    <div className="Course_name">{expertDetails.ExpertName}</div>
+                    <p style={{fontSize: "18px", color: "#F26C4F"}}>
+                    {expertDetails.ExpertDesignation}
+                    </p>
+                    <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
+                    <div className="img_arr" style={{marginLeft: "35px", display: "flex", justifyContent: "center"}}>
+                    {expertDetails.ExpertCompaniesLogo.map((
+                      companyLogo, index)=>{ 
+                      if(index<3){
+                        return(
+                          <img className="img_company" src={companyLogo}/>
+                        )
+                      }
+                      else
+                        return null;
+                    }
+                    )}
+                    </div>
+                    <div className="button_masterclass1">
+                    <a ><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+                    </div>
+                    </MDBCardBody>
+                </MDBCard>
+            ))}
+            </div>
+            <div className="slider_mobile">
+            <Carousel breakPoints={breakPoints}>
           {expertData.map(expertDetails=>(
                <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
                     <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src="https://www.clipartkey.com/mpngs/m/153-1539728_cartoon-person-waving-cartoon-person-png.png" alt='...' /></div>
@@ -50,6 +81,7 @@ function Page2(props) {
                     </MDBCardBody>
                 </MDBCard>
             ))}
+            </Carousel>
             </div>
             <Container className="rectangle-box2" style={{marginTop:"5%"}}>
         <Row >

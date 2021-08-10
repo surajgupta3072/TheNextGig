@@ -62,7 +62,7 @@ function Page1(props) {
             </Container>
         </div>
         <Container>
-          <div className="testimonial">
+          <div className="box2_page1">
             <nav className="nav_switchbtn">
               <button onClick={() => setActive("MasterSessions")} className="expert_switchbtn">MasterSessions</button>
               <button onClick={() => setActive("P2PLearning")} className="expert_switchbtn">P2P Learning</button>
