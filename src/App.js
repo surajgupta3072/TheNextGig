@@ -18,7 +18,7 @@ function App() {
           <Route path="/expert/:id">
             <ExpertPage/>
           </Route>
-          <Route path="/experts">
+          <Route path="/expert">
             <Page2/>
           </Route>
           <Route path="/gigs/:id">
