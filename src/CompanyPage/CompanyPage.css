@@ -1,0 +1,98 @@
+.pack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3%;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #f26c4f;
+  border-radius: 2px;
+  padding: 30px;
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+.expert_switchbtn {
+  background-color: Transparent;
+  color: #f26c4f;
+  border: 2px solid #f26c4f;
+  background-repeat: no-repeat;
+  padding: 5px 20px;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+.nav_switchbtn {
+  margin-top: 0;
+}
+.imag {
+  position: absolute;
+  height: auto;
+  width: 120px;
+  left: 50%;
+  top: 0%;
+  margin: -110px;
+}
+.img_experttop {
+  clip-path: circle(34% at 50% 45%);
+  height: 240px;
+  width: 240px;
+  object-fit: contain;
+}
+.img_company {
+  height: 70px;
+  width: 70px;
+  border-radius: 10px;
+  margin-left: 2%;
+}
+.img_arr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2%;
+}
+.para {
+  padding-top: 3em;
+  display: flex;
+  flex-direction: column;
+}
+.logo_para {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+h3 {
+  text-align: center;
+  color: #fff;
+}
+.subtitle_expertcard {
+  text-align: center;
+  color: #f26c4f;
+}
+.subtitle2_expertcard {
+  text-align: left;
+  color: #f26c4f;
+  margin-top: 3%;
+}
+.box2_page1 {
+  border: 2px solid #f26c4f;
+  margin-bottom: 2%;
+}
+.card_mastercard2 {
+  width: 40vh;
+  height: 23rem;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+@media screen and (max-width: 768px) {
+  .pack {
+    padding-top: 16%;
+  }
+}

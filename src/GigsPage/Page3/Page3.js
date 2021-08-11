@@ -18,9 +18,26 @@ const breakPoints = [
 
 function Page3(props) {
   const [gigs, setGigs] = useState([]);
-  // function(id){
-
-  // }
+  function queryCall(id){
+    let params = {
+      TableName: "GigsTable",
+      KeyConditionExpression: "#Gid = :GigId",
+      ExpressionAttributeNames: {
+        "#Gid": "GigId",
+      },
+      ExpressionAttributeValues: {
+        ":GigId": id,
+      },
+    };
+    docClient.query(params, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(data.Items[0]);
+        return data.Items[0];
+      }
+    });
+  }
   useEffect(() => {
     let params = {
       TableName: "GigsTable",
@@ -37,10 +54,6 @@ function Page3(props) {
         console.log(err);
       } else {
         setGigs(data.Items);
-        // console.log(data)
-        // console.log(data.Items)
-        // console.log(data.Items[0])
-        // console.log(data.Items[0].RelatedGigs)
       }
     });
   }, []);
@@ -117,7 +130,7 @@ function Page3(props) {
                 </Row>
                 <Row style={{ marginTop: "0%", paddingBottom: "1%" }}>
                   <Col>
-                    <a href={"/company/"+gigs[0].CompanyName}>
+                    <a href={"/company/"+gigs[0].GigId}>
                       <button
                         type="submit"
                         className="button_slide_page3 slide_right btn1_gigspage"
@@ -270,7 +283,7 @@ function Page3(props) {
                     <span style={{ marginLeft: "60%" }}>
                       <a
                         style={{ textDecoration: "none", color: "#f26c4f" }}
-                        href="/masterclass"
+                        href="/gigs"
                       >
                         Explore all gigs
                       </a>
@@ -283,7 +296,8 @@ function Page3(props) {
           <div>
             <Carousel breakPoints={breakPoints}>
               {gigs[0].RelatedGigs.map((carder) => (
-                // funtcion(carder)
+                <div>
+                {/* {queryCall(carder)} */}
                 <MDBCard
                   key={carder}
                   className="mbd_card card_mastercard"
@@ -349,6 +363,7 @@ function Page3(props) {
                     </div>
                   </MDBCardBody>
                 </MDBCard>
+                </div>
               ))}
             </Carousel>
           </div>

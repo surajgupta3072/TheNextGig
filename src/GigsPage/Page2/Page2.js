@@ -9,20 +9,19 @@ import './Page2.css'
 function Page2() {
   const [modalShow, setModalShow] = React.useState(false);
     return (
-      <Container  className="top-container">
+      <Container className="top-container">
       <Row>
        <Col md={7}>
          <p className="mast_page2_p1">Want to learn before trying?</p>
          <p className="mast_page2_p2">Learn from the best<a href="/gigs"><ArrowRight className="button_arrow"/></a></p>
-         <p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out sessions </p>
+         <a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out sessions </p></a>
        </Col> 
        <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
          <Container>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet our Partners!</p></Row>
             <Row style={{paddingLeft:"54%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="gig_page2_p5">Our partners in crime.</p></Row>
-            <Row className="gig_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="gig_page2_p5"><a>Check them out.</a></p></Row>
+            <Row className="gig_page2_row1" ><a style={{textDecoration:"none"}} href="/expert"><p style={{color:"rgb(243, 123, 97)"}} className="gig_page2_p5">Check them out.</p></a></Row>
          </Container>
-         
        </Col>
       </Row>
       <Container className="rectangle-box2" style={{marginTop:"5%"}}>
