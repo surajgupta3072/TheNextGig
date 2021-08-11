@@ -117,7 +117,7 @@ function Page3(props) {
                 </Row>
                 <Row style={{ marginTop: "0%", paddingBottom: "1%" }}>
                   <Col>
-                    <a href="#">
+                    <a href={"/company/"+gigs[0].CompanyName}>
                       <button
                         type="submit"
                         className="button_slide_page3 slide_right btn1_gigspage"

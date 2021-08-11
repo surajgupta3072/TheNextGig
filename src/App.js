@@ -7,6 +7,7 @@ import MasterClassDetails from "./MasterClassPage/MasterClassDetails";
 import Header from "./Header";
 import Page2 from './ExpertPage/Page2/Page2';
 import ExpertPage from './ExpertPage/ExpertPage';
+import CompanyPage from './CompanyPage/ComapnyPage';
 import './App.css';
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
       <Header/>
       <Router>
         <Switch>
+          <Route path="/company/:id">
+            <CompanyPage/>
+          </Route>
           <Route path="/expert/:id">
             <ExpertPage/>
           </Route>

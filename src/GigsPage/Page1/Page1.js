@@ -90,25 +90,49 @@ function Page1() {
                 </div>
                 <div className="episode_course">{carder.GigStipend}</div>
               </div>
+              <div className="button_class" style={{display:"flex",justifyContent:"space-between"}}>
               <div className="button_masterclass1">
                 <a href={"/gigs/" + carder.GigId}>
                   <button
-                    style={{ padding: "8px 14px" }}
+                    style={{ padding: "8px 14px" ,fontSize:"0.7rem"}}
                     type="submit"
-                    className="button_slide_new slide_right_new"
+                    className="button_slide_new slide_right_new" 
                   >
-                    Let's go
+                    View Details
                     <ArrowRight
                       style={{
-                        width: "30px",
-                        height: "30px",
-                        marginTop: "-3px",
+                        width: "28px",
+                        height: "28px",
+                        marginTop: "-5px",
+                        marginLeft:"1px"
                       }}
                       className="button_arrow_new"
                     />
                   </button>
                 </a>
               </div>
+              <div className="button_masterclass1">
+                <a href={"/gigs/" + carder.GigId}>
+                  <button
+                    style={{ padding: "8px 14px" ,fontSize:"0.7rem",marginLeft:"-110px"}}
+                    type="submit"
+                    className="button_slide_new slide_right_new"
+                  >
+                    Let's learn
+                    <ArrowRight
+                      style={{
+                        width: "28px",
+                        height: "28px",
+                        marginTop: "-5px",
+                        marginLeft:"1px"
+                      }}
+                      className="button_arrow_new"
+                    />
+                  </button>
+                </a>
+              </div>
+              </div>
+              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by </div>
             </MDBCardBody>
           </MDBCard>
         ))}
@@ -162,25 +186,49 @@ function Page1() {
                   </div>
                   <div className="episode_course">{carder.GigPOCcontact}</div>
                 </div>
-                <div className="button_masterclass1">
-                  <a href={"/gigs/" + carder.GigId}>
-                    <button
-                      style={{ padding: "8px 14px" }}
-                      type="submit"
-                      className="button_slide_new slide_right_new"
-                    >
-                      Let's go
-                      <ArrowRight
-                        style={{
-                          width: "30px",
-                          height: "30px",
-                          marginTop: "-3px",
-                        }}
-                        className="button_arrow_new"
-                      />
-                    </button>
-                  </a>
-                </div>
+                <div className="button_class" style={{display:"flex",justifyContent:"space-between"}}>
+              <div className="button_masterclass1">
+                <a href={"/gigs/" + carder.GigId}>
+                  <button
+                    style={{ padding: "8px 10px" ,fontSize:"0.5rem"}}
+                    type="submit"
+                    className="button_slide_new slide_right_new" 
+                  >
+                    View Details
+                    <ArrowRight
+                      style={{
+                        width: "25px",
+                        height: "25px",
+                        marginTop: "-7px",
+                        marginLeft:"1px"
+                      }}
+                      className="button_arrow_new"
+                    />
+                  </button>
+                </a>
+              </div>
+              <div className="button_masterclass1">
+                <a href={"/gigs/" + carder.GigId}>
+                  <button
+                    style={{ padding: "8px 10px" ,fontSize:"0.5rem",marginLeft:"-80px"}}
+                    type="submit"
+                    className="button_slide_new slide_right_new"
+                  >
+                    Let's learn
+                    <ArrowRight
+                      style={{
+                        width: "25px",
+                        height: "25px",
+                        marginTop: "-7px",
+                        marginLeft:"1px"
+                      }}
+                      className="button_arrow_new"
+                    />
+                  </button>
+                </a>
+              </div>
+              </div>
+              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by </div>
               </MDBCardBody>
             </MDBCard>
           ))}
