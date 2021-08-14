@@ -17,21 +17,21 @@ function Footer(){
                     <h2 className="footer_heading1">We're here</h2>
                     <h2 className="footer_heading2">Let's talk</h2>
                     <button style={{ marginLeft: "0%"}} type="submit" className="button_slide slide_right" onClick={() => setModalShow(true)}>
-                        Get in Touch <ArrowLeft className="button_arrow_footer"/></button>
+                        Get in Touch <ArrowLeft className="button_arrow_footer_footer"/></button>
                         <MyVerticallyCenteredModal
                           show={modalShow}
                           onHide={() => setModalShow(false)}
                         />
                 </Col>
                 <Col>
-                    <h3 style={{marginBottom:"7%", fontSize:"20px"}}>About Us</h3>
+                    <h3 style={{marginBottom:"7%", fontSize:"20px", display: "flex", justifyContent: "left"}}>About Us</h3>
                     <div className='footer-link'>
                         <a href="#" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Team</a>
                         <a href="#" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Vision</a>
                     </div>
                 </Col>
                 <Col>
-                    <h3 style={{marginBottom:"7%", fontSize:"20px"}}>Legal</h3>
+                    <h3 style={{marginBottom:"7%", fontSize:"20px", display: "flex", justifyContent: "left"}}>Legal</h3>
                     <div className='footer-link'>
                         <a href="#" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>T&C</a>
                         <a href="#" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Privacy</a>

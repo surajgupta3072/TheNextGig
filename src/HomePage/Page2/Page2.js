@@ -97,7 +97,7 @@ function Page2() {
         </Card.Body>
         <a href="/gigs"><ArrowRight className="card_arrow1"/></a>
       </Card>
-      <Card style={{ width: '18rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "20%", marginLeft:"5%" }}>
+      <Card style={{ width: '18rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "10%", marginLeft:"5%" }}>
         <Card.Body>
           <Row>
             <Col>
@@ -113,7 +113,7 @@ function Page2() {
         </Card.Body>
         <a href="/community"><ArrowRight className="card_arrow1"/></a>
       </Card>
-      <div style={{width:"300px",height:"50px",border:"1px solid #534D4D", marginTop:"2%",marginLeft:"5%", paddingTop:"20px"}}>
+      <div style={{width:"300px",height:"50px",border:"1px solid #534D4D",marginLeft:"5%", paddingTop:"15px"}}>
              
             <Col xs={12}><p style={{fontSize:"16px", justifyContent:"space-between"}}> 0  0  0  2000+ Learners on TheNextGig</p></Col>
       </div> 

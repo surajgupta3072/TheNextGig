@@ -96,7 +96,7 @@ function Page7() {
 </svg>
 
         <div
-      className="testimonial"
+      className="testimonial_page7_homepage"
       style={{ display: "flex", justifyContent: "center" }}
     >
       <div style={{ paddingBottom:"80px",width: "50%", textAlign: "center" }}>

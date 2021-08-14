@@ -4,7 +4,7 @@
   height: 45px;
   margin-top: -24px;
 }
-.testimonial {
+.testimonial_page7_homepage {
   margin-top: 50px;
 }
 .arrower1 {
@@ -36,8 +36,8 @@
   font-family: "Open Sans", sans-serif !important;
   font-size: 1.3rem;
 }
-.testimonial .slick-arrow.slick-prev,
-.testimonial .slick-arrow.slick-next {
+.testimonial_page7_homepage .slick-arrow.slick-prev,
+.testimonial_page7_homepage .slick-arrow.slick-next {
   width: 40px;
   height: 40px;
   display: flex;
@@ -56,10 +56,10 @@
 .slick-arrow.slick-prev {
   left: -70px;
 }
-.testimonial .slick-dots li button:before {
+.testimonial_page7_homepage .slick-dots li button:before {
   font-size: 15px;
 }
-.testimonial .slick-dots li {
+.testimonial_page7_homepage .slick-dots li {
   top: 15px;
 }
 @media only screen and (max-width: 550px) {
@@ -79,7 +79,7 @@
     width: 28px;
     height: 23px;
   }
-  .testimonial {
+  .testimonial_page7_homepage {
     margin-top: 20px;
   }
   .Quotes_page7 {

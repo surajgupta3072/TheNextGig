@@ -9,7 +9,7 @@
 .footer_linespace{
   display: none;
 }
-.button_arrow_footer {
+.button_arrow_footer_footer {
   position: absolute;
   margin-top: -10px;
   margin-left: 10px;
@@ -52,6 +52,7 @@
   }
   .button_slide{
     margin-bottom: 18%;
+    font-size: 16px;
   }
   .footer-link {
     margin-bottom: 38%;

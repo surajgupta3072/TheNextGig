@@ -15,7 +15,7 @@ const breakPoints = [
 function Page3() {
   var i=1;
     return (
-    <div style={{marginTop:"8%"}}>
+    <div style={{marginTop:"4%"}}>
 
       <div className="heading_box">
       <div>

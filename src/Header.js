@@ -12,17 +12,17 @@ function Header() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end" style={{paddingRight:"6%"}}>
             <Nav>
-                <Nav.Link style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
-                    <Link to="/masterclass" spy={true} smooth={true}>SESSIONS</Link>
+                <Nav.Link href="/masterclass" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
+                    SESSIONS
                 </Nav.Link>
-                <Nav.Link style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
-                    <Link to="/gigs" spy={true} smooth={true}>GIGS</Link>
+                <Nav.Link href="/gigs" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
+                    GIGS
                 </Nav.Link>
-                <Nav.Link style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
-                    <Link to="/community" spy={true} smooth={true}>COMMUNITY</Link>
+                <Nav.Link href="/community" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
+                    COMMUNITY
                 </Nav.Link>
-                <Nav.Link style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}} href="">
-                    <Link to="requestdemo" spy={true} smooth={true}>LOG IN</Link>
+                <Nav.Link href="/login" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}} href="">
+                    LOG IN
                 </Nav.Link>
             </Nav>                
         </Navbar.Collapse>
