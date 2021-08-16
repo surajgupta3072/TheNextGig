@@ -18,7 +18,8 @@ const breakPoints = [
 
 function Page3(props) {
   const [gigs, setGigs] = useState([]);
-  function queryCall(id){
+
+  async function queryCall(id) {
     let params = {
       TableName: "GigsTable",
       KeyConditionExpression: "#Gid = :GigId",
@@ -29,17 +30,18 @@ function Page3(props) {
         ":GigId": id,
       },
     };
-    docClient.query(params, function (err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(data.Items[0]);
-        return data.Items[0];
-      }
-    });
-  }
+    try {
+      const data1 = await docClient.query(params).promise()
+      console.log(data1.Items[0])
+      return data1.Items[0]
+    } 
+    catch (err) {
+      return err
+    }
+  };
+
   useEffect(() => {
-    let params = {
+    let paramss = {
       TableName: "GigsTable",
       KeyConditionExpression: "#Gid = :GigId",
       ExpressionAttributeNames: {
@@ -49,14 +51,17 @@ function Page3(props) {
         ":GigId": props.id,
       },
     };
-    docClient.query(params, function (err, data) {
+    docClient.query(paramss, function (err, data) {
       if (err) {
         console.log(err);
-      } else {
+      } 
+      else {
+        console.log(data)
         setGigs(data.Items);
       }
     });
   }, []);
+
   return (
     <div>
       {gigs.length !== 0 && (
@@ -296,8 +301,8 @@ function Page3(props) {
           <div>
             <Carousel breakPoints={breakPoints}>
               {gigs[0].RelatedGigs.map((carder) => (
-                <div>
-                {/* {queryCall(carder)} */}
+                <div key={carder}>
+                {queryCall(carder).then(function(result) { console.log(result) })}
                 <MDBCard
                   key={carder}
                   className="mbd_card card_mastercard"
