@@ -33,7 +33,7 @@ function Page5() {
           </Row>  
         </div>
         <div className="button_div_page5">
-          <button type="submit" className="button_slide slide_right">Gossip Here<ArrowRight className="button_arrow"/></button>
+          <a target="_blank" href="https://discord.gg/EEVcU7ZzAQ"><button type="submit" className="button_slide slide_right">Gossip Here<ArrowRight className="button_arrow"/></button></a>
         </div>
     </div>
     );

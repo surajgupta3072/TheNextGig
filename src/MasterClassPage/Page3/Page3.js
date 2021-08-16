@@ -7,6 +7,7 @@ import './Page3.css';
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
 import { useState } from 'react';
+// import docClient from '../../GigsPage/GigsAWS';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -18,11 +19,38 @@ const breakPoints = [
 function Page3(props) {
   const session = master[props.id-1];
   const [des, setDes] = useState(session["episodes"][0]["description"]);
+  const [epivid, setEpiVideo] = useState(session["episodes"][0]["epi_video"]);
   const showDescription = (epid) => {
-    console.log(epid);
-    console.log(session["episodes"][epid-1]["description"]);
     setDes(session["episodes"][epid-1]["description"]);
+    setEpiVideo(session["episodes"][epid-1]["epi_video"]);
+    // console.log(epivid);
   };
+  // const [relatedgigs, setDataRelatedGigs] = useState([]);
+  // async function queryCall(id) {
+  //   let params = {
+  //     TableName: "GigsTable",
+  //     KeyConditionExpression: "#Gid = :GigId",
+  //     ExpressionAttributeNames: {
+  //       "#Gid": "GigId",
+  //     },
+  //     ExpressionAttributeValues: {
+  //       ":GigId": id,
+  //     },
+  //   };
+  //   try {
+  //     const data1 = await docClient.query(params).promise()
+  //     return data1.Items[0]
+  //   } 
+  //   catch (err) {
+  //     return err
+  //   }
+  // };
+  // let finalResult = []
+  // for (let i = 0; i < session.gigs.length; i++) {
+  //   let singleResult = await queryCall(session.gigs[i]);
+  //   finalResult.push(singleResult);
+  // }
+  // setDataRelatedGigs(finalResult);
     return (
     <div>
       <Container style={{padding: "0%", maxWidth: "94%", marginBottom: "0%"}} className= "container1">
@@ -77,8 +105,9 @@ function Page3(props) {
               </Col>
             </Row>
           </Col>
-          <Col style={{padding:"0px"}} md={6}>            
-              <img src={session.course_image} className="anim_img"/>        
+          <Col style={{padding:"0px"}} md={6}> 
+              {/* <video src={session["episodes"][0]["epi_video"]} className="anim_img" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/> */}
+              <img src={session.course_image} className="anim_img"/>
           </Col>
           </Row>
       </Container>
@@ -88,7 +117,8 @@ function Page3(props) {
                 <div className="main_cardbody"> 
                   <Row >
                     <Col md={7} className="col1_cardbody">
-                      <img src={session.course_image} className="img_letsgo"/>
+                      <video src={epivid} className="img_letsgo" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
+                      {/* <img src={session["episodes"][0]["epi_video"]} className="img_letsgo"/> */}
                       <p className="twoline_desc">{des}</p>
                     </Col >
                     <Col md={5}>
@@ -119,39 +149,39 @@ function Page3(props) {
         </div>
         <div className="slider_mobile" style={{display:"block"}}>
           {session.gigs.length===0 ? <Container><h1 style={{marginTop:"15%"}}>We are constantly sourcing gigs / projects in this domain</h1>
-                <h5 style={{color:"#F26C4F"}}>Until then...</h5><div className="button_masterclass1">
-               <a style={{marginLeft:"%",marginBottom:"15%"}}href={"/masterclass/"+session.id}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
-             </div></Container>: 
-        master.map(details => {
+              <h5 style={{color:"#F26C4F"}}>Until then...</h5><div className="button_masterclass1">
+              <a style={{marginLeft:"%",marginBottom:"15%"}} href="../gigs"><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+             </div></Container> : 
+            master.map(details => {
               if(details.gigs===undefined)
-              return null;
+                return null;
               else
-            return (<div><Carousel  breakPoints={breakPoints}>
-                 {details.gigs.map(company=>{
-                   return(
-               <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
-             <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={company.internship_image} alt='...' /></div>
-             <MDBCardBody>
-               <div className="Course_name">{company.project_name}</div>
-               <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
-               <div className="instruct_time">
-                 <div className="instructor_name">{company.company_name}</div>
-                 <div className="time_course">{company.duration}</div>
-               </div>
-               <div className="post_episode">
-                 <div className="instructor_post">{company.industry}</div>
-                 <div className="episode_course">{company.fees}/{company.stipend_range}</div>
-               </div>
-               <div className="button_masterclass1">
-               <a href={"/masterclass/"+company.id}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
-             </div>
-             </MDBCardBody>
-           </MDBCard>
-                   )
-        })}
-          </Carousel>
-          </div>
-          )
+                return (<div><Carousel  breakPoints={breakPoints}>
+                    {details.gigs.map(company=>{
+                    return(
+                      <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
+                        <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={company.internship_image} alt='...' /></div>
+                        <MDBCardBody>
+                          <div className="Course_name">{company.project_name}</div>
+                          <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
+                          <div className="instruct_time">
+                            <div className="instructor_name">{company.company_name}</div>
+                            <div className="time_course">{company.duration}</div>
+                          </div>
+                          <div className="post_episode">
+                            <div className="instructor_post">{company.industry}</div>
+                            <div className="episode_course">{company.fees}/{company.stipend_range}</div>
+                          </div>
+                          <div className="button_masterclass1">
+                          <a href={"/gigs/"+company.id}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+                        </div>
+                        </MDBCardBody>
+                      </MDBCard>
+                    )
+              })}
+              </Carousel>
+              </div>
+              )
           })}
           </div>
           <div className="header_masterclass">

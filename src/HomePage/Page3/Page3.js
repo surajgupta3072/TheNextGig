@@ -3,7 +3,7 @@ import './Page3.css';
 import CardX from'./Card';
 import Carousel from "react-elastic-carousel";
 import { ArrowRight } from "react-bootstrap-icons";
-import Data from "./Data.json"
+import Data from "./../../MasterClassPage/Masterclass.json"
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -34,14 +34,14 @@ function Page3() {
       <div className="App1">
         <div className="carousel-wrapper">
           <Carousel  breakPoints={breakPoints}>
-            {Data.map((detail,item_no) => (
+            {Data.map(detail => (
             <div className="Item_component">
               <CardX
-                text1={detail.text1}
-                text2={detail.text2}
-                card={detail.card}
-                logo={detail.logo}
-                key={item_no}
+                text1={detail.course_instructor_post}
+                text2={detail.course_name}
+                card={detail.course_image}
+                logo={detail.course_image}
+                key={detail.id}
                 carl={i++}
               />
             </div>  

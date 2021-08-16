@@ -18,6 +18,7 @@ const breakPoints = [
 
 function Page3(props) {
   const [gigs, setGigs] = useState([]);
+  const [relatedgigs, setDataRelatedGigs] = useState([]);
 
   async function queryCall(id) {
     let params = {
@@ -32,7 +33,6 @@ function Page3(props) {
     };
     try {
       const data1 = await docClient.query(params).promise()
-      console.log(data1.Items[0])
       return data1.Items[0]
     } 
     catch (err) {
@@ -51,20 +51,25 @@ function Page3(props) {
         ":GigId": props.id,
       },
     };
-    docClient.query(paramss, function (err, data) {
+    docClient.query(paramss, async function(err, data) {
       if (err) {
         console.log(err);
       } 
       else {
-        console.log(data)
-        setGigs(data.Items);
+        setGigs(data.Items)
+        let finalResult = []
+        for (let i = 0; i < data.Items[0].RelatedGigs.length; i++) {
+          let singleResult = await queryCall(data.Items[0].RelatedGigs[i]);
+          finalResult.push(singleResult);
+        }
+        setDataRelatedGigs(finalResult);
       }
     });
   }, []);
 
   return (
     <div>
-      {gigs.length !== 0 && (
+      {gigs.length != 0 && (
         <div>
           <div className="header_masterclass">
             <Container>
@@ -300,9 +305,9 @@ function Page3(props) {
           </div>
           <div>
             <Carousel breakPoints={breakPoints}>
-              {gigs[0].RelatedGigs.map((carder) => (
-                <div key={carder}>
-                {queryCall(carder).then(function(result) { console.log(result) })}
+              {relatedgigs.map((carder) => (
+                carder!=undefined &&
+                <div key={carder.GigId}>
                 <MDBCard
                   key={carder}
                   className="mbd_card card_mastercard"

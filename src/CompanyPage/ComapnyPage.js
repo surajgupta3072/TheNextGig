@@ -6,11 +6,35 @@ import './CompanyPage.css'
 import { Linkedin } from 'react-bootstrap-icons';
 import MasterSessions from './MasterSessions';
 import Gigs from './Gigs';
+import expert from './../MasterClassPage/Masterclass.json';
 
 function CompanyPage() {
   let { id } = useParams();
   const [gigs, setGigs] = useState([]);
   const [active, setActive] = useState("Gigs");
+  const [relatedgigs, setDataCompanyGigs] = useState([]);
+  const [relatedsessions, setDataCompanyMasterSessions] = useState([]);
+
+  async function queryCall(id) {
+    let params = {
+      TableName: "GigsTable",
+      KeyConditionExpression: "#Gid = :GigId",
+      ExpressionAttributeNames: {
+        "#Gid": "GigId",
+      },
+      ExpressionAttributeValues: {
+        ":GigId": id,
+      },
+    };
+    try {
+      const data1 = await docClient.query(params).promise()
+      return data1.Items[0]
+    } 
+    catch (err) {
+      return err
+    }
+  };
+
   useEffect(() => {
     let params = {
       TableName: "GigsTable",
@@ -22,17 +46,31 @@ function CompanyPage() {
         ":GigId": id,
       },
     };
-    docClient.query(params, function (err, data) {
+    docClient.query(params, async function (err, data) {
       if (err) {
         console.log(err);
-      } else {
-        setGigs(data.Items);
+      } 
+      else {
+        setGigs(data.Items)
+        let finalGigs = []
+        let finalMasters = []
+        for (let i = 0; i < data.Items[0].CompanyGigs.length; i++) {
+          let singleGig = await queryCall(data.Items[0].CompanyGigs[i]);
+          finalGigs.push(singleGig);
+        }
+        setDataCompanyGigs(finalGigs);
+        for (let i = 0; i < data.Items[0].CompanyMasterSessions.length; i++) {
+          let singleMaster = expert[data.Items[0].CompanyMasterSessions[i]-1];
+          finalMasters.push(singleMaster);
+        }
+        setDataCompanyMasterSessions(finalMasters);
       }
     });
   }, []);
+
   return (
     <div>
-      {gigs.length !== 0 && (
+      {gigs.length != 0 && (
         <div>
           <div>
             <div className="header_masterclass">
@@ -104,8 +142,8 @@ function CompanyPage() {
                   </button>
                 </nav>
                 <div>
-                  {active === "Gigs" && <Gigs gigData={gigs[0]}/>}
-                  {active === "MasterSessions" && <MasterSessions gigData={gigs[0]}/>}
+                  {active === "Gigs" && <Gigs gigData={relatedgigs}/>}
+                  {active === "MasterSessions" && <MasterSessions masterData={relatedsessions}/>}
                 </div>
               </div>
             </Container>

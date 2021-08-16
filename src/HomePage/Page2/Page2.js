@@ -7,7 +7,7 @@ import './Page2.css';
 
 function Page2() {
     return (
-    <div style={{marginTop:"5%"}}>
+    <div id="ummm" style={{marginTop:"5%"}}>
       <div className="page2_laptop_view">
         <Container>
         <p style={{fontSize:"32px", fontWeight:"600",marginLeft:"1.5%",marginTop:"20px",marginBottom:"3%"}}>
@@ -44,7 +44,7 @@ function Page2() {
                   Some quirky text over here 
                   </Card.Text>
                 </Card.Body >
-                <a href="/community"><ArrowRight className="card_arrow1"/></a>
+                <a target="_blank" href="https://discord.gg/EEVcU7ZzAQ"><ArrowRight className="card_arrow1"/></a>
             </Card>
           </Row>
           <Row style={{width:"600px",height:"70px",border:"1px solid #534D4D", marginTop:"5%",marginLeft:"50%", paddingTop:"20px"}}>

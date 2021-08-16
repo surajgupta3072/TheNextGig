@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { ArrowDown } from "react-bootstrap-icons";
 import './Page1.css';
+import { Link } from 'react-scroll';
 
 function Page1() {
     return (
@@ -34,10 +35,9 @@ function Page1() {
         </Row>
         
         <div className="button_div">
-          <button type="submit" className="button_slide slide_right">Ummm, how?<ArrowDown className="button_arrow"/></button>
+          <Link to="ummm" scroll={true}><button type="submit" className="button_slide slide_right">Ummm, how?<ArrowDown className="button_arrow"/></button></Link>
         </div>
       </Container>
-    
     );
   }
   

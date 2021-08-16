@@ -12,93 +12,84 @@
         "episodes": [
             {
                 "id":1,
-                "title": "HTML",
+                "title": "HTML1",
                 "description": "What is lorem irem ipsum has bnter took a galley ofambled it to make a type specimen book it has?",
-                "thumbnail": "/loger1.svg"
+                "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession3.mp4"
             },
             {
                 "id":2,
-                "title": "CSS",
+                "title": "CSS2",
                 "description": "em ipsum has been the n unknown printer took a galley of type and scrambled it to make a",
-                "thumbnail": "/loger1.svg"
+                "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession2.mp4"
             },
             {
                 "id":3,
-                "title": "JS",
+                "title": "JS3",
                 "description": " is lorem irem ipsum has beeem irem ipsum has bnter took a galley on the n unknown printer took a galley of",
-                "thumbnail": "/loger1.svg"
+                "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession1.mp4"
             },
             {
                 "id":4,
                 "title": "React",
                 "description": "f type and scrambled it to maem irem ipsum has bnter took a galley oke a type specimen book it ha",
-                "thumbnail": "/loger1.svg"
+                "epi_video": "/loger1.svg"
             },
             {
                 "id":5,
                 "title": "HTML",
                 "description": " been the n unknown printer took em irem ipsum has bnter took a galley o a galley of type and scrambled ",
-                "thumbnail": "/loger1.svg"
+                "epi_video": "/loger1.svg"
             },
             {
                 "id":6,
                 "title": "CSS",
                 "description": " been the n unknow galley of type em irem ipsum has bnter took a galley o and scrambled  description to be shown",
-                "thumbnail": "/loger1.svg"
+                "epi_video": "/loger1.svg"
             },
             {
                 "id":7,
                 "title": "JS",
                 "description": "own printer took a galley of type em irem ipsum has bnter took a galley o and scrambled  desc",
-                "thumbnail": "/loger1.svg"
+                "epi_video": "/loger1.svg"
             },
             {
                 "id":8,
                 "title": "React",
                 "description": "en the n unknownem ipsum ha em irem ipsum has bnter took a galley o printer took a galley of type and scra",
-                "thumbnail": "/loger1.svg"
+                "epi_video": "/loger1.svg"
             }
         ],
-        "gigs": [{
-            "id":1,
-            "project_name":"Machine Learning",
-            "company_name":"Tata",
-            "duration":"3 months",
-            "industry":"Automobile",
-            "fees":"5k INR",
-            "stipend_range":"10k INR",
-            "internship_image":"https://media.istockphoto.com/photos/robot-with-education-hud-picture-id966248982?k=6&m=966248982&s=612x612&w=0&h=n4MgcVUV2D6kXpJGCyIMIgFuqsi63DkzjiwWQi4n0aE="
-        },
-        {
-            "id":2,
-            "project_name":"Computer Graphics",
-            "company_name":"Birla",
-            "duration":"1 month",
-            "industry":"fashion",
-            "fees":"10k INR",
-            "stipend_range":"40k INR",
-            "internship_image":"https://computerscienceassignmentshelp.com/wp-content/uploads/2017/01/Computer-Graphics-Assignment-Help.jpg"
-        },
-        {
-            "id":3,
-            "project_name":"Web Development",
-            "company_name":"next_gig",
-            "duration":"2 months",
-            "industry":"Eductional",
-            "fees":"10k INR",
-            "stipend_range":"40k INR",
-            "internship_image":"https://www.spinutech.com/webres/Image/web-design-development/articles/Web%20Dev-Blog.png"
-        },
-        {
-            "id":4,
-            "project_name":"Ai deployment",
-            "company_name":"Toyota",
-            "duration":"5 months",
-            "industry":"Software",
-            "fees":"50k INR",
-            "stipend_range":"100k INR",
-            "internship_image":"https://payu.in/blog/wp-content/uploads/2018/03/artificial-intelligence-in-business-1.png"
-        }
+        "gigs": [
+            {
+                "id":"a1",
+                "project_name":"Machine Learning",
+                "company_name":"Tata",
+                "duration":"3 months",
+                "industry":"Automobile",
+                "fees":"5k INR",
+                "stipend_range":"10k INR",
+                "internship_image":"https://media.istockphoto.com/photos/robot-with-education-hud-picture-id966248982?k=6&m=966248982&s=612x612&w=0&h=n4MgcVUV2D6kXpJGCyIMIgFuqsi63DkzjiwWQi4n0aE="
+            },
+            {
+                "id":"b2",
+                "project_name":"Computer Graphics",
+                "company_name":"Birla",
+                "duration":"1 month",
+                "industry":"fashion",
+                "fees":"10k INR",
+                "stipend_range":"40k INR",
+                "internship_image":"https://computerscienceassignmentshelp.com/wp-content/uploads/2017/01/Computer-Graphics-Assignment-Help.jpg"
+            },
+            {
+                "id":"e12a4ecc0d640624e452c00af223c86e",
+                "project_name":"Web Development",
+                "company_name":"next_gig",
+                "duration":"2 months",
+                "industry":"Eductional",
+                "fees":"10k INR",
+                "stipend_range":"40k INR",
+                "internship_image":"https://www.spinutech.com/webres/Image/web-design-development/articles/Web%20Dev-Blog.png"
+            }
         ]
     },
     {
@@ -167,7 +158,7 @@
     {
         "id":9,
         "course_name":"Course9",
-        "course_image":"https://ugc.futurelearn.com/uploads/images/ac/8b/thumbnail_ac8b5ba7-45d2-4b16-b64f-63b0063e3c6e.jpg",
+        "course_image":"https://ugc.futurelearn.com/uploads/images/ac/8b/epi_video_ac8b5ba7-45d2-4b16-b64f-63b0063e3c6e.jpg",
         "course_instructor":"Dhariya shah",
         "course_instructor_post":"Next_gig",
         "course_timing":"4hour 26 mins",

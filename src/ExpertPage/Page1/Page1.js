@@ -7,21 +7,20 @@ import {Linkedin } from 'react-bootstrap-icons';
 import MasterSessions from './../MasterSessions';
 import P2PLearning from './../P2PLearning';
 
-
 function Page1(props) {
   const [active, setActive] =  useState("MasterSessions");
   const expert = expertData[props.Eid-1];
   return (
     <div>
-          <div className="header_masterclass">
-            <Container>
-              <div className="top_masterclass">
-                <h1>LET’S KNOW THE EXPERT</h1>
-                <p className="subtitle_masterclass">
-                Take a <span className="orange_text_masterclass"> sneak peak </span> into the career of the professional teaching you{" "}
-                </p>
-              </div>
-            </Container>
+      <div className="header_masterclass">
+        <Container>
+          <div className="top_masterclass">
+            <h1>LET’S KNOW THE EXPERT</h1>
+            <p className="subtitle_masterclass">
+            Take a <span className="orange_text_masterclass"> sneak peak </span> into the career of the professional teaching you{" "}
+            </p>
+          </div>
+        </Container>
         </div>
         <Container>
         <div className="pack">

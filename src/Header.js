@@ -1,6 +1,5 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import { Link } from 'react-scroll';
 import './Header.css'
 
 function Header() {
@@ -18,10 +17,10 @@ function Header() {
                 <Nav.Link href="/gigs" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
                     GIGS
                 </Nav.Link>
-                <Nav.Link href="/community" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
+                <Nav.Link target="_blank" href="https://discord.gg/EEVcU7ZzAQ" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
                     COMMUNITY
                 </Nav.Link>
-                <Nav.Link href="/login" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}} href="">
+                <Nav.Link href="/login" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
                     LOG IN
                 </Nav.Link>
             </Nav>                
