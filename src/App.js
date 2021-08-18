@@ -8,6 +8,7 @@ import Header from "./Header";
 import Page2 from './ExpertPage/Page2/Page2';
 import ExpertPage from './ExpertPage/ExpertPage';
 import CompanyPage from './CompanyPage/ComapnyPage';
+import ProfilePage from './ProfilePage/ProfilePage';
 import './App.css';
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
       <Header/>
       <Router>
         <Switch>
+          <Route path="/profile">
+            <ProfilePage/>
+          </Route>
           <Route path="/company/:id">
             <CompanyPage/>
           </Route>

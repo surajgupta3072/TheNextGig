@@ -23,6 +23,9 @@ function Header() {
                 <Nav.Link href="/login" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
                     LOG IN
                 </Nav.Link>
+                <Nav.Link href="/profile" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
+                    PROFILE
+                </Nav.Link>
             </Nav>                
         </Navbar.Collapse>
     </Navbar>
