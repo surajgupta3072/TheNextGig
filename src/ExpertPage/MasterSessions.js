@@ -15,7 +15,7 @@ const breakPoints = [
 
 function MasterSessions(props) {
     const expert = expertData[props.Eid-1];
-    console.log(expert)
+    // console.log(expert)
     return (
         <div>
             <div className="Mastercards">
