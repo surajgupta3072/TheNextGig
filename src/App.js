@@ -1,10 +1,10 @@
+import Header from "./Header/Header";
 import HomePage from "./HomePage/HomePage";
 import GigsPage from "./GigsPage/GigsPage";
 import MasterClassPage from "./MasterClassPage/MasterClassPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GigsDetails from "./GigsPage/GigsDetails";
 import MasterClassDetails from "./MasterClassPage/MasterClassDetails";
-import Header from "./Header";
 import Page2 from "./ExpertPage/Page2/Page2";
 import ExpertPage from "./ExpertPage/ExpertPage";
 import CompanyPage from "./CompanyPage/ComapnyPage";
@@ -14,6 +14,7 @@ import RegisterPage from "./AuthPage/RegisterPage";
 import "./App.css";
 import { useEffect, useState } from "react";
 import Auth from "@aws-amplify/auth";
+import ProtectedRoute from "./GuardedRoute";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -42,7 +43,7 @@ function App() {
     setAuthStatus: setAuthStatus,
     setUser: setUser,
   };
-  // console.log("SOFTY=", authProps);
+  // console.log("NIK authProps=", authProps);
   return (
     <div>
       {!isAuthenticating && (
@@ -56,9 +57,9 @@ function App() {
               <Route path="/register">
                 <RegisterPage />
               </Route>
-              <Route path="/profile">
+              <ProtectedRoute path="/profile" auth={authProps}>
                 <ProfilePage />
-              </Route>
+              </ProtectedRoute>
               <Route path="/company/:id">
                 <CompanyPage />
               </Route>
@@ -68,12 +69,12 @@ function App() {
               <Route path="/expert">
                 <Page2 />
               </Route>
-              <Route path="/gigs/:id">
+              <ProtectedRoute path="/gigs/:id" auth={authProps}>
                 <GigsDetails />
-              </Route>
-              <Route path="/gigs">
+              </ProtectedRoute>
+              <ProtectedRoute path="/gigs" auth={authProps}>
                 <GigsPage />
-              </Route>
+              </ProtectedRoute>
               <Route path="/masterclass/:id">
                 <MasterClassDetails />
               </Route>
