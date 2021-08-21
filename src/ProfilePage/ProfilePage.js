@@ -11,13 +11,38 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import './ProfilePage.css'
 
 function ProfilePage() {
-  const [active, setActive] =  useState("Personal");
-  const [color, setColor] = useState("#F26C4F");
+  const bg = {backgroundColor: "#F26C4F"};
   const [percentage, setPercentage] = useState(0);
+  const [active, setActive] =  useState("Personal");
+  const [color1, setColor1] = useState(bg);
+  const [color2, setColor2] = useState({});
+  const [color3, setColor3] = useState({});
+  const [color4, setColor4] = useState({});
+  const [color5, setColor5] = useState({});
+
   const pp = {
     percentage: percentage,
     setPercentage:setPercentage
   };
+
+  function whichColor(word) {
+    setActive(word)
+    if(word==="Personal") {
+      setColor1(bg); setColor2({}); setColor3({}); setColor4({}); setColor5({});
+    }
+    else if(word==="Education") {
+      setColor2(bg); setColor1({}); setColor3({}); setColor4({}); setColor5({});
+    }
+    else if(word==="WorkEx") {
+      setColor3(bg); setColor1({}); setColor2({}); setColor4({}); setColor5({});
+    }
+    else if(word==="Skills") {
+      setColor4(bg); setColor1({}); setColor2({}); setColor3({}); setColor5({});
+    }
+    else if(word==="CvPitch") {
+      setColor5(bg); setColor1({}); setColor2({}); setColor3({}); setColor4({});
+    }
+  }
     return (
       <Container>
         <Row>
@@ -25,15 +50,15 @@ function ProfilePage() {
               <ProgressBar style={{marginTop:"10%", backgroundColor:"#F26C4F", marginBottom:"1%"}} min={0} max={100} variant="warning" now={percentage} />
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
               <Row style={{marginTop:"15%",marginLeft:"25%", marginBottom:"15%"}}><img src="google_logo.jpg" style={{height:"150px",width:"150px",borderRadius:"50%"}}/></Row>
-              <Row onClick={() => setActive("Personal")} style={{backgroundColor:color, textAlign:"center"}}><p style={{fontSize:"24px"}}>Personal</p></Row>
+              <Row onClick={() => whichColor("Personal")} style={color1}><p style={{fontSize:"24px", textAlign:"center"}}>Personal</p></Row>
               <hr style={{color:"#F26C4F"}}/>
-              <Row onClick={() => setActive("Education")} style={{textAlign:"center"}}><p style={{fontSize:"24px"}}>Education</p></Row>
+              <Row onClick={() => whichColor("Education")} style={color2}><p style={{fontSize:"24px", textAlign:"center"}}>Education</p></Row>
               <hr style={{color:"#F26C4F"}}/>
-              <Row onClick={() => setActive("WorkEx")} style={{textAlign:"center"}}><p style={{fontSize:"24px"}}>Work Ex</p></Row>
+              <Row onClick={() => whichColor("WorkEx")} style={color3}><p style={{fontSize:"24px", textAlign:"center"}}>Work Ex</p></Row>
               <hr style={{color:"#F26C4F"}}/>
-              <Row onClick={() => setActive("Skills")} style={{textAlign:"center"}}><p style={{fontSize:"24px"}}>Skills</p></Row>
+              <Row onClick={() => whichColor("Skills")} style={color4}><p style={{fontSize:"24px", textAlign:"center"}}>Skills</p></Row>
               <hr style={{color:"#F26C4F"}}/>
-              <Row onClick={() => setActive("CvPitch")} style={{textAlign:"center"}}><p style={{fontSize:"24px"}}>CV & Pitch decks</p></Row>
+              <Row onClick={() => whichColor("CvPitch")} style={color5}><p style={{fontSize:"24px", textAlign:"center"}}>CV & Pitch decks</p></Row>
             </Col>
             <Col >
                 {active === "Personal" && <Personal p={pp}/>}
