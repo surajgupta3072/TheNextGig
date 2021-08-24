@@ -58,7 +58,7 @@ function App() {
                 <RegisterPage />
               </Route>
               <ProtectedRoute path="/profile" auth={authProps}>
-                <ProfilePage />
+                <ProfilePage auth={authProps}/>
               </ProtectedRoute>
               <Route path="/company/:id">
                 <CompanyPage />
