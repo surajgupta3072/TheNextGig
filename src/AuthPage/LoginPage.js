@@ -1,10 +1,9 @@
 import Auth from "@aws-amplify/auth";
-import Form from 'react-bootstrap/Form';
 import { useState } from "react";
-import Button  from "react-bootstrap/Button";
 import Container  from 'react-bootstrap/Container';
+import { ArrowLeft} from 'react-bootstrap-icons';
 
-function LoginPage(props) {
+function LoginPage(props){
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
 
@@ -15,30 +14,26 @@ function LoginPage(props) {
       props.auth.setUser(userLogin);
       props.auth.setAuthStatus(true);
       window.location.href = "/";
-    } 
+    }
     catch (error) {
       console.log(error);
     }
-  }
-  
-  return (
-  <div>
-   <Container>
-    <Form>
-    <Form.Group style={{marginTop:"1%"}}>
-      <Form.Label style={{fontSize: "13px"}}>Email:</Form.Label>
-      <Form.Control  value={email} onChange={e => setEmail(e.target.value)} style={ {color: "black", fontSize: "15px"}} />
-    </Form.Group>
-    <Form.Group style={{marginTop:"1%"}}>
-      <Form.Label style={{fontSize: "13px"}}>Password:</Form.Label>
-      <Form.Control  value={password} onChange={e => setPassword(e.target.value)} style={ {color: "black", fontSize: "15px"}} />
-    </Form.Group>
-    <Button style={{marginTop:"5%"}} onClick={handleSubmit}>Login</Button>
-    <a style={{marginTop:"5%"}} href="/register">Register</a>
-    </Form>
-  </Container>
-  </div>
-  )
+ }
+  return(
+    <div>
+      <Container className="login" style={{marginTop:"10%",backgroundColor:"#020312", border: "1px solid #f26c4f",height:"30%",width:"30%"}}>
+        <div style={{padding:"7%"}}>
+            <Container style={{backgroundColor:"#f26c4f"}}>G Login with Google</Container>
+            <p style={{fontSize:"18px",marginTop:"30px"}}>Email / Mobile Number <text style={{color:"#f26c4f"}}>*</text></p>
+            <input value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}></input>
+            <p style={{marginTop:"10%",fontSize:"18px"}}>Password<text style={{color:"#f26c4f"}}>*</text></p>
+            <input value={password} onChange={e => setPassword(e.target.value)} style={{width:"100%"}}></input>
+            <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"30%"}}>Login<ArrowLeft className='button_arrow'/></button>
+            <p style={{marginTop:"5%",textAlign:"center",fontStyle:"italic"}}>Not a member yet? <a href="/register" style={{color:"#f26c4f"}}>Sign Up</a></p>
+        </div>
+      </Container>
+    </div>
+  );
 }
 
 export default LoginPage;

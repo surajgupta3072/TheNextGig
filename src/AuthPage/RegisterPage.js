@@ -1,14 +1,12 @@
 import Auth from "@aws-amplify/auth";
-import Form from 'react-bootstrap/Form';
 import { useState } from "react";
-import Button  from "react-bootstrap/Button";
 import Container  from 'react-bootstrap/Container';
+import {ArrowLeft} from 'react-bootstrap-icons'
 
-function RegisterPage() {
+function RegisterPage(){
   const [name, setName] = useState();
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
-  const [phone_number, setPhoneNumber] = useState();
 
   async function handleSubmit() {
     try {
@@ -16,7 +14,6 @@ function RegisterPage() {
       const signUpResponse = await Auth.signUp({
         username,
         password,
-        phone_number,
         attributes: {
           email,
           name,
@@ -28,33 +25,23 @@ function RegisterPage() {
       console.log(error);
     }
   }
-  
-  return (
-  <div>
-   <Container>
-    <Form>
-    <Form.Group style={{marginTop:"1%"}}>
-      <Form.Label style={{fontSize: "13px"}}>Name:</Form.Label>
-      <Form.Control  value={name} onChange={e => setName(e.target.value)} style={ {color: "black", fontSize: "15px"}} />
-    </Form.Group>
-    <Form.Group style={{marginTop:"1%"}}>
-      <Form.Label style={{fontSize: "13px"}}>Email:</Form.Label>
-      <Form.Control  value={email} onChange={e => setEmail(e.target.value)} style={ {color: "black", fontSize: "15px"}} />
-    </Form.Group>
-    <Form.Group style={{marginTop:"1%"}}>
-      <Form.Label style={{fontSize: "13px"}}>Password:</Form.Label>
-      <Form.Control  value={password} onChange={e => setPassword(e.target.value)} style={ {color: "black", fontSize: "15px"}} />
-    </Form.Group>
-    <Form.Group style={{marginTop:"1%"}}>
-      <Form.Label style={{fontSize: "13px"}}>Phone Number:</Form.Label>
-      <Form.Control  value={phone_number} onChange={e => setPhoneNumber(e.target.value)} style={ {color: "black", fontSize: "15px"}} />
-    </Form.Group>
-    </Form>
-    <Button style={{marginTop:"5%"}} onClick={handleSubmit}>Register</Button>
-    <a style={{marginTop:"5%"}} href="/login">Login</a>
-  </Container>
-  </div>
-  )
+  return(
+    <div>
+      <Container style={{marginTop:"7%",backgroundColor:"#020312", border: "1px solid #f26c4f",height:"40%",width:"30%"}}>
+      <div style={{padding:"7%"}}>
+            <Container style={{backgroundColor:"#f26c4f"}}>G Signup with Google</Container>
+            <p style={{fontSize:"18px",marginTop:"30px"}}>Full Name <text style={{color:"#f26c4f"}}>*</text></p>
+            <input value={name} onChange={e => setName(e.target.value)} style={{width:"100%"}}></input>
+            <p style={{fontSize:"18px",marginTop:"30px"}}>Email / Mobile Number <text style={{color:"#f26c4f"}}>*</text></p>
+            <input value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}></input>
+            <p style={{marginTop:"10%",fontSize:"18px"}}>Password<text style={{color:"#f26c4f"}}>*</text></p>
+            <input  value={password} onChange={e => setPassword(e.target.value)} style={{width:"100%"}}></input>
+            <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"30%"}}>Signup<ArrowLeft className='button_arrow'/></button>
+            <p style={{marginTop:"5%",textAlign:"center",fontStyle:"italic"}}>Already a member? <a href="/login" style={{color:"#f26c4f"}}>Login</a></p>
+          </div>
+      </Container>
+    </div>
+  );
 }
 
 export default RegisterPage;
