@@ -2,6 +2,7 @@ import Auth from "@aws-amplify/auth";
 import { useState } from "react";
 import Container  from 'react-bootstrap/Container';
 import {ArrowLeft} from 'react-bootstrap-icons'
+import './AuthPage.css';
 
 function RegisterPage(){
   const [name, setName] = useState();
@@ -26,8 +27,7 @@ function RegisterPage(){
     }
   }
   return(
-    <div>
-      <Container style={{marginTop:"7%",backgroundColor:"#020312", border: "1px solid #f26c4f",height:"40%",width:"30%"}}>
+    <div className="register_container" style={{marginTop:"7%",backgroundColor:"#020312", border: "1px solid #f26c4f"}}>
       <div style={{padding:"7%"}}>
             <Container style={{backgroundColor:"#f26c4f"}}>G Signup with Google</Container>
             <p style={{fontSize:"18px",marginTop:"30px"}}>Full Name <text style={{color:"#f26c4f"}}>*</text></p>
@@ -39,7 +39,6 @@ function RegisterPage(){
             <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"30%"}}>Signup<ArrowLeft className='button_arrow'/></button>
             <p style={{marginTop:"5%",textAlign:"center",fontStyle:"italic"}}>Already a member? <a href="/login" style={{color:"#f26c4f"}}>Login</a></p>
           </div>
-      </Container>
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.login_container{
+    height: 30%;
+    width:  30%;
+    margin: auto;
+}
+
+.register_container{
+    height: 40%;
+    width: 30%;
+    margin: auto;
+}
+@media screen and (max-width: 768px) {
+    .login_container{
+        height: 80%;
+        width:  80%;
+        margin: auto;
+    }
+    .register_container{
+        height: 90%;
+        width: 80%;
+        margin: auto;
+    }
+}
