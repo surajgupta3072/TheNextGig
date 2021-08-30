@@ -2,13 +2,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import React, { useState } from 'react';
+import './ProfilePage.css';
 
 function Personal(props) {
   const [fullName,setFullName]=useState();
   const [dob,setDOB]=useState();
   const [gender,setGender]=useState();
+  const [quirky,setQuirky]=useState();
   function handleSubmit(){
-    if(fullName!=null && dob!=null && gender!=null){
+    if(fullName!=null && dob!=null && gender!=null && quirky!=null){
       props.p.setPercentage(props.p.percentage+20)
     }
     else{
@@ -31,19 +33,23 @@ function Personal(props) {
               <p style={{fontSize:"20px"}}>Gender</p>
               <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
                 <p>
-                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="fav_language"></input>
+                  <input style={{border:"3px-solid-gray"}} value={gender} onChange={e => setGender(e.target.value)} type="radio" name="gender"></input>
                   <label for="html">Male</label><br></br>
                 </p>
                 <p>
-                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="fav_language"></input>
+                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="gender"></input>
                   <label for="html">Female</label><br></br>
                 </p>
                 <p> 
-                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="fav_language"></input>
-                  <label for="html">Trangender</label><br></br>
+                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="gender"></input>
+                  <label for="html">Other</label><br></br>
                 </p>
               </div>
             </Col>
+          </Row>
+          <Row style={{marginTop:"2%"}}>
+            <p style={{fontSize:"20px"}}>Something quirky about you?</p>
+            <p><input value={quirky} onChange={e => setQuirky(e.target.value)} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
           <button style={{marginTop:"5%"}} onClick={handleSubmit} className="button_slide">Save</button>
         </Container>
