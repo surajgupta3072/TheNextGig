@@ -53,7 +53,7 @@ function ProfilePage(props) {
       <Container>
         <Row>
             <Col xs={3} style={{backgroundColor:"#1B1C2A"}}>
-              <ProgressBar style={{marginTop:"10%", backgroundColor:"#F26C4F", marginBottom:"1%"}} min={0} max={100} variant="warning" now={percentage} />
+              <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} />
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
               <Row style={{marginTop:"8%",marginLeft:"25%"}}><img src="google_logo.jpg" style={{height:"150px",width:"150px",borderRadius:"50%"}}/></Row>
               <Row><p style={{fontSize:"18px", textAlign:"center"}}>{props.auth.user.attributes.name.split(" ")[0]}</p></Row>

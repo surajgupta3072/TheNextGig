@@ -24,13 +24,12 @@ function LoginPage(props){
   return(
     <div style={{marginTop:"10%",backgroundColor:"#020312", border: "1px solid #f26c4f"}} className="login_container">
       <div style={{paddingRight:"7%",paddingLeft:"7%",paddingTop:"7%",paddingBottom:"0%"}}>
-        <Container style={{backgroundColor:"#f26c4f", height:"30px", display:"flex", alignItems:"center"}}>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Container style={{backgroundColor:"#f26c4f", height:"30px", display:"flex", alignItems:"center",justifyContent:"space-evenly"}}>
           <FaGoogle/>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <b>Login with Google</b>
         </Container>
-        <p style={{fontSize:"18px",marginTop:"30px"}}>Email / Mobile Number <text style={{color:"#f26c4f"}}>*</text></p>
+        <p style={{textAlign:"center",marginTop:"10px",fontWeight:"bold",color: "rgba(242, 108, 79, 1)"}}>OR</p>
+        <p style={{fontSize:"18px"}}>Email / Mobile Number <text style={{color:"#f26c4f"}}>*</text></p>
         <input value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}></input>
         <p style={{marginTop:"10%",fontSize:"18px"}}>Password<text style={{color:"#f26c4f"}}>*</text></p>
         <input type="password"  value={password} onChange={e => setPassword(e.target.value)} style={{width:"100%"}}></input>

@@ -18,30 +18,33 @@ function Header(props) {
             <img className= "header_img" src="/logo192.png" alt="logo"/>
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end" style={{paddingRight:"6%"}}>
+        <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
             <Nav>
-                <Nav.Link href="/masterclass" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
-                    SESSIONS
+                <Nav.Link href="/masterclass" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                    MASTERCLASSES
                 </Nav.Link>
-                <Nav.Link href="/gigs" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
-                    GIGS
+                <Nav.Link href="/gigs" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                    GIGS & PROJECTS
                 </Nav.Link>
-                <Nav.Link target="_blank" href="https://discord.gg/EEVcU7ZzAQ" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
+                <Nav.Link href="/sociallearn" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                    SOCIAL LEARNING
+                </Nav.Link>
+                <Nav.Link target="_blank" href="https://discord.gg/EEVcU7ZzAQ" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
                     COMMUNITY
                 </Nav.Link>
                 {props.auth.isAuthenticated===true && 
-                    <Nav.Link onClick={LogOutFunc} style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
-                        LOG OUT
+                    <Nav.Link onClick={LogOutFunc} style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                        LOGOUT
                     </Nav.Link>
                 }
                 {props.auth.isAuthenticated===true && 
-                    <Nav.Link href="/profile" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
-                        {props.auth.user.attributes.name.split(" ")[0]}
+                    <Nav.Link href="/profile" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                        {props.auth.user.attributes.name.split(" ")[0].toUpperCase()}
                     </Nav.Link>
                 }
                 {props.auth.isAuthenticated===false && 
-                    <Nav.Link href="/login" style={{color: "#424242", fontWeight:"700", fontSize:"18px", paddingLeft:"55px"}}>
-                        LOG IN
+                    <Nav.Link href="/login" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                        LOGIN
                     </Nav.Link>
                 }
             </Nav>                
