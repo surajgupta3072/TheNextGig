@@ -15,6 +15,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import Auth from "@aws-amplify/auth";
 import ProtectedRoute from "./GuardedRoute";
+import SocialLearningPage from "./SocialLearningPage/SocialLearningPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -57,6 +58,9 @@ function App() {
               <Route path="/register">
                 <RegisterPage />
               </Route>
+              <ProtectedRoute path="/sociallearn" auth={authProps}>
+                <SocialLearningPage auth={authProps}/>
+              </ProtectedRoute>
               <ProtectedRoute path="/profile" auth={authProps}>
                 <ProfilePage auth={authProps}/>
               </ProtectedRoute>

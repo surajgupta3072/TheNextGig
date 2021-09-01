@@ -30,7 +30,7 @@ function WorkEx(props) {
         <Container style={{marginTop:"5%"}}>
         {inputFields.map((inputField,index) => (
           <div key={index} style={{marginBottom:"5%"}}>
-            <Row><p style={{fontSize:"25px",fontWeight:"bold"}}>Work Ex {index+1}</p></Row>
+            <Row><p style={{fontSize:"25px",fontWeight:"bold"}}>Work Experience #{index+1}</p></Row>
             <Row>
               <Col style={{display:"flex",flexDirection:"row"}}>
               <p style={{fontSize:"18px",marginRight:"10%"}}>Company</p>
