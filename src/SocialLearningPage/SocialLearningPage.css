@@ -4,3 +4,12 @@
   border: 1px solid rgb(212, 71, 41);
   background: transparent;
 }
+.rectangle {
+  margin-top: 10%;
+  margin-left: 2%;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid rgb(212, 71, 41);
+  background: transparent;
+}
