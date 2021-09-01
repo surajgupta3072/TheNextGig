@@ -13,7 +13,7 @@ function Page4() {
         <p class="btn">
           <span>
             <span>
-              <span className="border_box">GIGS. PROJECTS. INTERNSHIPS.</span>
+              <span className="border_box">GIGS. PROJECTS.</span>
             </span>
           </span>
         </p>
@@ -101,7 +101,7 @@ function Page4() {
                 </Col>
             </Row>
             <div className="button_div_page4">
-                <a href="/gigs"><button type="submit" className="button_slide slide_right orange_button_page3">Check ‘em out<ArrowRight className="button_arrow"/></button></a>
+                <a href="/gigs"><button type="submit" className="button_slide slide_right orange_button_page3">Start doing<ArrowRight className="button_arrow"/></button></a>
             </div>
         </Container>
     </div>
@@ -116,7 +116,7 @@ function Page4() {
         <p class="btn">
           <span>
             <span>
-              <span className="border_box">GIGS. PROJECTS. INTERNSHIPS.</span>
+              <span className="border_box">GIGS. PROJECTS. </span>
             </span>
           </span>
         </p>
@@ -204,7 +204,7 @@ function Page4() {
                 </Col>
             </Row>
             <div className="button_div_page4">
-                <a href="/gigs"><button type="submit" className="button_slide slide_right orange_button_page3">Check ‘em out<ArrowRight className="button_arrow"/></button></a>
+                <a href="/gigs"><button type="submit" className="button_slide slide_right orange_button_page3">Start doing<ArrowRight className="button_arrow"/></button></a>
             </div>
         </Container>
     </div>

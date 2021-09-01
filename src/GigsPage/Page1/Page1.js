@@ -4,6 +4,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from '../GigsAWS'
 import { useEffect, useState } from "react";
+import ReactTooltip from 'react-tooltip'
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -33,8 +34,8 @@ function Page1() {
           <div className="top_masterclass">
             <h1>ALL GIGS / LIVE PROJECTS</h1>
             <p className="subtitle_masterclass">
-              Short, but meant to stay with you for a{" "}
-              <span className="orange_text_masterclass">long time</span>.
+            Let’s make your learning 
+              <span className="orange_text_masterclass"> experiential</span>.
             </p>
           </div>
         </Container>
@@ -79,14 +80,20 @@ function Page1() {
                 style={{ height: "0.13rem", color: "#f26c4f" }}
               />
               <div className="instruct_time">
-                <div className="instructor_name">
-                  {carder.CompanyName}
+                <div className="instructor_name" >
+                  {carder.CompanyName} <sup data-tip data-for="registerTip">&#9432;</sup>
+                  <ReactTooltip id="registerTip" place="top" effect="solid">
+                    Tooltip for the register button
+                  </ReactTooltip>
                 </div>
                 <div className="time_course">{carder.GigDuration}</div>
               </div>
               <div className="post_episode">
                 <div className="instructor_post">
-                  {carder.GigFunction}
+                  {carder.GigFunction} <sup data-tip data-for="registerTip">&#9432;</sup>
+                  <ReactTooltip id="registerTip" place="top" effect="solid">
+                    Tooltip for the register button
+                  </ReactTooltip>
                 </div>
                 <div className="episode_course">{carder.GigStipend}</div>
               </div>

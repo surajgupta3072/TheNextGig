@@ -53,17 +53,24 @@ function Page3(props) {
   // setDataRelatedGigs(finalResult);
     return (
     <div>
+      <div className="header_masterclass">
+        <Container>
+          <div className="top_masterclass"><h1>IT’S ALL IN THE DETAILS</h1>
+            <p className="subtitle_masterclass">A <span className="orange_text_masterclass"> sneak peak </span> into the masterclass</p>
+          </div>
+        </Container>
+      </div>
       <Container style={{padding: "0%", maxWidth: "94%", marginBottom: "0%"}} className= "container1">
         <Row>
           <Col md={6} >
-            <Row style={{marginTop:"12%"}}>
+            <Row style={{marginTop:"2%"}}>
               <h1 className="page3_heading1">{session.course_name}</h1>
             </Row>
-            <Row style={{marginTop:"5%"}}>
+            <Row style={{marginTop:"0%"}}>
               <p className="page3_3linetext">Some text will span across three lines<br/> AAAAAA <br/> BBBBBBB</p>
               <p className="page3_3linetext2">Lifetime access to <span style={{color: "#f26c4f"}}>{session.course_timing}</span>  of Learning experience</p>
             </Row>
-            <Row className="card1_page3"  style={{marginLeft: "0", marginTop: "6%"}}>
+            <Row className="card1_page3"  style={{marginLeft: "0", marginTop: "3%"}}>
             <div >
               <p className="page3_cardtext">
               Prepares you for roles in:
@@ -92,15 +99,15 @@ function Page3(props) {
               </Row>
           </div>
             </Row>
-            <Row style={{marginTop: "5%", paddingBottom: "1%"}}>
-              <Col>
+            <Row style={{marginTop: "5%", paddingBottom: "1%", display: "flex", justifyContent: "space-around"}}>
+              <Col style={{marginLeft: "10%"}}>
                 <a href={"/expert/"+session.ExpertId}><button type="submit" className="button_slide_page3 slide_right">
-                Get to know<br /> your expert <ArrowLeft className="button_arrow_footer"/>
+                Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button></a>
               </Col>
-              <Col>
+              <Col style={{display: "flex", justifyContent: "space-between"}}>
                 <button type="submit" className="button_slide_page3 slide_right">
-                Invest {session.fees} in <br /> your future <ArrowLeft className="button_arrow_footer"/>
+                Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button>
               </Col>
             </Row>
@@ -142,8 +149,73 @@ function Page3(props) {
       </Container>
       <div className="header_masterclass">
         <Container>
-          <div className="top_masterclass"><h1>RELATED GIGS / LIVE PROJECTS / INTERNSHIPS</h1>
-            <p className="subtitle_masterclass">Learnt a skill - why not <span className="orange_text_masterclass">practice</span> it. </p>
+          <div className="top_masterclass"><h1>WHAT’S IN IT FOR YOU?</h1>
+            <p className="subtitle_masterclass">Is it worth <span className="orange_text_masterclass"> the penny </span> ? </p>
+          </div>
+        </Container>
+      </div>
+      <div className="Whats_inforyou_desktop_view">
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around", marginTop: "6%", marginBottom: "6%"}}>
+        <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
+          <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="100px" width="200px"/>
+          <h1>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
+        </div>
+        <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
+          <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="100px" width="200px"/>
+          <h1>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
+        </div>
+        </div>
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around", marginTop: "6%", marginBottom: "6%"}}>
+        <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
+          <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="100px" width="200px"/>
+          <h1>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
+        </div>
+        <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
+          <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="100px" width="200px"/>
+          <h1>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
+        </div>
+        </div>
+      </div>
+      <div className="Whats_inforyou_mobile_view">
+        <Container style={{display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
+          <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
+            <Col xs={4}>
+              <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="100px" />
+            </Col>
+            <Col xs={8}>
+              <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
+            </Col>
+          </Row>
+          <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
+            <Col xs={4}>
+              <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="100px" />
+            </Col>
+            <Col xs={8}>
+              <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
+            </Col>
+          </Row>
+          <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
+            <Col xs={4}>
+              <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="100px" />
+            </Col>
+            <Col xs={8}>
+              <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
+            </Col>
+          </Row>
+          <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
+            <Col xs={4}>
+              <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="100px" />
+            </Col>
+            <Col xs={8}>
+              <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <div className="header_masterclass">
+        <Container>
+          <div className="top_masterclass"><h1>RELATED GIGS / LIVE PROJECTS </h1>
+            <p className="subtitle_masterclass">Let’s <span className="orange_text_masterclass"> practice </span> what we’ve learnt practice it. </p>
           </div>
         </Container>
         </div>
@@ -186,8 +258,8 @@ function Page3(props) {
           </div>
           <div className="header_masterclass">
           <Container>
-          <div className="top_masterclass"><h1>OTHER SESSIONS</h1>
-            <p className="subtitle_masterclass">Want to learn <span className="orange_text_masterclass">something else?<span style={{marginLeft:"62.1%"}}><a style={{textDecoration:"none", color:"#f26c4f"}} href="/masterclass">Explore all sessions</a></span></span></p>
+          <div className="top_masterclass"><h1>OTHER MASTERCLASSES</h1>
+            <p className="subtitle_masterclass">Don’t stop learning!<span style={{marginLeft:"62.1%"}}><a style={{textDecoration:"none", color:"#f26c4f"}} href="/masterclass">Explore all sessions &#62; &#62;</a></span></p>
           </div>
           </Container>
           </div>
@@ -225,7 +297,7 @@ function Page3(props) {
           </Carousel>
           </div>
           </div>
-          <Container className="container2_page3">
+          <div className="container2_page3" style={{paddingLeft: "0", marginLeft: "0"}}>
           <Container className="rectangle-box3" style={{marginTop:"7%"}}>
             <Row >
               <Col style={{padding:"3%"}} md={8}>
@@ -237,7 +309,7 @@ function Page3(props) {
               </Col>
             </Row>
           </Container>
-          </Container>
+          </div>
           <div >
             <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>

@@ -12,22 +12,34 @@ function Page2() {
       <Container className="top-container">
       <Row>
        <Col md={7}>
-         <p className="mast_page2_p1">Want to learn before trying?</p>
-         <p className="mast_page2_p2">Learn from the best<a href="/gigs"><ArrowRight className="button_arrow"/></a></p>
-         <a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out sessions </p></a>
+         
+         <p className="mast_page2_p2">Learn from the best.</p>
+         <div>
+           <Row>
+             <Col md={4} xs={5}>
+              <a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> 
+             </Col>
+             <Col md={8} xs={7}>
+              <a href="/gigs"><ArrowRight className="button_arrow"/></a>
+             </Col>
+           </Row>
+          
+          
+         </div>
+         
        </Col> 
        <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
-         <Container>
-            <Row className="mast_page2_row"><p className="mast_page2_p4">Meet our Partners!</p></Row>
-            <Row style={{paddingLeft:"54%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="gig_page2_p5">Our partners in crime.</p></Row>
+         <Container >
+            <Row className="mast_page2_row"><p className="mast_page2_p4">Meet our Partners!</p></Row>           
             <Row className="gig_page2_row1" ><a style={{textDecoration:"none"}} href="/expert"><p style={{color:"rgb(243, 123, 97)"}} className="gig_page2_p5">Check them out.</p></a></Row>
+            <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2"/></a>
          </Container>
        </Col>
       </Row>
       <Container className="rectangle-box2" style={{marginTop:"5%"}}>
         <Row >
           <Col style={{padding:"2%"}} md={8}>
-            <p style={{marginBottom:"0%"}} className="mast_page2_p3">Need a gig in specific domain?</p>
+            <p style={{marginBottom:"0%"}} className="mast_page2_p3">Looking for a gig in specific domain?</p>
             <p  className="mast_page2_p3">Want to work with a particular company?</p>
           </Col>
           <Col style={{paddingLeft:"12%"}} className="col-button">

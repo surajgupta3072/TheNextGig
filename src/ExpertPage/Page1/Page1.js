@@ -5,7 +5,7 @@ import masterData from './../../MasterClassPage/Masterclass.json';
 import './Page1.css'
 import {Linkedin } from 'react-bootstrap-icons';
 import MasterSessions from './../MasterSessions';
-import P2PLearning from './../P2PLearning';
+
 
 function Page1(props) {
   const [active, setActive] =  useState("MasterSessions");
@@ -15,9 +15,9 @@ function Page1(props) {
       <div className="header_masterclass">
         <Container>
           <div className="top_masterclass">
-            <h1>LET’S KNOW THE EXPERT</h1>
+            <h1>HERE ARE THE EXPERTS</h1>
             <p className="subtitle_masterclass">
-            Take a <span className="orange_text_masterclass"> sneak peak </span> into the career of the professional teaching you{" "}
+            and what they’ve done in the past
             </p>
           </div>
         </Container>
@@ -57,14 +57,10 @@ function Page1(props) {
             </Container>
         </div>
         <Container>
-          <div className="box2_page1">
-            <nav className="nav_switchbtn">
-              <button onClick={() => setActive("MasterSessions")} className="expert_switchbtn">MasterSessions</button>
-              <button onClick={() => setActive("P2PLearning")} className="expert_switchbtn">P2P Learning</button>
-            </nav>
+          <div >
             <div>
               {active === "MasterSessions" && <MasterSessions Eid={props.Eid}/>}
-              {active === "P2PLearning" && <P2PLearning />}
+              
             </div>
           </div>
         </Container>

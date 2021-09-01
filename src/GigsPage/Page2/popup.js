@@ -22,10 +22,11 @@ function MyVerticallyPopUp(props) {
            <p style={{marginTop:"10%",fontSize:"18px"}}>Recommendation<text style={{color:"#f26c4f"}}>*</text></p>
            <p style={{marginTop:"-15px",fontSize:"15px"}}> (we will try our best to ____)</p>
            <select style={{width:"100%"}}>
+             <option selected disabled>Select from dropdown*</option>
                 <option>Session</option>
                 <option>Expert</option>
             </select>
-           <input style={{width:"100%",marginTop:"10%"}}></input>
+           <input style={{width:"100%",marginTop:"10%"}} placeholder="Insert text here*"/>
            <button className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"30%"}}>Submit<ArrowLeft className='button_arrow'/></button>
          </div>
       </Modal.Body>  

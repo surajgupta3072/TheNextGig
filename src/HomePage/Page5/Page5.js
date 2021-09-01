@@ -17,7 +17,7 @@ function Page5() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle text3">Learn from your <text style={{color:"#f26c4f"}}>peers</text>.<br className="line_space"/> They're smarter than you think.</h4>
+        <h4 className="page3_subtitle text3">Keeping you <text style={{color:"#f26c4f"}}> up-to-date</text> - with things that help you grow.</h4>
       </div>
       </div>
         
@@ -27,8 +27,8 @@ function Page5() {
               <img src="discord.jpg" className="discord_img"  alt="img1"/>
             </Col>
             <Col md={8}>
-              <p className="text1">We're on Slack.<br className="page5_linespace"/> Not Slacking.</p>
-              <p className="text2">Most probably discussing conspiracy theories though.</p>
+              <p className="text1">We’re on Discord!</p>
+              <p className="text2">...most probably discussing global conspiracy theories...</p>
             </Col>
           </Row>  
         </div>
