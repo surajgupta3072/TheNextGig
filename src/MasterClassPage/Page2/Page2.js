@@ -6,6 +6,8 @@ import master from '../Masterclass.json';
 import {ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
 import MyVerticallyPopUp  from './popup';
 import './Page2.css';
+import { Link } from 'react-scroll';
+
 
 function Page2() {
   const [modalShow, setModalShow] = React.useState(false);
@@ -14,27 +16,39 @@ function Page2() {
       <Row>
        <Col md={7}>
          <p className="mast_page2_p1">Already skilled enough?</p>
-         <p className="mast_page2_p2">Stop dreaming<a href="/gigs"><ArrowRight className="button_arrow"/></a></p>
-         <p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Start gigging </p>
+         <Row>
+           <Col md={4} xs={5}>
+           <p className="mast_page2_p2">Stop dreaming</p>
+           <p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Start doing</p>
+           </Col>
+           <Col md={8} xs={7}>
+              <div className="button_div_MC_Page2">
+                <a href="/gigs"><button type="submit"  className="button_slide_MC_Page2 slide_right">Gigs / projects / <br /> internships<ArrowRight className="button_arrow_MC_Page2"/></button></a>
+              </div>
+            </Col>
+         </Row>
+         
+         
        </Col> 
        <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
          <Container>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the experts!</p></Row>
             <Row style={{paddingLeft:"45%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
             <Row className="mast_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="mast_page2_p5"><a href="/expert" style={{textDecoration:"none", color:"#f26c4f"}}>Stalk them.</a></p></Row>
+            <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2"/></a>
          </Container>
          
        </Col>
       </Row>
       <Container className="rectangle-box2" style={{marginTop:"5%"}}>
         <Row >
-          <Col style={{padding:"2%"}} md={8}>
-            <p style={{marginBottom:"0%"}} className="mast_page2_p3">Want to learn from a specific expert?</p>
-            <p  className="mast_page2_p3">Want to learn a session in a specific domain?</p>
+          <Col style={{padding:"2%"}} md={7}>
+            <p style={{marginBottom:"0%"}} className="mast_page2_p3">Want to learn something cool?</p>
+            <p  className="mast_page2_p3">From a specific expert / company?</p>
           </Col>
           <Col style={{paddingLeft:"12%"}} className="col-button">
-            <button style={{marginLeft:"20%"}} className="button_slide slide_right" onClick={() => setModalShow(true)}>Recommend 
-            <ArrowLeft className="button_arrow"/></button>
+            <button style={{marginLeft:"20%"}} className="button_slide_MC_Page2_2 slide_right" onClick={() => setModalShow(true)}>Recommend <br /> a masterclass
+            <ArrowLeft className="button_arrow_MC_Page2_Right"/></button>
               <MyVerticallyPopUp
                   show={modalShow}
                   onHide={() => setModalShow(false)}

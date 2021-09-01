@@ -74,10 +74,10 @@ function Page3(props) {
           <div className="header_masterclass">
             <Container>
               <div className="top_masterclass">
-                <h1>LET’S LEARN MORE ABOUT THE GIG</h1>
+                <h1>IT’S ALL IN THE DETAILS</h1>
                 <p className="subtitle_masterclass">
-                  Read about what are you gonna{" "}
-                  <span className="orange_text_masterclass"> work on </span>
+                What you are going to <span className="orange_text_masterclass"> work on{" "}
+                   </span>
                 </p>
               </div>
             </Container>
@@ -107,28 +107,28 @@ function Page3(props) {
                     <Row>
                       <Col>
                         <Row>
-                          <Col className="img_col">
+                          <Col className="img_col" md={5}>
                             <img
                               className="img_page3_card"
                               variant="top"
                               src=""
                             />
-                          </Col>
-                          <Col className="text_col">
+                          </Col >
+                          <Col className="text_col" md={7}>
                             <h1 className="text_page3_card_gigs">Duration</h1>
                           </Col>
                         </Row>
                       </Col>
                       <Col>
                         <Row>
-                          <Col className="img_col">
+                          <Col className="img_col" md={4}>
                             <img
                               className="img_page3_card"
                               variant="top"
                               src=""
                             />
                           </Col>
-                          <Col className="text_col">
+                          <Col className="text_col" md={8}>
                             <h1 className="text_page3_card_gigs">
                               Expected stipend
                             </h1>
@@ -166,7 +166,7 @@ function Page3(props) {
                     className="text_page3_card applyby_text"
                     style={{ marginTop: "0%" }}
                   >
-                    Apply by " "
+                   <i> Apply by {"<>"} </i>
                   </p>
                 </Row>
               </Col>
@@ -192,12 +192,12 @@ function Page3(props) {
                     Learn before you actually{" "}
                     <span className="orange_text_masterclass">
                       practise
-                      <span style={{ marginLeft: "60%" }}>
+                      <span style={{ marginLeft: "58%" }}>
                         <a
                           style={{ textDecoration: "none", color: "#f26c4f" }}
                           href="/masterclass"
                         >
-                          Explore all sessions
+                          Explore all sessions &#62;&#62;
                         </a>
                       </span>
                     </span>
@@ -282,101 +282,8 @@ function Page3(props) {
               </Carousel>
             </div>
           </div>
-          <div className="header_masterclass">
-            <Container>
-              <div className="top_masterclass">
-                <h1>RELATED GIGS</h1>
-                <p className="subtitle_masterclass">
-                  Try your hand on other{" "}
-                  <span className="orange_text_masterclass">
-                    gigs
-                    <span style={{ marginLeft: "60%" }}>
-                      <a
-                        style={{ textDecoration: "none", color: "#f26c4f" }}
-                        href="/gigs"
-                      >
-                        Explore all gigs
-                      </a>
-                    </span>
-                  </span>
-                </p>
-              </div>
-            </Container>
-          </div>
-          <div>
-            <Carousel breakPoints={breakPoints}>
-              {relatedgigs.map((carder) => (
-                carder!=undefined &&
-                <div key={carder.GigId}>
-                <MDBCard
-                  key={carder}
-                  className="mbd_card card_mastercard"
-                  style={{
-                    borderRadius: "0px",
-                    margin: "4%",
-                    border: "2px solid rgba(242, 108, 79, 0.6)",
-                    backgroundColor: "#020312",
-                  }}
-                >
-                  <div className="image_card">
-                    <MDBCardImage
-                      style={{
-                        marginLeft: "1px",
-                        width: "100%",
-                        height: "14rem",
-                        paddingTop: "20px",
-                        paddingLeft: "20px",
-                        paddingRight: "20px",
-                      }}
-                      src={carder.GigName}
-                      alt="..."
-                    />
-                  </div>
-                  <div className="image_logo">
-                    <img className="image_logo1" src="logo192.png" />
-                    <img className="image_logo2" src="logo192.png" />
-                  </div>
-                  <MDBCardBody>
-                    <div className="Course_name">{carder.GigFunction}</div>
-                    <hr
-                      className="course_line"
-                      style={{ height: "0.13rem", color: "#f26c4f" }}
-                    />
-                    <div className="instruct_time">
-                      <div className="instructor_name">{carder.GigStipend}</div>
-                      <div className="time_course">{carder.GigStartDate}</div>
-                    </div>
-                    <div className="post_episode">
-                      <div className="instructor_post">{carder.GigPOCname}</div>
-                      <div className="episode_course">
-                        {carder.GigPOCcontact}
-                      </div>
-                    </div>
-                    <div className="button_masterclass1">
-                      <a href={"/gigs/" + carder}>
-                        <button
-                          style={{ padding: "8px 14px" }}
-                          type="submit"
-                          className="button_slide_new slide_right_new"
-                        >
-                          Let's go
-                          <ArrowRight
-                            style={{
-                              width: "30px",
-                              height: "30px",
-                              marginTop: "-3px",
-                            }}
-                            className="button_arrow_new"
-                          />
-                        </button>
-                      </a>
-                    </div>
-                  </MDBCardBody>
-                </MDBCard>
-                </div>
-              ))}
-            </Carousel>
-          </div>
+          
+        
         </div>
       )}
     </div>

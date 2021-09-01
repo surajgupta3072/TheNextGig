@@ -65,7 +65,7 @@ function Page7() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle text3">This is why we do what we do.</h4>
+        <h4 className="page3_subtitle text3">This is why we do what we do!</h4>
       </div>
       </div>
         {/* The svg below is for orange rectangle */}

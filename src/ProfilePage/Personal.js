@@ -30,16 +30,16 @@ function Personal(props) {
             <Col style={{marginTop:"2%",marginLeft:"10%"}}>
               <p style={{fontSize:"20px"}}>Gender</p>
               <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
-                <p>
-                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="fav_language"></input>
+                <p >
+                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="fav_language" style={{border: "none", height: "2em"}}></input>
                   <label for="html">Male</label><br></br>
                 </p>
-                <p>
-                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="fav_language"></input>
+                <p >
+                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="fav_language" style={{border: "none", height: "2em"}}></input>
                   <label for="html">Female</label><br></br>
                 </p>
-                <p> 
-                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="fav_language"></input>
+                <p > 
+                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="fav_language" style={{border: "none", height: "2em"}}></input>
                   <label for="html">Trangender</label><br></br>
                 </p>
               </div>

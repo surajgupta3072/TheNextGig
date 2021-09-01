@@ -60,7 +60,7 @@
   position: absolute;
   align-items: center;
   bottom: 0;
-  left: 65%;
+  left: 50%;
   transform: translate(-50%);
   transition: 0.5s;
   color: #fff;

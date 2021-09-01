@@ -11,15 +11,15 @@ function Page2() {
       <div className="page2_laptop_view">
         <Container>
         <p style={{fontSize:"32px", fontWeight:"600",marginLeft:"1.5%",marginTop:"20px",marginBottom:"3%"}}>
-          Its 2021. Un-Chatur yourself. Become a <em style={{color:"#f26c4f"}}>Rancho.</em> 
+        Here’s everything you can do! 
         </p>
           <Row>
             <Card style={{ width: "27%", marginLeft:"1.5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px"}} variant="top" src="holder.svg"/>
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >MASTERCLASSES</Card.Title>
-                  <Card.Text class="opensans_text" style={{fontSize:"20px",textAlign:"center"}}>
-                    Some quirky text over here  
+                  <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
+                  Short. Expert-driven. Real-life cases. And a <i> whole lot of value </i>!  
                   </Card.Text>
                 </Card.Body>
                 <a href="/masterclass"><ArrowRight className="card_arrow1"/></a>
@@ -27,9 +27,10 @@ function Page2() {
             
             <Card style={{ width: "27%", marginLeft:"7%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
                 <Card.Body style={{marginTop:"90px"}}>
-                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >GIGS</Card.Title>
-                  <Card.Text class="opensans_text" style={{fontSize:"20px",textAlign:"center"}}>
-                  Some quirky text over here 
+                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >GIGS & PROJECTS</Card.Title>
+                  <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
+                  👈🏼 you’ve learnt there. 
+Now practice here! 👇🏼
                   </Card.Text>
                 </Card.Body>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px"}} variant="top" src="holder.svg"/>
@@ -39,84 +40,90 @@ function Page2() {
             <Card style={{ width: "27%", marginLeft:"7%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px" }}>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px"}} variant="top" src="holder.svg"/>
                 <Card.Body style={{marginTop:"60px"}}>
-                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >PEER LEARNING</Card.Title>
-                  <Card.Text class="opensans_text" style={{fontSize:"20px",textAlign:"center"}}>
-                  Some quirky text over here 
+                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SOCIAL LEARNING</Card.Title>
+                  <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
+                  Learn from your peers -
+they’re smarter than you think!
                   </Card.Text>
                 </Card.Body >
                 <a target="_blank" href="https://discord.gg/EEVcU7ZzAQ"><ArrowRight className="card_arrow1"/></a>
             </Card>
           </Row>
-          <Row style={{width:"600px",height:"70px",border:"1px solid #534D4D", marginTop:"5%",marginLeft:"50%", paddingTop:"20px"}}>
-            <Col md={1}>O</Col>
-            <Col md={1}>O</Col>
-            <Col md={1}>O</Col>
-            <Col><p style={{fontSize:"20px", textAlign:"center"}}>2000+ Learners on TheNextGig</p></Col>
+          <Row style={{width:"500px",height:"70px",border:"1px solid #534D4D", marginTop:"5%",  marginBottom:"5%", marginLeft:"59%", paddingTop:"10px"}}>
+          <Col md={1} ><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="50px" /></Col>
+            <Col md={1}><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="50px" /></Col>
+            <Col md={1}><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="50px" /></Col>
+            <Col><p style={{fontSize:"20px", textAlign:"center", paddingTop: "10px"}}>3000+ Learners on TheNextGig</p></Col>
           </Row>
         </Container>
       </div>
 
-      <div className="page2_mobile_view">
+      <div className="page2_mobile_view" style={{marginLeft: "4%"}}>
         
       
-      <p style={{fontSize:"16px", fontWeight:"600",marginLeft:"4%",marginTop:"20px",marginBottom:"3%",textAlign:"left"}}>
-          Its 2021.
-          <p>Un-Chatur yourself. Become a <em style={{color:"#f26c4f"}}>Rancho.</em></p>
+      <p style={{fontSize:"23px", fontWeight:"600",marginLeft:"4%",marginTop:"20px",marginBottom:"3%",textAlign:"left"}}>
+          
+          Here’s everything you can do! 
       </p>
     <Container>
       <Col>
-      <Card style={{ width: '18rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%",marginLeft:"5%" }}>
+      <Card style={{ width: '20rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%" }}>
         <Card.Body>
-          <Row>
+          <div style={{display: "flex", flexDirection: "row"}}>
             <Col >
               <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
             </Col>
             <Col>
               <Card.Title style={{fontSize:"20px",textAlign:"center"}}>MASTERCLASSES</Card.Title>
               <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
-                Some quirky text over here.
+              Short. Expert-driven. <br /> Real-life cases.<br /> And a <i> whole lot of value </i>!  
               </Card.Text>
             </Col>
-          </Row>
+          </div>
         </Card.Body>
         <a href="/masterclass"><ArrowRight className="card_arrow1"/></a>
       </Card>
-      <Card style={{ width: '18rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%",marginLeft:"5%" }}>
+      <Card style={{ width: '20rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%"}}>
         <Card.Body>
-          <Row>
+          <div style={{display: "flex", flexDirection: "row"}}>
             <Col>
               <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
             </Col>
             <Col>
-              <Card.Title style={{fontSize:"20px",textAlign:"center"}}>GIGS</Card.Title>
+              <Card.Title style={{fontSize:"20px",textAlign:"center"}}>GIGS & PROJECTS</Card.Title>
               <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
-                Some quirky text over here.
+              👈🏼 you’ve learnt there. 
+              <br />Now practice  here! 👇🏼
               </Card.Text>
             </Col>
-          </Row>
+          </div>
         </Card.Body>
         <a href="/gigs"><ArrowRight className="card_arrow1"/></a>
       </Card>
-      <Card style={{ width: '18rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "10%", marginLeft:"5%" }}>
+      <Card style={{ width: '20rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "10%"}}>
         <Card.Body>
-          <Row>
+          <div style={{display: "flex", flexDirection: "row"}}>
             <Col>
               <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
             </Col>
             <Col>
-              <Card.Title style={{fontSize:"20px"}}>PEER LEARNING</Card.Title>
+              <Card.Title style={{fontSize:"20px"}}>SOCIAL LEARNING</Card.Title>
               <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
-                Some quirky text over here.
+              Learn from your peers -<br />
+they’re smarter  than you think!
               </Card.Text>
             </Col>
-          </Row>
+          </div>
         </Card.Body>
         <a href="/community"><ArrowRight className="card_arrow1"/></a>
       </Card>
-      <div style={{width:"300px",height:"50px",border:"1px solid #534D4D",marginLeft:"5%", paddingTop:"15px"}}>
-             
-            <Col xs={12}><p style={{fontSize:"16px", justifyContent:"space-between"}}> 0  0  0  2000+ Learners on TheNextGig</p></Col>
-      </div> 
+      
+      <div style={{width:"300px",height:"50px",border:"1px solid #534D4D", marginLeft:"5%", paddingTop:"5px", display: "flex", flexDirection: "row"}}>
+          <Col md={1} ><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
+            <Col md={1}><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
+            <Col md={1}><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
+            <Col><p style={{fontSize:"11px", textAlign:"center", paddingTop: "10px"}}>3000+ Learners on TheNextGig</p></Col>
+          </div>
       </Col>
     </Container>
     </div>

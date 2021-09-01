@@ -15,7 +15,7 @@ const breakPoints = [
 function Page3() {
   var i=1;
     return (
-    <div style={{marginTop:"4%"}}>
+    <div style={{marginTop:"7%"}}>
 
       <div className="heading_box">
       <div>
@@ -28,7 +28,7 @@ function Page3() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle">By experts. To make <span className="page3_orange"> <em>you</em> </span> an expert.</h4>
+        <h4 className="page3_subtitle">By experts. To make <i><span className="page3_orange"> <em>you</em> </span> an expert.</i></h4>
       </div>
       </div>
       <div className="App1">
