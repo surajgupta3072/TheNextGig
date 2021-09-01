@@ -38,11 +38,15 @@ function SocialLearningPage(props) {
               <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points:xxx</p></Row>
               <Row style={{marginBottom:"5%"}}><Linkedin size={30}/></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row style={{marginTop:"5%",}}><p>Explore:</p></Row>
-              <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="All" name="group1"/></Row>
-              <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="Data Science" name="group1"/></Row>
-              <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="Data Science" name="group1"/></Row>
-              <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="Data Science" name="group1"/></Row>
+              {active!=="Community" &&
+                <div>
+                <Row style={{marginTop:"5%",}}><p>Explore:</p></Row>
+                <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="All" name="group1"/></Row>
+                <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="Data Science" name="group1"/></Row>
+                <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="Data Science" name="group1"/></Row>
+                <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="Data Science" name="group1"/></Row>
+                </div>
+              }
               <br/>
             </Col>
             <Col >
@@ -52,9 +56,11 @@ function SocialLearningPage(props) {
                   <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Blogs</button>
                   <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Community</button>
                </Col>
-               <Col >
-                 <p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add video/blog)</p>
-               </Col>
+               {active!=="Community" &&
+                <Col >
+                  <p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add video/blog)</p>
+                </Col>
+                }
              </Row>
                 {active === "Videos" && <Videos />}
                 {active === "Blogs" && <Blogs />}
