@@ -18,27 +18,27 @@ const breakPoints = [
 
 function Page3(props) {
   const [gigs, setGigs] = useState([]);
-  const [relatedgigs, setDataRelatedGigs] = useState([]);
+  // const [relatedgigs, setDataRelatedGigs] = useState([]);
 
-  async function queryCall(id) {
-    let params = {
-      TableName: "GigsTable",
-      KeyConditionExpression: "#Gid = :GigId",
-      ExpressionAttributeNames: {
-        "#Gid": "GigId",
-      },
-      ExpressionAttributeValues: {
-        ":GigId": id,
-      },
-    };
-    try {
-      const data1 = await docClient.query(params).promise()
-      return data1.Items[0]
-    } 
-    catch (err) {
-      return err
-    }
-  };
+  // async function queryCall(id) {
+  //   let params = {
+  //     TableName: "GigsTable",
+  //     KeyConditionExpression: "#Gid = :GigId",
+  //     ExpressionAttributeNames: {
+  //       "#Gid": "GigId",
+  //     },
+  //     ExpressionAttributeValues: {
+  //       ":GigId": id,
+  //     },
+  //   };
+  //   try {
+  //     const data1 = await docClient.query(params).promise()
+  //     return data1.Items[0]
+  //   }
+  //   catch (err) {
+  //     return err
+  //   }
+  // };
 
   useEffect(() => {
     let paramss = {
@@ -51,33 +51,32 @@ function Page3(props) {
         ":GigId": props.id,
       },
     };
-    docClient.query(paramss, async function(err, data) {
+    docClient.query(paramss, async function (err, data) {
       if (err) {
         console.log(err);
-      } 
-      else {
-        setGigs(data.Items)
-        let finalResult = []
-        for (let i = 0; i < data.Items[0].RelatedGigs.length; i++) {
-          let singleResult = await queryCall(data.Items[0].RelatedGigs[i]);
-          finalResult.push(singleResult);
-        }
-        setDataRelatedGigs(finalResult);
+      } else {
+        setGigs(data.Items);
+        // let finalResult = []
+        // for (let i = 0; i < data.Items[0].RelatedGigs.length; i++) {
+        //   let singleResult = await queryCall(data.Items[0].RelatedGigs[i]);
+        //   finalResult.push(singleResult);
+        // }
+        // setDataRelatedGigs(finalResult);
       }
     });
   }, []);
 
   return (
     <div>
-      {gigs.length != 0 && (
+      {gigs.length !== 0 && (
         <div>
           <div className="header_masterclass">
             <Container>
               <div className="top_masterclass">
                 <h1>IT’S ALL IN THE DETAILS</h1>
                 <p className="subtitle_masterclass">
-                What you are going to <span className="orange_text_masterclass"> work on{" "}
-                   </span>
+                  What you are going to{" "}
+                  <span className="orange_text_masterclass"> work on </span>
                 </p>
               </div>
             </Container>
@@ -89,13 +88,13 @@ function Page3(props) {
             <Row>
               <Col md={6}>
                 <Row style={{ marginTop: "0%" }}>
-                  <h1 className="page3_heading1">{gigs[0].CompanyName}</h1>
+                  <h2 className="page3_heading1">{gigs[0].CompanyName}</h2>
                 </Row>
                 <Row style={{ marginTop: "2%" }}>
                   <p className="page3_3linetext">
-                    Domain:
-                    <br /> Industry: <br />
-                    Co Description:{" "}
+                    Domain: {gigs[0].GigFunction}
+                    <br /> Industry: {gigs[0].CompanyIndustry}<br />
+                    Co Description: {gigs[0].CompanyDescription}
                   </p>
                 </Row>
                 <Row
@@ -107,15 +106,15 @@ function Page3(props) {
                     <Row>
                       <Col>
                         <Row>
-                          <Col className="img_col" md={5}>
+                          <Col className="img_col" md={4}>
                             <img
                               className="img_page3_card"
                               variant="top"
                               src=""
                             />
-                          </Col >
+                          </Col>
                           <Col className="text_col" md={7}>
-                            <h1 className="text_page3_card_gigs">Duration</h1>
+                            <h1 className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
                           </Col>
                         </Row>
                       </Col>
@@ -130,7 +129,7 @@ function Page3(props) {
                           </Col>
                           <Col className="text_col" md={8}>
                             <h1 className="text_page3_card_gigs">
-                              Expected stipend
+                            {gigs[0].GigStipend}
                             </h1>
                           </Col>
                         </Row>
@@ -140,7 +139,7 @@ function Page3(props) {
                 </Row>
                 <Row style={{ marginTop: "0%", paddingBottom: "1%" }}>
                   <Col>
-                    <a href={"/company/"+gigs[0].GigId}>
+                    <a href={"/company/" + gigs[0].GigId}>
                       <button
                         type="submit"
                         className="button_slide_page3 slide_right btn1_gigspage"
@@ -166,7 +165,7 @@ function Page3(props) {
                     className="text_page3_card applyby_text"
                     style={{ marginTop: "0%" }}
                   >
-                   <i> Apply by {"<>"} </i>
+                    <i> Apply by {gigs[0].GigApplyBy} </i>
                   </p>
                 </Row>
               </Col>
@@ -180,7 +179,7 @@ function Page3(props) {
                 }}
                 md={6}
                 className="lastcol_page3_gigs"
-              ></Col>
+              >{gigs[0].GigDescription}<br/><br/><br/>{gigs[0].GigPreRequisites}<br/><br/><br/>{gigs[0].GigApplyWith}</Col>
             </Row>
           </Container>
           <div>
@@ -232,8 +231,8 @@ function Page3(props) {
                       />
                     </div>
                     <div className="image_logo">
-                      <img className="image_logo1" src="logo192.png" />
-                      <img className="image_logo2" src="logo192.png" />
+                      <img className="image_logo1" src="/logo192.png" />
+                      <img className="image_logo2" src="/logo192.png" />
                     </div>
                     <MDBCardBody>
                       <div className="Course_name">{carder.course_name}</div>
@@ -282,8 +281,6 @@ function Page3(props) {
               </Carousel>
             </div>
           </div>
-          
-        
         </div>
       )}
     </div>

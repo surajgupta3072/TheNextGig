@@ -14,11 +14,11 @@ function Blogs(props) {
             <Row style={{marginTop:"2%",marginLeft:"2%",fontSize:"14px"}}>Green bonds is taking a new turn<br/> with clean financiers going...</Row>
            </Col>
            <Col style={{marginLeft:"2%"}} className="blog-box">
-            <Row style={{marginTop:"2%",marginLeft:"2%",width:"270px",width:"270px",height:"130px",backgroundColor:"white"}}></Row>
+            <Row style={{marginTop:"2%",marginLeft:"2%",width:"270px",height:"130px",backgroundColor:"white"}}></Row>
             <Row style={{marginTop:"2%",marginLeft:"2%",fontSize:"14px"}}>Green bonds is taking a new turn<br/> with clean financiers going...</Row>
            </Col>
            <Col style={{marginLeft:"2%"}} className="blog-box">
-            <Row style={{marginTop:"2%",marginLeft:"2%",width:"270px",width:"270px",height:"130px",backgroundColor:"white"}}></Row>
+            <Row style={{marginTop:"2%",marginLeft:"2%",width:"270px",height:"130px",backgroundColor:"white"}}></Row>
             <Row style={{marginTop:"2%",marginLeft:"2%",fontSize:"14px"}}>Green bonds is taking a new turn<br/> with clean financiers going...</Row>
            </Col>
          </Row>

@@ -2,12 +2,9 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import master from '../Masterclass.json';
 import {ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
 import MyVerticallyPopUp  from './popup';
 import './Page2.css';
-import { Link } from 'react-scroll';
-
 
 function Page2() {
   const [modalShow, setModalShow] = React.useState(false);

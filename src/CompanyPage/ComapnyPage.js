@@ -70,7 +70,7 @@ function CompanyPage() {
 
   return (
     <div>
-      {gigs.length != 0 && (
+      {gigs.length!== 0 && (
         <div>
           <div>
             <div className="header_masterclass">

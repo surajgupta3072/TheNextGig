@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import expertData from './../Experts.json';
 import Container from 'react-bootstrap/Container';
-import masterData from './../../MasterClassPage/Masterclass.json';
 import './Page1.css'
 import {Linkedin } from 'react-bootstrap-icons';
 import MasterSessions from './../MasterSessions';
 
-
 function Page1(props) {
-  const [active, setActive] =  useState("MasterSessions");
   const expert = expertData[props.Eid-1];
   return (
     <div>
@@ -59,8 +56,7 @@ function Page1(props) {
         <Container>
           <div >
             <div>
-              {active === "MasterSessions" && <MasterSessions Eid={props.Eid}/>}
-              
+              <MasterSessions Eid={props.Eid}/>
             </div>
           </div>
         </Container>

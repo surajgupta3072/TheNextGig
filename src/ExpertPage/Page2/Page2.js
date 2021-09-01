@@ -16,7 +16,6 @@ const breakPoints = [
   ];
 
 function Page2(props) {
-  const expert = expertData[props.Eid-1];
     return (
       <div>
         <div className="header_masterclass">

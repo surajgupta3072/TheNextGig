@@ -15,30 +15,47 @@ const options = [
 ]
 
 function Education(props) {
-   const [gradInst,setGradInst]=useState();
+   const [gradInst, setGradInst] = useState();
    const [gradBranch,setGradBranch]=useState();
    const [gradyear,setGradyear]=useState();
    const [profInst,setProfInst]=useState();
    const [profBranch,setprofBranch]=useState();
-   const [profYear,setProfYear]=useState();
+   const [profyear,setProfyear]=useState();
    const [pgradInst,setpgradInst]=useState();
    const [pgradBranch,setpGradBranch]=useState();
-   const [pgradyear,setpgradyear]=useState();
-   function handleSubmit(){
-    if(gradBranch!=null && profBranch!=null && pgradBranch!=null){
-     props.p.setPercentage(props.p.percentage+20)
+   const [pgradyear,setPgradyear]=useState();
+
+   const [handleSelectChange1] = useState(() => {
+    return () => {
+      setGradInst(gradInst);
+      };
+    });
+    const [handleSelectChange2] = useState(() => {
+      return () => {
+        setProfInst(profInst);
+        };
+      });
+    const [handleSelectChange3] = useState(() => {
+      return () => {
+        setpgradInst(pgradInst);
+        };
+      });
+
+    function handleSubmit(){
+      if(gradInst!=null && gradBranch!=null && gradyear!=null){
+      props.p.setPercentage(props.p.percentage+20)
+      }
+      else{
+        console.warn("Details not filled")
+      }
     }
-    else{
-      console.warn("Details not filled")
-    }
-  }
     return (
       <div>
         <Container style={{marginTop:"5%"}}>
           <Row>
             <p style={{fontSize:"25px",fontWeight:"bold"}}>Graduation</p>
             <Col style={{fontSize:"20px"}} md={3}>Institution</Col>
-            <Col> <Select  placeholder="Search..." options={options} className="searchDropdownStyle"/></Col>
+            <Col><Select value={gradInst} onChange={handleSelectChange1}  placeholder="Search..." options={options} className="searchDropdownStyle"/></Col>
           </Row>
           <Row style={{marginTop:"5%"}}>
             <Col>
@@ -48,12 +65,12 @@ function Education(props) {
             <Col>
              <p style={{fontSize:"20px"}}>Year of Completion</p>
             </Col>
-            <Col><select style={{width:"100%",height:"35px"}}></select></Col>
+            <Col><input min="1980" max="2030"  type="number" value={gradyear} onChange={e => setGradyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
           </Row>
           <Row>
             <p style={{fontSize:"25px",fontWeight:"bold",marginTop:"5%"}}>Professional Degree</p>
             <Col style={{fontSize:"20px"}} md={3}>Institution</Col>
-            <Col> <Select placeholder="Search..." options={options} className="searchDropdownStyle"/></Col>
+            <Col><Select value={profInst} onChange={handleSelectChange2} placeholder="Search..." options={options} className="searchDropdownStyle"/></Col>
           </Row>
           <Row style={{marginTop:"5%"}}>
             <Col>
@@ -63,12 +80,12 @@ function Education(props) {
             <Col>
              <p style={{fontSize:"20px"}}>Year of Completion</p>
             </Col>
-            <Col><select style={{width:"100%",height:"35px"}}></select></Col>
+            <Col><input min="1980" max="2030"  type="number" value={profyear} onChange={e => setProfyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
           </Row>
           <Row>
             <p style={{fontSize:"25px",fontWeight:"bold",marginTop:"5%"}}>Post Graduation</p>
             <Col style={{fontSize:"20px"}} md={3}>Institution</Col>
-            <Col> <Select placeholder="Search..." options={options} className="searchDropdownStyle"/></Col>
+            <Col><Select value={pgradInst} onChange={handleSelectChange3} placeholder="Search..." options={options} className="searchDropdownStyle"/></Col>
           </Row>
           <Row style={{marginTop:"5%"}}>
             <Col>
@@ -78,7 +95,7 @@ function Education(props) {
             <Col>
              <p style={{fontSize:"20px"}}>Year of Completion</p>
             </Col>
-            <Col><select style={{width:"100%",height:"35px"}}></select></Col>
+            <Col><input min="1980" max="2030"  type="number" value={pgradyear} onChange={e => setPgradyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
           </Row>
           <button style={{marginTop:"3%"}} onClick={handleSubmit} className="button_slide">Save</button>
         </Container>

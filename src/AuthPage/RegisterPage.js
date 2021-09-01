@@ -4,12 +4,12 @@ import Container  from 'react-bootstrap/Container';
 import {ArrowLeft} from 'react-bootstrap-icons'
 import './AuthPage.css';
 import { FaGoogle } from 'react-icons/fa';
-import MyVerticallyCenteredModal  from "./RegisterPageModal";
+
 function RegisterPage(){
-  const [modalShow, setModalShow] = useState(false);
   const [name, setName] = useState();
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
+  const [showerr, setShowErr] = useState(false);
 
   async function handleSubmit() {
     try {
@@ -22,10 +22,11 @@ function RegisterPage(){
           name,
         },
       });
-      setModalShow(true);
+      setShowErr(false);
+      window.location.href = "/login";
     } 
     catch (error) {
-      console.log(error);
+      setShowErr(error.message);
     }
   }
   return(
@@ -38,15 +39,12 @@ function RegisterPage(){
         <p style={{textAlign:"center",marginTop:"10px",fontWeight:"bold",color: "rgba(242, 108, 79, 1)"}}>OR</p>
         <p style={{fontSize:"18px"}}>Full Name <text style={{color:"#f26c4f"}}>*</text></p>
         <input value={name} onChange={e => setName(e.target.value)} style={{width:"100%"}}></input>
-        <p style={{fontSize:"18px",marginTop:"30px"}}>Email / Mobile Number <text style={{color:"#f26c4f"}}>*</text></p>
+        <p style={{fontSize:"18px",marginTop:"30px"}}>Email<text style={{color:"#f26c4f"}}>*</text></p>
         <input value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}></input>
         <p style={{marginTop:"10%",fontSize:"18px"}}>Password<text style={{color:"#f26c4f"}}>*</text></p>
-        <input type="password"  value={password} onChange={e => setPassword(e.target.value)} style={{width:"100%"}}></input>
+        <input type="password" value={password} onChange={e => setPassword(e.target.value)} style={{width:"100%"}}></input>
         <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"32%"}}>Signup<ArrowLeft className='button_arrow'/></button>
-        <MyVerticallyCenteredModal
-                          show={modalShow}
-                          onHide={() => setModalShow(false)}
-                        />
+        {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
         <p style={{marginTop:"5%",textAlign:"center",fontStyle:"italic"}}>Already a member? <a href="/login" style={{color:"#f26c4f"}}>Login</a></p>
       </div>
     </div>

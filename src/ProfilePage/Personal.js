@@ -8,9 +8,10 @@ function Personal(props) {
   const [fullName,setFullName]=useState();
   const [dob,setDOB]=useState();
   const [gender,setGender]=useState();
+  const [mobile,setMobile]=useState();
   const [quirky,setQuirky]=useState();
   function handleSubmit(){
-    if(fullName!=null && dob!=null && gender!=null && quirky!=null){
+    if(fullName!=null && dob!=null && gender!=null && mobile!=null && quirky!=null){
       props.p.setPercentage(props.p.percentage+20)
     }
     else{
@@ -45,6 +46,12 @@ function Personal(props) {
                   <label for="html">Other</label><br></br>
                 </p>
               </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col style={{marginTop:"2%"}}>
+              <p><span style={{fontSize:"20px"}}>Mobile Number</span><br/>(We will only contact you)</p>
+              <input value={mobile} onChange={e => setMobile(e.target.value)} style={{width:"22%",height:"35px"}}></input>
             </Col>
           </Row>
           <Row style={{marginTop:"2%"}}>

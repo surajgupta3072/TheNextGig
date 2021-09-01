@@ -42,8 +42,8 @@ function WorkEx(props) {
               </Col>
             </Row>
             <Row style={{marginTop:"5%"}}>
-              <Col md={2}><p style={{fontSize:"18px"}}>Description</p></Col>
-              <Col><textarea name="description" onChange={e => handleChangeInput(index, e)} style={{width:"100%",height:"90px"}}></textarea></Col>
+              <Col md={1}><p style={{fontSize:"18px"}}>Description</p></Col>
+              <Col><textarea name="description" onChange={e => handleChangeInput(index, e)} style={{width:"95%",height:"90px", marginLeft:"50px"}}></textarea></Col>
             </Row>
           </div>
           ))}

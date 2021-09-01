@@ -65,13 +65,9 @@ function Page1() {
                   paddingLeft: "20px",
                   paddingRight: "20px",
                 }}
-                src={carder.GigName}
+                src="/google_logo.jpg"
                 alt="..."
               />
-            </div>
-            <div className="image_logo">
-              <img className="image_logo1" src="logo192.png" />
-              <img className="image_logo2" src="logo192.png" />
             </div>
             <MDBCardBody>
               <div className="Course_name">{carder.GigName}</div>
@@ -81,18 +77,18 @@ function Page1() {
               />
               <div className="instruct_time">
                 <div className="instructor_name" >
-                  {carder.CompanyName} <sup data-tip data-for="registerTip">&#9432;</sup>
-                  <ReactTooltip id="registerTip" place="top" effect="solid">
-                    Tooltip for the register button
+                  {carder.GigFunction} <sup data-tip data-for="registerTip1">&#9432;</sup>
+                  <ReactTooltip id="registerTip1" place="top" effect="solid">
+                    {carder.GigDescription}
                   </ReactTooltip>
                 </div>
                 <div className="time_course">{carder.GigDuration}</div>
               </div>
               <div className="post_episode">
                 <div className="instructor_post">
-                  {carder.GigFunction} <sup data-tip data-for="registerTip">&#9432;</sup>
-                  <ReactTooltip id="registerTip" place="top" effect="solid">
-                    Tooltip for the register button
+                  {carder.CompanyName} <sup data-tip data-for="registerTip2">&#9432;</sup>
+                  <ReactTooltip id="registerTip2" place="top" effect="solid">
+                    {carder.CompanyDescription}
                   </ReactTooltip>
                 </div>
                 <div className="episode_course">{carder.GigStipend}</div>
@@ -105,7 +101,7 @@ function Page1() {
                     type="submit"
                     className="button_slide_new slide_right_new" 
                   >
-                    View Details
+                    View details
                     <ArrowRight
                       style={{
                         width: "28px",
@@ -125,7 +121,7 @@ function Page1() {
                     type="submit"
                     className="button_slide_new slide_right_new"
                   >
-                    Let's learn
+                    Apply now
                     <ArrowRight
                       style={{
                         width: "28px",
@@ -139,7 +135,7 @@ function Page1() {
                 </a>
               </div>
               </div>
-              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by </div>
+              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
             </MDBCardBody>
           </MDBCard>
         ))}
