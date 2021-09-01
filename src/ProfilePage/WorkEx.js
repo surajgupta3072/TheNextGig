@@ -20,7 +20,7 @@ function WorkEx(props) {
   }
  
   function handleSubmit(){
-    // console.log(inputFields)
+    console.log(inputFields)
     if(inputFields[0].company!=='' && inputFields[0].months!=='') {
       props.p.setPercentage(props.p.percentage+20)
     }

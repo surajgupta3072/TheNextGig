@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Personal from './Personal';
 import Education from './Education';
 import WorkEx from './WorkEx';
@@ -21,9 +21,10 @@ function ProfilePage(props) {
   const [color3, setColor3] = useState({});
   const [color4, setColor4] = useState({});
   const [color5, setColor5] = useState({});
-  const [color6,setColor6]  = useState({})
+  const [color6,setColor6]  = useState({});
 
   const pp = {
+    subUserId: props.auth.user.username,
     percentage: percentage,
     setPercentage:setPercentage
   };

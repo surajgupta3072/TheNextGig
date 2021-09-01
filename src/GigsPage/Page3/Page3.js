@@ -51,7 +51,7 @@ function Page3(props) {
         ":GigId": props.id,
       },
     };
-    docClient.query(paramss, async function (err, data) {
+    docClient.query(paramss, function (err, data) {
       if (err) {
         console.log(err);
       } else {

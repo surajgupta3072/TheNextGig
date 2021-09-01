@@ -4,6 +4,7 @@ import Container  from 'react-bootstrap/Container';
 import {ArrowLeft} from 'react-bootstrap-icons'
 import './AuthPage.css';
 import { FaGoogle } from 'react-icons/fa';
+import docClient from './../GigsPage/GigsAWS';
 
 function RegisterPage(){
   const [name, setName] = useState();
@@ -23,6 +24,19 @@ function RegisterPage(){
         },
       });
       setShowErr(false);
+      
+      console.log(signUpResponse);
+      var params = {
+        TableName: "UsersTable",
+        Item: {"UserID":signUpResponse.userSub, "Name":name, "Email":email}
+      }
+      docClient.put(params, function (err, data) {
+          if (err) {
+              console.log('Error', err)
+          } else {
+              console.log('Success', data)
+          }
+      })
       window.location.href = "/login";
     } 
     catch (error) {
