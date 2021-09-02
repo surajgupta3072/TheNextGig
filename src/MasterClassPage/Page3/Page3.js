@@ -8,6 +8,8 @@ import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
 import { useState } from 'react';
 // import docClient from '../../GigsPage/GigsAWS';
+import MyVerticallyPopUp  from './popup';
+import React from 'react'
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -17,6 +19,7 @@ const breakPoints = [
 ];
 
 function Page3(props) {
+  const [modalShow, setModalShow] = React.useState(false);
   const session = master[props.id-1];
   const [des, setDes] = useState(session["episodes"][0]["description"]);
   const [epivid, setEpiVideo] = useState(session["episodes"][0]["epi_video"]);
@@ -106,9 +109,13 @@ function Page3(props) {
                 </button></a>
               </Col>
               <Col style={{display: "flex", justifyContent: "space-between"}}>
-                <button type="submit" className="button_slide_page3 slide_right">
+                <button type="submit" className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
                 Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button>
+                <MyVerticallyPopUp
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+               />
               </Col>
             </Row>
           </Col>
@@ -297,7 +304,7 @@ function Page3(props) {
           </Carousel>
           </div>
           </div>
-          <div className="container2_page3" style={{paddingLeft: "0", marginLeft: "0"}}>
+          {/* {<div className="container2_page3" style={{paddingLeft: "0", marginLeft: "0"}}>
           <Container className="rectangle-box3" style={{marginTop:"7%"}}>
             <Row >
               <Col style={{padding:"3%"}} md={8}>
@@ -309,7 +316,7 @@ function Page3(props) {
               </Col>
             </Row>
           </Container>
-          </div>
+          </div>} */}
           <div >
             <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>

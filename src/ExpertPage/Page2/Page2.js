@@ -6,6 +6,8 @@ import Carousel from "react-elastic-carousel";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
+import MyVerticallyPopUp  from './popup';
+import React from 'react'
 
 
 const breakPoints = [
@@ -16,6 +18,7 @@ const breakPoints = [
   ];
 
 function Page2(props) {
+  const [modalShow, setModalShow] = React.useState(false);
     return (
       <div>
         <div className="header_masterclass">
@@ -97,8 +100,12 @@ function Page2(props) {
             <p  className="mast_page2_p3">Want to provide feedback about an expert?</p>
           </Col>
           <Col style={{paddingLeft:"12%"}} className="col-button">
-            <button style={{marginLeft:"20%"}} className="button_slide slide_right" >We're here 
+            <button style={{marginLeft:"20%"}} className="button_slide slide_right" onClick={() => setModalShow(true)}>Talk to us
             <ArrowLeft className="button_arrow"/></button>
+            <MyVerticallyPopUp
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+               />
               
           </Col>
         </Row>

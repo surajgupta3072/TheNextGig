@@ -5,6 +5,8 @@ import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from '../GigsAWS'
 import { useEffect, useState } from "react";
 import ReactTooltip from 'react-tooltip'
+import MyVerticallyPopUp  from './../Page3/popup';
+import React from 'react'
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -13,6 +15,7 @@ const breakPoints = [
   { width: 1080, itemsToShow: 3 },
 ];
 function Page1() {
+  const [modalShow, setModalShow] = React.useState(false);
   const [gigs, setGigs]=useState([]);
   useEffect(() => {
     let params = {
@@ -115,11 +118,12 @@ function Page1() {
                 </a>
               </div>
               <div className="button_masterclass1">
-                <a href={"/gigs/" + carder.GigId}>
+                
                   <button
                     style={{ padding: "8px 14px" ,fontSize:"0.7rem",marginLeft:"-110px"}}
                     type="submit"
                     className="button_slide_new slide_right_new"
+                    onClick={() => setModalShow(true)}
                   >
                     Apply now
                     <ArrowRight
@@ -132,7 +136,11 @@ function Page1() {
                       className="button_arrow_new"
                     />
                   </button>
-                </a>
+                  <MyVerticallyPopUp
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+               />
+                
               </div>
               </div>
               <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
