@@ -99,7 +99,7 @@ function CompanyPage() {
                     <p className="subtitle_expertcard">{gigs[0].CompanyIndustry}</p>
                   </div>
                   <div class="logo_para">
-                    <a href={gigs[0].CompanyLinkedIn} target="_blank">
+                    <a href={gigs[0].CompanyLinkedIn} rel="noreferrer" target="_blank">
                       <Linkedin
                         style={{ color: "white", cursor: "pointer" }}
                         size={34}

@@ -29,15 +29,11 @@ function MyVerticallyPopUp(props) {
                 <p>Net payable <br/> amount</p>
                 <p>xxx</p>
            </div>
-           <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", fontSize:"18px"}}>
-                <button className="button_slide slide_right" style={{marginTop:"10%"}}>Back<ArrowLeft className='button_arrow'/></button>
-                <button className="button_slide slide_right" style={{marginTop:"10%"}}>Proceed<ArrowLeft className='button_arrow'/></button>
+           <div style={{textAlign:"center"}}>
+              <button className="button_slide slide_right" style={{marginTop:"10%"}}>Proceed<ArrowLeft className='button_arrow'/></button>
            </div>
-           
-           
          </div>
-      </Modal.Body>  
-
+      </Modal.Body>
       </Modal>
     );
   }

@@ -19,7 +19,7 @@ const breakPoints = [
 ];
 
 function Page3(props) {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
   const session = master[props.id-1];
   const [des, setDes] = useState(session["episodes"][0]["description"]);
   const [epivid, setEpiVideo] = useState(session["episodes"][0]["epi_video"]);

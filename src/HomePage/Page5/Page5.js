@@ -22,24 +22,12 @@ function Page5() {
         <h4 className="page3_subtitle text3">Peers, colleagues, people like you and me - but with knowledge <text style={{color:"#f26c4f"}}> to share</text> .</h4>
       </div>
       </div>
-        
-        {/* {<div className="rectangle-box">
-          <Row style={{height:"130%"}}>
-            <Col style={{padding:"0px"}} md={4}>
-              <img src="discord.jpg" className="discord_img"  alt="img1"/>
-            </Col>
-            <Col md={8}>
-              <p className="text1">We’re on Discord!</p>
-              <p className="text2">...most probably discussing global conspiracy theories...</p>
-            </Col>
-          </Row>  
-        </div>} */}
 
-<div id="ummm" >
+    <div>
       <div className="page2_laptop_view">
         <Container>
           <Row>
-            <Card style={{ width: "27%", marginLeft:"1.5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
+            <Card style={{ width: "27%", marginLeft:"2.5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"10px"}} variant="top" src="holder.svg"/>
                 <Card.Body style={{marginTop:"10px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >VIDEOS</Card.Title>
@@ -51,11 +39,11 @@ function Page5() {
             </Card>
             
             <Card style={{ width: "27%", marginLeft:"7%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
-                <Card.Body style={{marginTop:"90px"}}>
+                <Card.Body style={{marginTop:"50px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >BLOGS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
                   Read some; write some!
-The topic? Anything under the sun!
+                  The topic? Anything under the sun!
                   </Card.Text>
                 </Card.Body>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px"}} variant="top" src="holder.svg"/>
@@ -105,7 +93,7 @@ The topic? Anything under the sun!
               <Card.Title style={{fontSize:"20px",textAlign:"center"}}>BLOGS</Card.Title>
               <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
               Read some; write some! <br/>
-The topic? Anything under the sun!
+              The topic? Anything under the sun!
               </Card.Text>
             </Col>
           </div>
@@ -135,7 +123,7 @@ The topic? Anything under the sun!
     </div>
     </div>
         <div className="button_div_page5">
-          <a target="_blank" href="https://discord.gg/EEVcU7ZzAQ"><button type="submit" className="button_slide slide_right">Let's go!<ArrowRight className="button_arrow"/></button></a>
+          <a href="/sociallearn"><button type="submit" className="button_slide slide_right">Let's go!<ArrowRight className="button_arrow"/></button></a>
         </div>
     </div>
     );

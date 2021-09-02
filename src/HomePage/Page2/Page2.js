@@ -29,8 +29,7 @@ function Page2() {
                 <Card.Body style={{marginTop:"90px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >GIGS & PROJECTS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  👈🏼 you’ve learnt there. 
-Now practice here! 👇🏼
+                  👈🏼 you’ve learnt there. Now practice here! 👇🏼
                   </Card.Text>
                 </Card.Body>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px"}} variant="top" src="holder.svg"/>
@@ -42,11 +41,10 @@ Now practice here! 👇🏼
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SOCIAL LEARNING</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Learn from your peers -
-they’re smarter than you think!
+                  Learn from your peers - they’re smarter than you think!
                   </Card.Text>
                 </Card.Body >
-                <a target="_blank" href="https://discord.gg/EEVcU7ZzAQ"><ArrowRight className="card_arrow1"/></a>
+                <a href="/sociallearn"><ArrowRight className="card_arrow1"/></a>
             </Card>
           </Row>
           <Row style={{width:"500px",height:"70px",border:"1px solid #534D4D", marginTop:"5%",  marginBottom:"5%", marginLeft:"59%", paddingTop:"10px"}}>
@@ -62,7 +60,6 @@ they’re smarter than you think!
         
       
       <p style={{fontSize:"23px", fontWeight:"600",marginLeft:"4%",marginTop:"20px",marginBottom:"3%",textAlign:"left"}}>
-          
           Here’s everything you can do! 
       </p>
     <Container>
@@ -92,8 +89,7 @@ they’re smarter than you think!
             <Col>
               <Card.Title style={{fontSize:"20px",textAlign:"center"}}>GIGS & PROJECTS</Card.Title>
               <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
-              👈🏼 you’ve learnt there. 
-              <br />Now practice  here! 👇🏼
+              👈🏼 you’ve learnt there. <br/>Now practice  here! 👇🏼
               </Card.Text>
             </Col>
           </div>
@@ -109,8 +105,7 @@ they’re smarter than you think!
             <Col>
               <Card.Title style={{fontSize:"20px"}}>SOCIAL LEARNING</Card.Title>
               <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
-              Learn from your peers -<br />
-they’re smarter  than you think!
+              Learn from your peers -<br/>they’re smarter than you think!
               </Card.Text>
             </Col>
           </div>

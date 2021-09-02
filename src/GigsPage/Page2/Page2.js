@@ -20,7 +20,7 @@ function Page2() {
               <a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> 
              </Col>
              <Col md={8} xs={7}>
-              <a href="/gigs"><ArrowRight className="button_arrow"/></a>
+              <a href="/masterclass"><ArrowRight className="button_arrow"/></a>
              </Col>
            </Row>
           
