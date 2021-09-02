@@ -9,6 +9,8 @@ import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from "../GigsAWS";
 import { useEffect, useState } from "react";
+import MyVerticallyPopUp  from './popup';
+import React from 'react'
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -17,6 +19,7 @@ const breakPoints = [
 ];
 
 function Page3(props) {
+  const [modalShow, setModalShow] = React.useState(false);
   const [gigs, setGigs] = useState([]);
   // const [relatedgigs, setDataRelatedGigs] = useState([]);
 
@@ -154,10 +157,15 @@ function Page3(props) {
                     <button
                       type="submit"
                       className="button2_slide_page3 slide_right btn2_gigspage"
+                      onClick={() => setModalShow(true)}
                     >
                       Apply now{" "}
                       <ArrowLeft className="button_arrow2_footer_gigspage3" />
                     </button>
+                    <MyVerticallyPopUp
+                                show={modalShow}
+                                onHide={() => setModalShow(false)}
+                            />
                   </Col>
                 </Row>
                 <Row>
@@ -262,6 +270,7 @@ function Page3(props) {
                             style={{ padding: "8px 14px" }}
                             type="submit"
                             className="button_slide_new slide_right_new"
+                            
                           >
                             Let's go
                             <ArrowRight
@@ -272,6 +281,7 @@ function Page3(props) {
                               }}
                               className="button_arrow_new"
                             />
+                            
                           </button>
                         </a>
                       </div>

@@ -20,7 +20,7 @@ function MyVerticallyPopUp(props) {
            <p style={{marginTop:"-15px",fontSize:"15px"}}>(we promise we won't spam)</p>
            <input style={{width:"100%"}}></input>
            <p style={{marginTop:"10%",fontSize:"18px"}}>Recommendation<text style={{color:"#f26c4f"}}>*</text></p>
-           <p style={{marginTop:"-15px",fontSize:"15px"}}> (we will try our best to ____)</p>
+           <p style={{marginTop:"-15px",fontSize:"15px"}}> (we will try our best to get this for you)</p>
            <select style={{width:"100%"}}>
              <option selected disabled>Select from dropdown*</option>
                 <option>Session</option>

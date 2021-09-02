@@ -131,6 +131,7 @@ function CompanyPage() {
                   <button
                     onClick={() => setActive("Gigs")}
                     className="expert_switchbtn"
+                    
                   >
                     Gigs
                   </button>

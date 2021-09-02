@@ -28,6 +28,7 @@
   cursor: pointer;
   overflow: hidden;
   outline: none;
+  width: 20%;
 }
 .nav_switchbtn {
   margin-top: 0;
@@ -94,5 +95,8 @@ h3 {
 @media screen and (max-width: 768px) {
   .pack {
     padding-top: 16%;
+  }
+  .expert_switchbtn {
+    width: 50%;
   }
 }
