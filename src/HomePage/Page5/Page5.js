@@ -133,8 +133,7 @@ The topic? Anything under the sun!
       </Col>
     </Container>
     </div>
-    </div> 
-
+    </div>
         <div className="button_div_page5">
           <a target="_blank" href="https://discord.gg/EEVcU7ZzAQ"><button type="submit" className="button_slide slide_right">Let's go!<ArrowRight className="button_arrow"/></button></a>
         </div>

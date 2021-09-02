@@ -24,13 +24,10 @@ function Header(props) {
                     MASTERCLASSES
                 </Nav.Link>
                 <Nav.Link href="/gigs" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                    GIGS & PROJECTS
+                    EXPERIENTIAL LEARNING
                 </Nav.Link>
                 <Nav.Link href="/sociallearn" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
                     SOCIAL LEARNING
-                </Nav.Link>
-                <Nav.Link target="_blank" href="https://discord.gg/EEVcU7ZzAQ" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                    COMMUNITY
                 </Nav.Link>
                 {props.auth.isAuthenticated===true && 
                     <Nav.Link onClick={LogOutFunc} style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>

@@ -21,9 +21,10 @@ function ProfilePage(props) {
   const [color3, setColor3] = useState({});
   const [color4, setColor4] = useState({});
   const [color5, setColor5] = useState({});
-  const [color6,setColor6]  = useState({})
+  const [color6,setColor6]  = useState({});
 
   const pp = {
+    subUserId: props.auth.user.username,
     percentage: percentage,
     setPercentage:setPercentage
   };
@@ -55,7 +56,7 @@ function ProfilePage(props) {
             <Col xs={3} style={{backgroundColor:"#1B1C2A"}}>
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} />
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
-              <Row style={{marginTop:"8%",marginLeft:"25%"}}><img src="google_logo.jpg" style={{height:"150px",width:"150px",borderRadius:"50%"}}/></Row>
+              <Row style={{marginTop:"8%",marginLeft:"25%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"150px",borderRadius:"50%"}}/></Row>
               <Row><p style={{fontSize:"18px", textAlign:"center"}}>{props.auth.user.attributes.name.split(" ")[0]}</p></Row>
               <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points:xxx</p></Row>
               <Row style={{marginBottom:"2%"}}><Linkedin size={30}/></Row>

@@ -1,8 +1,9 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProfilePage.css';
+import docClient from '../GigsPage/GigsAWS';
 
 function Personal(props) {
   const [fullName,setFullName]=useState();
@@ -10,9 +11,54 @@ function Personal(props) {
   const [gender,setGender]=useState();
   const [mobile,setMobile]=useState();
   const [quirky,setQuirky]=useState();
+
+  useEffect(() => {
+    let paramss = {
+      TableName: "UsersTable",
+      KeyConditionExpression: "#Uid = :UserID",
+      ExpressionAttributeNames: {
+        "#Uid": "UserID",
+      },
+      ExpressionAttributeValues: {
+        ":UserID": props.p.subUserId,
+      },
+    };
+    docClient.query(paramss, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        setFullName(data.Items[0].Name);
+        setDOB(data.Items[0].DOB);
+        setGender(data.Items[0].Gender);
+        setMobile(data.Items[0].MobileNumber);
+        setQuirky(data.Items[0].QuirkyText);
+      }
+    });
+  }, []);
+
   function handleSubmit(){
-    if(fullName!=null && dob!=null && gender!=null && mobile!=null && quirky!=null){
-      props.p.setPercentage(props.p.percentage+20)
+    if(fullName!=null && dob!=null && gender!=null && mobile!=null && quirky!=null) {
+      var params = {
+        TableName: "UsersTable",
+        Key: { "UserID":props.p.subUserId },
+        UpdateExpression: "set DOB = :d, Gender=:g, MobileNumber=:m, QuirkyText=:q",
+        ExpressionAttributeValues:{
+          ":d":dob,
+          ":g":gender,
+          ":m":mobile,
+          ":q":quirky
+        },
+        ReturnValues:"UPDATED_NEW"
+      }
+      console.log(params);
+      docClient.update(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(data);
+          props.p.setPercentage(props.p.percentage+20)
+        }
+      });
     }
     else{
       console.warn("Details not filled")

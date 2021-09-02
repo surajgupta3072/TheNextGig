@@ -102,7 +102,7 @@ function Page3(props) {
               </Row>
           </div>
             </Row>
-            <Row style={{marginTop: "5%", paddingBottom: "1%", display: "flex", justifyContent: "space-around"}}>
+            <Row style={{marginTop: "4%", paddingBottom: "1%", display: "flex", justifyContent: "space-around"}}>
               <Col style={{marginLeft: "10%"}}>
                 <a href={"/expert/"+session.ExpertId}><button type="submit" className="button_slide_page3 slide_right">
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
@@ -142,7 +142,7 @@ function Page3(props) {
                         {session["episodes"].map(topic=>(
                           <div className="menu_list" style={{cursor:"pointer"}} onClick={() => {showDescription(topic.id)}}>
                           <span >
-                            <a style={{textDecoration: "none"}} >{topic.title}</a><br/>
+                            <a style={{textDecoration: "none"}}>{topic.title}</a><br/>
                           </span>
                           </div>
                         ))}
