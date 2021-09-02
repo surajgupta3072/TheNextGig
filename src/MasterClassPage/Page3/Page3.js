@@ -6,10 +6,9 @@ import master from '../Masterclass.json';
 import './Page3.css';
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
-import { useState } from 'react';
+import React,{ useState, useEffect } from 'react';
 // import docClient from '../../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popup';
-import React from 'react'
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -23,11 +22,26 @@ function Page3(props) {
   const session = master[props.id-1];
   const [des, setDes] = useState(session["episodes"][0]["description"]);
   const [epivid, setEpiVideo] = useState(session["episodes"][0]["epi_video"]);
+  const [paymentshow, setPaymentShow] = useState(false);
+  const [coursePurchased, setCoursePurchased] = useState(false);
+
+  useEffect(() => {
+    setCoursePurchased(false)
+  }, []);
+
   const showDescription = (epid) => {
-    setDes(session["episodes"][epid-1]["description"]);
-    setEpiVideo(session["episodes"][epid-1]["epi_video"]);
-    // console.log(epivid);
+    if(coursePurchased===true || session["episodes"][epid-1].id===1)
+    {
+      setDes(session["episodes"][epid-1]["description"]);
+      setEpiVideo(session["episodes"][epid-1]["epi_video"]);
+      setPaymentShow(false);
+    }
+    else {
+      setDes("");
+      setPaymentShow(true);
+    }
   };
+
   // const [relatedgigs, setDataRelatedGigs] = useState([]);
   // async function queryCall(id) {
   //   let params = {
@@ -113,6 +127,8 @@ function Page3(props) {
                 Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button>
                 <MyVerticallyPopUp
+                  cname={session.course_name}
+                  fees={session.fees}
                   show={modalShow}
                   onHide={() => setModalShow(false)}
                />
@@ -131,9 +147,25 @@ function Page3(props) {
                 <div className="main_cardbody"> 
                   <Row >
                     <Col md={7} className="col1_cardbody">
-                      <video src={epivid} className="img_letsgo" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
-                      {/* <img src={session["episodes"][0]["epi_video"]} className="img_letsgo"/> */}
-                      <p className="twoline_desc">{des}</p>
+                      {paymentshow===false &&
+                        <video src={epivid} className="img_letsgo" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
+                      }
+                      {paymentshow===false &&
+                        <p className="twoline_desc">{des}</p>
+                      }
+                      {paymentshow===true &&
+                        <div style={{display:"flex", justifyContent:"center", marginTop:"15%"}}>
+                          <button type="submit" className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
+                          Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                          </button>
+                          <MyVerticallyPopUp
+                            cname={session.course_name}
+                            fees={session.fees}
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                          />
+                        </div>
+                      }
                     </Col >
                     <Col md={5}>
                       <div className="menu_card">   
