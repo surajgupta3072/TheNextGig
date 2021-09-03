@@ -180,6 +180,7 @@ function Page3(props) {
                         <ArrowLeft className="button_arrow2_footer_gigspage3" />
                       </button>
                       <MyVerticallyPopUp
+                        gigname={gigs[0].GigName}
                         gigid={gigs[0].GigId}
                         userid={props.prop.username}
                         show={modalShow}

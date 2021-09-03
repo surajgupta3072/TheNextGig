@@ -263,6 +263,7 @@ function Page1(props) {
                     />
                   </button>
                   <MyVerticallyPopUp
+                    gigname={carder.GigName}
                     gigid={carder.GigId}
                     userid={props.prop.username}
                     show={modalShow}

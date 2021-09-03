@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Personal from './Personal';
 import Education from './Education';
 import WorkEx from './WorkEx';
@@ -11,20 +11,44 @@ import Col from 'react-bootstrap/Col';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import {Linkedin} from "react-bootstrap-icons";
 import './ProfilePage.css'
+import docClient from '../GigsPage/GigsAWS';
 
 function ProfilePage(props) {
   const bg = {backgroundColor: "#F26C4F"};
   const [percentage, setPercentage] = useState(0);
-  const [active, setActive] =  useState("Personal");
+  const [active, setActive] =  useState("");
   const [color1, setColor1] = useState(bg);
   const [color2, setColor2] = useState({});
   const [color3, setColor3] = useState({});
   const [color4, setColor4] = useState({});
   const [color5, setColor5] = useState({});
   const [color6,setColor6]  = useState({});
+  const [wholedata, setWholedata] = useState([]);
+
+  useEffect(async() => {
+    let paramss = {
+      TableName: "UsersTable",
+      KeyConditionExpression: "#Uid = :UserID",
+      ExpressionAttributeNames: {
+        "#Uid": "UserID",
+      },
+      ExpressionAttributeValues: {
+        ":UserID": props.auth.user.username,
+      },
+    };
+    try {
+      const data1 = await docClient.query(paramss).promise();
+      setWholedata(data1.Items[0])
+      setActive("Personal")
+    } 
+    catch (err) {
+      return err
+    }
+  }, []);
 
   const pp = {
-    subUserId: props.auth.user.username,
+    setWholedata: setWholedata,
+    wholedata: wholedata,
     percentage: percentage,
     setPercentage:setPercentage
   };

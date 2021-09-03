@@ -13,36 +13,24 @@ function Personal(props) {
   const [quirky,setQuirky]=useState();
 
   useEffect(() => {
-    let paramss = {
-      TableName: "UsersTable",
-      KeyConditionExpression: "#Uid = :UserID",
-      ExpressionAttributeNames: {
-        "#Uid": "UserID",
-      },
-      ExpressionAttributeValues: {
-        ":UserID": props.p.subUserId,
-      },
-    };
-    docClient.query(paramss, function (err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        setFullName(data.Items[0].Name);
-        setDOB(data.Items[0].DOB);
-        setGender(data.Items[0].Gender);
-        setMobile(data.Items[0].MobileNumber);
-        setQuirky(data.Items[0].QuirkyText);
-      }
-    });
+    document.getElementsByName("gender").forEach(e=>{
+      e.checked = e.value===props.p.wholedata.Gender ? true: false;
+    })
+    setFullName(props.p.wholedata.Name);
+    setDOB(props.p.wholedata.DOB);
+    setGender(props.p.wholedata.Gender);
+    setMobile(props.p.wholedata.MobileNumber);
+    setQuirky(props.p.wholedata.QuirkyText);
   }, []);
 
   function handleSubmit(){
-    if(fullName!=null && dob!=null && gender!=null && mobile!=null && quirky!=null) {
+    if(fullName!="" && dob!="" && gender!="" && mobile!="" && quirky!="") {
       var params = {
         TableName: "UsersTable",
-        Key: { "UserID":props.p.subUserId },
-        UpdateExpression: "set DOB = :d, Gender=:g, MobileNumber=:m, QuirkyText=:q",
+        Key: { "UserID":props.p.wholedata.UserID },
+        UpdateExpression: "set Name = :n, DOB = :d, Gender=:g, MobileNumber=:m, QuirkyText=:q",
         ExpressionAttributeValues:{
+          ":n":fullName,
           ":d":dob,
           ":g":gender,
           ":m":mobile,
@@ -50,12 +38,16 @@ function Personal(props) {
         },
         ReturnValues:"UPDATED_NEW"
       }
-      console.log(params);
       docClient.update(params, function (err, data) {
         if (err) {
           console.log(err);
         } else {
-          console.log(data);
+          props.p.wholedata.Name = data.Attributes.Name
+          props.p.wholedata.DOB = data.Attributes.DOB
+          props.p.wholedata.Gender = data.Attributes.Gender
+          props.p.wholedata.MobileNumber = data.Attributes.MobileNumber
+          props.p.wholedata.QuirkyText = data.Attributes.QuirkyText
+          props.p.setWholedata(props.p.wholedata)
           props.p.setPercentage(props.p.percentage+20)
         }
       });
@@ -78,19 +70,10 @@ function Personal(props) {
             </Col>
             <Col style={{marginTop:"2%",marginLeft:"10%"}}>
               <p style={{fontSize:"20px"}}>Gender</p>
-              <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
-                <p>
-                  <input style={{border:"3px-solid-gray"}} value={gender} onChange={e => setGender(e.target.value)} type="radio" name="gender"></input>
-                  <label for="html">Male</label><br></br>
-                </p>
-                <p>
-                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="gender"></input>
-                  <label for="html">Female</label><br></br>
-                </p>
-                <p> 
-                  <input value={gender} onChange={e => setGender(e.target.value)} type="radio" name="gender"></input>
-                  <label for="html">Other</label><br></br>
-                </p>
+              <div onChange={e => setGender(e.target.value)} style={{display:"flex",flexDirection:"row", alignItems:"center"}}>
+                  <input value="male" type="radio" name="gender"/>&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input value="female" type="radio" name="gender"/>&nbsp;Female&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input value="other" type="radio" name="gender"/>&nbsp;Other
               </div>
             </Col>
           </Row>

@@ -20,6 +20,7 @@ function MyVerticallyPopUp(props) {
       ReactS3Client.uploadFile(afile, props.gigid+"----"+afile.name).then(data => {
         const adata = {
           "GigId": props.gigid,
+          "GigName": props.gigname,
           "fees": Number(fees),
           "choice": choice,
           "hours": Number(hours),
