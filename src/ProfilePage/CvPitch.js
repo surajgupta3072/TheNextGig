@@ -11,7 +11,6 @@ const ReactS3Client = new S3(config);
 function CvPitch(props) {
   const [cv, setCV]=useState();
   const [cvlink, setCvlink]=useState("");
-  const [project, setProject]=useState();
 
   useEffect(() => {
     setCvlink(props.p.wholedata.CVlink);
@@ -33,7 +32,7 @@ function CvPitch(props) {
           console.log(err);
         }
         else {
-          window.location.reload();
+          window.location.href="/profile";
         }
       });
     }

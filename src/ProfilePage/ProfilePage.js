@@ -24,6 +24,7 @@ function ProfilePage(props) {
   const [color5, setColor5] = useState({});
   const [color6,setColor6]  = useState({});
   const [wholedata, setWholedata] = useState([]);
+  const [rew, setRew] = useState(0);
 
   useEffect(async() => {
     let paramss = {
@@ -40,13 +41,31 @@ function ProfilePage(props) {
       const data1 = await docClient.query(paramss).promise();
       setWholedata(data1.Items[0]);
       setActive("Personal");
-      setPercentage(data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC)
+      const per = data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC
+      setPercentage(per)
+      var params = {
+        TableName: "UsersTable",
+        Key: { "UserID":props.auth.user.username },
+        UpdateExpression: "set TotalRewards= :tr",
+        ExpressionAttributeValues:{
+          ":tr":per,
+        },
+        ReturnValues:"UPDATED_NEW"
+      }
+      docClient.update(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          setRew(data.Attributes.TotalRewards)
+        }
+      });
     } 
     catch (err) {
       return err
     }
   }, []);
 
+  wholedata.TotalRewards = rew;
   const pp = {
     setWholedata: setWholedata,
     wholedata: wholedata,
@@ -83,7 +102,7 @@ function ProfilePage(props) {
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
               <Row style={{marginTop:"8%",marginLeft:"25%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"150px",borderRadius:"50%"}}/></Row>
               <Row><p style={{fontSize:"18px", textAlign:"center"}}>{props.auth.user.attributes.name.split(" ")[0]}</p></Row>
-              <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points:xxx</p></Row>
+              <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p></Row>
               <Row style={{marginBottom:"2%"}}><Linkedin size={30}/></Row>
               <br/>
               <Row onClick={() => whichColor("Personal")} style={color1}><p style={{fontSize:"24px", textAlign:"center"}}>Personal</p></Row>

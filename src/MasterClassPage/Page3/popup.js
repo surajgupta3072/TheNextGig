@@ -6,7 +6,19 @@ import docClient from './../../GigsPage/GigsAWS';
 function MyVerticallyPopUp(props) {
   const [reward, setReward] = useState("");
   useEffect(() => {
-    setReward(100)
+    var paramss = {
+      TableName: "UsersTable",
+      Key: { "UserID":props.uid },
+      ProjectionExpression: "TotalRewards",
+    };
+    docClient.get(paramss, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(data)
+        setReward(data.Item.TotalRewards)
+      }
+    });
   }, []);
 
   async function loadScript(src) {
