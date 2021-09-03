@@ -37,6 +37,29 @@ function Education(props) {
       setpgradInst(props.p.wholedata.PGradInst);
     }, []);
 
+    function givereward() {
+      if(props.p.wholedata.RewardE===0) {
+        var params = {
+          TableName: "UsersTable",
+          Key: { "UserID":props.p.wholedata.UserID },
+          UpdateExpression: "set RewardE= :re",
+          ExpressionAttributeValues:{
+            ":re": 20,
+          },
+          ReturnValues:"UPDATED_NEW"
+        }
+        docClient.update(params, function (err, data) {
+          if (err) {
+            console.log(err);
+          } else {
+            props.p.wholedata.RewardE = data.Attributes.RewardE
+            props.p.setWholedata(props.p.wholedata)
+            props.p.setPercentage(props.p.wholedata.RewardP + props.p.wholedata.RewardE + props.p.wholedata.RewardW + props.p.wholedata.RewardS + props.p.wholedata.RewardC)
+          }
+        });
+      }
+    }
+
     function handleSubmit() {
       if(gradInst!=={} && gradyear!==null && gradBranch!==null){
         var params = {
@@ -70,7 +93,7 @@ function Education(props) {
             props.p.wholedata.ProfInst = data.Attributes.ProfInst
             props.p.wholedata.PGradInst = data.Attributes.PGradInst
             props.p.setWholedata(props.p.wholedata)
-            props.p.setPercentage(props.p.percentage+20)
+            givereward()
           }
         });
       }

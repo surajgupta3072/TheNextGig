@@ -28,6 +28,29 @@ function WorkEx(props) {
     }
   }, []);
 
+  function givereward() {
+    if(props.p.wholedata.RewardW===0) {
+      var params = {
+        TableName: "UsersTable",
+        Key: { "UserID":props.p.wholedata.UserID },
+        UpdateExpression: "set RewardW= :rw",
+        ExpressionAttributeValues:{
+          ":rw": 20,
+        },
+        ReturnValues:"UPDATED_NEW"
+      }
+      docClient.update(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          props.p.wholedata.RewardW = data.Attributes.RewardW
+          props.p.setWholedata(props.p.wholedata)
+          props.p.setPercentage(props.p.wholedata.RewardP + props.p.wholedata.RewardE + props.p.wholedata.RewardW + props.p.wholedata.RewardS + props.p.wholedata.RewardC)
+        }
+      });
+    }
+  }
+
   function handleSubmit(){
     if(inputFields[0].company!=='' && inputFields[0].months!=='') {
       var params = {
@@ -45,7 +68,7 @@ function WorkEx(props) {
         } else {
           props.p.wholedata.WorkExperience = data.Attributes.WorkExperience
           props.p.setWholedata(props.p.wholedata)
-          props.p.setPercentage(props.p.percentage+20)
+          givereward()
         }
       });
     }

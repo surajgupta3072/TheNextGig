@@ -16,19 +16,42 @@ function Personal(props) {
     document.getElementsByName("gender").forEach(e=>{
       e.checked = e.value===props.p.wholedata.Gender ? true: false;
     })
-    setFullName(props.p.wholedata.Name);
+    setFullName(props.p.wholedata.FullName);
     setDOB(props.p.wholedata.DOB);
     setGender(props.p.wholedata.Gender);
     setMobile(props.p.wholedata.MobileNumber);
     setQuirky(props.p.wholedata.QuirkyText);
   }, []);
 
+  function givereward() {
+    if(props.p.wholedata.RewardP===0) {
+      var params = {
+        TableName: "UsersTable",
+        Key: { "UserID":props.p.wholedata.UserID },
+        UpdateExpression: "set RewardP= :rp",
+        ExpressionAttributeValues:{
+          ":rp": 20,
+        },
+        ReturnValues:"UPDATED_NEW"
+      }
+      docClient.update(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          props.p.wholedata.RewardP = data.Attributes.RewardP
+          props.p.setWholedata(props.p.wholedata)
+          props.p.setPercentage(props.p.wholedata.RewardP + props.p.wholedata.RewardE + props.p.wholedata.RewardW + props.p.wholedata.RewardS + props.p.wholedata.RewardC)
+        }
+      });
+    }
+  }
+
   function handleSubmit(){
     if(fullName!="" && dob!="" && gender!="" && mobile!="" && quirky!="") {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID":props.p.wholedata.UserID },
-        UpdateExpression: "set Name = :n, DOB = :d, Gender=:g, MobileNumber=:m, QuirkyText=:q",
+        UpdateExpression: "set FullName= :n, DOB = :d, Gender=:g, MobileNumber=:m, QuirkyText=:q",
         ExpressionAttributeValues:{
           ":n":fullName,
           ":d":dob,
@@ -42,13 +65,13 @@ function Personal(props) {
         if (err) {
           console.log(err);
         } else {
-          props.p.wholedata.Name = data.Attributes.Name
+          props.p.wholedata.FullName = data.Attributes.FullName
           props.p.wholedata.DOB = data.Attributes.DOB
           props.p.wholedata.Gender = data.Attributes.Gender
           props.p.wholedata.MobileNumber = data.Attributes.MobileNumber
           props.p.wholedata.QuirkyText = data.Attributes.QuirkyText
           props.p.setWholedata(props.p.wholedata)
-          props.p.setPercentage(props.p.percentage+20)
+          givereward()
         }
       });
     }

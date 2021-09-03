@@ -17,11 +17,32 @@ function CvPitch(props) {
     setCvlink(props.p.wholedata.CVlink);
   }, []);
 
+  function givereward() {
+    if(props.p.wholedata.RewardC===0) {
+      var params = {
+        TableName: "UsersTable",
+        Key: { "UserID":props.p.wholedata.UserID },
+        UpdateExpression: "set RewardC= :rc",
+        ExpressionAttributeValues:{
+          ":rc": 20,
+        },
+        ReturnValues:"UPDATED_NEW"
+      }
+      docClient.update(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        }
+        else {
+          window.location.reload();
+        }
+      });
+    }
+  }
+
   function handleSubmit(){
     if(cv!==undefined) {
       config.dirName = props.p.wholedata.UserID
       ReactS3Client.uploadFile(cv, cv.name).then(data => {
-        console.log(data)
         var params = {
           TableName: "UsersTable",
           Key: { "UserID":props.p.wholedata.UserID },
@@ -35,14 +56,12 @@ function CvPitch(props) {
           if (err) {
             console.log(err);
           } else {
-            console.log(data);
             props.p.wholedata.CVlink = data.Attributes.CVlink
             props.p.setWholedata(props.p.wholedata)
-            window.location.reload()
+            givereward()
           }
         });
       });
-      props.p.setPercentage(props.p.percentage+20)
     }
     else{
       console.warn("Details not filled")

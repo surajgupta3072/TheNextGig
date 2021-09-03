@@ -28,7 +28,7 @@ function RegisterPage(){
       console.log(signUpResponse);
       var params = {
         TableName: "UsersTable",
-        Item: {"UserID":signUpResponse.userSub, "Name":name, "Email":email}
+        Item: {"UserID":signUpResponse.userSub, "FullName":name, "Email":email}
       }
       docClient.put(params, function (err, data) {
           if (err) {

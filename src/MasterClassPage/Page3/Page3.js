@@ -133,6 +133,7 @@ function Page3(props) {
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button></a>
               </Col>
+              {coursePurchased===false &&
               <Col style={{display: "flex", justifyContent: "space-between"}}>
                 <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
                 Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
@@ -146,6 +147,7 @@ function Page3(props) {
                   onHide={() => setModalShow(false)}
                 />
               </Col>
+              }
             </Row>
           </Col>
           <Col style={{padding:"0px"}} md={6}> 
