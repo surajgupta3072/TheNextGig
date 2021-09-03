@@ -1,48 +1,64 @@
 import Modal from 'react-bootstrap/Modal';
 import React,{ useEffect, useState } from "react";
-import {ArrowLeft} from 'react-bootstrap-icons'
-import docClient from './../GigsAWS'
+import {ArrowLeft} from 'react-bootstrap-icons';
+import docClient from './../GigsAWS';
+import S3 from 'react-aws-s3';
+
+const config = {bucketName: process.env.REACT_APP_BUCKET_NAME, region: process.env.REACT_APP_REGION, accessKeyId: process.env.REACT_APP_ACCESS_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY};
+const ReactS3Client = new S3(config);
 
 function MyVerticallyPopUp(props) {
   const [fees, setFees] = useState(0);
   const [choice, setChoice] = useState("");
   const [hours, setHours] = useState(0);
   const [afile, setAfile] = useState();
+  const [showerr, setShowErr] = useState(false);
+
   function handleApply() {
-    const adata = {
-      "GigId": props.gigid,
-      "fees": Number(fees),
-      "choice": choice,
-      "hours": Number(hours),
-      "afile": "wwwwwwww.com"
-    }
-    console.log("/"+props.userid+"/"+props.gigid)
-    var paramss = {
-      TableName: "UsersTable",
-      Key: { "UserID":props.userid },
-    };
-    docClient.get(paramss, function(err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        var params = {
+    if(fees!=0 && choice!=="" && hours!=0 && afile!==undefined) {
+      config.dirName = props.userid
+      ReactS3Client.uploadFile(afile, props.gigid+"----"+afile.name).then(data => {
+        const adata = {
+          "GigId": props.gigid,
+          "fees": Number(fees),
+          "choice": choice,
+          "hours": Number(hours),
+          "upload": data.location
+        }
+        var paramss = {
           TableName: "UsersTable",
           Key: { "UserID":props.userid },
-          UpdateExpression: "set gigsApplications["+(data.Item.gigsApplications.length)+"] = :g",
-          ExpressionAttributeValues:{
-            ":g":adata,
-          },
-          ReturnValues:"UPDATED_NEW"
-        }
-        docClient.update(params, function (err, data) {
+          ProjectionExpression: "gigsApplications",
+        };
+        docClient.get(paramss, function(err, data) {
           if (err) {
             console.log(err);
           } else {
-            console.log(data);
+            var params = {
+              TableName: "UsersTable",
+              Key: { "UserID":props.userid },
+              UpdateExpression: "set gigsApplications["+(data.Item.gigsApplications.length)+"] = :g",
+              ExpressionAttributeValues:{
+                ":g":adata,
+              },
+              ReturnValues:"UPDATED_NEW"
+            }
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                console.log(data);
+                alert("APPLIED SUCCESSFULLY")
+                window.location.href="/gigs"
+              }
+            });
           }
         });
-      }
-    });
+      });
+    }
+    else {
+      setShowErr("All Fields are mandatory");
+    }
   }
     return (
       <Modal
@@ -70,6 +86,7 @@ function MyVerticallyPopUp(props) {
            <p style={{marginTop:"10%",fontSize:"18px"}}>Upload File<text style={{color:"#f26c4f"}}>*</text></p>
            <input onChange={(e)=>(setAfile(e.target.files[0]))} type="file" style={{width:"100%",height:"35px"}}/>
            <button onClick={handleApply} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"30%"}}>Submit<ArrowLeft className='button_arrow'/></button>
+           {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
          </div>
       </Modal.Body>
       </Modal>
