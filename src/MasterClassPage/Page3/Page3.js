@@ -18,8 +18,8 @@ const breakPoints = [
 ];
 
 function Page3(props) {
-  const [modalShow, setModalShow] = useState(false);
   const session = master[props.id-1];
+  const [modalShow, setModalShow] = useState(false);
   const [des, setDes] = useState(session["episodes"][0]["description"]);
   const [epivid, setEpiVideo] = useState(session["episodes"][0]["epi_video"]);
   const [paymentshow, setPaymentShow] = useState(false);

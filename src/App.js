@@ -74,10 +74,10 @@ function App() {
                 <Page2 />
               </Route>
               <ProtectedRoute path="/gigs/:id" auth={authProps}>
-                <GigsDetails />
+                <GigsDetails auth={authProps.user}/>
               </ProtectedRoute>
               <ProtectedRoute path="/gigs" auth={authProps}>
-                <GigsPage />
+                <GigsPage auth={authProps.user}/>
               </ProtectedRoute>
               <Route path="/masterclass/:id">
                 <MasterClassDetails />

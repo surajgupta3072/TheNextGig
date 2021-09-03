@@ -8,9 +8,9 @@ import master from "../../MasterClassPage/Masterclass.json";
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from "../GigsAWS";
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState } from "react";
 import MyVerticallyPopUp  from './popup';
-import React from 'react'
+
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -19,7 +19,7 @@ const breakPoints = [
 ];
 
 function Page3(props) {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
   const [gigs, setGigs] = useState([]);
   // const [relatedgigs, setDataRelatedGigs] = useState([]);
 
@@ -163,9 +163,11 @@ function Page3(props) {
                       <ArrowLeft className="button_arrow2_footer_gigspage3" />
                     </button>
                     <MyVerticallyPopUp
-                                show={modalShow}
-                                onHide={() => setModalShow(false)}
-                            />
+                      gigid={gigs[0].GigId}
+                      userid={props.prop.username}
+                      show={modalShow}
+                      onHide={() => setModalShow(false)}
+                    />
                   </Col>
                 </Row>
                 <Row>
