@@ -1,6 +1,7 @@
 import Modal from 'react-bootstrap/Modal';
 import React, { useState, useEffect } from 'react';
-import {ArrowLeft} from 'react-bootstrap-icons'
+import {ArrowLeft} from 'react-bootstrap-icons';
+import docClient from './../../GigsPage/GigsAWS';
 
 function MyVerticallyPopUp(props) {
   const [reward, setReward] = useState("");
@@ -31,8 +32,35 @@ function MyVerticallyPopUp(props) {
       "name": props.cname,
       "description": "THE NEXT GIG",
       "handler": function (response){
-        alert("PAYMENT SUCCESSFUL");
-        window.location.reload();
+        var paramss = {
+          TableName: "UsersTable",
+          Key: { "UserID":props.uid },
+          ProjectionExpression: "MasterclassesPurchased",
+        };
+        docClient.get(paramss, function(err, data) {
+          if (err) {
+            console.log(err);
+          } else {
+            var params = {
+              TableName: "UsersTable",
+              Key: { "UserID":props.uid },
+              UpdateExpression: "set MasterclassesPurchased["+(data.Item.MasterclassesPurchased.length)+"] = :ms",
+              ExpressionAttributeValues:{
+                ":ms":props.cid,
+              },
+              ReturnValues:"UPDATED_NEW"
+            }
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                console.log(data);
+                alert("PAYMENT SUCCESSFUL");
+                window.location.reload();
+              }
+            });
+          }
+        });
       },
     };
     const paymentObject = new window.Razorpay(options)

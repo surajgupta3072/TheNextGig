@@ -80,7 +80,7 @@ function App() {
                 <GigsPage auth={authProps.user}/>
               </ProtectedRoute>
               <Route path="/masterclass/:id">
-                <MasterClassDetails />
+                <MasterClassDetails auth={authProps.user.username}/>
               </Route>
               <Route path="/masterclass">
                 <MasterClassPage />

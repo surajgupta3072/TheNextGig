@@ -7,7 +7,7 @@ import './Page3.css';
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
 import React,{ useState, useEffect } from 'react';
-// import docClient from '../../GigsPage/GigsAWS';
+import docClient from '../../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popup';
 
 const breakPoints = [
@@ -26,7 +26,18 @@ function Page3(props) {
   const [coursePurchased, setCoursePurchased] = useState(false);
 
   useEffect(() => {
-    setCoursePurchased(false)
+    var params = {
+      TableName: "UsersTable",
+      Key: { "UserID":props.prop },
+      ProjectionExpression: "MasterclassesPurchased",
+    };
+    docClient.get(params, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        setCoursePurchased(data.Item.MasterclassesPurchased.includes(Number(session.id)));
+      }
+    });
   }, []);
 
   const showDescription = (epid) => {
@@ -127,11 +138,13 @@ function Page3(props) {
                 Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button>
                 <MyVerticallyPopUp
+                  uid={props.prop}
+                  cid={session.id}
                   cname={session.course_name}
                   fees={session.fees}
                   show={modalShow}
                   onHide={() => setModalShow(false)}
-               />
+                />
               </Col>
             </Row>
           </Col>
@@ -148,7 +161,7 @@ function Page3(props) {
                   <Row >
                     <Col md={7} className="col1_cardbody">
                       {paymentshow===false &&
-                        <video src={epivid} className="img_letsgo" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
+                        <video src={epivid} className="img_letsgo" controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
                       }
                       {paymentshow===false &&
                         <p className="twoline_desc">{des}</p>
@@ -159,6 +172,8 @@ function Page3(props) {
                           Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                           </button>
                           <MyVerticallyPopUp
+                            uid={props.prop}
+                            cid={session.id}
                             cname={session.course_name}
                             fees={session.fees}
                             show={modalShow}
