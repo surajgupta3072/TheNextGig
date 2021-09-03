@@ -35,7 +35,7 @@ function Page1() {
         </Row>
         
         <div className="button_div">
-          <Link to="ummm" scroll={true}><button type="submit" className="button_slide slide_right">Ummm, how?<ArrowDown className="button_arrow"/></button></Link>
+          <Link to="ummm" scroll={true}><button  className="button_slide slide_right">Ummm, how?<ArrowDown className="button_arrow"/></button></Link>
         </div>
       </Container>
     );

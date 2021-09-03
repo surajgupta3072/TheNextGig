@@ -17,17 +17,36 @@ const breakPoints = [
 function Page1(props) {
   const [modalShow, setModalShow] = useState(false);
   const [gigs, setGigs]=useState([]);
+  const [appliedgigs, setAppliedGigs] = useState([]);
+  var agig = [];
+
   useEffect(() => {
-    let params = {
+    let paramss = {
       TableName: "GigsTable"
     };
-    docClient.scan(params, function(err, data) {
+    docClient.scan(paramss, function(err, data) {
     if (err) {
       console.log(err);
     } 
     else {
       setGigs(data.Items);
     }
+    });
+
+    var params = {
+      TableName: "UsersTable",
+      Key: { "UserID":props.prop.username },
+      ProjectionExpression: "gigsApplications",
+    };
+    docClient.get(params, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        for(var x=0; x<data.Item.gigsApplications.length; x++) {
+          agig.push(data.Item.gigsApplications[x].GigId);
+        }
+        setAppliedGigs(agig)
+      }
     });
   }, []);
   return (
@@ -101,7 +120,6 @@ function Page1(props) {
                 <a href={"/gigs/" + carder.GigId}>
                   <button
                     style={{ padding: "8px 14px" ,fontSize:"0.7rem"}}
-                    type="submit"
                     className="button_slide_new slide_right_new" 
                   >
                     View details
@@ -117,10 +135,10 @@ function Page1(props) {
                   </button>
                 </a>
               </div>
-              <div className="button_masterclass1">
+              {!appliedgigs.includes(carder.GigId) ?
+                <div className="button_masterclass1">
                   <button
                     style={{ padding: "8px 14px" ,fontSize:"0.7rem",marginLeft:"-110px"}}
-                    type="submit"
                     className="button_slide_new slide_right_new"
                     onClick={() => setModalShow(true)}
                   >
@@ -141,9 +159,18 @@ function Page1(props) {
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                   />
+                </div> :
+                <div className="button_masterclass1">
+                  <button
+                    style={{ padding: "8px 14px" ,fontSize:"0.7rem",marginLeft:"-110px"}}
+                    className="button_slide_new slide_right_new"
+                  >
+                    Applied!
+                  </button>
+                </div>
+              }
               </div>
-              </div>
-              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
+              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}><em>Apply by {carder.GigApplyBy}</em></div>
             </MDBCardBody>
           </MDBCard>
         ))}
@@ -202,7 +229,6 @@ function Page1(props) {
                 <a href={"/gigs/" + carder.GigId}>
                   <button
                     style={{ padding: "8px 10px" ,fontSize:"0.5rem"}}
-                    type="submit"
                     className="button_slide_new slide_right_new" 
                   >
                     View Details
@@ -218,14 +244,14 @@ function Page1(props) {
                   </button>
                 </a>
               </div>
-              <div className="button_masterclass1">
-                <a href={"/gigs/" + carder.GigId}>
+              {!appliedgigs.includes(carder.GigId) ?
+                <div className="button_masterclass1">
                   <button
                     style={{ padding: "8px 10px" ,fontSize:"0.5rem",marginLeft:"-80px"}}
-                    type="submit"
                     className="button_slide_new slide_right_new"
+                    onClick={() => setModalShow(true)}
                   >
-                    Let's learn
+                    Apply now
                     <ArrowRight
                       style={{
                         width: "25px",
@@ -236,8 +262,22 @@ function Page1(props) {
                       className="button_arrow_new"
                     />
                   </button>
-                </a>
-              </div>
+                  <MyVerticallyPopUp
+                    gigid={carder.GigId}
+                    userid={props.prop.username}
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                  />
+                </div> :
+                <div className="button_masterclass1">
+                  <button
+                    style={{ padding: "8px 10px" ,fontSize:"0.5rem",marginLeft:"-80px"}}
+                    className="button_slide_new slide_right_new"
+                  >
+                    Applied!
+                  </button>
+                </div>
+              }
               </div>
               <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by </div>
               </MDBCardBody>

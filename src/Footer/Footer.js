@@ -16,7 +16,7 @@ function Footer(){
                 <Col md={7} style={{marginBottom:"3%"}}>
                     <h2 className="footer_heading1">We're here</h2>
                     <h2 className="footer_heading2">Let's talk</h2>
-                    <button style={{ marginLeft: "0%"}} type="submit" className="button_slide slide_right" onClick={() => setModalShow(true)}>
+                    <button style={{ marginLeft: "0%"}} className="button_slide slide_right" onClick={() => setModalShow(true)}>
                         Get in Touch <ArrowLeft className="button_arrow_footer_footer"/></button>
                         <MyVerticallyCenteredModal
                           show={modalShow}

@@ -26,7 +26,7 @@ function MasterSessions(props) {
                         <div className="Course_name">{Session.course_name}</div>
                         <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
                         <div className="button_masterclass1">
-                        <a href={"/masterclass/"+Session.id}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+                        <a href={"/masterclass/"+Session.id}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
                         </div>
                         </MDBCardBody>
                     </MDBCard>
@@ -45,7 +45,7 @@ function MasterSessions(props) {
                <div className="Course_name">{Session.course_name}</div>
                <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
                <div className="button_masterclass1">
-               <a href={"/masterclass/"+Session.id}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+               <a href={"/masterclass/"+Session.id}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
              </div>
              </MDBCardBody>
            </MDBCard>

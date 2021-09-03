@@ -20,7 +20,7 @@ function Page2() {
            </Col>
            <Col md={8} xs={7}>
               <div className="button_div_MC_Page2">
-                <a href="/gigs"><button type="submit"  className="button_slide_MC_Page2 slide_right">Gigs / projects / <br /> internships<ArrowRight className="button_arrow_MC_Page2"/></button></a>
+                <a href="/gigs"><button   className="button_slide_MC_Page2 slide_right">Gigs / projects / <br /> internships<ArrowRight className="button_arrow_MC_Page2"/></button></a>
               </div>
             </Col>
          </Row>

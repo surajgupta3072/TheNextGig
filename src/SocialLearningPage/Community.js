@@ -17,7 +17,7 @@ function Community(){
           </Row>  
         </div>
         <div className="button_div_page5">
-          <a rel="noreferrer" target="_blank" href="https://discord.gg/EEVcU7ZzAQ"><button type="submit" className="button_slide slide_right">Gossip Here<ArrowRight className="button_arrow"/></button></a>
+          <a rel="noreferrer" target="_blank" href="https://discord.gg/EEVcU7ZzAQ"><button  className="button_slide slide_right">Gossip Here<ArrowRight className="button_arrow"/></button></a>
         </div>
         </div>
     )

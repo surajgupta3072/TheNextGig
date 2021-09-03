@@ -118,12 +118,12 @@ function Page3(props) {
             </Row>
             <Row style={{marginTop: "4%", paddingBottom: "1%", display: "flex", justifyContent: "space-around"}}>
               <Col style={{marginLeft: "10%"}}>
-                <a href={"/expert/"+session.ExpertId}><button type="submit" className="button_slide_page3 slide_right">
+                <a href={"/expert/"+session.ExpertId}><button  className="button_slide_page3 slide_right">
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button></a>
               </Col>
               <Col style={{display: "flex", justifyContent: "space-between"}}>
-                <button type="submit" className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
+                <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
                 Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button>
                 <MyVerticallyPopUp
@@ -155,7 +155,7 @@ function Page3(props) {
                       }
                       {paymentshow===true &&
                         <div style={{display:"flex", justifyContent:"center", marginTop:"15%"}}>
-                          <button type="submit" className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
+                          <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
                           Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                           </button>
                           <MyVerticallyPopUp
@@ -261,7 +261,7 @@ function Page3(props) {
         <div className="slider_mobile" style={{display:"block"}}>
           {session.gigs.length===0 ? <Container><h1 style={{marginTop:"15%"}}>We are constantly sourcing gigs / projects in this domain</h1>
               <h5 style={{color:"#F26C4F"}}>Until then...</h5><div className="button_masterclass1">
-              <a style={{marginLeft:"%",marginBottom:"15%"}} href="../gigs"><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+              <a style={{marginLeft:"%",marginBottom:"15%"}} href="../gigs"><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
              </div></Container> : 
             master.map(details => {
               if(details.gigs===undefined)
@@ -284,7 +284,7 @@ function Page3(props) {
                             <div className="episode_course">{company.fees}/{company.stipend_range}</div>
                           </div>
                           <div className="button_masterclass1">
-                          <a href={"/gigs/"+company.id}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+                          <a href={"/gigs/"+company.id}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
                         </div>
                         </MDBCardBody>
                       </MDBCard>
@@ -327,7 +327,7 @@ function Page3(props) {
                  <div className="episode_course">{details.course_episode}</div>
                </div>
                <div className="button_masterclass1">
-               <a href={"/masterclass/"+details.id}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+               <a href={"/masterclass/"+details.id}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
              </div>
              </MDBCardBody>
            </MDBCard>

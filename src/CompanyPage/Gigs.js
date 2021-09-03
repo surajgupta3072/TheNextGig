@@ -30,7 +30,7 @@ function Gigs(props) {
                             <div className="episode_course">{Gig.GigDuration}</div>
                         </div>
                         <div className="button_masterclass1">
-                        <a href={"/gigs/"+Gig.GigId}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+                        <a href={"/gigs/"+Gig.GigId}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
                         </div>
                         </MDBCardBody>
                     </MDBCard>
@@ -53,7 +53,7 @@ function Gigs(props) {
                 <div className="episode_course">{Gig.GigDuration}</div>
                </div>
                <div className="button_masterclass1">
-               <a href={"/gigs/"+Gig.GigId}><button style={{padding:"8px 14px"}} type="submit" className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+               <a href={"/gigs/"+Gig.GigId}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
              </div>
              </MDBCardBody>
            </MDBCard>

@@ -21,6 +21,8 @@ const breakPoints = [
 function Page3(props) {
   const [modalShow, setModalShow] = useState(false);
   const [gigs, setGigs] = useState([]);
+  const [appliedgigs, setAppliedGigs] = useState([]);
+  var agig = [];
   // const [relatedgigs, setDataRelatedGigs] = useState([]);
 
   // async function queryCall(id) {
@@ -65,6 +67,22 @@ function Page3(props) {
         //   finalResult.push(singleResult);
         // }
         // setDataRelatedGigs(finalResult);
+      }
+    });
+
+    var params = {
+      TableName: "UsersTable",
+      Key: { "UserID":props.prop.username },
+      ProjectionExpression: "gigsApplications",
+    };
+    docClient.get(params, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        for(var x=0; x<data.Item.gigsApplications.length; x++) {
+          agig.push(data.Item.gigsApplications[x].GigId);
+        }
+        setAppliedGigs(agig)
       }
     });
   }, []);
@@ -144,7 +162,6 @@ function Page3(props) {
                   <Col>
                     <a href={"/company/" + gigs[0].GigId}>
                       <button
-                        type="submit"
                         className="button_slide_page3 slide_right btn1_gigspage"
                       >
                         Get to know the
@@ -153,22 +170,28 @@ function Page3(props) {
                       </button>
                     </a>
                   </Col>
-                  <Col>
-                    <button
-                      type="submit"
-                      className="button2_slide_page3 slide_right btn2_gigspage"
-                      onClick={() => setModalShow(true)}
-                    >
-                      Apply now{" "}
-                      <ArrowLeft className="button_arrow2_footer_gigspage3" />
+                  { !appliedgigs.includes(gigs[0].GigId) ?
+                    <Col>
+                      <button
+                        className="button2_slide_page3 slide_right btn2_gigspage"
+                        onClick={() => setModalShow(true)}
+                      >
+                        Apply now{" "}
+                        <ArrowLeft className="button_arrow2_footer_gigspage3" />
+                      </button>
+                      <MyVerticallyPopUp
+                        gigid={gigs[0].GigId}
+                        userid={props.prop.username}
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                      />
+                    </Col> :
+                    <Col>
+                    <button className="button2_slide_page3 slide_right btn2_gigspage">
+                      Applied!
                     </button>
-                    <MyVerticallyPopUp
-                      gigid={gigs[0].GigId}
-                      userid={props.prop.username}
-                      show={modalShow}
-                      onHide={() => setModalShow(false)}
-                    />
                   </Col>
+                  }
                 </Row>
                 <Row>
                   <p
@@ -270,9 +293,7 @@ function Page3(props) {
                         <a href={"/masterclass/" + carder.id}>
                           <button
                             style={{ padding: "8px 14px" }}
-                            type="submit"
                             className="button_slide_new slide_right_new"
-                            
                           >
                             Let's go
                             <ArrowRight
@@ -283,7 +304,6 @@ function Page3(props) {
                               }}
                               className="button_arrow_new"
                             />
-                            
                           </button>
                         </a>
                       </div>
