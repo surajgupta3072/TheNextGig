@@ -8,8 +8,10 @@ import Blogs from './Blogs';
 import {Linkedin} from "react-bootstrap-icons";
 import Community from './Community';
 import docClient from '../GigsPage/GigsAWS';
+import MyVerticallyPopUp  from './popup';
 
 function SocialLearningPage(props) {
+  const [modalShow, setModalShow] = React.useState(false);
   const [active, setActive] =  useState("Videos");
   const [color1,setColor1] =useState("#f26c4f");
   const [textColor1,setextColor1] =useState("white");
@@ -75,7 +77,11 @@ function SocialLearningPage(props) {
                </Col>
                {active!=="Community" && active!=="Blogs" &&
                 <Col >
-                  <p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p>
+                  <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>
+                  <MyVerticallyPopUp
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+               />
                 </Col>
                 }
              </Row>
