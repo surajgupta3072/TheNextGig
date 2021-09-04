@@ -8,6 +8,7 @@ function Blogs(props) {
   return (
     <div>
        <Container >
+       <br/><br/>
          <Row>
            <Col className="blog-box">
             <Row style={{marginTop:"2%",marginLeft:"2%",width:"270px",height:"130px",backgroundColor:"white"}}></Row>

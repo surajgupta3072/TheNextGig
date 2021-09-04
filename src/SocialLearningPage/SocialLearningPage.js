@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -7,6 +7,7 @@ import Videos from './Videos';
 import Blogs from './Blogs';
 import {Linkedin} from "react-bootstrap-icons";
 import Community from './Community';
+import docClient from '../GigsPage/GigsAWS';
 
 function SocialLearningPage(props) {
   const [active, setActive] =  useState("Videos");
@@ -16,6 +17,22 @@ function SocialLearningPage(props) {
   const [textColor2,setextColor2] =useState("#f26c4f");
   const [color3,setColor3] =useState("white");
   const [textColor3,setextColor3] =useState("#f26c4f");
+  const [rew, setRew] = useState(0);
+
+  useEffect(() => {
+    var params = {
+      TableName: "UsersTable",
+      Key: { "UserID":props.auth.user.username },
+      ProjectionExpression: "TotalRewards",
+    };
+    docClient.get(params, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        setRew(data.Item.TotalRewards);
+      }
+    });
+  }, []);
 
    function buttonColor(word){
      setActive(word)
@@ -35,7 +52,7 @@ function SocialLearningPage(props) {
             <Col xs={3} style={{backgroundColor:"#1B1C2A",height:"90vh"}}>
               <Row style={{marginTop:"30%",marginLeft:"25%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"150px",borderRadius:"50%"}}/></Row>
               <Row><p style={{fontSize:"18px", textAlign:"center"}}>{props.auth.user.attributes.name.split(" ")[0]}</p></Row>
-              <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points:xxx</p></Row>
+              <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p></Row>
               <Row style={{marginBottom:"5%"}}><Linkedin size={30}/></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               {active!=="Community" &&
@@ -56,9 +73,9 @@ function SocialLearningPage(props) {
                   <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Blogs</button>
                   <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Community</button>
                </Col>
-               {active!=="Community" &&
+               {active!=="Community" && active!=="Blogs" &&
                 <Col >
-                  <p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add video/blog)</p>
+                  <p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p>
                 </Col>
                 }
              </Row>
@@ -66,7 +83,7 @@ function SocialLearningPage(props) {
                 {active === "Blogs" && <Blogs />}
                 {active === "Community" && <Community/>}
             </Col> 
-        </Row>
+          </Row>
       </Container>
     );
   }
