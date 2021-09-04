@@ -18,10 +18,9 @@ function MyVerticallyPopUp(props) {
            <p style={{fontSize:"18px"}} >Topic <text style={{color:"#f26c4f"}}>*</text></p>
            <input style={{width:"100%"}} placeholder="ABC"></input>
            <p style={{marginTop:"10%",fontSize:"18px"}}>Hashtags<text style={{color:"#f26c4f"}}>*</text></p>
-           <input style={{width:"100%",marginTop:"1%"}} placeholder="Data science" />
+           <input style={{width:"100%",marginTop:"1%"}} placeholder="datascience" />
            <p style={{marginTop:"10%",fontSize:"18px"}}>Upload File<text style={{color:"#f26c4f"}}>*</text></p>
-           <input type="file" />
-           
+           <input type="file"/>
            <button className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"30%"}}>Submit<ArrowLeft className='button_arrow'/></button>
          </div>
       </Modal.Body>  
