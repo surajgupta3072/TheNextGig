@@ -5,6 +5,7 @@ import docClient from './../../GigsPage/GigsAWS';
 
 function MyVerticallyPopUp(props) {
   const [reward, setReward] = useState("");
+
   useEffect(() => {
     var paramss = {
       TableName: "UsersTable",
@@ -15,7 +16,6 @@ function MyVerticallyPopUp(props) {
       if (err) {
         console.log(err);
       } else {
-        console.log(data)
         setReward(data.Item.TotalRewards)
       }
     });
@@ -66,7 +66,6 @@ function MyVerticallyPopUp(props) {
               if (err) {
                 console.log(err);
               } else {
-                console.log(data);
                 alert("PAYMENT SUCCESSFUL");
                 window.location.reload();
               }

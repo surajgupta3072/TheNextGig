@@ -1,5 +1,5 @@
 import Modal from 'react-bootstrap/Modal';
-import React,{ useEffect, useState } from "react";
+import React,{ useState } from "react";
 import {ArrowLeft} from 'react-bootstrap-icons';
 import docClient from './../GigsAWS';
 import S3 from 'react-aws-s3';
@@ -48,7 +48,6 @@ function MyVerticallyPopUp(props) {
               if (err) {
                 console.log(err);
               } else {
-                console.log(data);
                 alert("APPLIED SUCCESSFULLY")
                 window.location.href="/gigs"
               }

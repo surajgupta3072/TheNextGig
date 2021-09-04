@@ -26,18 +26,20 @@ function Page3(props) {
   const [coursePurchased, setCoursePurchased] = useState(false);
 
   useEffect(() => {
-    var params = {
-      TableName: "UsersTable",
-      Key: { "UserID":props.prop },
-      ProjectionExpression: "MasterclassesPurchased",
-    };
-    docClient.get(params, function(err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        setCoursePurchased(data.Item.MasterclassesPurchased.includes(Number(session.id)));
-      }
-    });
+    if(props.prop!==null) {
+      var params = {
+        TableName: "UsersTable",
+        Key: { "UserID":props.prop.username },
+        ProjectionExpression: "MasterclassesPurchased",
+      };
+      docClient.get(params, function(err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          setCoursePurchased(data.Item.MasterclassesPurchased.includes(Number(session.id)));
+        }
+      });
+    }
   }, []);
 
   const showDescription = (epid) => {
@@ -133,20 +135,26 @@ function Page3(props) {
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button></a>
               </Col>
-              {coursePurchased===false &&
-              <Col style={{display: "flex", justifyContent: "space-between"}}>
-                <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
-                Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
-                </button>
-                <MyVerticallyPopUp
-                  uid={props.prop}
-                  cid={session.id}
-                  cname={session.course_name}
-                  fees={session.fees}
-                  show={modalShow}
-                  onHide={() => setModalShow(false)}
-                />
-              </Col>
+              { props.prop!==null ?
+                coursePurchased===false &&
+                <Col style={{display: "flex", justifyContent: "space-between"}}>
+                  <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
+                  Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                  </button>
+                  <MyVerticallyPopUp
+                    uid={props.prop.username}
+                    cid={session.id}
+                    cname={session.course_name}
+                    fees={session.fees}
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                  />
+                </Col> :
+                <Col style={{display: "flex", justifyContent: "space-between"}}>
+                  <button style={{width:"40%"}} className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
+                    Login <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                  </button>
+                </Col>
               }
             </Row>
           </Col>
@@ -168,20 +176,27 @@ function Page3(props) {
                       {paymentshow===false &&
                         <p className="twoline_desc">{des}</p>
                       }
-                      {paymentshow===true &&
+                      { paymentshow===true && (
+                        props.prop!==null ? (
                         <div style={{display:"flex", justifyContent:"center", marginTop:"15%"}}>
                           <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
                           Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                           </button>
                           <MyVerticallyPopUp
-                            uid={props.prop}
+                            uid={props.prop.username}
                             cid={session.id}
                             cname={session.course_name}
                             fees={session.fees}
                             show={modalShow}
                             onHide={() => setModalShow(false)}
                           />
+                        </div> ) :
+                        <div style={{display:"flex", justifyContent:"center", marginTop:"15%"}}>
+                          <button className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
+                          Login <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                          </button>
                         </div>
+                        )
                       }
                     </Col >
                     <Col md={5}>

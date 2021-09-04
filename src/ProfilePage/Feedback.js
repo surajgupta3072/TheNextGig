@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
-import React, { useState } from 'react';
+import React from 'react';
 
 function FeedBack(){
     return(

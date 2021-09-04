@@ -47,7 +47,7 @@ function Personal(props) {
   }
 
   function handleSubmit(){
-    if(fullName!="" && dob!="" && gender!="" && mobile!="" && quirky!="") {
+    if(fullName!=="" && dob!=="" && gender!=="" && mobile!=="" && quirky!=="") {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID":props.p.wholedata.UserID },
