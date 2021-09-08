@@ -7,13 +7,20 @@ function Skills() {
       <div>
         <Container style={{marginTop:"5%"}}>
           <Row>
-            <Col md={3}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills you possess</p></Col>
-            <Col><input style={{width:"100%",height:"35px"}}></input></Col>
+            <Col md={12}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills you possess</p></Col>
+            <Col md={12}><input style={{width:"100%",height:"35px"}}></input></Col>
           </Row>
+          <br/>
           <Row>
-            <Col md={4}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills you want to acquire</p></Col>
-            <Col><input style={{width:"100%",height:"35px"}}></input></Col>
+            <Col md={12}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills you want to acquire</p></Col>
+            <Col md={12}><input style={{width:"100%",height:"35px"}}></input></Col>
           </Row>
+          <br/>
+          <Row>
+            <Col md={12}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills acquired through the platform</p></Col>
+            <Col md={12}><input style={{width:"100%",height:"35px"}}></input></Col>
+          </Row>
+          <button style={{marginTop:"4%"}} className="button_slide">Save</button>
          </Container>
       </div>
     );

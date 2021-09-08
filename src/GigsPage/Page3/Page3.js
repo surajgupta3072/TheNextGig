@@ -265,8 +265,8 @@ function Page3(props) {
                       />
                     </div>
                     <div className="image_logo">
-                      <img className="image_logo1" src="/logo192.png" />
-                      <img className="image_logo2" src="/logo192.png" />
+                      <img className="image_logo1" src="/TheNextGigLogo.png" />
+                      <img className="image_logo2" src="/TheNextGigLogo.png" />
                     </div>
                     <MDBCardBody>
                       <div className="Course_name">{carder.course_name}</div>

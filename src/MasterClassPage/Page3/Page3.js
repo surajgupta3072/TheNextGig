@@ -152,7 +152,7 @@ function Page3(props) {
                 </Col> :
                 <Col style={{display: "flex", justifyContent: "space-between"}}>
                   <button style={{width:"40%"}} className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
-                    Login <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                  Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                   </button>
                 </Col>
               }
@@ -193,7 +193,7 @@ function Page3(props) {
                         </div> ) :
                         <div style={{display:"flex", justifyContent:"center", marginTop:"15%"}}>
                           <button className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
-                          Login <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                          Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                           </button>
                         </div>
                         )
@@ -344,8 +344,8 @@ function Page3(props) {
                <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={details.course_image} alt='...' /></div>
              <div className="image_logo">
-             <img className="image_logo1" src="/logo192.png"/>
-             <img className="image_logo2" src="/logo192.png"/>
+             <img className="image_logo1" src="/TheNextGigLogo.png"/>
+             <img className="image_logo2" src="/TheNextGigLogo.png"/>
              </div>
              <MDBCardBody>
                <div className="Course_name">{details.course_name}</div>

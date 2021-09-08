@@ -47,13 +47,12 @@ function Personal(props) {
   }
 
   function handleSubmit(){
-    if(fullName!=="" && dob!=="" && gender!=="" && mobile!=="" && quirky!=="") {
+    if(dob!=="" && gender!=="" && mobile!=="" && quirky!=="") {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID":props.p.wholedata.UserID },
-        UpdateExpression: "set FullName= :n, DOB = :d, Gender=:g, MobileNumber=:m, QuirkyText=:q",
+        UpdateExpression: "set DOB = :d, Gender=:g, MobileNumber=:m, QuirkyText=:q",
         ExpressionAttributeValues:{
-          ":n":fullName,
           ":d":dob,
           ":g":gender,
           ":m":mobile,
@@ -65,7 +64,6 @@ function Personal(props) {
         if (err) {
           console.log(err);
         } else {
-          props.p.wholedata.FullName = data.Attributes.FullName
           props.p.wholedata.DOB = data.Attributes.DOB
           props.p.wholedata.Gender = data.Attributes.Gender
           props.p.wholedata.MobileNumber = data.Attributes.MobileNumber
@@ -83,12 +81,12 @@ function Personal(props) {
       <div>
         <Container style={{marginTop:"5%"}}>
           <Row>
-            <p><span style={{fontSize:"20px"}}>Full Name</span> <br/>(Shakespeare said ‘what’s in a name but we want to know how to address you)</p>
-            <p><input value={fullName} onChange={e => setFullName(e.target.value)} style={{width:"100%",height:"35px"}}></input></p>
+            <p><span style={{fontSize:"20px"}}>Full Name</span></p>
+            <p><input disabled value={fullName} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
           <Row>
             <Col style={{marginTop:"2%"}}>
-              <p><span style={{fontSize:"20px"}}>Date of birth</span><br/>(We will only wish you on your birthday)</p>
+              <p><span style={{fontSize:"20px"}}>Date of birth</span></p>
               <input value={dob} onChange={e => setDOB(e.target.value)} type="date" style={{width:"50%",height:"35px"}}></input>
             </Col>
             <Col style={{marginTop:"2%",marginLeft:"10%"}}>
@@ -102,7 +100,7 @@ function Personal(props) {
           </Row>
           <Row>
             <Col style={{marginTop:"2%"}}>
-              <p><span style={{fontSize:"20px"}}>Mobile Number</span><br/>(We will only contact you)</p>
+              <p><span style={{fontSize:"20px"}}>Mobile Number</span></p>
               <input value={mobile} onChange={e => setMobile(e.target.value)} style={{width:"22%",height:"35px"}}></input>
             </Col>
           </Row>
@@ -110,7 +108,7 @@ function Personal(props) {
             <p style={{fontSize:"20px"}}>Something quirky about you?</p>
             <p><input value={quirky} onChange={e => setQuirky(e.target.value)} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
-          <button style={{marginTop:"5%"}} onClick={handleSubmit} className="button_slide">Save</button>
+          <button style={{marginTop:"3%"}} onClick={handleSubmit} className="button_slide">Save</button>
         </Container>
       </div>
     );

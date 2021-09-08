@@ -75,9 +75,18 @@ function SocialLearningPage(props) {
                   <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Blogs</button>
                   <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Community</button>
                </Col>
-               {active!=="Community" && active!=="Blogs" &&
+               {active==="Videos" &&
                 <Col >
                   <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>
+                  <MyVerticallyPopUp
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+               />
+                </Col>
+                }
+                {active==="Blogs" &&
+                <Col >
+                  <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Blog)</p></a>
                   <MyVerticallyPopUp
                   show={modalShow}
                   onHide={() => setModalShow(false)}
