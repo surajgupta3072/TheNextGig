@@ -80,7 +80,7 @@
   font-size: 48px;
 }
 .page3_3linetext {
-  font-size: 24px;
+  font-size: 20px;
 }
 .page3_3linetext2 {
   margin-top: 24px;
@@ -94,7 +94,6 @@
   width: 70px;
   padding-bottom: 10px;
   text-align: right;
-  background-color: white;
 }
 .text_page3_card {
   font-size: 20px;
@@ -214,7 +213,7 @@
     font-size: 34px;
   }
   .page3_3linetext {
-    font-size: 18px;
+    font-size: 14px;
   }
   .page3_3linetext2 {
     font-size: 16px;
@@ -228,7 +227,6 @@
     height: 30px;
     width: 40px;
     padding-bottom: 10px;
-    background-color: white;
   }
   .button_slide_page3 {
     font-size: 12px;

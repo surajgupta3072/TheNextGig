@@ -10,19 +10,31 @@ function Videos(props) {
         <br/>
          <Row>
            <Col >
-            <Row style={{width:"270px",height:"180px",backgroundColor:"white"}}></Row>
-            <Row>ABC Topic name</Row>
-            <Row>#dataScience #ml</Row>
+            <Row>
+              <video controls style={{height:"250px", width:"350px"}}>
+                <source src="https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession2.mp4"/>
+              </video>
+            </Row>
+            <Row><Col>Web Development</Col></Row>
+            <Row><Col>#webd #react</Col></Row>
            </Col>
            <Col>
-            <Row style={{width:"270px",height:"180px",backgroundColor:"white"}}></Row>
-            <Row>ABC Topic name</Row>
-            <Row>#dataScience #ml</Row>
+            <Row>
+              <video controls style={{height:"250px", width:"350px"}}>
+                <source src="https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession1.mp4"/>
+              </video>
+            </Row>
+            <Row><Col>Machine Learning</Col></Row>
+            <Row><Col>#dataScience #ml</Col></Row>
            </Col>
            <Col>
-            <Row style={{width:"270px",height:"180px",backgroundColor:"white"}}></Row>
-            <Row>ABC Topic name</Row>
-            <Row>#dataScience #ml</Row>
+            <Row>
+              <video controls style={{height:"250px", width:"350px"}}>
+                <source src="https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession3.mp4"/>
+              </video>
+            </Row>
+            <Row><Col>Marketing</Col></Row>
+            <Row><Col>#marketing #product</Col></Row>
            </Col>
          </Row>
       </Container>

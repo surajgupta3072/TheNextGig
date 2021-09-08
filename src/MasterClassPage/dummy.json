@@ -1,0 +1,177 @@
+[
+    {
+      "id": 1,
+      "course_name": "Unlearn Marketing",
+      "course_image": "https://media-exp1.licdn.com/dms/image/C5103AQFb-ZO9kOGFAg/profile-displayphoto-shrink_800_800/0/1521735963585?e=1636588800&v=beta&t=U4uXCQhI2iW4lK3H1eXihHvu72Z77W6B0qNZHT5vp9k",
+      "course_instructor": "Anil Nair",
+      "course_instructor_post": "Co-founder,The Pretty Geeky",
+      "course_timing": "1 hour 20 mins",
+      "course_episode": "13 episodes",
+      "course_description": "The tools of Marketing might change from decade to decade (with recent buzz around social marketing) – however, the fundamentals remain the same.  The marketer that sticks to the fundamental can cut his way through decades",
+      "course_role": "Marketing",
+      "course_industry": "Agnostic",
+      "fees": "899",
+      "ExpertId": 1,
+      "episodes": [
+        {
+          "id": 1,
+          "title": "HTML1",
+          "description": "What is lorem irem ipsum has bnter took a galley ofambled it to make a type specimen book it has?",
+          "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession3.mp4"
+        },
+        {
+          "id": 2,
+          "title": "CSS2",
+          "description": "em ipsum has been the n unknown printer took a galley of type and scrambled it to make a",
+          "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession2.mp4"
+        },
+        {
+          "id": 3,
+          "title": "JS3",
+          "description": " is lorem irem ipsum has beeem irem ipsum has bnter took a galley on the n unknown printer took a galley of",
+          "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession1.mp4"
+        },
+        {
+          "id": 4,
+          "title": "React",
+          "description": "f type and scrambled it to maem irem ipsum has bnter took a galley oke a type specimen book it ha",
+          "epi_video": "/loger1.svg"
+        },
+        {
+          "id": 5,
+          "title": "HTML",
+          "description": " been the n unknown printer took em irem ipsum has bnter took a galley o a galley of type and scrambled ",
+          "epi_video": "/loger1.svg"
+        },
+        {
+          "id": 6,
+          "title": "CSS",
+          "description": " been the n unknow galley of type em irem ipsum has bnter took a galley o and scrambled  description to be shown",
+          "epi_video": "/loger1.svg"
+        },
+        {
+          "id": 7,
+          "title": "JS",
+          "description": "own printer took a galley of type em irem ipsum has bnter took a galley o and scrambled  desc",
+          "epi_video": "/loger1.svg"
+        },
+        {
+          "id": 8,
+          "title": "React",
+          "description": "en the n unknownem ipsum ha em irem ipsum has bnter took a galley o printer took a galley of type and scra",
+          "epi_video": "/loger1.svg"
+        }
+      ],
+      "gigs": [
+        {
+          "id": "a1",
+          "project_name": "Machine Learning",
+          "company_name": "Tata",
+          "duration": "3 months",
+          "industry": "Automobile",
+          "fees": "5k INR",
+          "stipend_range": "10k INR",
+          "internship_image": "https://media.istockphoto.com/photos/robot-with-education-hud-picture-id966248982?k=6&m=966248982&s=612x612&w=0&h=n4MgcVUV2D6kXpJGCyIMIgFuqsi63DkzjiwWQi4n0aE="
+        },
+        {
+          "id": "b2",
+          "project_name": "Computer Graphics",
+          "company_name": "Birla",
+          "duration": "1 month",
+          "industry": "fashion",
+          "fees": "10k INR",
+          "stipend_range": "40k INR",
+          "internship_image": "https://computerscienceassignmentshelp.com/wp-content/uploads/2017/01/Computer-Graphics-Assignment-Help.jpg"
+        },
+        {
+          "id": "e12a4ecc0d640624e452c00af223c86e",
+          "project_name": "Web Development",
+          "company_name": "next_gig",
+          "duration": "2 months",
+          "industry": "Eductional",
+          "fees": "10k INR",
+          "stipend_range": "40k INR",
+          "internship_image": "https://www.spinutech.com/webres/Image/web-design-development/articles/Web%20Dev-Blog.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "course_name": "Computer Vision in Robotics",
+      "course_image": "https://gigfilesimages.s3.ap-south-1.amazonaws.com/image8.png",
+      "course_instructor": "Orangewood",
+      "course_instructor_post": "Y-combinator backed Co",
+      "course_timing": "1 hour 30 minutes",
+      "course_episode": "10 episodes",
+      "course_description": "Y-combinator backed Co",
+      "course_role": "Marketing",
+      "course_industry": "Agnostic"
+    },
+    {
+      "id": 3,
+      "course_name": "Journey of a Tech Deal",
+      "course_image": "https://media-exp1.licdn.com/dms/image/C4E0BAQFdi0Aq1_2B5Q/company-logo_200_200/0/1623758741071?e=1639008000&v=beta&t=guhFm7H4Jy1xdSkaO4FeTAr4xzo50LgyKtevZBKzYRs",
+      "course_instructor": "Eiliant Advisors",
+      "course_instructor_post": "Take from gigs thing",
+      "course_timing": "1 hour 15 minutes",
+      "course_episode": "12 episodes",
+      "course_description": "Take from gigs thing",
+      "course_role": "Marketing",
+      "course_industry": "Agnostic"
+    },
+    {
+      "id": 4,
+      "course_name": "Course4",
+      "course_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWgxNnkxXySUXM3BjTBffeQBr1yjmwMQvf2AYHuFqyQ1o2ZsvXVywiAfF_Ww8Xi3ckbsk&usqp=CAU",
+      "course_instructor": "Harsh Lohiya",
+      "course_instructor_post": "Next_gig intern",
+      "course_timing": "1hour 56 mins",
+      "course_episode": "20 episodes"
+    },
+    {
+      "id": 5,
+      "course_name": "Course5",
+      "course_image": "https://learnenglish.britishcouncil.org/sites/podcasts/files/styles/article/public/GettyImages-1072206958.png?itok=lUNSIqVR",
+      "course_instructor": "Anurag Vaibhav",
+      "course_instructor_post": "Next_gig intern",
+      "course_timing": "1hour 16 mins",
+      "course_episode": "15 episodes"
+    },
+    {
+      "id": 6,
+      "course_name": "Course6",
+      "course_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXrs_aNmhXY2Pi0UYDkb4Mb6GfKhXkOK2Crg&usqp=CAU",
+      "course_instructor": "Jai Chand",
+      "course_instructor_post": "Next_gig intern",
+      "course_timing": "2hour 26 mins",
+      "course_episode": "18 episodes"
+    },
+    {
+      "id": 7,
+      "course_name": "Course7",
+      "course_image": "https://learnenglish.britishcouncil.org/sites/podcasts/files/image/GettyImages-1138008061.jpg",
+      "course_instructor": "debdoot sheet",
+      "course_instructor_post": "IIT Kgp prof",
+      "course_timing": "36 mins",
+      "course_episode": "5 episodes"
+    },
+    {
+      "id": 8,
+      "course_name": "Course8",
+      "course_image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202106/online-4727942_1280__1__1200x768.jpeg?ZfqOecIFMsk3B7A6UBks.hm1Ltf4xm4I&size=770:433",
+      "course_instructor": "Samanta Ray",
+      "course_instructor_post": "IIT KGP prof",
+      "course_timing": "3hour 26 mins",
+      "course_episode": "24 episodes"
+    },
+    {
+      "id": 9,
+      "course_name": "Course9",
+      "course_image": "https://ugc.futurelearn.com/uploads/images/ac/8b/epi_video_ac8b5ba7-45d2-4b16-b64f-63b0063e3c6e.jpg",
+      "course_instructor": "Dhariya shah",
+      "course_instructor_post": "Next_gig",
+      "course_timing": "4hour 26 mins",
+      "course_episode": "40 episodes"
+    }
+  ]
+  

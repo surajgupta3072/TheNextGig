@@ -84,7 +84,7 @@ function Page3(props) {
     return (
     <div>
       <div className="header_masterclass">
-        <Container>
+        <Container style={{marginBottom:"0"}}>
           <div className="top_masterclass"><h1>IT’S ALL IN THE DETAILS</h1>
             <p className="subtitle_masterclass">A <span className="orange_text_masterclass"> sneak peak </span> into the masterclass</p>
           </div>
@@ -97,10 +97,10 @@ function Page3(props) {
               <h1 className="page3_heading1">{session.course_name}</h1>
             </Row>
             <Row style={{marginTop:"0%"}}>
-              <p className="page3_3linetext">Some text will span across three lines<br/> AAAAAA <br/> BBBBBBB</p>
+              <p className="page3_3linetext">{session.course_description}</p>
               <p className="page3_3linetext2">Lifetime access to <span style={{color: "#f26c4f"}}>{session.course_timing}</span>  of Learning experience</p>
             </Row>
-            <Row className="card1_page3"  style={{marginLeft: "0", marginTop: "3%"}}>
+            <Row className="card1_page3" style={{marginLeft: "0", marginTop: "3%"}}>
             <div >
               <p className="page3_cardtext">
               Prepares you for roles in:
@@ -109,10 +109,10 @@ function Page3(props) {
                 <Col>
                   <Row>
                     <Col className="img_col">
-                      <img className="img_page3_card" variant="top" src="/image11.png"/>
+                      <img className="img_page3_card" variant="top" src="/imageh.png"/>
                     </Col>
                     <Col className="text_col">
-                      <h1 className="text_page3_card">Role</h1>
+                      <h1 className="text_page3_card">{session.course_role}</h1>
                     </Col>
                   </Row>
                   <br/>
@@ -120,10 +120,10 @@ function Page3(props) {
                 <Col>
                   <Row>
                     <Col className="img_col">
-                      <img className="img_page3_card" variant="top" src="/image11.png"/>
+                      <img className="img_page3_card" variant="top" src="/imageh.png"/>
                     </Col>
                     <Col className="text_col">
-                      <h1 className="text_page3_card">Industry</h1>
+                      <h1 className="text_page3_card">{session.course_industry}</h1>
                     </Col>
                   </Row>
                 </Col>
@@ -140,7 +140,7 @@ function Page3(props) {
                 coursePurchased===false &&
                 <Col style={{display: "flex", justifyContent: "space-between"}}>
                   <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
-                  Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                  Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
                   </button>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
@@ -152,8 +152,8 @@ function Page3(props) {
                   />
                 </Col> :
                 <Col style={{display: "flex", justifyContent: "space-between"}}>
-                  <button style={{width:"40%"}} className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
-                  Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                  <button style={{width:"50%"}} className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
+                  Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
                   </button>
                 </Col>
               }
@@ -181,7 +181,7 @@ function Page3(props) {
                         props.prop!==null ? (
                         <div style={{display:"flex", justifyContent:"center", marginTop:"15%"}}>
                           <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
-                          Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                          Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
                           </button>
                           <MyVerticallyPopUp
                             uid={props.prop.username}
@@ -194,7 +194,7 @@ function Page3(props) {
                         </div> ) :
                         <div style={{display:"flex", justifyContent:"center", marginTop:"15%"}}>
                           <button className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
-                          Learn <br /> @ INR  {session.fees} <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                          Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
                           </button>
                         </div>
                         )
@@ -226,33 +226,58 @@ function Page3(props) {
           </div>
         </Container>
       </div>
-      <div className="Whats_inforyou_desktop_view">
+      <br/><br/>
+      <Container>
+        <Row>
+          <Col style={{textAlign:"center"}}>
+            <img src="/imageh.png" height="100px" width="160px"/>
+            <h3>Preference for Marketing <span style={{color: "#f26c4f"}}>gigs / internships / jobs</span></h3>
+          </Col>
+          <Col style={{textAlign:"center"}}>
+            <img src="/imageh.png" height="100px" width="160px"/>
+            <h3>Re-learn the Marketing Fundamentals from the <span style={{color: "#f26c4f"}}>Best</span></h3>          
+          </Col>
+        </Row>
+        <br/><br/>
+        <Row>
+          <Col style={{textAlign:"center"}}>
+            <img src="/imageh.png" height="100px" width="160px"/>
+            <h3>Certificate from TheNextGig in association with <span style={{color: "#f26c4f"}}>Anil Nair</span></h3>
+          </Col>
+          <Col style={{textAlign:"center"}}>
+            <img src="/imageh.png" height="100px" width="160px"/>
+            <h3>Sneak peek into real-life <span style={{color: "#f26c4f"}}>marketing</span></h3>          
+          </Col>
+        </Row>
+      </Container>
+      <br/><br/>
+      {/* <div className="Whats_inforyou_desktop_view">
         <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around", marginTop: "6%", marginBottom: "6%"}}>
-        <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-          <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="100px" width="200px"/>
-          <h1>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
-        </div>
-        <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-          <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="100px" width="200px"/>
-          <h1>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
-        </div>
+          <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
+            <img src="/imageh.png" height="100px" width="160px"/>
+            <h5>Preference for Marketing <span style={{color: "#f26c4f"}}>gigs / internships / jobs</span></h5>
+          </div>
+          <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
+            <img src="/imageh.png" height="100px" width="160px"/>
+            <h5>Re-learn the Marketing Fundamentals from the <span style={{color: "#f26c4f"}}>Best</span></h5>
+          </div>
         </div>
         <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around", marginTop: "6%", marginBottom: "6%"}}>
-        <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-          <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="100px" width="200px"/>
-          <h1>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
+          <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
+            <img src="/imageh.png" height="100px" width="160px"/>
+            <h5>Certificate from TheNextGig in association with <span style={{color: "#f26c4f"}}>Anil Nair</span></h5>
+          </div>
+          <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
+            <img src="/imageh.png" height="100px" width="160px"/>
+            <h5>Sneak peek into real-life <span style={{color: "#f26c4f"}}>marketing</span></h5>
+          </div>
         </div>
-        <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-          <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="100px" width="200px"/>
-          <h1>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
-        </div>
-        </div>
-      </div>
+      </div> */}
       <div className="Whats_inforyou_mobile_view">
         <Container style={{display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
           <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
             <Col xs={4}>
-              <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="100px" />
+              <img src="/imageh.png" height="50px" width="100px" />
             </Col>
             <Col xs={8}>
               <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
@@ -260,7 +285,7 @@ function Page3(props) {
           </Row>
           <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
             <Col xs={4}>
-              <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="100px" />
+              <img src="/imageh.png" height="50px" width="100px" />
             </Col>
             <Col xs={8}>
               <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
@@ -268,7 +293,7 @@ function Page3(props) {
           </Row>
           <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
             <Col xs={4}>
-              <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="100px" />
+              <img src="/imageh.png" height="50px" width="100px" />
             </Col>
             <Col xs={8}>
               <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
@@ -276,7 +301,7 @@ function Page3(props) {
           </Row>
           <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
             <Col xs={4}>
-              <img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="100px" />
+              <img src="/imageh.png" height="50px" width="100px" />
             </Col>
             <Col xs={8}>
               <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>

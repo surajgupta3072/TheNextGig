@@ -87,7 +87,7 @@ function Page1(props) {
                   paddingLeft: "20px",
                   paddingRight: "20px",
                 }}
-                src="/google_logo.jpg"
+                src={carder.GigImage}
                 alt="..."
               />
             </div>
@@ -99,8 +99,8 @@ function Page1(props) {
               />
               <div className="instruct_time">
                 <div className="instructor_name" >
-                  {carder.GigFunction} <sup data-tip data-for="registerTip1">&#9432;</sup>
-                  <ReactTooltip id="registerTip1" place="top" effect="solid">
+                  {carder.GigFunction} <sup data-tip data-for={carder.GigId}>&#9432;</sup>
+                  <ReactTooltip id={carder.GigId} place="top" effect="solid">
                     {carder.GigDescription}
                   </ReactTooltip>
                 </div>
@@ -108,8 +108,8 @@ function Page1(props) {
               </div>
               <div className="post_episode">
                 <div className="instructor_post">
-                  {carder.CompanyName} <sup data-tip data-for="registerTip2">&#9432;</sup>
-                  <ReactTooltip id="registerTip2" place="top" effect="solid">
+                  {carder.CompanyName} <sup data-tip data-for={carder.GigId}>&#9432;</sup>
+                  <ReactTooltip id={carder.GigId} place="top" effect="solid">
                     {carder.CompanyDescription}
                   </ReactTooltip>
                 </div>

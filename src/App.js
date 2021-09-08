@@ -52,40 +52,40 @@ function App() {
           <Header auth={authProps} />
           <Router>
             <Switch>
-              <Route path="/login">
+              <Route exact path="/login">
                 <LoginPage auth={authProps} />
               </Route>
-              <Route path="/register">
+              <Route exact path="/register">
                 <RegisterPage />
               </Route>
-              <ProtectedRoute path="/sociallearn" auth={authProps}>
+              <ProtectedRoute exact path="/sociallearn" auth={authProps}>
                 <SocialLearningPage auth={authProps}/>
               </ProtectedRoute>
-              <ProtectedRoute path="/profile" auth={authProps}>
+              <ProtectedRoute exact path="/profile" auth={authProps}>
                 <ProfilePage auth={authProps}/>
               </ProtectedRoute>
-              <Route path="/company/:id">
+              <Route exact path="/company/:id">
                 <CompanyPage />
               </Route>
-              <Route path="/expert/:id">
+              <Route exact path="/expert/:id">
                 <ExpertPage />
               </Route>
-              <Route path="/expert">
+              <Route exact path="/expert">
                 <Page2 />
               </Route>
-              <ProtectedRoute path="/gigs/:id" auth={authProps}>
+              <ProtectedRoute exact path="/gigs/:id" auth={authProps}>
                 <GigsDetails auth={authProps.user}/>
               </ProtectedRoute>
-              <ProtectedRoute path="/gigs" auth={authProps}>
+              <ProtectedRoute exact path="/gigs" auth={authProps}>
                 <GigsPage auth={authProps.user}/>
               </ProtectedRoute>
-              <Route path="/masterclass/:id">
+              <Route exact path="/masterclass/:id">
                 <MasterClassDetails auth={authProps.user}/>
               </Route>
-              <Route path="/masterclass">
+              <Route exact path="/masterclass">
                 <MasterClassPage />
               </Route>
-              <Route path="/">
+              <Route exact path="/">
                 <HomePage />
               </Route>
             </Switch>

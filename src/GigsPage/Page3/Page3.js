@@ -131,7 +131,7 @@ function Page3(props) {
                             <img
                               className="img_page3_card"
                               variant="top"
-                              src="/image9.png"
+                              src="/imagetime.png"
                             />
                           </Col>
                           <Col className="text_col" md={7}>
@@ -145,7 +145,7 @@ function Page3(props) {
                             <img
                               className="img_page3_card"
                               variant="top"
-                              src="/image6.png"
+                              src="/imagestip.png"
                             />
                           </Col>
                           <Col className="text_col" md={8}>
@@ -209,7 +209,7 @@ function Page3(props) {
                   border: "2px solid #f26c4f",
                   borderRadius: "10px",
                   marginBottom: "2%",
-                  height: "65vh",
+                  height: "fit-content",
                   marginLeft: "",
                 }}
                 md={6}
@@ -221,7 +221,7 @@ function Page3(props) {
                 <h4>Pre-requisites:</h4>
                 {gigs[0].GigPreRequisites}<br/><br/><br/>
                 <h4>Pre-selection tasks (if any):</h4>
-                {gigs[0].GigApplyWith}
+                {gigs[0].GigPreSelectionTask}
               </Col>
             </Row>
           </Container>

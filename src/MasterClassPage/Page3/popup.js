@@ -66,8 +66,26 @@ function MyVerticallyPopUp(props) {
               if (err) {
                 console.log(err);
               } else {
-                alert("PAYMENT SUCCESSFUL");
-                window.location.reload();
+                var params = {
+                  TableName: "UsersTable",
+                  Key: { "UserID":props.uid },
+                  UpdateExpression: "set TotalRewards = :tr",
+                  ExpressionAttributeValues:{
+                    ":tr": "0",
+                  },
+                  ReturnValues:"UPDATED_NEW"
+                }
+                console.log(params)
+                docClient.update(params, function (err, data) {
+                  if (err) {
+                    console.log(err);
+                  } else {
+                    console.log(data)
+                    setReward(0);
+                    alert("PAYMENT SUCCESSFUL");
+                    window.location.reload();
+                  }
+                });
               }
             });
           }
