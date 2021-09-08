@@ -131,7 +131,7 @@ function Page3(props) {
                             <img
                               className="img_page3_card"
                               variant="top"
-                              src=""
+                              src="/image9.png"
                             />
                           </Col>
                           <Col className="text_col" md={7}>
@@ -145,7 +145,7 @@ function Page3(props) {
                             <img
                               className="img_page3_card"
                               variant="top"
-                              src=""
+                              src="/image6.png"
                             />
                           </Col>
                           <Col className="text_col" md={8}>
@@ -156,6 +156,7 @@ function Page3(props) {
                         </Row>
                       </Col>
                     </Row>
+                    <br/>
                   </div>
                 </Row>
                 <Row style={{ marginTop: "0%", paddingBottom: "1%" }}>
@@ -213,7 +214,15 @@ function Page3(props) {
                 }}
                 md={6}
                 className="lastcol_page3_gigs"
-              >{gigs[0].GigDescription}<br/><br/><br/>{gigs[0].GigPreRequisites}<br/><br/><br/>{gigs[0].GigApplyWith}</Col>
+              >
+                <br/>
+                <h4>Gig Description:</h4>
+                {gigs[0].GigDescription}<br/><br/><br/>
+                <h4>Pre-requisites:</h4>
+                {gigs[0].GigPreRequisites}<br/><br/><br/>
+                <h4>Pre-selection tasks (if any):</h4>
+                {gigs[0].GigApplyWith}
+              </Col>
             </Row>
           </Container>
           <div>

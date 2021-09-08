@@ -28,7 +28,7 @@ function Page5() {
         <Container>
           <Row>
             <Card style={{ width: "27%", marginLeft:"2.5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
-                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"10px"}} variant="top" src="holder.svg"/>
+                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"10px", background:"white", borderRadius:"30%"}} variant="top" src="/image10.png"/>
                 <Card.Body style={{marginTop:"10px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >VIDEOS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
@@ -46,12 +46,12 @@ function Page5() {
                   The topic? Anything under the sun!
                   </Card.Text>
                 </Card.Body>
-                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px"}} variant="top" src="holder.svg"/>
+                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px", background:"white", borderRadius:"30%"}} variant="top" src="/image4.png"/>
                 
             </Card>
 
             <Card style={{ width: "27%", marginLeft:"7%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px" }}>
-                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"10px"}} variant="top" src="holder.svg"/>
+                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"10px", background:"white", borderRadius:"30%"}} variant="top" src="/image1.png"/>
                 <Card.Body style={{marginTop:"10px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >COMMUNITY</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>

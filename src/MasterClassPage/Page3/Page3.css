@@ -90,10 +90,11 @@
 }
 .img_page3_card {
   margin-right: 0;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 70px;
   padding-bottom: 10px;
   text-align: right;
+  background-color: white;
 }
 .text_page3_card {
   font-size: 20px;
@@ -224,9 +225,10 @@
   }
   .img_page3_card {
     margin: auto;
-    height: 40px;
+    height: 30px;
     width: 40px;
     padding-bottom: 10px;
+    background-color: white;
   }
   .button_slide_page3 {
     font-size: 12px;

@@ -15,7 +15,7 @@ function Page2() {
         </p>
           <Row>
             <Card style={{ width: "27%", marginLeft:"1.5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
-                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px"}} variant="top" src="holder.svg"/>
+                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px", background:"white", borderRadius:"30%"}} variant="top" src="/image7.png"/>
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >MASTERCLASSES</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
@@ -32,12 +32,12 @@ function Page2() {
                   👈🏼 you’ve learnt there. Now practice here! 👇🏼
                   </Card.Text>
                 </Card.Body>
-                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px"}} variant="top" src="holder.svg"/>
+                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px", background:"white", borderRadius:"30%"}} variant="top" src="/image3.png"/>
                 <a href="/gigs"><ArrowRight className="card_arrow1"/></a>
             </Card>
 
             <Card style={{ width: "27%", marginLeft:"7%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px" }}>
-                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px"}} variant="top" src="holder.svg"/>
+                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px", background:"white", borderRadius:"30%"}} variant="top" src="/image2.png"/>
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SOCIAL LEARNING</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
@@ -48,9 +48,9 @@ function Page2() {
             </Card>
           </Row>
           <Row style={{width:"500px",height:"70px",border:"1px solid #534D4D", marginTop:"5%",  marginBottom:"5%", marginLeft:"59%", paddingTop:"10px"}}>
-          <Col md={1} ><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="50px" /></Col>
-            <Col md={1}><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="50px" /></Col>
-            <Col md={1}><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="50px" width="50px" /></Col>
+            <Col md={1}><img src="https://media-exp1.licdn.com/dms/image/C4D03AQFn3cR03llVHA/profile-displayphoto-shrink_400_400/0/1611850401052?e=1636588800&v=beta&t=PAiR61Sw84Ba9s9hqdm16-TbvM6ohKd2K5O6MuXLQZo" height="50px" width="50px" /></Col>
+            <Col md={1}><img src="https://media-exp1.licdn.com/dms/image/C4E03AQE7ozU87tbOow/profile-displayphoto-shrink_400_400/0/1615921578753?e=1636588800&v=beta&t=mj5jbwnrV8vxBB7FAV3UZd2tQPShGQ5LBGl5NOTI0oU" height="50px" width="50px" /></Col>
+            <Col md={1} ><img src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_400_400/0/1611408696050?e=1636588800&v=beta&t=-w8wRLMIBJXs-rV8qPtrslboo1waw-ObTyAHAHQPhKM" height="50px" width="50px" /></Col>
             <Col><p style={{fontSize:"20px", textAlign:"center", paddingTop: "10px"}}>3000+ Learners on TheNextGig</p></Col>
           </Row>
         </Container>

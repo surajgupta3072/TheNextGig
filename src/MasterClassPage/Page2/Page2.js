@@ -24,8 +24,6 @@ function Page2() {
               </div>
             </Col>
          </Row>
-         
-         
        </Col> 
        <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
          <Container>
@@ -34,7 +32,6 @@ function Page2() {
             <Row className="mast_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="mast_page2_p5"><a href="/expert" style={{textDecoration:"none", color:"#f26c4f"}}>Stalk them.</a></p></Row>
             <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2"/></a>
          </Container>
-         
        </Col>
       </Row>
       <Container className="rectangle-box2" style={{marginTop:"5%"}}>

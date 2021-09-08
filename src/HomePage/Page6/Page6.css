@@ -10,22 +10,22 @@
 }
 @property --num1 {
   syntax: "<integer>";
-  initial-value: 43;
+  initial-value: 3000;
   inherits: false;
 }
 @property --num2 {
   syntax: "<integer>";
-  initial-value: 68;
+  initial-value: 110;
   inherits: false;
 }
 @property --num3 {
   syntax: "<integer>";
-  initial-value: 17;
+  initial-value: 970;
   inherits: false;
 }
 @property --num4 {
   syntax: "<integer>";
-  initial-value: 12;
+  initial-value: 5;
   inherits: false;
 }
 .number1 {
@@ -61,7 +61,7 @@
     --num1: 0;
   }
   to {
-    --num1: 43;
+    --num1: 3000;
   }
 }
 @keyframes counter1 {
@@ -69,7 +69,7 @@
     --num2: 0;
   }
   to {
-    --num2: 68;
+    --num2: 110;
   }
 }
 @keyframes counter2 {
@@ -77,7 +77,7 @@
     --num3: 0;
   }
   to {
-    --num3: 17;
+    --num3: 970;
   }
 }
 @keyframes counter3 {
@@ -85,7 +85,7 @@
     --num4: 0;
   }
   to {
-    --num4: 12;
+    --num4: 5;
   }
 }
 .numbers_page6_mobile,
@@ -133,7 +133,7 @@
     position: absolute;
     transform: rotate(45deg);
     margin-top: 60px;
-    margin-left: -68px;
+    margin-left: -110px;
   }
   .liner_3 {
     margin-left: -55px;

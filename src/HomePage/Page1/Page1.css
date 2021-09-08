@@ -1,6 +1,11 @@
 .Opening_container{
   background: url("https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg") center;
 }
+
+/* .Opening_container{
+  background: url("./../../Homepage.png") center;
+} */
+
 /*Headings*/
   .heading {
     position: relative;

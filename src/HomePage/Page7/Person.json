@@ -1,24 +1,30 @@
 [
-    {
-        "id":1,
-        "img":"https://www.tutorialrepublic.com/examples/images/clients/3.jpg",
-        "quotes":"It was a great learning experience with TheNextGig. I had a chance to explore various jobs",
-        "name":"Dhariya Shah",
-        "post":"IIM-Ahmedabad, ‘18-20"
-    },
-    {
-        "id":2,
-        "img":"https://www.tutorialrepublic.com/examples/images/clients/2.jpg",
-        "quotes":"I learnt a lot of thing but the hands on project helped me a lot and thus make me more confident",
-        "name":"Nikhil Agarwal",
-        "post":"IIT-Kharagpur, ‘18-22"
-
-    },
-    {
-      "id":3,
-      "img":"https://www.tutorialrepublic.com/examples/images/clients/1.jpg",
-      "quotes":"Internship was great and the peer groups helped a lot as well in knowing where I stand in the list",
-      "name":"Shanya Singh",
-      "post":"IIM-Delhi, ‘18-20"
-    }
+  {
+    "id": 1,
+    "img": "https://media-exp1.licdn.com/dms/image/C5103AQF41sT0AIOWLw/profile-displayphoto-shrink_800_800/0/1572105784862?e=1636588800&v=beta&t=uPotIz27KlmTfuzZ9sUdX9LRArHmJ7Qli6zp3hb1lo4",
+    "quotes": "TheNextGig live project was an extremely smooth, enjoyable and brilliant learning experience for us. The project we worked on helped us gain knowledge of the industry and gave us a chance to apply our learnings in a practical manner. Had immense support from Urmil and Dhairya throughout the project.",
+    "name": "Kirti Agrawal",
+    "post": "MICA"
+  },
+  {
+    "id": 2,
+    "img": "https://media-exp1.licdn.com/dms/image/C5103AQFg7zfzkiQE8Q/profile-displayphoto-shrink_800_800/0/1571626383719?e=1636588800&v=beta&t=m1mCj3Im7_GOEbeeq2JSqP5oEb07kfIUpZUQATUaVa4",
+    "quotes": "I am super grateful to the TNG Team for the opportunity they provided us with. If not for them, we would have definitely been at homes fooling around doing nothing but now we are getting hands on experience from the best people in the business.",
+    "name": "Saurabh Zanwar",
+    "post": "IIT-Kharagpur"
+  },
+  {
+    "id": 3,
+    "img": "https://media-exp1.licdn.com/dms/image/C4D0BAQG7hDsmiBlIaQ/company-logo_200_200/0/1519892037509?e=1639008000&v=beta&t=I-ffSiAv4e1uTX03_KPh1sYcBAaHzUvOT-AlKheilH8",
+    "quotes": "It was an amazing experience all the way from the submitting the project, interviewing students, and then the 45 days of getting the project done! They went beyond expectations in coordination, communication and troubleshooting.",
+    "name": "Studysid",
+    "post": "Education Management"
+  },
+  {
+    "id": 4,
+    "img": "https://media-exp1.licdn.com/dms/image/C4E0BAQHeEUSbk4-S6Q/company-logo_200_200/0/1542603072841?e=1639008000&v=beta&t=1RcAWFOJQ6aDdINhSzek4P52qNDbmYb0pFqDvmSuZrQ",
+    "quotes": "We have used their services for a couple of projects now and both the times we received credible candidate profiles and their project management skills ensured the quality and timely completion of the tasks given.",
+    "name": "Pirimid",
+    "post": "Financial Services"
+  }
 ]

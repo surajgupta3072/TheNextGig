@@ -109,17 +109,18 @@ function Page3(props) {
                 <Col>
                   <Row>
                     <Col className="img_col">
-                      <img  className="img_page3_card" variant="top" src={session.course_image}/>
+                      <img className="img_page3_card" variant="top" src="/image11.png"/>
                     </Col>
                     <Col className="text_col">
-                      <h1  className="text_page3_card">Role</h1>
+                      <h1 className="text_page3_card">Role</h1>
                     </Col>
                   </Row>
+                  <br/>
                 </Col>
                 <Col>
                   <Row>
                     <Col className="img_col">
-                      <img className="img_page3_card" variant="top" src={session.course_image}/>
+                      <img className="img_page3_card" variant="top" src="/image11.png"/>
                     </Col>
                     <Col className="text_col">
                       <h1 className="text_page3_card">Industry</h1>
@@ -129,7 +130,7 @@ function Page3(props) {
               </Row>
           </div>
             </Row>
-            <Row style={{marginTop: "4%", paddingBottom: "1%", display: "flex", justifyContent: "space-around"}}>
+            <Row style={{display: "flex", justifyContent: "space-around"}}>
               <Col style={{marginLeft: "10%"}}>
                 <a href={"/expert/"+session.ExpertId}><button  className="button_slide_page3 slide_right">
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
