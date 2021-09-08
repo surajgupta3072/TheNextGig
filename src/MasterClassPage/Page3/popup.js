@@ -53,10 +53,15 @@ function MyVerticallyPopUp(props) {
           if (err) {
             console.log(err);
           } else {
+            var purlen;
+            if(data.Item.MasterclassesPurchased===undefined)
+              purlen = 0
+            else
+              purlen = data.Item.MasterclassesPurchased.length
             var params = {
               TableName: "UsersTable",
               Key: { "UserID":props.uid },
-              UpdateExpression: "set MasterclassesPurchased["+(data.Item.MasterclassesPurchased.length)+"] = :ms",
+              UpdateExpression: "set MasterclassesPurchased["+purlen.toString()+"] = :ms",
               ExpressionAttributeValues:{
                 ":ms":props.cid,
               },
@@ -71,7 +76,7 @@ function MyVerticallyPopUp(props) {
                   Key: { "UserID":props.uid },
                   UpdateExpression: "set TotalRewards = :tr",
                   ExpressionAttributeValues:{
-                    ":tr": "0",
+                    ":tr": 0,
                   },
                   ReturnValues:"UPDATED_NEW"
                 }

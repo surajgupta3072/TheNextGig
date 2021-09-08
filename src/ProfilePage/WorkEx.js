@@ -20,7 +20,7 @@ function WorkEx(props) {
   }
 
   useEffect(() => {
-    if(props.p.wholedata.WorkExperience.length === 0){
+    if(props.p.wholedata.WorkExperience===undefined){
       setInputFields([{ company:'', months: '', description:'' }])
     }
     else{

@@ -13,7 +13,7 @@ function Page4() {
         <p class="btn">
           <span>
             <span>
-              <span className="border_box">GIGS. PROJECTS.</span>
+              <span className="border_box">EXPERIENTIAL LEARNING</span>
             </span>
           </span>
         </p>
@@ -116,7 +116,7 @@ function Page4() {
         <p class="btn">
           <span>
             <span>
-              <span className="border_box">GIGS. PROJECTS. </span>
+              <span className="border_box">EXPERIENTIAL LEARNING </span>
             </span>
           </span>
         </p>

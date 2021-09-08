@@ -36,6 +36,7 @@ function Page3(props) {
         if (err) {
           console.log(err);
         } else {
+          if(data.Item.MasterclassesPurchased!==undefined)
           setCoursePurchased(data.Item.MasterclassesPurchased.includes(Number(session.id)));
         }
       });

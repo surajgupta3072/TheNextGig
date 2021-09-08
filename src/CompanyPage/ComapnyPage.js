@@ -92,8 +92,9 @@ function CompanyPage() {
               <div className="pack">
                 <div className="testimonial">
                   <div className="imag">
-                    <img className="img_experttop" src="/loger1.svg"/>
+                    <img className="img_experttop" src={gigs[0].GigImage}/>
                   </div>
+                  <br/>
                   <div class="para">
                     <h3>{gigs[0].CompanyName}</h3>
                     <p className="subtitle_expertcard">{gigs[0].CompanyIndustry}</p>

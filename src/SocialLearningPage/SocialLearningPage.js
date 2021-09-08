@@ -60,7 +60,7 @@ function SocialLearningPage(props) {
               {active!=="Community" &&
                 <div>
                 <Row style={{marginTop:"5%",}}><p>Explore:</p></Row>
-                <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="All" name="group1"/></Row>
+                <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="All" name="group1" checked/></Row>
                 <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="Data Science" name="group1"/></Row>
                 <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="Data Science" name="group1"/></Row>
                 <Row style={{marginTop:"2%",marginLeft:"2%"}}><Form.Check inline label="Data Science" name="group1"/></Row>

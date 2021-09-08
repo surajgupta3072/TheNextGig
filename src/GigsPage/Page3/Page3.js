@@ -79,10 +79,12 @@ function Page3(props) {
       if (err) {
         console.log(err);
       } else {
-        for(var x=0; x<data.Item.gigsApplications.length; x++) {
-          agig.push(data.Item.gigsApplications[x].GigId);
+        if(data.Item.gigsApplications!==undefined) {
+          for(var x=0; x<data.Item.gigsApplications.length; x++) {
+            agig.push(data.Item.gigsApplications[x].GigId);
+          }
+          setAppliedGigs(agig)
         }
-        setAppliedGigs(agig)
       }
     });
   }, []);

@@ -27,7 +27,7 @@ function Page2() {
             
             <Card style={{ width: "27%", marginLeft:"7%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
                 <Card.Body style={{marginTop:"90px"}}>
-                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >GIGS & PROJECTS</Card.Title>
+                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >EXPERIENTIAL LEARNING</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
                   👈🏼 you’ve learnt there. Now practice here! 👇🏼
                   </Card.Text>
@@ -87,7 +87,7 @@ function Page2() {
               <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
             </Col>
             <Col>
-              <Card.Title style={{fontSize:"20px",textAlign:"center"}}>GIGS & PROJECTS</Card.Title>
+              <Card.Title style={{fontSize:"20px",textAlign:"center"}}>EXPERIENTIAL LEARNING</Card.Title>
               <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
               👈🏼 you’ve learnt there. <br/>Now practice  here! 👇🏼
               </Card.Text>

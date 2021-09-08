@@ -4,7 +4,6 @@ import {BsSlash} from 'react-icons/bs';
 function Page6() {
     return (
     <div className="page6_maindiv">
-        
         <div className="image_page6">
             <div className="numbers_page6">
                 <h1 className="client_number"><span className="number1"></span><BsSlash className="liner_page6 liner_1"/><h5 style={{fontSize:"1.1rem",color:"white"}}>Learners</h5></h1>

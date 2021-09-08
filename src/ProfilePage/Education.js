@@ -16,25 +16,27 @@ function Education(props) {
     {value: '7', label: 'Item 7'},
   ]
    const [gradInst, setGradInst] = useState({});
-   const [gradBranch,setGradBranch]=useState();
-   const [gradyear,setGradyear]=useState();
+   const [gradBranch,setGradBranch]=useState("");
+   const [gradyear,setGradyear]=useState("");
    const [profInst,setProfInst]=useState({});
-   const [profBranch,setprofBranch]=useState();
-   const [profyear,setProfyear]=useState();
+   const [profBranch,setprofBranch]=useState("");
+   const [profyear,setProfyear]=useState("");
    const [pgradInst,setpgradInst]=useState({});
-   const [pgradBranch,setpGradBranch]=useState();
-   const [pgradyear,setPgradyear]=useState();
+   const [pgradBranch,setpGradBranch]=useState("");
+   const [pgradyear,setPgradyear]=useState("");
 
     useEffect(() => {
-      setGradBranch(props.p.wholedata.GradBranch);
-      setGradyear(props.p.wholedata.GradYear);
-      setProfyear(props.p.wholedata.ProfYear);
-      setprofBranch(props.p.wholedata.ProfBranch);
-      setPgradyear(props.p.wholedata.PGradYear);
-      setpGradBranch(props.p.wholedata.PGradBranch);
-      setGradInst(props.p.wholedata.GradInst);
-      setProfInst(props.p.wholedata.ProfInst);
-      setpgradInst(props.p.wholedata.PGradInst);
+      if(props.p.wholedata.GradBranch!==undefined) {
+        setGradBranch(props.p.wholedata.GradBranch);
+        setGradyear(props.p.wholedata.GradYear);
+        setProfyear(props.p.wholedata.ProfYear);
+        setprofBranch(props.p.wholedata.ProfBranch);
+        setPgradyear(props.p.wholedata.PGradYear);
+        setpGradBranch(props.p.wholedata.PGradBranch);
+        setGradInst(props.p.wholedata.GradInst);
+        setProfInst(props.p.wholedata.ProfInst);
+        setpgradInst(props.p.wholedata.PGradInst);
+      }
     }, []);
 
     function givereward() {
@@ -61,10 +63,10 @@ function Education(props) {
     }
 
     function handleSubmit() {
-      if(gradInst!=={} && gradyear!==null && gradBranch!==null){
+      if(gradInst!=={} && gradyear!=="" && gradBranch!=="") {
         var params = {
           TableName: "UsersTable",
-          Key: { "UserID":props.p.wholedata.UserID },
+          Key: { "UserID": props.p.wholedata.UserID },
           UpdateExpression: "set GradBranch=:gb, GradYear=:gy, ProfYear=:py, ProfBranch=:pb, PGradYear=:pgy, PGradBranch=:pgb, GradInst=:gi, ProfInst=:pi, PGradInst=:pgi",
           ExpressionAttributeValues:{
             ":gi": gradInst,

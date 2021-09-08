@@ -9,11 +9,15 @@ const config = {bucketName: "userscv", region: process.env.REACT_APP_REGION, acc
 const ReactS3Client = new S3(config);
 
 function CvPitch(props) {
+  const [prevgigs, setPrevgigs]=useState([]);
   const [cv, setCV]=useState();
   const [cvlink, setCvlink]=useState("");
 
   useEffect(() => {
-    setCvlink(props.p.wholedata.CVlink);
+    if(props.p.wholedata.CVlink!==undefined)
+      setCvlink(props.p.wholedata.CVlink);
+    if(props.p.wholedata.gigsApplications!==undefined)
+      setPrevgigs(props.p.wholedata.gigsApplications)
   }, []);
 
   function givereward() {
@@ -80,7 +84,7 @@ function CvPitch(props) {
        <button style={{marginLeft:"60%"}} onClick={handleSubmit} className="button_slide">Save</button>
        <br/><br/><br/>
        <p style={{fontSize:"25px",fontWeight:"bold"}}>Past Applications</p>
-       {props.p.wholedata.gigsApplications.map(single=>
+       {prevgigs.map(single=>
        <Row>
          <Col md={7}><p style={{fontSize:"24px"}}>{single.GigName}</p></Col>
          <Col style={{display:"flex", alignItems:"center"}}><a target="_blank" href={single.upload} style={{fontSize:"16px", color:"#F26C4F"}}>{single.upload.split("----")[1]}</a></Col>

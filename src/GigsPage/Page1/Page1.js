@@ -42,10 +42,12 @@ function Page1(props) {
       if (err) {
         console.log(err);
       } else {
-        for(var x=0; x<data.Item.gigsApplications.length; x++) {
-          agig.push(data.Item.gigsApplications[x].GigId);
+        if(data.Item.gigsApplications!==undefined) {
+          for(var x=0; x<data.Item.gigsApplications.length; x++) {
+            agig.push(data.Item.gigsApplications[x].GigId);
+          }
+          setAppliedGigs(agig)
         }
-        setAppliedGigs(agig)
       }
     });
   }, []);
@@ -54,7 +56,7 @@ function Page1(props) {
       <div className="header_masterclass">
         <Container>
           <div className="top_masterclass">
-            <h1>ALL GIGS / LIVE PROJECTS</h1>
+            <h1>EXPERIENTIAL LEARNING</h1>
             <p className="subtitle_masterclass">
             Let’s make your learning 
               <span className="orange_text_masterclass"> experiential</span>.

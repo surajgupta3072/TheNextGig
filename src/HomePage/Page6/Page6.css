@@ -29,19 +29,19 @@
   inherits: false;
 }
 .number1 {
-  animation: counter 5s alternate ease-in-out;
+  animation: counter 10s alternate ease-in-out;
   counter-reset: num1 var(--num1);
 }
 .number2 {
-  animation: counter1 5s alternate ease-in-out;
+  animation: counter1 10s alternate ease-in-out;
   counter-reset: num2 var(--num2);
 }
 .number3 {
-  animation: counter2 5s alternate ease-in-out;
+  animation: counter2 10s alternate ease-in-out;
   counter-reset: num3 var(--num3);
 }
 .number4 {
-  animation: counter3 5s alternate ease-in-out;
+  animation: counter3 10s alternate ease-in-out;
   counter-reset: num4 var(--num4);
 }
 .number1::after {
