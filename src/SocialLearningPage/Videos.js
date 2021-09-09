@@ -1,42 +1,45 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import React from 'react';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import React, { useState, useEffect } from "react";
+import docClient from '../GigsPage/GigsAWS';
 
-function Videos(props) {
+function Videos() {
+  const [allvideos, setAllvideos] = useState([]);
+
+  useEffect(() => {
+    var params = {
+      TableName: "VideosTable"
+    };
+    docClient.scan(params, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        setAllvideos(data.Items.filter((e)=>{if(e.isApproved===true) return e}));
+      }
+    });
+  }, []);
+
   return (
     <div>
-      <Container >
-        <br/>
-         <Row>
-           <Col >
-            <Row>
-              <video controls style={{height:"250px", width:"350px"}}>
-                <source src="https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession2.mp4"/>
-              </video>
-            </Row>
-            <Row><Col>Web Development</Col></Row>
-            <Row><Col>#webd #react</Col></Row>
-           </Col>
-           <Col>
-            <Row>
-              <video controls style={{height:"250px", width:"350px"}}>
-                <source src="https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession1.mp4"/>
-              </video>
-            </Row>
-            <Row><Col>Machine Learning</Col></Row>
-            <Row><Col>#dataScience #ml</Col></Row>
-           </Col>
-           <Col>
-            <Row>
-              <video controls style={{height:"250px", width:"350px"}}>
-                <source src="https://master-sessions.s3.ap-south-1.amazonaws.com/Sample_MasterSession3.mp4"/>
-              </video>
-            </Row>
-            <Row><Col>Marketing</Col></Row>
-            <Row><Col>#marketing #product</Col></Row>
-           </Col>
-         </Row>
+      <Container>
+        <Row>
+          {allvideos.map((vid)=>
+            <Col xs={4} key={vid.VideoID}>
+              <Row>
+                <video controls style={{ height: "250px", width: "350px" }}>
+                  <source src={vid.VideoLink} />
+                </video>
+              </Row>
+              <Row>
+                <Col>{vid.VideoTopic}</Col>
+              </Row>
+              <Row>
+                <Col>{vid.VideoHashtags}</Col>
+              </Row>
+            </Col>
+          )}
+        </Row>
       </Container>
     </div>
   );

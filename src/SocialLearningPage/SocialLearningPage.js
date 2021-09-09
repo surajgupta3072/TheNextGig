@@ -79,6 +79,7 @@ function SocialLearningPage(props) {
                 <Col >
                   <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>
                   <MyVerticallyPopUp
+                  userid={props.auth.user.username}
                   show={modalShow}
                   onHide={() => setModalShow(false)}
                />
@@ -88,6 +89,7 @@ function SocialLearningPage(props) {
                 <Col >
                   <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Blog)</p></a>
                   <MyVerticallyPopUp
+                  userid={props.auth.user.username}
                   show={modalShow}
                   onHide={() => setModalShow(false)}
                />

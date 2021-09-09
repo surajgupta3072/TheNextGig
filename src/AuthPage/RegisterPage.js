@@ -26,7 +26,7 @@ function RegisterPage(){
       setShowErr(false);
       var params = {
         TableName: "UsersTable",
-        Item: {"UserID":signUpResponse.userSub, "FullName":name, "Email":email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards":0, "MasterclassesPurchased":[], "gigsApplications":[]}
+        Item: {"UserID":signUpResponse.userSub, "FullName":name, "Email":email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards":0, "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[]}
       }
       docClient.put(params, function (err, data) {
           if (err) {
