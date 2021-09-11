@@ -9,6 +9,7 @@ import {Linkedin} from "react-bootstrap-icons";
 import Community from './Community';
 import docClient from '../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popup';
+import MyVerticallyPopUpBlog  from './popupBlog';
 
 function SocialLearningPage(props) {
   const [modalShow, setModalShow] = React.useState(false);
@@ -88,7 +89,7 @@ function SocialLearningPage(props) {
                 {active==="Blogs" &&
                 <Col >
                   <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Blog)</p></a>
-                  <MyVerticallyPopUp
+                  <MyVerticallyPopUpBlog
                   userid={props.auth.user.username}
                   show={modalShow}
                   onHide={() => setModalShow(false)}

@@ -1,6 +1,3 @@
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import React, { useState, useEffect } from "react";
 import docClient from '../GigsPage/GigsAWS';
 
@@ -22,25 +19,20 @@ function Videos() {
 
   return (
     <div>
-      <Container>
-        <Row>
-          {allvideos.map((vid)=>
-            <Col xs={4} key={vid.VideoID}>
-              <Row>
-                <video controls style={{ height: "250px", width: "350px" }}>
-                  <source src={vid.VideoLink} />
-                </video>
-              </Row>
-              <Row>
-                <Col>{vid.VideoTopic}</Col>
-              </Row>
-              <Row>
-                <Col>{vid.VideoHashtags}</Col>
-              </Row>
-            </Col>
-          )}
-        </Row>
-      </Container>
+      <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
+        {allvideos.map((vid)=>
+          <div key={vid.VideoID}>
+            <div>
+              <video controls style={{ height: "250px", width: "350px" }}>
+                <source src={vid.VideoLink} />
+              </video>
+              <h5>{vid.VideoTopic}</h5>
+              {vid.VideoHashtags}
+            </div>
+            <br/>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
