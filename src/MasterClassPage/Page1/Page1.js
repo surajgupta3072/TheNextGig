@@ -29,8 +29,8 @@ function Page1() {
       <MDBCardImage  style={{ marginLeft:"0.5%",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={carder.course_image} alt='...' />
       </div>
       <div className="image_logo">
-      <img className="image_logo1" src="/TheNextGigLogo.png"/>
-      <img className="image_logo2" src="/TheNextGigLogo.png"/>
+      <img alt="..." className="image_logo1" src="/TheNextGigLogo.png"/>
+      <img alt="..." className="image_logo2" src="/TheNextGigLogo.png"/>
       </div>
       <MDBCardBody>
         <div className="Course_name">{carder.course_name}</div>
@@ -57,8 +57,8 @@ function Page1() {
              <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={carder.course_image} alt='...' /></div>
              <div className="image_logo">
-             <img className="image_logo1" src="/TheNextGigLogo.png"/>
-             <img className="image_logo2" src="/TheNextGigLogo.png"/>
+             <img alt="..." className="image_logo1" src="/TheNextGigLogo.png"/>
+             <img alt="..." className="image_logo2" src="/TheNextGigLogo.png"/>
              </div>
              <MDBCardBody>
                <div className="Course_name">{carder.course_name}</div>

@@ -8,11 +8,10 @@ import Blogs from './Blogs';
 import {Linkedin} from "react-bootstrap-icons";
 import Community from './Community';
 import docClient from '../GigsPage/GigsAWS';
-import MyVerticallyPopUp  from './popup';
+import MyVerticallyPopUp  from './popupVideo';
 import MyVerticallyPopUpBlog  from './popupBlog';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-
 
 function SocialLearningPage(props) {
   const [modalShow, setModalShow] = React.useState(false);
@@ -24,6 +23,7 @@ function SocialLearningPage(props) {
   const [color3,setColor3] =useState("white");
   const [textColor3,setextColor3] =useState("#f26c4f");
   const [rew, setRew] = useState(0);
+  const [allvideos, setAllvideos] = useState([]);
 
   useEffect(() => {
     var params = {
@@ -36,6 +36,16 @@ function SocialLearningPage(props) {
         console.log(err);
       } else {
         setRew(data.Item.TotalRewards);
+      }
+    });
+    var paramss = {
+      TableName: "VideosTable"
+    };
+    docClient.scan(paramss, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        setAllvideos(data.Items.filter((e)=>{if(e.isApproved===true) return e}));
       }
     });
   }, []);
@@ -131,7 +141,7 @@ function SocialLearningPage(props) {
                 </Col>
                 }
              </Row>
-                {active === "Videos" && <Videos />}
+                {active === "Videos" && <Videos prop={allvideos}/>}
                 {active === "Blogs" && <Blogs />}
                 {active === "Community" && <Community/>}
             </Col> 

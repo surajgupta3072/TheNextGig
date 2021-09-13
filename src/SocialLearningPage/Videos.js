@@ -1,26 +1,10 @@
-import React, { useState, useEffect } from "react";
-import docClient from '../GigsPage/GigsAWS';
+import React from "react";
 
-function Videos() {
-  const [allvideos, setAllvideos] = useState([]);
-
-  useEffect(() => {
-    var params = {
-      TableName: "VideosTable"
-    };
-    docClient.scan(params, function(err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        setAllvideos(data.Items.filter((e)=>{if(e.isApproved===true) return e}));
-      }
-    });
-  }, []);
-
+function Videos(props) {
   return (
     <div>
       <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
-        {allvideos.map((vid)=>
+        {props.prop.map((vid)=>
           <div key={vid.VideoID}>
             <div>
               <video controls style={{ height: "250px", width: "350px" }}>

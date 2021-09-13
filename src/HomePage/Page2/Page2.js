@@ -48,9 +48,9 @@ function Page2() {
             </Card>
           </Row>
           <Row style={{width:"500px",height:"70px",border:"1px solid #534D4D", marginTop:"5%",  marginBottom:"5%", marginLeft:"59%", paddingTop:"10px"}}>
-            <Col md={1}><img src="https://media-exp1.licdn.com/dms/image/C4D03AQFn3cR03llVHA/profile-displayphoto-shrink_400_400/0/1611850401052?e=1636588800&v=beta&t=PAiR61Sw84Ba9s9hqdm16-TbvM6ohKd2K5O6MuXLQZo" height="50px" width="50px" /></Col>
-            <Col md={1}><img src="https://media-exp1.licdn.com/dms/image/C4E03AQE7ozU87tbOow/profile-displayphoto-shrink_400_400/0/1615921578753?e=1636588800&v=beta&t=mj5jbwnrV8vxBB7FAV3UZd2tQPShGQ5LBGl5NOTI0oU" height="50px" width="50px" /></Col>
-            <Col md={1} ><img src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_400_400/0/1611408696050?e=1636588800&v=beta&t=-w8wRLMIBJXs-rV8qPtrslboo1waw-ObTyAHAHQPhKM" height="50px" width="50px" /></Col>
+            <Col md={1}><img alt="..." src="https://media-exp1.licdn.com/dms/image/C4D03AQFn3cR03llVHA/profile-displayphoto-shrink_400_400/0/1611850401052?e=1636588800&v=beta&t=PAiR61Sw84Ba9s9hqdm16-TbvM6ohKd2K5O6MuXLQZo" height="50px" width="50px" /></Col>
+            <Col md={1}><img alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQE7ozU87tbOow/profile-displayphoto-shrink_400_400/0/1615921578753?e=1636588800&v=beta&t=mj5jbwnrV8vxBB7FAV3UZd2tQPShGQ5LBGl5NOTI0oU" height="50px" width="50px" /></Col>
+            <Col md={1} ><img alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_400_400/0/1611408696050?e=1636588800&v=beta&t=-w8wRLMIBJXs-rV8qPtrslboo1waw-ObTyAHAHQPhKM" height="50px" width="50px" /></Col>
             <Col><p style={{fontSize:"20px", textAlign:"center", paddingTop: "10px"}}>3000+ Learners on TheNextGig</p></Col>
           </Row>
         </Container>
@@ -114,9 +114,9 @@ function Page2() {
       </Card>
       
       <div style={{width:"300px",height:"50px",border:"1px solid #534D4D", marginLeft:"5%", paddingTop:"5px", display: "flex", flexDirection: "row"}}>
-          <Col md={1} ><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
-            <Col md={1}><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
-            <Col md={1}><img src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
+          <Col md={1} ><img alt="..." src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
+            <Col md={1}><img alt="..." src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
+            <Col md={1}><img alt="..." src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
             <Col><p style={{fontSize:"11px", textAlign:"center", paddingTop: "10px"}}>3000+ Learners on TheNextGig</p></Col>
           </div>
       </Col>

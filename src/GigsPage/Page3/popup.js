@@ -34,7 +34,8 @@ function MyVerticallyPopUp(props) {
         docClient.get(paramss, function(err, data) {
           if (err) {
             console.log(err);
-          } else {
+          } 
+          else {
             var gigapplen;
             if(data.Item.gigsApplications===undefined)
               gigapplen = 0
@@ -42,7 +43,7 @@ function MyVerticallyPopUp(props) {
               gigapplen = data.Item.gigsApplications.length
             var params = {
               TableName: "UsersTable",
-              Key: { "UserID":props.userid },
+              Key: { "UserID": props.userid },
               UpdateExpression: "set gigsApplications["+gigapplen.toString()+"] = :g",
               ExpressionAttributeValues:{
                 ":g":adata,
@@ -52,9 +53,38 @@ function MyVerticallyPopUp(props) {
             docClient.update(params, function (err, data) {
               if (err) {
                 console.log(err);
-              } else {
-                alert("APPLIED SUCCESSFULLY")
-                window.location.href="/gigs"
+              } 
+              else {
+                var paramss = {
+                  TableName: "GigsTable",
+                  Key: { "GigId": props.gigid },
+                  ProjectionExpression: "ApplicationsUserID",
+                };
+                docClient.get(paramss, function(err, data) {
+                  if (err) {
+                    console.log(err);
+                  } 
+                  else {
+                    var params = {
+                      TableName: "GigsTable",
+                      Key: { "GigId": props.gigid },
+                      UpdateExpression: "set ApplicationsUserID["+data.Item.ApplicationsUserID.length.toString()+"] = :al",
+                      ExpressionAttributeValues:{
+                        ":al": props.userid,
+                      },
+                      ReturnValues:"UPDATED_NEW"
+                    }
+                    docClient.update(params, function (err, data) {
+                      if (err) {
+                        console.log(err);
+                      } 
+                      else {
+                        alert("APPLIED SUCCESSFULLY")
+                        window.location.href="/gigs"
+                      }
+                    });
+                  }
+                });
               }
             });
           }

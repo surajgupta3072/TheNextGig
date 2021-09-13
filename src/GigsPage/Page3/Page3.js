@@ -131,6 +131,7 @@ function Page3(props) {
                         <Row>
                           <Col className="img_col" md={4}>
                             <img
+                              alt="..."
                               className="img_page3_card"
                               variant="top"
                               src="/imagetime.png"
@@ -148,6 +149,7 @@ function Page3(props) {
                               className="img_page3_card"
                               variant="top"
                               src="/imagestip.png"
+                              alt="..."
                             />
                           </Col>
                           <Col className="text_col" md={8}>
@@ -276,8 +278,8 @@ function Page3(props) {
                       />
                     </div>
                     <div className="image_logo">
-                      <img className="image_logo1" src="/TheNextGigLogo.png" />
-                      <img className="image_logo2" src="/TheNextGigLogo.png" />
+                      <img alt="..." className="image_logo1" src="/TheNextGigLogo.png" />
+                      <img alt="..." className="image_logo2" src="/TheNextGigLogo.png" />
                     </div>
                     <MDBCardBody>
                       <div className="Course_name">{carder.course_name}</div>

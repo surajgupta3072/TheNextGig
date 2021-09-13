@@ -23,7 +23,7 @@ function Page1(props) {
         <div className="pack">
           <div className="testimonial">
             <div className="imag">
-              <img className="img_experttop" src={expert.ExpertPic} />
+              <img alt="..." className="img_experttop" src={expert.ExpertPic} />
             </div>
             <div class="para">
               <h3>{expert.ExpertName}</h3>
@@ -37,7 +37,7 @@ function Page1(props) {
             </div>
             <div className="img_arr">
               {expert.ExpertCompaniesLogo.map(companyLogo=>
-                <img className="img_company" src={companyLogo}/>
+                <img alt="..." className="img_company" src={companyLogo}/>
               )}
             </div>
           </div>

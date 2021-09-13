@@ -110,7 +110,7 @@ function Page3(props) {
                 <Col>
                   <Row>
                     <Col className="img_col">
-                      <img className="img_page3_card" variant="top" src="/imageh.png"/>
+                      <img alt="..." className="img_page3_card" variant="top" src="/imageh.png"/>
                     </Col>
                     <Col className="text_col">
                       <h1 className="text_page3_card">{session.course_role}</h1>
@@ -121,7 +121,7 @@ function Page3(props) {
                 <Col>
                   <Row>
                     <Col className="img_col">
-                      <img className="img_page3_card" variant="top" src="/imageh.png"/>
+                      <img alt="..." className="img_page3_card" variant="top" src="/imageh.png"/>
                     </Col>
                     <Col className="text_col">
                       <h1 className="text_page3_card">{session.course_industry}</h1>
@@ -162,7 +162,7 @@ function Page3(props) {
           </Col>
           <Col style={{padding:"0px"}} md={6}> 
               {/* <video src={session["episodes"][0]["epi_video"]} className="anim_img" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/> */}
-              <img src={session.course_image} className="anim_img"/>
+              <img alt="..." src={session.course_image} className="anim_img"/>
           </Col>
           </Row>
       </Container>
@@ -231,22 +231,22 @@ function Page3(props) {
       <Container>
         <Row>
           <Col style={{textAlign:"center"}}>
-            <img src="/imageh.png" height="100px" width="160px"/>
+            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
             <h3>Preference for Marketing <span style={{color: "#f26c4f"}}>gigs / internships / jobs</span></h3>
           </Col>
           <Col style={{textAlign:"center"}}>
-            <img src="/imageh.png" height="100px" width="160px"/>
+            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
             <h3>Re-learn the Marketing Fundamentals from the <span style={{color: "#f26c4f"}}>Best</span></h3>          
           </Col>
         </Row>
         <br/><br/>
         <Row>
           <Col style={{textAlign:"center"}}>
-            <img src="/imageh.png" height="100px" width="160px"/>
+            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
             <h3>Certificate from TheNextGig in association with <span style={{color: "#f26c4f"}}>Anil Nair</span></h3>
           </Col>
           <Col style={{textAlign:"center"}}>
-            <img src="/imageh.png" height="100px" width="160px"/>
+            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
             <h3>Sneak peek into real-life <span style={{color: "#f26c4f"}}>marketing</span></h3>          
           </Col>
         </Row>
@@ -255,21 +255,21 @@ function Page3(props) {
       {/* <div className="Whats_inforyou_desktop_view">
         <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around", marginTop: "6%", marginBottom: "6%"}}>
           <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-            <img src="/imageh.png" height="100px" width="160px"/>
+            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
             <h5>Preference for Marketing <span style={{color: "#f26c4f"}}>gigs / internships / jobs</span></h5>
           </div>
           <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-            <img src="/imageh.png" height="100px" width="160px"/>
+            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
             <h5>Re-learn the Marketing Fundamentals from the <span style={{color: "#f26c4f"}}>Best</span></h5>
           </div>
         </div>
         <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around", marginTop: "6%", marginBottom: "6%"}}>
           <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-            <img src="/imageh.png" height="100px" width="160px"/>
+            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
             <h5>Certificate from TheNextGig in association with <span style={{color: "#f26c4f"}}>Anil Nair</span></h5>
           </div>
           <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-            <img src="/imageh.png" height="100px" width="160px"/>
+            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
             <h5>Sneak peek into real-life <span style={{color: "#f26c4f"}}>marketing</span></h5>
           </div>
         </div>
@@ -278,7 +278,7 @@ function Page3(props) {
         <Container style={{display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
           <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
             <Col xs={4}>
-              <img src="/imageh.png" height="50px" width="100px" />
+              <img alt="..." src="/imageh.png" height="50px" width="100px" />
             </Col>
             <Col xs={8}>
               <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
@@ -286,7 +286,7 @@ function Page3(props) {
           </Row>
           <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
             <Col xs={4}>
-              <img src="/imageh.png" height="50px" width="100px" />
+              <img alt="..." src="/imageh.png" height="50px" width="100px" />
             </Col>
             <Col xs={8}>
               <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
@@ -294,7 +294,7 @@ function Page3(props) {
           </Row>
           <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
             <Col xs={4}>
-              <img src="/imageh.png" height="50px" width="100px" />
+              <img alt="..." src="/imageh.png" height="50px" width="100px" />
             </Col>
             <Col xs={8}>
               <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
@@ -302,7 +302,7 @@ function Page3(props) {
           </Row>
           <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
             <Col xs={4}>
-              <img src="/imageh.png" height="50px" width="100px" />
+              <img alt="..." src="/imageh.png" height="50px" width="100px" />
             </Col>
             <Col xs={8}>
               <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
@@ -371,8 +371,8 @@ function Page3(props) {
                <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={details.course_image} alt='...' /></div>
              <div className="image_logo">
-             <img className="image_logo1" src="/TheNextGigLogo.png"/>
-             <img className="image_logo2" src="/TheNextGigLogo.png"/>
+             <img alt="..." className="image_logo1" src="/TheNextGigLogo.png"/>
+             <img alt="..." className="image_logo2" src="/TheNextGigLogo.png"/>
              </div>
              <MDBCardBody>
                <div className="Course_name">{details.course_name}</div>

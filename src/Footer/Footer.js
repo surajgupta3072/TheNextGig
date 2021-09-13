@@ -50,12 +50,9 @@ function Footer(){
                     <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    
                 </Col>
             </Row>
             </div>
-            
-        
     </div>
     );
 }

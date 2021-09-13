@@ -1,4 +1,5 @@
 .blog-box {
+  padding: 10px !important;
   width: 280px;
   height: 250px;
   overflow-x: hidden;
@@ -28,22 +29,25 @@
   background: rgb(242, 108, 79);
   border-radius: 30%;
 }
-.SocialLearn_list_mobile{
+.SocialLearn_list_mobile {
   display: none;
 }
 
+.form-check-input:checked[type=checkbox] {
+  background-color: rgb(242, 108, 79);
+  border-color:rgb(242, 108, 79);
+}
+
 @media screen and (max-width: 768px) {
-  .SocialLearn_laptop{
+  .SocialLearn_laptop {
     display: none;
   }
-  .SocialLearn_list_mobile{
+  .SocialLearn_list_mobile {
     display: inline;
   }
   .rectangle {
-
     width: 72%;
     height: 300px;
     margin-left: 13%;
-
   }
 }

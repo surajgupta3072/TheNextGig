@@ -133,31 +133,31 @@ function ProfilePage(props) {
                   <Row style={{marginBottom:"2%"}}><Linkedin size={30}/></Row>
                 </Col>
                 <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",  marginTop: "10%"}} expand="lg">
-                <Navbar.Brand style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                  <p  style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{navbarHeading}</p>
-                </Navbar.Brand>
-                <Navbar.Toggle style={{backgroundColor: "grey"}}/>
-                <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
-                    <Nav>
-                        <Nav.Link onClick={() => whichColor("Personal")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                        Personal
-                        </Nav.Link>
-                        <Nav.Link onClick={() => whichColor("Education")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                        Education
-                        </Nav.Link>
-                        <Nav.Link onClick={() => whichColor("WorkEx")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                        Work Experience
-                        </Nav.Link>                
-                        <Nav.Link onClick={() => whichColor("Skills")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                        Skills
-                        </Nav.Link>              
-                        <Nav.Link onClick={() => whichColor("CvPitch")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                        CV / Other Documents
-                        </Nav.Link>
-                        <Nav.Link onClick={() => whichColor("FeedBack")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                        Feedback & Comments
-                        </Nav.Link>
-                    </Nav>                
+                  <Navbar.Brand style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                    <p  style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{navbarHeading}</p>
+                  </Navbar.Brand>
+                  <Navbar.Toggle style={{backgroundColor: "grey"}}/>
+                  <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
+                  <Nav>
+                      <Nav.Link onClick={() => whichColor("Personal")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                      Personal
+                      </Nav.Link>
+                      <Nav.Link onClick={() => whichColor("Education")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                      Education
+                      </Nav.Link>
+                      <Nav.Link onClick={() => whichColor("WorkEx")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                      Work Experience
+                      </Nav.Link>                
+                      <Nav.Link onClick={() => whichColor("Skills")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                      Skills
+                      </Nav.Link>              
+                      <Nav.Link onClick={() => whichColor("CvPitch")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                      CV / Other Documents
+                      </Nav.Link>
+                      <Nav.Link onClick={() => whichColor("FeedBack")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                      Feedback & Comments
+                      </Nav.Link>
+                  </Nav>                
                   </Navbar.Collapse>
                 </Navbar>
               </Row>

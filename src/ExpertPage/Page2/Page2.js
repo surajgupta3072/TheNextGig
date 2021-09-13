@@ -46,7 +46,7 @@ function Page2(props) {
                       companyLogo, index)=>{ 
                       if(index<3){
                         return(
-                          <img className="img_company" src={companyLogo}/>
+                          <img alt="..." className="img_company" src={companyLogo}/>
                         )
                       }
                       else
@@ -77,7 +77,7 @@ function Page2(props) {
                       companyLogo, index)=>{ 
                       if(index<3){
                         return(
-                          <img className="img_company" src={companyLogo}/>
+                          <img alt="..." className="img_company" src={companyLogo}/>
                         )
                       }
                       else

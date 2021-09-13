@@ -51,6 +51,7 @@ function Page1(props) {
       }
     });
   }, []);
+  
   return (
     <div>
       <div className="header_masterclass">
@@ -205,8 +206,8 @@ function Page1(props) {
                 />
               </div>
               <div className="image_logo">
-                <img className="image_logo1" src="/TheNextGigLogo.png" />
-                <img className="image_logo2" src="/TheNextGigLogo.png" />
+                <img alt="..." className="image_logo1" src="/TheNextGigLogo.png" />
+                <img alt="..." className="image_logo2" src="/TheNextGigLogo.png" />
               </div>
               <MDBCardBody>
                 <div className="Course_name">{carder.GigFunction}</div>

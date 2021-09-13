@@ -92,7 +92,7 @@ function CompanyPage() {
               <div className="pack">
                 <div className="testimonial">
                   <div className="imag">
-                    <img className="img_experttop" src={gigs[0].GigImage}/>
+                    <img alt="..." className="img_experttop" src={gigs[0].GigImage}/>
                   </div>
                   <br/>
                   <div class="para">
