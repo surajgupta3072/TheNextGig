@@ -89,7 +89,7 @@ function Personal(props) {
               <p><span style={{fontSize:"20px"}}>Date of birth</span></p>
               <input value={dob} onChange={e => setDOB(e.target.value)} type="date" style={{width:"50%",height:"35px"}}></input>
             </Col>
-            <Col style={{marginTop:"2%",marginLeft:"10%"}}>
+            <Col style={{marginTop:"2%"}} className= "Gender_col">
               <p style={{fontSize:"20px"}}>Gender</p>
               <div onChange={e => setGender(e.target.value)} style={{display:"flex",flexDirection:"row", alignItems:"center"}}>
                   <input value="male" type="radio" name="gender"/>&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -101,7 +101,7 @@ function Personal(props) {
           <Row>
             <Col style={{marginTop:"2%"}}>
               <p><span style={{fontSize:"20px"}}>Mobile Number</span></p>
-              <input value={mobile} onChange={e => setMobile(e.target.value)} style={{width:"22%",height:"35px"}}></input>
+              <input value={mobile} onChange={e => setMobile(e.target.value)} style={{height:"35px"}} className="Mobilenum_input"></input>
             </Col>
           </Row>
           <Row style={{marginTop:"2%"}}>

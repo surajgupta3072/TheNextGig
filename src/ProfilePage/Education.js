@@ -116,11 +116,11 @@ function Education(props) {
             <Col>
              <p style={{fontSize:"18px"}}>Branch / Specialization</p>
             </Col>
-            <Col><input value={gradBranch} onChange={e => setGradBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
+            <Col xs={12}><input value={gradBranch} onChange={e => setGradBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
             <Col>
              <p style={{fontSize:"20px"}}>Year of Completion</p>
             </Col>
-            <Col><input min="1980" max="2030"  type="number" value={gradyear} onChange={e => setGradyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
+            <Col xs={12}><input min="1980" max="2030"  type="number" value={gradyear} onChange={e => setGradyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
           </Row>
           <Row>
             <p style={{fontSize:"25px",fontWeight:"bold",marginTop:"5%"}}>Professional Degree</p>
@@ -131,11 +131,11 @@ function Education(props) {
             <Col>
              <p style={{fontSize:"18px"}}>Branch / Specialization</p>
             </Col>
-            <Col><input value={profBranch} onChange={e => setprofBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
+            <Col  xs={12}><input value={profBranch} onChange={e => setprofBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
             <Col>
              <p style={{fontSize:"20px"}}>Year of Completion</p>
             </Col>
-            <Col><input min="1980" max="2030"  type="number" value={profyear} onChange={e => setProfyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
+            <Col  xs={12}><input min="1980" max="2030"  type="number" value={profyear} onChange={e => setProfyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
           </Row>
           <Row>
             <p style={{fontSize:"25px",fontWeight:"bold",marginTop:"5%"}}>Post Graduation</p>
@@ -146,11 +146,11 @@ function Education(props) {
             <Col>
              <p style={{fontSize:"18px"}}>Branch / Specialization</p>
             </Col>
-            <Col>< input value={pgradBranch} onChange={e => setpGradBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
+            <Col  xs={12}>< input value={pgradBranch} onChange={e => setpGradBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
             <Col>
              <p style={{fontSize:"20px"}}>Year of Completion</p>
             </Col>
-            <Col><input min="1980" max="2030"  type="number" value={pgradyear} onChange={e => setPgradyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
+            <Col  xs={12}><input min="1980" max="2030"  type="number" value={pgradyear} onChange={e => setPgradyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
           </Row>
           <button style={{marginTop:"3%"}} onClick={handleSubmit} className="button_slide">Save</button>
         </Container>
