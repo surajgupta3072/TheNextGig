@@ -10,6 +10,9 @@ import Community from './Community';
 import docClient from '../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popup';
 import MyVerticallyPopUpBlog  from './popupBlog';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+
 
 function SocialLearningPage(props) {
   const [modalShow, setModalShow] = React.useState(false);
@@ -52,7 +55,7 @@ function SocialLearningPage(props) {
     return (
       <Container>
         <Row>
-            <Col xs={3} style={{backgroundColor:"#1B1C2A",height:"90vh"}}>
+            <Col xs={3} style={{backgroundColor:"#1B1C2A",height:"90vh"}} className="SocialLearn_laptop">
               <Row style={{marginTop:"30%",marginLeft:"25%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"150px",borderRadius:"50%"}}/></Row>
               <Row><p style={{fontSize:"18px", textAlign:"center"}}>{props.auth.user.attributes.name.split(" ")[0]}</p></Row>
               <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p></Row>
@@ -69,16 +72,47 @@ function SocialLearningPage(props) {
               }
               <br/>
             </Col>
+            <Col xs={12}  className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
+              <Row >
+                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "flex-end"}}><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></Col>
+                <Col>
+                  <Row><p style={{fontSize:"18px", textAlign:"center"}}>{props.auth.user.attributes.name.split(" ")[0]}</p></Row>
+                  <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p></Row>
+                  <Row style={{marginBottom:"2%"}}><Linkedin size={30}/></Row>
+                </Col>
+                <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
+                <Navbar.Brand >
+                  <p  style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
+                </Navbar.Brand>
+                <Navbar.Toggle style={{backgroundColor: "grey"}}/>
+                <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
+                    <Nav>
+                        <Nav.Link onClick={()=>buttonColor("Videos")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                        Videos
+                        </Nav.Link>
+                        <Nav.Link onClick={()=>buttonColor("Blogs")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                        Blogs
+                        </Nav.Link>
+                        <Nav.Link onClick={()=>buttonColor("Community")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                        Community
+                        </Nav.Link>                
+                    </Nav>                
+                  </Navbar.Collapse>
+                </Navbar>
+              </Row>
+              <br/>
+              
+            </Col>
             <Col >
-             <Row style={{marginTop:"5%"}}>
-               <Col xs={9}>
+             <Row style={{marginTop:"5%"}} >
+               <Col xs={9} className="SocialLearn_laptop">
                   <button onClick={()=>buttonColor("Videos")} style={{marginLeft:"2%",marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Videos</button>
                   <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Blogs</button>
                   <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Community</button>
                </Col>
                {active==="Videos" &&
                 <Col >
-                  <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>
+                  <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)", display: "flex", flexDirection: "row", justifyContent: "flex-end"}}>Impart knowledge + <br/>(Add Video / blog)</p></a>
                   <MyVerticallyPopUp
                   userid={props.auth.user.username}
                   show={modalShow}

@@ -75,12 +75,13 @@ function WorkEx(props) {
   }
     return (
       <div>
+      <div className= "WorkEx_Desktop_view">
         <Container style={{marginTop:"5%"}}>
         {inputFields.map((iField,index) => (
           <div key={index} style={{marginBottom:"5%"}}>
             <Row><p style={{fontSize:"25px",fontWeight:"bold"}}>Work Experience #{index+1}</p></Row>
             <Row>
-              <Col style={{display:"flex",flexDirection:"row"}}>
+              <Col  style={{display:"flex",flexDirection:"row"}} className="company_input_WorkEX">
               <p style={{fontSize:"18px",marginRight:"10%"}}>Company</p>
               <input value={iField.company} name="company" onChange={e => handleChangeInput(index, e)} style={{width:"80%",height:"35px"}}/>
 
@@ -99,6 +100,34 @@ function WorkEx(props) {
           <Row onClick={handleAddFields} style={{marginTop:"3%",cursor:"pointer"}}><p style={{textAlign:"end"}}>Add more +</p></Row>
           <button onClick={handleSubmit} className="button_slide">Save</button>
         </Container>
+      </div>
+
+      <div className= "WorkEx_Mobile_view">
+        <Container style={{marginTop:"5%"}}>
+        {inputFields.map((iField,index) => (
+          <div key={index} style={{marginBottom:"5%"}}>
+            <Row><p style={{fontSize:"25px",fontWeight:"bold", padding: "0"}}>Work Experience #{index+1}</p></Row>
+            <Row>
+              <Row >
+              <p style={{fontSize:"18px",marginRight:"10%"}}>Company</p><br />
+              <input value={iField.company} name="company" onChange={e => handleChangeInput(index, e)} style={{width:"80%",height:"35px"}}/>
+
+              </Row>
+              <Row >  
+              <p style={{fontSize:"18px", width:"50%"}}>No of Months</p><br />
+              <input value={iField.months} name="months" onChange={e => handleChangeInput(index, e)} style={{width:"100%",height:"35px"}}/>
+              </Row>
+            </Row>
+            <Row style={{marginTop:"5%"}}>
+              <Col md={1}><p style={{fontSize:"18px"}}>Description</p></Col>
+              <Col><textarea value={iField.description} name="description" onChange={e => handleChangeInput(index, e)} style={{width:"95%",height:"90px"}}></textarea></Col>
+            </Row>
+          </div>
+          ))}
+          <Row onClick={handleAddFields} style={{marginTop:"3%",cursor:"pointer"}}><p style={{textAlign:"end"}}>Add more +</p></Row>
+          <button onClick={handleSubmit} className="button_slide">Save</button>
+        </Container>
+      </div>
       </div>
     );
   }

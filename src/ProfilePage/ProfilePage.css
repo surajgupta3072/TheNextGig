@@ -2,3 +2,37 @@
     background-color: #EBECF0;
     color: #172B4D;
 }
+.Profile_list_mobile{
+    display: none;
+}
+.Gender_col{
+    margin-left: 10%;
+}
+.Mobilenum_input{
+    width: 22%;
+}
+.WorkEx_Mobile_view{
+    display: none;
+}
+
+
+@media screen and (max-width : 768px) {
+    .Profile_list_laptop{
+        display: none;
+    }
+    .Profile_list_mobile{
+        display: block;
+    }
+    .Gender_col{
+        margin-left: 0%;
+    }
+    .Mobilenum_input{
+        width: 52%;
+    }
+    .WorkEx_Desktop_view{
+        display: none;
+    }
+    .WorkEx_Mobile_view{
+        display: block;
+    }
+}
