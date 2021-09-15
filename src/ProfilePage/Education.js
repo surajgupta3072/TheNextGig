@@ -105,6 +105,7 @@ function Education(props) {
     }
     
     return (
+      <div>
       <div className="Education_Desktop_view">
         <Container style={{marginTop:"5%"}}>
           <Row>
@@ -154,6 +155,58 @@ function Education(props) {
           </Row>
           <button style={{marginTop:"3%"}} onClick={handleSubmit} className="button_slide">Save</button>
         </Container>
+      </div>
+
+      <div className="Education_Mobile_view">
+        <Container style={{marginTop:"5%"}}>
+          <div style={{marginTop:"30px"}}>
+            <Row><p style={{fontSize:"25px",fontWeight:"bold"}}>Graduation</p></Row>
+            <Row><span style={{fontSize:"20px", padding: "0"}}>Institution</span></Row>
+            
+            <Row ><Select style={{padding: "0"}} value={gradInst} onChange={(e)=>setGradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Row>
+            <br/>
+            <Row><span style={{fontSize:"18px", padding: "0"}}>Branch / Specialization</span></Row>
+            <Row><input value={gradBranch} onChange={e => setGradBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
+            <br/>
+            <Row><span style={{fontSize:"20px", padding: "0"}}>Year of Completion</span></Row>
+            <Row><input min="1980" max="2030"  type="number" value={gradyear} onChange={e => setGradyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
+          </div>
+
+          <div style={{marginTop:"30px"}}>
+            <Row><p style={{fontSize:"25px",fontWeight:"bold"}}>Professional Degree</p></Row>
+            <Row><span style={{fontSize:"20px", padding: "0"}}>Institution</span></Row>
+            
+            <Row><Select value={profInst} onChange={(e)=>setProfInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Row>
+            <br/>
+            <Row><span style={{fontSize:"18px", padding: "0"}}>Branch / Specialization</span></Row>
+            <Row><input value={profBranch} onChange={e => setprofBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
+            <br/>
+            <Row><span style={{fontSize:"20px", padding: "0"}}>Year of Completion</span></Row>
+            <Row><input min="1980" max="2030"  type="number" value={profyear} onChange={e => setProfyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
+          </div>
+          
+         
+          <div style={{marginTop:"30px"}}>
+            <Row><p style={{fontSize:"25px",fontWeight:"bold",marginTop:"5%"}}>Post Graduation</p></Row>
+            <Row><span style={{fontSize:"20px", padding: "0"}}>Institution</span></Row>
+            
+            <Row><Select value={pgradInst} onChange={(e)=>setpgradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Row>
+            <br/>
+            <Row><span style={{fontSize:"18px", padding: "0"}}>Branch / Specialization</span></Row>
+            <Row><input value={pgradBranch} onChange={e => setpGradBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
+            <br/>
+            <Row><span style={{fontSize:"20px", padding: "0"}}>Year of Completion</span></Row>
+            <Row><input min="1980" max="2030"  type="number" value={pgradyear} onChange={e => setPgradyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
+          </div>
+
+          <div>
+            <br />
+          <button style={{marginTop:"3%", marginBottom: "10%"}} onClick={handleSubmit} className="button_slide_Edu_Profile">Save</button>
+          
+          </div>
+          
+        </Container>
+      </div>
       </div>
     );
     }
