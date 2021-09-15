@@ -122,7 +122,7 @@ function SocialLearningPage(props) {
                </Col>
                {active==="Videos" &&
                 <Col >
-                  <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)", display: "flex", flexDirection: "row", justifyContent: "flex-end"}}>Impart knowledge + <br/>(Add Video / blog)</p></a>
+                  <a onClick={() => setModalShow(true)} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)", display: "flex", flexDirection: "row", justifyContent: "flex-end"}}>Impart knowledge + <br/>(Add Video)</p></a>
                   <MyVerticallyPopUp
                   userid={props.auth.user.username}
                   show={modalShow}
