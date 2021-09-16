@@ -3,10 +3,11 @@
   width: 280px;
   height: 250px;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   border: 1px solid rgb(212, 71, 41);
   background: transparent;
 }
+
 .rectangle {
   margin-top: 10%;
   margin-left: 2%;
@@ -17,18 +18,6 @@
   background: transparent;
 }
 
-.visible-scrollbar {
-  display: block;
-}
-.visible-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  height: 8px;
-  background-color: white;
-}
-.visible-scrollbar::-webkit-scrollbar-thumb {
-  background: rgb(242, 108, 79);
-  border-radius: 30%;
-}
 .SocialLearn_list_mobile {
   display: none;
 }
