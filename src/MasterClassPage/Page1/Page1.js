@@ -24,7 +24,7 @@ function Page1() {
         <div className="Mastercards">
           {master.map(carder=>
           (
-        <MDBCard  style={{borderRadius:"0px",marginTop:"2%", marginLeft:"4%",marginRight:"4%" ,marginBottom:"4%",border:"2px solid rgba(242, 108, 79, 0.6)" , backgroundColor:"#020312"}} className="card_mastercard">
+        <MDBCard onClick={() => window.location.href="/masterclass/"+carder.id} style={{cursor:"pointer", borderRadius:"0px",marginTop:"2%", marginLeft:"4%",marginRight:"4%" ,marginBottom:"4%",border:"2px solid rgba(242, 108, 79, 0.6)" , backgroundColor:"#020312"}} className="card_mastercard">
           <div className="image_card">
       <MDBCardImage  style={{ marginLeft:"0.5%",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={carder.course_image} alt='...' />
       </div>
@@ -44,8 +44,7 @@ function Page1() {
           <div className="episode_course">{carder.course_episode}</div>
         </div>
         <div className="button_masterclass1">
-        <a href={"/masterclass/"+carder.id}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px",marginTop:"-3px"}} className="button_arrow_new"/></button></a>
-      </div>
+        </div>
       </MDBCardBody>
     </MDBCard>
           )
@@ -54,7 +53,7 @@ function Page1() {
         <div className="slider_mobile">
         <Carousel  breakPoints={breakPoints}>
             {master.map((carder) => (
-             <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
+             <MDBCard onClick={() => window.location.href="/masterclass/"+carder.id} className="mbd_card card_mastercard" style={{cursor:"pointer", borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={carder.course_image} alt='...' /></div>
              <div className="image_logo">
              <img alt="..." className="image_logo1" src="/TheNextGigLogo.png"/>
@@ -72,8 +71,7 @@ function Page1() {
                  <div className="episode_course">{carder.course_episode}</div>
                </div>
                <div className="button_masterclass1">
-               <a href={"/masterclass/"+carder.id}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
-             </div>
+              </div>
              </MDBCardBody>
            </MDBCard>
             ))}

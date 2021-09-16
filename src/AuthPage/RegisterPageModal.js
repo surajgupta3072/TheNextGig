@@ -14,14 +14,14 @@ function MyVerticallyCenteredModal(props) {
         className="mobile_view"
         transparent={true}
       >
-      <Modal.Body style={{backgroundColor:"#020312", border: "1px solid #f26c4f"}}>
-         <div>
-           <p style={{fontSize:"24px"}}>Complete your profile to: </p>
-           <p style={{fontSize:"24px",marginLeft:"3%"}}>1. Earn <text style={{color:"#f26c4f"}}>reward points </text> (redeem them for masterclasses)<br/>2. Increase your chances of scoring a <text style={{color:"#f26c4f"}}> gig, project or job</text> </p>
-           <a href="/profile"><button  className="button_slide slide_right" style={{marginLeft:"40%"}}>Proceed<ArrowLeft className='button_arrow'/></button></a>
-         </div>
-      </Modal.Body>  
-
+        <Modal.Body style={{backgroundColor:"#020312", border: "1px solid #f26c4f"}}>
+          <div>
+            <p style={{fontSize:"24px"}}>Complete your profile to: </p>
+            <p style={{fontSize:"24px",marginLeft:"3%"}}>1. Earn <text style={{color:"#f26c4f"}}>reward points </text> (redeem them for masterclasses)<br/>2. Increase your chances of scoring a <text style={{color:"#f26c4f"}}> gig, project or job</text></p>
+            <a style={{marginLeft:"30%",marginRight:"10%"}} href="/sociallearn"><button className="button_slide slide_right">Back<ArrowLeft className='button_arrow'/></button></a>
+            <a href="/profile"><button className="button_slide slide_right">Proceed<ArrowLeft className='button_arrow'/></button></a>
+          </div>
+        </Modal.Body>
       </Modal>
     );
   }

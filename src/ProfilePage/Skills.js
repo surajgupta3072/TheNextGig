@@ -18,7 +18,7 @@ function Skills() {
           <br/>
           <Row>
             <Col md={12}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills acquired through the platform</p></Col>
-            <Col md={12}><input style={{width:"100%",height:"35px"}}></input></Col>
+            <Col md={12}><p>Data Science, Consulting, Blockchain</p></Col>
           </Row>
           <button style={{marginTop:"4%"}} className="button_slide">Save</button>
          </Container>
