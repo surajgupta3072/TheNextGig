@@ -10,16 +10,19 @@ const ReactS3Client = new S3(config);
 
 function MyVerticallyPopUp(props) {
     const [topic,setTopic]=useState("");
+    const [creds,setCreds]=useState("");
     const [hashtag,setHashtag]=useState("");
     const [vfile,setVfile]=useState();
     const [showerr, setShowErr] = useState(false);
 
     function handleApply() {
-      if(topic!=="" && hashtag!=="" && vfile!==undefined) {
+      if(topic!=="" && creds!=="" && hashtag!=="" && vfile!==undefined) {
         ReactS3Client.uploadFile(vfile, vfile.name).then(data => {
           const adata = {
             "VideoID": crypto.randomBytes(8).toString("hex"),
             "VideoTopic": topic,
+            "VideoCreds": creds,
+            "VideoUsername": props.userid.attributes.name,
             "VideoHashtags": hashtag,
             "VideoLink": data.location,
             "isApproved": false
@@ -35,7 +38,7 @@ function MyVerticallyPopUp(props) {
             else {
               var params = {
                 TableName: "UsersTable",
-                Key: { "UserID":props.userid },
+                Key: { "UserID":props.userid.username },
                 ProjectionExpression: "SocialLearningVideosUploaded",
               };
               docClient.get(params, function(err, data) {
@@ -44,7 +47,7 @@ function MyVerticallyPopUp(props) {
                 } else {
                   var params = {
                     TableName: "UsersTable",
-                    Key: { "UserID":props.userid },
+                    Key: { "UserID":props.userid.username },
                     UpdateExpression: "set SocialLearningVideosUploaded["+data.Item.SocialLearningVideosUploaded.length.toString()+"] = :slv",
                     ExpressionAttributeValues:{
                       ":slv":adata["VideoID"],
@@ -84,9 +87,11 @@ function MyVerticallyPopUp(props) {
          <div style={{padding:"7%"}}>
            <p style={{fontSize:"18px"}} >Topic <text style={{color:"#f26c4f"}}>*</text></p>
            <input onChange={(e)=>(setTopic(e.target.value))} value={topic} style={{width:"100%"}} placeholder="ABC"></input>
-           <p style={{marginTop:"10%",fontSize:"18px"}}>Hashtags<text style={{color:"#f26c4f"}}>*</text></p>
+           <p style={{marginTop:"10%",fontSize:"18px"}} >Credentials <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(Highlight relevant creds)</text></p>
+           <input onChange={(e)=>(setCreds(e.target.value))} value={creds} style={{width:"100%"}} placeholder="Founder of TheNextGig"></input>
+           <p style={{marginTop:"10%",fontSize:"18px"}}>Hashtags <text style={{color:"#f26c4f"}}>*</text></p>
            <input onChange={(e)=>(setHashtag(e.target.value))} value={hashtag} style={{width:"100%",marginTop:"1%"}} placeholder="datascience" />
-           <p style={{marginTop:"10%",fontSize:"18px"}}>Upload Video<text style={{color:"#f26c4f"}}>*</text></p>
+           <p style={{marginTop:"10%",fontSize:"18px"}}>Upload Video <text style={{color:"#f26c4f"}}>*</text></p>
            <input onChange={(e)=>(setVfile(e.target.files[0]))} type="file"/>
            <button onClick={handleApply} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"30%"}}>Submit<ArrowLeft className='button_arrow'/></button>
            {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}

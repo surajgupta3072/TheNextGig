@@ -38,17 +38,20 @@ function Videos(props) {
       <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
         {props.prop.map((vid)=>
           <div key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
+            {props.redirlog ? 
+              <video style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                <source src={vid.VideoLink} />
+              </video> :
+              <video onEnded={(e)=> VideoWatched(e.target.id)} id={vid.VideoID} controls style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                <source src={vid.VideoLink} />
+              </video>
+            }
             <div>
-              {props.redirlog ? 
-                <video style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                  <source src={vid.VideoLink} />
-                </video> :
-                <video onEnded={(e)=> VideoWatched(e.target.id)} id={vid.VideoID} controls style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                  <source src={vid.VideoLink} />
-                </video>
-              }
-              <h5>{vid.VideoTopic}</h5>
-              {vid.VideoHashtags}
+              <h5 style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>
+              <p style={{padding:"0", margin:"0"}}>{vid.VideoHashtags}</p>
+              <br/>
+              <h5 style={{padding:"0", margin:"0"}}>{vid.VideoUsername}</h5>
+              <h6 style={{padding:"0", margin:"0"}}>{vid.VideoCreds}</h6>
             </div>
             <br/>
           </div>

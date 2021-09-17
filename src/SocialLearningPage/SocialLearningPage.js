@@ -120,9 +120,9 @@ function SocialLearningPage(props) {
                </Col>
                {active==="Videos" &&
                 <Col>
-                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)", display: "flex", flexDirection: "row", justifyContent: "flex-end"}}>Impart knowledge + <br/>(Add Video)</p></a>
+                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>
                   <MyVerticallyPopUp
-                    userid={user.username}
+                    userid={user}
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                   />
@@ -132,7 +132,7 @@ function SocialLearningPage(props) {
                 <Col>
                   <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Blog)</p></a>
                   <MyVerticallyPopUpBlog
-                    userid={user.username}
+                    userid={user}
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                   />

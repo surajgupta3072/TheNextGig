@@ -1,6 +1,5 @@
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import './Header.css';
 import Auth from "@aws-amplify/auth";
 
 function Header(props) {
@@ -14,8 +13,8 @@ function Header(props) {
     }
   return (
     <Navbar style={{background:"white", padding:"0px", width:"100%", position:"sticky", top:"0", zIndex:"100"}} expand="lg">
-        <Navbar.Brand href="/">
-            <img className= "header_img" src="/TheNextGigLogo.png" alt="logo"/>
+        <Navbar.Brand style={{marginLeft:"8%", padding:"0"}} href="/">
+            <img style={{height:"70px", width:"70px"}} src="/TheNextGigLogo.png" alt="logo"/>
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>

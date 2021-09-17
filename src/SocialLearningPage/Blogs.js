@@ -55,10 +55,13 @@ function Blogs(props) {
         {!readsingleblog && allBlogs.map((blog)=>
           <div key={blog.BlogID} onClick={() => {if(!props.redirlog) BlogRead(blog);  else window.location.href="/login";}}>
             <div className="blog-box">
-              <h4 style={{marginTop:"1%",marginLeft:"2%"}}>{blog.BlogTopic}</h4>
-              <p style={{marginTop:"1%",marginLeft:"2%",fontSize:"14px"}}>{blog.Blog}</p>
+              <h4 style={{padding:"0", margin:"0"}}>{blog.BlogTopic}</h4>
+              <h5 style={{padding:"0", margin:"0"}}>{blog.BlogUsername}</h5>
+              <h6 style={{padding:"0", margin:"0", fontWeight:"600"}}>{blog.BlogCreds}</h6>
+              <p style={{padding:"0", margin:"0"}}>{blog.BlogHashtags}</p>
+              <br/>
+              <p style={{fontSize:"14px"}}>{blog.Blog}</p>
             </div>
-            <p style={{marginTop:"1%",marginLeft:"2%"}}>{blog.BlogHashtags}</p>
             <br/>
           </div>
         )}

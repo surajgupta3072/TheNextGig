@@ -18,7 +18,10 @@ function Skills() {
           <br/>
           <Row>
             <Col md={12}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills acquired through the platform</p></Col>
-            <Col md={12}><p>Data Science, Consulting, Blockchain</p></Col>
+            <Col md={12}><em><p style={{fontSize:"18px"}}>Through Mastersessions</p></em></Col>
+            <Col md={12}><em><p style={{fontSize:"18px"}}>Through Gigs / Internship</p></em></Col>
+            <Col md={12}><em><p style={{fontSize:"18px"}}>Through Social Learning - Videos</p></em></Col>
+            <Col md={12}><em><p style={{fontSize:"18px"}}>Through Social Learning - Blogs</p></em></Col>
           </Row>
           <button style={{marginTop:"4%"}} className="button_slide">Save</button>
          </Container>
