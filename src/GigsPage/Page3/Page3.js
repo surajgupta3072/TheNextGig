@@ -255,10 +255,11 @@ function Page3(props) {
               <Carousel breakPoints={breakPoints}>
                 {master.map((carder) => (
                   <MDBCard
-                    className="mbd_card card_mastercard"
+                    className="cax mbd_card card_mastercard"
                     style={{
                       borderRadius: "0px",
                       margin: "4%",
+                      height:"30rem",
                       border: "2px solid rgba(242, 108, 79, 0.6)",
                       backgroundColor: "#020312",
                     }}
@@ -268,18 +269,11 @@ function Page3(props) {
                         style={{
                           marginLeft: "1px",
                           width: "100%",
-                          height: "14rem",
-                          paddingTop: "20px",
-                          paddingLeft: "20px",
-                          paddingRight: "20px",
+                          height: "22rem"
                         }}
                         src={carder.course_image}
                         alt="..."
                       />
-                    </div>
-                    <div className="image_logo">
-                      <img alt="..." className="image_logo1" src="/TheNextGigLogo.png" />
-                      <img alt="..." className="image_logo2" src="/TheNextGigLogo.png" />
                     </div>
                     <MDBCardBody>
                       <div className="Course_name">{carder.course_name}</div>
@@ -302,24 +296,6 @@ function Page3(props) {
                         <div className="episode_course">
                           {carder.course_episode}
                         </div>
-                      </div>
-                      <div className="button_masterclass1">
-                        <a href={"/masterclass/" + carder.id}>
-                          <button
-                            style={{ padding: "8px 14px" }}
-                            className="button_slide_new slide_right_new"
-                          >
-                            Let's go
-                            <ArrowRight
-                              style={{
-                                width: "30px",
-                                height: "30px",
-                                marginTop: "-3px",
-                              }}
-                              className="button_arrow_new"
-                            />
-                          </button>
-                        </a>
                       </div>
                     </MDBCardBody>
                   </MDBCard>

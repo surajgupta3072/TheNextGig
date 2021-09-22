@@ -36,9 +36,9 @@ function Page1() {
               border: "2px solid rgba(242, 108, 79, 0.6)",
               backgroundColor: "#020312",
             }}
-            className="card_mastercard"
+            className="cax card_mastercard"
           >
-            <div className="image_card">
+            <div className="image_card1">
               <MDBCardImage
                 style={{ width: "100%", height: "22rem" }}
                 src={carder.course_image}

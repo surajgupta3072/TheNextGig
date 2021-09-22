@@ -8,19 +8,19 @@ export default function CardX(props) {
           <div className="card-title-group"></div>
         </div>
         <img className="card-image" src={props.card} alt="Logo" />
-        <div className="card-like-bar">
-          <div className="like-text">
-            <img className="company_image" src={props.logo} alt="cr"/>
-            {props.text1}
+        <div style={{display:"flex",justifyContent:"center"}} className="card-like-bar">
+          <div  className="texting">
+            {props.text2}
           </div>
         </div>
-        <h2 className="texting">{props.text2}</h2>
-        <br />
-        <br />
-        <hr className="line" />
-        <div className="boxing">
-          <span className="join">Join</span>
-          <span className="soon">Soon</span>
+        <hr style={{color:"orange",height:"3px"}}/>
+        <div className="like-text" style={{display:"flex",justifyContent:"space-between"}}>
+        <div >{props.name}</div>
+        <div >{props.time}</div>
+        </div>
+        <div className="like-text1" style={{display:"flex",justifyContent:"space-between"}}>
+        <div>{props.text1}</div>
+        <div>INR {props.fees}</div>
         </div>
       </div>
     </div>

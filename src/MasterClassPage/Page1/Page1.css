@@ -8,6 +8,24 @@
 .slider_mobile {
   display: none;
 }
+.card_mastercard {
+  animation: slider 3s;
+}
+.card_mastercard:hover {
+  transform: scale(0.97);
+  box-shadow: 0 10px 20px rgba(134, 50, 50, 0.8), 0 4px 8px #f26c4f;
+}
+@keyframes slider {
+  0% {
+    transform: translateY(300px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .rec.rec-arrow-left {
   margin-right: -18px;
 }
@@ -23,14 +41,14 @@
   padding-bottom: 20px;
 }
 .Mastercards {
-  margin-left:2%;
-  margin-right:2%;
+  margin-left: 2%;
+  margin-right: 2%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 .card_mastercard {
-  width: 28%;
+  width: 320px;
   height: 30rem;
   margin-bottom: 2%;
   margin-top: 2%;
@@ -44,6 +62,16 @@
   display: flex;
   justify-content: center;
   font-size: 1.6rem;
+}
+.cax {
+  width: 370px;
+  height: fit-content;
+}
+.image_card1 {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  height: 300px;
 }
 .image_card {
   display: flex;
@@ -130,6 +158,9 @@
   .slider_mobile {
     display: inline;
   }
+  .card_mastercard {
+    height: 26rem;
+  }
 }
 @media only screen and (max-width: 786px) {
   .subtitle_masterclass {
@@ -156,5 +187,11 @@
   }
   .post_episode {
     font-size: 0.75rem;
+  }
+  .Course_name {
+    font-size: 1rem;
+  }
+  .card_mastercard {
+    height: 20rem;
   }
 }

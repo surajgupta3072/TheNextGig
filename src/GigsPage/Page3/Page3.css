@@ -17,7 +17,10 @@
   -moz-transition: ease-out 0.4s;
   transition: ease-out 0.4s;
 }
-
+.mbd_card {
+  height: fit-content;
+  min-height: 24.3rem;
+}
 .button_arrow1_footer_gigspage3 {
   position: absolute;
   margin-top: -15px;
@@ -50,7 +53,6 @@
 .text_page3_card_gigs {
   font-size: 18px;
 }
-
 @media screen and (max-width: 768px) {
   .container2_page3 {
     margin-right: 0%;
