@@ -47,8 +47,8 @@ function Videos(props) {
 
   return (
     <div>
-      <input style={{marginLeft:"2%"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>
-      <button onClick={searchFilter} type="submit">Search</button>
+      <input style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px", width:"40%"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
+      <button style={{background:"rgb(242, 108, 79)", color:"white", border:"0", borderRadius:"20px", width:"10%"}} onClick={searchFilter} type="submit">Search</button>
       <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
         {videoslist===false && props.prop.map((vid)=>
           <div key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
