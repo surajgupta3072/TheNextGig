@@ -9,7 +9,7 @@ const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1},
   { width: 750, itemsToShow: 2 },
-  { width: 1080, itemsToShow: 3 }
+  { width: 1200, itemsToShow: 3 }
 ];
 
 function Page3() {
@@ -32,7 +32,7 @@ function Page3() {
       </div>
       </div>
       <div className="App1">
-        <div className="carousel-wrapper">
+        <div style={{}} className="carousel-wrapper">
           <Carousel  breakPoints={breakPoints}>
             {Data.map(detail => (
             <div className="Item_component">
@@ -41,6 +41,9 @@ function Page3() {
                 text2={detail.course_name}
                 card={detail.course_image}
                 logo={detail.course_image}
+                name={detail.course_instructor}
+                time={detail.course_timing}
+                fees={detail.fees}
                 key={detail.id}
                 carl={i++}
               />

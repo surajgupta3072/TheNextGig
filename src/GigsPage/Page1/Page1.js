@@ -45,7 +45,7 @@ function Page1(props) {
           </div>
         </Container>
       </div>
-      <div className="Mastercards">
+      <div style={{display:"flex",justifyContent:"space-evenly"}} className="Mastercards">
         {gigs.map((carder) => (
           <MDBCard
             onClick={() => {if(!redirectlogin) window.location.href="/gigs/"+carder.GigId;  else window.location.href="/login";}}
@@ -54,23 +54,19 @@ function Page1(props) {
               cursor:"pointer",
               borderRadius: "0px",
               marginTop: "2%",
-              marginLeft: "4%",
-              marginRight: "4%",
+              height:"30rem",
               marginBottom: "4%",
               border: "2px solid rgba(242, 108, 79, 0.6)",
               backgroundColor: "#020312",
             }}
-            className="card_mastercard"
+            className="cax card_mastercard mbd_card"
           >
             <div className="image_card">
               <MDBCardImage
                 style={{
                   marginLeft: "0.5%",
                   width: "100%",
-                  height: "14rem",
-                  paddingTop: "20px",
-                  paddingLeft: "20px",
-                  paddingRight: "20px",
+                  height: "22rem"
                 }}
                 src={carder.GigImage}
                 alt="..."

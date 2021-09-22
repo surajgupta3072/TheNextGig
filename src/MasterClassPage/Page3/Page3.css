@@ -29,7 +29,6 @@
   }
   .container2_page3 {
     margin-top: 10%;
-    
   }
 
   .rec.rec-arrow-left {
@@ -161,7 +160,7 @@
   box-sizing: border-box;
   box-shadow: 0px 2px 2px rgba(255, 255, 255, 0.25);
 }
-.Whats_inforyou_mobile_view{
+.Whats_inforyou_mobile_view {
   display: none;
 }
 @media screen and (max-width: 768px) {
@@ -255,7 +254,7 @@
     width: 30px;
     height: 30px;
     margin-top: 0px;
-  margin-left: 0px;
+    margin-left: 0px;
   }
   .menu_list {
     width: 100%;
@@ -263,10 +262,10 @@
   .menu_list:hover {
     width: 100%;
   }
-  .Whats_inforyou_desktop_view{
+  .Whats_inforyou_desktop_view {
     display: none;
   }
-  .Whats_inforyou_mobile_view{
+  .Whats_inforyou_mobile_view {
     display: inline;
   }
 }

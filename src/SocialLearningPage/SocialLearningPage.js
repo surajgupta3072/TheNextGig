@@ -95,13 +95,13 @@ function SocialLearningPage(props) {
                 <Navbar.Toggle style={{backgroundColor: "grey"}}/>
                 <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
                     <Nav>
-                        <Nav.Link onClick={()=>buttonColor("Videos")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                        <Nav.Link onClick={()=>buttonColor("Videos")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
                         Videos
                         </Nav.Link>
-                        <Nav.Link onClick={()=>buttonColor("Blogs")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                        <Nav.Link onClick={()=>buttonColor("Blogs")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
                         Blogs
                         </Nav.Link>
-                        <Nav.Link onClick={()=>buttonColor("Community")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                        <Nav.Link onClick={()=>buttonColor("Community")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
                         Community
                         </Nav.Link>                
                     </Nav>                
@@ -114,9 +114,9 @@ function SocialLearningPage(props) {
             <Col>
              <Row style={{marginTop:"5%"}} >
                <Col xs={9} className="SocialLearn_laptop">
-                  <button onClick={()=>buttonColor("Videos")} style={{marginLeft:"2%",marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Videos</button>
-                  <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Blogs</button>
-                  <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold"}}>Community</button>
+                  <button onClick={()=>buttonColor("Videos")} style={{marginLeft:"2%",marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Videos</button>
+                  <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button>
+                  <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button>
                </Col>
                {active==="Videos" &&
                 <Col>

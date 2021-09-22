@@ -19,38 +19,34 @@ function MasterSessions(props) {
     return (
         <div>
             <div className="Mastercards">
+                <Carousel breakPoints={breakPoints}>
                 {expert.ExpertMasterClass.map(CourseId=>
-                    <MDBCard className="mbd_card card_mastercard2" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
-                        <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={masterData[CourseId-1].course_image} alt='...' /></div>
-                        <div className="image_logo">
-                            <img alt="..." className="image_logo1" src="/TheNextGigLogo.png"/>
-                            <img alt="..." className="image_logo2" src="/TheNextGigLogo.png"/>
-                        </div>
+                    <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"30rem",width:"370px"}}>
+                        <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={masterData[CourseId-1].course_image} alt='...' /></div>
                         <MDBCardBody>
                         <div className="Course_name">{masterData[CourseId-1].course_name}</div>
                         <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
-                        <div className="button_masterclass1">
-                        <a href={"/masterclass/"+CourseId}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+                        <div className="post_episode">
+                            <div className="instructor_post">{masterData[CourseId-1].course_instructor}</div>
+                            <div className="episode_course">{masterData[CourseId-1].course_episode}</div>
+                        </div>
+                        <div className="like-text1" style={{display:"flex",justifyContent:"space-between",marginLeft:"0px",marginRight:"0px"}}>
+                        <div>{masterData[CourseId-1].course_instructor_post}</div>
+                        <div>INR {masterData[CourseId-1].fees}</div>
                         </div>
                         </MDBCardBody>
                     </MDBCard>
                 )} 
+                </Carousel>
             </div>
             <div className="slider_mobile">
         <Carousel breakPoints={breakPoints}>
             {expert.ExpertMasterClass.map(CourseId=> 
              <MDBCard className="mbd_card card_mastercard2" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
-             <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src={masterData[CourseId-1].course_image} alt='...' /></div>
-             <div className="image_logo">
-                <img alt="..." className="image_logo1" src="/TheNextGigLogo.png"/>
-                <img alt="..." className="image_logo2" src="/TheNextGigLogo.png"/>
-             </div>
+             <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem"}} src={masterData[CourseId-1].course_image} alt='...' /></div>
              <MDBCardBody>
                <div className="Course_name">{masterData[CourseId-1].course_name}</div>
                <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
-               <div className="button_masterclass1">
-               <a href={"/masterclass/"+CourseId}><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Let's go<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
-             </div>
              </MDBCardBody>
            </MDBCard>
             )}

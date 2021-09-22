@@ -19,11 +19,19 @@ button.rec-dot {
   color: #f26c4f;
   padding-right: 4px;
   border-width: 2px;
+  background-color: #020312;
   border-color: #f26c4f;
   border-style: solid;
 }
 .rec.rec.rec-arrow-right {
-  padding-left: 5px;
+  padding-left: 6px;
+  margin-right: 5px;
+  padding-bottom: 49px;
+}
+.rec.rec.rec-arrow-left {
+  margin-left: 5px;
+  padding-bottom: 49px;
+  padding-right: 4px;
 }
 .page3_subtitle {
   margin-top: -63px;
@@ -169,8 +177,7 @@ button.rec-dot {
     font-size: 15px;
   }
   .button_div_page3 {
-    margin-top: -38%;
+    margin-top: -120px;
     margin-left: 48%;
   }
 }
-

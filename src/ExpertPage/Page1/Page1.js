@@ -53,13 +53,7 @@ function Page1(props) {
               </div>
             </Container>
         </div>
-        <Container>
-          <div >
-            <div>
               <MasterSessions Eid={props.Eid}/>
-            </div>
-          </div>
-        </Container>
     </div>
   );
 }

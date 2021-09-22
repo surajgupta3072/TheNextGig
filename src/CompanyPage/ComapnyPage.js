@@ -1,5 +1,8 @@
 import { useParams } from "react-router-dom";
 import docClient from "./../GigsPage/GigsAWS";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import './CompanyPage.css'
@@ -14,6 +17,17 @@ function CompanyPage() {
   const [active, setActive] = useState("Gigs");
   const [relatedgigs, setDataCompanyGigs] = useState([]);
   const [relatedsessions, setDataCompanyMasterSessions] = useState([]);
+  const [modalShow, setModalShow] = React.useState(false);
+  const [color1,setColor1] =useState("#f26c4f");
+  const [textColor1,setextColor1] =useState("white");
+  const [color2,setColor2] =useState("white");
+  const [textColor2,setextColor2] =useState("#f26c4f");
+  const [color3,setColor3] =useState("white");
+  const [textColor3,setextColor3] =useState("#f26c4f");
+  const [rew, setRew] = useState(0);
+  const [allvideos, setAllvideos] = useState([]);
+  const [user, setUser] = useState("");
+  const [redirectlogin, setRedirectLogin] = useState(true);
 
   async function queryCall(id) {
     let params = {
@@ -67,7 +81,15 @@ function CompanyPage() {
       }
     });
   }, []);
-
+  function buttonColor(word){
+    setActive(word)
+    if(word==="Gigs"){
+      setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");setColor3("white");setextColor3("#f26c4f");
+    }
+    if(word==="MasterSessions"){
+     setColor1("white");setextColor1("#f26c4f");setColor2("#f26c4f");setextColor2("white");setColor3("white");setextColor3("#f26c4f");
+   }
+  }
   return (
     <div>
       {gigs.length!== 0 && (
@@ -127,28 +149,17 @@ function CompanyPage() {
               </Container>
             </div>
             <Container>
-              <div className="box2_page1">
-                <nav className="nav_switchbtn">
-                  <button
-                    onClick={() => setActive("Gigs")}
-                    className="expert_switchbtn"
-                    
-                  >
-                    Gigs
-                  </button>
-                  <button
-                    onClick={() => setActive("MasterSessions")}
-                    className="expert_switchbtn"
-                  >
-                    MasterSessions
-                  </button>
-                </nav>
-                <div>
+            <Row style={{marginTop:"5%"}} >
+               <Col xs={9} className="SocialLearn_laptop">
+                  <button onClick={()=>buttonColor("Gigs")} style={{marginLeft:"2%",marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs</button>
+                  <button onClick={()=>buttonColor("MasterSessions")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"fit-content",height:"30px",fontWeight:"bold",border:"0px"}}>MasterSessions</button>
+               </Col>
+             </Row>
+             </Container>
+              <div>
                   {active === "Gigs" && <Gigs gigData={relatedgigs}/>}
                   {active === "MasterSessions" && <MasterSessions masterData={relatedsessions}/>}
                 </div>
-              </div>
-            </Container>
           </div>
         </div>
       )}
