@@ -103,12 +103,12 @@ function Page3(props) {
             </Row>
             <Row className="card1_page3" style={{marginLeft: "0", marginTop: "3%"}}>
             <div >
-              <p style={{marginLeft:"15px",marginTop:"22px"}}  className="page3_cardtext">
+              <p style={{marginLeft:"25px",marginTop:"12px"}}  className="page3_cardtext">
               Prepares you for roles in:
               </p>
               <Row>
                 <Col>
-                  <Row>
+                  <Row style={{marginBottom:"12px",marginLeft:"-4px"}}>
                     <Col className="img_col">
                       <img alt="..." className="img_page3_card" variant="top" src="/imageh.png"/>
                     </Col>
@@ -116,7 +116,6 @@ function Page3(props) {
                       <h1 className="text_page3_card">{session.course_role}</h1>
                     </Col>
                   </Row>
-                  <br/>
                 </Col>
                 <Col>
                   <Row>

@@ -125,10 +125,10 @@ function Page3(props) {
                   style={{ marginLeft: "0", marginTop: "2%" }}
                 >
                   <div>
-                    <p style={{paddingTop:"30px",marginLeft:"5px"}} className="page3_cardtext">Project Details:</p>
+                    <p style={{marginTop:"12px",marginLeft:"23px"}} className="page3_cardtext">Project Details:</p>
                     <Row>
                       <Col>
-                        <Row>
+                        <Row style={{marginBottom:"12px",marginLeft:"7px"}}>
                           <Col className="img_col" md={4}>
                             <img
                               alt="..."
@@ -160,7 +160,6 @@ function Page3(props) {
                         </Row>
                       </Col>
                     </Row>
-                    <br/>
                   </div>
                 </Row>
                 <Row style={{ marginTop: "0%", paddingBottom: "1%" }}>
