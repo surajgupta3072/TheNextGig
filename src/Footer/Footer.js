@@ -10,11 +10,11 @@ function Footer(){
     const [modalShow, setModalShow] = React.useState(false);
 
     return(
-        <div style={{background: "rgba(255, 255, 255, 0.1)", paddingTop:"3%"}}>
+        <div style={{background: "rgba(255, 255, 255, 0.1)", paddingTop:"4.5%"}}>
         
-            <Row style={{marginLeft: "9%", marginRight: "9%", paddingTop:"2%"}}>
+            <Row style={{marginLeft: "9%", marginRight: "9%"}}>
                 <Col md={7} style={{marginBottom:"3%"}}>
-                    <h2 className="footer_heading1">We're here</h2>
+                    <h2 style={{marginTop:"-20px"}} className="footer_heading1">We're here</h2>
                     <h2 className="footer_heading2">Let's talk</h2>
                     <button style={{ marginLeft: "0%"}} className="button_slide slide_right" onClick={() => setModalShow(true)}>
                         Get in Touch <ArrowLeft className="button_arrow_footer_footer"/></button>
@@ -40,14 +40,14 @@ function Footer(){
             </Row>
             
             <div className="footer_div2">
-            <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
+            <Row style={{marginTop: "2.5%", border:"1px solid #534D4D", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
                 <h6 style={{fontSize:"15px",color:"grey"}}>
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
                 <Col md={2}>
-                    <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                 </Col>

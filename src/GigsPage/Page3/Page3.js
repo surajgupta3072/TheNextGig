@@ -125,7 +125,7 @@ function Page3(props) {
                   style={{ marginLeft: "0", marginTop: "2%" }}
                 >
                   <div>
-                    <p className="page3_cardtext">Project Details:</p>
+                    <p style={{paddingTop:"30px",marginLeft:"5px"}} className="page3_cardtext">Project Details:</p>
                     <Row>
                       <Col>
                         <Row>
@@ -265,7 +265,7 @@ function Page3(props) {
                     }}
                   >
                     <div className="image_card">
-                      <MDBCardImage
+                      <MDBCardImage className="mbd_image"
                         style={{
                           marginLeft: "1px",
                           width: "100%",

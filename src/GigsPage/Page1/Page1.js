@@ -5,7 +5,6 @@ import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from '../GigsAWS'
 import React,{ useEffect, useState } from "react";
 import ReactTooltip from 'react-tooltip'
-
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -62,7 +61,7 @@ function Page1(props) {
             className="cax card_mastercard mbd_card"
           >
             <div className="image_card">
-              <MDBCardImage
+              <MDBCardImage className="mbd_image"
                 style={{
                   marginLeft: "0.5%",
                   width: "100%",
@@ -117,38 +116,35 @@ function Page1(props) {
               }}
             >
               <div className="image_card">
-                <MDBCardImage
+                <MDBCardImage className="mbd_image"
                   style={{
                     marginLeft: "1px",
                     width: "100%",
-                    height: "14rem",
-                    paddingTop: "20px",
-                    paddingLeft: "20px",
-                    paddingRight: "20px",
+                    height: "14rem"
                   }}
-                  src={carder.GigName}
+                  src={carder.GigImage}
                   alt="..."
                 />
               </div>
               <MDBCardBody>
-                <div className="Course_name">{carder.GigFunction}</div>
+                <div className="Course_name">{carder.GigName}</div>
                 <hr
                   className="course_line"
                   style={{ height: "0.13rem", color: "#f26c4f" }}
                 />
                 <div className="instruct_time">
                   <div className="instructor_name">
-                    {carder.GigStipend}
+                    {carder.GigFunction}
                   </div>
-                  <div className="time_course">{carder.GigStartDate}</div>
+                  <div className="time_course">{carder.GigDuration}</div>
                 </div>
                 <div className="post_episode">
                   <div className="instructor_post">
-                    {carder.GigPOCname}
+                    {carder.CompanyName}
                   </div>
-                  <div className="episode_course">{carder.GigPOCcontact}</div>
+                  <div className="episode_course">{carder.GigStipend}</div>
                 </div>
-              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by </div>
+              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
               </MDBCardBody>
             </MDBCard>
           ))}

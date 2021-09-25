@@ -7,13 +7,14 @@ export default function CardX(props) {
         <div className="card-header">
           <div className="card-title-group"></div>
         </div>
-        <img className="card-image" src={props.card} alt="Logo" />
+        <span style={{position:"absolute",fontFamily:"Brush Script MT, Brush Script Std, cursive",color:"#f26c4f",fontSize:"35px",transform:"rotate(-50deg)",marginLeft:"10px",marginTop:"-15px"}}>New</span>
+        <img className="card-image" src={props.card} alt="Logo"/>
         <div style={{display:"flex",justifyContent:"center"}} className="card-like-bar">
           <div  className="texting">
             {props.text2}
           </div>
         </div>
-        <hr style={{color:"orange",height:"3px"}}/>
+        <hr style={{color:"#f26c4f",height:"3px"}}/>
         <div className="like-text" style={{display:"flex",justifyContent:"space-between"}}>
         <div >{props.name}</div>
         <div >{props.time}</div>

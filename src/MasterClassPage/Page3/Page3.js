@@ -103,7 +103,7 @@ function Page3(props) {
             </Row>
             <Row className="card1_page3" style={{marginLeft: "0", marginTop: "3%"}}>
             <div >
-              <p className="page3_cardtext">
+              <p style={{marginLeft:"15px",marginTop:"22px"}}  className="page3_cardtext">
               Prepares you for roles in:
               </p>
               <Row>
@@ -132,7 +132,7 @@ function Page3(props) {
           </div>
             </Row>
             <Row style={{display: "flex", justifyContent: "space-around"}}>
-              <Col style={{marginLeft: "10%"}}>
+              <Col>
                 <a href={"/expert/"+session.ExpertId}><button  className="button_slide_page3 slide_right">
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button></a>
@@ -160,7 +160,7 @@ function Page3(props) {
               }
             </Row>
           </Col>
-          <Col style={{padding:"0px"}} md={6}> 
+          <Col style={{padding:"0px",marginTop:"25px"}} md={6}> 
               {/* <video src={session["episodes"][0]["epi_video"]} className="anim_img" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/> */}
               <img alt="..." src={session.course_image} className="anim_img"/>
           </Col>
@@ -227,27 +227,36 @@ function Page3(props) {
           </div>
         </Container>
       </div>
-      <br/><br/>
-      <Container>
+      <br/>
+      <Container className="info">
         <Row>
           <Col style={{textAlign:"center"}}>
-            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
-            <h3>Preference for Marketing <span style={{color: "#f26c4f"}}>gigs / internships / jobs</span></h3>
+          <div style={{height:"2px",width:"70%",backgroundColor:"#F26C4F"}}></div>
+            <div style={{height:"100px",width:"80px",backgroundColor:"rgba(242, 108, 79, 0.3)",border:"1px solid #F26C4F",paddingTop:"38px"}}>1</div>
+            <h3 style={{marginTop:"-60px",marginLeft:"-320px"}}>HANDS-ON <span style={{color: "#F26C4F"}}>EXPERIENCE</span></h3>
           </Col>
-          <Col style={{textAlign:"center"}}>
-            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
-            <h3>Re-learn the Marketing Fundamentals from the <span style={{color: "#f26c4f"}}>Best</span></h3>          
+          <div className="night">
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+      <div className="star"></div>
+    </div>
+        </Row>
+        <br/><br/>
+        <Row>
+          <Col style={{textAlign:"center",marginLeft:"20%"}}>
+            <div style={{height:"2px",width:"80%",backgroundColor:"#C89636"}}></div>
+            <div style={{height:"100px",width:"80px",backgroundColor:"rgba(200, 150, 54, 0.3)",border:"1px solid #C89636",paddingTop:"38px"}}>2</div>
+            <h3 style={{marginTop:"-60px",marginLeft:"-100px"}}>HANDS-ON <span style={{color: "#C89636"}}>EXPERIENCE</span></h3>
           </Col>
         </Row>
         <br/><br/>
         <Row>
-          <Col style={{textAlign:"center"}}>
-            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
-            <h3>Certificate from TheNextGig in association with <span style={{color: "#f26c4f"}}>Anil Nair</span></h3>
-          </Col>
-          <Col style={{textAlign:"center"}}>
-            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
-            <h3>Sneak peek into real-life <span style={{color: "#f26c4f"}}>marketing</span></h3>          
+          <Col style={{textAlign:"center",marginLeft:"40%"}}>
+          <div style={{height:"2px",width:"100%",backgroundColor:"#569670"}}></div>
+            <div style={{height:"100px",width:"80px",backgroundColor:"rgba(86, 150, 112, 0.3)",border:"1px solid #569670",paddingTop:"38px"}}>3</div>
+            <h3 style={{marginTop:"-60px",marginLeft:"90px"}}>HANDS-ON <span style={{color: "#569670"}}>EXPERIENCE</span></h3>
           </Col>
         </Row>
       </Container>
@@ -275,39 +284,32 @@ function Page3(props) {
         </div>
       </div> */}
       <div className="Whats_inforyou_mobile_view">
-        <Container style={{display: "flex", flexDirection: "column", justifyContent: "space-around"}}>
-          <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
-            <Col xs={4}>
-              <img alt="..." src="/imageh.png" height="50px" width="100px" />
-            </Col>
-            <Col xs={8}>
-              <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
-            </Col>
-          </Row>
-          <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
-            <Col xs={4}>
-              <img alt="..." src="/imageh.png" height="50px" width="100px" />
-            </Col>
-            <Col xs={8}>
-              <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
-            </Col>
-          </Row>
-          <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
-            <Col xs={4}>
-              <img alt="..." src="/imageh.png" height="50px" width="100px" />
-            </Col>
-            <Col xs={8}>
-              <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
-            </Col>
-          </Row>
-          <Row style={{paddingTop: "20px", paddingBottom: "20px"}}>
-            <Col xs={4}>
-              <img alt="..." src="/imageh.png" height="50px" width="100px" />
-            </Col>
-            <Col xs={8}>
-              <h1 style={{ fontSize: "18px", display: "flex", justifyContent: "space-around", marginTop: "5%"}}>HANDS-ON <span style={{color: "#f26c4f"}}> EXPERIENCE </span></h1>
-            </Col>
-          </Row>
+        <Container style={{display: "flex", flexDirection: "column", justifyContent: "space-around",marginTop:"-60px"}}>
+        <Row>
+          <Col style={{textAlign:"center"}}>
+          <div style={{height:"2px",width:"100%",backgroundColor:"#F26C4F"}}></div>
+            <div style={{height:"100px",width:"80px",backgroundColor:"rgba(242, 108, 79, 0.3)",border:"1px solid #F26C4F",paddingTop:"38px"}}>1</div>
+            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>HANDS-ON <span style={{color: "#F26C4F"}}>EXPERIENCE</span></h3>
+          </Col>
+        </Row>
+        <br/><br/>
+        <Row>
+          <Col style={{textAlign:"center"}}>
+            <div style={{height:"2px",width:"100%",backgroundColor:"#C89636"}}></div>
+            <div style={{height:"100px",width:"80px",backgroundColor:"rgba(200, 150, 54, 0.3)",border:"1px solid #C89636",paddingTop:"38px"}}>2</div>
+            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>HANDS-ON <span style={{color: "#C89636"}}>EXPERIENCE</span></h3>
+          </Col>
+        </Row>
+        <br/><br/>
+        <Row>
+          <Col style={{textAlign:"center"}}>
+          <div style={{height:"2px",width:"100%",backgroundColor:"#569670"}}></div>
+            <div style={{height:"100px",width:"80px",backgroundColor:"rgba(86, 150, 112, 0.3)",border:"1px solid #569670",paddingTop:"38px"}}>3</div>
+            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>HANDS-ON <span style={{color: "#569670"}}>EXPERIENCE</span></h3>
+          </Col>
+        </Row>
+        <br/>
+        <br/>
         </Container>
       </div>
       <div className="header_masterclass">
@@ -330,7 +332,7 @@ function Page3(props) {
                     {details.gigs.map(company=>{
                     return(
                       <MDBCard onClick={()=>window.location.href="/gigs/"+company.id} className="cax mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%",height:"30rem" ,border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
-                        <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={company.internship_image} alt='...' /></div>
+                        <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={company.internship_image} alt='...' /></div>
                         <MDBCardBody>
                           <div className="Course_name">{company.project_name}</div>
                           <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
@@ -366,7 +368,7 @@ function Page3(props) {
               else
             return (
                <MDBCard  onClick={()=>window.location.href="/masterclass/"+details.id} className="cax mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"30rem"}}>
-             <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={details.course_image} alt='...' /></div>
+             <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={details.course_image} alt='...' /></div>
              <MDBCardBody>
                <div className="Course_name">{details.course_name}</div>
                <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />

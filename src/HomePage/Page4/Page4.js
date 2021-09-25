@@ -22,7 +22,6 @@ function Page4() {
         <h4 className="page3_subtitle"><span class="h3_live" style={{color: "#F26C4F"}}>Live</span>. At your doorstep.</h4>
       </div>
       </div>
-        
         <Container>
             <Row style={{marginTop: "5%"}}>
                 <Col className="main_col1" md={8} >
@@ -30,6 +29,8 @@ function Page4() {
                         <Row>
                             <h1 className="heading_1">Practice what you <span style={{ textDecorationLine: 'line-through', textDecorationColor: "#F26C4F"}} className="heading_1span">preach.</span></h1>
                         </Row>
+                        <Row>
+                            </Row>
                         <Row>
                             <h1 className="heading_2" style={{color: "#F26C4F"}} >learn.</h1>
                         </Row> 
