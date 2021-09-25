@@ -131,7 +131,7 @@ function Page3(props) {
               </Row>
           </div>
             </Row>
-            <Row style={{display: "flex", justifyContent: "space-around"}}>
+            <Row style={{display: "flex", justifyContent:"space-between"}}>
               <Col>
                 <a href={"/expert/"+session.ExpertId}><button  className="button_slide_page3 slide_right">
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
@@ -152,7 +152,7 @@ function Page3(props) {
                     onHide={() => setModalShow(false)}
                   />
                 </Col> :
-                <Col style={{display: "flex", justifyContent: "space-between"}}>
+                <Col style={{display: "flex", justifyContent: "space-between",marginLeft:"15%"}}>
                   <button style={{width:"50%"}} className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
                   Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
                   </button>
