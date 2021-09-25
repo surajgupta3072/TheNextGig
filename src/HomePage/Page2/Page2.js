@@ -61,7 +61,7 @@ function Page2() {
       </p>
     <Container>
       <Col>
-      <Card style={{ width: '20rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%" }}>
+      <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%" }}>
         <Card.Body>
           <div style={{display: "flex", flexDirection: "row"}}>
             <Col >
@@ -77,7 +77,7 @@ function Page2() {
         </Card.Body>
         <a href="/masterclass"><ArrowRight className="card_arrow1"/></a>
       </Card>
-      <Card style={{ width: '20rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%"}}>
+      <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%"}}>
         <Card.Body>
           <div style={{display: "flex", flexDirection: "row"}}>
             <Col>
@@ -93,7 +93,7 @@ function Page2() {
         </Card.Body>
         <a href="/gigs"><ArrowRight className="card_arrow1"/></a>
       </Card>
-      <Card style={{ width: '20rem',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "10%"}}>
+      <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "10%"}}>
         <Card.Body>
           <div style={{display: "flex", flexDirection: "row"}}>
             <Col>
@@ -110,7 +110,7 @@ function Page2() {
         <a href="/community"><ArrowRight className="card_arrow1"/></a>
       </Card>
       
-      <div style={{width:"300px",height:"50px",border:"1px solid #534D4D", marginLeft:"5%", paddingTop:"5px", display: "flex", flexDirection: "row"}}>
+      <div style={{width:"100%",height:"50px",border:"1px solid #534D4D", paddingTop:"5px", display: "flex", flexDirection: "row",margin:"auto"}}>
           <Col  md={1} ><img alt="..." src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px"  /></Col>
             <Col md={1}><img alt="..." src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
             <Col md={1}><img alt="..." src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
