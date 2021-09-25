@@ -1,17 +1,17 @@
 .gig_page2_p5 {
-    font-size: 20px;
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif !important;
+}
+.gig_page2_row1 {
+  padding-left: 66%;
+}
+
+@media screen and (max-width: 768px) {
+  .gig_page2_p5 {
+    font-size: 14px;
     font-family: "Open Sans", sans-serif !important;
   }
   .gig_page2_row1 {
-    padding-left: 66%;
+    padding-left: 50%;
   }
-
-  @media screen and (max-width: 768px) {
-    .gig_page2_p5 {
-        font-size: 14px;
-        font-family: "Open Sans", sans-serif !important;
-      }
-      .gig_page2_row1 {
-        padding-left: 50%;
-      }
-  }
+}

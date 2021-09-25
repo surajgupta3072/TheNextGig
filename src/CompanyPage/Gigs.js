@@ -18,7 +18,7 @@ function Gigs(props) {
             <Carousel  breakPoints={breakPoints}>
             {props.gigData.map(Gig=>
                     <MDBCard onClick={()=>window.location.href="/gigs/"+Gig.GigId} className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"30rem",width:"370px"}}>
-                        <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={Gig.GigImage} alt='...' /></div>
+                        <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={Gig.GigImage} alt='...' /></div>
                         <MDBCardBody>
                         <div className="Course_name">{Gig.GigName}</div>
                         <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
@@ -40,7 +40,7 @@ function Gigs(props) {
         <Carousel breakPoints={breakPoints}>
             {props.gigData.map(Gig=>
              <MDBCard onClick={()=>window.location.href="/gigs/"+Gig.GigId} className="mbd_card card_mastercard2" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
-             <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src="https://www.clipartkey.com/mpngs/m/153-1539728_cartoon-person-waving-cartoon-person-png.png" alt='...' /></div>
+             <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"14rem",paddingTop:"20px",paddingLeft:"20px",paddingRight:"20px"}} src="https://www.clipartkey.com/mpngs/m/153-1539728_cartoon-person-waving-cartoon-person-png.png" alt='...' /></div>
              <MDBCardBody>
                <div className="Course_name">{Gig.GigName}</div>
                <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />

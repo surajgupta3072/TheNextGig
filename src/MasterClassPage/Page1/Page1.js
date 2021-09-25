@@ -39,7 +39,7 @@ function Page1() {
             className="cax card_mastercard"
           >
             <div className="image_card1">
-              <MDBCardImage
+              <MDBCardImage className="mbd_image"
                 style={{ width: "100%", height: "22rem" }}
                 src={carder.course_image}
                 alt="..."
@@ -83,15 +83,12 @@ function Page1() {
                 backgroundColor: "#020312",
               }}
             >
-              <div className="image_card">
-                <MDBCardImage
+              <div  className="image_card">
+                <MDBCardImage className="mbd_image"
                   style={{
                     marginLeft: "1px",
                     width: "100%",
-                    height: "14rem",
-                    paddingTop: "20px",
-                    paddingLeft: "20px",
-                    paddingRight: "20px",
+                    height: "14rem"
                   }}
                   src={carder.course_image}
                   alt="..."

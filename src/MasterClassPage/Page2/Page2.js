@@ -27,10 +27,20 @@ function Page2() {
        </Col> 
        <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
          <Container>
+           <Row>
+             <Col style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} md={3} xs={1}>
+               <img style={{height:"50px",width:"50px",marginTop:"25%"}} src="/google_logo.jpg"/>
+               <img style={{height:"50px",width:"50px",marginLeft:"75%",marginTop:"30%"}} src="/google_logo.jpg"/>
+               <img style={{height:"50px",width:"50px",marginTop:"20%"}} src="/google_logo.jpg"/>
+               <img style={{height:"50px",width:"50px",marginLeft:"140%"}} src="/google_logo.jpg"/>
+             </Col>
+             <Col>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the experts!</p></Row>
-            <Row style={{paddingLeft:"45%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
+            <Row style={{paddingLeft:"12%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
             <Row className="mast_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="mast_page2_p5"><a href="/expert" style={{textDecoration:"none", color:"#f26c4f"}}>Stalk them.</a></p></Row>
             <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2"/></a>
+            </Col>
+            </Row>
          </Container>
        </Col>
       </Row>

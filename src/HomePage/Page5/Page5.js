@@ -27,9 +27,9 @@ function Page5() {
       <div className="page2_laptop_view">
         <Container>
           <Row>
-            <Card style={{ width: "27%", marginLeft:"2.5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
-                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"10px", background:"white", borderRadius:"30%"}} variant="top" src="/image10.png"/>
-                <Card.Body style={{marginTop:"10px"}}>
+            <Card className="page2card" style={{ width: "29.9%", marginLeft:"-2%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
+                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/videohome.jpg"/>
+                <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >VIDEOS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
                   Upload a video? Get rewarded. Watch a video? Learn something new. <br /><br />It’s a win-win!  
@@ -38,21 +38,21 @@ function Page5() {
                 
             </Card>
             
-            <Card style={{ width: "27%", marginLeft:"7%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
-                <Card.Body style={{marginTop:"50px"}}>
+            <Card className="page2card"  style={{width: "29.9%", marginLeft:"6.8%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
+                <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >BLOGS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
                   Read some; write some!
                   The topic? Anything under the sun!
                   </Card.Text>
                 </Card.Body>
-                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px", background:"white", borderRadius:"30%"}} variant="top" src="/image4.png"/>
+                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/bloghome.jpg"/>
                 
             </Card>
 
-            <Card style={{ width: "27%", marginLeft:"7%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px" }}>
-                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"10px", background:"white", borderRadius:"30%"}} variant="top" src="/image1.png"/>
-                <Card.Body style={{marginTop:"10px"}}>
+            <Card className="page2card" style={{width: "29.9%", marginLeft:"6.8%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px",marginRight:"-2%"}}>
+                <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/communityhome.jpg"/>
+                <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >COMMUNITY</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
                   Talk to your fellow learners and experts. Build your network!

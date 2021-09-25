@@ -65,23 +65,23 @@ function Blogs(props) {
       <input style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px", width:"40%"}}  value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Blog..." type="search"/>&nbsp;&nbsp;&nbsp;
       <button style={{background:"rgb(242, 108, 79)", color:"white", border:"0", borderRadius:"20px", width:"10%"}} onClick={searchFilter} type="submit">Search</button>
       <br/><br/>
-      <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
+      <div  style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around" }}>
         {!readsingleblog && allBlogs.map((blog)=>
           <div key={blog.BlogID} onClick={() => {if(!props.redirlog) BlogRead(blog);  else window.location.href="/login";}}>
-            <div className="blog-box">
+            <div  className="blog-box">
               <h4 style={{padding:"0", margin:"0"}}>{blog.BlogTopic}</h4>
               <h5 style={{padding:"0", margin:"0"}}>{blog.BlogUsername}</h5>
               <h6 style={{padding:"0", margin:"0", fontWeight:"600"}}>{blog.BlogCreds}</h6>
               <p style={{padding:"0", margin:"0"}}>{blog.BlogHashtags}</p>
               <br/>
-              <p style={{fontSize:"14px"}}>{blog.Blog}</p>
+              <p style={{fontSize:"14px"}}>{blog.Blog.split(" ").slice(0,32).join(" ")+"  . . . "}</p>
             </div>
             <br/>
           </div>
         )}
       </div>
       {readsingleblog && readsingleblog.map((blog)=>
-        <div style={{marginLeft:"3%"}} key={blog.BlogID}>
+        <div style={{marginLeft:"3%",paddingBottom:"10px"}} key={blog.BlogID}>
           <h4 style={{padding:"0", margin:"0"}}>{blog.BlogTopic}</h4>
           <h5 style={{padding:"0", margin:"0"}}>{blog.BlogUsername}</h5>
           <h6 style={{padding:"0", margin:"0", fontWeight:"600"}}>{blog.BlogCreds}</h6>

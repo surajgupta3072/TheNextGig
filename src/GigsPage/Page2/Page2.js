@@ -30,9 +30,19 @@ function Page2() {
        </Col> 
        <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
          <Container >
+           <Row>
+         <Col style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} md={3} xs={1}>
+               <img style={{height:"50px",width:"50px",marginTop:"25%"}} src="/google_logo.jpg"/>
+               <img style={{height:"50px",width:"50px",marginLeft:"75%",marginTop:"30%"}} src="/google_logo.jpg"/>
+               <img style={{height:"50px",width:"50px",marginTop:"20%"}} src="/google_logo.jpg"/>
+               <img style={{height:"50px",width:"50px",marginLeft:"140%"}} src="/google_logo.jpg"/>
+             </Col>
+             <Col>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet our Partners!</p></Row>           
-            <Row className="gig_page2_row1" ><a style={{textDecoration:"none"}} href="/expert"><p style={{color:"rgb(243, 123, 97)"}} className="gig_page2_p5">Check them out.</p></a></Row>
-            <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2"/></a>
+            <Row className="gig_page2_row1" ><a style={{textDecoration:"none"}} href="/expert"><p style={{color:"rgb(243, 123, 97)",marginLeft:"-18%"}} className="gig_page2_p5">Check them out.</p></a></Row>
+            <a href="/expert" ><ArrowRight style={{marginLeft:"18%"}} className="button_arrow_MC_Page2_2"/></a>
+            </Col>
+            </Row>
          </Container>
        </Col>
       </Row>

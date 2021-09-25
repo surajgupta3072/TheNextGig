@@ -4,7 +4,10 @@
 .page2_laptop_view {
   display: block;
 }
-
+.page2card:hover {
+  transform: scale(0.97);
+  box-shadow: 0 10px 20px rgba(134, 50, 50, 0.8), 0 4px 8px #f26c4f;
+}
 .color-block {
   width: 45px;
   height: 45px;
@@ -34,7 +37,7 @@
   .page2_laptop_view {
     display: none;
   }
-  .card_arrow1{
+  .card_arrow1 {
     margin-bottom: -7%;
     margin-left: 90%;
   }
