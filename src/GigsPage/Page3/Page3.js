@@ -177,7 +177,7 @@ function Page3(props) {
                   </Col>
                   { !appliedgigs.includes(gigs[0].GigId) ?
                     <Col>
-                      <button
+                      <button style={{marginLeft:"5%"}}
                         className="button2_slide_page3 slide_right btn2_gigspage"
                         onClick={() => setModalShow(true)}
                       >
@@ -193,7 +193,8 @@ function Page3(props) {
                       />
                     </Col> :
                     <Col>
-                    <button className="button2_slide_page3 slide_right btn2_gigspage">
+                    <button style={{marginLeft:"12%"}}
+                    className="button2_slide_page3 slide_right btn2_gigspage">
                       Applied!
                     </button>
                   </Col>
