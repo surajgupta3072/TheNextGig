@@ -194,7 +194,9 @@ function Education(props) {
           </div>
           <div>
             <br/>
-            <button style={{marginTop:"3%", marginBottom: "10%"}} onClick={handleSubmit} className="button_slide_Edu_Profile">Save</button>         
+            <div className="button_div">
+            <button style={{marginTop:"3%", marginBottom: "10%"}} onClick={handleSubmit} className="button_slide">Save</button>
+            </div>         
           </div>
         </Container>
       </div>

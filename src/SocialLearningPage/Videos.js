@@ -47,8 +47,8 @@ function Videos(props) {
 
   return (
     <div>
-      <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px", width:"40%"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
-      <button style={{background:"rgb(242, 108, 79)", color:"white", border:"0", borderRadius:"20px", width:"10%"}} onClick={searchFilter} type="submit">Search</button>
+      <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
+      <button className="search_button" style={{background:"rgb(242, 108, 79)", color:"white", border:"0", borderRadius:"20px"}} onClick={searchFilter} type="submit">Search</button>
       <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
         {videoslist===false && props.prop.map((vid)=>
           <div  key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
@@ -61,10 +61,10 @@ function Videos(props) {
               </video>
             }
             <div>
-              <h5 style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>
-              <p style={{padding:"0", margin:"0"}}>{vid.VideoHashtags}</p>
-              <h5 style={{padding:"0", margin:"0"}}>{vid.VideoUsername}</h5>
-              <h6 style={{padding:"0", margin:"0"}}>{vid.VideoCreds}</h6>
+              <h5 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>
+              <p className="text" style={{padding:"0", margin:"0"}}>{vid.VideoHashtags}</p>
+              <h5 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoUsername}</h5>
+              <h6 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoCreds}</h6>
             </div>
             <br/>
           </div>

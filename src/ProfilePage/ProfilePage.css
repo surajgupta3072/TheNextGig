@@ -14,7 +14,7 @@
 .WorkEx_Mobile_view {
   display: none;
 }
-.Education_Mobile_view{
+.Education_Mobile_view {
   display: none;
 }
 
@@ -40,6 +40,11 @@
   .Profile_list_laptop {
     display: none;
   }
+  .button_slide {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
   .Profile_list_mobile {
     display: block;
   }
@@ -55,13 +60,13 @@
   .WorkEx_Mobile_view {
     display: block;
   }
-  .Education_Mobile_view{
+  .Education_Mobile_view {
     display: block;
   }
-  .Education_Desktop_view{
+  .Education_Desktop_view {
     display: none;
   }
-  .row>*{
+  .row > * {
     padding: 0;
   }
 }

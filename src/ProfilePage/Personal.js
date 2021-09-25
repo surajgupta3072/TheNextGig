@@ -108,7 +108,9 @@ function Personal(props) {
             <p style={{fontSize:"20px"}}>Something quirky about you?</p>
             <p><input value={quirky} onChange={e => setQuirky(e.target.value)} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
-          <button style={{marginTop:"3%"}} onClick={handleSubmit} className="button_slide">Save</button>
+          <div className="button_div">
+          <button style={{marginTop:"10%"}} onClick={handleSubmit} className="button_slide">Save</button>
+          </div>
         </Container>
       </div>
     );

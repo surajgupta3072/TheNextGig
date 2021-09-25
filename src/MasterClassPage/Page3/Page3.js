@@ -101,8 +101,8 @@ function Page3(props) {
               <p className="page3_3linetext">{session.course_description}</p>
               <p className="page3_3linetext2">Lifetime access to <span style={{color: "#f26c4f"}}>{session.course_timing}</span>  of Learning experience</p>
             </Row>
-            <Row className="card1_page3" style={{marginLeft: "0", marginTop: "3%"}}>
-            <div >
+            <Row className="card1_page3" style={{marginTop: "3%"}}>
+            <div className="diver">
               <p style={{marginLeft:"25px",marginTop:"12px"}}  className="page3_cardtext">
               Prepares you for roles in:
               </p>
@@ -139,7 +139,7 @@ function Page3(props) {
               { props.prop!==null ?
                 coursePurchased===false &&
                 <Col style={{display: "flex", justifyContent: "space-between"}}>
-                  <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
+                  <button className="button_slide_page3 inr_button slide_right " onClick={() => setModalShow(true)}>
                   Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
                   </button>
                   <MyVerticallyPopUp
@@ -152,7 +152,7 @@ function Page3(props) {
                   />
                 </Col> :
                 <Col style={{display: "flex", justifyContent: "space-between",marginLeft:"15%"}}>
-                  <button style={{width:"50%"}} className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
+                  <button  className="button_slide_page3 slide_right inr_button" onClick={() => window.location.href="/login"}>
                   Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
                   </button>
                 </Col>
@@ -161,12 +161,13 @@ function Page3(props) {
           </Col>
           <Col style={{padding:"0px",marginTop:"25px"}} md={6}> 
               {/* <video src={session["episodes"][0]["epi_video"]} className="anim_img" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/> */}
+              
               <img alt="..." src={session.course_image} className="anim_img"/>
           </Col>
           </Row>
       </Container>
       <Container className="container2_page3" style={{padding: "0%", maxWidth: "94.25%",  marginBottom: "0%"}}>
-        <Row className="main_cardbody_row" style={{marginLeft: "2%"}}>
+        <Row className="main_cardbody_row" style={{marginLeft: "auto",marginRight:"auto"}}>
         <div className="main_card" >               
                 <div className="main_cardbody"> 
                   <Row >
@@ -202,7 +203,7 @@ function Page3(props) {
                     </Col >
                     <Col md={4}>
                       <div className="menu_card">   
-                        <h1 style={{marginTop: "2%", marginLeft: "2%"}}>Episodes</h1>   
+                        <h1 className="epi" style={{marginTop: "2%", marginLeft: "2%"}}>Episodes</h1>   
                         <div className="vertical-menu">
                         {session["episodes"].map(topic=>(
                           <div className="menu_list" style={{cursor:"pointer"}} onClick={() => {showDescription(topic.id)}}>
@@ -330,8 +331,8 @@ function Page3(props) {
                 return (<div><Carousel  breakPoints={breakPoints}>
                     {details.gigs.map(company=>{
                     return(
-                      <MDBCard onClick={()=>window.location.href="/gigs/"+company.id} className="cax mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%",height:"30rem" ,border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
-                        <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={company.internship_image} alt='...' /></div>
+                      <MDBCard onClick={()=>window.location.href="/gigs/"+company.id} className="cax  card_mastercard" style={{borderRadius:"0px", margin:"4%",border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"fit-content"}}>
+                        <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={company.internship_image} alt='...' /></div>
                         <MDBCardBody>
                           <div className="Course_name">{company.project_name}</div>
                           <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
@@ -355,7 +356,7 @@ function Page3(props) {
           <div className="header_masterclass">
           <Container>
           <div className="top_masterclass"><h1>OTHER MASTERCLASSES</h1>
-            <p className="subtitle_masterclass">Don’t stop learning!<span style={{marginLeft:"62.1%"}}><a style={{textDecoration:"none", color:"#f26c4f"}} href="/masterclass">Explore all sessions &#62; &#62;</a></span></p>
+            <p className="subtitle_masterclass">Don’t stop learning!<span className="explore_sessions" ><a style={{textDecoration:"none", color:"#f26c4f"}} href="/masterclass">Explore all sessions &#62; &#62;</a></span></p>
           </div>
           </Container>
           </div>
@@ -366,9 +367,9 @@ function Page3(props) {
               return null;
               else
             return (
-               <MDBCard  onClick={()=>window.location.href="/masterclass/"+details.id} className="cax mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"30rem"}}>
-             <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={details.course_image} alt='...' /></div>
-             <MDBCardBody>
+               <MDBCard  onClick={()=>window.location.href="/masterclass/"+details.id} className="cax card_mastercard" style={{height:"fit-content",borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
+             <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={details.course_image} alt='...' /></div>
+             <MDBCardBody > 
                <div className="Course_name">{details.course_name}</div>
                <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
                <div className="instruct_time">

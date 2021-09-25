@@ -118,7 +118,8 @@ function WorkEx(props) {
               </div>
             ))}
             <Row onClick={handleAddFields} style={{marginTop:"3%",cursor:"pointer"}}><p style={{textAlign:"end"}}>Add more +</p></Row>
-            <button onClick={handleSubmit} className="button_slide">Save</button>
+            <div className="button_div">
+            <button onClick={handleSubmit} className="button_slide">Save</button></div>
           </Container>
         </div>
       </div>

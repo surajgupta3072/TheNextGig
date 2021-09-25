@@ -139,6 +139,7 @@
 .search:focus {
   outline: none;
 }
+
 .rectangle {
   margin-top: 10%;
   margin-left: 2%;
@@ -157,17 +158,38 @@
   background-color: rgb(242, 108, 79);
   border-color: rgb(242, 108, 79);
 }
-
+.search {
+  width: 40%;
+}
+.search_button {
+  width: 10%;
+}
 @media screen and (max-width: 768px) {
   .SocialLearn_laptop {
     display: none;
   }
+  .text {
+    text-align: center;
+  }
+  .search_button {
+    width: 30%;
+  }
+  .search {
+    width: 60%;
+  }
   .SocialLearn_list_mobile {
     display: inline;
   }
+  .discord_img {
+    width: 100%;
+  }
   .rectangle {
-    width: 72%;
+    width: 80%;
     height: 300px;
-    margin-left: 13%;
+    margin: auto;
+  }
+  .text1,
+  .text2 {
+    margin-top: -10px;
   }
 }

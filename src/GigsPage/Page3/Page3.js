@@ -238,7 +238,7 @@ function Page3(props) {
                     Learn before you actually{" "}
                     <span className="orange_text_masterclass">
                       practise
-                      <span style={{ marginLeft: "58%" }}>
+                      <span className="explore_session" style={{ marginLeft: "58%" }}>
                         <a
                           style={{ textDecoration: "none", color: "#f26c4f" }}
                           href="/masterclass"
@@ -255,11 +255,10 @@ function Page3(props) {
               <Carousel breakPoints={breakPoints}>
                 {master.map((carder) => (
                   <MDBCard
-                    className="cax mbd_card card_mastercard"
+                    className="cax card_mastercard"
                     style={{
                       borderRadius: "0px",
                       margin: "4%",
-                      height:"30rem",
                       border: "2px solid rgba(242, 108, 79, 0.6)",
                       backgroundColor: "#020312",
                     }}
@@ -268,8 +267,7 @@ function Page3(props) {
                       <MDBCardImage className="mbd_image"
                         style={{
                           marginLeft: "1px",
-                          width: "100%",
-                          height: "22rem"
+                          width: "100%"
                         }}
                         src={carder.course_image}
                         alt="..."

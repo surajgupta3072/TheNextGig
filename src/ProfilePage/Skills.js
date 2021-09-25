@@ -23,7 +23,8 @@ function Skills() {
             <Col md={12}><em><p style={{fontSize:"18px"}}>Through Social Learning - Videos</p></em></Col>
             <Col md={12}><em><p style={{fontSize:"18px"}}>Through Social Learning - Blogs</p></em></Col>
           </Row>
-          <button style={{marginTop:"4%"}} className="button_slide">Save</button>
+          <div className="button_div">
+          <button style={{marginTop:"4%"}} className="button_slide">Save</button></div>
          </Container>
       </div>
     );

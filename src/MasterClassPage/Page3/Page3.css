@@ -4,11 +4,14 @@
 }
 .anim_img {
   height: 80%;
-  width: 100%;
+  width: 80%;
 }
 .vertical-menu {
   height: 80%;
   overflow-y: auto;
+}
+.mbd_image {
+  height: 22rem;
 }
 .rectangle-box3 {
   width: 105%;
@@ -27,10 +30,6 @@
     border: 1px solid rgb(212, 71, 41);
     background: transparent;
   }
-  .container2_page3 {
-    margin-top: 10%;
-  }
-
   .rec.rec-arrow-left {
     margin-left: 30px;
     margin-right: -22px;
@@ -56,7 +55,7 @@
 }
 .main_card {
   width: 100%;
-  height: 550px;
+  height: fit-content;
   margin-left: "1.5%";
   background-color: rgba(242, 108, 79, 0.07);
   border: 2px solid rgba(242, 108, 79, 0.6);
@@ -86,6 +85,7 @@
 }
 .page3_cardtext {
   font-size: 25px;
+  margin-left: 25px;
 }
 .img_page3_card {
   margin-right: 0;
@@ -144,9 +144,6 @@
   width: 90%;
   text-decoration: none;
 }
-.container2_page3 {
-  margin-top: 5%;
-}
 .button_arrow_Letsgo_Page3 {
   position: absolute;
   margin-top: 10px;
@@ -163,9 +160,24 @@
 .Whats_inforyou_mobile_view {
   display: none;
 }
+.explore_sessions {
+  margin-left: 62.1%;
+}
+.epi {
+  margin-left: 2%;
+}
+.inr_button {
+  width: 50%;
+}
 @media screen and (max-width: 768px) {
   .info {
     display: none;
+  }
+  .mbd_image {
+    height: 14rem;
+  }
+  .explore_sessions {
+    margin-left: 10%;
   }
   .container1 {
     margin-right: 0%;
@@ -185,8 +197,9 @@
   }
   .main_card {
     width: 80%;
-    height: 550px;
-    margin-left: 0%;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 5%;
   }
   .main_cardbody_row {
@@ -196,7 +209,11 @@
   .twoline_desc {
     font-size: 14px;
     font-weight: 300;
+    text-align: center;
     margin: 20px 5px auto 5px;
+  }
+  .epi {
+    text-align: center;
   }
   .img_letsgo {
     width: 100%;
@@ -213,6 +230,7 @@
   }
   .page3_heading1 {
     font-size: 34px;
+    text-align: center;
   }
   .page3_3linetext {
     font-size: 14px;
@@ -225,7 +243,7 @@
     font-size: 18px;
   }
   .img_page3_card {
-    margin: auto;
+    margin-left: -10px;
     height: 30px;
     width: 40px;
     padding-bottom: 10px;
@@ -235,23 +253,24 @@
     padding: 8px 12px;
     margin-top: 21%;
   }
-  .card1_page3 {
-    margin-left: 20%;
+  .inr_button {
     width: 100%;
+  }
+  .card1_page3 {
+    margin: auto !important;
+    width: 90%;
   }
   .text_page3_card {
     font-size: 15px;
+    margin-left: -15px;
   }
   .anim_img {
     position: relative;
-    height: 100%;
-    width: 100%;
-    margin-top: 10%;
-    margin-bottom: 70%;
-  }
-  .container2_page3 {
-    margin-top: 20%;
-    margin-bottom: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 2%;
+    border-radius: 20px;
   }
   .button_arrow_Letsgo_Page3 {
     width: 30px;
