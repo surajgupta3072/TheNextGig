@@ -1,6 +1,4 @@
-import React from 'react'
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
-import { ArrowRight} from "react-bootstrap-icons";
 import Carousel from "react-elastic-carousel";
 import './../ExpertPage/Page1/Page1.css'
 

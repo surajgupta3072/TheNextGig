@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import React, { useState,useEffect } from 'react';
+import { useState,useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
 
 function WorkEx(props) {
@@ -93,7 +93,7 @@ function WorkEx(props) {
               </Row>
               <Row style={{marginTop:"5%"}}>
                 <Col md={1}><p style={{fontSize:"18px"}}>Description</p></Col>
-                <Col><textarea value={iField.description} name="description" onChange={e => handleChangeInput(index, e)} style={{width:"95%",height:"90px", marginLeft:"50px"}}></textarea></Col>
+                <Col><textarea value={iField.description} name="description" onChange={e => handleChangeInput(index, e)} style={{width:"95%",height:"60px", marginLeft:"50px"}}></textarea></Col>
               </Row>
             </div>
             ))}

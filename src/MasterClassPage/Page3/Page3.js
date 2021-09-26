@@ -6,7 +6,7 @@ import master from '../Masterclass.json';
 import './Page3.css';
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
-import React,{ useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import docClient from '../../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popup';
 

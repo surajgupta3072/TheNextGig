@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './ProfilePage.css';
 import docClient from '../GigsPage/GigsAWS';
 

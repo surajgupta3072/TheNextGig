@@ -12,6 +12,7 @@
     "aws-sdk": "^2.962.0",
     "bootstrap": "^5.0.2",
     "mdb-react-ui-kit": "^1.2.0",
+    "multiselect-react-dropdown": "^2.0.7",
     "react": "^17.0.2",
     "react-aws-s3": "^1.5.0",
     "react-bootstrap": "^2.0.0-beta.4",

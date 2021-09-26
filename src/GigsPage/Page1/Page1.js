@@ -1,9 +1,8 @@
 import Container from "react-bootstrap/Container";
 import Carousel from "react-elastic-carousel";
-import { ArrowRight } from "react-bootstrap-icons";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from '../GigsAWS'
-import React,{ useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ReactTooltip from 'react-tooltip'
 const breakPoints = [
   { width: 1, itemsToShow: 1 },

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import docClient from '../GigsPage/GigsAWS';
 import './SocialLearningPage.css';
 
@@ -20,7 +20,37 @@ function Blogs(props) {
     });
   }, []);
 
+  function addSearchTerm() {
+    var params = {
+      TableName: "UsersTable",
+      Key: { "UserID":props.userid },
+      ProjectionExpression: "BlogsSearchHistory",
+    };
+    docClient.get(params, function(err, data) {
+      if (err) {
+        console.log(err);
+      } 
+      else {
+        var params = {
+          TableName: "UsersTable",
+          Key: { "UserID":props.userid },
+          UpdateExpression: "set BlogsSearchHistory["+data.Item.BlogsSearchHistory.length.toString()+"] = :bsh",
+          ExpressionAttributeValues: {
+            ":bsh": {timestamp: `${Date.now()}`, sbterm: searchterm}
+          },
+          ReturnValues:"UPDATED_NEW"
+        }
+        docClient.update(params, function (err, data) {
+          if (err) {
+            console.log(err);
+          }
+        });
+      }
+    });
+  }
+
   function searchFilter() {
+    addSearchTerm();
     const searchblogs = allBlogs.filter((blog)=>{
       if(blog.BlogTopic.toLowerCase().includes(searchterm.toLowerCase()) || blog.BlogUsername.toLowerCase().includes(searchterm.toLowerCase()) 
       || blog.BlogHashtags.toLowerCase().includes(searchterm.toLowerCase()) || blog.BlogCreds.toLowerCase().includes(searchterm.toLowerCase())) {

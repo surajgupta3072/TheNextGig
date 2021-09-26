@@ -1,11 +1,41 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import docClient from '../GigsPage/GigsAWS';
 
 function Videos(props) {
   const [videoslist, setVideosList] = useState(false);
   const [searchterm, setSearchTerm] = useState("");
 
+  function addSearchTerm() {
+    var params = {
+      TableName: "UsersTable",
+      Key: { "UserID":props.userid },
+      ProjectionExpression: "VideosSearchHistory",
+    };
+    docClient.get(params, function(err, data) {
+      if (err) {
+        console.log(err);
+      } 
+      else {
+        var params = {
+          TableName: "UsersTable",
+          Key: { "UserID":props.userid },
+          UpdateExpression: "set VideosSearchHistory["+data.Item.VideosSearchHistory.length.toString()+"] = :vsh",
+          ExpressionAttributeValues: {
+            ":vsh": {timestamp: `${Date.now()}`, svterm: searchterm}
+          },
+          ReturnValues:"UPDATED_NEW"
+        }
+        docClient.update(params, function (err, data) {
+          if (err) {
+            console.log(err);
+          }
+        });
+      }
+    });
+  }
+
   function searchFilter() {
+    addSearchTerm();
     const searchvids = props.prop.filter((vid)=>{
       if(vid.VideoTopic.toLowerCase().includes(searchterm.toLowerCase()) || vid.VideoUsername.toLowerCase().includes(searchterm.toLowerCase()) 
       || vid.VideoHashtags.toLowerCase().includes(searchterm.toLowerCase()) || vid.VideoCreds.toLowerCase().includes(searchterm.toLowerCase())) {
@@ -49,6 +79,7 @@ function Videos(props) {
     <div>
       <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
       <button className="search_button" style={{background:"rgb(242, 108, 79)", color:"white", border:"0", borderRadius:"20px"}} onClick={searchFilter} type="submit">Search</button>
+      <br/><br/>
       <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
         {videoslist===false && props.prop.map((vid)=>
           <div  key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
