@@ -130,10 +130,10 @@ function Page4() {
          <Container>
             <Row style={{marginTop: "5%"}}>
                 <Col className="main_col1" md={8} >
-                    <Row style={{marginTop: "15%"}} xs={10}>
-                        {/* <Row>
+                    <Row style={{marginTop: "15%"}} xs={7}>
+                        <Row>
                             <h1 style={{textAlign:"center"}} className="heading_1">Practice what you <span style={{ textDecorationLine: 'line-through', textDecorationColor: "#F26C4F"}} className="heading_1span">preach.</span></h1>
-                        </Row> */}
+                        </Row>
                          <Row>
                             <h1 className="heading_2" style={{color: "#F26C4F",textAlign:"center"}} >learn.</h1>
                         </Row> 
