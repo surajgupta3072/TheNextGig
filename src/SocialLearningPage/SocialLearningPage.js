@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {Linkedin} from 'react-bootstrap-icons';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -13,7 +13,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 function SocialLearningPage(props) {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
   const [active, setActive] =  useState("Videos");
   const [color1,setColor1] =useState("#f26c4f");
   const [textColor1,setextColor1] =useState("white");
@@ -76,27 +76,32 @@ function SocialLearningPage(props) {
         <Row>
             <Col xs={3} style={{backgroundColor:"#1B1C2A",height:"fit-content"}} className="SocialLearn_laptop">
               <Row style={{marginTop:"10%",marginLeft:"18%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"170px",borderRadius:"50%"}}/></Row>
-              {user.attributes!==undefined && <Row><p style={{fontSize:"18px", textAlign:"center"}}>{user.attributes.name.split(" ")[0]}</p></Row>}
+              {user.attributes!==undefined ? <Row><p style={{fontSize:"20px", textAlign:"center"}}>{user.attributes.name.split(" ")[0]}</p></Row> : <Row><br/></Row>}
+              <Row>
+                <p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p>
+                <Linkedin style={{color: "white", cursor: "pointer",marginBottom:"7px"}} size={30}/>
+              </Row>
               <br/>
-              <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F",marginTop:"-40px"}}>Reward Points: {rew}</p>
-              <Linkedin style={{color: "white", cursor: "pointer",marginTop:"-20px",marginBottom:"7px"}} size={30}/></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <div style={{fontSize:"14px",marginLeft:"7px",marginTop:"7px"}}>Why <span style={{color:"#F26C4F"}}>watch </span>{active=="Videos"?"videos":active=="Blogs"?"blog":"community"} ?
-<br/>
-<br/>
-<span style={{color:"#F26C4F"}}>Learn </span>new skills and <span style={{color:"#F26C4F"}}>add </span> them to your <span style={{color:"#F26C4F"}}>profile</span> 
-<br/>
-<br/>
-Why upload <span style={{color:"#F26C4F"}}>{active=="Videos"?"videos":active=="Blogs"?"blog":"community"} </span>?
-<br/>
-<br/>
-<span style={{color:"#F26C4F"}}>Teach </span>new skills and and gain <span style={{color:"#F26C4F"}}>satisfaction </span>of spreading knowledge <span style={{fontSize:"11px"}}>(and gain reward points)</span>
-<br/>
-<br/>
-<span style={{fontSize:"11px",color:"white",marginTop:"4px"}}>
-PS: It is usually said that best way to know that you are a master of something is when you can teach that to others<br/>
-PPS: Knwoledge increases through sharing</span></div>
-
+              <br/>
+              <div style={{fontSize:"14px",marginLeft:"7px"}}>Why <span style={{color:"#F26C4F"}}>watch </span>{active==="Videos"?"videos":active==="Blogs"?"blog":"community"} ?
+                <br/>
+                <br/>
+                <span style={{color:"#F26C4F"}}>Learn </span>new skills and <span style={{color:"#F26C4F"}}>add </span> them to your <span style={{color:"#F26C4F"}}>profile</span> 
+                <br/>
+                <br/>
+                Why upload <span style={{color:"#F26C4F"}}>{active==="Videos"?"videos":active==="Blogs"?"blog":"community"} </span>?
+                <br/>
+                <br/>
+                <span style={{color:"#F26C4F"}}>Teach </span>new skills and and gain <span style={{color:"#F26C4F"}}>satisfaction </span>of spreading knowledge <span style={{fontSize:"11px"}}>(and gain reward points)</span>
+                <br/>
+                <br/>
+                <span style={{fontSize:"11px",color:"white",marginTop:"4px"}}>
+                PS: It is usually said that best way to know that you are a master of something is when you can teach that to others<br/>
+                PPS: Knwoledge increases through sharing</span>
+                <br/>
+                <br/>
+              </div>
             </Col>
             <Col xs={12}  className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
               <Row >

@@ -8,7 +8,7 @@ import master from "../../MasterClassPage/Masterclass.json";
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from "../GigsAWS";
-import React,{ useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import MyVerticallyPopUp  from './popup';
 
 const breakPoints = [
@@ -255,6 +255,9 @@ function Page3(props) {
               <Carousel breakPoints={breakPoints}>
                 {master.map((carder) => (
                   <MDBCard
+                    onClick={() =>
+                      (window.location.href = "/masterclass/" + carder.id)
+                    }
                     className="cax card_mastercard"
                     style={{
                       borderRadius: "0px",

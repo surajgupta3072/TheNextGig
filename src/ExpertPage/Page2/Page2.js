@@ -1,13 +1,12 @@
 import expertData from './../Experts.json';
 import Container from 'react-bootstrap/Container';
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
-import { ArrowRight} from "react-bootstrap-icons";
 import Carousel from "react-elastic-carousel";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
 import MyVerticallyPopUp  from './popup';
-import React from 'react'
+import {useState} from 'react'
 
 
 const breakPoints = [
@@ -18,7 +17,7 @@ const breakPoints = [
   ];
 
 function Page2(props) {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
     return (
       <div>
         <div className="header_masterclass">

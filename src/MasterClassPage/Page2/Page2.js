@@ -1,13 +1,13 @@
-import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
 import MyVerticallyPopUp  from './popup';
 import './Page2.css';
+import { useState } from 'react';
 
 function Page2() {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
     return (
      <Container  className="top-container">
       <Row>
@@ -29,14 +29,14 @@ function Page2() {
          <Container>
            <Row>
              <Col style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} md={3} xs={1}>
-               <img style={{height:"50px",width:"50px",marginTop:"25%"}} src="/google_logo.jpg"/>
-               <img style={{height:"50px",width:"50px",marginLeft:"75%",marginTop:"30%"}} src="/google_logo.jpg"/>
-               <img style={{height:"50px",width:"50px",marginTop:"20%"}} src="/google_logo.jpg"/>
-               <img style={{height:"50px",width:"50px",marginLeft:"140%"}} src="/google_logo.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginTop:"25%"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginLeft:"75%",marginTop:"30%"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginTop:"20%"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginLeft:"140%"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
              </Col>
              <Col>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the experts!</p></Row>
-            <Row style={{paddingLeft:"12%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
+            <Row style={{paddingLeft:"19%",marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
             <Row className="mast_page2_row1" ><p style={{color:"rgb(243, 123, 97)"}} className="mast_page2_p5"><a href="/expert" style={{textDecoration:"none", color:"#f26c4f"}}>Stalk them.</a></p></Row>
             <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2"/></a>
             </Col>

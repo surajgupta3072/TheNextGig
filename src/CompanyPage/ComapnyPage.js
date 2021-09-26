@@ -2,8 +2,7 @@ import { useParams } from "react-router-dom";
 import docClient from "./../GigsPage/GigsAWS";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import './CompanyPage.css'
 import { Linkedin } from 'react-bootstrap-icons';
@@ -17,17 +16,10 @@ function CompanyPage() {
   const [active, setActive] = useState("Gigs");
   const [relatedgigs, setDataCompanyGigs] = useState([]);
   const [relatedsessions, setDataCompanyMasterSessions] = useState([]);
-  const [modalShow, setModalShow] = React.useState(false);
   const [color1,setColor1] =useState("#f26c4f");
   const [textColor1,setextColor1] =useState("white");
   const [color2,setColor2] =useState("white");
   const [textColor2,setextColor2] =useState("#f26c4f");
-  const [color3,setColor3] =useState("white");
-  const [textColor3,setextColor3] =useState("#f26c4f");
-  const [rew, setRew] = useState(0);
-  const [allvideos, setAllvideos] = useState([]);
-  const [user, setUser] = useState("");
-  const [redirectlogin, setRedirectLogin] = useState(true);
 
   async function queryCall(id) {
     let params = {
@@ -84,10 +76,10 @@ function CompanyPage() {
   function buttonColor(word){
     setActive(word)
     if(word==="Gigs"){
-      setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");setColor3("white");setextColor3("#f26c4f");
+      setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");
     }
     if(word==="MasterSessions"){
-     setColor1("white");setextColor1("#f26c4f");setColor2("#f26c4f");setextColor2("white");setColor3("white");setextColor3("#f26c4f");
+     setColor1("white");setextColor1("#f26c4f");setColor2("#f26c4f");setextColor2("white");
    }
   }
   return (

@@ -1,4 +1,4 @@
-import React  from 'react';
+import { useState }  from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {Linkedin, Instagram, Whatsapp } from 'react-bootstrap-icons';
@@ -7,7 +7,7 @@ import MyVerticallyCenteredModal from './Modal.js'
 import { ArrowLeft } from "react-bootstrap-icons";
 
 function Footer(){
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
 
     return(
         <div style={{background: "rgba(255, 255, 255, 0.1)", paddingTop:"4.5%"}}>

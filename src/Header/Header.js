@@ -6,7 +6,7 @@ function Header(props) {
     async function LogOutFunc() {
         try {
             await Auth.signOut();
-            window.location.href = "/";
+            window.location.reload();
         } catch (error) {
             console.log(error);
         }

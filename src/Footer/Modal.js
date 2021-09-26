@@ -1,6 +1,5 @@
 import Modal from 'react-bootstrap/Modal';
 import './Modal.css';
-import React from 'react';
 import {ArrowLeft} from 'react-bootstrap-icons'
 
 function MyVerticallyCenteredModal(props) {

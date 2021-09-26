@@ -1,5 +1,5 @@
 import Modal from 'react-bootstrap/Modal';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {ArrowLeft} from 'react-bootstrap-icons';
 import docClient from './../../GigsPage/GigsAWS';
 

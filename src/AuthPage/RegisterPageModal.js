@@ -1,5 +1,4 @@
 import Modal from 'react-bootstrap/Modal';
-import React from 'react';
 import {ArrowLeft} from 'react-bootstrap-icons'
 import './RegisterPageModal.css';
 

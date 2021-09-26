@@ -1,6 +1,4 @@
-import React from 'react'
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
-import { ArrowRight} from "react-bootstrap-icons";
 import Carousel from "react-elastic-carousel";
 import expertData from '././Experts.json';
 import masterData from './../MasterClassPage/Masterclass.json';
@@ -21,7 +19,7 @@ function MasterSessions(props) {
             <div className="Mastercards">
                 <Carousel breakPoints={breakPoints}>
                 {expert.ExpertMasterClass.map(CourseId=>
-                    <MDBCard className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"30rem",width:"370px"}}>
+                    <MDBCard onClick={() => (window.location.href = "/masterclass/" + CourseId)} className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"30rem",width:"370px"}}>
                         <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={masterData[CourseId-1].course_image} alt='...' /></div>
                         <MDBCardBody>
                         <div className="Course_name">{masterData[CourseId-1].course_name}</div>
@@ -42,7 +40,7 @@ function MasterSessions(props) {
             <div className="slider_mobile">
         <Carousel breakPoints={breakPoints}>
             {expert.ExpertMasterClass.map(CourseId=> 
-             <MDBCard className="mbd_card card_mastercard2" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
+             <MDBCard onClick={() => (window.location.href = "/masterclass/" + CourseId)} className="mbd_card card_mastercard2" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"14rem"}} src={masterData[CourseId-1].course_image} alt='...' /></div>
              <MDBCardBody>
                <div className="Course_name">{masterData[CourseId-1].course_name}</div>

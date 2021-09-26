@@ -1,13 +1,13 @@
-import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
 import MyVerticallyPopUp  from './popup';
 import './Page2.css'
+import { useState } from 'react';
 
 function Page2() {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
     return (
       <Container className="top-container">
       <Row>
@@ -32,10 +32,10 @@ function Page2() {
          <Container >
            <Row>
          <Col style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} md={3} xs={1}>
-               <img style={{height:"50px",width:"50px",marginTop:"25%"}} src="/google_logo.jpg"/>
-               <img style={{height:"50px",width:"50px",marginLeft:"75%",marginTop:"30%"}} src="/google_logo.jpg"/>
-               <img style={{height:"50px",width:"50px",marginTop:"20%"}} src="/google_logo.jpg"/>
-               <img style={{height:"50px",width:"50px",marginLeft:"140%"}} src="/google_logo.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginTop:"25%"}} src="/google_logo.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginLeft:"75%",marginTop:"30%"}} src="/google_logo.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginTop:"20%"}} src="/google_logo.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginLeft:"140%"}} src="/google_logo.jpg"/>
              </Col>
              <Col>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet our Partners!</p></Row>           

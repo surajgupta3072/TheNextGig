@@ -1,5 +1,5 @@
 import Modal from 'react-bootstrap/Modal';
-import React,{ useState } from "react";
+import { useState } from "react";
 import {ArrowLeft} from 'react-bootstrap-icons';
 import docClient from './../GigsAWS';
 import S3 from 'react-aws-s3';
