@@ -22,7 +22,7 @@ function Page4() {
         <h4 className="page3_subtitle"><span class="h3_live" style={{color: "#F26C4F"}}>Live</span>. At your doorstep.</h4>
       </div>
       </div>
-        {/* <Container>
+        <Container>
             <Row style={{marginTop: "5%"}}>
                 <Col className="main_col1" md={8} >
                     <Row style={{marginTop: "15%"}} xs={12}>
@@ -104,13 +104,13 @@ function Page4() {
             <div className="button_div_page4">
                 <a href="/gigs"><button  className="button_slide slide_right orange_button_page3">Start doing<ArrowRight className="button_arrow"/></button></a>
             </div>
-        </Container> */}
+        </Container>
     </div>
 
 
 {/*Mobile view*/}
 
-<div className="page4_maindiv mobile_view">
+{/* <div className="page4_maindiv mobile_view">
         
         <div className="heading_box">
       <div>
@@ -209,7 +209,7 @@ function Page4() {
             </div>
         </Container>
     </div>
-
+ */}
 
 </div>
     );
