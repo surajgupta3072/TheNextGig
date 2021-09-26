@@ -127,7 +127,7 @@ function Page4() {
       </div>
       </div>
         
-        {/* <Container>
+         <Container>
             <Row style={{marginTop: "5%"}}>
                 <Col className="main_col1" md={8} >
                     <Row style={{marginTop: "15%"}} xs={12}>
@@ -139,7 +139,7 @@ function Page4() {
                         </Row> 
                     </Row>                   
                 </Col>
-                <Col xs={11} className="main_col1" md={4}>
+               {/*  <Col xs={11} className="main_col1" md={4}>
                     <Row  className="img-grid_row" xs={12}>
                         <Row className="row1">
                             <Col></Col>                       
@@ -203,11 +203,11 @@ function Page4() {
                         </Row>
                     </Row>
                 </Col>
-            </Row>
+ */}            </Row>
             <div className="button_div_page4">
                 <a href="/gigs"><button  className="button_slide slide_right orange_button_page3">Start doing<ArrowRight className="button_arrow"/></button></a>
             </div>
-        </Container> */}
+        </Container> 
     </div>
 
 
