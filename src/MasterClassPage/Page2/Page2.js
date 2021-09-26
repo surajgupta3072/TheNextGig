@@ -11,21 +11,21 @@ function Page2() {
     return (
      <Container  className="top-container">
       <Row>
-        <Col md={7}>
+       <Col md={7}>
          <p  className="mast_page2_p1">Already skilled enough?</p>
          <Row>
            <Col md={4} xs={5}>
            <p className="mast_page2_p2">Stop dreaming</p>
            <p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Start doing</p>
            </Col>
-           {/*<Col md={8} xs={5}>
+           <Col md={8} xs={7}>
               <div className="button_div_MC_Page2">
                 <a href="/gigs"><button   className="button_slide_MC_Page2 slide_right">Gigs / projects / <br /> internships<ArrowRight className="button_arrow_MC_Page2"/></button></a>
               </div>
-    </Col>*/}
+            </Col>
          </Row>
-       </Col>  
-       <Col style={{backgroundColor:"#1B1C2A"}} className="col-container">
+       </Col> 
+       {/* <Col style={{backgroundColor:"#1B1C2A"}} className="col-container">
          <Container>
            <Row>
              <Col style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} md={3} xs={1}>
@@ -42,7 +42,7 @@ function Page2() {
             </Col>
             </Row>
          </Container>
-       </Col> 
+       </Col> */}
       </Row>
       <Container className="rectangle-box2" style={{marginTop:"5%"}}>
         <Row >
