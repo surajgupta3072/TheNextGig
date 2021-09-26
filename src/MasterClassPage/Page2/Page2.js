@@ -12,7 +12,7 @@ function Page2() {
      <Container  className="top-container">
       <Row>
        <Col md={7}>
-         <p className="mast_page2_p1">Already skilled enough?</p>
+         <p  className="mast_page2_p1">Already skilled enough?</p>
          <Row>
            <Col md={4} xs={5}>
            <p className="mast_page2_p2">Stop dreaming</p>
