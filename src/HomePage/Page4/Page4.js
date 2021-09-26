@@ -129,7 +129,7 @@ function Page4() {
         
          <Container>
             <Row style={{marginTop: "5%"}}>
-                {/* <Col className="main_col1" md={8} >
+                <Col className="main_col1" md={8} >
                     <Row style={{marginTop: "15%"}} xs={12}>
                         <Row>
                             <h1 style={{textAlign:"center"}} className="heading_1">Practice what you <span style={{ textDecorationLine: 'line-through', textDecorationColor: "#F26C4F"}} className="heading_1span">preach.</span></h1>
@@ -138,7 +138,7 @@ function Page4() {
                             <h1 className="heading_2" style={{color: "#F26C4F",textAlign:"center"}} >learn.</h1>
                         </Row> 
                     </Row>                   
-                </Col> */}
+                </Col>
                 <Col xs={11} className="main_col1" md={4}>
                     <Row  className="img-grid_row" xs={12}>
                         <Row className="row1">
