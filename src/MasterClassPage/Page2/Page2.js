@@ -25,7 +25,7 @@ function Page2() {
             </Col>
          </Row>
        </Col> 
-       <Col style={{backgroundColor:"#1B1C2A"}} className="col-container">
+       {/* <Col style={{backgroundColor:"#1B1C2A"}} className="col-container">
          <Container>
            <Row>
              <Col style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} md={3} xs={1}>
@@ -42,9 +42,9 @@ function Page2() {
             </Col>
             </Row>
          </Container>
-       </Col>
+       </Col> */}
       </Row>
-      <Container className="rectangle-box2" style={{marginTop:"5%"}}>
+      {/* <Container className="rectangle-box2" style={{marginTop:"5%"}}>
         <Row >
           <Col style={{padding:"2%"}} md={7}>
             <p style={{marginBottom:"0%"}} className="mast_page2_p3">Want to learn something cool?</p>
@@ -59,7 +59,7 @@ function Page2() {
                />
           </Col>
         </Row>
-      </Container>
+      </Container> */}
           <div >
             <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
