@@ -134,9 +134,9 @@ function Page4() {
                         <Row>
                             <h1 style={{textAlign:"center"}} className="heading_1">Practice what you <span style={{ textDecorationLine: 'line-through', textDecorationColor: "#F26C4F"}} className="heading_1span">preach.</span></h1>
                         </Row>
-                        <Row>
+                        {/* <Row>
                             <h1 className="heading_2" style={{color: "#F26C4F",textAlign:"center"}} >learn.</h1>
-                        </Row> 
+                        </Row> */} 
                     </Row>                   
                 </Col>
                 <Col xs={11} className="main_col1" md={4}>
