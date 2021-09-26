@@ -64,14 +64,14 @@ function Page5() {
         </Container>
       </div>
 
-      <div className="page2_mobile_view" style={{marginLeft: "4%"}}>
+      <div className="page2_mobile_view" >
     <Container>
       <Col>
       <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"15%" }}>
         <Card.Body>
           <div style={{display: "flex", flexDirection: "row"}}>
             <Col >
-              <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
+              <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/videohome.jpg"/>
             </Col>
             <Col>
               <Card.Title style={{fontSize:"20px",textAlign:"center"}}>VIDEOS</Card.Title>
@@ -87,7 +87,7 @@ function Page5() {
         <Card.Body>
           <div style={{display: "flex", flexDirection: "row"}}>
             <Col>
-              <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
+              <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/bloghome.jpg"/>
             </Col>
             <Col>
               <Card.Title style={{fontSize:"20px",textAlign:"center"}}>BLOGS</Card.Title>
@@ -104,7 +104,7 @@ function Page5() {
         <Card.Body>
           <div style={{display: "flex", flexDirection: "row"}}>
             <Col>
-              <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
+              <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/communityhome.jpg"/>
             </Col>
             <Col>
               <Card.Title style={{fontSize:"20px"}}>COMMUNITY</Card.Title>
