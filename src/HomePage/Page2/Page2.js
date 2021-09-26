@@ -53,19 +53,19 @@ function Page2() {
         </Container>
       </div>
 
-      <div className="page2_mobile_view" style={{marginLeft: "4%"}}>
+      <div className="page2_mobile_view" >
         
       
-      <p style={{fontSize:"23px", fontWeight:"600",marginLeft:"4%",marginTop:"20px",marginBottom:"3%",textAlign:"left"}}>
+      <p style={{fontSize:"23px", fontWeight:"600",marginTop:"20px",marginBottom:"3%",textAlign:"center"}}>
           Here’s everything you can do! 
       </p>
     <Container>
       <Col>
-      <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%" }}>
+      <Card onClick={()=>window.location.href="/masterclass"} style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%" }}>
         <Card.Body>
           <div style={{display: "flex", flexDirection: "row"}}>
-            <Col >
-              <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
+            <Col style={{marginTop:"8px"}}>
+              <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/masterclasshome.jpg"/>
             </Col>
             <Col>
               <Card.Title style={{fontSize:"20px",textAlign:"center"}}>MASTERCLASSES</Card.Title>
@@ -75,13 +75,12 @@ function Page2() {
             </Col>
           </div>
         </Card.Body>
-        <a href="/masterclass"><ArrowRight className="card_arrow1"/></a>
       </Card>
-      <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%"}}>
+      <Card onClick={()=>window.location.href="/gigs"} style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%"}}>
         <Card.Body>
           <div style={{display: "flex", flexDirection: "row"}}>
-            <Col>
-              <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
+            <Col style={{marginTop:"8px"}}>
+              <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/experimentalhome.jpg"/>
             </Col>
             <Col>
               <Card.Title style={{fontSize:"20px",textAlign:"center"}}>EXPERIENTIAL LEARNING</Card.Title>
@@ -91,13 +90,12 @@ function Page2() {
             </Col>
           </div>
         </Card.Body>
-        <a href="/gigs"><ArrowRight className="card_arrow1"/></a>
       </Card>
-      <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "10%"}}>
+      <Card onClick={()=>window.location.href="/community"} style={{width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "10%"}}>
         <Card.Body>
           <div style={{display: "flex", flexDirection: "row"}}>
-            <Col>
-              <Card.Img style={{margin: "auto", height:"50px", width:"50px",paddingTop:"10%"}} variant="top" src="holder.svg"/>
+            <Col style={{marginTop:"8px"}}>
+              <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/sociallearninghome.jpg"/>
             </Col>
             <Col>
               <Card.Title style={{fontSize:"20px"}}>SOCIAL LEARNING</Card.Title>
@@ -107,14 +105,13 @@ function Page2() {
             </Col>
           </div>
         </Card.Body>
-        <a href="/community"><ArrowRight className="card_arrow1"/></a>
       </Card>
       
       <div style={{width:"100%",height:"50px",border:"1px solid #534D4D", paddingTop:"5px", display: "flex", flexDirection: "row",margin:"auto"}}>
-          <Col  md={1} ><img alt="..." src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px"  /></Col>
-            <Col md={1}><img alt="..." src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
-            <Col md={1}><img alt="..." src="https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg" height="40px" width="40px" /></Col>
-            <Col><p style={{fontSize:"11px", textAlign:"center", paddingTop: "10px"}}>3000+ Learners on TheNextGig</p></Col>
+          <Col  md={1} ><img style={{borderRadius:"8px",marginRight:"8px",marginLeft:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4D03AQFn3cR03llVHA/profile-displayphoto-shrink_400_400/0/1611850401052?e=1636588800&v=beta&t=PAiR61Sw84Ba9s9hqdm16-TbvM6ohKd2K5O6MuXLQZo" height="40px" width="40px"  /></Col>
+            <Col md={1}><img style={{borderRadius:"8px",marginRight:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQE7ozU87tbOow/profile-displayphoto-shrink_400_400/0/1615921578753?e=1636588800&v=beta&t=mj5jbwnrV8vxBB7FAV3UZd2tQPShGQ5LBGl5NOTI0oU" height="40px" width="40px" /></Col>
+            <Col md={1}><img style={{borderRadius:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_400_400/0/1611408696050?e=1636588800&v=beta&t=-w8wRLMIBJXs-rV8qPtrslboo1waw-ObTyAHAHQPhKM" height="40px" width="40px" /></Col>
+            <Col><p style={{fontSize:"11px", textAlign:"center", paddingTop: "4px"}}>3000+<br/>Learners on TheNextGig</p></Col>
           </div>
       </Col>
     </Container>

@@ -41,11 +41,19 @@
   font-size: 38px;
   margin-bottom: 3%;
 }
-
+.mobile_footer {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .footer_heading1 {
     font-size: 28px;
     margin-top: 18%;
+  }
+  .footer_laptop {
+    display: none;
+  }
+  .mobile_footer {
+    display: block;
   }
   .footer_heading2 {
     font-size: 28px;

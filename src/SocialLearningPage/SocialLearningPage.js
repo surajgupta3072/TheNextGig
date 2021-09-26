@@ -113,7 +113,7 @@ function SocialLearningPage(props) {
                 </Col>
                 <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
                 <Navbar.Brand >
-                  <p  style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
+                  <p  style={{marginLeft:"35px",color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
                 </Navbar.Brand>
                 <Navbar.Toggle style={{backgroundColor: "grey"}}/>
                 <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
@@ -143,7 +143,7 @@ function SocialLearningPage(props) {
                </Col>
                {active==="Videos" &&
                 <Col>
-                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>
+                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>
                   <MyVerticallyPopUp
                     userid={user}
                     show={modalShow}
@@ -153,7 +153,7 @@ function SocialLearningPage(props) {
                 }
                 {active==="Blogs" &&
                 <Col>
-                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Blog)</p></a>
+                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Blog)</p></a>
                   <MyVerticallyPopUpBlog
                     userid={user}
                     show={modalShow}

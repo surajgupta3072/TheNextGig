@@ -12,7 +12,7 @@ function Page2() {
      <Container  className="top-container">
       <Row>
        <Col md={7}>
-         <p className="mast_page2_p1">Already skilled enough?</p>
+         <p  className="mast_page2_p1">Already skilled enough?</p>
          <Row>
            <Col md={4} xs={5}>
            <p className="mast_page2_p2">Stop dreaming</p>
@@ -25,7 +25,7 @@ function Page2() {
             </Col>
          </Row>
        </Col> 
-       <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
+       <Col style={{backgroundColor:"#1B1C2A"}} className="col-container">
          <Container>
            <Row>
              <Col style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} md={3} xs={1}>

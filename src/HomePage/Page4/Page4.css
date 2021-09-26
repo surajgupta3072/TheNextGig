@@ -83,6 +83,10 @@
     font-size: 15px;
     left: 65%;
   }
+  .grid_imgs {
+    height: 80px;
+    width: 80px;
+  }
   .heading_2 {
     margin-left: 20px;
     font-size: 25px;

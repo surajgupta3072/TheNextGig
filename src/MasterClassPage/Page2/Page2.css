@@ -1,10 +1,22 @@
 .rectangle-box2 {
-  width: 105%;
+  width: 100%;
   height: 175px;
   border: 1px solid rgb(212, 71, 41);
   background: transparent;
 }
-
+.image1 {
+  margin-top: 25%;
+}
+.image2 {
+  margin-left: 75%;
+  margin-top: 30%;
+}
+.image3 {
+  margin-top: 20%;
+}
+.image4 {
+  margin-left: 140%;
+}
 .mast_page2_p1 {
   font-size: 48px;
 }
@@ -127,13 +139,30 @@
   -moz-transition: ease-out 0.4s;
   transition: ease-out 0.4s;
 }
-
+.super_men_women {
+  padding-left: 12%;
+}
 @media screen and (max-width: 768px) {
   .mast_page2_p1 {
+    text-align: center;
     font-size: 24px;
+  }
+  .button_div_MC_Page2 {
+    margin-left: 25%;
+  }
+  .super_men_women {
+    padding-left: 30%;
+  }
+
+  .image1,
+  .image2,
+  .image3,
+  .image4 {
+    margin-left: 0px;
   }
   .mast_page2_p2 {
     font-size: 16px;
+    margin-left: 15%;
     font-family: "Open Sans", sans-serif !important;
   }
   .mast_page2_p3 {
@@ -156,15 +185,15 @@
   }
 
   .mast_page2_row {
-    padding-left: 45%;
+    padding-left: 30%;
+    padding-top: 20px;
   }
 
   .top-container {
     margin-top: 10%;
-    margin-left: 10%;
   }
   .col-container {
-    height: 200px;
+    height: fit-content;
   }
 
   .col-button {
@@ -193,7 +222,7 @@
   }
   .button_arrow_MC_Page2_2 {
     position: absolute;
-    margin-left: 34.5%;
+    margin-left: 38%;
     width: 30px;
     height: 30px;
   }
