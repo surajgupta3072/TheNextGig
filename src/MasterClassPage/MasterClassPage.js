@@ -5,7 +5,7 @@ function MasterClassPage() {
   return (
     <div>
       <Page1/>
-      <Page2/>
+      {/* <Page2/> */}
     </div>
   );
 }
