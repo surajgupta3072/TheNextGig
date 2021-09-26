@@ -129,7 +129,7 @@ function Page4() {
         
          <Container>
             <Row style={{marginTop: "5%"}}>
-                <Col className="main_col1" md={8} >
+                {/* <Col className="main_col1" md={8} >
                     <Row style={{marginTop: "15%"}} xs={12}>
                         <Row>
                             <h1 style={{textAlign:"center"}} className="heading_1">Practice what you <span style={{ textDecorationLine: 'line-through', textDecorationColor: "#F26C4F"}} className="heading_1span">preach.</span></h1>
@@ -138,8 +138,8 @@ function Page4() {
                             <h1 className="heading_2" style={{color: "#F26C4F",textAlign:"center"}} >learn.</h1>
                         </Row> 
                     </Row>                   
-                </Col>
-               {/*  <Col xs={11} className="main_col1" md={4}>
+                </Col> */}
+                <Col xs={11} className="main_col1" md={4}>
                     <Row  className="img-grid_row" xs={12}>
                         <Row className="row1">
                             <Col></Col>                       
@@ -203,10 +203,10 @@ function Page4() {
                         </Row>
                     </Row>
                 </Col>
- */}            </Row>
-            <div className="button_div_page4">
+            </Row>
+            {/* <div className="button_div_page4">
                 <a href="/gigs"><button  className="button_slide slide_right orange_button_page3">Start doing<ArrowRight className="button_arrow"/></button></a>
-            </div>
+            </div> */}
         </Container> 
     </div>
 
