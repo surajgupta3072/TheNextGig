@@ -103,7 +103,7 @@ function Page3(props) {
             </Row>
             <Row className="card1_page3" style={{marginTop: "3%"}}>
             <div className="diver">
-              <p style={{marginLeft:"25px",marginTop:"12px"}}  className="page3_cardtext">
+              <p style={{marginTop:"12px"}}  className="page3_cardtext">
               Prepares you for roles in:
               </p>
               <Row>

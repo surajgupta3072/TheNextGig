@@ -234,13 +234,18 @@
   }
   .page3_3linetext {
     font-size: 14px;
+    text-align: center;
   }
   .page3_3linetext2 {
     font-size: 16px;
+    text-align: center;
     color: #ffffffbf;
   }
   .page3_cardtext {
     font-size: 18px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
   }
   .img_page3_card {
     margin-left: -10px;
@@ -262,7 +267,7 @@
   }
   .text_page3_card {
     font-size: 15px;
-    margin-left: -15px;
+    margin-left: -5px;
   }
   .anim_img {
     position: relative;

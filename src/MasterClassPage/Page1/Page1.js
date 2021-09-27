@@ -78,7 +78,7 @@ function Page1() {
                 borderRadius: "0px",
                 margin: "4%",
                 border: "2px solid rgba(242, 108, 79, 0.6)",
-                backgroundColor: "#020312",
+                backgroundColor: "#020312"
               }}
             >
               <div  className="image_card">

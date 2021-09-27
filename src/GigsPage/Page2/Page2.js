@@ -16,12 +16,12 @@ function Page2() {
          <p className="mast_page2_p2">Learn from the best.</p>
          <div>
            <Row>
-             <Col md={4} xs={5}>
+             <div >
               <a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> 
-             </Col>
-             <Col md={8} xs={7}>
-              <a href="/masterclass"><ArrowRight className="button_arrow"/></a>
-             </Col>
+             </div>
+             <div className="zinger">
+             <div> <a href="/masterclass"><ArrowRight className="button_arrow1"/></a></div>
+             </div>
            </Row>
           
           
@@ -52,13 +52,13 @@ function Page2() {
             <p style={{marginBottom:"0%"}} className="mast_page2_p3">Looking for a gig in specific domain?</p>
             <p  className="mast_page2_p3">Want to work with a particular company?</p>
           </Col>
-          <Col style={{paddingLeft:"12%"}} className="col-button">
-            <button style={{marginLeft:"20%"}} className="button_slide slide_right" onClick={() => setModalShow(true)}>Recommend 
+          <Col  className="col-button">
+            <div className="btn_div"><div><button className="btn_recommend" onClick={() => setModalShow(true)}>Recommend 
             <ArrowLeft className="button_arrow"/></button>
               <MyVerticallyPopUp
                   show={modalShow}
                   onHide={() => setModalShow(false)}
-               />
+               /></div></div>
           </Col>
         </Row>
       </Container>
@@ -69,11 +69,11 @@ function Page2() {
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
-                <Col md={2}>
+                <div className="social_link" md={2}>
                     <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                </Col>
+                </div>
             </Row>
             </div>
       </Container> 
