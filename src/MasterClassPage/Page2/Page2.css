@@ -142,10 +142,19 @@
 .super_men_women {
   padding-left: 12%;
 }
+.mobile_view_masterclass_page2 {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .mast_page2_p1 {
     text-align: center;
     font-size: 24px;
+  }
+  .mobile_view_masterclass_page2 {
+    display: block;
+  }
+  .laptop_view_masterclass_page2 {
+    display: none;
   }
   .button_div_MC_Page2 {
     margin-left: 25%;
@@ -162,7 +171,6 @@
   }
   .mast_page2_p2 {
     font-size: 16px;
-    margin-left: 15%;
     font-family: "Open Sans", sans-serif !important;
   }
   .mast_page2_p3 {
