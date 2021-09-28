@@ -91,12 +91,12 @@ function Videos(props) {
                 <source src={vid.VideoLink} />
               </video>
             }
-           {/*  <div>
+            <div>
               <h5 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>
               <p className="text" style={{padding:"0", margin:"0"}}>{vid.VideoHashtags}</p>
               <h5 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoUsername}</h5>
               <h6 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoCreds}</h6>
-            </div> */}
+            </div>
             <br/>
           </div>
         )}
@@ -110,12 +110,12 @@ function Videos(props) {
                 <source src={vid.VideoLink} />
               </video>
             }
-           {/*  <div>
+            <div>
               <h5 style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>
               <p style={{padding:"0", margin:"0"}}>{vid.VideoHashtags}</p>
               <h5 style={{padding:"0", margin:"0"}}>{vid.VideoUsername}</h5>
               <h6 style={{padding:"0", margin:"0"}}>{vid.VideoCreds}</h6>
-            </div> */}
+            </div>
             <br/>
           </div>
         )}
