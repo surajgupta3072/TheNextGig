@@ -94,13 +94,13 @@ function Page3(props) {
       <Container style={{padding: "0%", maxWidth: "94%", marginBottom: "0%"}} className= "container1">
         <Row>
           <Col md={6} >
-            <Row style={{marginTop:"2%"}}>
+            {/* <Row style={{marginTop:"2%"}}>
               <h1 className="page3_heading1">{session.course_name}</h1>
             </Row>
             <div style={{marginTop:"0%"}}>
               <p className="page3_3linetext">{session.course_description}</p>
               <p className="page3_3linetext2">Lifetime access to <span style={{color: "#f26c4f"}}>{session.course_timing}</span>  of Learning experience</p>
-            </div>
+            </div> */}
             <Row className="card1_page3" style={{marginTop: "3%"}}>
             <div className="diver">
               <p style={{marginTop:"12px"}}  className="page3_cardtext">
@@ -199,7 +199,7 @@ function Page3(props) {
         <div className="main_card" >               
                 <div className="main_cardbody"> 
                   <Row >
-                    <Col md={8} className="col1_cardbody">
+                    <Col xs={12} md={8} className="col1_cardbody">
                       {paymentshow===false &&
                         <video src={epivid} className="img_letsgo" controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
                       }
