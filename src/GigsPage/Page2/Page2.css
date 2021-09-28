@@ -7,6 +7,9 @@
 .gig_page2_row1 {
   padding-left: 66%;
 }
+.gigs_page_text_mobile {
+  display: none;
+}
 .button_arrow_gig {
   position: absolute;
   margin-top: 10px;
@@ -45,6 +48,12 @@
   .btn_div {
     display: flex;
     justify-content: center;
+  }
+  .gigs_page_text_mobile {
+    display: block;
+  }
+  .gig_text_laptop_view {
+    display: none;
   }
   .laptop_view_of_icons {
     display: none;

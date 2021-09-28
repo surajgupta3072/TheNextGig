@@ -11,7 +11,7 @@ function Page2() {
     return (
       <Container className="top-container">
       <Row>
-       {/* <Col md={7}>
+       <Col className="gig_text_laptop_view" md={7}>
          
          <p className="mast_page2_p2">Learn from the best.</p>
          <div>
@@ -27,7 +27,20 @@ function Page2() {
           
          </div>
          
-       </Col>  */}
+       </Col> 
+       <Col className="gigs_page_text_mobile" md={7}>
+         
+         <p className="mast_page2_p2">Learn from the best.</p>
+         <div>
+             <div >
+              <a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> 
+             </div>
+             <div className="zingerx">
+             <div> <a href="/masterclass"><ArrowRight className="button_arrow_gig"/></a></div>
+             </div>
+         </div>
+         
+       </Col> 
        <Col className="mobile_view_of_icons col-container" style={{backgroundColor:"#1B1C2A"}} >
          <Container >
            <div style={{display:"flex",justifyContent:"space-between"}}>
