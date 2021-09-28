@@ -164,9 +164,15 @@
 .search_button {
   width: 10%;
 }
+.video_social_learn {
+  width: 350px;
+}
 @media screen and (max-width: 768px) {
   .SocialLearn_laptop {
     display: none;
+  }
+  .video_social_learn {
+    width: 100%;
   }
   .impart_know {
     text-align: center;
