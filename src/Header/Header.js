@@ -5,6 +5,7 @@ import Auth from "@aws-amplify/auth";
 function Header(props) {
     async function LogOutFunc() {
         try {
+            // localStorage.removeItem("login");
             await Auth.signOut();
             window.location.reload();
         } catch (error) {

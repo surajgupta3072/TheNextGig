@@ -11,11 +11,13 @@ import CompanyPage from "./CompanyPage/ComapnyPage";
 import ProfilePage from "./ProfilePage/ProfilePage";
 import LoginPage from "./AuthPage/LoginPage";
 import RegisterPage from "./AuthPage/RegisterPage";
-import "./App.css";
 import { useEffect, useState } from "react";
 import Auth from "@aws-amplify/auth";
 import ProtectedRoute from "./GuardedRoute";
 import SocialLearningPage from "./SocialLearningPage/SocialLearningPage";
+import jwt_decode from "jwt-decode";
+import docClient from './GigsPage/GigsAWS';
+import "./App.css";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,11 +28,37 @@ function App() {
     try {
       const session = await Auth.currentSession();
       setAuthStatus(true);
-      // console.log(session);
       const user = await Auth.currentAuthenticatedUser();
-      setUser(user);
       // console.log(user);
-    } catch (error) {
+      if(user.username.includes("google")) {
+        var decoded = jwt_decode(user.signInUserSession.idToken.jwtToken);
+        // console.log(decoded);
+        let guser = {
+          "attributes": {"name": decoded.name},
+          "username": decoded.sub
+        }
+        setUser(guser);
+        if(localStorage.getItem("login")!==decoded.sub) {
+          var params = {
+            TableName: "UsersTable",
+            Item: {"UserID":decoded.sub, "FullName":decoded.name, "Email":decoded.email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards":0, "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": []}
+          }
+          docClient.put(params, function (err, data) {
+            if (err) {
+              console.log('Error', err)
+            }
+            else {
+              console.log(data);
+              localStorage.setItem("login", decoded.sub);
+            }
+          })
+        }
+      }
+      else {
+        setUser(user);
+      }
+    } 
+    catch (error) {
       if (error !== "No current user") {
         console.log(error);
       }

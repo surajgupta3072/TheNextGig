@@ -1,23 +1,23 @@
-.login_container{
-    height: 30%;
-    width:  25%;
-    margin: auto;
+.login_container {
+  height: 30%;
+  width: 25%;
+  margin: auto;
 }
 
-.register_container{
-    height: 40%;
-    width: 25%;
-    margin: auto;
+.register_container {
+  height: 40%;
+  width: 25%;
+  margin: auto;
 }
 @media screen and (max-width: 768px) {
-    .login_container{
-        height: 50%;
-        width:  80%;
-        margin: auto;
-    }
-    .register_container{
-        height: 90%;
-        width: 80%;
-        margin: auto;
-    }
+  .login_container {
+    height: 50%;
+    width: 80%;
+    margin: auto;
+  }
+  .register_container {
+    height: 90%;
+    width: 80%;
+    margin: auto;
+  }
 }
