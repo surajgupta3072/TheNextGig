@@ -103,7 +103,7 @@ function Page2() {
              </div>
              <div style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}}>
             <div>Meet the experts!</div>
-            <div style={{marginBottom:"0%"}}><p style={{marginBottom:"0%"}} className="mast_page2_p5">Superwomen. Supermen.</p></div>
+            <div ><p className="mast_page2_p5">Superwomen. Supermen.</p></div>
             <div style={{color:"rgb(243, 123, 97)"}}><a href="/expert" style={{textDecoration:"none", color:"#f26c4f"}}>Stalk them.</a></div>
             <div>
             <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2"/></a>

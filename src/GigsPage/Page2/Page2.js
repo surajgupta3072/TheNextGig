@@ -11,24 +11,41 @@ function Page2() {
     return (
       <Container className="top-container">
       <Row>
-       <Col md={7}>
+       {/* <Col md={7}>
          
          <p className="mast_page2_p2">Learn from the best.</p>
          <div>
-           <Row>
+           <Row className="check_masterclass">
              <div >
               <a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> 
              </div>
-             <div className="zinger">
-             <div> <a href="/masterclass"><ArrowRight className="button_arrow1"/></a></div>
+             <div className="zingerx">
+             <div> <a href="/masterclass"><ArrowRight className="button_arrow_gig"/></a></div>
              </div>
            </Row>
           
           
          </div>
          
-       </Col> 
-       <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container">
+       </Col>  */}
+       <Col className="mobile_view_of_icons col-container" style={{backgroundColor:"#1B1C2A"}} >
+         <Container >
+           <div style={{display:"flex",justifyContent:"space-between"}}>
+         <div style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} >
+               <img alt="..." style={{height:"50px",width:"50px"}} src="/google_logo.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px"}} src="/google_logo.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px"}} src="/google_logo.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px"}} src="/google_logo.jpg"/>
+             </div>
+             <div style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}}>
+            <div>Meet our Partners!</div>           
+            <div className="gig_page2_row1" ><a style={{textDecoration:"none"}} href="/expert"><p style={{color:"rgb(243, 123, 97)"}}>Check them out.</p></a></div>
+            <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2"/></a>
+            </div>
+            </div>
+         </Container>
+       </Col>
+       <Col style={{backgroundColor:"#1B1C2A",width:"740px"}} className="col-container laptop_view_of_icons">
          <Container >
            <Row>
          <Col style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} md={3} xs={1}>
