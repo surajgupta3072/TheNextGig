@@ -111,7 +111,7 @@ function SocialLearningPage(props) {
                   <br/>
                   <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p></Row>
                 </Col>
-                <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
+                {/* <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
                 <Navbar.Brand >
                   <p  style={{marginLeft:"40px",color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
                 </Navbar.Brand>
@@ -129,7 +129,7 @@ function SocialLearningPage(props) {
                         </Nav.Link>                
                     </Nav>                
                   </Navbar.Collapse>
-                </Navbar>
+                </Navbar> */}
               </Row>
               <br/>
               
@@ -143,7 +143,7 @@ function SocialLearningPage(props) {
                </Col>
                {active==="Videos" &&
                 <Col>
-                  {/* <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a> */}
+                  {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>}
                   <MyVerticallyPopUp
                     userid={user}
                     show={modalShow}
