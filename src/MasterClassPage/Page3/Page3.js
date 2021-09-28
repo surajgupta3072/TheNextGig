@@ -96,11 +96,11 @@ function Page3(props) {
           <Col md={6} >
             {/* <Row style={{marginTop:"2%"}}>
               <h1 className="page3_heading1">{session.course_name}</h1>
-            </Row>
+            </Row> */}
             <div style={{marginTop:"0%"}}>
               <p className="page3_3linetext">{session.course_description}</p>
               <p className="page3_3linetext2">Lifetime access to <span style={{color: "#f26c4f"}}>{session.course_timing}</span>  of Learning experience</p>
-            </div> */}
+            </div>
             <Row className="card1_page3" style={{marginTop: "3%"}}>
             <div className="diver">
               <p style={{marginTop:"12px"}}  className="page3_cardtext">

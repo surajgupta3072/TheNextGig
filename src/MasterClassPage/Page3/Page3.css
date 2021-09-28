@@ -170,7 +170,7 @@
   width: 50%;
 }
 .mobile_view_video_master {
-  display: none;
+  display: none !important;
 }
 @media screen and (max-width: 768px) {
   .info {
@@ -180,7 +180,7 @@
     display: none !important;
   }
   .mobile_view_video_master {
-    display: flex;
+    display: flex !important;
     justify-content: space-evenly;
   }
   .mbd_image {
@@ -214,7 +214,7 @@
     margin-bottom: 5%;
   }
   .main_cardbody_row {
-    width: 95%;
+    width: fit-content;
     margin-left: 2%;
   }
   .twoline_desc {
@@ -277,7 +277,7 @@
   }
   .text_page3_card {
     font-size: 15px;
-    margin-left: -5px;
+    margin-left: -8px;
   }
   .anim_img {
     position: relative;

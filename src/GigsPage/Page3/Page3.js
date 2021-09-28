@@ -162,7 +162,7 @@ function Page3(props) {
                     </Row>
                   </div>
                 </Row>
-                <Row style={{ marginTop: "0%", paddingBottom: "1%" }}>
+                <Row className="laptop_view_btn_gig" style={{ marginTop: "0%", paddingBottom: "1%" }}>
                   <Col>
                     <a href={"/company/" + gigs[0].GigId}>
                       <button
@@ -199,14 +199,51 @@ function Page3(props) {
                   </Col>
                   }
                 </Row>
-                <Row>
+                <div className="mobile_view_btn_gig" >
+                  <div>
+                    <a href={"/company/" + gigs[0].GigId}>
+                      <button
+                        className="button_slide_page3 slide_right btn1_gigspage"
+                      >
+                        Get to know the
+                        <br /> company{" "}
+                        <ArrowLeft className="button_arrow1_footer_gigspage3" />
+                      </button>
+                    </a>
+                  </div>
+                  { !appliedgigs.includes(gigs[0].GigId) ?
+                    <div>
+                      <button style={{marginLeft:"5%"}}
+                        className="button2_slide_page3 slide_right btn2_gigspage"
+                        onClick={() => setModalShow(true)}
+                      >
+                        Apply now{" "}
+                        <ArrowLeft className="button_arrow2_footer_gigspage3" />
+                      </button>
+                      <MyVerticallyPopUp
+                        gigname={gigs[0].GigName}
+                        gigid={gigs[0].GigId}
+                        userid={props.prop.username}
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                      />
+                    </div> :
+                    <div>
+                    <button style={{marginLeft:"12%"}}
+                    className="button2_slide_page3 slide_right btn2_gigspage">
+                      Applied!
+                    </button>
+                  </div>
+                  }
+                </div>
+                <div>
                   <p
                     className="text_page3_card applyby_text"
                     style={{ marginTop: "0%" }}
                   >
                     <i> Apply by {gigs[0].GigApplyBy} </i>
                   </p>
-                </Row>
+                </div>
               </Col>
               <Col
                 style={{

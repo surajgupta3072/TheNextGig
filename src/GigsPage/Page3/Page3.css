@@ -53,6 +53,13 @@
 .text_page3_card_gigs {
   font-size: 18px;
 }
+.mobile_view_btn_gig {
+  display: none !important;
+}
+.page3_cardtext {
+  margin-top: 12px;
+  margin-left: 23px;
+}
 @media screen and (max-width: 768px) {
   .container2_page3 {
     margin-right: 0%;
@@ -80,5 +87,16 @@
   }
   .lastcol_page3_gigs {
     margin-left: 10px;
+    text-align: center;
+  }
+  .laptop_view_btn_gig {
+    display: none !important;
+  }
+  .mobile_view_btn_gig {
+    display: flex !important;
+    justify-content: space-evenly;
+  }
+  .page3_cardtext {
+    text-align: center !important;
   }
 }
