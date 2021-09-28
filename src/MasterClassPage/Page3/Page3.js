@@ -97,10 +97,10 @@ function Page3(props) {
             <Row style={{marginTop:"2%"}}>
               <h1 className="page3_heading1">{session.course_name}</h1>
             </Row>
-            <Row style={{marginTop:"0%"}}>
+            <div style={{marginTop:"0%"}}>
               <p className="page3_3linetext">{session.course_description}</p>
               <p className="page3_3linetext2">Lifetime access to <span style={{color: "#f26c4f"}}>{session.course_timing}</span>  of Learning experience</p>
-            </Row>
+            </div>
             <Row className="card1_page3" style={{marginTop: "3%"}}>
             <div className="diver">
               <p style={{marginTop:"12px"}}  className="page3_cardtext">
@@ -130,7 +130,7 @@ function Page3(props) {
               </Row>
           </div>
             </Row>
-            <Row style={{display: "flex", justifyContent:"space-between"}}>
+            <Row className="laptop_view_video_master">
               <Col>
                 <a href={"/expert/"+session.ExpertId}><button  className="button_slide_page3 slide_right">
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
@@ -158,6 +158,34 @@ function Page3(props) {
                 </Col>
               }
             </Row>
+            <div className="mobile_view_video_master">
+              <div>
+                <a href={"/expert/"+session.ExpertId}><button  className="button_slide_page3 slide_right">
+                Get to know<br /> your expert <ArrowLeft style={{width:"25px",height:"25px"}}className="button_arrow_Letsgo_Page3"/>
+                </button></a>
+              </div>
+              { props.prop!==null ?
+                coursePurchased===false &&
+                <div style={{display: "flex", justifyContent: "space-between"}}>
+                  <button className="button_slide_page3 inr_button slide_right " onClick={() => setModalShow(true)}>
+                  Learn @ INR {session.fees}<ArrowLeft style={{width:"25px",height:"25px"}} className="button_arrow_Letsgo_Page3"/>
+                  </button>
+                  <MyVerticallyPopUp
+                    uid={props.prop.username}
+                    cid={session.id}
+                    cname={session.course_name}
+                    fees={session.fees}
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                  />
+                </div> :
+                <div style={{display: "flex", justifyContent: "space-between",marginLeft:"15%"}}>
+                  <button  className="button_slide_page3 slide_right inr_button" onClick={() => window.location.href="/login"}>
+                  Learn @ INR {session.fees}<ArrowLeft style={{width:"25px",height:"25px"}}className="button_arrow_Letsgo_Page3"/>
+                  </button>
+                </div>
+              }
+            </div>
           </Col>
           <Col style={{padding:"0px",marginTop:"25px"}} md={6}> 
               {/* <video src={session["episodes"][0]["epi_video"]} className="anim_img" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/> */}
@@ -407,11 +435,11 @@ function Page3(props) {
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
-                <Col md={2}>
+                <div style={{display:"flex",justifyContent:"center"}}>
                     <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                </Col>
+                </div>
             </Row>
             </div>
     </div>
