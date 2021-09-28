@@ -172,9 +172,18 @@
 .mobile_view_video_master {
   display: none !important;
 }
+.masterclass_name_mobile {
+  display: none !important;
+}
 @media screen and (max-width: 768px) {
   .info {
     display: none;
+  }
+  .masterclass_name_laptop {
+    display: none !important;
+  }
+  .masterclass_name_mobile {
+    display: block !important;
   }
   .laptop_view_video_master {
     display: none !important;

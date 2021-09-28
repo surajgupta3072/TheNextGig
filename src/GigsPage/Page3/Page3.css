@@ -60,6 +60,15 @@
   margin-top: 12px;
   margin-left: 23px;
 }
+.proj_det_mobile {
+  display: none !important;
+}
+.proj_det_laptop {
+  margin-right: -50px;
+}
+.d2 {
+  margin-left: -80px;
+}
 @media screen and (max-width: 768px) {
   .container2_page3 {
     margin-right: 0%;
@@ -98,5 +107,14 @@
   }
   .page3_cardtext {
     text-align: center !important;
+  }
+  .proj_det_laptop {
+    display: none !important;
+  }
+  .proj_det_mobile {
+    display: flex !important;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-right: 30px;
   }
 }

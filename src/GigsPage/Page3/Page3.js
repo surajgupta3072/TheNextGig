@@ -128,7 +128,7 @@ function Page3(props) {
                     <p style={{marginTop:"12px",marginLeft:"23px"}} className="page3_cardtext">Project Details:</p>
                     <Row>
                       <Col>
-                        <Row style={{marginBottom:"12px",marginLeft:"7px"}}>
+                        <Row  className="proj_det_laptop">
                           <Col className="img_col" md={4}>
                             <img
                               alt="..."
@@ -143,7 +143,23 @@ function Page3(props) {
                         </Row>
                       </Col>
                       <Col>
-                        <Row>
+                        <div className="proj_det_mobile d1">
+                          <div className="img_col" md={4}>
+                            <img
+                              alt="..."
+                              className="img_page3_card"
+                              variant="top"
+                              src="/imagetime.png"
+                            />
+                          </div>
+                          <div className="text_col" md={7}>
+                            <h1 className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
+                          </div>
+                        </div>
+                      </Col>
+ 
+                      <Col>
+                        <Row className="proj_det_laptop d2">
                           <Col className="img_col" md={4}>
                             <img
                               className="img_page3_card"
@@ -158,6 +174,21 @@ function Page3(props) {
                             </h1>
                           </Col>
                         </Row>
+                        <div className="proj_det_mobile">
+                          <div className="img_col" md={4}>
+                            <img
+                              className="img_page3_card"
+                              variant="top"
+                              src="/imagestip.png"
+                              alt="..."
+                            />
+                          </div>
+                          <div className="text_col" md={8}>
+                            <h1 className="text_page3_card_gigs">
+                            {gigs[0].GigStipend}
+                            </h1>
+                          </div>
+                        </div>
                       </Col>
                     </Row>
                   </div>
