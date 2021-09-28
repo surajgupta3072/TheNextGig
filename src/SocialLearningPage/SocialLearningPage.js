@@ -111,7 +111,7 @@ function SocialLearningPage(props) {
                   <br/>
                   <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p></Row>
                 </Col>
-                {/* <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
+                <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
                 <Navbar.Brand >
                   <p  style={{marginLeft:"40px",color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
                 </Navbar.Brand>
@@ -129,7 +129,7 @@ function SocialLearningPage(props) {
                         </Nav.Link>                
                     </Nav>                
                   </Navbar.Collapse>
-                </Navbar> */}
+                </Navbar>
               </Row>
               <br/>
               
