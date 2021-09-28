@@ -83,39 +83,39 @@ function Videos(props) {
       <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
         {videoslist===false && props.prop.map((vid)=>
           <div  key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
-            {/* {props.redirlog ? 
+            {props.redirlog ? 
               <video style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video> :
               <video className="video_social_learn" onEnded={(e)=> VideoWatched(e.target.id)} id={vid.VideoID} controls style={{ height: "250px"}} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video>
-            } */}
-            <div>
+            }
+           {/*  <div>
               <h5 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>
               <p className="text" style={{padding:"0", margin:"0"}}>{vid.VideoHashtags}</p>
               <h5 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoUsername}</h5>
               <h6 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoCreds}</h6>
-            </div>
+            </div> */}
             <br/>
           </div>
         )}
         {videoslist!==false && videoslist.map((vid)=>
           <div key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
-            {/* {props.redirlog ? 
+            {props.redirlog ? 
               <video style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video> :
               <video onEnded={(e)=> VideoWatched(e.target.id)} id={vid.VideoID} controls style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video>
-            } */}
-            <div>
+            }
+           {/*  <div>
               <h5 style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>
               <p style={{padding:"0", margin:"0"}}>{vid.VideoHashtags}</p>
               <h5 style={{padding:"0", margin:"0"}}>{vid.VideoUsername}</h5>
               <h6 style={{padding:"0", margin:"0"}}>{vid.VideoCreds}</h6>
-            </div>
+            </div> */}
             <br/>
           </div>
         )}
