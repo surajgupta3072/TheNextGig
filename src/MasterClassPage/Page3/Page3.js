@@ -197,7 +197,7 @@ function Page3(props) {
           </Col>
           </Row>
       </Container>
-      <Container className="container2_page3" style={{padding: "0%", maxWidth: "94.25%",  marginBottom: "0%"}}>
+      <Container className="container2_page3 masterclass_video_laptop" style={{padding: "0%", maxWidth: "94.25%",  marginBottom: "0%"}}>
         <Row className="main_cardbody_row" style={{marginLeft: "auto",marginRight:"auto"}}>
         <div className="main_card" >               
                 <div className="main_cardbody"> 
@@ -251,6 +251,61 @@ function Page3(props) {
             </div>
         </Row>
       </Container>
+      <Container className="masterclass_video_mobile">
+      <div className="main_cardbody_row" style={{marginLeft: "auto",marginRight:"auto"}}>
+        <div className="main_card" >               
+                <div className="main_cardbody"> 
+                  <div >
+                    <div   className="col1_cardbody">
+                      {paymentshow===false &&
+                        <video src={epivid} className="img_letsgo" controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
+                      }
+                      {paymentshow===false &&
+                        <p className="twoline_desc">{des}</p>
+                      }
+                      { paymentshow===true && (
+                        props.prop!==null ? (
+                        <div style={{display:"flex", justifyContent:"center", marginTop:"15%"}}>
+                          <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
+                          Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                          </button>
+                          <MyVerticallyPopUp
+                            uid={props.prop.username}
+                            cid={session.id}
+                            cname={session.course_name}
+                            fees={session.fees}
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                          />
+                        </div> ) :
+                        <div style={{display:"flex", justifyContent:"center", marginTop:"15%"}}>
+                          <button className="button_slide_page3 slide_right" onClick={() => window.location.href="/login"}>
+                          Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                          </button>
+                        </div>
+                        )
+                      }
+                    </div >
+                    <div md={4}>
+                      <div className="menu_card">   
+                        <h1 className="epi" style={{marginTop: "2%", marginLeft: "2%"}}>Episodes</h1>   
+                        <div className="vertical-menu">
+                        {session["episodes"].map(topic=>(
+                          <div className="menu_list" style={{cursor:"pointer"}} onClick={() => {showDescription(topic.id)}}>
+                          <span >
+                            <a style={{textDecoration: "none"}}>{topic.title}</a><br/>
+                          </span>
+                          </div>
+                        ))}
+                        </div>      
+                      </div>
+                    </div>
+                  </div>                   
+                </div>               
+            </div>
+        </div>
+
+        </Container>
       <div className="header_masterclass">
         <Container>
           <div className="top_masterclass"><h1>WHAT’S IN IT FOR YOU?</h1>

@@ -175,9 +175,18 @@
 .masterclass_name_mobile {
   display: none !important;
 }
+.masterclass_video_mobile {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .info {
     display: none;
+  }
+  .masterclass_video_laptop {
+    display: none;
+  }
+  .masterclass_video_mobile {
+    display: block;
   }
   .masterclass_name_laptop {
     display: none !important;
@@ -216,7 +225,7 @@
     margin-top: 0%;
   }
   .main_card {
-    width: 80%;
+    width: fit-content;
     height: fit-content;
     margin-left: auto;
     margin-right: auto;

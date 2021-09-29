@@ -148,7 +148,7 @@
     color: #f26c4f;
     display: flex;
     flex-direction: column;
-    margin-left: 50%;
+    justify-content: center;
   }
 
   .client_number,
@@ -158,10 +158,18 @@
     padding-top: 30px;
     font-size: 1.5rem;
     font-weight: 0.5rem;
+    text-align: center;
   }
   .liner_page6 {
-    margin-top: 20px;
-    margin-left: -48px;
+    margin-top: 0px;
+    margin-left: auto;
+  }
+  .liner_3 {
+    margin-left: 0%;
+  }
+  .slasher {
+    display: flex;
+    justify-content: center;
   }
   .page6_maindiv {
     margin-top: 0%;

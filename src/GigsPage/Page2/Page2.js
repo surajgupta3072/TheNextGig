@@ -99,11 +99,11 @@ function Page2() {
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
-                <div className="social_link" md={2}>
+                <Col className="social_link" md={2}>
                     <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                </div>
+                </Col>
             </Row>
             </div>
       </Container> 

@@ -123,11 +123,12 @@ function ProfilePage(props) {
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`}/>
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
               <Row >
-                <Col style={{ display: "flex", flexDirection: "row", justifyContent: "flex-end"}}><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></Col>
-                <Col>
-                  <Row><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></Row>
-                  <Row style={{marginBottom:"2%", textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{wholedata.ReferralCode}</b></p></Row>
-                </Col>
+                <div className="profile_logo_text_mobile"><div><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
+                <div>
+                  <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></div>
+                  <div style={{marginBottom:"2%", textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{wholedata.ReferralCode}</b></p></div>
+                </div>
+                </div>
                 <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",  marginTop: "10%"}} expand="lg">
                   <Navbar.Brand style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
                     <p  style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{navbarHeading}</p>
