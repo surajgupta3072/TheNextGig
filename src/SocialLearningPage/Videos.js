@@ -80,7 +80,7 @@ function Videos(props) {
       <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
       <button className="search_button" style={{background:"rgb(242, 108, 79)", color:"white", border:"0", borderRadius:"20px"}} onClick={searchFilter} type="submit">Search</button>
       <br/><br/>
-      <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
+      {/* <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
         {videoslist===false && props.prop.map((vid)=>
           <div  key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
@@ -119,7 +119,7 @@ function Videos(props) {
             <br/>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
