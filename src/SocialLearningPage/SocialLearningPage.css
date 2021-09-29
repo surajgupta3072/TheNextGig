@@ -167,9 +167,25 @@
 .video_social_learn {
   width: 350px;
 }
+.profile_logo_text_laptop {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.profile_logo_text_mobile {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .SocialLearn_laptop {
     display: none;
+  }
+  .profile_logo_text_laptop {
+    display: none;
+  }
+  .profile_logo_text_mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
   .video_social_learn {
     width: 100%;
