@@ -2,11 +2,11 @@
   background: url("https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg") center;
 } */
 
-.Opening_container {
-  background: url("./../../home.png") no-repeat center;
+.homeimage {
+  background: url("./../../homepage2.png") no-repeat center;
   /* height: 100%;
   width: 100%; */
-  background-size: 1300px 700px;
+  background-size: 800px 700px;
 }
 
 /*Headings*/
@@ -136,6 +136,10 @@ div.heading > div:nth-child(3) > p {
 @media screen and (max-width: 768px) {
   .slide-down {
     font-size: 50px;
+  }
+  .Opening_container {
+    background: url("./../../homepage2.png") no-repeat center;
+    background-size: 150% 700px;
   }
   .heading {
     margin-top: 53%;
