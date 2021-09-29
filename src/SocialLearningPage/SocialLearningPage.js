@@ -112,7 +112,7 @@ function SocialLearningPage(props) {
                 </Col> */}
                 <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
                 <Navbar.Brand >
-                  <p style={{marginLeft:"40px",color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
+                  <p style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
                 </Navbar.Brand>
                 <Navbar.Toggle style={{backgroundColor: "grey"}}/>
                 <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
