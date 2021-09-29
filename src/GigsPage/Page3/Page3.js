@@ -124,7 +124,7 @@ function Page3(props) {
                   style={{ marginLeft: "0", marginTop: "2%" }}
                 >
                   <div>
-                    <p style={{marginTop:"12px",marginLeft:"23px"}} className="page3_cardtext">Project Details:</p>
+                    <p className="page3_cardtext">Project Details:</p>
                     <Row>
                       <Col>
                         <Row  className="proj_det_laptop">
@@ -143,7 +143,7 @@ function Page3(props) {
                       </Col>
                       <Col>
                         <div className="proj_det_mobile d1">
-                          <div className="img_col" md={4}>
+                          <div className="img_col">
                             <img
                               alt="..."
                               className="img_page3_card"
@@ -151,7 +151,7 @@ function Page3(props) {
                               src="/imagetime.png"
                             />
                           </div>
-                          <div className="text_col" md={7}>
+                          <div className="text_col">
                             <h1 className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
                           </div>
                         </div>
@@ -173,8 +173,8 @@ function Page3(props) {
                             </h1>
                           </Col>
                         </Row>
-                        <div className="proj_det_mobile">
-                          <div className="img_col" md={4}>
+                        <div className="proj_det_mobile d3">
+                          <div className="img_col">
                             <img
                               className="img_page3_card"
                               variant="top"
@@ -244,7 +244,7 @@ function Page3(props) {
                   { !appliedgigs.includes(gigs[0].GigId) ?
                     <div>
                       <button style={{marginLeft:"5%"}}
-                        className="button2_slide_page3 slide_right btn2_gigspage"
+                        className="button2_slide_page3 slide_right btn2_gigspage apply_now_button"
                         onClick={() => setModalShow(true)}
                       >
                         Apply now{" "}

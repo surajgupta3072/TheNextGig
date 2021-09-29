@@ -69,6 +69,10 @@
 .d2 {
   margin-left: -80px;
 }
+.page3_cardtext {
+  margin-top: 12px;
+  margin-left: 23px;
+}
 @media screen and (max-width: 768px) {
   .container2_page3 {
     margin-right: 0%;
@@ -76,6 +80,7 @@
   }
   .text_page3_card {
     text-align: center;
+    margin-left: auto;
   }
 
   .text_page3_card_gigs {
@@ -92,7 +97,12 @@
   .button2_slide_page3 {
     font-size: 12px;
     padding: 18px 22px;
-    margin-top: 21%;
+    margin-top: 22%;
+  }
+  .apply_now_button {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin-top: 22%;
   }
   .lastcol_page3_gigs {
     margin-left: 10px;
@@ -115,6 +125,11 @@
     display: flex !important;
     justify-content: space-evenly;
     flex-direction: column;
-    margin-right: 30px;
+  }
+  .d1 {
+    margin-right: 20px;
+  }
+  .d3 {
+    margin-right: 60px;
   }
 }
