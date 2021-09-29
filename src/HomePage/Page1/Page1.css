@@ -1,19 +1,13 @@
-/* .Opening_container{
-  background: url("https://demo.softhopper.studio/selfer/wp-content/uploads/sites/20/2018/10/bg-hero.jpg") center;
-} */
-
 .homeimage {
   background: url("./../../homepage2.png") no-repeat center;
-  /* height: 100%;
-  width: 100%; */
-  background-size: 800px 700px;
+  background-size: 800px 900px;
 }
 
 /*Headings*/
 .heading {
   position: relative;
   margin-top: 3%;
-  margin-left: 5px;
+  margin-left: 45px;
   font-size: 86px;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -24,7 +18,7 @@
 .subheading {
   position: relative;
   margin-top: 7%;
-  margin-left: 15px;
+  margin-left: 50px;
   font-weight: 800;
   color: #f26c4f;
   font-size: 40px;
@@ -142,16 +136,14 @@ div.heading > div:nth-child(3) > p {
     background-size: 150% 700px;
   }
   .heading {
-    margin-top: 53%;
+    margin-top: 50%;
+    margin-left: 15px;
   }
   .subheading {
     font-size: 30px;
+    margin-left: 20px;
   }
   .button_slide {
     margin-left: -45%;
-  }
-  .button_div {
-    margin-left: 49%;
-    margin-top: 8%;
   }
 }

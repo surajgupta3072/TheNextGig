@@ -13,7 +13,7 @@ function RegisterPage() {
   const [refcode, setRefCode] = useState("");
   const [showerr, setShowErr] = useState(false);
 
-  async function RegisterUser(totrew) {
+  async function RegisterUser(totrew, refby) {
     const username = email;
     const signUpResponse = await Auth.signUp({
       username,
@@ -26,7 +26,7 @@ function RegisterPage() {
     setShowErr(false);
     var params = {
       TableName: "UsersTable",
-      Item: {"UserID":signUpResponse.userSub, "FullName":name, "Email":email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards": totrew, "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": email.split("@")[0]}
+      Item: {"UserID":signUpResponse.userSub, "FullName":name, "Email":email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards": totrew, "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": email.split("@")[0], "ReferredBy": refby}
     }
     docClient.put(params, function (err, data) {
       if (err) {
@@ -77,7 +77,7 @@ function RegisterPage() {
                         console.log(err);
                       } 
                       else {
-                        RegisterUser(50);
+                        RegisterUser(50, e.UserID);
                       }
                     });
                   }
@@ -94,7 +94,7 @@ function RegisterPage() {
       }
       else {
         if(name!=="" && email!=="" && password!=="") {
-          RegisterUser(0);
+          RegisterUser(0, "");
         }
         else {
           setShowErr("Name, Email and Password is Mandatory");

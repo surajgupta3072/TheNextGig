@@ -2,14 +2,13 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { ArrowLeft } from "react-bootstrap-icons";
-import "./Page3.css";
-import { ArrowRight } from "react-bootstrap-icons";
 import master from "../../MasterClassPage/Masterclass.json";
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from "../GigsAWS";
 import { useEffect, useState } from "react";
 import MyVerticallyPopUp  from './popup';
+import "./Page3.css";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },

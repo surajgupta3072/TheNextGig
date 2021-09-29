@@ -33,10 +33,9 @@ function Page1() {
           </Col>
           <Col className="homeimage" md={8}></Col>
         </Row>
-        
-        <div className="button_div">
+        <Row style={{textAlign:"center"}}>
           <Link to="ummm" scroll={true}><button  className="button_slide slide_right">Ummm, how?<ArrowDown className="button_arrow"/></button></Link>
-        </div>
+        </Row>
       </Container>
     );
   }
