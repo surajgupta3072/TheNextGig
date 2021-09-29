@@ -9,7 +9,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ProgressBar from 'react-bootstrap/ProgressBar'
-import {Linkedin} from "react-bootstrap-icons";
+// import {Linkedin} from "react-bootstrap-icons";
 import './ProfilePage.css'
 import docClient from '../GigsPage/GigsAWS';
 import Navbar from 'react-bootstrap/Navbar';
@@ -47,24 +47,21 @@ function ProfilePage(props) {
       setActive("Personal");
       setNavbarHeading("Personal");
       const per = data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC
-      setPercentage(per)
+      setPercentage(per);
       var params = {
         TableName: "UsersTable",
-        Key: { "UserID":props.auth.user.username },
-        UpdateExpression: "set TotalRewards= :tr",
-        ExpressionAttributeValues:{
-          ":tr":per,
-        },
-        ReturnValues:"UPDATED_NEW"
-      }
-      docClient.update(params, function (err, data) {
+        Key: { "UserID": props.auth.user.username },
+        ProjectionExpression: "TotalRewards",
+      };
+      docClient.get(params, function(err, data) {
         if (err) {
           console.log(err);
-        } else {
-          setRew(data.Attributes.TotalRewards)
+        } 
+        else {
+          setRew(data.Item.TotalRewards);
         }
       });
-    } 
+    }     
     catch (err) {
       return err
     }
@@ -105,11 +102,11 @@ function ProfilePage(props) {
             <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="Profile_list_laptop">
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`}/>
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
-              <Row style={{marginTop:"8%",marginLeft:"18%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"170px",borderRadius:"50%"}}/></Row>
-              <Row><p style={{fontSize:"18px", textAlign:"center"}}>{props.auth.user.attributes.name.split(" ")[0]}</p></Row>
-              <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p></Row>
-              <Row style={{marginBottom:"2%"}}><Linkedin size={30}/></Row>
+              <Row style={{marginTop:"7%",marginLeft:"22%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"170px",borderRadius:"50%"}}/></Row>
               <br/>
+              <Row><p style={{fontSize:"16px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></Row>
+              <Row style={{marginBottom:"1%", textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{wholedata.ReferralCode}</b></p></Row>
+              <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("Personal")} style={color1}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Personal</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("Education")} style={color2}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Education</p></Row>
@@ -128,9 +125,8 @@ function ProfilePage(props) {
               <Row >
                 <Col style={{ display: "flex", flexDirection: "row", justifyContent: "flex-end"}}><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></Col>
                 <Col>
-                  <Row><p style={{fontSize:"18px", textAlign:"center"}}>{props.auth.user.attributes.name.split(" ")[0]}</p></Row>
-                  <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p></Row>
-                  <Row style={{marginBottom:"2%"}}><Linkedin size={30}/></Row>
+                  <Row><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></Row>
+                  <Row style={{marginBottom:"2%", textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{wholedata.ReferralCode}</b></p></Row>
                 </Col>
                 <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",  marginTop: "10%"}} expand="lg">
                   <Navbar.Brand style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
