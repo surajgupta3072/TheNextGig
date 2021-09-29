@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import {Linkedin} from 'react-bootstrap-icons';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -22,6 +21,7 @@ function SocialLearningPage(props) {
   const [color3,setColor3] =useState("white");
   const [textColor3,setextColor3] =useState("#f26c4f");
   const [rew, setRew] = useState(0);
+  const [myrefcode, setMyRefCode] = useState("");
   const [allvideos, setAllvideos] = useState([]);
   const [user, setUser] = useState("");
   const [redirectlogin, setRedirectLogin] = useState(true);
@@ -47,13 +47,13 @@ function SocialLearningPage(props) {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID":props.auth.user.username },
-        ProjectionExpression: "TotalRewards",
       };
       docClient.get(params, function(err, data) {
         if (err) {
           console.log(err);
         } else {
           setRew(data.Item.TotalRewards);
+          setMyRefCode(data.Item.ReferralCode);
         }
       });
     }
@@ -75,13 +75,12 @@ function SocialLearningPage(props) {
       <Container>
         <Row>
             <Col xs={3} style={{backgroundColor:"#1B1C2A",height:"fit-content"}} className="SocialLearn_laptop">
-              <Row style={{marginTop:"10%",marginLeft:"18%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"170px",borderRadius:"50%"}}/></Row>
-              {user.attributes!==undefined ? <Row><p style={{fontSize:"20px", textAlign:"center"}}>{user.attributes.name.split(" ")[0]}</p></Row> : <Row><br/></Row>}
+              <Row style={{marginTop:"10%",marginLeft:"22%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"170px",borderRadius:"50%"}}/></Row>
+              {user.attributes!==undefined ? <Row><p style={{fontSize:"20px", textAlign:"center", marginTop:"10px"}}>{user.attributes.name}</p></Row> : <Row><br/></Row>}
               <Row>
-                <p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p>
-                <Linkedin style={{color: "white", cursor: "pointer",marginBottom:"7px"}} size={30}/>
+                <p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p>
+                <p style={{textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{myrefcode}</b></p></p>
               </Row>
-              <br/>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <br/>
               <div style={{fontSize:"14px",marginLeft:"7px"}}>Why <span style={{color:"#F26C4F"}}>watch </span>{active==="Videos"?"videos":active==="Blogs"?"blog":"community"} ?
@@ -107,13 +106,13 @@ function SocialLearningPage(props) {
               <Row >
                 <Col style={{ display: "flex", flexDirection: "row", justifyContent: "flex-end"}}><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></Col>
                 <Col>
-                  {user.attributes!==undefined && <Row><p style={{fontSize:"18px", textAlign:"center"}}>{user.attributes.name.split(" ")[0]}</p></Row>}
-                  <br/>
-                  <Row><p style={{fontSize:"12px", textAlign:"center",color:"#F26C4F"}}>Reward Points: {rew}</p></Row>
+                  {user.attributes!==undefined && <Row><p style={{fontSize:"18px", textAlign:"center"}}>{user.attributes.name}</p></Row>}
+                  <Row><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></Row>
+                  <Row style={{textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{myrefcode}</b></p></Row>
                 </Col>
                 <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
                 <Navbar.Brand >
-                  <p  style={{marginLeft:"40px",color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
+                  <p style={{marginLeft:"40px",color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
                 </Navbar.Brand>
                 <Navbar.Toggle style={{backgroundColor: "grey"}}/>
                 <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>

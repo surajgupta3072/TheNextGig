@@ -35,7 +35,7 @@ function LoginPage(props){
         <p style={{textAlign:"center",marginTop:"10px",fontWeight:"bold",color: "rgba(242, 108, 79, 1)"}}>OR</p>
         <p style={{fontSize:"18px"}}>Email<text style={{color:"#f26c4f"}}>*</text></p>
         <input value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}></input>
-        <p style={{marginTop:"10%",fontSize:"18px"}}>Password<text style={{color:"#f26c4f"}}>*</text></p>
+        <p style={{fontSize:"18px", marginTop:"20px"}}>Password<text style={{color:"#f26c4f"}}>*</text></p>
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} style={{width:"100%"}}></input>
         <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"33%"}}>Login<ArrowLeft className='button_arrow'/></button>
         <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)}/>

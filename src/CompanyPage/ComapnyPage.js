@@ -73,6 +73,7 @@ function CompanyPage() {
       }
     });
   }, []);
+  
   function buttonColor(word){
     setActive(word)
     if(word==="Gigs"){
