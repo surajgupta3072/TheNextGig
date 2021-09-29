@@ -37,10 +37,37 @@ function Personal(props) {
       docClient.update(params, function (err, data) {
         if (err) {
           console.log(err);
-        } else {
+        } 
+        else {
           props.p.wholedata.RewardP = data.Attributes.RewardP
           props.p.setWholedata(props.p.wholedata)
-          props.p.setPercentage(props.p.wholedata.RewardP + props.p.wholedata.RewardE + props.p.wholedata.RewardW + props.p.wholedata.RewardS + props.p.wholedata.RewardC)
+          props.p.setPercentage(props.p.wholedata.RewardP + props.p.wholedata.RewardE + props.p.wholedata.RewardW + props.p.wholedata.RewardS + props.p.wholedata.RewardC);
+          var paramss = {
+            TableName: "UsersTable",
+            Key: { "UserID": props.p.wholedata.UserID },
+            ProjectionExpression: "TotalRewards",
+          };
+          docClient.get(paramss, function(err, data) {
+            if (err) {
+              console.log(err);
+            } 
+            else {
+              var paramss = {
+                TableName: "UsersTable",
+                Key: { "UserID": props.p.wholedata.UserID },
+                UpdateExpression: "set TotalRewards = :tr",
+                ExpressionAttributeValues:{
+                  ":tr": data.Item.TotalRewards + 20,
+                },
+                ReturnValues:"UPDATED_NEW"
+              }
+              docClient.update(paramss, function (err, data) {
+                if (err) {
+                  console.log(err);
+                }
+              });
+            }
+          });
         }
       });
     }
