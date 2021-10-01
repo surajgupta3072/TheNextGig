@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
-import './ProfilePage.css';
 import docClient from '../GigsPage/GigsAWS';
+import './ProfilePage.css';
 
 function Personal(props) {
   const [fullName,setFullName]=useState();
@@ -11,6 +11,8 @@ function Personal(props) {
   const [gender,setGender]=useState();
   const [mobile,setMobile]=useState();
   const [quirky,setQuirky]=useState();
+  const [refcode, setRefCode] = useState("");
+  const [showerr, setShowErr] = useState(false);
 
   useEffect(() => {
     document.getElementsByName("gender").forEach(e=>{
@@ -22,6 +24,84 @@ function Personal(props) {
     setMobile(props.p.wholedata.MobileNumber);
     setQuirky(props.p.wholedata.QuirkyText);
   }, []);
+
+  function RefCodeSubmit() {
+    if(refcode!==props.p.wholedata.ReferralCode) {
+      var params = {
+        TableName: "UsersTable"
+      };
+      docClient.scan(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        } 
+        else {
+          var refstatus = false;
+          for (var e of data.Items) {
+            if(e.ReferralCode===refcode) {
+              var refstatus = true;
+              var params = {
+                TableName: "UsersTable",
+                Key: { "UserID": e.UserID },
+                ProjectionExpression: "TotalRewards",
+              };
+              docClient.get(params, function(err, data) {
+                if (err) {
+                  console.log(err);
+                } 
+                else {
+                  var paramss = {
+                    TableName: "UsersTable",
+                    Key: { "UserID": e.UserID },
+                    UpdateExpression: "set TotalRewards = :tr",
+                    ExpressionAttributeValues:{
+                      ":tr": data.Item.TotalRewards + 50,
+                    },
+                    ReturnValues:"UPDATED_NEW"
+                  }
+                  docClient.update(paramss, function (err, data) {
+                    if (err) {
+                      console.log(err);
+                    } 
+                    else {
+                      var paramss = {
+                        TableName: "UsersTable",
+                        Key: { "UserID": props.p.wholedata.UserID },
+                        UpdateExpression: "set TotalRewards = :tr, ReferredBy = :rb",
+                        ExpressionAttributeValues:{
+                          ":tr": props.p.wholedata.TotalRewards + 50,
+                          ":rb": e.UserID,
+                        },
+                        ReturnValues:"UPDATED_NEW"
+                      }
+                      docClient.update(paramss, function (err, data) {
+                        if (err) {
+                          console.log(err);
+                        } 
+                        else {
+                          props.p.wholedata.ReferredBy = data.Attributes.ReferredBy;
+                          props.p.wholedata.TotalRewards = data.Attributes.TotalRewards;
+                          props.p.setWholedata(props.p.wholedata);
+                          window.location.reload();
+                        }
+                      });
+                    }
+                  });
+                }
+              });
+              break;
+            }
+          }
+          if(refstatus===false) {
+            setShowErr("Referral Code is Invalid");
+            setRefCode("");
+          }
+        }
+      });
+    }
+    else {
+      setRefCode("");
+    }
+  }
 
   function givereward() {
     if(props.p.wholedata.RewardP===0) {
@@ -138,6 +218,19 @@ function Personal(props) {
           <div className="button_div">
           <button style={{marginTop:"10%"}} onClick={handleSubmit} className="button_slide">Save</button>
           </div>
+          {props.p.wholedata.RewardP + props.p.wholedata.RewardE + props.p.wholedata.RewardW + props.p.wholedata.RewardS + props.p.wholedata.RewardC===100 &&
+            props.p.wholedata.ReferredBy==="" &&
+            <Row style={{marginTop:"2%"}}>
+              <Col xs={6}>
+                <p style={{fontSize:"20px"}}>Referral Code</p>
+                <p style={{margin:"0"}}><input value={refcode} onChange={e => setRefCode(e.target.value)} style={{width:"90%",height:"35px"}}></input></p>
+                {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
+              </Col>
+              <Col xs={4}>
+                <button style={{width:"100px",height:"35px",marginTop:"15%"}} onClick={RefCodeSubmit}>Save</button>
+              </Col>
+            </Row>
+          }
         </Container>
       </div>
     );

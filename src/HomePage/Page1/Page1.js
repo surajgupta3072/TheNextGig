@@ -9,7 +9,7 @@ function Page1() {
     return (
       <Container className="Opening_container">
          <Row>
-          <Col style={{marginTop:"5%", marginBottom:"12%"}} md={4}>
+          <Col style={{marginTop:"5%", marginBottom:"10%"}} md={7}>
             <div>              
               <div class="heading">
                 <div>
@@ -31,7 +31,7 @@ function Page1() {
               <h1 className="subheading slide-down">the right way.</h1>
             </div>
           </Col>
-          <Col className="homeimage" md={8}></Col>
+          <Col className="homeimage" md={5}></Col>
         </Row>
         <Row style={{textAlign:"center"}}>
           <Link to="ummm" scroll={true}><button  className="button_slide slide_right">Ummm, how?<ArrowDown className="button_arrow"/></button></Link>

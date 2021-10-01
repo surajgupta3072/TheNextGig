@@ -1,6 +1,6 @@
 .homeimage {
-  background: url("./../../homepage2.png") no-repeat center;
-  background-size: 800px 900px;
+  background: url("./../../homepage3.png") no-repeat center;
+  background-size: 330px 570px;
 }
 
 /*Headings*/
@@ -132,11 +132,11 @@ div.heading > div:nth-child(3) > p {
     font-size: 50px;
   }
   .Opening_container {
-    background: url("./../../homepage2.png") no-repeat center;
-    background-size: 150% 700px;
+    background: url("./../../homepage3.png") no-repeat center;
+    background-size: 80% 600px;
   }
   .heading {
-    margin-top: 50%;
+    margin-top: 45%;
     margin-left: 15px;
   }
   .subheading {
