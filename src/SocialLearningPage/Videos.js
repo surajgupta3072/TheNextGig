@@ -85,10 +85,10 @@ function Videos(props) {
           <div  key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
                <div>
-              <video style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video className="vid" style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
-              </video></div> :<div style={{border:"2px solid rgba(242, 108, 79, 0.6)"}}>
-              <video className="video_social_learn" onEnded={(e)=> VideoWatched(e.target.id)} id={vid.VideoID} controls style={{ height: "250px"}} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              </video></div> :<div>
+              <video className="video_social_learn" onEnded={(e)=> VideoWatched(e.target.id)} id={vid.VideoID} controls  controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video></div>
             }

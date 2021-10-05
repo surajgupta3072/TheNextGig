@@ -175,7 +175,7 @@ function ProfilePage(props) {
             <Col xs={12}  className="Profile_list_mobile">
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`}/>
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
-              <Row >
+              <div >
                 <div className="profile_logo_text_mobile"><div><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
                 <div>
                   <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></div>
@@ -196,7 +196,7 @@ function ProfilePage(props) {
               <div><button onClick={() => buttonColor("FeedBack")} style={{backgroundColor:color66,color:textColor6,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Feedback</button></div>
                   </div>
                 </div>
-              </Row>
+              </div>
               <br/>
               
             </Col>
