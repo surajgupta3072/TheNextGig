@@ -102,8 +102,8 @@ function SocialLearningPage(props) {
                 <br/>
               </div>
             </Col>
-            <Col xs={12}  className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
-              {/* <Row >
+            <div   className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
+               <div >
                 <div className="profile_logo_text_mobile" ><div><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
                 <div>
                   {user.attributes!==undefined && <div><p style={{fontSize:"18px", textAlign:"center"}}>{user.attributes.name}</p></div>}
@@ -111,7 +111,7 @@ function SocialLearningPage(props) {
                   <div style={{textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{myrefcode}</b></p></div>
                 </div> 
                 </div>
-              </Row> */}
+              </div> 
               <br/>
                <div style={{marginTop:"5%"}} >
                 <div style={{display:"flex",justifyContent:"space-evenly"}}>
@@ -120,7 +120,7 @@ function SocialLearningPage(props) {
                   <div><button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button></div>
                </div> 
              </div> 
-            </Col>
+            </div>
             <Col>
              <Row style={{marginTop:"5%"}} >
                <Col xs={9} className="SocialLearn_laptop">
