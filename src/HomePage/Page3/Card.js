@@ -7,7 +7,6 @@ export default function CardX(props) {
         <div className="card-header">
           <div className="card-title-group"></div>
         </div>
-        <span style={{position:"absolute",fontFamily:"Brush Script MT, Brush Script Std, cursive",color:"#f26c4f",fontSize:"35px",transform:"rotate(-50deg)",marginLeft:"10px",marginTop:"-15px"}}>New</span>
         <img className="card-image" src={props.card} alt="Logo"/>
         <div style={{display:"flex",justifyContent:"center"}} className="card-like-bar">
           <div  className="texting">

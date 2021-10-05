@@ -152,6 +152,12 @@ button.rec-dot {
   .rec.rec-arrow {
     font-size: 20px;
   }
+  .rec.rec.rec-arrow-right {
+    margin-right: 0px;
+  }
+  .rec.rec.rec-arrow-left {
+    margin-left: 0px;
+  }
 }
 @media only screen and (max-width: 1440px) {
   .App1 {

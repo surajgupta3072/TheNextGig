@@ -6,7 +6,7 @@
   margin-top: 2.3%;
 }
 .mbd_image {
-  border-radius: 15px;
+  border-radius: 12px;
 }
 .slider_mobile {
   display: none;
@@ -55,8 +55,8 @@
   height: 30rem;
   margin-bottom: 2%;
   margin-top: 2%;
-  border: 5px solid #f26c4f !important;
-  border-radius: 20px !important;
+  border: 2px solid rgba(242, 108, 79, 0.6) !important;
+  border-radius: 12px !important;
 }
 .button_masterclass1 {
   display: flex;

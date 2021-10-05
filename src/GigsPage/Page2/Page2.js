@@ -17,7 +17,7 @@ function Page2() {
          <div>
            <Row className="check_masterclass">
              <div >
-              <a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> 
+             <div className="btn_div1"><button className="btn_recommend"><a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"white"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> </button></div>
              </div>
              <div className="zingerx">
              <div> <a href="/masterclass"><ArrowRight className="button_arrow_gig"/></a></div>
@@ -33,7 +33,7 @@ function Page2() {
          <p className="mast_page2_p2">Learn from the best.</p>
          <div>
              <div >
-              <a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> 
+             <div className="btn_div"><div><button className="btn_recommend"><a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"white"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> </button></div></div>
              </div>
              <div className="zingerx">
              <div> <a href="/masterclass"><ArrowRight className="button_arrow_gig"/></a></div>
@@ -83,7 +83,7 @@ function Page2() {
             <p  className="mast_page2_p3">Want to work with a particular company?</p>
           </Col>
           <Col  className="col-button">
-            <div className="btn_div"><div><button className="btn_recommend" onClick={() => setModalShow(true)}>Recommend 
+            <div  className="btn_div"><div><button className="btn_recommend" onClick={() => setModalShow(true)}>Recommend 
             <ArrowLeft className="button_arrow"/></button>
               <MyVerticallyPopUp
                   show={modalShow}

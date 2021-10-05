@@ -12,8 +12,8 @@
 }
 .button_arrow_gig {
   position: absolute;
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: -25px;
+  margin-left: 120px;
   width: 40px;
   height: 40px;
   padding: 7px;
@@ -44,8 +44,15 @@
 .mobile_view_of_icons {
   display: none;
 }
+.mast_page2_p2 {
+  font-size: 16px !important;
+}
+.btn_div {
+  margin-left: 20%;
+}
 @media screen and (max-width: 768px) {
   .btn_div {
+    margin-left: 0%;
     display: flex;
     justify-content: center;
   }
@@ -80,7 +87,7 @@
     width: 40px;
     height: 40px;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: -25px;
     padding: 7px;
     color: rgb(212, 71, 41);
     background: #000000;

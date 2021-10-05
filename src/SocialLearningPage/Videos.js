@@ -84,12 +84,13 @@ function Videos(props) {
         {videoslist===false && props.prop.map((vid)=>
           <div  key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
+               <div style={{border:"2px solid rgba(242, 108, 79, 0.6)"}}>
               <video style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
-              </video> :
+              </video></div> :<div style={{border:"2px solid rgba(242, 108, 79, 0.6)"}}>
               <video className="video_social_learn" onEnded={(e)=> VideoWatched(e.target.id)} id={vid.VideoID} controls style={{ height: "250px"}} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
-              </video>
+              </video></div>
             }
             <div>
               <h5 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>

@@ -9,7 +9,8 @@ import { Linkedin } from 'react-bootstrap-icons';
 import MasterSessions from './MasterSessions';
 import Gigs from './Gigs';
 import expert from './../MasterClassPage/Masterclass.json';
-
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 function CompanyPage() {
   let { id } = useParams();
   const [gigs, setGigs] = useState([]);
@@ -140,6 +141,22 @@ function CompanyPage() {
                   </p>
                 </div>
               </Container>
+              <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
+                <Navbar.Brand >
+                  <p style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
+                </Navbar.Brand>
+                <Navbar.Toggle style={{backgroundColor: "grey"}}/>
+                <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
+                    <Nav>
+                        <Nav.Link onClick={()=>buttonColor("Gigs")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
+                        Gigs
+                        </Nav.Link>
+                        <Nav.Link onClick={()=>buttonColor("MasterSessions")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
+                        MasterSessions
+                        </Nav.Link>              
+                    </Nav>                
+                  </Navbar.Collapse>
+                </Navbar> 
             </div>
             <Container>
             <Row style={{marginTop:"5%"}} >

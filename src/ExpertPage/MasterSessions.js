@@ -40,7 +40,7 @@ function MasterSessions(props) {
             <div className="slider_mobile">
         <Carousel breakPoints={breakPoints}>
             {expert.ExpertMasterClass.map(CourseId=> 
-             <MDBCard onClick={() => (window.location.href = "/masterclass/" + CourseId)} className="mbd_card card_mastercard2" style={{margin:"4%",borderRadius:"18px",border:"5px solid #f26c4f", backgroundColor:"#020312"}}>
+             <MDBCard onClick={() => (window.location.href = "/masterclass/" + CourseId)} className="mbd_card card_mastercard2" style={{margin:"4%",borderRadius:"12px",border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"14rem"}} src={masterData[CourseId-1].course_image} alt='...' /></div>
              <MDBCardBody>
                <div className="Course_name">{masterData[CourseId-1].course_name}</div>

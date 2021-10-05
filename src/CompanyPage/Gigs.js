@@ -37,7 +37,7 @@ function Gigs(props) {
             <div className="slider_mobile">
         <Carousel breakPoints={breakPoints}>
             {props.gigData.map(Gig=>
-             <MDBCard onClick={()=>window.location.href="/gigs/"+Gig.GigId} className="mbd_card card_mastercard2" style={{margin:"4%", border:"5px solid #f26c4f", borderRadius:"18px",backgroundColor:"#020312"}}>
+             <MDBCard onClick={()=>window.location.href="/gigs/"+Gig.GigId} className="mbd_card card_mastercard2" style={{margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px",backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"14rem"}} src="https://www.clipartkey.com/mpngs/m/153-1539728_cartoon-person-waving-cartoon-person-png.png" alt='...' /></div>
              <MDBCardBody>
                <div className="Course_name">{Gig.GigName}</div>

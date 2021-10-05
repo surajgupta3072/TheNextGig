@@ -1,8 +1,8 @@
 .cardpage3 {
   background-color: #06050b;
   color: #272727;
-  border: 5px;
-  border-color: #f26c4f;
+  border: 2px;
+  border-color: rgba(242, 108, 79, 0.6);
   border-style: solid;
   transition: 200ms;
   width: 340px;
@@ -10,7 +10,7 @@
   height: fit-content;
   min-height: 410px;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 12px;
 }
 .company_image {
   margin-right: 0.8rem;
@@ -25,9 +25,9 @@
   box-shadow: 0 10px 20px rgba(134, 50, 50, 0.8), 0 4px 8px #f26c4f;
 }
 .card-image {
-  width: 330px;
+  width: 337px;
   height: 250px;
-  border-radius: 150px 15px 0px 0px;
+  border-radius: 12px 12px 0px 0px;
   margin-top: -17px;
 }
 .lowertext2 {
@@ -250,7 +250,7 @@
     height: 350px;
   }
   .card-image {
-    width: 230px;
+    width: 236px;
     height: 200px;
   }
   .like-text {
