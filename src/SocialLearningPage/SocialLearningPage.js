@@ -113,13 +113,13 @@ function SocialLearningPage(props) {
                 </div>
               </Row> */}
               <br/>
-              <Row style={{marginTop:"5%"}} >
+              {/* <Row style={{marginTop:"5%"}} >
                <div style={{display:"flex",justifyContent:"space-evenly"}}>
                   <div><button onClick={()=>buttonColor("Videos")} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Videos</button></div>
                   <div><button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button></div>
                   <div><button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button></div>
                </div>
-             </Row>
+             </Row> */}
             </Col>
             <Col>
              <Row style={{marginTop:"5%"}} >
@@ -128,7 +128,7 @@ function SocialLearningPage(props) {
                   <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button>
                   <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button>
                </Col>
-               {active==="Videos" &&
+               {/* {active==="Videos" &&
                 <Col>
                   {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>}
                   <MyVerticallyPopUp
@@ -147,7 +147,7 @@ function SocialLearningPage(props) {
                     onHide={() => setModalShow(false)}
                   />
                 </Col>
-                }
+                } */}
              </Row>
                 {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
