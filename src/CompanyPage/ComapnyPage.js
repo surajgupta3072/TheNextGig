@@ -141,24 +141,14 @@ function CompanyPage() {
                   </p>
                 </div>
               </Container>
-              <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
-                <Navbar.Brand >
-                  <p style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
-                </Navbar.Brand>
-                <Navbar.Toggle style={{backgroundColor: "grey"}}/>
-                <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
-                    <Nav>
-                        <Nav.Link onClick={()=>buttonColor("Gigs")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
-                        Gigs
-                        </Nav.Link>
-                        <Nav.Link onClick={()=>buttonColor("MasterSessions")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
-                        MasterSessions
-                        </Nav.Link>              
-                    </Nav>                
-                  </Navbar.Collapse>
-                </Navbar> 
             </div>
             <Container>
+            <Row  style={{marginTop:"0%"}} >
+               <div className="company_mobile">
+                  <div><button onClick={()=>buttonColor("Gigs")} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs</button></div>
+                  <div><button onClick={()=>buttonColor("MasterSessions")} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"fit-content",height:"30px",fontWeight:"bold",border:"0px"}}>MasterSessions</button></div>
+               </div>
+             </Row>
             <Row style={{marginTop:"5%"}} >
                <Col xs={9} className="SocialLearn_laptop">
                   <button onClick={()=>buttonColor("Gigs")} style={{marginLeft:"2%",marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs</button>

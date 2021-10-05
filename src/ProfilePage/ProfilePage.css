@@ -11,6 +11,9 @@
 .Mobilenum_input {
   width: 22%;
 }
+.mobile_nav_profile {
+  display: none;
+}
 .WorkEx_Mobile_view {
   display: none;
 }
@@ -40,7 +43,11 @@
   .Profile_list_laptop {
     display: none;
   }
-  .button_slide {
+  .mobile_nav_profile {
+    display: block;
+  }
+  .button_div {
+    margin-left: 0%;
     display: flex;
     flex-direction: row;
     justify-content: center;

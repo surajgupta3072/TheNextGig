@@ -216,7 +216,7 @@ function Personal(props) {
             <p><input value={quirky} onChange={e => setQuirky(e.target.value)} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
           <div className="button_div">
-          <button style={{marginTop:"10%"}} onClick={handleSubmit} className="button_slide">Save</button>
+          <div><button style={{marginTop:"10%"}} onClick={handleSubmit} className="button_slide">Save</button></div>
           </div>
           {props.p.wholedata.RewardP + props.p.wholedata.RewardE + props.p.wholedata.RewardW + props.p.wholedata.RewardS + props.p.wholedata.RewardC===100 &&
             props.p.wholedata.ReferredBy==="" &&
@@ -227,7 +227,7 @@ function Personal(props) {
                 {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
               </Col>
               <Col xs={4}>
-                <button style={{width:"100px",height:"35px",marginTop:"15%"}} onClick={RefCodeSubmit}>Save</button>
+                <button className="button_slide" style={{marginTop:"40%"}} onClick={RefCodeSubmit}>Save</button>
               </Col>
             </Row>
           }

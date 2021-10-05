@@ -92,11 +92,18 @@ h3 {
   margin-bottom: 3%;
   margin-top: 3%;
 }
+.company_mobile {
+  display: none !important;
+}
 @media screen and (max-width: 768px) {
   .pack {
     padding-top: 16%;
   }
   .expert_switchbtn {
     width: 50%;
+  }
+  .company_mobile {
+    display: flex !important;
+    justify-content: space-evenly;
   }
 }

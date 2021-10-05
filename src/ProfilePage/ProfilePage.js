@@ -25,6 +25,18 @@ function ProfilePage(props) {
   const [color4, setColor4] = useState({});
   const [color5, setColor5] = useState({});
   const [color6,setColor6]  = useState({});
+  const [color11,setColor11] =useState("#f26c4f");
+  const [textColor1,setextColor1] =useState("white");
+  const [color22,setColor22] =useState("white");
+  const [textColor2,setextColor2] =useState("#f26c4f");
+  const [color33,setColor33] =useState("white");
+  const [textColor3,setextColor3] =useState("#f26c4f");
+  const [color44,setColor44] =useState("white");
+  const [textColor4,setextColor4] =useState("#f26c4f");
+  const [color55,setColor55] =useState("white");
+  const [textColor5,setextColor5] =useState("#f26c4f");
+  const [color66,setColor66] =useState("white");
+  const [textColor6,setextColor6] =useState("#f26c4f");
   const [wholedata, setWholedata] = useState([]);
   const [rew, setRew] = useState(0);
   const [navbarHeading, setNavbarHeading] = useState("");
@@ -66,7 +78,48 @@ function ProfilePage(props) {
       return err
     }
   }, []);
-
+  function buttonColor(word){
+    setActive(word)
+    if(word==="Personal"){
+      setColor11("#f26c4f");setextColor1("white");setColor22("white");setextColor2("#f26c4f");setColor33("white");setextColor3("#f26c4f");
+      setColor44("white");setextColor4("#f26c4f");
+      setColor55("white");setextColor5("#f26c4f");
+      setColor66("white");setextColor6("#f26c4f");
+    }
+    if(word==="Education"){
+     setColor11("white");setextColor1("#f26c4f");setColor22("#f26c4f");setextColor2("white");setColor33("white");setextColor3("#f26c4f");
+     setColor44("white");setextColor4("#f26c4f");
+     setColor55("white");setextColor5("#f26c4f");
+     setColor66("white");setextColor6("#f26c4f");
+   }
+   if(word==="WorkEx"){
+     setColor11("white");setextColor1("#f26c4f");setColor22("white");setextColor2("#f26c4f");setColor33("#f26c4f");setextColor3("white");
+     setColor44("white");setextColor4("#f26c4f");
+     setColor55("white");setextColor5("#f26c4f");
+     setColor66("white");setextColor6("#f26c4f");
+   }
+   if(word==="Skills"){
+    setColor11("white");setextColor1("#f26c4f");setColor22("white");setextColor2("#f26c4f");
+    setColor33("white");setextColor3("#f26c4f");
+    setColor55("white");setextColor5("#f26c4f");
+    setColor66("white");setextColor6("#f26c4f");
+    setColor44("#f26c4f");setextColor4("white");
+  }
+  if(word==="CvPitch"){
+    setColor11("white");setextColor1("#f26c4f");setColor22("white");setextColor2("#f26c4f");
+    setColor33("white");setextColor3("#f26c4f");
+    setColor44("white");setextColor4("#f26c4f");
+    setColor66("white");setextColor6("#f26c4f");
+    setColor55("#f26c4f");setextColor5("white");
+  }
+  if(word==="FeedBack"){
+    setColor11("white");setextColor1("#f26c4f");setColor22("white");setextColor2("#f26c4f");
+    setColor33("white");setextColor3("#f26c4f");
+    setColor44("white");setextColor4("#f26c4f");
+    setColor55("white");setextColor5("#f26c4f");
+    setColor66("#f26c4f");setextColor6("white");
+  }
+  }
   wholedata.TotalRewards = rew;
   const pp = {
     setWholedata: setWholedata,
@@ -129,34 +182,20 @@ function ProfilePage(props) {
                   <div style={{marginBottom:"2%", textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{wholedata.ReferralCode}</b></p></div>
                 </div>
                 </div>
-                <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",  marginTop: "10%"}} expand="lg">
-                  <Navbar.Brand style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <p  style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{navbarHeading}</p>
-                  </Navbar.Brand>
-                  <Navbar.Toggle style={{backgroundColor: "grey"}}/>
-                  <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
-                  <Nav>
-                      <Nav.Link onClick={() => whichColor("Personal")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                      Personal
-                      </Nav.Link>
-                      <Nav.Link onClick={() => whichColor("Education")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                      Education
-                      </Nav.Link>
-                      <Nav.Link onClick={() => whichColor("WorkEx")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                      Work Experience
-                      </Nav.Link>                
-                      <Nav.Link onClick={() => whichColor("Skills")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                      Skills
-                      </Nav.Link>              
-                      <Nav.Link onClick={() => whichColor("CvPitch")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                      CV / Other Documents
-                      </Nav.Link>
-                      <Nav.Link onClick={() => whichColor("FeedBack")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                      Feedback & Comments
-                      </Nav.Link>
-                  </Nav>                
-                  </Navbar.Collapse>
-                </Navbar>
+                <div className="mobile_nav_profile">
+                <br/>
+                  <div style={{display:"flex",justifyContent:"space-evenly"}}>
+                  <div ><button onClick={() => buttonColor("Personal")} style={{backgroundColor:color11,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Personal</button></div>
+              <div><button onClick={() => buttonColor("Education")} style={{backgroundColor:color22,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Education</button></div>
+              <div><button onClick={() => buttonColor("WorkEx")} style={{backgroundColor:color33,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Work /Exp</button></div>
+                  </div>
+                  <br/>
+                  <div style={{display:"flex",justifyContent:"space-evenly"}}> 
+                  <div><button onClick={() => buttonColor("Skills")} style={{backgroundColor:color44,color:textColor4,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Skills</button></div>
+              <div><button onClick={() => buttonColor("CvPitch")} style={{backgroundColor:color55,color:textColor5,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>CV</button></div>
+              <div><button onClick={() => buttonColor("FeedBack")} style={{backgroundColor:color66,color:textColor6,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Feedback</button></div>
+                  </div>
+                </div>
               </Row>
               <br/>
               

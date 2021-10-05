@@ -111,28 +111,15 @@ function SocialLearningPage(props) {
                   <div style={{textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{myrefcode}</b></p></div>
                 </div> 
                 </div>
-                 <Navbar style={{background:"rgba(255, 255, 255, 0.1)", padding:"0px", width:"100%",   marginTop: "10%"}} expand="lg">
-                <Navbar.Brand >
-                  <p style={{color: "#fff", fontWeight:"700", fontSize:"24px", margin: "10px"}}>{active}</p>
-                </Navbar.Brand>
-                <Navbar.Toggle style={{backgroundColor: "grey"}}/>
-                <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
-                    <Nav>
-                        <Nav.Link onClick={()=>buttonColor("Videos")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
-                        Videos
-                        </Nav.Link>
-                        <Nav.Link onClick={()=>buttonColor("Blogs")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
-                        Blogs
-                        </Nav.Link>
-                        <Nav.Link onClick={()=>buttonColor("Community")} style={{color: "#fff", fontWeight:"700", fontSize:"16px", paddingLeft:"35px",border:"0px"}}>
-                        Community
-                        </Nav.Link>                
-                    </Nav>                
-                  </Navbar.Collapse>
-                </Navbar> 
               </Row>
               <br/>
-              
+              <Row style={{marginTop:"5%"}} >
+               <div style={{display:"flex",justifyContent:"space-evenly"}}>
+                  <div><button onClick={()=>buttonColor("Videos")} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Videos</button></div>
+                  <div><button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button></div>
+                  <div><button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button></div>
+               </div>
+             </Row>
             </Col>
             <Col>
              <Row style={{marginTop:"5%"}} >

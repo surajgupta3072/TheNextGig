@@ -127,19 +127,19 @@ function Page3(props) {
                     <p className="page3_cardtext">Project Details:</p>
                     <Row>
                       <Col>
-                        <Row  className="proj_det_laptop">
-                          <Col className="img_col" md={4}>
+                        <div style={{display:"flex",justifyContent:"space-evenly"}} className="proj_det_laptop">
+                          <div className="img_col">
                             <img
                               alt="..."
                               className="img_page3_card"
                               variant="top"
                               src="/imagetime.png"
                             />
-                          </Col>
-                          <Col className="text_col" md={7}>
+                          </div>
+                          <div className="text_col">
                             <h1 className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
-                          </Col>
-                        </Row>
+                          </div>
+                        </div>
                       </Col>
                       <Col>
                         <div className="proj_det_mobile d1">
