@@ -113,13 +113,13 @@ function SocialLearningPage(props) {
                 </div>
               </Row> */}
               <br/>
-               <Row style={{marginTop:"5%"}} >
-               {/* <div style={{display:"flex",justifyContent:"space-evenly"}}>
+               <div style={{marginTop:"5%"}} >
+                <div style={{display:"flex",justifyContent:"space-evenly"}}>
                   <div><button onClick={()=>buttonColor("Videos")} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Videos</button></div>
                   <div><button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button></div>
                   <div><button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button></div>
-               </div> */}
-             </Row> 
+               </div> 
+             </div> 
             </Col>
             <Col>
              <Row style={{marginTop:"5%"}} >
