@@ -103,7 +103,7 @@ function SocialLearningPage(props) {
               </div>
             </Col>
             <Col xs={12}  className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
-               <Row >
+              {/* <Row >
                 <div className="profile_logo_text_mobile" ><div><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
                 <div>
                   {user.attributes!==undefined && <div><p style={{fontSize:"18px", textAlign:"center"}}>{user.attributes.name}</p></div>}
@@ -111,7 +111,7 @@ function SocialLearningPage(props) {
                   <div style={{textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{myrefcode}</b></p></div>
                 </div> 
                 </div>
-              </Row> 
+              </Row> */}
               <br/>
               {/* <Row style={{marginTop:"5%"}} >
                <div style={{display:"flex",justifyContent:"space-evenly"}}>
@@ -128,7 +128,7 @@ function SocialLearningPage(props) {
                   <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button>
                   <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button>
                </Col>
-               {/* {active==="Videos" &&
+                {active==="Videos" &&
                 <Col>
                   {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>}
                   <MyVerticallyPopUp
@@ -147,7 +147,7 @@ function SocialLearningPage(props) {
                     onHide={() => setModalShow(false)}
                   />
                 </Col>
-                } */}
+                } 
              </Row>
                 {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
