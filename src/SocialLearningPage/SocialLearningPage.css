@@ -13,7 +13,10 @@
   height: 100%;
   transform: rotateZ(40deg);
 }
-
+.imp_know {
+  display: flex;
+  justify-content: flex-end;
+}
 .star {
   position: absolute;
   margin-top: 40%;
@@ -178,6 +181,10 @@
 @media screen and (max-width: 768px) {
   .SocialLearn_laptop {
     display: none;
+  }
+  .imp_know {
+    display: flex;
+    justify-content: center;
   }
   .profile_logo_text_laptop {
     display: none;

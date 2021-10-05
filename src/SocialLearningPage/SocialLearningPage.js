@@ -129,7 +129,7 @@ function SocialLearningPage(props) {
                   <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button>
                </Col>
              </Row>
-             {/* {active==="Videos" &&
+             <div className="imp_know"> {active==="Videos" &&
                 <div>
                   {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>}
                   <MyVerticallyPopUp
@@ -148,7 +148,8 @@ function SocialLearningPage(props) {
                     onHide={() => setModalShow(false)}
                   />
                 </div>
-                }  */}
+                } </div>
+                <br/>
                 {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Community" && <Community/>}

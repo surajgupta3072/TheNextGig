@@ -84,7 +84,7 @@ function Videos(props) {
         {videoslist===false && props.prop.map((vid)=>
           <div  key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
-               <div style={{border:"2px solid rgba(242, 108, 79, 0.6)"}}>
+               <div>
               <video style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video></div> :<div style={{border:"2px solid rgba(242, 108, 79, 0.6)"}}>
