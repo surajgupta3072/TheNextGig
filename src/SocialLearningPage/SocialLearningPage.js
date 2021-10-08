@@ -72,7 +72,7 @@ function SocialLearningPage(props) {
     return (
       <Container>
         <Row>
-            <Col xs={3} style={{backgroundColor:"#1B1C2A",height:"91vh"}} className="SocialLearn_laptop">
+            <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="SocialLearn_laptop">
               <Row style={{marginTop:"10%",marginLeft:"22%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"170px",borderRadius:"50%"}}/></Row>
               {user.attributes!==undefined ? <Row><p style={{fontSize:"20px", textAlign:"center", marginTop:"10px"}}>{user.attributes.name}</p></Row> : <Row><br/></Row>}
               <Row>
@@ -100,7 +100,7 @@ function SocialLearningPage(props) {
                 <br/>
               </div>
             </Col>
-            <div   className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
+            <div className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
                <div >
                 <div className="profile_logo_text_mobile" ><div><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
                 <div>
@@ -150,7 +150,7 @@ function SocialLearningPage(props) {
               </div>
                 {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
-                {active === "Community" && <Community/>}
+                {active === "Community" && <Community curruser={user} redirlog={redirectlogin}/>}
             </Col> 
           </Row>
       </Container>
