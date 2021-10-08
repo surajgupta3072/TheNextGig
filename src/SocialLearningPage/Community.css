@@ -11,12 +11,14 @@
   color: rgb(242, 108, 79);
 }
 .css-dar85v,
-.css-1ci66ko {
+.css-1ci66ko,
+.css-1q9r8rv {
   color: rgb(242, 108, 79) !important;
 }
 .css-c4yxs9,
 .css-1kto3a2,
-.css-nak6hv {
+.css-nak6hv,
+.css-s0w2zm-CometChatBadgeCount {
   background-color: black !important;
 }
 img {
@@ -33,9 +35,12 @@ img {
 .css-ra048q {
   background-image: url();
 }
-i,
+
 .css-oqag9p {
   background-color: rgb(242, 108, 79) !important;
+}
+i {
+  background-color: white !important;
 }
 .css-oo4eva > button[value="yes"],
 .css-oo4eva > button[value="no"] {
@@ -60,7 +65,8 @@ i,
 .css-xi606m,
 .css-1836g67,
 .css-1p1ib4y,
-.css-jtfp66 {
+.css-jtfp66,
+.css-apt4nl {
   color: black !important;
 }
 .css-1cgz8sa-CometChatBlockedUser {

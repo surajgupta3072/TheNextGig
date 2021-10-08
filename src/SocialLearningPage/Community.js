@@ -1,22 +1,23 @@
 import { CometChat } from "@cometchat-pro/chat";
 import { CometChatUI } from "./../cometchat-pro-react-ui-kit/CometChatWorkspace/src";
+import Container from 'react-bootstrap/Container';
 import "./Community.css"
 function Community(props) {
-  if(props.redirlog===false) {
+  if(props.auth.isAuthenticated===true) {
     const appID = "195321db052f943d";
     const region = "us";
     const authKey = "73fe83c3cc547f4c2f780760069bdd064627534c";
-    const uid = props.curruser.username;
+    const uid = props.auth.user.username;
     const appSetting = new CometChat.AppSettingsBuilder().subscribePresenceForAllUsers().setRegion(region).build();
       CometChat.init(appID, appSetting).then(() => {
         CometChat.login(uid, authKey).then(user => {console.log("Login Successful:", user)}).catch(error => {
             console.log("Login failed with exception:", error);
-            var uname = props.curruser.attributes.name;
+            var uname = props.auth.user.attributes.name;
             var user = new CometChat.User(uid);
             user.setName(uname);
             CometChat.createUser(user, authKey).then(user => {
                 console.log("User Created", user);
-                window.location.reload();
+                window.location.href="/TheNextGigCommunity"
               }).catch(error => {
                 console.log("error", error);
               });
@@ -28,10 +29,10 @@ function Community(props) {
   }
 
     return (
-      (props.redirlog===false) &&
-      <div style={{marginTop:"7%",border:"2px solid rgb(242, 108, 79)",marginBottom:"4%"}}>
+      (props.auth.isAuthenticated===true) &&
+      <Container><div style={{marginTop:"2%",border:"2px solid rgb(242, 108, 79)",marginBottom:"4%"}}>
         <CometChatUI style={{border:"0px"}}/>
-      </div>
+      </div></Container>
     )
 }
 

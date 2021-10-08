@@ -18,7 +18,7 @@ import SocialLearningPage from "./SocialLearningPage/SocialLearningPage";
 import jwt_decode from "jwt-decode";
 import docClient from './GigsPage/GigsAWS';
 import "./App.css";
-
+import Community from "./SocialLearningPage/Community";
 function App() {
   const [user, setUser] = useState(null);
   const [isAuthenticating, setAuthenticatingStatus] = useState(true);
@@ -82,6 +82,9 @@ function App() {
             <Switch>
               <Route exact path="/login">
                 <LoginPage auth={authProps} />
+              </Route>
+              <Route exact path="/TheNextGigCommunity">
+                <Community auth={authProps} />
               </Route>
               <Route exact path="/register">
                 <RegisterPage />

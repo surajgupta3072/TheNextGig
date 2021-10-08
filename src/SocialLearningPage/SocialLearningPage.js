@@ -115,7 +115,7 @@ function SocialLearningPage(props) {
                 <div style={{display:"flex",justifyContent:"space-evenly"}}>
                   <div><button onClick={()=>buttonColor("Videos")} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Videos</button></div>
                   <div><button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button></div>
-                  <div><button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button></div>
+                  <div><button onClick={()=>{buttonColor("Community");window.location.href="/TheNextGigCommunity"}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button></div>
                </div> 
              </div> 
             </div>
@@ -124,7 +124,7 @@ function SocialLearningPage(props) {
                <Col xs={9} className="SocialLearn_laptop">
                   <button onClick={()=>buttonColor("Videos")} style={{marginLeft:"2%",marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Videos</button>
                   <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button>
-                  <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button>
+                  <button onClick={()=>{buttonColor("Community");window.location.href="/TheNextGigCommunity"}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button>
                </Col>
              </Row>
               <div className="imp_know"> {active==="Videos" &&
@@ -150,7 +150,6 @@ function SocialLearningPage(props) {
               </div>
                 {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
-                {active === "Community" && <Community curruser={user} redirlog={redirectlogin}/>}
             </Col> 
           </Row>
       </Container>
