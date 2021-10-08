@@ -78,9 +78,6 @@ function Personal(props) {
                           console.log(err);
                         } 
                         else {
-                          props.p.wholedata.ReferredBy = data.Attributes.ReferredBy;
-                          props.p.wholedata.TotalRewards = data.Attributes.TotalRewards;
-                          props.p.setWholedata(props.p.wholedata);
                           window.location.reload();
                         }
                       });
@@ -205,12 +202,6 @@ function Personal(props) {
               </div>
             </Col>
           </Row>
-          <Row>
-            <Col style={{marginTop:"2%"}}>
-              <p><span style={{fontSize:"20px"}}>Mobile Number</span></p>
-              <input value={mobile} onChange={e => setMobile(e.target.value)} style={{height:"35px"}} className="Mobilenum_input"></input>
-            </Col>
-          </Row>
           <Row style={{marginTop:"2%"}}>
             <p style={{fontSize:"20px"}}>Something quirky about you?</p>
             <p><input value={quirky} onChange={e => setQuirky(e.target.value)} style={{width:"100%",height:"35px"}}></input></p>
@@ -218,8 +209,7 @@ function Personal(props) {
           <div className="button_div">
           <div><button style={{marginTop:"10%"}} onClick={handleSubmit} className="button_slide">Save</button></div>
           </div>
-          {props.p.wholedata.RewardP + props.p.wholedata.RewardE + props.p.wholedata.RewardW + props.p.wholedata.RewardS + props.p.wholedata.RewardC===100 &&
-            props.p.wholedata.ReferredBy==="" &&
+          {props.p.wholedata.ReferredBy==="" &&
             <Row style={{marginTop:"2%"}}>
               <Col xs={6}>
                 <p style={{fontSize:"20px"}}>Referral Code</p>
@@ -227,10 +217,16 @@ function Personal(props) {
                 {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
               </Col>
               <Col xs={4}>
-                <button className="button_slide" style={{marginTop:"40%"}} onClick={RefCodeSubmit}>Save</button>
+                <button style={{marginTop:"17%"}} onClick={RefCodeSubmit}>Save</button>
               </Col>
             </Row>
           }
+          <Row>
+            <Col style={{marginTop:"2%"}}>
+              <p><span style={{fontSize:"20px"}}>Mobile Number</span></p>
+              <input value={mobile} onChange={e => setMobile(e.target.value)} style={{height:"35px"}} className="Mobilenum_input"></input>
+            </Col>
+          </Row>
         </Container>
       </div>
     );

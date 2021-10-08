@@ -8,12 +8,9 @@ import FeedBack  from './Feedback';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ProgressBar from 'react-bootstrap/ProgressBar'
-// import {Linkedin} from "react-bootstrap-icons";
-import './ProfilePage.css'
+import ProgressBar from 'react-bootstrap/ProgressBar';
 import docClient from '../GigsPage/GigsAWS';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import './ProfilePage.css';
 
 function ProfilePage(props) {
   const bg = {backgroundColor: "#F26C4F"};
@@ -187,7 +184,7 @@ function ProfilePage(props) {
                   <div style={{display:"flex",justifyContent:"space-evenly"}}>
                   <div ><button onClick={() => buttonColor("Personal")} style={{backgroundColor:color11,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Personal</button></div>
               <div><button onClick={() => buttonColor("Education")} style={{backgroundColor:color22,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Education</button></div>
-              <div><button onClick={() => buttonColor("WorkEx")} style={{backgroundColor:color33,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Work /Exp</button></div>
+              <div><button onClick={() => buttonColor("WorkEx")} style={{backgroundColor:color33,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Work Ex</button></div>
                   </div>
                   <br/>
                   <div style={{display:"flex",justifyContent:"space-evenly"}}> 

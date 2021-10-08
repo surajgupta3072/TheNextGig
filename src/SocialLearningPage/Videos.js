@@ -78,11 +78,11 @@ function Videos(props) {
   return (
     <div>
       <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
-      <button className="search_button" style={{background:"rgb(242, 108, 79)", color:"white", border:"0", borderRadius:"20px"}} onClick={searchFilter} type="submit">Search</button>
+      <button className="search_button" onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button>
       <br/><br/>
       <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
         {videoslist===false && props.prop.map((vid)=>
-          <div  key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
+          <div key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
                <div>
               <video className="vid" style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
@@ -93,10 +93,9 @@ function Videos(props) {
               </video></div>
             }
             <div>
-              <h5 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>
-              <p className="text" style={{padding:"0", margin:"0"}}>{vid.VideoHashtags}</p>
-              <h5 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoUsername}</h5>
-              <h6 className="text" style={{padding:"0", margin:"0"}}>{vid.VideoCreds}</h6>
+              <h5 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h5>
+              <h6 style={{padding:"0", margin:"0"}}>{vid.VideoUsername} - {vid.VideoCreds}</h6>
+              <p className="text" style={{padding:"0", margin:"0", color:"grey"}}>{vid.VideoHashtags}</p>
             </div>
             <br/>
           </div>
@@ -112,10 +111,9 @@ function Videos(props) {
               </video>
             }
             <div>
-              <h5 style={{padding:"0", margin:"0"}}>{vid.VideoTopic}</h5>
-              <p style={{padding:"0", margin:"0"}}>{vid.VideoHashtags}</p>
-              <h5 style={{padding:"0", margin:"0"}}>{vid.VideoUsername}</h5>
-              <h6 style={{padding:"0", margin:"0"}}>{vid.VideoCreds}</h6>
+              <h5 style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h5>
+              <h6 style={{padding:"0", margin:"0"}}>{vid.VideoUsername} - {vid.VideoCreds}</h6>
+              <p style={{padding:"0", margin:"0", color:"grey"}}>{vid.VideoHashtags}</p>
             </div>
             <br/>
           </div>

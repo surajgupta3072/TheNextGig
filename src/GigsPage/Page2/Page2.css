@@ -44,8 +44,8 @@
 .mobile_view_of_icons {
   display: none;
 }
-.mast_page2_p2 {
-  font-size: 16px !important;
+.mast_page2_p2_gigs {
+  font-size: 16px;
 }
 .btn_div {
   margin-left: 20%;
@@ -95,7 +95,7 @@
     box-sizing: border-box;
     box-shadow: 0px 2px 2px rgb(255 255 255 / 25%);
   }
-  .mast_page2_p2 {
+  .mast_page2_p2_gigs {
     text-align: center;
   }
   .mast_page2_p3 {

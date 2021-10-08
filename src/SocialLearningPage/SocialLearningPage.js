@@ -8,8 +8,6 @@ import Community from './Community';
 import docClient from '../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popupVideo';
 import MyVerticallyPopUpBlog  from './popupBlog';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 
 function SocialLearningPage(props) {
   const [modalShow, setModalShow] = useState(false);
@@ -74,7 +72,7 @@ function SocialLearningPage(props) {
     return (
       <Container>
         <Row>
-            <Col xs={3} style={{backgroundColor:"#1B1C2A",height:"fit-content"}} className="SocialLearn_laptop">
+            <Col xs={3} style={{backgroundColor:"#1B1C2A",height:"91vh"}} className="SocialLearn_laptop">
               <Row style={{marginTop:"10%",marginLeft:"22%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"170px",borderRadius:"50%"}}/></Row>
               {user.attributes!==undefined ? <Row><p style={{fontSize:"20px", textAlign:"center", marginTop:"10px"}}>{user.attributes.name}</p></Row> : <Row><br/></Row>}
               <Row>
@@ -129,7 +127,7 @@ function SocialLearningPage(props) {
                   <button onClick={()=>buttonColor("Community")} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button>
                </Col>
              </Row>
-             <div className="imp_know"> {active==="Videos" &&
+              <div className="imp_know"> {active==="Videos" &&
                 <div>
                   {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>}
                   <MyVerticallyPopUp
@@ -148,8 +146,8 @@ function SocialLearningPage(props) {
                     onHide={() => setModalShow(false)}
                   />
                 </div>
-                } </div>
-                <br/>
+                } 
+              </div>
                 {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Community" && <Community/>}

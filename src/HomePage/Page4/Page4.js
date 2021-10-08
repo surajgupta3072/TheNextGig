@@ -28,12 +28,8 @@ function Page4() {
                     <Row style={{marginTop: "15%"}} xs={12}>
                         <Row>
                             <h1 className="heading_1">Practice what you <span style={{ textDecorationLine: 'line-through', textDecorationColor: "#F26C4F"}} className="heading_1span">preach.</span></h1>
-                        </Row>
-                        <Row>
-                            </Row>
-                        <Row>
                             <h1 className="heading_2" style={{color: "#F26C4F"}} >learn.</h1>
-                        </Row> 
+                        </Row>
                     </Row>                   
                 </Col>
                 <Col className="main_col1" md={4}>
@@ -132,8 +128,6 @@ function Page4() {
                     <div style={{marginTop: "15%"}}>
                         <div>
                             <h1 style={{textAlign:"center"}} className="heading_1">Practice what you <span style={{ textDecorationLine: 'line-through', textDecorationColor: "#F26C4F"}} className="heading_1span">preach.</span></h1>
-                        </div>
-                         <div>
                             <h1 className="heading_2" style={{color: "#F26C4F",textAlign:"center"}} >learn.</h1>
                         </div> 
                     </div>                   

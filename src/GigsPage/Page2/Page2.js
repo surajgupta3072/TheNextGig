@@ -13,11 +13,11 @@ function Page2() {
       <Row>
        <Col className="gig_text_laptop_view" md={7}>
          
-         <p className="mast_page2_p2">Learn from the best.</p>
+         <p className="mast_page2_p2_gigs">Learn from the best.</p>
          <div>
            <Row className="check_masterclass">
              <div >
-             <div className="btn_div1"><button className="btn_recommend"><a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"white"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> </button></div>
+             <div className="btn_div1"><button className="btn_recommend"><a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"white"}} className="mast_page2_p2_gigs">Check out our  <br /> masterclasses. </p> </a> </button></div>
              </div>
              <div className="zingerx">
              <div> <a href="/masterclass"><ArrowRight className="button_arrow_gig"/></a></div>
@@ -30,10 +30,10 @@ function Page2() {
        </Col> 
        <Col className="gigs_page_text_mobile" md={7}>
          
-         <p className="mast_page2_p2">Learn from the best.</p>
+         <p className="mast_page2_p2_gigs">Learn from the best.</p>
          <div>
              <div >
-             <div className="btn_div"><div><button className="btn_recommend"><a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"white"}} className="mast_page2_p2">Check out our  <br /> masterclasses. </p> </a> </button></div></div>
+             <div className="btn_div"><div><button className="btn_recommend"><a style={{textDecoration:"none"}} href="/masterclass"><p style={{color:"white"}} className="mast_page2_p2_gigs">Check out our  <br /> masterclasses. </p> </a> </button></div></div>
              </div>
              <div className="zingerx">
              <div> <a href="/masterclass"><ArrowRight className="button_arrow_gig"/></a></div>

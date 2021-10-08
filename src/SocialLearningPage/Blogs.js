@@ -93,7 +93,7 @@ function Blogs(props) {
   return (
     <div>
       <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}}  value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Blog..." type="search"/>&nbsp;&nbsp;&nbsp;
-      <button className="search_button" style={{background:"rgb(242, 108, 79)", color:"white", border:"0", borderRadius:"20px"}} onClick={searchFilter} type="submit">Search</button>
+      <button className="search_button" onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button>
       <br/><br/>
       <div  style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around" }}>
         {!readsingleblog && allBlogs.map((blog)=>
