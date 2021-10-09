@@ -58,7 +58,7 @@ function MyVerticallyPopUp(props) {
                     if (err) {
                       console.log(err);
                     } else {
-                      alert("VIDEO POSTED")
+                      alert("VIDEO POSTED");
                       window.location.reload();
                     }
                   });

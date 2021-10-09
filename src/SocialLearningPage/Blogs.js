@@ -85,6 +85,33 @@ function Blogs(props) {
           if (err) {
             console.log(err);
           }
+          else {
+            var paramss = {
+              TableName: "UsersTable",
+              Key: { "UserID":props.userid },
+              ProjectionExpression: "SkillsAcquiredBlogs",
+            };
+            docClient.get(paramss, function(err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                  var params = {
+                    TableName: "UsersTable",
+                    Key: { "UserID":props.userid },
+                    UpdateExpression: "set SkillsAcquiredBlogs["+data.Item.SkillsAcquiredBlogs.length.toString()+"] = :sab",
+                    ExpressionAttributeValues:{
+                      ":sab": blog.BlogHashtags.split(" ")
+                    },
+                    ReturnValues:"UPDATED_NEW"
+                  }
+                  docClient.update(params, function (err, data) {
+                    if (err) {
+                      console.log(err);
+                    }
+                  });
+                }
+            });
+          }
         });
       }
     });

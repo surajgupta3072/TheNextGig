@@ -1,7 +1,7 @@
 import { CometChat } from "@cometchat-pro/chat";
 import { CometChatUI } from "./../cometchat-pro-react-ui-kit/CometChatWorkspace/src";
-import Container from 'react-bootstrap/Container';
-import "./Community.css"
+import "./Community.css";
+
 function Community(props) {
   if(props.auth.isAuthenticated===true) {
     const appID = "195321db052f943d";
@@ -30,9 +30,9 @@ function Community(props) {
 
     return (
       (props.auth.isAuthenticated===true) &&
-      <Container><div style={{marginTop:"2%",border:"2px solid rgb(242, 108, 79)",marginBottom:"4%"}}>
-        <CometChatUI style={{border:"0px"}}/>
-      </div></Container>
+        <div style={{margin:"2%", border:"2px solid rgb(242, 108, 79)"}}>
+          <CometChatUI/>
+        </div>
     )
 }
 

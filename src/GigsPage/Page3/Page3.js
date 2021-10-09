@@ -271,7 +271,7 @@ function Page3(props) {
                     className="text_page3_card applyby_text"
                     style={{ marginTop: "0%" }}
                   >
-                    <i> Apply by {gigs[0].GigApplyBy} </i>
+                    <em> Apply by {gigs[0].GigApplyBy} </em>
                   </p>
                 </div>
               </Col>

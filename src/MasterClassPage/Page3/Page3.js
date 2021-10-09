@@ -149,6 +149,7 @@ function Page3(props) {
                     uid={props.prop.username}
                     cid={session.id}
                     cname={session.course_name}
+                    crole={session.course_role}
                     fees={session.fees}
                     show={modalShow}
                     onHide={() => setModalShow(false)}
@@ -177,6 +178,7 @@ function Page3(props) {
                     uid={props.prop.username}
                     cid={session.id}
                     cname={session.course_name}
+                    crole={session.course_role}
                     fees={session.fees}
                     show={modalShow}
                     onHide={() => setModalShow(false)}
@@ -219,6 +221,7 @@ function Page3(props) {
                             uid={props.prop.username}
                             cid={session.id}
                             cname={session.course_name}
+                            crole={session.course_role}
                             fees={session.fees}
                             show={modalShow}
                             onHide={() => setModalShow(false)}
@@ -273,6 +276,7 @@ function Page3(props) {
                             uid={props.prop.username}
                             cid={session.id}
                             cname={session.course_name}
+                            crole={session.course_role}
                             fees={session.fees}
                             show={modalShow}
                             onHide={() => setModalShow(false)}
@@ -347,28 +351,6 @@ function Page3(props) {
         </Row>
       </Container>
       <br/><br/>
-      {/* <div className="Whats_inforyou_desktop_view">
-        <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around", marginTop: "6%", marginBottom: "6%"}}>
-          <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
-            <h5>Preference for Marketing <span style={{color: "#f26c4f"}}>gigs / internships / jobs</span></h5>
-          </div>
-          <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
-            <h5>Re-learn the Marketing Fundamentals from the <span style={{color: "#f26c4f"}}>Best</span></h5>
-          </div>
-        </div>
-        <div style={{display: "flex", flexDirection: "row", justifyContent: "space-around", marginTop: "6%", marginBottom: "6%"}}>
-          <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
-            <h5>Certificate from TheNextGig in association with <span style={{color: "#f26c4f"}}>Anil Nair</span></h5>
-          </div>
-          <div width="50%" height="50%" style={{display: "flex", flexDirection: "column",alignItems: "center"}}>
-            <img alt="..." src="/imageh.png" height="100px" width="160px"/>
-            <h5>Sneak peek into real-life <span style={{color: "#f26c4f"}}>marketing</span></h5>
-          </div>
-        </div>
-      </div> */}
       <div className="Whats_inforyou_mobile_view">
         <Container style={{display: "flex", flexDirection: "column", justifyContent: "space-around",marginTop:"-60px"}}>
         <Row>
@@ -473,19 +455,6 @@ function Page3(props) {
           </Carousel>
           </div>
           </div>
-          {/* {<div className="container2_page3" style={{paddingLeft: "0", marginLeft: "0"}}>
-          <Container className="rectangle-box3" style={{marginTop:"7%"}}>
-            <Row >
-              <Col style={{padding:"3%"}} md={8}>
-                <p  className="mast_page2_p3">Want to provide feeback on the session!</p>
-              </Col>
-              <Col style={{paddingLeft:"12%",paddingTop:"3%"}} className="col-button">
-                <button style={{marginLeft:"20%"}} className="button_slide slide_right">We're listening
-                <ArrowLeft className="button_arrow"/></button>
-              </Col>
-            </Row>
-          </Container>
-          </div>} */}
           <div >
             <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>

@@ -36,15 +36,10 @@ function MyVerticallyPopUp(props) {
             console.log(err);
           } 
           else {
-            var gigapplen;
-            if(data.Item.gigsApplications===undefined)
-              gigapplen = 0
-            else
-              gigapplen = data.Item.gigsApplications.length
             var params = {
               TableName: "UsersTable",
               Key: { "UserID": props.userid },
-              UpdateExpression: "set gigsApplications["+gigapplen.toString()+"] = :g",
+              UpdateExpression: "set gigsApplications["+data.Item.gigsApplications.length.toString()+"] = :g",
               ExpressionAttributeValues:{
                 ":g":adata,
               },

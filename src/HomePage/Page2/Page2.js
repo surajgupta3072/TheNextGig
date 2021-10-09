@@ -18,7 +18,7 @@ function Page2() {
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >MASTERCLASSES</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Short. Expert-driven. Real-life cases. And a <i> whole lot of value </i>!  
+                  Short. Expert-driven. Real-life cases. And a <em> whole lot of value </em>!  
                   </Card.Text>
                 </Card.Body>
             </Card>
@@ -67,7 +67,7 @@ function Page2() {
                 <Col>
                   <Card.Title style={{fontSize:"20px",textAlign:"center"}}>MASTERCLASSES</Card.Title>
                   <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
-                  Short. Expert-driven. <br /> Real-life cases.<br /> And a <i> whole lot of value </i>!  
+                  Short. Expert-driven. <br /> Real-life cases.<br /> And a <em> whole lot of value </em>!  
                   </Card.Text>
                 </Col>
               </div>

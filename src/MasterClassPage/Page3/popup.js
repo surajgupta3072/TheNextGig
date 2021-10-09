@@ -53,15 +53,10 @@ function MyVerticallyPopUp(props) {
           if (err) {
             console.log(err);
           } else {
-            var purlen;
-            if(data.Item.MasterclassesPurchased===undefined)
-              purlen = 0
-            else
-              purlen = data.Item.MasterclassesPurchased.length
             var params = {
               TableName: "UsersTable",
               Key: { "UserID":props.uid },
-              UpdateExpression: "set MasterclassesPurchased["+purlen.toString()+"] = :ms",
+              UpdateExpression: "set MasterclassesPurchased["+data.Item.MasterclassesPurchased.length.toString()+"] = :ms",
               ExpressionAttributeValues:{
                 ":ms":props.cid,
               },
@@ -80,15 +75,39 @@ function MyVerticallyPopUp(props) {
                   },
                   ReturnValues:"UPDATED_NEW"
                 }
-                console.log(params)
                 docClient.update(params, function (err, data) {
                   if (err) {
                     console.log(err);
                   } else {
-                    console.log(data)
                     setReward(0);
                     alert("PAYMENT SUCCESSFUL");
-                    window.location.reload();
+                    var paramss = {
+                      TableName: "UsersTable",
+                      Key: { "UserID":props.uid },
+                      ProjectionExpression: "SkillsAcquiredMastersessions",
+                    };
+                    docClient.get(paramss, function(err, data) {
+                      if (err) {
+                        console.log(err);
+                      } else {
+                          var params = {
+                            TableName: "UsersTable",
+                            Key: { "UserID":props.uid },
+                            UpdateExpression: "set SkillsAcquiredMastersessions["+data.Item.SkillsAcquiredMastersessions.length.toString()+"] = :sam",
+                            ExpressionAttributeValues:{
+                              ":sam":props.crole,
+                            },
+                            ReturnValues:"UPDATED_NEW"
+                          }
+                          docClient.update(params, function (err, data) {
+                            if (err) {
+                              console.log(err);
+                            } else {
+                              window.location.reload();
+                            }
+                          });
+                        }
+                    });
                   }
                 });
               }

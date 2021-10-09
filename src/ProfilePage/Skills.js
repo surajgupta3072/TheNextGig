@@ -150,10 +150,30 @@ function Skills(props) {
           <br/><br/>
           <Row>
             <Col md={12}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills acquired through the platform</p></Col>
-            <Col md={12}><em><p style={{fontSize:"18px"}}>Through Mastersessions</p></em></Col>
-            <Col md={12}><em><p style={{fontSize:"18px"}}>Through Gigs / Internship</p></em></Col>
-            <Col md={12}><em><p style={{fontSize:"18px"}}>Through Social Learning - Videos</p></em></Col>
-            <Col md={12}><em><p style={{fontSize:"18px"}}>Through Social Learning - Blogs</p></em></Col>
+            <Col md={12}>
+              <em><p style={{fontSize:"18px"}}>Through Mastersessions:<br/>
+              {props.p.wholedata.SkillsAcquiredMastersessions.map((msk)=> 
+                <span>{msk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              )}</p></em>
+            </Col>
+            <Col md={12}>
+              <em><p style={{fontSize:"18px"}}>Through Gigs / Internship:<br/>
+              {props.p.wholedata.SkillsAcquiredGigs.map((gsk)=> 
+                <span>{gsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              )}</p></em>
+            </Col>
+            <Col md={12}>
+              <em><p style={{fontSize:"18px"}}>Through Social Learning - Videos:<br/>
+              {props.p.wholedata.SkillsAcquiredVideos.map((vsk)=> 
+                <span>{vsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              )}</p></em>
+            </Col>
+            <Col md={12}>
+              <em><p style={{fontSize:"18px"}}>Through Social Learning - Blogs:<br/>
+              {props.p.wholedata.SkillsAcquiredBlogs.map((bsk)=> 
+                <span>{bsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              )}</p></em>
+            </Col>
           </Row>
          </Container>
       </div>
