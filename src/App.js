@@ -17,8 +17,11 @@ import ProtectedRoute from "./GuardedRoute";
 import SocialLearningPage from "./SocialLearningPage/SocialLearningPage";
 import jwt_decode from "jwt-decode";
 import docClient from './GigsPage/GigsAWS';
-import "./App.css";
 import Community from "./SocialLearningPage/Community";
+import ForgotPasswordPage from "./AuthPage/ForgotPasswordPage";
+import ChangePasswordPage from "./AuthPage/ChangePasswordPage";
+import "./App.css";
+
 function App() {
   const [user, setUser] = useState(null);
   const [isAuthenticating, setAuthenticatingStatus] = useState(true);
@@ -82,6 +85,12 @@ function App() {
             <Switch>
               <Route exact path="/login">
                 <LoginPage auth={authProps} />
+              </Route>
+              <Route exact path="/forgotpassword">
+                <ForgotPasswordPage/>
+              </Route>
+              <Route exact path="/changepassword">
+                <ChangePasswordPage/>
               </Route>
               <Route exact path="/TheNextGigCommunity">
                 <Community auth={authProps} />

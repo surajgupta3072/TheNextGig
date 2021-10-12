@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import Personal from './Personal';
 import Education from './Education';
 import WorkEx from './WorkEx';
@@ -10,7 +10,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import docClient from '../GigsPage/GigsAWS';
+import S3 from 'react-aws-s3';
 import './ProfilePage.css';
+
+const config = {bucketName: "usersdp", region: process.env.REACT_APP_REGION, accessKeyId: process.env.REACT_APP_ACCESS_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY};
+const ReactS3Client = new S3(config);
 
 function ProfilePage(props) {
   const bg = {backgroundColor: "#F26C4F"};
@@ -36,6 +40,7 @@ function ProfilePage(props) {
   const [textColor6,setextColor6] =useState("#f26c4f");
   const [wholedata, setWholedata] = useState([]);
   const [rew, setRew] = useState(0);
+  const [dplink, setDplink]=useState("");
   const [navbarHeading, setNavbarHeading] = useState("");
 
 
@@ -68,6 +73,10 @@ function ProfilePage(props) {
         } 
         else {
           setRew(data.Item.TotalRewards);
+          if(data1.Items[0].DPlink!==undefined)
+            setDplink(data1.Items[0].DPlink);
+          else
+            setDplink("./google_logo.jpg")  
         }
       });
     }     
@@ -75,6 +84,35 @@ function ProfilePage(props) {
       return err
     }
   }, []);
+
+  function onChangePicture(e) {
+    const dpv = e.target.files[0];
+    if (dpv!==undefined) {
+      config.dirName = props.auth.user.username 
+      ReactS3Client.uploadFile(dpv,dpv.name).then(data => {
+        var params = {
+          TableName: "UsersTable",
+          Key: { "UserID": props.auth.user.username },
+          UpdateExpression: "set DPlink = :dp",
+          ExpressionAttributeValues:{
+            ":dp": data.location,
+          },
+          ReturnValues:"UPDATED_NEW"
+        }
+        docClient.update(params, function (err, data) {
+          if (err) {
+            console.log(err);
+          } 
+          else {
+            window.location.reload();
+          }
+        });
+      });
+    }
+  };
+
+
+
   function buttonColor(word){
     setActive(word)
     if(word==="Personal"){
@@ -152,7 +190,10 @@ function ProfilePage(props) {
             <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="Profile_list_laptop">
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`}/>
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
-              <Row style={{marginTop:"7%",marginLeft:"22%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"170px",borderRadius:"50%"}}/></Row>
+              <Row style={{marginTop:"7%",marginLeft:"22%"}}>
+                <input type="file" onChange={(e)=>onChangePicture(e)}/>
+                <img alt="dp" src={dplink}  style={{height:"150px",width:"170px",borderRadius:"50%"}}/>
+              </Row>
               <br/>
               <Row><p style={{fontSize:"16px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></Row>
               <Row style={{marginBottom:"1%", textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{wholedata.ReferralCode}</b></p></Row>

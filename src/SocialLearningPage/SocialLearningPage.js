@@ -7,7 +7,7 @@ import Blogs from './Blogs';
 import docClient from '../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popupVideo';
 import MyVerticallyPopUpBlog  from './popupBlog';
-import {Linkedin} from 'react-bootstrap-icons';
+
 function SocialLearningPage(props) {
   const [modalShow, setModalShow] = useState(false);
   const [active, setActive] =  useState("Videos");
@@ -18,10 +18,10 @@ function SocialLearningPage(props) {
   const [color3,setColor3] =useState("white");
   const [textColor3,setextColor3] =useState("#f26c4f");
   const [rew, setRew] = useState(0);
-  const [myrefcode, setMyRefCode] = useState("");
   const [allvideos, setAllvideos] = useState([]);
   const [user, setUser] = useState("");
   const [redirectlogin, setRedirectLogin] = useState(true);
+  const [dplink, setDplink]=useState("");
 
   useEffect(() => {
     var paramss = {
@@ -50,7 +50,10 @@ function SocialLearningPage(props) {
           console.log(err);
         } else {
           setRew(data.Item.TotalRewards);
-          setMyRefCode(data.Item.ReferralCode);
+          if(data.Item.DPlink!==undefined)
+            setDplink(data.Item.DPlink);
+          else
+            setDplink("./google_logo.jpg")
         }
       });
     }
@@ -70,26 +73,27 @@ function SocialLearningPage(props) {
    }
     return (
       <div>
-        <div className="social_learning_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F"}}>SOCIAL LEARNING</h1><p style={{fontFamily:"Open Sans"}}>This is your one-stop solution for learning anything under the sun......in anything less than 10 minutes!</p><p style={{fontStyle:"italic",fontSize:"12px",marginTop:"-10px"}}>PS: Uploading videos or blogs or being actively involved in community discussions earns you reward points, personal branding and a whole lot of confidence :<br/>)</p></Container></div>
+        <div className="social_learning_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F"}}>SOCIAL LEARNING</h1><p style={{fontFamily:"Open Sans"}}>This is your one-stop solution for learning anything under the sun......in anything less than 10 minutes!</p><p style={{fontStyle:"italic",fontSize:"12px",marginTop:"-10px"}}>PS: Uploading videos or blogs or being actively involved in community discussions earns you reward points, personal branding and a whole lot of confidence :)</p></Container></div>
       <Container>
         <Row>
-            <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="SocialLearn_laptop">
-              <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></span>:<br/>}<Linkedin style={{height:"30px",width:"30px",marginLeft:"35px"}}/></Col></Row>
+            <Col xs={3} style={{backgroundColor:"#1B1C2A", height:"68vh", display:"fixed", top:"0"}} className="SocialLearn_laptop">
+              <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src={dplink} style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></span>:<br/>}</Col></Row>
+              <br/>
               <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading {active==="Videos"?"videos":"blogs"
-}:
-<br/>
-<br/>
-<ul><li>Teach something you are good at or something you’ve learnt recently</li>
-<li>Talk about it as if you are explaining it to a 5 year old</li>
-<li>Don’t worry about your background or surroundings - just open your camera, focus on what you want to say and smile</li>
-</ul>
-It’s easier than you think :)
-<br/>
+              }:
+              <br/>
+              <br/>
+              <ul><li>Teach something you are good at or something you’ve learnt recently</li>
+              <li>Talk about it as if you are explaining it to a 5 year old</li>
+              <li>Don’t worry about your background or surroundings - just open your camera, focus on what you want to say and smile</li>
+              </ul>
+              It’s easier than you think :)
+              <br/>
               </div>
             </Col>
             <div className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
-               <div >
-                <div className="profile_logo_text_mobile" ><div><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
+               <div>
+                <div className="profile_logo_text_mobile" ><div><img alt="dp" src={dplink} style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
                 <div>
                   {user.attributes!==undefined && <div><p style={{fontSize:"18px", textAlign:"center"}}>{user.attributes.name}</p></div>}
                   <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></div>
