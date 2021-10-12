@@ -7,7 +7,7 @@ import Blogs from './Blogs';
 import docClient from '../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popupVideo';
 import MyVerticallyPopUpBlog  from './popupBlog';
-
+import {Linkedin} from 'react-bootstrap-icons';
 function SocialLearningPage(props) {
   const [modalShow, setModalShow] = useState(false);
   const [active, setActive] =  useState("Videos");
@@ -69,34 +69,21 @@ function SocialLearningPage(props) {
     }
    }
     return (
+      <div>
+        <div className="social_learning_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F",paddingTop:"25px"}}>SOCIAL LEARNING</h1><p style={{fontFamily:"Open Sans"}}>This is your one-stop solution for learning anything under the sun......in anything less than 10 minutes!</p><p style={{fontStyle:"italic",fontSize:"12px",marginTop:"-10px"}}>PS: Uploading videos or blogs or being actively involved in community discussions earns you reward points, personal branding and a whole lot of confidence :)</p></Container></div>
       <Container>
         <Row>
             <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="SocialLearn_laptop">
-              <Row style={{marginTop:"10%",marginLeft:"22%"}}><img alt="dp" src="google_logo.jpg" style={{height:"150px",width:"170px",borderRadius:"50%"}}/></Row>
-              {user.attributes!==undefined ? <Row><p style={{fontSize:"20px", textAlign:"center", marginTop:"10px"}}>{user.attributes.name}</p></Row> : <Row><br/></Row>}
-              <Row>
-                <p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p>
-                <p style={{textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{myrefcode}</b></p></p>
-              </Row>
-              <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <br/>
-              <div style={{fontSize:"14px",marginLeft:"7px"}}>Why <span style={{color:"#F26C4F"}}>watch </span>{active==="Videos"?"videos":active==="Blogs"?"blog":"community"} ?
-                <br/>
-                <br/>
-                <span style={{color:"#F26C4F"}}>Learn </span>new skills and <span style={{color:"#F26C4F"}}>add </span> them to your <span style={{color:"#F26C4F"}}>profile</span> 
-                <br/>
-                <br/>
-                Why upload <span style={{color:"#F26C4F"}}>{active==="Videos"?"videos":active==="Blogs"?"blog":"community"} </span>?
-                <br/>
-                <br/>
-                <span style={{color:"#F26C4F"}}>Teach </span>new skills and and gain <span style={{color:"#F26C4F"}}>satisfaction </span>of spreading knowledge <span style={{fontSize:"11px"}}>(and gain reward points)</span>
-                <br/>
-                <br/>
-                <span style={{fontSize:"11px",color:"white",marginTop:"4px"}}>
-                PS: It is usually said that best way to know that you are a master of something is when you can teach that to others<br/>
-                PPS: Knwoledge increases through sharing</span>
-                <br/>
-                <br/>
+              <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></span>:<br/>}<Linkedin style={{height:"30px",width:"30px",marginLeft:"35px"}}/></Col></Row>
+              <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading videos:
+<br/>
+<br/>
+<ul><li>Teach something you are good at or something you’ve learnt recently</li>
+<li>Talk about it as if you are explaining it to a 5 year old</li>
+<li>Don’t worry about your background or surroundings - just open your camera, focus on what you want to say and smile</li>
+</ul>
+It’s easier than you think :)
+<br/>
               </div>
             </Col>
             <div className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
@@ -105,7 +92,7 @@ function SocialLearningPage(props) {
                 <div>
                   {user.attributes!==undefined && <div><p style={{fontSize:"18px", textAlign:"center"}}>{user.attributes.name}</p></div>}
                   <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></div>
-                  <div style={{textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{myrefcode}</b></p></div>
+                  <div style={{textAlign:"center"}}></div>
                 </div> 
                 </div>
               </div> 
@@ -126,9 +113,10 @@ function SocialLearningPage(props) {
                   <button onClick={()=>{buttonColor("Community");window.location.href="/TheNextGigCommunity"}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button>
                </Col>
              </Row>
+             <br/>
               <div className="imp_know"> {active==="Videos" &&
                 <div>
-                  {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Video)</p></a>}
+                  {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Add your video <span className="plus">&nbsp;+&nbsp;</span></p></a>}
                   <MyVerticallyPopUp
                     userid={user}
                     show={modalShow}
@@ -138,7 +126,7 @@ function SocialLearningPage(props) {
                 }
                 {active==="Blogs" &&
                 <div>
-                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Impart knowledge + <br/>(Add Blog)</p></a>
+                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Add your blog post <span className="plus">&nbsp;+&nbsp;</span></p></a>
                   <MyVerticallyPopUpBlog
                     userid={user}
                     show={modalShow}
@@ -152,6 +140,7 @@ function SocialLearningPage(props) {
             </Col> 
           </Row>
       </Container>
+      </div>
     );
   }
   

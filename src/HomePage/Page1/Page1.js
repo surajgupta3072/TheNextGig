@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col';
 import { ArrowDown } from "react-bootstrap-icons";
 import './Page1.css';
 import { Link } from 'react-scroll';
-
 function Page1() {
     return (
       <Container className="Opening_container">
