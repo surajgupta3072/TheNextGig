@@ -75,7 +75,8 @@ function SocialLearningPage(props) {
         <Row>
             <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="SocialLearn_laptop">
               <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src="google_logo.jpg" style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></span>:<br/>}<Linkedin style={{height:"30px",width:"30px",marginLeft:"35px"}}/></Col></Row>
-              <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading videos:
+              <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading {active==="Videos"?"videos":"blogs"
+}:
 <br/>
 <br/>
 <ul><li>Teach something you are good at or something you’ve learnt recently</li>
@@ -116,7 +117,7 @@ It’s easier than you think :)
              <br/>
               <div className="imp_know"> {active==="Videos" &&
                 <div>
-                  {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Add your video <span className="plus">&nbsp;+&nbsp;</span></p></a>}
+                  {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Add your video <span className="plus">+</span></p></a>}
                   <MyVerticallyPopUp
                     userid={user}
                     show={modalShow}
@@ -126,7 +127,7 @@ It’s easier than you think :)
                 }
                 {active==="Blogs" &&
                 <div>
-                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Add your blog post <span className="plus">&nbsp;+&nbsp;</span></p></a>
+                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Add your blog post <span className="plus">+</span></p></a>
                   <MyVerticallyPopUpBlog
                     userid={user}
                     show={modalShow}
