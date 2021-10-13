@@ -17,7 +17,7 @@ function Community(props) {
             user.setName(uname);
             CometChat.createUser(user, authKey).then(user => {
                 console.log("User Created", user);
-                window.location.href="/TheNextGigCommunity"
+                window.location.reload();
               }).catch(error => {
                 console.log("error", error);
               });
@@ -25,13 +25,13 @@ function Community(props) {
         }).catch((error)=> {console.log("Initialization failed with error:", error)});
   }
   else {
-    window.location.href = "/login"
+    window.location.href = "/login";
   }
 
     return (
       (props.auth.isAuthenticated===true) &&
         <div style={{margin:"2%", border:"2px solid rgb(242, 108, 79)"}}>
-          <CometChatUI/>
+          <CometChatUI />
         </div>
     )
 }

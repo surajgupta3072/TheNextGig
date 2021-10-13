@@ -1,0 +1,15 @@
+.nolearner_mobile_view {
+    display: none;
+  }
+  .nolearner_laptop_view {
+    display: block;
+  }
+
+  @media screen and (max-width: 768px) {
+    .page2_mobile_view {
+      display: block;
+    }
+    .page2_laptop_view {
+      display: none;
+    }
+  }

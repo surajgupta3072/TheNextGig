@@ -63,16 +63,17 @@ function Page1(props) {
       <br/>
       <br/>
         <Row>
-               <Col xs={9} className="SocialLearn_laptop">
-                  <button onClick={()=>buttonColor("Jobs")} style={{marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Jobs</button>
-                  <button onClick={()=>buttonColor("Gigs/Projects")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs/Projects</button>
-                  <button onClick={()=>{buttonColor("Internships");window.location.href="/TheNextGigCommunity"}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Internships</button>
-               </Col>
-             </Row></Container>
+          <Col xs={9} className="SocialLearn_laptop">
+            <button onClick={()=>buttonColor("Jobs")} style={{marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Jobs</button>
+            <button onClick={()=>buttonColor("Gigs/Projects")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs/Projects</button>
+            <button onClick={()=>{buttonColor("Internships")}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Internships</button>
+          </Col>
+        </Row>
+      </Container>
       <div style={{display:"flex",justifyContent:"space-evenly"}} className="Mastercards">
         {gigs.map((carder) => (
           <MDBCard
-            onClick={() => {if(!redirectlogin) window.location.href="/gigs/"+carder.GigId;  else window.location.href="/login";}}
+            onClick={() => {if(!redirectlogin) window.location.href="/ExperientialLearning/"+carder.GigId;  else window.location.href="/login";}}
             key={carder.GigId}
             style={{
               cursor:"pointer",
@@ -129,7 +130,7 @@ function Page1(props) {
         <Carousel breakPoints={breakPoints}>
           {gigs.map((carder) => (
             <MDBCard
-            onClick={() => {if(!redirectlogin) window.location.href="/gigs/"+carder.GigId;  else window.location.href="/login";}}
+            onClick={() => {if(!redirectlogin) window.location.href="/ExperientialLearning/"+carder.GigId;  else window.location.href="/login";}}
               key={carder.GigId}
               className="mbd_card card_mastercard"
               style={{
