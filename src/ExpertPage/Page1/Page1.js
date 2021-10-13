@@ -1,8 +1,8 @@
 import expertData from './../Experts.json';
 import Container from 'react-bootstrap/Container';
 import './Page1.css'
-import {Linkedin } from 'react-bootstrap-icons';
-import MasterSessions from './../MasterSessions';
+import { Linkedin } from 'react-bootstrap-icons';
+// import MasterSessions from './../MasterSessions';
 
 function Page1(props) {
   const expert = expertData[props.Eid-1];
@@ -42,7 +42,7 @@ function Page1(props) {
           </div>
         </div>
         </Container>
-        <div className="header_masterclass">
+        {/* <div className="header_masterclass">
             <Container>
               <div className="top_masterclass">
                 <h1>MORE FROM THE EXPERT</h1>
@@ -51,8 +51,8 @@ function Page1(props) {
                 </p>
               </div>
             </Container>
-        </div>
-              <MasterSessions Eid={props.Eid}/>
+        </div> */}
+        {/* <MasterSessions Eid={props.Eid}/> */}
     </div>
   );
 }

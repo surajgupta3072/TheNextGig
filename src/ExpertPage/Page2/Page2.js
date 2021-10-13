@@ -8,7 +8,6 @@ import {ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
 import MyVerticallyPopUp  from './popup';
 import {useState} from 'react'
 
-
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 500, itemsToShow: 1},

@@ -390,7 +390,7 @@ function Page3(props) {
         <div className="slider_mobile" style={{display:"block"}}>
           {session.gigs.length===0 ? <Container><h1 style={{marginTop:"15%"}}>We are constantly sourcing gigs / projects in this domain</h1>
               <h5 style={{color:"#F26C4F"}}>Until then...</h5><div className="button_masterclass1">
-              <a style={{marginLeft:"%",marginBottom:"15%"}} href="../gigs"><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
+              <a style={{marginLeft:"%",marginBottom:"15%"}} href="../ExperientialLearning"><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
              </div></Container> : 
             master.map(details => {
               if(details.gigs===undefined)
@@ -399,7 +399,7 @@ function Page3(props) {
                 return (<div><Carousel  breakPoints={breakPoints}>
                     {details.gigs.map(company=>{
                     return(
-                      <MDBCard onClick={()=>window.location.href="/gigs/"+company.id} className="cax  card_mastercard" style={{borderRadius:"0px", margin:"4%",border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"fit-content"}}>
+                      <MDBCard onClick={()=>window.location.href="/ExperientialLearning/"+company.id} className="cax  card_mastercard" style={{borderRadius:"0px", margin:"4%",border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"fit-content"}}>
                         <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={company.internship_image} alt='...' /></div>
                         <MDBCardBody>
                           <div className="Course_name">{company.project_name}</div>
@@ -424,7 +424,7 @@ function Page3(props) {
           <div className="header_masterclass">
           <Container>
           <div className="top_masterclass"><h1>OTHER MASTERCLASSES</h1>
-            <p className="subtitle_masterclass">Don’t stop learning!<span className="explore_sessions" ><a style={{textDecoration:"none", color:"#f26c4f"}} href="/masterclass">Explore all sessions &#62; &#62;</a></span></p>
+            <p className="subtitle_masterclass">Don’t stop learning!<span className="explore_sessions" ><a style={{textDecoration:"none", color:"#f26c4f"}} href="/TNGoriginals">Explore all sessions &#62; &#62;</a></span></p>
           </div>
           </Container>
           </div>
@@ -435,7 +435,7 @@ function Page3(props) {
               return null;
               else
             return (
-               <MDBCard  onClick={()=>window.location.href="/masterclass/"+details.id} className="cax card_mastercard" style={{height:"fit-content",borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
+               <MDBCard  onClick={()=>window.location.href="/TNGoriginals/"+details.id} className="cax card_mastercard" style={{height:"fit-content",borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={details.course_image} alt='...' /></div>
              <MDBCardBody > 
                <div className="Course_name">{details.course_name}</div>

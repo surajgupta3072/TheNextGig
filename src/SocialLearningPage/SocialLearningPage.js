@@ -21,7 +21,7 @@ function SocialLearningPage(props) {
   const [allvideos, setAllvideos] = useState([]);
   const [user, setUser] = useState("");
   const [redirectlogin, setRedirectLogin] = useState(true);
-  const [dplink, setDplink]=useState("./google_logo.jpg");
+  const [dplink, setDplink]=useState("./dpavtar.png");
 
   useEffect(() => {
     var paramss = {

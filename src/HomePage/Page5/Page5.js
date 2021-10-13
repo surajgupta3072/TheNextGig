@@ -118,7 +118,7 @@ function Page5() {
     </div>
     </div>
         <div className="button_div_page5">
-          <a href="/sociallearn"><button  className="button_slide slide_right">Let's go!<ArrowRight className="button_arrow"/></button></a>
+          <a href="/SocialLearning"><button  className="button_slide slide_right">Let's go!<ArrowRight className="button_arrow"/></button></a>
         </div>
     </div>
     );

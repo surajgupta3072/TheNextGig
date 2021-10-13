@@ -75,7 +75,7 @@ function MyVerticallyPopUp(props) {
                       } 
                       else {
                         alert("APPLIED SUCCESSFULLY")
-                        window.location.href="/gigs"
+                        window.location.href="/ExperientialLearning"
                       }
                     });
                   }

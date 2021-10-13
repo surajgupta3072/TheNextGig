@@ -13,7 +13,7 @@ function Page2() {
         Here’s everything you can do! 
         </p>
           <Row>
-            <Card className="page2card" onClick={()=>window.location.href="/masterclass"} style={{ width: "29.9%", marginLeft:"2%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
+            <Card className="page2card" onClick={()=>window.location.href="/TNGoriginals"} style={{ width: "29.9%", marginLeft:"2%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/masterclasshome.jpg"/>
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >MASTERCLASSES</Card.Title>
@@ -23,7 +23,7 @@ function Page2() {
                 </Card.Body>
             </Card>
             
-            <Card className="page2card" onClick={()=>window.location.href="/gigs"} style={{ width: "29.9%", marginLeft:"3%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
+            <Card className="page2card" onClick={()=>window.location.href="/ExperientialLearning"} style={{ width: "29.9%", marginLeft:"3%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >EXPERIENTIAL LEARNING</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
@@ -33,7 +33,7 @@ function Page2() {
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/experimentalhome.jpg"/>
             </Card>
 
-            <Card className="page2card" onClick={()=>window.location.href="/sociallearn"} style={{ width: "29.9%", marginLeft:"3%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px" }}>
+            <Card className="page2card" onClick={()=>window.location.href="/SocialLearning"} style={{ width: "29.9%", marginLeft:"3%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px" }}>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/sociallearninghome.jpg"/>
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SOCIAL LEARNING</Card.Title>
@@ -58,7 +58,7 @@ function Page2() {
         </p>
         <Container>
           <Col>
-          <Card onClick={()=>window.location.href="/masterclass"} style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%" }}>
+          <Card onClick={()=>window.location.href="/TNGoriginals"} style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%" }}>
             <Card.Body>
               <div style={{display: "flex", flexDirection: "row"}}>
                 <Col style={{marginTop:"8px"}}>
@@ -73,7 +73,7 @@ function Page2() {
               </div>
             </Card.Body>
           </Card>
-          <Card onClick={()=>window.location.href="/gigs"} style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%"}}>
+          <Card onClick={()=>window.location.href="/ExperientialLearning"} style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%"}}>
             <Card.Body>
               <div style={{display: "flex", flexDirection: "row"}}>
                 <Col style={{marginTop:"8px"}}>

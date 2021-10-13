@@ -53,7 +53,7 @@ function Page3() {
       </div>
       
       <div className="button_div_page3">
-        <a href="/masterclass"><button  className="button_slide slide_right">Check ‘em out<ArrowRight className="button_arrow"/></button></a>
+        <a href="/TNGoriginals"><button  className="button_slide slide_right">Check ‘em out<ArrowRight className="button_arrow"/></button></a>
       </div>
       </div>
     );

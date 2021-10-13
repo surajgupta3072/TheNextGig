@@ -308,7 +308,7 @@ function Page3(props) {
                       <span className="explore_session" style={{ marginLeft: "58%" }}>
                         <a
                           style={{ textDecoration: "none", color: "#f26c4f" }}
-                          href="/masterclass"
+                          href="/TNGoriginals"
                         >
                           Explore all sessions &#62;&#62;
                         </a>
@@ -323,7 +323,7 @@ function Page3(props) {
                 {master.map((carder) => (
                   <MDBCard
                     onClick={() =>
-                      (window.location.href = "/masterclass/" + carder.id)
+                      (window.location.href = "/TNGoriginals/" + carder.id)
                     }
                     className="cax card_mastercard"
                     style={{

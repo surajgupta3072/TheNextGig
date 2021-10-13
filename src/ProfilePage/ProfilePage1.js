@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import Personal from './Personal';
 import Education from './Education';
 import WorkEx from './WorkEx';
@@ -12,6 +12,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import docClient from '../GigsPage/GigsAWS';
 import S3 from 'react-aws-s3';
 import './ProfilePage.css';
+
 
 const config = {bucketName: "usersdp", region: process.env.REACT_APP_REGION, accessKeyId: process.env.REACT_APP_ACCESS_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY};
 const ReactS3Client = new S3(config);
@@ -40,7 +41,7 @@ function ProfilePage(props) {
   const [textColor6,setextColor6] =useState("#f26c4f");
   const [wholedata, setWholedata] = useState([]);
   const [rew, setRew] = useState(0);
-  const [dplink, setDplink]=useState("./dpavtar.png");
+  const [dplink, setDplink]=useState("");
   const [navbarHeading, setNavbarHeading] = useState("");
 
 
@@ -75,6 +76,8 @@ function ProfilePage(props) {
           setRew(data.Item.TotalRewards);
           if(data1.Items[0].DPlink!==undefined)
             setDplink(data1.Items[0].DPlink);
+          else
+            setDplink("./dpavtar.png")  
         }
       });
     }     
@@ -189,10 +192,10 @@ function ProfilePage(props) {
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`}/>
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
               <Row style={{marginTop:"7%",marginLeft:"22%"}}>
-                <label> 
-                  <input type="file" onChange={(e)=>onChangePicture(e)} style={{display:"none"}}/>
-                  <img alt="dp" src={dplink} style={{height:"150px",width:"150px",borderRadius:"50%",cursor:"pointer"}}/>
-                </label> 
+              <label> 
+                <input type="file" onChange={(e)=>onChangePicture(e)} style={{display:"none"}}/>
+                <img  alt="dp" src={dplink}  style={{height:"150px",width:"170px",borderRadius:"50%",cursor:"pointer"}}/>
+              </label> 
               </Row>
               <br/>
               <Row><p style={{fontSize:"16px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></Row>

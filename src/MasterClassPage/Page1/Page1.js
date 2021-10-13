@@ -27,7 +27,7 @@ function Page1() {
       <div className="Mastercards">
         {master.map((carder) => (
           <MDBCard
-            onClick={() => (window.location.href = "/masterclass/" + carder.id)}
+            onClick={() => (window.location.href = "/TNGoriginals/" + carder.id)}
             style={{
               cursor: "pointer",
               borderRadius: "0px",
@@ -71,7 +71,7 @@ function Page1() {
         <Carousel breakPoints={breakPoints}>
           {master.map((carder) => (
             <MDBCard
-              onClick={() => (window.location.href = "/masterclass/" + carder.id)}
+              onClick={() => (window.location.href = "/TNGoriginals/" + carder.id)}
               className="mbd_card card_mastercard"
               style={{
                 cursor: "pointer",

@@ -20,6 +20,7 @@ import docClient from './GigsPage/GigsAWS';
 import Community from "./SocialLearningPage/Community";
 import ForgotPasswordPage from "./AuthPage/ForgotPasswordPage";
 import ChangePasswordPage from "./AuthPage/ChangePasswordPage";
+import NotALearnerPage from "./NotALearnerPage/NotALearnerPage";
 import "./App.css";
 
 function App() {
@@ -98,7 +99,7 @@ function App() {
               <Route exact path="/register">
                 <RegisterPage />
               </Route>
-              <Route exact path="/sociallearn">
+              <Route exact path="/SocialLearning">
                 <SocialLearningPage auth={authProps}/>
               </Route>
               <ProtectedRoute exact path="/profile" auth={authProps}>
@@ -113,17 +114,20 @@ function App() {
               <Route exact path="/expert">
                 <Page2 />
               </Route>
-              <Route exact path="/gigs/:id" auth={authProps}>
+              <Route exact path="/ExperientialLearning/:id" auth={authProps}>
                 <GigsDetails auth={authProps.user}/>
               </Route>
-              <Route exact path="/gigs" auth={authProps}>
+              <Route exact path="/ExperientialLearning" auth={authProps}>
                 <GigsPage auth={authProps.user}/>
               </Route>
-              <Route exact path="/masterclass/:id">
+              <Route exact path="/TNGoriginals/:id">
                 <MasterClassDetails auth={authProps.user}/>
               </Route>
-              <Route exact path="/masterclass">
+              <Route exact path="/TNGoriginals">
                 <MasterClassPage />
+              </Route>
+              <Route exact path="/NotALearner">
+                <NotALearnerPage />
               </Route>
               <Route exact path="/">
                 <HomePage />

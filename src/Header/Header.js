@@ -20,14 +20,17 @@ function Header(props) {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
             <Nav>
-                <Nav.Link href="/masterclass" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                    MASTERCLASSES
+                <Nav.Link href="/TNGoriginals" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                    TNG ORIGINALS
                 </Nav.Link>
-                <Nav.Link href="/gigs" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                <Nav.Link href="/ExperientialLearning" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
                     EXPERIENTIAL LEARNING
                 </Nav.Link>
-                <Nav.Link href="/sociallearn" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                <Nav.Link href="/SocialLearning" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
                     SOCIAL LEARNING
+                </Nav.Link>
+                <Nav.Link href="/NotALearner" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                    NOT A LEARNER?
                 </Nav.Link>
                 {props.auth.isAuthenticated===true && 
                     <Nav.Link onClick={LogOutFunc} style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>

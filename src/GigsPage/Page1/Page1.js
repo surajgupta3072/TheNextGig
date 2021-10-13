@@ -46,7 +46,7 @@ function Page1(props) {
       <div style={{display:"flex",justifyContent:"space-evenly"}} className="Mastercards">
         {gigs.map((carder) => (
           <MDBCard
-            onClick={() => {if(!redirectlogin) window.location.href="/gigs/"+carder.GigId;  else window.location.href="/login";}}
+            onClick={() => {if(!redirectlogin) window.location.href="/ExperientialLearning/"+carder.GigId;  else window.location.href="/login";}}
             key={carder.GigId}
             style={{
               cursor:"pointer",
@@ -103,7 +103,7 @@ function Page1(props) {
         <Carousel breakPoints={breakPoints}>
           {gigs.map((carder) => (
             <MDBCard
-            onClick={() => {if(!redirectlogin) window.location.href="/gigs/"+carder.GigId;  else window.location.href="/login";}}
+            onClick={() => {if(!redirectlogin) window.location.href="/ExperientialLearning/"+carder.GigId;  else window.location.href="/login";}}
               key={carder.GigId}
               className="mbd_card card_mastercard"
               style={{
