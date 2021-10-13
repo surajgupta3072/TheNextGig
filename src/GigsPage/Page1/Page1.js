@@ -4,6 +4,9 @@ import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from '../GigsAWS'
 import { useEffect, useState } from "react";
 import ReactTooltip from 'react-tooltip'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import "./Page1.css"
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -12,6 +15,15 @@ const breakPoints = [
 ];
 
 function Page1(props) {
+  const [allBlogs, setAllBlogs] = useState([]);
+  const [searchterm, setSearchTerm] = useState("");
+  const [active, setActive] =  useState("Videos");
+  const [color1,setColor1] =useState("#f26c4f");
+  const [textColor1,setextColor1] =useState("white");
+  const [color2,setColor2] =useState("white");
+  const [textColor2,setextColor2] =useState("#f26c4f");
+  const [color3,setColor3] =useState("white");
+  const [textColor3,setextColor3] =useState("#f26c4f");
   const [gigs, setGigs] = useState([]);
   const [redirectlogin, setRedirectLogin] = useState(false);
 
@@ -29,24 +41,38 @@ function Page1(props) {
     }
     });
   }, []);
-  
+  function buttonColor(word){
+    setActive(word)
+    if(word==="Jobs"){
+      setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");setColor3("white");setextColor3("#f26c4f");
+    }
+    if(word==="Gigs/Projects"){
+     setColor1("white");setextColor1("#f26c4f");setColor2("#f26c4f");setextColor2("white");setColor3("white");setextColor3("#f26c4f");
+   }
+   if(word==="Internships"){
+     setColor1("white");setextColor1("#f26c4f");setColor2("white");setextColor2("#f26c4f");setColor3("#f26c4f");setextColor3("white");
+   }
+  }
   return (
     <div>
-      <div className="header_masterclass">
-        <Container>
-          <div className="top_masterclass">
-            <h1>EXPERIENTIAL LEARNING</h1>
-            <p className="subtitle_masterclass">
-            Let’s make your learning 
-              <span className="orange_text_masterclass"> experiential</span>.
-            </p>
-          </div>
-        </Container>
-      </div>
+      <div className="gigs_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F"}}>ALL OPPORTUNITIES</h1><p style={{fontFamily:"Open Sans"}}>We believe the best way to learn something is by experiencing it yourself - pick out of gigs, internships or even a job </p><p style={{fontStyle:"Open Sans",marginTop:"-10px"}}>to make your learning complete.</p></Container></div>
+      <br/>
+      <Container>
+      <input className="search" style={{ borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}}  value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search for companies / domains / profiles / etc." type="search"/>&nbsp;&nbsp;&nbsp;
+      <button className="search_button" /* onClick={searchFilter} */ style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button>
+      <br/>
+      <br/>
+        <Row>
+               <Col xs={9} className="SocialLearn_laptop">
+                  <button onClick={()=>buttonColor("Jobs")} style={{marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Jobs</button>
+                  <button onClick={()=>buttonColor("Gigs/Projects")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs/Projects</button>
+                  <button onClick={()=>{buttonColor("Internships");window.location.href="/TheNextGigCommunity"}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Internships</button>
+               </Col>
+             </Row></Container>
       <div style={{display:"flex",justifyContent:"space-evenly"}} className="Mastercards">
         {gigs.map((carder) => (
           <MDBCard
-            onClick={() => {if(!redirectlogin) window.location.href="/ExperientialLearning/"+carder.GigId;  else window.location.href="/login";}}
+            onClick={() => {if(!redirectlogin) window.location.href="/gigs/"+carder.GigId;  else window.location.href="/login";}}
             key={carder.GigId}
             style={{
               cursor:"pointer",
@@ -103,7 +129,7 @@ function Page1(props) {
         <Carousel breakPoints={breakPoints}>
           {gigs.map((carder) => (
             <MDBCard
-            onClick={() => {if(!redirectlogin) window.location.href="/ExperientialLearning/"+carder.GigId;  else window.location.href="/login";}}
+            onClick={() => {if(!redirectlogin) window.location.href="/gigs/"+carder.GigId;  else window.location.href="/login";}}
               key={carder.GigId}
               className="mbd_card card_mastercard"
               style={{

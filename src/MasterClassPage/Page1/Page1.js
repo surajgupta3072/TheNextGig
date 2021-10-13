@@ -13,21 +13,11 @@ const breakPoints = [
 function Page1() {
   return (
     <div>
-      <div className="header_masterclass">
-        <Container>
-          <div className="top_masterclass">
-            <h1>ALL MASTERCLASSES</h1>
-            <p className="subtitle_masterclass">
-              Short, but meant to stay with you for a{" "}
-              <span className="orange_text_masterclass">long time</span>.
-            </p>
-          </div>
-        </Container>
-      </div>
+      <div className="masterclass_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F"}}>ALL TNG ORIGINALS</h1><p style={{fontFamily:"Open Sans"}}>Specially curated courses - they’re short, binge-able and based on real-life experiences.</p><p style={{fontStyle:"italic",fontSize:"12px",marginTop:"-10px"}}>PS: You get a certificate too!</p></Container></div>
       <div className="Mastercards">
         {master.map((carder) => (
           <MDBCard
-            onClick={() => (window.location.href = "/TNGoriginals/" + carder.id)}
+            onClick={() => (window.location.href = "/masterclass/" + carder.id)}
             style={{
               cursor: "pointer",
               borderRadius: "0px",
@@ -71,7 +61,7 @@ function Page1() {
         <Carousel breakPoints={breakPoints}>
           {master.map((carder) => (
             <MDBCard
-              onClick={() => (window.location.href = "/TNGoriginals/" + carder.id)}
+              onClick={() => (window.location.href = "/masterclass/" + carder.id)}
               className="mbd_card card_mastercard"
               style={{
                 cursor: "pointer",
