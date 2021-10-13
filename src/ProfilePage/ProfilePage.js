@@ -40,7 +40,7 @@ function ProfilePage(props) {
   const [textColor6,setextColor6] =useState("#f26c4f");
   const [wholedata, setWholedata] = useState([]);
   const [rew, setRew] = useState(0);
-  const [dplink, setDplink]=useState("");
+  const [dplink, setDplink]=useState("./google_logo.jpg");
   const [navbarHeading, setNavbarHeading] = useState("");
 
 
@@ -75,8 +75,6 @@ function ProfilePage(props) {
           setRew(data.Item.TotalRewards);
           if(data1.Items[0].DPlink!==undefined)
             setDplink(data1.Items[0].DPlink);
-          else
-            setDplink("./google_logo.jpg")  
         }
       });
     }     

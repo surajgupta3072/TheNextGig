@@ -189,11 +189,11 @@ function Personal(props) {
             <p><input disabled value={fullName} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
           <Row>
-            <Col style={{marginTop:"2%"}}>
+            <Col >
               <p><span style={{fontSize:"20px"}}>Date of birth</span></p>
               <input value={dob} onChange={e => setDOB(e.target.value)} type="date" style={{width:"50%",height:"35px"}}></input>
             </Col>
-            <Col style={{marginTop:"2%"}} className= "Gender_col">
+            <Col  className= "Gender_col">
               <p style={{fontSize:"20px"}}>Gender</p>
               <div onChange={e => setGender(e.target.value)} style={{display:"flex",flexDirection:"row", alignItems:"center"}}>
                   <input value="male" type="radio" name="gender"/>&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

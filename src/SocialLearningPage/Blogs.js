@@ -125,9 +125,9 @@ function Blogs(props) {
       <div  style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
         {!readsingleblog && allBlogs.map((blog)=>
           <div key={blog.BlogID} onClick={() => {if(!props.redirlog) BlogRead(blog);  else window.location.href="/login";}}>
-            <div  className="blog-box">
-              <h4 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h4>
-              <h5 style={{padding:"0", margin:"0"}}>{blog.BlogUsername}-{blog.BlogCreds}</h5>
+            <div className="blog-box">
+              <h5 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h5>
+              <h6 style={{padding:"0", margin:"0"}}>{blog.BlogUsername} - {blog.BlogCreds}</h6>
               <p style={{padding:"0", margin:"0",color:"grey"}}>{blog.BlogHashtags}</p>
               <br/>
               <p style={{fontSize:"14px"}}>{blog.Blog.split(" ").slice(0,32).join(" ")+"  . . . "}</p>
@@ -137,12 +137,13 @@ function Blogs(props) {
         )}
       </div>
       {readsingleblog && readsingleblog.map((blog)=>
-        <div style={{marginLeft:"3%",paddingBottom:"10px"}} key={blog.BlogID}>
+        <div style={{marginLeft:"3%",paddingBottom:"10px", textAlign:"center"}} key={blog.BlogID}>
           <h4 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h4>
-          <h5 style={{padding:"0", margin:"0"}}>{blog.BlogUsername}-{blog.BlogCreds}</h5>
+          <br/>
+          <h6 style={{padding:"0", margin:"0"}}>{blog.BlogUsername}-{blog.BlogCreds}</h6>
           <p style={{padding:"0", margin:"0",color:"grey"}}>{blog.BlogHashtags}</p>
           <br/>
-          <p style={{fontSize:"18px"}}>{blog.Blog}</p>
+          <p style={{fontSize:"18px", textAlign:"left"}}>{blog.Blog}</p>
         </div>
       )}
     </div>

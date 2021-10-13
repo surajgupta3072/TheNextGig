@@ -21,7 +21,7 @@ function SocialLearningPage(props) {
   const [allvideos, setAllvideos] = useState([]);
   const [user, setUser] = useState("");
   const [redirectlogin, setRedirectLogin] = useState(true);
-  const [dplink, setDplink]=useState("");
+  const [dplink, setDplink]=useState("./google_logo.jpg");
 
   useEffect(() => {
     var paramss = {
@@ -52,8 +52,6 @@ function SocialLearningPage(props) {
           setRew(data.Item.TotalRewards);
           if(data.Item.DPlink!==undefined)
             setDplink(data.Item.DPlink);
-          else
-            setDplink("./google_logo.jpg")
         }
       });
     }
