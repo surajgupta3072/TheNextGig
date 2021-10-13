@@ -23,6 +23,21 @@
   box-sizing: border-box;
   box-shadow: 0px 2px 2px rgb(255 255 255 / 25%);
 }
+.btn_recommendx {
+  font-family: "Open Sans", sans-serif !important;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  background-color: #f26c4f;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0px;
+  padding: 12px 24px 0px 24px;
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: ease-out 0.4s;
+}
 .btn_recommend {
   font-family: "Open Sans", sans-serif !important;
   text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);

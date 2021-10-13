@@ -17,23 +17,20 @@ function Page2() {
          <div>
            <Row className="check_masterclass">
              <div >
-             <div className="btn_div1"><button className="btn_recommend"><a style={{textDecoration:"none"}} href="/TNGoriginals"><p style={{color:"white"}} className="mast_page2_p2_gigs">Check out our  <br /> masterclasses. </p> </a> </button></div>
+             <div className="btn_div1"><button className="btn_recommendx"><a style={{textDecoration:"none"}} href="/TNGoriginals"><p style={{color:"white"}} className="mast_page2_p2_gigs">Check out the
+ <br/>TNG Originals</p></a> </button></div>
              </div>
              <div className="zingerx">
              <div> <a href="/TNGoriginals"><ArrowRight className="button_arrow_gig"/></a></div>
              </div>
-           </Row>
-          
-          
+           </Row> 
          </div>
-         
        </Col> 
        <Col className="gigs_page_text_mobile" md={7}>
-         
          <p className="mast_page2_p2_gigs">Learn from the best.</p>
          <div>
              <div >
-             <div className="btn_div"><div><button className="btn_recommend"><a style={{textDecoration:"none"}} href="/TNGoriginals"><p style={{color:"white"}} className="mast_page2_p2_gigs">Check out our  <br /> masterclasses. </p> </a> </button></div></div>
+             <div className="btn_div"><div><button className="btn_recommendx"><a style={{textDecoration:"none"}} href="/TNGoriginals"><p style={{color:"white"}} className="mast_page2_p2_gigs">Check out our  <br /> masterclasses. </p> </a> </button></div></div>
              </div>
              <div className="zingerx">
              <div> <a href="/TNGoriginals"><ArrowRight className="button_arrow_gig"/></a></div>
