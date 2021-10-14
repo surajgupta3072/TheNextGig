@@ -19,7 +19,7 @@ function Page5() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle text3">Peers, colleagues, people like you and me - but with knowledge <text style={{color:"#f26c4f"}}> to share</text> .</h4>
+        <h4 className="page3_subtitle text3">...instead of the <text style={{color:"#f26c4f"}}> mindless </text>  scrolling on other social media platforms?  to share</h4>
       </div>
       </div>
 

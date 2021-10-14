@@ -1,6 +1,8 @@
 .homeimage {
-  background: url("./../../homepage3.png") no-repeat center;
-  background-size: 330px 570px;
+  background: url("./../../homepage4.jpg") no-repeat center;
+  background-size: 330px 500px;
+  max-width: 100%;
+  height: auto;
 }
 
 /*Headings*/

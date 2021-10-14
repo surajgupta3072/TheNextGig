@@ -10,15 +10,15 @@ function Page2() {
       <div className="page2_laptop_view">
         <Container>
         <p style={{fontSize:"32px", fontWeight:"600",marginLeft:"1.5%",marginTop:"20px",marginBottom:"3%"}}>
-        Here’s everything you can do! 
+        Here is everything you can do on the platform: 
         </p>
           <Row>
             <Card className="page2card" onClick={()=>window.location.href="/masterclass"} style={{ width: "29.9%", marginLeft:"2%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/masterclasshome.jpg"/>
                 <Card.Body style={{marginTop:"60px"}}>
-                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >MASTERCLASSES</Card.Title>
+                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >TNG <br /> ORIGINALS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Short. Expert-driven. Real-life cases. And a <em> whole lot of value </em>!  
+                  Short expert-driven sessions, real-life cases, And a  <em> whole lot of value </em>!  
                   </Card.Text>
                 </Card.Body>
             </Card>
@@ -27,7 +27,7 @@ function Page2() {
                 <Card.Body style={{marginTop:"60px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >EXPERIENTIAL LEARNING</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  👈🏼 you’ve learnt there. Now practice here! 👇🏼
+                  Gigs, internships, live projects and job opportunities!
                   </Card.Text>
                 </Card.Body>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/experimentalhome.jpg"/>
@@ -36,9 +36,9 @@ function Page2() {
             <Card className="page2card" onClick={()=>window.location.href="/sociallearn"} style={{ width: "29.9%", marginLeft:"3%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px" }}>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"60px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/sociallearninghome.jpg"/>
                 <Card.Body style={{marginTop:"60px"}}>
-                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SOCIAL LEARNING</Card.Title>
+                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SOCIAL <br /> LEARNING</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Learn from your peers - they’re smarter than you think!
+                  Learn <em> and teach </em> bite sized content; Videos, blogs and an exclusive community
                   </Card.Text>
                 </Card.Body >
             </Card>
