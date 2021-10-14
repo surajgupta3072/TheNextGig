@@ -155,7 +155,7 @@ function Page1(props) {
                 className="course_line"
                 style={{ height: "0.13rem", color: "#f26c4f" }}
               />
-              <div className="instruct_time">
+              <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
                 <div className="instructor_name" >
                   {carder.GigFunction} <sup data-tip data-for={carder.GigId+"g"}>&#9432;</sup>
                   <ReactTooltip id={carder.GigId+"g"} place="top" effect="solid">
@@ -164,7 +164,7 @@ function Page1(props) {
                 </div>
                 <div className="time_course">{carder.GigDuration}</div>
               </div>
-              <div className="post_episode">
+              <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
                 <div className="instructor_post">
                   {carder.CompanyName} <sup data-tip data-for={carder.GigId+"d"}>&#9432;</sup>
                   <ReactTooltip id={carder.GigId+"d"} place="top" effect="solid">
@@ -209,7 +209,7 @@ function Page1(props) {
                   className="course_line"
                   style={{ height: "0.13rem", color: "#f26c4f" }}
                 />
-                <div className="instruct_time">
+                <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
                   <div className="instructor_name" >
                     {carder.GigFunction} <sup data-tip data-for={carder.GigId+"g"}>&#9432;</sup>
                     <ReactTooltip id={carder.GigId+"g"} place="top" effect="solid">
@@ -218,7 +218,7 @@ function Page1(props) {
                   </div>
                   <div className="time_course">{carder.GigDuration}</div>
                 </div>
-                <div className="post_episode">
+                <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
                   <div className="instructor_post">
                     {carder.CompanyName} <sup data-tip data-for={carder.GigId+"d"}>&#9432;</sup>
                     <ReactTooltip id={carder.GigId+"d"} place="top" effect="solid">
@@ -265,13 +265,13 @@ function Page1(props) {
                   className="course_line"
                   style={{ height: "0.13rem", color: "#f26c4f" }}
                 />
-                <div className="instruct_time">
+                <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
                   <div className="instructor_name">
                     {carder.GigFunction}
                   </div>
                   <div className="time_course">{carder.GigDuration}</div>
                 </div>
-                <div className="post_episode">
+                <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
                   <div className="instructor_post">
                     {carder.CompanyName}
                   </div>
@@ -311,13 +311,13 @@ function Page1(props) {
         className="course_line"
         style={{ height: "0.13rem", color: "#f26c4f" }}
       />
-      <div className="instruct_time">
+      <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
         <div className="instructor_name">
           {carder.GigFunction}
         </div>
         <div className="time_course">{carder.GigDuration}</div>
       </div>
-      <div className="post_episode">
+      <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
         <div className="instructor_post">
           {carder.CompanyName}
         </div>

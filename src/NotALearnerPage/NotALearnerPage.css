@@ -1,15 +1,26 @@
-.nolearner_mobile_view {
-    display: none;
+.nolearner_laptop_view {
+  display: block;
+}
+.nolearner_subtitle {
+  margin-top: -63px;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1.3rem;
+  margin-bottom: -60px;
+}
+.mobile_span {
+  display: none !important;
+}
+@media screen and (max-width: 768px) {
+  .mobile_span {
+    display: block !important;
   }
   .nolearner_laptop_view {
-    display: block;
+    display: none;
   }
-
-  @media screen and (max-width: 768px) {
-    .page2_mobile_view {
-      display: block;
-    }
-    .page2_laptop_view {
-      display: none;
-    }
+  .nolearner_subtitle {
+    margin-top: -63px;
+    font-family: "Open Sans", sans-serif !important;
+    font-size: 1rem;
+    margin-bottom: 20px;
   }
+}

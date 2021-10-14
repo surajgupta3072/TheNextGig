@@ -345,26 +345,25 @@ function Page3(props) {
                     </div>
                     <MDBCardBody>
                       <div className="Course_name">{carder.course_name}</div>
-                      <hr
-                        className="course_line"
-                        style={{ height: "0.13rem", color: "#f26c4f" }}
-                      />
-                      <div className="instruct_time">
-                        <div className="instructor_name">
+
+                      <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
+                        <div style={{color:"grey"}} className="instructor_name">
                           {carder.course_instructor}
                         </div>
-                        <div className="time_course">
-                          {carder.course_timing}
-                        </div>
                       </div>
-                      <div className="post_episode">
+                      <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
                         <div className="instructor_post">
                           {carder.course_instructor_post}
+                        </div>
+                        </div>
+                        <div style={{display:"flex",justifyContent:"space-between"}}>
+                        <div className="time_course">
+                          {carder.course_timing}
                         </div>
                         <div className="episode_course">
                           {carder.course_episode}
                         </div>
-                      </div>
+                        </div>
                     </MDBCardBody>
                   </MDBCard>
                 ))}

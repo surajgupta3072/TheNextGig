@@ -21,7 +21,7 @@ function Page2() {
  <br/>TNG Originals</p></a> </button></div>
              </div>
              <div className="zingerx">
-             <div> <a href="/TNGoriginals"><ArrowRight className="button_arrow_gig"/></a></div>
+             <div> <a href="/TNGoriginals"><ArrowRight className="button_arrow_gigx"/></a></div>
              </div>
            </Row> 
          </div>

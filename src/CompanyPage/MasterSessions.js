@@ -19,14 +19,15 @@ function MasterSessions(props) {
                         <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%",height:"22rem"}} src={Session.course_image} alt='...' /></div>
                         <MDBCardBody>
                         <div className="Course_name">{Session.course_name}</div>
-                        <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
+                        
                         <div className="post_episode">
                             <div className="instructor_post">{Session.course_instructor}</div>
-                            <div className="episode_course">{Session.course_episode}</div>
                         </div>
                         <div className="like-text1" style={{display:"flex",justifyContent:"space-between",marginLeft:"0px",marginRight:"0px"}}>
-                            {console.log(props)}
-                        <div>{Session.course_instructor_post}</div>
+                        </div>
+                        <div style={{color:"grey"}}>{Session.course_instructor_post}</div>
+                        <div style={{display:"flex",justifyContent:"space-between"}}>
+                        <div className="episode_course">{Session.course_episode}</div>
                         <div>INR {Session.fees}</div>
                         </div>
                         </MDBCardBody>
@@ -45,7 +46,7 @@ function MasterSessions(props) {
              </div>
              <MDBCardBody>
                <div className="Course_name">{Session.course_name}</div>
-               <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
+               
              </MDBCardBody>
            </MDBCard>
             )}

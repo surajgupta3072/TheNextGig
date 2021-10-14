@@ -142,8 +142,8 @@ function Page3(props) {
               { props.prop!==null ?
                 coursePurchased===false &&
                 <Col style={{display: "flex", justifyContent: "space-between"}}>
-                  <button className="button_slide_page3 inr_button slide_right " onClick={() => setModalShow(true)}>
-                  Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                  <button className="button_slide_page3  slide_right " onClick={() => setModalShow(true)}>
+                  Learn @ INR<br/>{session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3x"/>
                   </button>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
@@ -171,8 +171,8 @@ function Page3(props) {
               { props.prop!==null ?
                 coursePurchased===false &&
                 <div style={{display: "flex", justifyContent: "space-between"}}>
-                  <button className="button_slide_page3 inr_button slide_right " onClick={() => setModalShow(true)}>
-                  Learn @ INR {session.fees}<ArrowLeft style={{width:"25px",height:"25px"}} className="button_arrow_Letsgo_Page3"/>
+                  <button className="button_slide_page3  slide_right " onClick={() => setModalShow(true)}>
+                  Learn @ INR<br/>{session.fees}<ArrowLeft style={{width:"25px",height:"25px",marginLeft:"30px"}} className="button_arrow_Letsgo_Page3"/>
                   </button>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
@@ -403,15 +403,15 @@ function Page3(props) {
                         <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={company.internship_image} alt='...' /></div>
                         <MDBCardBody>
                           <div className="Course_name">{company.project_name}</div>
-                          <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
+          
                           <div className="instruct_time">
-                            <div className="instructor_name">{company.company_name}</div>
+                            <div style={{color:"grey"}} className="instructor_name">{company.company_name}</div>
+                          </div>
+                            <div style={{color:"grey"}} className="instructor_post">{company.industry}</div>
+                            <div style={{display:"flex",justifyContent:"space-between"}}>
                             <div className="time_course">{company.duration}</div>
-                          </div>
-                          <div className="post_episode">
-                            <div className="instructor_post">{company.industry}</div>
-                            <div className="episode_course">{company.fees}/{company.stipend_range}</div>
-                          </div>
+                            <div className="episode_course">{company.fees}{company.stipend_range}</div>
+                            </div>
                         </MDBCardBody>
                       </MDBCard>
                     )
@@ -439,15 +439,14 @@ function Page3(props) {
              <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={details.course_image} alt='...' /></div>
              <MDBCardBody > 
                <div className="Course_name">{details.course_name}</div>
-               <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
-               <div className="instruct_time">
-                 <div className="instructor_name">{details.course_instructor}</div>
+                 <div style={{color:"grey"}} className="instructor_name">{details.course_instructor}
+
+               </div>
+                 <div style={{color:"grey"}} className="instructor_post">{details.course_instructor_post}</div>
+                 <div style={{display:"flex",justifyContent:"space-between"}}>
                  <div className="time_course">{details.course_timing}</div>
-               </div>
-               <div className="post_episode">
-                 <div className="instructor_post">{details.course_instructor_post}</div>
                  <div className="episode_course">{details.course_episode}</div>
-               </div>
+                 </div>
              </MDBCardBody>
            </MDBCard>
            )

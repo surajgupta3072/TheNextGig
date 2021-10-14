@@ -37,7 +37,7 @@ function Page5() {
                 </Card.Body>
             </Card>
             
-            <Card className="page2card"  style={{width: "29.9%", marginLeft:"3%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px" }}>
+            <Card className="page2card"  style={{width: "29.9%", marginLeft:"3%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(200, 150, 54,0.4)", borderRadius:"12px" }}>
                 <Card.Body style={{marginTop:"40px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >BLOGS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
@@ -48,7 +48,7 @@ function Page5() {
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/bloghome.jpg"/>
             </Card>
 
-            <Card className="page2card" style={{width: "29.9%", marginLeft:"3%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgba(242, 108, 79, 0.6)",borderRadius:"12px"}}>
+            <Card className="page2card" style={{width: "29.9%", marginLeft:"3%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgb(86, 150, 112,0.6)",borderRadius:"12px"}}>
                 <Card.Img style={{margin: "auto", height:"140px", width:"140px", marginTop:"40px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/communityhome.jpg"/>
                 <Card.Body style={{marginTop:"40px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >COMMUNITY</Card.Title>

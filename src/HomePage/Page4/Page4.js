@@ -37,27 +37,18 @@ function Page4() {
                         <Row className="row1">
                             <Col style={{width: "20"}}>
                                 <div class="grid_imgs">
-                                <img src="/google_logo.jpg" alt="..." class="myimg" />
-                                    <div class="layer">
-                                    <h3>Google</h3>
-                                    </div>
+                                <img src="/captzack.png" alt="..." class="myimg" />
                                 </div>
                             </Col>                       
                             <Col style={{width: "20"}}>
                                 <div class="grid_imgs">
-                                <img src="/google_logo.jpg" alt="..." class="myimg" />
-                                    <div class="layer">
-                                    <h3>Google</h3>
-                                    </div>
+                                <img src="/superpro.png" alt="..." class="myimg" />
                                 </div>
                             </Col> 
                             
                             <Col style={{width: "20"}}>
                                 <div class="grid_imgs">
-                                <img src="/google_logo.jpg" alt="..." class="myimg" />
-                                    <div class="layer">
-                                    <h3>Google</h3>
-                                    </div>
+                                <img src="/grey.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                         </Row >
@@ -66,18 +57,12 @@ function Page4() {
                                                
                             <Col>
                                 <div class="grid_imgs">
-                                <img src="/google_logo.jpg" alt="..." class="myimg" />
-                                    <div class="layer">
-                                    <h3>Google</h3>
-                                    </div>
+                                <img src="/scalenut.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                             <Col>
                                 <div class="grid_imgs">
-                                <img src="/google_logo.jpg" alt="..." class="myimg" />
-                                    <div class="layer">
-                                    <h3>Google</h3>
-                                    </div>
+                                <img src="/fish.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                         </Row>
@@ -87,10 +72,7 @@ function Page4() {
                         <Col></Col>
                             <Col>
                                 <div class="grid_imgs">
-                                <img src="/google_logo.jpg" alt="..." class="myimg" />
-                                    <div class="layer">
-                                    <h3>Google</h3>
-                                    </div>
+                                <img src="/synapisca.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                         </Row>
