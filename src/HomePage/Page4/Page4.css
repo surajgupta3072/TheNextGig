@@ -19,13 +19,25 @@
   margin-left: 8%;
   font-size: 48px;
 }
-.heading_1span {
-  margin-left: 0;
-  font-size: 48px;
-  color: grey;
+.heading_1span{
+  position: relative;
 }
+.heading_1span:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: 2px solid ;
+  border-color: #F26C4F;
+  
+  -webkit-transform:rotate(-5deg);
+  -moz-transform:rotate(-5deg);
+  -ms-transform:rotate(-5deg);
+  -o-transform:rotate(-5deg);
+  transform:rotate(-5deg);}
 .heading_2 {
-  margin-left: 60%;
+  margin-left: 26%;
   font-size: 50px;
 }
 .learn_heading {
@@ -91,13 +103,14 @@
     text-align: end !important;
     padding-right: 22px;
     font-size: 25px;
+    margin-left: 10%;
   }
   .heading_1 {
     margin-left: 20px;
     font-size: 25px;
   }
   .heading_1span {
-    font-size: 30px;
+    font-size: 15px;
   }
   .getin {
     margin-left: 20px;

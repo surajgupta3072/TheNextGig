@@ -13,7 +13,7 @@ export default function CardX(props) {
             {props.text2}
           </div>
         </div>
-        <hr style={{color:"#f26c4f",height:"3px"}}/>
+        
         <div className="like-text" style={{display:"flex",justifyContent:"space-between"}}>
         <div >{props.name}</div>
         <div >{props.time}</div>
