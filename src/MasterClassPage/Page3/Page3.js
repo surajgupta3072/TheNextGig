@@ -86,7 +86,7 @@ function Page3(props) {
     <div>
       <div className="header_masterclass">
         <Container style={{marginBottom:"0"}}>
-          <div className="top_masterclass"><h1>IT’S ALL IN THE DETAILS</h1>
+          <div className="top_masterclass"><h1>{session.course_name}</h1>
             <p className="subtitle_masterclass">A <span className="orange_text_masterclass"> sneak peak </span> into the masterclass</p>
           </div>
         </Container>
@@ -94,15 +94,8 @@ function Page3(props) {
       <Container style={{padding: "0%", maxWidth: "94%", marginBottom: "0%"}} className= "container1">
         <Row>
           <Col md={6} >
-             <Row className="masterclass_name_laptop" style={{marginTop:"2%"}}>
-              <h1 className="page3_heading1">{session.course_name}</h1>
-            </Row> 
-            <div  className="masterclass_name_mobile" style={{marginTop:"2%"}}>
-              <h1 className="page3_heading1">{session.course_name}</h1>
-            </div>
-            <div style={{marginTop:"0%"}}>
+            <div style={{marginTop:"3%"}}>
               <p className="page3_3linetext">{session.course_description}</p>
-              <p className="page3_3linetext2">Lifetime access to <span style={{color: "#f26c4f"}}>{session.course_timing}</span>  of Learning experience</p>
             </div>
             <Row className="card1_page3" style={{marginTop: "3%"}}>
             <div className="diver">
@@ -192,19 +185,17 @@ function Page3(props) {
               }
             </div>
           </Col>
-          <Col style={{padding:"0px",marginTop:"25px"}} md={6}> 
-              {/* <video src={session["episodes"][0]["epi_video"]} className="anim_img" autoplay controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/> */}
-              
+          <Col style={{padding:"0px",marginTop:"25px"}} md={6}>
               <img alt="..." src={session.course_image} className="anim_img"/>
           </Col>
           </Row>
       </Container>
-      <Container className="container2_page3 masterclass_video_laptop" style={{padding: "0%", maxWidth: "94.25%",  marginBottom: "0%"}}>
+      <Container className="container2_page3 masterclass_video_laptop" style={{padding: "0%", maxWidth: "94.25%",  marginBottom:"0%"}}>
         <Row className="main_cardbody_row" style={{marginLeft: "auto",marginRight:"auto"}}>
         <div className="main_card" >               
                 <div className="main_cardbody"> 
                   <Row >
-                    <Col  md={8} className="col1_cardbody">
+                    <Col md={8} className="col1_cardbody">
                       {paymentshow===false &&
                         <video src={epivid} className="img_letsgo" controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
                       }

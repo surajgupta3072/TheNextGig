@@ -18,7 +18,7 @@ function Page5() {
           </span>
         </p>
       </div>
-      <div style={{marginTop: "70px"}}>
+      <div style={{marginTop: "80px"}}>
         <h4 className="page3_subtitle text3">...instead of the <text style={{color:"#f26c4f"}}> mindless </text>  scrolling on other social media platforms?  to share</h4>
       </div>
       </div>
@@ -69,7 +69,7 @@ function Page5() {
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col >
-                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/videohome.jpg"/>
+                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"10px"}} variant="top" src="/videohome.jpg"/>
               </Col>
               <Col>
                 <Card.Title style={{fontSize:"20px",textAlign:"center"}}>VIDEOS</Card.Title>
@@ -85,7 +85,7 @@ function Page5() {
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col>
-                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/bloghome.jpg"/>
+                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"10px"}} variant="top" src="/bloghome.jpg"/>
               </Col>
               <Col>
                 <Card.Title style={{fontSize:"20px",textAlign:"center"}}>BLOGS</Card.Title>
@@ -102,7 +102,7 @@ function Page5() {
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col>
-                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/communityhome.jpg"/>
+                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"10px"}} variant="top" src="/communityhome.jpg"/>
               </Col>
               <Col>
                 <Card.Title style={{fontSize:"20px"}}>COMMUNITY</Card.Title>

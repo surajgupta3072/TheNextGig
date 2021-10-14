@@ -31,7 +31,7 @@ function Page3() {
       </div>
       </div>
       <div className="App1">
-        <div style={{}} className="carousel-wrapper">
+        <div className="carousel-wrapper">
           <Carousel  breakPoints={breakPoints}>
             {Data.map(detail => (
             <div className="Item_component">

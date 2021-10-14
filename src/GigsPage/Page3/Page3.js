@@ -159,7 +159,7 @@ function Page3(props) {
  
                       <Col>
                         <Row className="proj_det_laptop d2">
-                          <Col className="img_col" md={4}>
+                          <Col className="img_col" md={5}>
                             <img
                               className="img_page3_card"
                               variant="top"
@@ -167,7 +167,7 @@ function Page3(props) {
                               alt="..."
                             />
                           </Col>
-                          <Col className="text_col" md={8}>
+                          <Col className="text_col" md={7}>
                             <h1 className="text_page3_card_gigs">
                             {gigs[0].GigStipend}
                             </h1>

@@ -3,8 +3,8 @@
   margin-left: 5% !important;
 }
 .anim_img {
-  height: 80%;
-  width: 80%;
+  height: 72%;
+  width: 100%;
 }
 .vertical-menu {
   height: 80%;
@@ -13,23 +13,10 @@
 .mbd_image {
   height: 22rem;
 }
-.rectangle-box3 {
-  width: 105%;
-  height: 150px;
-  border: 1px solid rgb(212, 71, 41);
-  background: transparent;
-}
 .container2_page3 {
-  margin-top: 7%;
+  margin-top: 0%;
 }
 @media only screen and (min-width: 500px) {
-  .rectangle-box3 {
-    margin: 10%;
-    width: 85%;
-    height: 150px;
-    border: 1px solid rgb(212, 71, 41);
-    background: transparent;
-  }
   .rec.rec-arrow-left {
     margin-left: 30px;
     margin-right: -22px;
@@ -59,8 +46,8 @@
   margin-left: "1.5%";
   background-color: rgba(242, 108, 79, 0.07);
   border: 2px solid rgba(242, 108, 79, 0.6);
-  border-radius: 1px;
   margin-bottom: 5%;
+  border-radius: 2%;
 }
 .menu_card {
   width: 100%;
@@ -79,9 +66,6 @@
 }
 .page3_3linetext {
   font-size: 20px;
-}
-.page3_3linetext2 {
-  margin-top: 24px;
 }
 .page3_cardtext {
   font-size: 25px;
@@ -138,6 +122,7 @@
   width: 90%;
   text-decoration: none;
   margin-top: 1%;
+  border-radius: 4%;
 }
 .menu_list:hover {
   border: 2px solid #f26c4f;
@@ -247,6 +232,7 @@
   .main_cardbody_row {
     width: fit-content;
     margin-left: 2%;
+    border-radius: 20%;
   }
   .twoline_desc {
     font-size: 14px;
@@ -276,11 +262,6 @@
   .page3_3linetext {
     font-size: 14px;
     text-align: center;
-  }
-  .page3_3linetext2 {
-    font-size: 16px;
-    text-align: center;
-    color: #ffffffbf;
   }
   .page3_cardtext {
     font-size: 18px;

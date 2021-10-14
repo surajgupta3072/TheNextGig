@@ -14,8 +14,8 @@ function Header(props) {
     }
   return (
     <Navbar style={{background:"white", padding:"0px", width:"100%", position:"sticky", top:"0", zIndex:"100"}} expand="lg">
-        <Navbar.Brand style={{marginLeft:"8%", padding:"0"}} href="/">
-            <img style={{height:"70px", width:"70px"}} src="/TNG_logo.png" alt="logo"/>
+        <Navbar.Brand style={{marginLeft:"8%", padding:"3px"}} href="/">
+            <img style={{height:"68px", width:"90px"}} src="/TNG_logo.png" alt="logo"/>
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
