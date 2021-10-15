@@ -18,7 +18,7 @@ function Page3() {
 
       <div className="heading_box">
       <div>
-        <p class="btn">
+        <p className="btn">
           <span>
             <span>
               <span className="border_box">TNG ORIGINALS</span>
@@ -30,14 +30,16 @@ function Page3() {
         <h4 className="page3_subtitle">Curated, certified sessions to make <span className="page3_orange"> you </span> an expert</h4>
       </div>
       </div>
+      <br/>
       <div className="App1">
         <div className="carousel-wrapper">
-          <Carousel  breakPoints={breakPoints}>
+          <Carousel breakPoints={breakPoints}>
             {Data.map(detail => (
             <div className="Item_component">
               <CardX
                 text1={detail.course_instructor_post}
                 text2={detail.course_name}
+                text3={detail.instructor_creds}
                 card={detail.course_image}
                 logo={detail.course_image}
                 name={detail.course_instructor}
@@ -50,10 +52,6 @@ function Page3() {
             ))}
           </Carousel>
         </div>
-      </div>
-      
-      <div className="button_div_page3">
-        <a href="/TNGoriginals"><button  className="button_slide slide_right">Check ‘em out<ArrowRight className="button_arrow"/></button></a>
       </div>
       </div>
     );

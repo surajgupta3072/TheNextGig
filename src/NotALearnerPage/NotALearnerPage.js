@@ -24,7 +24,7 @@ function NotALearnerPage() {
                         </p>
                     </div>
                     <div style={{ marginTop: "70px" }}>
-                        <h4 className="nolearner_subtitle">So you’re an organisation, industry expert or just a curious person and.....</h4>
+                        <h4 className="nolearner_subtitle">You’re an organisation, industry expert or just a curious person and.....</h4>
                     </div>
                 </div>
                 <Container style={{marginTop:"7%"}}>
@@ -36,7 +36,7 @@ function NotALearnerPage() {
                                 </Card.Text>
                             </Card.Body>
                             <br/>
-                            <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/experimentalhome.jpg" />
+                            <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./rubix.jpeg" />
                         </Card>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(200, 150, 54, 0.07)", border: "2px solid rgba(200, 150, 54, 0.4)" }}>
                             <Card.Body style={{ marginTop: "10%" }}>
@@ -45,7 +45,7 @@ function NotALearnerPage() {
                                 </Card.Text>
                             </Card.Body>
                             <br/>
-                            <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/experimentalhome.jpg" />
+                            <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./maarten.jpeg" />
                         </Card>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(86, 150, 112, 0.07)", border: " 2px solid rgba(86, 150, 112, 0.6)" }}>
                             <Card.Body style={{ marginTop: "10%" }}>
@@ -54,7 +54,7 @@ function NotALearnerPage() {
                                 </Card.Text>
                             </Card.Body>
                             <br/>
-                            <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/experimentalhome.jpg" />
+                            <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./william.jpeg" />
                         </Card>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(70, 83, 204, 0.07)", border: "2px solid rgba(70, 83, 204, 0.6)" }}>
                             <Card.Body style={{ marginTop: "10%" }}>
@@ -63,7 +63,7 @@ function NotALearnerPage() {
                                 </Card.Text>
                             </Card.Body>
                             <br/>
-                            <Card.Img style={{ marginTop: "12%", marginLeft:"23%",height: "140px", width: "140px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/experimentalhome.jpg" />
+                            <Card.Img style={{ marginTop: "12%", marginLeft:"23%",height: "140px", width: "140px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./toa-heftiba.jpeg" />
                         </Card>
                      </Row>
                     </Container>
@@ -88,7 +88,7 @@ function NotALearnerPage() {
                         </p>
                     </div>
                     <div style={{ marginTop: "70px" }}>
-                        <h4 className="nolearner_subtitle">So you’re an organisation, industry expert or just a curious person and.....</h4>
+                        <h4 className="nolearner_subtitle">You’re an organisation, industry expert or just a curious person and.....</h4>
                     </div>
                 </div>
                 <Container style={{marginTop:"20px"}}>
@@ -97,7 +97,7 @@ function NotALearnerPage() {
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
-                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/masterclasshome.jpg"/>
+                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="./rubix.jpeg"/>
                                 </Col>
                                 <Col>
                                 <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
@@ -111,7 +111,7 @@ function NotALearnerPage() {
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
-                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/masterclasshome.jpg"/>
+                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="./maarten.jpeg"/>
                                 </Col>
                                 <Col>
                                 <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
@@ -125,7 +125,7 @@ function NotALearnerPage() {
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
-                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/masterclasshome.jpg"/>
+                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="./william.jpeg"/>
                                 </Col>
                                 <Col>
                                 <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
@@ -139,7 +139,7 @@ function NotALearnerPage() {
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
-                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/masterclasshome.jpg"/>
+                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="./toa-heftiba.jpeg"/>
                                 </Col>
                                 <Col>
                                 <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>

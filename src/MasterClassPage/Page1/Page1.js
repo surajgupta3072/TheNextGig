@@ -10,6 +10,7 @@ const breakPoints = [
   { width: 750, itemsToShow: 2 },
   { width: 1080, itemsToShow: 3 },
 ];
+
 function Page1() {
   return (
     <div>

@@ -250,7 +250,7 @@ function Page3(props) {
         <div className="main_card" >               
                 <div className="main_cardbody"> 
                   <div >
-                    <div   className="col1_cardbody">
+                    <div className="col1_cardbody">
                       {paymentshow===false &&
                         <video src={epivid} className="img_letsgo" controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
                       }
@@ -373,8 +373,8 @@ function Page3(props) {
       </div>
       <div className="header_masterclass">
         <Container>
-          <div className="top_masterclass"><h1>RELATED GIGS / LIVE PROJECTS </h1>
-            <p className="subtitle_masterclass">Let’s <span className="orange_text_masterclass"> practice </span> what we’ve learnt practice it. </p>
+          <div className="top_masterclass"><h1>RELATED OPPORTUNITIES</h1>
+            <p className="subtitle_masterclass">Let’s <span className="orange_text_masterclass"> apply </span> what we’ve learnt </p>
           </div>
         </Container>
         </div>
@@ -414,7 +414,7 @@ function Page3(props) {
           </div>
           <div className="header_masterclass">
           <Container>
-          <div className="top_masterclass"><h1>OTHER MASTERCLASSES</h1>
+          <div className="top_masterclass"><h1>OTHER SESSIONS</h1>
             <p className="subtitle_masterclass">Don’t stop learning!<span className="explore_sessions" ><a style={{textDecoration:"none", color:"#f26c4f"}} href="/TNGoriginals">Explore all sessions &#62; &#62;</a></span></p>
           </div>
           </Container>

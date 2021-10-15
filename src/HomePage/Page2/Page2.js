@@ -6,7 +6,8 @@ import './Page2.css';
 
 function Page2() {
     return (
-    <div id="ummm" style={{marginTop:"5%"}}>
+    <div id="ummm">
+      <br/><br/><br/>
       <div className="page2_laptop_view">
         <Container>
         <p style={{fontSize:"32px", fontWeight:"600",marginLeft:"1.5%",marginTop:"20px",marginBottom:"3%"}}>

@@ -19,7 +19,7 @@ function Page4() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle">Practice what you <span style={{ color: "grey"}} className="heading_1span"> preach</span> learn.</h4>
+        <h4 className="page3_subtitle">Practice what you <span style={{ color: "grey"}} className="heading_1span"> preach</span> <text style={{color:"#F26C4F"}}>learn.</text></h4>
       </div>
       </div>
         <Container>
@@ -101,7 +101,7 @@ function Page4() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-      <h4 className="page3_subtitle">Practice what you <span style={{ color: "grey"}} className="heading_1span"> preach</span> learn.</h4>
+      <h4 className="page3_subtitle">Practice what you <span style={{ color: "grey"}} className="heading_1span"> preach</span> <text style={{color:"#F26C4F"}}>learn.</text></h4>
       </div>
       </div>
         
