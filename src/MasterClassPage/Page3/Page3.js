@@ -97,35 +97,29 @@ function Page3(props) {
             <div style={{marginTop:"3%"}}>
               <p className="page3_3linetext">{session.course_description}</p>
             </div>
-            <Row className="card1_page3" style={{marginTop: "3%"}}>
-            <div className="diver">
-              <p style={{marginTop:"12px"}}  className="page3_cardtext">
-              Prepares you for roles in:
-              </p>
-              <Row>
-                <Col>
-                  <Row style={{marginBottom:"12px",marginLeft:"-4px"}}>
-                    <Col className="img_col">
-                      <img alt="..." className="img_page3_card" variant="top" src="/imageh.png"/>
-                    </Col>
-                    <Col className="text_col">
-                      <h1 className="text_page3_card">{session.course_role}</h1>
-                    </Col>
-                  </Row>
-                </Col>
-                <Col>
-                  <Row>
-                    <Col className="img_col">
-                      <img alt="..." className="img_page3_card" variant="top" src="/imageh.png"/>
-                    </Col>
-                    <Col className="text_col">
-                      <h1 className="text_page3_card">{session.course_industry}</h1>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-          </div>
-            </Row>
+            <div style={{display:"flex",justifyContent:"space-evenly"}}>
+              <div >
+            <div  className="card1_page3" style={{marginTop: "3%"}}>
+                      <h1 className="text_page3_card">What you’ll learn:</h1>
+              </div>
+              <br/>
+              <p><img src="/tick.png"/>&nbsp;&nbsp;Fundamentals of marketing</p>
+                      <p><img src="/tick.png"/>&nbsp;&nbsp;Difference between product and brand</p>
+                      <p><img src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
+                      <p><img src="/tick.png"/>&nbsp;&nbsp;Using digital and social marketing<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channels to create a brand presence</p>
+                      </div>
+                      <div>
+                      <div>
+              <div className="card1_page3" style={{marginTop: "3%"}}>
+                      <h1 className="text_page3_card">Prepares you for:</h1>
+                </div>
+                </div>
+                <br/>
+                <p><img src="/tick.png"/>&nbsp;&nbsp;Marketing roles</p>
+                <p><img src="/tick.png"/>&nbsp;&nbsp;Branding and growth roles</p>
+                <p><img src="/tick.png"/>&nbsp;&nbsp;Freelance marketing gigs</p>
+                </div>
+                </div>
             <Row className="laptop_view_video_master">
               <Col>
                 <a href={"/expert/"+session.ExpertId}><button  className="button_slide_page3 slide_right">
@@ -378,7 +372,7 @@ function Page3(props) {
           </div>
         </Container>
         </div>
-        <div className="slider_mobile" style={{display:"block"}}>
+        <div  style={{display:"block"}}>
           {session.gigs.length===0 ? <Container><h1 style={{marginTop:"15%"}}>We are constantly sourcing gigs / projects in this domain</h1>
               <h5 style={{color:"#F26C4F"}}>Until then...</h5><div className="button_masterclass1">
               <a style={{marginLeft:"%",marginBottom:"15%"}} href="../ExperientialLearning"><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
@@ -419,7 +413,7 @@ function Page3(props) {
           </div>
           </Container>
           </div>
-          <div className="slider_mobile" style={{display:"block"}}> 
+          <div> 
            <div><Carousel  breakPoints={breakPoints}>
             {master.map((details,index) => {
               if(index===session.id-1)
@@ -431,7 +425,6 @@ function Page3(props) {
              <MDBCardBody > 
                <div className="Course_name">{details.course_name}</div>
                  <div style={{color:"grey"}} className="instructor_name">{details.course_instructor}
-
                </div>
                  <div style={{color:"grey"}} className="instructor_post">{details.course_instructor_post}</div>
                  <div style={{display:"flex",justifyContent:"space-between"}}>
@@ -451,8 +444,13 @@ function Page3(props) {
                 <h6 style={{fontSize:"15px",color:"#FFFFFF99"}}>
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
-                </Col> 
-                <div style={{display:"flex",justifyContent:"center"}}>
+                </Col>
+                <Col className="soci_master_lap" style={{display:"flex",justifyContent:"center"}}>
+                    <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                </Col>
+                <div className="soci_master" style={{display:"flex",justifyContent:"center"}}>
                     <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;

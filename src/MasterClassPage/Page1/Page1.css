@@ -9,7 +9,7 @@
   border-radius: 12px;
 }
 .slider_mobile {
-  display: none;
+  display: none !important;
 }
 .card_mastercard {
   animation: slider 3s;
@@ -166,7 +166,7 @@
     display: none !important;
   }
   .slider_mobile {
-    display: inline;
+    display: inline !important;
   }
   .card_mastercard {
     height: 26rem;

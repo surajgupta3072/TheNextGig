@@ -2,7 +2,7 @@
   {
     "id": 1,
     "course_name": "The ultimate guide to branding and marketing",
-    "course_image": "./thisisengineering-raeng-TXxiFuQLBKQ-unsplash.jpeg",
+    "course_image": "/thisisengineering-raeng-TXxiFuQLBKQ-unsplash.jpeg",
     "course_instructor": "Anil Nair",
     "course_instructor_post": "Vice President, Kedaara Capital",
     "instructor_creds": "IIM-A 2020, SRCC 2017",
@@ -75,7 +75,7 @@
   {
     "id": 2,
     "course_name": "The ultimate guide to branding and marketing",
-    "course_image": "./thisisengineering-raeng-TXxiFuQLBKQ-unsplash.jpeg",
+    "course_image": "/thisisengineering-raeng-TXxiFuQLBKQ-unsplash.jpeg",
     "course_instructor": "Anil Nair",
     "course_instructor_post": "Vice President, Kedaara Capital",
     "instructor_creds": "IIM-A 2020, SRCC 2017",
@@ -110,44 +110,12 @@
         "title": "Foundations of Marketing",
         "description": "f type and scrambled it to maem irem ipsum has bnter took a galley oke a type specimen book it ha",
         "epi_video": "/loger1.svg"
-      }
-    ],
-    "gigs": [
-      {
-        "id": "a1",
-        "project_name": "Machine Learning",
-        "company_name": "Tata",
-        "duration": "3 months",
-        "industry": "Automobile",
-        "fees": "5k INR",
-        "stipend_range": "10k INR",
-        "internship_image": "https://media.istockphoto.com/photos/robot-with-education-hud-picture-id966248982?k=6&m=966248982&s=612x612&w=0&h=n4MgcVUV2D6kXpJGCyIMIgFuqsi63DkzjiwWQi4n0aE="
-      },
-      {
-        "id": "b2",
-        "project_name": "Computer Graphics",
-        "company_name": "Birla",
-        "duration": "1 month",
-        "industry": "fashion",
-        "fees": "10k INR",
-        "stipend_range": "40k INR",
-        "internship_image": "https://computerscienceassignmentshelp.com/wp-content/uploads/2017/01/Computer-Graphics-Assignment-Help.jpg"
-      },
-      {
-        "id": "e12a4ecc0d640624e452c00af223c86e",
-        "project_name": "Web Development",
-        "company_name": "next_gig",
-        "duration": "2 months",
-        "industry": "Eductional",
-        "fees": "10k INR",
-        "stipend_range": "40k INR",
-        "internship_image": "https://www.spinutech.com/webres/Image/web-design-development/articles/Web%20Dev-Blog.png"
       }
     ]
   },{
     "id": 3,
     "course_name": "The ultimate guide to branding and marketing",
-    "course_image": "./thisisengineering-raeng-TXxiFuQLBKQ-unsplash.jpeg",
+    "course_image": "/thisisengineering-raeng-TXxiFuQLBKQ-unsplash.jpeg",
     "course_instructor": "Anil Nair",
     "course_instructor_post": "Vice President, Kedaara Capital",
     "instructor_creds": "IIM-A 2020, SRCC 2017",
@@ -182,38 +150,6 @@
         "title": "Foundations of Marketing",
         "description": "f type and scrambled it to maem irem ipsum has bnter took a galley oke a type specimen book it ha",
         "epi_video": "/loger1.svg"
-      }
-    ],
-    "gigs": [
-      {
-        "id": "a1",
-        "project_name": "Machine Learning",
-        "company_name": "Tata",
-        "duration": "3 months",
-        "industry": "Automobile",
-        "fees": "5k INR",
-        "stipend_range": "10k INR",
-        "internship_image": "https://media.istockphoto.com/photos/robot-with-education-hud-picture-id966248982?k=6&m=966248982&s=612x612&w=0&h=n4MgcVUV2D6kXpJGCyIMIgFuqsi63DkzjiwWQi4n0aE="
-      },
-      {
-        "id": "b2",
-        "project_name": "Computer Graphics",
-        "company_name": "Birla",
-        "duration": "1 month",
-        "industry": "fashion",
-        "fees": "10k INR",
-        "stipend_range": "40k INR",
-        "internship_image": "https://computerscienceassignmentshelp.com/wp-content/uploads/2017/01/Computer-Graphics-Assignment-Help.jpg"
-      },
-      {
-        "id": "e12a4ecc0d640624e452c00af223c86e",
-        "project_name": "Web Development",
-        "company_name": "next_gig",
-        "duration": "2 months",
-        "industry": "Eductional",
-        "fees": "10k INR",
-        "stipend_range": "40k INR",
-        "internship_image": "https://www.spinutech.com/webres/Image/web-design-development/articles/Web%20Dev-Blog.png"
       }
     ]
   }

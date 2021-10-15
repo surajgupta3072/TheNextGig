@@ -127,7 +127,7 @@ function Page3(props) {
                     <p className="page3_cardtext">Project Details:</p>
                     <Row>
                       <Col>
-                        <div style={{display:"flex",justifyContent:"space-evenly"}} className="proj_det_laptop">
+                        <div style={{display:"flex",justifyContent:"space-between"}} className="proj_det_laptop">
                           <div className="img_col">
                             <img
                               alt="..."

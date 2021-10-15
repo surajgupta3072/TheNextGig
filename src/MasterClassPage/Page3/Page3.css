@@ -92,10 +92,13 @@
   text-align: center;
 }
 .card1_page3 {
-  width: 80%;
+  width: fit-content;
   margin-left: "10%";
-  background-color: rgba(242, 108, 79, 0.07);
-  border: 2px solid rgba(242, 108, 79, 0.6);
+  padding-top: 8px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgba(242, 108, 79, 0.12);
   margin-top: 20%;
 }
 .button_slide_page3 {
@@ -113,6 +116,7 @@
   font-size: 16px;
   letter-spacing: 1px;
   cursor: pointer;
+  margin-left: 10%;
   -webkit-transition: ease-out 0.4s;
   -moz-transition: ease-out 0.4s;
   transition: ease-out 0.4s;
@@ -176,8 +180,14 @@
 .masterclass_video_mobile {
   display: none;
 }
+.soci_master {
+  display: none !important;
+}
 @media screen and (max-width: 768px) {
   .info {
+    display: none;
+  }
+  .soci_master_lap {
     display: none;
   }
   .masterclass_video_laptop {
