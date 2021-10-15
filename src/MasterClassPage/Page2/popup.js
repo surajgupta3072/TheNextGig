@@ -54,7 +54,7 @@ function MyVerticallyPopUp(props) {
             Email / Mobile Number <text style={{ color: "#f26c4f" }}>*</text>
           </p>
           <p style={{ marginTop: "-15px", fontSize: "15px" }}>
-            (we promise we won't spam)
+(no spamming, we promise)
           </p>
           <input
             onChange={handleid}
@@ -66,7 +66,7 @@ function MyVerticallyPopUp(props) {
           </p>
           <p style={{ marginTop: "-15px", fontSize: "15px" }}>
             {" "}
-            (we will try our best to ____)
+(we will try our best to get them)
           </p>
           <select
             onChange={handlefield1}

@@ -50,7 +50,7 @@ function MyVerticallyCenteredModal(props) {
             Email / Mobile Number <text style={{ color: "#f26c4f" }}>*</text>
           </p>
           <p style={{ marginTop: "-15px", fontSize: "15px" }}>
-            (we promise we won't spam)
+(no spamming, we promise)
           </p>
           <input
             onChange={handleid}

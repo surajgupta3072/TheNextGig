@@ -10,24 +10,28 @@ function Page1() {
          <Row>
           <Col style={{marginTop:"5%", marginBottom:"10%"}} md={7}>
             <div>              
-              <div class="heading">
+              <div className="heading">
                 <div>
-                  <p class="slide-down">
+                  <p className="slide-down">
                     <span>LEARN.</span>
                   </p>
                 </div>
                 <div>
-                  <p class="slide-down">
+                  <p className="slide-down">
                     <span>UPSKILL.</span>
                   </p>
                 </div>
                 <div>
-                  <p class="slide-down">
+                  <p className="slide-down">
                     <span>GROW.</span>
                   </p>
                 </div>
+                <div>
+                <p className="slide-down" style={{fontSize:"40px",color:"#F26C4F"}}>
+                    <span>the right way.</span>
+                  </p>
+                  </div>
               </div>
-              <h1 className="subheading slide-down">the right way.</h1>
             </div>
           </Col>
           <Col className="homeimage" md={5}></Col>

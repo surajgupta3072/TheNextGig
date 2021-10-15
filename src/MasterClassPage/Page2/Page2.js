@@ -53,8 +53,8 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
             <p  className="mast_page2_p3">From a specific expert / company?</p>
           </Col>
           <Col style={{paddingLeft:"12%"}} className="col-button">
-            <button style={{marginLeft:"20%"}} className="button_slide_MC_Page2_2 slide_right" onClick={() => setModalShow(true)}>Recommend <br /> a masterclass
-            <ArrowLeft className="button_arrow_MC_Page2_Right"/></button>
+            <button style={{marginLeft:"20%"}} className="button_slide_MC_Page2_2 slide_right" onClick={() => setModalShow(true)}>Recommend <br /> a session
+            <ArrowLeft style={{marginLeft:"1.5%"}} className="button_arrow_MC_Page2_Right"/></button>
               <MyVerticallyPopUp
                   show={modalShow}
                   onHide={() => setModalShow(false)}
@@ -70,7 +70,7 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
                 </h6>
                 </Col> 
                 <Col md={2}>
-                    <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                 </Col>
@@ -121,8 +121,8 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
             <p  style={{textAlign:"center"}} className="mast_page2_p3">From a specific expert / company?</p>
           </Col>
           <Col style={{paddingLeft:"12%"}} className="col-button">
-            <button style={{marginLeft:"20%"}} className="button_slide_MC_Page2_2 slide_right" onClick={() => setModalShow(true)}>Recommend <br /> a masterclass
-            <ArrowLeft className="button_arrow_MC_Page2_Right"/></button>
+            <button style={{marginLeft:"20%"}} className="button_slide_MC_Page2_2 slide_right" onClick={() => setModalShow(true)}>Recommend <br /> a session
+            <ArrowLeft style={{marginLeft:"5%"}} className="button_arrow_MC_Page2_Right"/></button>
               <MyVerticallyPopUp
                   show={modalShow}
                   onHide={() => setModalShow(false)}
@@ -138,7 +138,7 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
                 </h6>
                 </Col> 
                 <div style={{display:"flex",justifyContent:"center"}} md={2}>
-                    <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                 </div>
