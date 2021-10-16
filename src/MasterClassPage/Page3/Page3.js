@@ -185,6 +185,7 @@ function Page3(props) {
           </Row>
       </Container>
       <Container className="container2_page3 masterclass_video_laptop" style={{padding: "0%", maxWidth: "94.25%",  marginBottom:"0%"}}>
+      <br/><br/>
         <Row className="main_cardbody_row" style={{marginLeft: "auto",marginRight:"auto"}}>
         <div className="main_card" >               
                 <div className="main_cardbody"> 
@@ -274,7 +275,7 @@ function Page3(props) {
                         </div>
                         )
                       }
-                    </div >
+                    </div>
                     <div md={4}>
                       <div className="menu_card">   
                         <h1 className="epi" style={{marginTop: "2%", marginLeft: "2%"}}>Episodes</h1>   

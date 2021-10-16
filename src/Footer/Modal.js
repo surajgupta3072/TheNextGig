@@ -3,6 +3,7 @@ import "./Modal.css";
 import emailjs from "emailjs-com";
 import { ArrowLeft } from "react-bootstrap-icons";
 import { useState } from "react";
+import Swal from 'sweetalert2'
 
 function MyVerticallyCenteredModal(props) {
   const [feedback, setFeedback] = useState("");
@@ -28,6 +29,16 @@ function MyVerticallyCenteredModal(props) {
         if (res.status === 200) {
           setFeedback("");
           setData("");
+          props.onHide();
+          Swal.fire({
+            title: "<h5 style='color:white'>" + "Saved Succesfully" + "</h5>",
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000,
+            background: '#020312',
+            color: 'white',
+            iconColor: "orange"
+          })
         }
       })
       .catch((err) => console.error("Failed to send feedback. Error: ", err));
