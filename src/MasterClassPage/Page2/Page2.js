@@ -91,7 +91,8 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
                 <a href="/ExperientialLearning"><button   className="button_slide_MC_Page2 slide_right">Gigs / projects / <br /> internships<ArrowRight className="button_arrow_MC_Page2"/></button></a>
               </div>
             </div>
-         </div> 
+         </div>
+         <br/> 
        </Col> 
         <Col style={{backgroundColor:"#1B1C2A"}} className="col-container">
          <Container>

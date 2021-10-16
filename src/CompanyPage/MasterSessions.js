@@ -28,7 +28,7 @@ function MasterSessions(props) {
                         <div style={{color:"grey"}}>{Session.course_instructor_post}</div>
                         <div style={{display:"flex",justifyContent:"space-between"}}>
                         <div className="episode_course">{Session.course_episode}</div>
-                        <div>INR {Session.fees}</div>
+                        <div>&#8377; {Session.fees}</div>
                         </div>
                         </MDBCardBody>
                     </MDBCard>

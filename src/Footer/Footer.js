@@ -10,8 +10,9 @@ function Footer(){
     const [modalShow, setModalShow] = useState(false);
 
     return(
-        <div style={{background: "rgba(255, 255, 255, 0.1)", paddingTop:"4.5%"}}>
-         <div className="footer_laptop">
+        <div>
+        <div className="footer_laptop" style={{background: "rgba(255, 255, 255, 0.1)", paddingTop:"4.5%"}}>
+         <div >
             <Row style={{marginLeft: "9%", marginRight: "9%"}}>
                 <Col md={7} style={{marginBottom:"3%"}}>
                     <h2 style={{marginTop:"-20px"}} className="footer_heading1">We're here</h2>
@@ -38,9 +39,11 @@ function Footer(){
                     </div>
                 </Col>
             </Row>
+            </div>
             
-            <div className="footer_div2">
-            <Row style={{marginTop: "2.5%", border:"1px solid #534D4D", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
+            </div>
+            <div className="footer_div2_lap">
+            <Row style={{border:"1px solid #534D4D", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
                 <h6 style={{fontSize:"15px",color:"grey"}}>
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
@@ -53,7 +56,7 @@ function Footer(){
                 </Col>
             </Row>
             </div>
-            </div>
+            <div className="x_mob" style={{background: "rgba(255, 255, 255, 0.1)", paddingTop:"4.5%"}}>
             <div style={{marginTop:"-10%"}} className="mobile_footer">
             <Row style={{marginLeft: "9%", marginRight: "9%"}}>
                 <Col md={7} style={{marginBottom:"3%"}}>
@@ -87,7 +90,7 @@ function Footer(){
                 </div>
                 </div>
             </Row>
-            
+            </div>
             <div className="footer_div2">
             <Row style={{border:"1px solid #534D4D", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>

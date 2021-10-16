@@ -82,15 +82,15 @@ function Page1() {
               <MDBCardBody>
                 <div className="Course_name">{carder.course_name}</div>
                 <div className="instruct_time">
-                  <div className="instructor_name">
+                  <div style={{color:"grey"}} className="instructor_name">
                     {carder.course_instructor}
                   </div>
                 </div>
-                  <div className="instructor_post">
+                  <div style={{color:"grey"}} className="instructor_post">
                     {carder.course_instructor_post}
                   <div style={{display:"flex",justifyContent:"space-between"}}>
-                  <div className="time_course">{carder.course_timing}</div>
-                  <div className="episode_course">{carder.course_episode}</div>
+                  <div style={{color:"white"}} className="time_course">{carder.course_timing}</div>
+                  <div style={{color:"white"}} className="episode_course">{carder.course_episode}</div>
                   </div>
                 </div>
               </MDBCardBody>

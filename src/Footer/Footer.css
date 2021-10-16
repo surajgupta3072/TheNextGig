@@ -6,7 +6,9 @@
 .button_arrow {
   margin-bottom: -5%;
 }
-
+.x_mob {
+  display: none;
+}
 .footer_linespace {
   display: none;
 }
@@ -48,6 +50,12 @@
   .footer_heading1 {
     font-size: 28px;
     margin-top: 18%;
+  }
+  .footer_div2_lap {
+    display: none;
+  }
+  .x_mob {
+    display: block;
   }
   .footer_laptop {
     display: none;

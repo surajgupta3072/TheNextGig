@@ -13,9 +13,7 @@ export default function CardX(props) {
             <b>{props.text2}</b>
           </div>
         </div>
-        <div className="like-text" style={{display:"flex"}}>
-        <div >{props.name}</div>
-        </div>
+        <div className="like-text1">{props.name}</div>
         <div className="like-text1" style={{display:"flex"}}>
         <div>{props.text1}</div>
         </div>

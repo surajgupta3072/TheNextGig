@@ -57,20 +57,7 @@
 .boxing {
   margin-top: -0.7rem;
 }
-.join {
-  color: white;
-  margin-left: 10%;
-  font-size: 1.3rem;
-}
-.soon {
-  font-size: 1.3rem;
-  color: grey;
-  margin-left: 50%;
-}
-.line {
-  color: aliceblue;
-  margin-top: 1.2rem;
-}
+
 @keyframes slider {
   0% {
     transform: translateY(300px);
@@ -90,16 +77,6 @@
   .card-image {
     width: 428px;
     height: 280px;
-  }
-  .join {
-    font-weight: 1.8rem;
-  }
-  .line {
-    margin-top: -1.5rem;
-  }
-  .soon {
-    margin-left: 220px;
-    font-size: 1.8rem;
   }
   .texting {
     margin-top: 0rem;
@@ -160,17 +137,6 @@
     width: 240px;
     height: 200px;
   }
-  .join {
-    margin-left: 28px;
-  }
-  .soon {
-    margin-left: 110px;
-    font-size: 1.3rem;
-  }
-  /*  .texting,
-  .like-text {
-    margin-left: 20px;
-  } */
   .line {
     margin-top: 0.5rem;
   }
@@ -199,16 +165,6 @@
   .texting {
     font-size: 1rem;
   }
-  .line {
-    margin-top: -3rem;
-  }
-  .join {
-    font-size: 1rem;
-  }
-  .soon {
-    margin-left: 90px;
-    font-size: 1rem;
-  }
 }
 @media only screen and (max-width: 670px) {
   .cardpage3 {
@@ -219,20 +175,6 @@
   .card-image {
     width: 230px;
     height: 200px;
-  }
-  .join {
-    margin-left: 28px;
-  }
-  .soon {
-    margin-left: 110px;
-    font-size: 1.3rem;
-  }
-  /* .texting,
-  .like-text {
-    margin-left: 20px;
-  } */
-  .line {
-    margin-top: 0.5rem;
   }
   .texting {
     font-size: 1.2rem;

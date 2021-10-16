@@ -395,7 +395,7 @@ function Page3(props) {
                             <div style={{color:"grey"}} className="instructor_post">{company.industry}</div>
                             <div style={{display:"flex",justifyContent:"space-between"}}>
                             <div className="time_course">{company.duration}</div>
-                            <div className="episode_course">{company.fees}{company.stipend_range}</div>
+                            <div className="episode_course">&#8377;{company.fees}-&#8377;{company.stipend_range}</div>
                             </div>
                         </MDBCardBody>
                       </MDBCard>

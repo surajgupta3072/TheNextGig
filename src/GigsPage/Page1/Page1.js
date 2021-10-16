@@ -171,7 +171,7 @@ function Page1(props) {
                     {carder.CompanyDescription.substring(0, 150)}...
                   </ReactTooltip>
                 </div>
-                <div className="episode_course">{carder.GigStipend}</div>
+                <div className="episode_course">&#8377; {carder.GigStipend}</div>
               </div>
               <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}><em>Apply by {carder.GigApplyBy}</em></div>
             </MDBCardBody>
@@ -225,7 +225,7 @@ function Page1(props) {
                       {carder.CompanyDescription.substring(0, 150)}...
                     </ReactTooltip>
                   </div>
-                  <div className="episode_course">{carder.GigStipend}</div>
+                  <div className="episode_course">&#8377; {carder.GigStipend}</div>
                 </div>
                 <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}><em>Apply by {carder.GigApplyBy}</em></div>
               </MDBCardBody>
@@ -275,9 +275,9 @@ function Page1(props) {
                   <div className="instructor_post">
                     {carder.CompanyName}
                   </div>
-                  <div className="episode_course">{carder.GigStipend}</div>
+                  <div className="episode_course">&#8377; {carder.GigStipend}</div>
                 </div>
-              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
+              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px",fontSize:"0.85rem"}}>Apply by {carder.GigApplyBy}</div>
               </MDBCardBody>
             </MDBCard>
 }):videoslist.map((carder) => {
@@ -321,9 +321,9 @@ function Page1(props) {
         <div className="instructor_post">
           {carder.CompanyName}
         </div>
-        <div className="episode_course">{carder.GigStipend}</div>
+        <div className="episode_course">&#8377; {carder.GigStipend}</div>
       </div>
-    <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
+    <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px",fontSize:"0.85rem"}}>Apply by {carder.GigApplyBy}</div>
     </MDBCardBody>
   </MDBCard>
 })}
