@@ -448,12 +448,12 @@ function Page3(props) {
                 <Col className="soci_master_lap" style={{display:"flex",justifyContent:"center"}}>
                     <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Whatsapp onClick={()=>window.location.href="https://api.whatsapp.com/send?phone=919920891546"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                 </Col>
                 <div className="soci_master" style={{display:"flex",justifyContent:"center"}}>
                     <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Whatsapp onClick={()=>window.location.href="https://api.whatsapp.com/send?phone=919920891546"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                 </div>
             </Row>
             </div>

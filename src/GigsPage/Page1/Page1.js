@@ -74,7 +74,7 @@ function Page1(props) {
     addSearchTerm();
     const searchvids = gigs.filter((vid)=>{
       if(vid.CompanyIndustry.toLowerCase().includes(searchterm.toLowerCase()) || vid.GigFunction.toLowerCase().includes(searchterm.toLowerCase()) 
-      || vid.GigName.toLowerCase().includes(searchterm.toLowerCase()) || vid.GigDuration.toLowerCase().includes(searchterm.toLowerCase())) {
+      || vid.GigName.toLowerCase().includes(searchterm.toLowerCase()) || vid.GigDuration.toLowerCase().includes(searchterm.toLowerCase())||vid.CompanyName.toLowerCase().includes(searchterm.toLowerCase()) ) {
         return vid;
       }
     })

@@ -2,7 +2,7 @@ import "./Card.css";
 
 export default function CardX(props) {
   return (
-    <div className="container_card">
+    <div onClick={()=>{window.location.href="/TNGoriginals/"+props.carl}} className="container_card">
       <div className="cardpage3">
         <div className="card-header">
           <div className="card-title-group"></div>

@@ -171,7 +171,7 @@ function Skills(props) {
             <Col md={12}>
               <em><p style={{fontSize:"18px"}}>Through Social Learning - Blogs:<br/>
               {props.p.wholedata.SkillsAcquiredBlogs.map((bsk)=> 
-                <span>{bsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span style={{wordWrap:""}}>{bsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
               )}</p></em>
             </Col>
           </Row>

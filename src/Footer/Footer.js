@@ -52,7 +52,7 @@ function Footer(){
                 <Col md={2}>
                     <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Whatsapp onClick={()=>window.location.href="https://api.whatsapp.com/send?phone=919920891546"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                 </Col>
             </Row>
             </div>
@@ -101,7 +101,7 @@ function Footer(){
                 <div style={{display:"flex",justifyContent:"center"}} md={2}>
                     <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Whatsapp onClick={()=>window.location.href="https://api.whatsapp.com/send?phone=919920891546"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                 </div>
             </Row>
             </div>

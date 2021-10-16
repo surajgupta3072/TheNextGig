@@ -87,7 +87,7 @@ function Page2(props) {
             </div>
             <Container className="rectangle-box2" style={{marginTop:"5%"}}>
         <Row >
-          <Col style={{padding:"2%"}} md={8}>
+          <Col style={{paddingLeft:"2%",paddingTop:"0.5%"}} md={8}>
             <p style={{marginBottom:"0%"}} className="mast_page2_p3">Want to learn from a specific expert?</p>
             <p  className="mast_page2_p3">Want to provide feedback about an expert?</p>
           </Col>
@@ -110,9 +110,9 @@ function Page2(props) {
                 </h6>
                 </Col> 
                 <Col md={2}>
-                    <Linkedin style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Whatsapp onClick={()=>window.location.href="https://api.whatsapp.com/send?phone=919920891546"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                 </Col>
             </Row>
             </div>

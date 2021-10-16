@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import docClient from '../GigsPage/GigsAWS';
 import './SocialLearningPage.css';
-
+import {BiArrowBack} from 'react-icons/bi'
 function Blogs(props) {
   const [allBlogs, setAllBlogs] = useState([]);
   const [readsingleblog, setReadSingleBlog] = useState(false);
@@ -120,9 +120,9 @@ function Blogs(props) {
   return (
     <div>
       <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}}  value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Blog..." type="search"/>&nbsp;&nbsp;&nbsp;
-      <button className="search_button" onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button>
+      <button className="search_button"  onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button>
       <br/><br/>
-      <div  style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
+      <div  style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around",cursor:"pointer"}}>
         {!readsingleblog && allBlogs.map((blog)=>
           <div key={blog.BlogID} onClick={() => {if(!props.redirlog) BlogRead(blog);  else window.location.href="/login";}}>
             <div className="blog-box">
@@ -137,6 +137,8 @@ function Blogs(props) {
         )}
       </div>
       {readsingleblog && readsingleblog.map((blog)=>
+      <div>
+      <span onClick={()=>setReadSingleBlog(false)} style={{color:"#F26C4F"}}><BiArrowBack/></span>
         <div style={{marginLeft:"3%",paddingBottom:"10px", textAlign:"center"}} key={blog.BlogID}>
           <h4 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h4>
           <br/>
@@ -144,6 +146,7 @@ function Blogs(props) {
           <p style={{padding:"0", margin:"0",color:"grey"}}>{blog.BlogHashtags}</p>
           <br/>
           <p style={{fontSize:"18px", textAlign:"left"}}>{blog.Blog}</p>
+        </div>
         </div>
       )}
     </div>

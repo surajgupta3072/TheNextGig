@@ -10,7 +10,7 @@ function Page2() {
   const [modalShow, setModalShow] = useState(false);
     return (
       <Container className="top-container">
-      <Row>
+     {/*  <Row>
        <Col className="gig_text_laptop_view" md={7}>
          
          <p className="mast_page2_p2_gigs">Learn from the best.</p>
@@ -72,7 +72,7 @@ function Page2() {
             </Row>
          </Container>
        </Col>
-      </Row>
+      </Row> */}
       <Container className="rectangle-box2" style={{marginTop:"5%"}}>
         <Row >
           <Col style={{padding:"2%"}} md={8}>
@@ -99,7 +99,7 @@ function Page2() {
                 <Col className="social_link" md={2}>
                     <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <Whatsapp onClick={()=>window.location.href="https://api.whatsapp.com/send?phone=919920891546"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                 </Col>
             </Row>
             </div>

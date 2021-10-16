@@ -36,7 +36,7 @@ function Page3() {
           <Carousel breakPoints={breakPoints}>
             {Data.map(detail => (
             <div className="Item_component">
-              <CardX
+              <CardX 
                 text1={detail.course_instructor_post}
                 text2={detail.course_name}
                 text3={detail.instructor_creds}
