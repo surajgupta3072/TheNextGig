@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState,useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
+import Swal from 'sweetalert2'
 
 function WorkEx(props) {
   const [inputFields, setInputFields] = useState([
@@ -95,6 +96,15 @@ function WorkEx(props) {
           props.p.wholedata.WorkExperience = data.Attributes.WorkExperience
           props.p.setWholedata(props.p.wholedata)
           givereward()
+          Swal.fire({
+            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000,
+            background: '#020312',
+            color: 'white',
+            iconColor: "#F26C4F"
+          })
         }
       });
     }

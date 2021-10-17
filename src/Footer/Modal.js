@@ -31,13 +31,13 @@ function MyVerticallyCenteredModal(props) {
           setData("");
           props.onHide();
           Swal.fire({
-            title: "<h5 style='color:white'>" + "Saved Succesfully" + "</h5>",
+            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
             icon: 'success',
             showConfirmButton: false,
             timer: 2000,
             background: '#020312',
             color: 'white',
-            iconColor: "orange"
+            iconColor: "#F26C4F"
           })
         }
       })

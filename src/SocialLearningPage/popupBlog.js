@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ArrowLeft } from 'react-bootstrap-icons'
 import crypto from 'crypto';
 import docClient from '../GigsPage/GigsAWS';
+import Swal from 'sweetalert2'
 
 function MyVerticallyPopUpBlog(props) {
     const [topic, setTopic] = useState("");
@@ -53,8 +54,18 @@ function MyVerticallyPopUpBlog(props) {
                         if (err) {
                           console.log(err);
                         } else {
-                          alert("BLOG POSTED")
-                          window.location.reload();
+                          props.onHide();
+                          Swal.fire({
+                            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 2000,
+                            background: '#020312',
+                            color: 'white',
+                            iconColor: "#F26C4F"
+                          }).then(()=>window.location.reload());
+                          // alert("BLOG POSTED")
+                          // window.location.reload();
                         }
                       });
                     }

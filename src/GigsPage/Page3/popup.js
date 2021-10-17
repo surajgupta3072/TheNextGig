@@ -3,6 +3,7 @@ import { useState } from "react";
 import {ArrowLeft} from 'react-bootstrap-icons';
 import docClient from './../GigsAWS';
 import S3 from 'react-aws-s3';
+import Swal from 'sweetalert2'
 
 const config = {bucketName: process.env.REACT_APP_BUCKET_NAME, region: process.env.REACT_APP_REGION, accessKeyId: process.env.REACT_APP_ACCESS_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY};
 const ReactS3Client = new S3(config);
@@ -74,8 +75,17 @@ function MyVerticallyPopUp(props) {
                         console.log(err);
                       } 
                       else {
-                        alert("APPLIED SUCCESSFULLY")
-                        window.location.href="/ExperientialLearning"
+                        props.onHide();
+                        Swal.fire({
+                          title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+                          icon: 'success',
+                          showConfirmButton: false,
+                          timer: 2000,
+                          background: '#020312',
+                          color: 'white',
+                          iconColor: "#F26C4F"
+                        }).then(()=>window.location.href="/ExperientialLearning")
+                        // alert("APPLIED SUCCESSFULLY")
                       }
                     });
                   }

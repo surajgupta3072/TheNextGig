@@ -2,6 +2,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useState, useEffect } from 'react';
 import {ArrowLeft} from 'react-bootstrap-icons';
 import docClient from './../../GigsPage/GigsAWS';
+import Swal from 'sweetalert2'
 
 function MyVerticallyPopUp(props) {
   const [reward, setReward] = useState("");
@@ -80,7 +81,8 @@ function MyVerticallyPopUp(props) {
                     console.log(err);
                   } else {
                     setReward(0);
-                    alert("PAYMENT SUCCESSFUL");
+                    // alert("PAYMENT SUCCESSFUL");
+                    
                     var paramss = {
                       TableName: "UsersTable",
                       Key: { "UserID":props.uid },
@@ -103,7 +105,16 @@ function MyVerticallyPopUp(props) {
                             if (err) {
                               console.log(err);
                             } else {
-                              window.location.reload();
+                              Swal.fire({
+                                title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+                                icon: 'success',
+                                showConfirmButton: false,
+                                timer: 2000,
+                                background: '#020312',
+                                color: 'white',
+                                iconColor: "#F26C4F"
+                              }).then(()=>window.location.reload());
+                              
                             }
                           });
                         }

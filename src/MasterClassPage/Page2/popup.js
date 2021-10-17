@@ -3,6 +3,8 @@ import "./popup.css";
 import emailjs, { send } from "emailjs-com";
 import { ArrowLeft } from "react-bootstrap-icons";
 import { useState } from "react";
+import Swal from 'sweetalert2'
+
 function MyVerticallyPopUp(props) {
   const [data, setdata] = useState("");
   const [field1, setfield1] = useState("");
@@ -32,6 +34,16 @@ function MyVerticallyPopUp(props) {
           setdata("");
           setfield1("");
           setfield2("");
+          props.onHide();
+          Swal.fire({
+            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000,
+            background: '#020312',
+            color: 'white',
+            iconColor: "#F26C4F"
+          })
         }
       })
       .catch((err) => console.error("Failed to send feedback. Error: ", err));
