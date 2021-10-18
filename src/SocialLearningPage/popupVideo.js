@@ -10,8 +10,6 @@ const config = {bucketName: "socialvideoslearn", region: process.env.REACT_APP_R
 const ReactS3Client = new S3(config);
 
 function MyVerticallyPopUp(props) {
-  const [video, setvideo] = useState("");
-  const [datax, setData] = useState("");
     const [topic,setTopic]=useState("");
     const [creds,setCreds]=useState("");
     const [hashtag,setHashtag]=useState("");
@@ -19,76 +17,22 @@ function MyVerticallyPopUp(props) {
     const [showerr, setShowErr] = useState(false);
     const SERVICE_ID = "service_mztzudb";
     const TEMPLATE_ID = "template_4od9vgl";
+    
     function handleApply() {
       if(topic!=="" && creds!=="" && hashtag!=="" && vfile!==undefined) {
         if(vfile.size>209715200) {
           setShowErr("Video File more than 200MB size");
         }
         else {
-        ReactS3Client.uploadFile(vfile, vfile.name).then(data => {
-          const adata = {
-            "VideoID": crypto.randomBytes(8).toString("hex"),
-            "VideoTopic": topic,
-            "VideoCreds": creds,
-            "VideoUsername": props.userid.attributes.name,
-            "VideoHashtags": hashtag,
-            "VideoLink": data.location,
-            "isApproved": false
-          }
-          var paramss = {
-            TableName: "VideosTable",
-            Item: adata
-          };
-          docClient.put(paramss, function(err, data) {
-            if (err) {
-              console.log(err);
-            } 
-            else {
-              var params = {
-                TableName: "UsersTable",
-                Key: { "UserID":props.userid.username },
-                ProjectionExpression: "SocialLearningVideosUploaded",
-              };
-              docClient.get(params, function(err, data) {
-                if (err) {
-                  console.log(err);
-                } else {
-                  var params = {
-                    TableName: "UsersTable",
-                    Key: { "UserID":props.userid.username },
-                    UpdateExpression: "set SocialLearningVideosUploaded["+data.Item.SocialLearningVideosUploaded.length.toString()+"] = :slv",
-                    ExpressionAttributeValues:{
-                      ":slv":adata["VideoID"],
-                    },
-                    ReturnValues:"UPDATED_NEW"
-                  }
-                  docClient.update(params, function (err, data) {
-                    if (err) {
-                      console.log(err);
-                    } else {
-                      props.onHide();
-                      emailjs
-                        .send(
-                          SERVICE_ID,
-                          TEMPLATE_ID,
-                          {feedback:props.userid.attributes.name, Details:topic},
-                          "user_LuNukIHe37LdAF6nNkxao"
-                        );
-                      Swal.fire({
-                        title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
-                        icon: 'success',
-                        showConfirmButton: false,
-                        timer: 2000,
-                        background: '#020312',
-                        color: 'white',
-                        iconColor: "#F26C4F"
-                      }).then(()=>{ window.location.reload()});
-                      // alert("VIDEO POSTED");
-                      // window.location.reload();
-                    }
-                  });
-                }
-              });
+          ReactS3Client.uploadFile(vfile, vfile.name).then(data => {
+            const adata = {
+              "VideoID": crypto.randomBytes(8).toString("hex"),
+              "VideoTopic": topic,
+              "VideoCreds": creds,
+              "VideoUsername": props.userid.attributes.name,
+              "VideoHashtags": hashtag,
+              "VideoLink": data.location,
+              "isApproved": false
             }
             var paramss = {
               TableName: "VideosTable",
@@ -122,6 +66,12 @@ function MyVerticallyPopUp(props) {
                         console.log(err);
                       } else {
                         props.onHide();
+                        emailjs.send(
+                          SERVICE_ID,
+                          TEMPLATE_ID,
+                          {feedback:props.userid.attributes.name, Details:topic},
+                          "user_LuNukIHe37LdAF6nNkxao"
+                        );
                         Swal.fire({
                           title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
                           icon: 'success',
