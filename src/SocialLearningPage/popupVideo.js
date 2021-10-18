@@ -21,6 +21,10 @@ function MyVerticallyPopUp(props) {
     const TEMPLATE_ID = "template_4od9vgl";
     function handleApply() {
       if(topic!=="" && creds!=="" && hashtag!=="" && vfile!==undefined) {
+        if(vfile.size>209715200) {
+          setShowErr("Video File more than 200MB size");
+        }
+        else {
         ReactS3Client.uploadFile(vfile, vfile.name).then(data => {
           const adata = {
             "VideoID": crypto.randomBytes(8).toString("hex"),
@@ -86,8 +90,55 @@ function MyVerticallyPopUp(props) {
                 }
               });
             }
+            var paramss = {
+              TableName: "VideosTable",
+              Item: adata
+            };
+            docClient.put(paramss, function(err, data) {
+              if (err) {
+                console.log(err);
+              } 
+              else {
+                var params = {
+                  TableName: "UsersTable",
+                  Key: { "UserID":props.userid.username },
+                  ProjectionExpression: "SocialLearningVideosUploaded",
+                };
+                docClient.get(params, function(err, data) {
+                  if (err) {
+                    console.log(err);
+                  } else {
+                    var params = {
+                      TableName: "UsersTable",
+                      Key: { "UserID":props.userid.username },
+                      UpdateExpression: "set SocialLearningVideosUploaded["+data.Item.SocialLearningVideosUploaded.length.toString()+"] = :slv",
+                      ExpressionAttributeValues:{
+                        ":slv":adata["VideoID"],
+                      },
+                      ReturnValues:"UPDATED_NEW"
+                    }
+                    docClient.update(params, function (err, data) {
+                      if (err) {
+                        console.log(err);
+                      } else {
+                        props.onHide();
+                        Swal.fire({
+                          title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+                          icon: 'success',
+                          showConfirmButton: false,
+                          timer: 2000,
+                          background: '#020312',
+                          color: 'white',
+                          iconColor: "#F26C4F"
+                        });
+                      }
+                    });
+                  }
+                });
+              }
+            });
           });
-        });
+        }
       }
       else {
         setShowErr("All Fields are mandatory");
@@ -100,7 +151,7 @@ function MyVerticallyPopUp(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
         contentClassName="custom-modal-style"
-        dialogClassName="modal-w"
+        dialogClassName="modal-40w"
         className="mobile_view"
         transparent={true}
       >
@@ -111,10 +162,10 @@ function MyVerticallyPopUp(props) {
            <p style={{marginTop:"10%",fontSize:"18px"}} >Credentials <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(Highlight relevant creds)</text></p>
            <input onChange={(e)=>(setCreds(e.target.value))} value={creds} style={{width:"100%"}} placeholder="Founder of TheNextGig"></input>
            <p style={{marginTop:"10%",fontSize:"18px"}}>Hashtags <text style={{color:"#f26c4f"}}>*</text></p>
-           <input onChange={(e)=>(setHashtag(e.target.value))} value={hashtag} style={{width:"100%",marginTop:"1%"}} placeholder="#datascience #MachineLearning" />
-           <p style={{marginTop:"10%",fontSize:"18px"}}>Upload Video <text style={{color:"#f26c4f"}}>*</text></p>
+           <input onChange={(e)=>(setHashtag(e.target.value))} value={hashtag} style={{width:"100%",marginTop:"1%"}} placeholder="#datascience #webdev" />
+           <p style={{marginTop:"10%",fontSize:"18px"}}>Upload Video <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(less than 200MB)</text></p>
            <input onChange={(e)=>(setVfile(e.target.files[0]))} type="file"/>
-           <button onClick={handleApply} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"30%"}}>Submit<ArrowLeft className='button_arrow'/></button>
+           <button onClick={handleApply} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"35%"}}>Submit<ArrowLeft className='button_arrow'/></button>
            {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
          </div>
       </Modal.Body>  
