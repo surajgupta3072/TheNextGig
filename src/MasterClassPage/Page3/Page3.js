@@ -97,16 +97,16 @@ function Page3(props) {
             <div style={{marginTop:"3%"}}>
               <p className="page3_3linetext">{session.course_description}</p>
             </div>
-            <div style={{display:"flex",justifyContent:"space-evenly"}}>
+            <div className="appreciation">
               <div >
             <div  className="card1_page3" style={{marginTop: "3%"}}>
                       <h1 className="text_page3_card">What you’ll learn:</h1>
               </div>
               <br/>
-              <p><img src="/tick.png"/>&nbsp;&nbsp;Fundamentals of marketing</p>
-                      <p><img src="/tick.png"/>&nbsp;&nbsp;Difference between product and brand</p>
-                      <p><img src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
-                      <p><img src="/tick.png"/>&nbsp;&nbsp;Using digital and social marketing<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channels to create a brand presence</p>
+              <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Fundamentals of marketing</p>
+                      <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Difference between product and brand</p>
+                      <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
+                      <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Using digital and social marketing<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channels to create a brand presence</p>
                       </div>
                       <div>
                       <div>
@@ -115,9 +115,9 @@ function Page3(props) {
                 </div>
                 </div>
                 <br/>
-                <p><img src="/tick.png"/>&nbsp;&nbsp;Marketing roles</p>
-                <p><img src="/tick.png"/>&nbsp;&nbsp;Branding and growth roles</p>
-                <p><img src="/tick.png"/>&nbsp;&nbsp;Freelance marketing gigs</p>
+                <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Marketing roles</p>
+                <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Branding and growth roles</p>
+                <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Freelance marketing gigs</p>
                 </div>
                 </div>
             <Row className="laptop_view_video_master">
@@ -343,8 +343,8 @@ function Page3(props) {
           <Col style={{textAlign:"center"}}>
           <div style={{height:"2px",width:"100%",backgroundColor:"#F26C4F"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(242, 108, 79, 0.3)",border:"1px solid #F26C4F",paddingTop:"38px"}}>1</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>Lifetime access to 20 years of professional experience 
- <span style={{color: "#F26C4F"}}>compressed into 1.5 hours of learning</span></h3>
+            <h3 style={{marginTop:"-70px",marginLeft:"75px",fontSize:"15px"}}>Lifetime access to 20 years of professional experience 
+ <span style={{color: "#F26C4F"}}> compressed into 1.5 hours of learning</span></h3>
           </Col>
         </Row>
         <br/><br/>
@@ -352,7 +352,7 @@ function Page3(props) {
           <Col style={{textAlign:"center"}}>
             <div style={{height:"2px",width:"100%",backgroundColor:"#C89636"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(200, 150, 54, 0.3)",border:"1px solid #C89636",paddingTop:"38px"}}>2</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>Preference for experiential learning opportunities that we<span style={{color: "#C89636"}}>source for you in this domain</span></h3>
+            <h3 style={{marginTop:"-70px",marginLeft:"80px",fontSize:"15px"}}>Preference for experiential learning opportunities that we<span style={{color: "#C89636"}}>source for you in this domain</span></h3>
           </Col>
         </Row>
         <br/><br/>
@@ -360,7 +360,7 @@ function Page3(props) {
           <Col style={{textAlign:"center"}}>
           <div style={{height:"2px",width:"100%",backgroundColor:"#569670"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(86, 150, 112, 0.3)",border:"1px solid #569670",paddingTop:"38px"}}>3</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>A certificate of completion and a chance to get your in-<span style={{color: "#569670"}}>session case / project reviewed by the expert</span></h3>
+            <h3 style={{marginTop:"-70px",marginLeft:"80px",fontSize:"15px"}}>A certificate of completion and a chance to get your in-<span style={{color: "#569670"}}>session case / project reviewed by the expert</span></h3>
           </Col>
         </Row>
         <br/>

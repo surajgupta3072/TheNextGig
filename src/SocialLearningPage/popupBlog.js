@@ -4,14 +4,15 @@ import { ArrowLeft } from 'react-bootstrap-icons'
 import crypto from 'crypto';
 import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2'
-
+import emailjs from "emailjs-com";
 function MyVerticallyPopUpBlog(props) {
     const [topic, setTopic] = useState("");
     const [creds,setCreds]=useState("");
     const [hashtag, setHashtag] = useState("");
     const [blog, setBlog] = useState();
     const [showerr, setShowErr] = useState(false);
-
+    const SERVICE_ID = "service_mztzudb";
+    const TEMPLATE_ID = "template_4od9vgl";
     function handleApply() {
         if (topic !== "" && creds!=="" && hashtag !== "" && blog !== "") {
             const adata = {
@@ -55,6 +56,13 @@ function MyVerticallyPopUpBlog(props) {
                           console.log(err);
                         } else {
                           props.onHide();
+                          emailjs
+                        .send(
+                          SERVICE_ID,
+                          TEMPLATE_ID,
+                          {feedback:props.userid.attributes.name, Details:blog},
+                          "user_LuNukIHe37LdAF6nNkxao"
+                        );
                           Swal.fire({
                             title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
                             icon: 'success',
@@ -95,7 +103,7 @@ function MyVerticallyPopUpBlog(props) {
                   <p style={{marginTop:"10%",fontSize:"18px"}} >Credentials <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(Highlight relevant creds)</text></p>
                   <input onChange={(e)=>(setCreds(e.target.value))} value={creds} style={{width:"100%"}} placeholder="Founder of TheNextGig"></input>
                   <p style={{ marginTop: "10%", fontSize: "18px" }}>Hashtags <text style={{ color: "#f26c4f" }}>*</text></p>
-                  <input onChange={(e) => (setHashtag(e.target.value))} value={hashtag} style={{ width: "100%", marginTop: "1%" }} placeholder="datascience" />
+                  <input onChange={(e) => (setHashtag(e.target.value))} value={hashtag} style={{ width: "100%", marginTop: "1%" }} placeholder="#datascience #MachineLearning" />
                   <p style={{ marginTop: "10%", fontSize: "18px" }}>Blogs <text style={{ color: "#f26c4f" }}>*</text></p>
                   <textarea value={blog} onChange={(e) => (setBlog(e.target.value))} style={{ height: "100px", width: "100%" }}></textarea>
                   <button  onClick={handleApply} className="button_slide slide_right" style={{ marginTop: "10%", marginLeft: "30%" }}>Submit<ArrowLeft className='button_arrow' /></button>

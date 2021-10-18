@@ -5,17 +5,20 @@ import S3 from 'react-aws-s3';
 import crypto from 'crypto';
 import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2'
-
+import emailjs from "emailjs-com";
 const config = {bucketName: "socialvideoslearn", region: process.env.REACT_APP_REGION, accessKeyId: process.env.REACT_APP_ACCESS_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY};
 const ReactS3Client = new S3(config);
 
 function MyVerticallyPopUp(props) {
+  const [video, setvideo] = useState("");
+  const [datax, setData] = useState("");
     const [topic,setTopic]=useState("");
     const [creds,setCreds]=useState("");
     const [hashtag,setHashtag]=useState("");
     const [vfile,setVfile]=useState();
     const [showerr, setShowErr] = useState(false);
-
+    const SERVICE_ID = "service_mztzudb";
+    const TEMPLATE_ID = "template_4od9vgl";
     function handleApply() {
       if(topic!=="" && creds!=="" && hashtag!=="" && vfile!==undefined) {
         ReactS3Client.uploadFile(vfile, vfile.name).then(data => {
@@ -60,6 +63,13 @@ function MyVerticallyPopUp(props) {
                       console.log(err);
                     } else {
                       props.onHide();
+                      emailjs
+                        .send(
+                          SERVICE_ID,
+                          TEMPLATE_ID,
+                          {feedback:props.userid.attributes.name, Details:topic},
+                          "user_LuNukIHe37LdAF6nNkxao"
+                        );
                       Swal.fire({
                         title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
                         icon: 'success',
@@ -68,7 +78,7 @@ function MyVerticallyPopUp(props) {
                         background: '#020312',
                         color: 'white',
                         iconColor: "#F26C4F"
-                      }).then(()=>window.location.reload());
+                      }).then(()=>{ window.location.reload()});
                       // alert("VIDEO POSTED");
                       // window.location.reload();
                     }
@@ -101,7 +111,7 @@ function MyVerticallyPopUp(props) {
            <p style={{marginTop:"10%",fontSize:"18px"}} >Credentials <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(Highlight relevant creds)</text></p>
            <input onChange={(e)=>(setCreds(e.target.value))} value={creds} style={{width:"100%"}} placeholder="Founder of TheNextGig"></input>
            <p style={{marginTop:"10%",fontSize:"18px"}}>Hashtags <text style={{color:"#f26c4f"}}>*</text></p>
-           <input onChange={(e)=>(setHashtag(e.target.value))} value={hashtag} style={{width:"100%",marginTop:"1%"}} placeholder="#datascience #Machine Learning" />
+           <input onChange={(e)=>(setHashtag(e.target.value))} value={hashtag} style={{width:"100%",marginTop:"1%"}} placeholder="#datascience #MachineLearning" />
            <p style={{marginTop:"10%",fontSize:"18px"}}>Upload Video <text style={{color:"#f26c4f"}}>*</text></p>
            <input onChange={(e)=>(setVfile(e.target.files[0]))} type="file"/>
            <button onClick={handleApply} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"30%"}}>Submit<ArrowLeft className='button_arrow'/></button>
