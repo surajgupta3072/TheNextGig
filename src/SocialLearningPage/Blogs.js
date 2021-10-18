@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import docClient from '../GigsPage/GigsAWS';
 import './SocialLearningPage.css';
-import {BiArrowBack} from 'react-icons/bi'
+/* import {BiArrowBack} from 'react-icons/bi' */
+import { ArrowLeft } from "react-bootstrap-icons";
 function Blogs(props) {
   const [allBlogs, setAllBlogs] = useState([]);
   const [readsingleblog, setReadSingleBlog] = useState(false);
@@ -138,7 +139,8 @@ function Blogs(props) {
       </div>
       {readsingleblog && readsingleblog.map((blog)=>
       <div>
-      <span onClick={()=>setReadSingleBlog(false)} style={{color:"#F26C4F"}}><BiArrowBack/></span>
+      <span  style={{color:"#F26C4F"}}><button onClick={()=>setReadSingleBlog(false)} style={{marginLeft:"4%",position:"absolute"}} className="button_slide_MC_Page2_2 slide_right">Back
+            <ArrowLeft style={{marginLeft:"0.8%",marginTop:"-8px"}} className="button_arrow_MC_Page2_Right"/></button></span>
         <div style={{marginLeft:"3%",paddingBottom:"10px", textAlign:"center"}} key={blog.BlogID}>
           <h4 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h4>
           <br/>

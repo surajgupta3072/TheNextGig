@@ -309,7 +309,7 @@ function Page3(props) {
           <Col style={{textAlign:"center"}}>
           <div style={{height:"2px",width:"70%",backgroundColor:"#F26C4F"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(242, 108, 79, 0.3)",border:"1px solid #F26C4F",paddingTop:"38px"}}>1</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"-320px"}}>HANDS-ON <span style={{color: "#F26C4F"}}>EXPERIENCE</span></h3>
+            <h3 style={{marginTop:"-60px",marginLeft:"-320px",fontSize:"20px"}}>Lifetime access to 20 years of professional experience<br/><span style={{color: "#F26C4F"}}>compressed into 1.5 hours of learning</span></h3>
           </Col>
           <div className="night">
       <div className="star"></div>
@@ -324,7 +324,7 @@ function Page3(props) {
           <Col style={{textAlign:"center",marginLeft:"20%"}}>
             <div style={{height:"2px",width:"80%",backgroundColor:"#C89636"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(200, 150, 54, 0.3)",border:"1px solid #C89636",paddingTop:"38px"}}>2</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"-100px"}}>HANDS-ON <span style={{color: "#C89636"}}>EXPERIENCE</span></h3>
+            <h3 style={{marginTop:"-60px",marginLeft:"-100px",fontSize:"20px"}}>Preference for experiential learning opportunities that we<br/><span style={{color: "#C89636"}}>source for you in this domain</span></h3>
           </Col>
         </Row>
         <br/><br/>
@@ -332,7 +332,7 @@ function Page3(props) {
           <Col style={{textAlign:"center",marginLeft:"40%"}}>
           <div style={{height:"2px",width:"100%",backgroundColor:"#569670"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(86, 150, 112, 0.3)",border:"1px solid #569670",paddingTop:"38px"}}>3</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"90px"}}>HANDS-ON <span style={{color: "#569670"}}>EXPERIENCE</span></h3>
+            <h3 style={{marginTop:"-60px",marginLeft:"90px",fontSize:"20px"}}>A certificate of completion and a chance to get your in-<br/><span style={{color: "#569670"}}>session case / project reviewed by the expert</span></h3>
           </Col>
         </Row>
       </Container>
@@ -343,7 +343,8 @@ function Page3(props) {
           <Col style={{textAlign:"center"}}>
           <div style={{height:"2px",width:"100%",backgroundColor:"#F26C4F"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(242, 108, 79, 0.3)",border:"1px solid #F26C4F",paddingTop:"38px"}}>1</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>HANDS-ON <span style={{color: "#F26C4F"}}>EXPERIENCE</span></h3>
+            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>Lifetime access to 20 years of professional experience 
+ <span style={{color: "#F26C4F"}}>compressed into 1.5 hours of learning</span></h3>
           </Col>
         </Row>
         <br/><br/>
@@ -351,7 +352,7 @@ function Page3(props) {
           <Col style={{textAlign:"center"}}>
             <div style={{height:"2px",width:"100%",backgroundColor:"#C89636"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(200, 150, 54, 0.3)",border:"1px solid #C89636",paddingTop:"38px"}}>2</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>HANDS-ON <span style={{color: "#C89636"}}>EXPERIENCE</span></h3>
+            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>Preference for experiential learning opportunities that we<span style={{color: "#C89636"}}>source for you in this domain</span></h3>
           </Col>
         </Row>
         <br/><br/>
@@ -359,7 +360,7 @@ function Page3(props) {
           <Col style={{textAlign:"center"}}>
           <div style={{height:"2px",width:"100%",backgroundColor:"#569670"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(86, 150, 112, 0.3)",border:"1px solid #569670",paddingTop:"38px"}}>3</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>HANDS-ON <span style={{color: "#569670"}}>EXPERIENCE</span></h3>
+            <h3 style={{marginTop:"-60px",marginLeft:"70px"}}>A certificate of completion and a chance to get your in-<span style={{color: "#569670"}}>session case / project reviewed by the expert</span></h3>
           </Col>
         </Row>
         <br/>

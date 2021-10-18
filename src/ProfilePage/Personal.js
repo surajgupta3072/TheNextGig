@@ -219,7 +219,7 @@ function Personal(props) {
           <div className="button_div">
           <div><button style={{marginTop:"10%"}} onClick={handleSubmit} className="button_slide">Save</button></div>
           </div>
-          {props.p.wholedata.ReferredBy==="" &&
+          {/* {props.p.wholedata.ReferredBy==="" &&
             <Row style={{marginTop:"2%"}}>
               <Col xs={6}>
                 <p style={{fontSize:"20px"}}>Referral Code</p>
@@ -236,7 +236,7 @@ function Personal(props) {
               <p><span style={{fontSize:"20px"}}>Mobile Number</span></p>
               <input value={mobile} onChange={e => setMobile(e.target.value)} style={{height:"35px"}} className="Mobilenum_input"></input>
             </Col>
-          </Row>
+          </Row> */}
         </Container>
       </div>
     );

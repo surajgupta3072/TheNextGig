@@ -123,10 +123,10 @@ function Page3(props) {
                   className="card1_page3"
                   style={{ marginLeft: "0", marginTop: "2%" }}
                 >
-                  <div>
+                  <div style={{width:"fit-content"}}>
                     <p className="page3_cardtext">Project Details:</p>
                     <Row>
-                      <Col>
+                      <Col md={7}>
                         <div style={{display:"flex"}} className="proj_det_laptop">
                           <div className="img_col">
                             <img
@@ -137,7 +137,7 @@ function Page3(props) {
                             />
                           </div>
                           <div className="text_col">
-                            <h1 className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
+                            <h1 style={{fontSize:"16px"}} className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
                           </div>
                         </div>
                       </Col>
@@ -152,11 +152,10 @@ function Page3(props) {
                             />
                           </div>
                           <div  className="text_col">
-                            <h1 className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
+                            <h1 style={{fontSize:"16px"}} className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
                           </div>
                         </div>
                       </Col>
- 
                       <Col>
                         <Row className="proj_det_laptop d2">
                           <Col className="img_col" md={5}>
@@ -168,13 +167,13 @@ function Page3(props) {
                             />
                           </Col>
                           <Col className="text_col" md={7}>
-                            <h1 className="text_page3_card_gigs">
+                            <h1  style={{fontSize:"16px"}} className="text_page3_card_gigs">
                             {gigs[0].GigStipend}
                             </h1>
                           </Col>
                         </Row>
                         <div className="proj_det_mobile d3">
-                          <div className="img_col">
+                          <div  className="img_col">
                             <img
                               className="img_page3_card"
                               variant="top"
@@ -183,7 +182,7 @@ function Page3(props) {
                             />
                           </div>
                           <div className="text_col" md={8}>
-                            <h1 className="text_page3_card_gigs">
+                            <h1 style={{fontSize:"16px"}} className="text_page3_card_gigs">
                             {gigs[0].GigStipend}
                             </h1>
                           </div>
