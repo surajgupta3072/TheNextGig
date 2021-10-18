@@ -4,14 +4,15 @@ import { ArrowLeft } from 'react-bootstrap-icons'
 import crypto from 'crypto';
 import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2'
-
+import emailjs from "emailjs-com";
 function MyVerticallyPopUpBlog(props) {
     const [topic, setTopic] = useState("");
     const [creds,setCreds]=useState("");
     const [hashtag, setHashtag] = useState("");
     const [blog, setBlog] = useState();
     const [showerr, setShowErr] = useState(false);
-
+    const SERVICE_ID = "service_mztzudb";
+    const TEMPLATE_ID = "template_4od9vgl";
     function handleApply() {
         if (topic !== "" && creds!=="" && hashtag !== "" && blog !== "") {
             const adata = {
@@ -55,6 +56,13 @@ function MyVerticallyPopUpBlog(props) {
                           console.log(err);
                         } else {
                           props.onHide();
+                          emailjs
+                        .send(
+                          SERVICE_ID,
+                          TEMPLATE_ID,
+                          {feedback:props.userid.attributes.name, Details:blog},
+                          "user_LuNukIHe37LdAF6nNkxao"
+                        );
                           Swal.fire({
                             title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
                             icon: 'success',

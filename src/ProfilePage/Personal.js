@@ -217,7 +217,7 @@ function Personal(props) {
             <p><input value={quirky} onChange={e => setQuirky(e.target.value)} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
           <div className="button_div">
-          <div><button style={{marginTop:"10%"}} onClick={handleSubmit} className="button_slide">Save</button></div>
+          <div><div><button style={{marginTop:"10%"}} onClick={handleSubmit} className="button_slide">Save</button></div></div>
           </div>
           {/* {props.p.wholedata.ReferredBy==="" &&
             <Row style={{marginTop:"2%"}}>

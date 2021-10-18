@@ -81,7 +81,7 @@ function Page5() {
           </Card.Body>
           
         </Card>
-        <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%"}}>
+        <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(200, 150, 54,0.4)",marginTop:"10%"}}>
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col>
@@ -98,7 +98,7 @@ function Page5() {
           </Card.Body>
           
         </Card>
-        <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%", marginBottom: "10%"}}>
+        <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(86, 150, 112,0.6)",marginTop:"10%", marginBottom: "10%"}}>
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col>
