@@ -22,6 +22,87 @@ function MyVerticallyPopUp(props) {
     });
   }, []);
 
+  function paymentFlowCase(deduct) {
+    var paramss = {
+      TableName: "UsersTable",
+      Key: { "UserID":props.uid },
+      ProjectionExpression: "MasterclassesPurchased",
+    };
+    docClient.get(paramss, function(err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var params = {
+          TableName: "UsersTable",
+          Key: { "UserID":props.uid },
+          UpdateExpression: "set MasterclassesPurchased["+data.Item.MasterclassesPurchased.length.toString()+"] = :ms",
+          ExpressionAttributeValues:{
+            ":ms":props.cid,
+          },
+          ReturnValues:"UPDATED_NEW"
+        }
+        docClient.update(params, function (err, data) {
+          if (err) {
+            console.log(err);
+          } else {
+            var params = {
+              TableName: "UsersTable",
+              Key: { "UserID":props.uid },
+              UpdateExpression: "set TotalRewards = :tr",
+              ExpressionAttributeValues:{
+                ":tr": deduct,
+              },
+              ReturnValues:"UPDATED_NEW"
+            }
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                setReward(0);
+                Swal.fire({
+                  title: "<h5 style='color:white'>" + "PAYMENT SUCCESSFUL!" + "</h5>",
+                  icon: 'success',
+                  showConfirmButton: false,
+                  timer: 2000,
+                  background: '#020312',
+                  color: 'white',
+                  iconColor: "#F26C4F"
+                });
+                var paramss = {
+                  TableName: "UsersTable",
+                  Key: { "UserID":props.uid },
+                  ProjectionExpression: "SkillsAcquiredMastersessions",
+                };
+                docClient.get(paramss, function(err, data) {
+                  if (err) {
+                    console.log(err);
+                  } else {
+                      var params = {
+                        TableName: "UsersTable",
+                        Key: { "UserID":props.uid },
+                        UpdateExpression: "set SkillsAcquiredMastersessions["+data.Item.SkillsAcquiredMastersessions.length.toString()+"] = :sam",
+                        ExpressionAttributeValues:{
+                          ":sam":props.crole,
+                        },
+                        ReturnValues:"UPDATED_NEW"
+                      }
+                      docClient.update(params, function (err, data) {
+                        if (err) {
+                          console.log(err);
+                        } else {
+                          window.location.reload();
+                        }
+                      });
+                    }
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+
   async function loadScript(src) {
     return new Promise((resolve)=>{
       const script = document.createElement("script")
@@ -37,98 +118,27 @@ function MyVerticallyPopUp(props) {
   }
 
   async function handlePayment() {
-    const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
-    const options = {
-      "key": "rzp_test_2hJkSfRZOnRtZp", 
-      "amount": Number(props.fees-reward) * 100,
-      "currency": "INR",
-      "name": props.cname,
-      "description": "THE NEXT GIG",
-      "handler": function (response){
-        var paramss = {
-          TableName: "UsersTable",
-          Key: { "UserID":props.uid },
-          ProjectionExpression: "MasterclassesPurchased",
-        };
-        docClient.get(paramss, function(err, data) {
-          if (err) {
-            console.log(err);
-          } else {
-            var params = {
-              TableName: "UsersTable",
-              Key: { "UserID":props.uid },
-              UpdateExpression: "set MasterclassesPurchased["+data.Item.MasterclassesPurchased.length.toString()+"] = :ms",
-              ExpressionAttributeValues:{
-                ":ms":props.cid,
-              },
-              ReturnValues:"UPDATED_NEW"
-            }
-            docClient.update(params, function (err, data) {
-              if (err) {
-                console.log(err);
-              } else {
-                var params = {
-                  TableName: "UsersTable",
-                  Key: { "UserID":props.uid },
-                  UpdateExpression: "set TotalRewards = :tr",
-                  ExpressionAttributeValues:{
-                    ":tr": 0,
-                  },
-                  ReturnValues:"UPDATED_NEW"
-                }
-                docClient.update(params, function (err, data) {
-                  if (err) {
-                    console.log(err);
-                  } else {
-                    setReward(0);
-                    // alert("PAYMENT SUCCESSFUL");
-                    
-                    var paramss = {
-                      TableName: "UsersTable",
-                      Key: { "UserID":props.uid },
-                      ProjectionExpression: "SkillsAcquiredMastersessions",
-                    };
-                    docClient.get(paramss, function(err, data) {
-                      if (err) {
-                        console.log(err);
-                      } else {
-                          var params = {
-                            TableName: "UsersTable",
-                            Key: { "UserID":props.uid },
-                            UpdateExpression: "set SkillsAcquiredMastersessions["+data.Item.SkillsAcquiredMastersessions.length.toString()+"] = :sam",
-                            ExpressionAttributeValues:{
-                              ":sam":props.crole,
-                            },
-                            ReturnValues:"UPDATED_NEW"
-                          }
-                          docClient.update(params, function (err, data) {
-                            if (err) {
-                              console.log(err);
-                            } else {
-                              Swal.fire({
-                                title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
-                                icon: 'success',
-                                showConfirmButton: false,
-                                timer: 2000,
-                                background: '#020312',
-                                color: 'white',
-                                iconColor: "#F26C4F"
-                              }).then(()=>window.location.reload());
-                              
-                            }
-                          });
-                        }
-                    });
-                  }
-                });
-              }
-            });
-          }
-        });
-      },
-    };
-    const paymentObject = new window.Razorpay(options)
-    paymentObject.open()
+    if(props.fees==reward) {
+      paymentFlowCase(0);
+    }
+    else if(props.fees<reward) {
+      paymentFlowCase(reward - Number(props.fees));
+    }
+    else {
+      const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
+      const options = {
+        "key": "rzp_test_2hJkSfRZOnRtZp", 
+        "amount": Number(props.fees-reward) * 100,
+        "currency": "INR",
+        "name": props.cname,
+        "description": "THE NEXT GIG",
+        "handler": function (response) {
+          paymentFlowCase(0);
+        },
+      };
+      const paymentObject = new window.Razorpay(options);
+      paymentObject.open();
+    }
   }
 
   return (

@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
 import S3 from 'react-aws-s3';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 const config = {bucketName: "userscv", region: process.env.REACT_APP_REGION, accessKeyId: process.env.REACT_APP_ACCESS_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY};
 const ReactS3Client = new S3(config);

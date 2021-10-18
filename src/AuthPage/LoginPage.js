@@ -5,6 +5,7 @@ import {ArrowLeft} from 'react-bootstrap-icons';
 import './AuthPage.css';
 import { FaGoogle } from 'react-icons/fa';
 import MyVerticallyCenteredModal  from "./RegisterPageModal";
+import docClient from '../GigsPage/GigsAWS';
 
 function LoginPage(props){
   const [modalShow, setModalShow] = useState(false);
@@ -19,7 +20,29 @@ function LoginPage(props){
       props.auth.setUser(userLogin);
       props.auth.setAuthStatus(true);
       setShowErr(false);
-      setModalShow(true);
+      let paramss = {
+        TableName: "UsersTable",
+        KeyConditionExpression: "#Uid = :UserID",
+        ExpressionAttributeNames: {
+          "#Uid": "UserID",
+        },
+        ExpressionAttributeValues: {
+          ":UserID": userLogin.username,
+        },
+      };
+      try {
+        const data1 = await docClient.query(paramss).promise();
+        const per = data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC;
+        if(per==100) {
+          window.location.href = "/TNGoriginals";
+        }
+        else {
+          setModalShow(true);
+        }
+      }
+      catch (err) {
+        console.log(err);
+      }
     } 
     catch (error) {
       setShowErr(error.message);

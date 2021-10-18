@@ -15,13 +15,13 @@ function MyVerticallyPopUpBlog(props) {
     function handleApply() {
         if (topic !== "" && creds!=="" && hashtag !== "" && blog !== "") {
             const adata = {
-                "BlogID": crypto.randomBytes(8).toString("hex"),
-                "BlogTopic": topic,
-                "BlogCreds": creds,
-                "BlogUsername": props.userid.attributes.name,
-                "BlogHashtags": hashtag,
-                "Blog": blog,
-                "isApproved": false
+              "BlogID": crypto.randomBytes(8).toString("hex"),
+              "BlogTopic": topic,
+              "BlogCreds": creds,
+              "BlogUsername": props.userid.attributes.name,
+              "BlogHashtags": hashtag,
+              "Blog": blog,
+              "isApproved": false
             }
             var paramss = {
                 TableName: "BlogsTable",
@@ -63,9 +63,7 @@ function MyVerticallyPopUpBlog(props) {
                             background: '#020312',
                             color: 'white',
                             iconColor: "#F26C4F"
-                          }).then(()=>window.location.reload());
-                          // alert("BLOG POSTED")
-                          // window.location.reload();
+                          });
                         }
                       });
                     }
@@ -80,13 +78,13 @@ function MyVerticallyPopUpBlog(props) {
     
     return (
         <Modal
-            {...props}
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-            contentClassName="custom-modal-style"
-            dialogClassName="modal-w"
-            className="mobile_view"
-            transparent={true}
+          {...props}
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+          contentClassName="custom-modal-style"
+          dialogClassName="modal-40w"
+          className="mobile_view"
+          transparent={true}
         >
           <Modal.Body style={{ backgroundColor: "#020312", border: "1px solid #f26c4f" }}>
               <div style={{ padding: "7%" }}>
@@ -95,10 +93,10 @@ function MyVerticallyPopUpBlog(props) {
                   <p style={{marginTop:"10%",fontSize:"18px"}} >Credentials <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(Highlight relevant creds)</text></p>
                   <input onChange={(e)=>(setCreds(e.target.value))} value={creds} style={{width:"100%"}} placeholder="Founder of TheNextGig"></input>
                   <p style={{ marginTop: "10%", fontSize: "18px" }}>Hashtags <text style={{ color: "#f26c4f" }}>*</text></p>
-                  <input onChange={(e) => (setHashtag(e.target.value))} value={hashtag} style={{ width: "100%", marginTop: "1%" }} placeholder="datascience" />
+                  <input onChange={(e) => (setHashtag(e.target.value))} value={hashtag} style={{ width: "100%", marginTop: "1%" }} placeholder="#datascience #webdev" />
                   <p style={{ marginTop: "10%", fontSize: "18px" }}>Blogs <text style={{ color: "#f26c4f" }}>*</text></p>
-                  <textarea value={blog} onChange={(e) => (setBlog(e.target.value))} style={{ height: "100px", width: "100%" }}></textarea>
-                  <button  onClick={handleApply} className="button_slide slide_right" style={{ marginTop: "10%", marginLeft: "30%" }}>Submit<ArrowLeft className='button_arrow' /></button>
+                  <textarea placeholder="ABC is ..." value={blog} onChange={(e) => (setBlog(e.target.value))} style={{ height: "100px", width: "100%" }}></textarea>
+                  <button  onClick={handleApply} className="button_slide slide_right" style={{ marginTop: "10%", marginLeft: "35%" }}>Submit<ArrowLeft className='button_arrow' /></button>
                   {showerr !== false && <p style={{ color: "red", textAlign: "center" }}><br />*{showerr}</p>}
               </div>
           </Modal.Body>

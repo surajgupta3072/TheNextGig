@@ -5,6 +5,7 @@ import {ArrowLeft} from 'react-bootstrap-icons'
 import { FaGoogle } from 'react-icons/fa';
 import docClient from './../GigsPage/GigsAWS';
 import './AuthPage.css';
+import Swal from 'sweetalert2';
 
 function RegisterPage() {
   const [name, setName] = useState("");
@@ -35,7 +36,15 @@ function RegisterPage() {
         console.log('Error', err)
       } 
       else {
-        window.location.href = "/login";
+        Swal.fire({
+          title: "<h5 style='color:white'>" + "Signed up Successfully - Please verify your Email to Login" + "</h5>",
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 5000,
+          background: '#020312',
+          color: 'white',
+          iconColor: "#F26C4F"
+        }).then(()=> window.location.href = "/login");
       }
     });
   }
@@ -65,7 +74,7 @@ function RegisterPage() {
         <p style={{fontSize:"18px"}}>Full Name <text style={{color:"#f26c4f"}}>*</text></p>
         <input value={name} onChange={e => setName(e.target.value)} style={{width:"100%"}}/>
         <p style={{fontSize:"18px",marginTop:"20px"}}>Email<text style={{color:"#f26c4f"}}>*</text></p>
-        <input value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}/>
+        <input type="email" value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}/>
         <p style={{fontSize:"18px",marginTop:"20px"}}>Password<text style={{color:"#f26c4f"}}>*</text></p>
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} style={{width:"100%"}}/>
         <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"32%"}}>Signup<ArrowLeft className='button_arrow'/></button>
