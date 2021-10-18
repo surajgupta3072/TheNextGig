@@ -29,13 +29,11 @@ function Page1() {
             }}
             className="cax card_mastercard"
           >
-            <div className="image_card1">
               <MDBCardImage className="mbd_image"
-                style={{ width: "100%", height: "22rem" }}
+                style={{ width: "100%"}}
                 src={carder.course_image}
                 alt="..."
               />
-            </div>
             <MDBCardBody>
               <div className="Course_name">{carder.course_name}</div>
               <div className="instruct_time">
@@ -45,8 +43,12 @@ function Page1() {
               </div>
                 <div style={{color:"grey"}} className="instructor_post">
                   {carder.course_instructor_post}
+                  
                 </div>
-                <div style={{display:"flex",justifyContent:"space-between"}}>
+                <div style={{color:"grey"}} className="instructor_post">
+                {carder.instructor_creds}
+                </div>
+                <div style={{display:"flex",justifyContent:"space-between",marginTop:"20px"}}>
                 <div className="time_course">{carder.course_timing}</div>
                 <div className="episode_course">{carder.course_episode}</div>
                 </div>
@@ -72,8 +74,7 @@ function Page1() {
                 <MDBCardImage className="mbd_image"
                   style={{
                     marginLeft: "1px",
-                    width: "100%",
-                    height: "14rem"
+                    width: "100%"
                   }}
                   src={carder.course_image}
                   alt="..."
@@ -88,7 +89,8 @@ function Page1() {
                 </div>
                   <div style={{color:"grey"}} className="instructor_post">
                     {carder.course_instructor_post}
-                  <div style={{display:"flex",justifyContent:"space-between"}}>
+                    <div style={{color:"grey"}} className="instructor_post">{carder.instructor_creds}</div>
+                  <div style={{display:"flex",justifyContent:"space-between",marginTop:"20px"}}>
                   <div style={{color:"white"}} className="time_course">{carder.course_timing}</div>
                   <div style={{color:"white"}} className="episode_course">{carder.course_episode}</div>
                   </div>

@@ -386,7 +386,7 @@ function Page3(props) {
                     {details.gigs.map(company=>{
                     return(
                       <MDBCard onClick={()=>window.location.href="/ExperientialLearning/"+company.id} className="cax  card_mastercard" style={{borderRadius:"0px", margin:"4%",border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"fit-content"}}>
-                        <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={company.internship_image} alt='...' /></div>
+                        <MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={company.internship_image} alt='...' />
                         <MDBCardBody>
                           <div className="Course_name">{company.project_name}</div>
           
@@ -394,7 +394,7 @@ function Page3(props) {
                             <div style={{color:"grey"}} className="instructor_name">{company.company_name}</div>
                           </div>
                             <div style={{color:"grey"}} className="instructor_post">{company.industry}</div>
-                            <div style={{display:"flex",justifyContent:"space-between"}}>
+                            <div style={{display:"flex",justifyContent:"space-between",marginTop:"20px"}}>
                             <div className="time_course">{company.duration}</div>
                             <div className="episode_course">&#8377;{company.fees}-&#8377;{company.stipend_range}</div>
                             </div>
@@ -428,7 +428,8 @@ function Page3(props) {
                  <div style={{color:"grey"}} className="instructor_name">{details.course_instructor}
                </div>
                  <div style={{color:"grey"}} className="instructor_post">{details.course_instructor_post}</div>
-                 <div style={{display:"flex",justifyContent:"space-between"}}>
+                 <div style={{color:"grey"}} className="instructor_post">{details.instructor_creds}</div>
+                 <div style={{display:"flex",justifyContent:"space-between",marginTop:"20px"}}>
                  <div className="time_course">{details.course_timing}</div>
                  <div className="episode_course">{details.course_episode}</div>
                  </div>

@@ -127,7 +127,7 @@ function Page3(props) {
                     <p className="page3_cardtext">Project Details:</p>
                     <Row>
                       <Col>
-                        <div style={{display:"flex",justifyContent:"space-between"}} className="proj_det_laptop">
+                        <div style={{display:"flex"}} className="proj_det_laptop">
                           <div className="img_col">
                             <img
                               alt="..."
@@ -141,8 +141,8 @@ function Page3(props) {
                           </div>
                         </div>
                       </Col>
-                      <Col>
-                        <div className="proj_det_mobile d1">
+                      <Col className="proj_det_mobile d1">
+                        <div>
                           <div className="img_col">
                             <img
                               alt="..."
@@ -151,7 +151,7 @@ function Page3(props) {
                               src="/imagetime.png"
                             />
                           </div>
-                          <div className="text_col">
+                          <div  className="text_col">
                             <h1 className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
                           </div>
                         </div>
@@ -267,12 +267,6 @@ function Page3(props) {
                   }
                 </div>
                 <div>
-                  <p
-                    className="text_page3_card applyby_text"
-                    style={{ marginTop: "0%" }}
-                  >
-                    <em> Apply by {gigs[0].GigApplyBy} </em>
-                  </p>
                 </div>
               </Col>
               <Col
@@ -293,6 +287,9 @@ function Page3(props) {
                 {gigs[0].GigPreRequisites}<br/><br/><br/>
                 <h4>Pre-selection tasks (if any):</h4>
                 {gigs[0].GigPreSelectionTask}
+                <p style={{ marginTop: "3%"}}>
+                    <em style={{color:"#F26C4F"}}> Apply by {gigs[0].GigApplyBy} </em>
+                  </p>
               </Col>
             </Row>
           </Container>
@@ -333,7 +330,6 @@ function Page3(props) {
                       backgroundColor: "#020312",
                     }}
                   >
-                    <div className="image_card">
                       <MDBCardImage className="mbd_image"
                         style={{
                           marginLeft: "1px",
@@ -342,28 +338,16 @@ function Page3(props) {
                         src={carder.course_image}
                         alt="..."
                       />
-                    </div>
                     <MDBCardBody>
-                      <div className="Course_name">{carder.course_name}</div>
-
-                      <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
-                        <div style={{color:"grey"}} className="instructor_name">
-                          {carder.course_instructor}
-                        </div>
-                      </div>
-                      <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
-                        <div className="instructor_post">
-                          {carder.course_instructor_post}
-                        </div>
-                        </div>
-                        <div style={{display:"flex",justifyContent:"space-between"}}>
-                        <div className="time_course">
-                          {carder.course_timing}
-                        </div>
-                        <div className="episode_course">
-                          {carder.course_episode}
-                        </div>
-                        </div>
+                    <div className="Course_name">{carder.course_name}</div>
+                 <div style={{color:"grey"}} className="instructor_name">{carder.course_instructor}
+               </div>
+                 <div style={{color:"grey"}} className="instructor_post">{carder.course_instructor_post}</div>
+                 <div style={{color:"grey"}} className="instructor_post">{carder.instructor_creds}</div>
+                 <div style={{display:"flex",justifyContent:"space-between",marginTop:"20px"}}>
+                 <div className="time_course">{carder.course_timing}</div>
+                 <div className="episode_course">{carder.course_episode}</div>
+                 </div>
                     </MDBCardBody>
                   </MDBCard>
                 ))}

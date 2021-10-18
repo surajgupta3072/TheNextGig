@@ -58,9 +58,18 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+.instructor_name,
+.instructor_post {
+  font-size: 0.9rem;
+}
+.time_course,
+.episode_course {
+  font-size: 18px;
+}
 .card_mastercard {
   width: 320px;
-  height: 30rem;
+  height: fit-content;
+  min-height: 410px;
   margin-bottom: 2%;
   margin-top: 2%;
   border: 2px solid rgba(242, 108, 79, 0.6) !important;
@@ -73,7 +82,8 @@
 }
 .Course_name {
   display: flex;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
 }
 .cax {
   width: 370px;
