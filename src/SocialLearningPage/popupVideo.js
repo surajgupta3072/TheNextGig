@@ -4,6 +4,7 @@ import {ArrowLeft} from 'react-bootstrap-icons'
 import S3 from 'react-aws-s3';
 import crypto from 'crypto';
 import docClient from '../GigsPage/GigsAWS';
+import Swal from 'sweetalert2'
 
 const config = {bucketName: "socialvideoslearn", region: process.env.REACT_APP_REGION, accessKeyId: process.env.REACT_APP_ACCESS_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY};
 const ReactS3Client = new S3(config);
@@ -58,8 +59,18 @@ function MyVerticallyPopUp(props) {
                     if (err) {
                       console.log(err);
                     } else {
-                      alert("VIDEO POSTED");
-                      window.location.reload();
+                      props.onHide();
+                      Swal.fire({
+                        title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 2000,
+                        background: '#020312',
+                        color: 'white',
+                        iconColor: "#F26C4F"
+                      }).then(()=>window.location.reload());
+                      // alert("VIDEO POSTED");
+                      // window.location.reload();
                     }
                   });
                 }
