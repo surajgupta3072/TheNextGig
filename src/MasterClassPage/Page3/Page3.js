@@ -369,7 +369,7 @@ function Page3(props) {
       <div className="header_masterclass">
         <Container>
           <div className="top_masterclass"><h1>RELATED OPPORTUNITIES</h1>
-            <p className="subtitle_masterclass">Let’s <span className="orange_text_masterclass"> apply </span> what we’ve learnt </p>
+            <p className="subtitle_masterclass">Let’s <span className="orange_text_masterclass"> apply </span> what we’ve learnt <span className="explore_sessions" ><a style={{textDecoration:"none", color:"#f26c4f"}} href="/ExperientialLearning">Explore all &#62; &#62;</a></span> </p>
           </div>
         </Container>
         </div>

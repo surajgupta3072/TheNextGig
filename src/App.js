@@ -21,6 +21,7 @@ import Community from "./SocialLearningPage/Community";
 import ForgotPasswordPage from "./AuthPage/ForgotPasswordPage";
 import ChangePasswordPage from "./AuthPage/ChangePasswordPage";
 import NotALearnerPage from "./NotALearnerPage/NotALearnerPage";
+import AboutUs from "./AboutUsPage/AboutUs";
 import "./App.css";
 
 function App() {
@@ -128,6 +129,9 @@ function App() {
               </Route>
               <Route exact path="/NotALearner">
                 <NotALearnerPage />
+              </Route>
+              <Route exact path="/AboutUs">
+                <AboutUs />
               </Route>
               <Route exact path="/">
                 <HomePage />
