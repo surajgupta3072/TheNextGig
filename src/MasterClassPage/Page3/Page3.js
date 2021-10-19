@@ -106,7 +106,6 @@ function Page3(props) {
               <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Fundamentals of marketing</p>
                       <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Difference between product and brand</p>
                       <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
-                      <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Using digital and social marketing<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;channels to create a brand presence</p>
                       </div>
                       <div>
                       <div>

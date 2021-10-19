@@ -20,31 +20,31 @@ function Header(props) {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end" style={{paddingRight:"5%"}}>
             <Nav>
-                <Nav.Link href="/TNGoriginals" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                    TNG ORIGINALS
+                <Nav.Link href="/TNGoriginals" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
+                    TNG Originals
                 </Nav.Link>
-                <Nav.Link href="/ExperientialLearning" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                    EXPERIENTIAL LEARNING
+                <Nav.Link href="/ExperientialLearning" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
+                    Experimental Learning
                 </Nav.Link>
-                <Nav.Link href="/SocialLearning" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                    SOCIAL LEARNING
+                <Nav.Link href="/SocialLearning" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
+                    Social Learning
                 </Nav.Link>
-                <Nav.Link href="/NotALearner" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                    NOT A LEARNER?
+                <Nav.Link href="/NotALearner" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
+                    Not a Learner?
                 </Nav.Link>
                 {props.auth.isAuthenticated===true && 
-                    <Nav.Link onClick={LogOutFunc} style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                        LOGOUT
+                    <Nav.Link onClick={LogOutFunc} style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
+                        Logout
                     </Nav.Link>
                 }
                 {props.auth.isAuthenticated===true && 
-                    <Nav.Link href="/profile" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                    <Nav.Link href="/profile" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
                         {props.auth.user.attributes.name.split(" ")[0].toUpperCase()}
                     </Nav.Link>
                 }
                 {props.auth.isAuthenticated===false && 
                     <Nav.Link href="/login" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
-                        LOGIN
+                        Login
                     </Nav.Link>
                 }
             </Nav>                

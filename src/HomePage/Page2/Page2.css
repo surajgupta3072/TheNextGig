@@ -24,7 +24,11 @@
   width: 45px;
   height: 45px;
 }
-
+.learner:hover {
+  transform: scale(0.97);
+  box-shadow: 0 10px 20px rgba(70, 83, 204, 0.6),
+    0 4px 8px rgba(70, 83, 204, 0.6);
+}
 .opensans_text {
   font-family: "Open Sans", sans-serif !important;
   color: white;

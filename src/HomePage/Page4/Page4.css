@@ -19,7 +19,7 @@
   margin-left: 5%;
   font-size: 48px;
 }
-.heading_1span{
+.heading_1span {
   position: relative;
 }
 .heading_1span:before {
@@ -28,16 +28,17 @@
   left: 0;
   top: 50%;
   right: 0;
-  border-top: 2px solid ;
-  border-color: #F26C4F;
-  
-  -webkit-transform:rotate(-5deg);
-  -moz-transform:rotate(-5deg);
-  -ms-transform:rotate(-5deg);
-  -o-transform:rotate(-5deg);
-  transform:rotate(-5deg);}
+  border-top: 2px solid;
+  border-color: #f26c4f;
+
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
 .heading_2 {
-  margin-left: 26%;
+  margin-left: 22.5%;
   font-size: 50px;
 }
 .learn_heading {

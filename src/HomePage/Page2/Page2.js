@@ -45,19 +45,13 @@ function Page2() {
             </Card>
           </Row>
           <Row style={{width:"500px",height:"70px", marginTop:"4%",  marginBottom:"5%", marginLeft:"59%", paddingTop:"10px"}}>
-            <p className="btn">
-              <span>
-                <span>
                   <span  className="border_box">
-                    <Row>
+                    <Row className="learner" style={{border:"2px solid rgba(70, 83, 204, 0.6)"}}>
             <Col md={1}><img style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4D03AQFn3cR03llVHA/profile-displayphoto-shrink_400_400/0/1611850401052?e=1636588800&v=beta&t=PAiR61Sw84Ba9s9hqdm16-TbvM6ohKd2K5O6MuXLQZo" height="40px" width="40px" /></Col>&nbsp;&nbsp;&nbsp;
             <Col md={1}><img style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQE7ozU87tbOow/profile-displayphoto-shrink_400_400/0/1615921578753?e=1636588800&v=beta&t=mj5jbwnrV8vxBB7FAV3UZd2tQPShGQ5LBGl5NOTI0oU" height="40px" width="40px" /></Col>&nbsp;&nbsp;&nbsp;
             <Col md={1} ><img  style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_400_400/0/1611408696050?e=1636588800&v=beta&t=-w8wRLMIBJXs-rV8qPtrslboo1waw-ObTyAHAHQPhKM" height="40px" width="40px" /></Col>&nbsp;&nbsp;&nbsp;
             <Col ><p style={{fontSize:"16px", textAlign:"center", paddingTop: "18px",color:"white",opacity:"0.7",fontFamily:"Inter"}}>3000+ Learners on TheNextGig</p></Col></Row>
             </span>
-            </span>
-            </span>
-            </p>
           </Row>
         </Container>
       </div>
@@ -113,8 +107,7 @@ function Page2() {
               </div>
             </Card.Body>
           </Card>
-          
-          <div style={{width:"100%",height:"50px",border:"1px solid #534D4D", paddingTop:"5px", display: "flex", flexDirection: "row",margin:"auto"}}>
+          <div style={{width:"100%",height:"50px",border:"2px solid rgba(70, 83, 204, 0.6)", paddingTop:"5px", display: "flex", flexDirection: "row",margin:"auto"}}>
               <Col  md={1} ><img style={{borderRadius:"8px",marginRight:"8px",marginLeft:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4D03AQFn3cR03llVHA/profile-displayphoto-shrink_400_400/0/1611850401052?e=1636588800&v=beta&t=PAiR61Sw84Ba9s9hqdm16-TbvM6ohKd2K5O6MuXLQZo" height="40px" width="40px"  /></Col>
                 <Col md={1}><img style={{borderRadius:"8px",marginRight:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQE7ozU87tbOow/profile-displayphoto-shrink_400_400/0/1615921578753?e=1636588800&v=beta&t=mj5jbwnrV8vxBB7FAV3UZd2tQPShGQ5LBGl5NOTI0oU" height="40px" width="40px" /></Col>
                 <Col md={1}><img style={{borderRadius:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_400_400/0/1611408696050?e=1636588800&v=beta&t=-w8wRLMIBJXs-rV8qPtrslboo1waw-ObTyAHAHQPhKM" height="40px" width="40px" /></Col>

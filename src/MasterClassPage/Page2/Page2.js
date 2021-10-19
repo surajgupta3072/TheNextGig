@@ -17,7 +17,7 @@ function Page2() {
          <Row>
            <Col md={4} xs={5}>
            <p className="mast_page2_p2">Stop dreaming</p>
-           <p style={{color:"rgba(242, 108, 79, 1)"}} className="mast_page2_p2">Start doing</p>
+           <p style={{color:"rgba(242, 108, 79, 1)",marginTop:"-15px"}} className="mast_page2_p2">Start doing</p>
            </Col>
            <Col md={8} xs={7}>
               <div className="button_div_MC_Page2">
