@@ -30,7 +30,7 @@ function ChangePasswordPage(){
         <input type="password" value={newpassword} onChange={e => setNewPassword(e.target.value)} style={{width:"100%"}}/>
         {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
         </div>
-        <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%", marginLeft:"23%", marginBottom:"10%"}}>Change Password<ArrowLeft className='button_arrow'/></button>
+        <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%", marginLeft:"22%", marginBottom:"10%"}}>Change Password<ArrowLeft className='button_arrow'/></button>
     </div>
   );
 }

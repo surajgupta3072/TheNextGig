@@ -3,8 +3,8 @@ import Vision from './Vision'
 function AboutUs(){
     return(
       <div>  
+       <Vision/> 
        <Team/>
-       <Vision/>
        </div>
     );
 }

@@ -9,8 +9,7 @@ import { Linkedin } from 'react-bootstrap-icons';
 import MasterSessions from './MasterSessions';
 import Gigs from './Gigs';
 import expert from './../MasterClassPage/Masterclass.json';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+
 function CompanyPage() {
   let { id } = useParams();
   const [gigs, setGigs] = useState([]);

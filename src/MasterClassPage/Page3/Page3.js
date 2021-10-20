@@ -103,9 +103,9 @@ function Page3(props) {
                       <h1 className="text_page3_card">What you’ll learn:</h1>
               </div>
               <br/>
-              <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Fundamentals of marketing</p>
-                      <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Difference between product and brand</p>
-                      <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
+              <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Fundamentals of marketing</p>
+                      <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Difference between product and brand</p>
+                      <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
                       </div>
                       <div>
                       <div>
@@ -114,9 +114,9 @@ function Page3(props) {
                 </div>
                 </div>
                 <br/>
-                <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Marketing roles</p>
-                <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Branding and growth roles</p>
-                <p className="img_text"><img src="/tick.png"/>&nbsp;&nbsp;Freelance marketing gigs</p>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Marketing roles</p>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Branding and growth roles</p>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Freelance marketing gigs</p>
                 </div>
                 </div>
             <Row className="laptop_view_video_master">
@@ -178,8 +178,8 @@ function Page3(props) {
               }
             </div>
           </Col>
-          <Col style={{padding:"0px",marginTop:"25px"}} md={6}>
-              <img alt="..." src={session.course_image} className="anim_img"/>
+          <Col style={{padding:"1px"}} md={6}>
+            <video className="anim_img" src="https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Anil_Nair_Trailer.mp4" autoplay controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
           </Col>
           </Row>
       </Container>

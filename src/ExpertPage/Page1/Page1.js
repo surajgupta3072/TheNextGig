@@ -29,7 +29,7 @@ function Page1(props) {
               <p className="subtitle_expertcard">{expert.ExpertDesignation}</p>       
             </div>
             <div class="logo_para">
-              <a href={expert.ExpertLinkedIn} target="_blank"><Linkedin  style={{color: "white", cursor: "pointer"}} size={34}/></a>
+              <a href={expert.ExpertLinkedIn} target="_blank" rel="noreferrer"><Linkedin  style={{color: "white", cursor: "pointer"}} size={34}/></a>
             </div>
             <div>
               <p className="subtitle2_expertcard">{expert.ExpertDescription}</p>

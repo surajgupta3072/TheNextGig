@@ -24,7 +24,7 @@ function ForgotPasswordPage(){
         <input value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}></input>
         {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
         </div>
-        <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%", marginLeft:"35%", marginBottom:"10%"}}>Submit<ArrowLeft className='button_arrow'/></button>
+        <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%", marginLeft:"33%", marginBottom:"10%"}}>Submit<ArrowLeft className='button_arrow'/></button>
     </div>
   );
 }

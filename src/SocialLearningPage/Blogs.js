@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import docClient from '../GigsPage/GigsAWS';
 import './SocialLearningPage.css';
-/* import {BiArrowBack} from 'react-icons/bi' */
 import { ArrowLeft } from "react-bootstrap-icons";
+
 function Blogs(props) {
   const [allBlogs, setAllBlogs] = useState([]);
+  const [allBlogsConst, setAllBlogsConst] = useState([]);
   const [readsingleblog, setReadSingleBlog] = useState(false);
   const [searchterm, setSearchTerm] = useState("");
   
@@ -17,6 +18,7 @@ function Blogs(props) {
         console.log(err);
       } else {
         setAllBlogs(data.Items.filter((e)=>{if(e.isApproved===true) return e}));
+        setAllBlogsConst(data.Items.filter((e)=>{if(e.isApproved===true) return e}));
       }
     });
   }, []);
@@ -51,14 +53,19 @@ function Blogs(props) {
   }
 
   function searchFilter() {
-    addSearchTerm();
-    const searchblogs = allBlogs.filter((blog)=>{
-      if(blog.BlogTopic.toLowerCase().includes(searchterm.toLowerCase()) || blog.BlogUsername.toLowerCase().includes(searchterm.toLowerCase()) 
-      || blog.BlogHashtags.toLowerCase().includes(searchterm.toLowerCase()) || blog.BlogCreds.toLowerCase().includes(searchterm.toLowerCase())) {
-        return blog;
-      }
-    })
-    setAllBlogs(searchblogs);
+    if(searchterm==="") {
+      setAllBlogs(allBlogsConst);
+    }
+    else {
+      addSearchTerm();
+      const searchblogs = allBlogs.filter((blog)=>{
+        if(blog.BlogTopic.toLowerCase().includes(searchterm.toLowerCase()) || blog.BlogUsername.toLowerCase().includes(searchterm.toLowerCase()) 
+        || blog.BlogHashtags.toLowerCase().includes(searchterm.toLowerCase()) || blog.BlogCreds.toLowerCase().includes(searchterm.toLowerCase())) {
+          return blog;
+        }
+      })
+      setAllBlogs(searchblogs);
+    }
   }
 
   function BlogRead(blog) {

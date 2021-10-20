@@ -115,7 +115,7 @@ function CvPitch(props) {
        <Row>
           <Col md={7}>
            <p style={{fontSize:"25px",fontWeight:"bold"}}>CV</p>
-           {cvlink!=="" && <a target="_blank" href={cvlink} style={{fontSize:"14px", color:"#F26C4F"}}>Previous Updated Resume</a>}
+           {cvlink!=="" && <a target="_blank" rel="noreferrer" href={cvlink} style={{fontSize:"14px", color:"#F26C4F"}}>Previous Updated Resume</a>}
           </Col>
          <Col><input onChange={(e)=>setCV(e.target.files[0])} type="file" style={{width:"100%",height:"35px"}}/></Col>
        </Row>
@@ -125,7 +125,7 @@ function CvPitch(props) {
        {prevgigs.map(single=>
        <Row>
          <Col md={7}><p style={{fontSize:"24px"}}>{single.GigName}</p></Col>
-         <Col style={{display:"flex", alignItems:"center"}}><a target="_blank" href={single.upload} style={{fontSize:"16px", color:"#F26C4F"}}>{single.upload.split("----")[1]}</a></Col>
+         <Col style={{display:"flex", alignItems:"center"}}><a target="_blank" rel="noreferrer" href={single.upload} style={{fontSize:"16px", color:"#F26C4F"}}>{single.upload.split("----")[1]}</a></Col>
        </Row>
        )}
       </Container>

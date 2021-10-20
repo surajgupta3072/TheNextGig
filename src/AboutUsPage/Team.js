@@ -32,7 +32,7 @@ function Team(){
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Passionate about education and an avid guitarist. Spends his free time learning new instruments and doing yoga. Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                           </Card>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(200, 150, 54, 0.07)", border: "2px solid rgba(200, 150, 54, 0.4)" }}>
@@ -43,7 +43,7 @@ function Team(){
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Huge fan of conspiracy theories and sci-fi movies. Likes to explore time travel and related theories. Can spend his entire day playing Poker and Catan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(86, 150, 112, 0.07)", border: " 2px solid rgba(86, 150, 112, 0.6)" }}>
@@ -54,7 +54,7 @@ function Team(){
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Passionate about education and an avid guitarist. Spends his free time learning new instruments and doing yoga. Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(70, 83, 204, 0.07)", border: "2px solid rgba(70, 83, 204, 0.6)" }}>
@@ -65,7 +65,7 @@ function Team(){
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Passionate about education and an avid guitarist. Spends his free time learning new instruments and doing yoga. Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
                      </Row>
@@ -78,7 +78,7 @@ function Team(){
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Passionate about education and an avid guitarist. Spends his free time learning new instruments and doing yoga. Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                           </Card>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(200, 150, 54, 0.07)", border: "2px solid rgba(200, 150, 54, 0.4)" }}>
@@ -89,7 +89,7 @@ function Team(){
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Passionate about education and an avid guitarist. Spends his free time learning new instruments and doing yoga. Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(86, 150, 112, 0.07)", border: " 2px solid rgba(86, 150, 112, 0.6)" }}>
@@ -100,7 +100,7 @@ function Team(){
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Passionate about education and an avid guitarist. Spends his free time learning new instruments and doing yoga. Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
                      </Row>
@@ -136,7 +136,7 @@ function Team(){
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"nowrap",marginLeft:"5px"}}>
                                 Passionate about education and an<br/> avid guitarist. Spends his free time<br/> learning new instruments and doing yoga.<br/> Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                                 </Col>
                             </div>
                             </Card.Body>
@@ -153,7 +153,7 @@ function Team(){
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"nowrap",marginLeft:"5px"}}>
                                 Passionate about education and an<br/> avid guitarist. Spends his free time<br/> learning new instruments and doing yoga.<br/> Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                                 </Col>
                             </div>
                             </Card.Body>
@@ -170,7 +170,7 @@ function Team(){
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"nowrap",marginLeft:"5px"}}>
                                 Passionate about education and an<br/> avid guitarist. Spends his free time<br/> learning new instruments and doing yoga.<br/> Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                                 </Col>
                             </div>
                             </Card.Body>
@@ -187,7 +187,7 @@ function Team(){
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"nowrap",marginLeft:"5px"}}>
                                 Passionate about education and an<br/> avid guitarist. Spends his free time<br/> learning new instruments and doing yoga.<br/> Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                                 </Col>
                             </div>
                             </Card.Body>
@@ -204,7 +204,7 @@ function Team(){
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"nowrap",marginLeft:"5px"}}>
                                 Passionate about education and an<br/> avid guitarist. Spends his free time<br/> learning new instruments and doing yoga.<br/> Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                                 </Col>
                             </div>
                             </Card.Body>
@@ -221,7 +221,7 @@ function Team(){
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"nowrap",marginLeft:"5px"}}>
                                 Passionate about education and an<br/> avid guitarist. Spends his free time<br/> learning new instruments and doing yoga.<br/> Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                                 </Col>
                             </div>
                             </Card.Body>
@@ -238,7 +238,7 @@ function Team(){
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"nowrap",marginLeft:"5px"}}>
                                 Passionate about education and an<br/> avid guitarist. Spends his free time<br/> learning new instruments and doing yoga.<br/> Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
-                                <Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20} />
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                                 </Col>
                             </div>
                             </Card.Body>

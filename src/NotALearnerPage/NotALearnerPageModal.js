@@ -25,8 +25,7 @@ function NotALearnerModal(props){
   const TEMPLATE_ID = "template_r0wbju9";
   const submit = (event) => {
     event.preventDefault();
-    emailjs
-      .send(
+    emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         { title: "Not a learner", field1, field2,field3, Details: data },

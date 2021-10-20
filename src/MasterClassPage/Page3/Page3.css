@@ -3,7 +3,7 @@
   margin-left: 5% !important;
 }
 .anim_img {
-  height: 72%;
+  height: 100%;
   width: 100%;
 }
 .vertical-menu {
@@ -96,7 +96,7 @@
   text-align: center;
 }
 .card1_page3 {
-  width: fit-content;
+  width: 83%;
   margin-left: "10%";
   padding-top: 8px;
   padding-bottom: 1px;

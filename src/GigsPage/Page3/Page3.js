@@ -1,7 +1,7 @@
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram } from "react-bootstrap-icons";
+import { ArrowLeft,Linkedin,Whatsapp,Instagram } from "react-bootstrap-icons";
 import master from "../../MasterClassPage/Masterclass.json";
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
@@ -123,7 +123,7 @@ function Page3(props) {
                   className="card1_page3"
                   style={{ marginLeft: "0", marginTop: "2%" }}
                 >
-                  <div style={{width:"fit-content"}}>
+                  <div style={{width:"100%"}}>
                     <p className="page3_cardtext">Project Details:</p>
                     <Row>
                       <Col md={7}>
@@ -191,6 +191,7 @@ function Page3(props) {
                     </Row>
                   </div>
                 </Row>
+                <br/>
                 <Row className="laptop_view_btn_gig" style={{ marginTop: "0%", paddingBottom: "1%" }}>
                   <Col>
                     <a href={"/company/" + gigs[0].GigId}>
@@ -281,16 +282,16 @@ function Page3(props) {
               >
                 <br/>
                 <h4>Description:</h4>
-                {gigs[0].GigDescription}<br/><br/><br/>
+                {gigs[0].GigDescription}<br/><br/>
                 <h4>Pre-requisites:</h4>
-                {gigs[0].GigPreRequisites}<br/><br/><br/>
+                {gigs[0].GigPreRequisites}<br/><br/>
                 <h4>Related files (JD / case study / etc.):  <button style={{marginLeft:"2%"}}
-                    className="button2_slideview_page3 slide_right btn2_gigspage">
-                      View
-                    </button></h4>
-                <p style={{ marginTop: "3%"}}>
-                    <span style={{color:"#F26C4F"}}> Apply by {gigs[0].GigApplyBy} </span>
-                  </p>
+                  className="button2_slideview_page3 slide_right btn2_gigspage">
+                    View
+                </button></h4>
+                <p>
+                  <span style={{color:"#F26C4F"}}> Apply by {gigs[0].GigApplyBy} </span>
+                </p>
               </Col>
             </Row>
           </Container>
@@ -331,14 +332,14 @@ function Page3(props) {
                       backgroundColor: "#020312",
                     }}
                   >
-                      <MDBCardImage className="mbd_image"
-                        style={{
-                          marginLeft: "1px",
-                          width: "100%"
-                        }}
-                        src={carder.course_image}
-                        alt="..."
-                      />
+                    <MDBCardImage className="mbd_image"
+                      style={{
+                        marginLeft: "1px",
+                        width: "100%"
+                      }}
+                      src={carder.course_image}
+                      alt="..."
+                    />
                     <MDBCardBody>
                     <div className="Course_name">{carder.course_name}</div>
                  <div style={{color:"grey"}} className="instructor_name">{carder.course_instructor}

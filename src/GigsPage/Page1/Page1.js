@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import ReactTooltip from 'react-tooltip'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import "./Page1.css"
+import "./Page1.css";
+
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -15,7 +16,6 @@ const breakPoints = [
 ];
 
 function Page1(props) {
-  const [allBlogs, setAllBlogs] = useState([]);
   const [searchterm, setSearchTerm] = useState("");
   const [active, setActive] =  useState("Jobs");
   const [color1,setColor1] =useState("#f26c4f");
@@ -28,6 +28,7 @@ function Page1(props) {
   const [redirectlogin, setRedirectLogin] = useState(false);
   const [buck,setbuck]=useState(1)
   const [videoslist, setVideosList] = useState(false);
+  
   useEffect(() => {
     props.prop===null && setRedirectLogin(true)
     let paramss = {
@@ -42,11 +43,12 @@ function Page1(props) {
     }
     });
   }, []);
+
   function addSearchTerm() {
     var params = {
       TableName: "UsersTable",
-      Key: { "UserID":props.userid },
-      ProjectionExpression: "VideosSearchHistory",
+      Key: { "UserID":props.prop.username },
+      ProjectionExpression: "GigsSearchHistory",
     };
     docClient.get(params, function(err, data) {
       if (err) {
@@ -55,10 +57,10 @@ function Page1(props) {
       else {
         var params = {
           TableName: "UsersTable",
-          Key: { "UserID":props.userid },
-          UpdateExpression: "set SkillsAcquiredGigs["+data.Item.SkillsAcquiredGigs.length.toString()+"] = :vsh",
+          Key: { "UserID":props.prop.username },
+          UpdateExpression: "set GigsSearchHistory["+data.Item.GigsSearchHistory.length.toString()+"] = :gsh",
           ExpressionAttributeValues: {
-            ":vsh": {timestamp: `${Date.now()}`, svterm: searchterm}
+            ":gsh": {timestamp: `${Date.now()}`, sgterm: searchterm}
           },
           ReturnValues:"UPDATED_NEW"
         }
@@ -70,15 +72,19 @@ function Page1(props) {
       }
     });
   }
+
   function searchFilter() {
-    addSearchTerm();
-    const searchvids = gigs.filter((vid)=>{
-      if(vid.GigFunction.toLowerCase().includes(searchterm.toLowerCase()) || vid.GigName.toLowerCase().includes(searchterm.toLowerCase()) || vid.CompanyName.toLowerCase().includes(searchterm.toLowerCase())) {
-        return vid;
-      }
-    })
-    setVideosList(searchvids);
+    if(searchterm!="") {
+      addSearchTerm();
+      const searchvids = gigs.filter((vid)=>{
+        if(vid.GigFunction.toLowerCase().includes(searchterm.toLowerCase()) || vid.GigName.toLowerCase().includes(searchterm.toLowerCase()) || vid.CompanyName.toLowerCase().includes(searchterm.toLowerCase())) {
+          return vid;
+        }
+      })
+      setVideosList(searchvids);
+    }
   }
+
   function buttonColor(word){
     setActive(word)
     if(word==="Jobs"){

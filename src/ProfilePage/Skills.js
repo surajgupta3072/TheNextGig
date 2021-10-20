@@ -174,13 +174,13 @@ function Skills(props) {
             </Col>
             <Col md={12}>
               <em><p style={{fontSize:"18px"}}>Through Social Learning - Videos:<br/>
-              {props.p.wholedata.SkillsAcquiredVideos.map((vsk)=> 
+              {Array.from(new Map(props.p.wholedata.SkillsAcquiredVideos.map((p) => [p.join(), p])).values()).map((vsk)=> 
                 <span>{vsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
               )}</p></em>
             </Col>
             <Col md={12}>
               <em><p style={{fontSize:"18px"}}>Through Social Learning - Blogs:<br/>
-              {props.p.wholedata.SkillsAcquiredBlogs.map((bsk)=> 
+              {Array.from(new Map(props.p.wholedata.SkillsAcquiredBlogs.map((p) => [p.join(), p])).values()).map((bsk)=> 
                 <span style={{wordWrap:"break-word"}}>{bsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
               )}</p></em>
             </Col>

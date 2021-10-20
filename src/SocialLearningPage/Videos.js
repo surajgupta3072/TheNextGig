@@ -35,14 +35,19 @@ function Videos(props) {
   }
 
   function searchFilter() {
-    addSearchTerm();
-    const searchvids = props.prop.filter((vid)=>{
-      if(vid.VideoTopic.toLowerCase().includes(searchterm.toLowerCase()) || vid.VideoUsername.toLowerCase().includes(searchterm.toLowerCase()) 
-      || vid.VideoHashtags.toLowerCase().includes(searchterm.toLowerCase()) || vid.VideoCreds.toLowerCase().includes(searchterm.toLowerCase())) {
-        return vid;
-      }
-    })
-    setVideosList(searchvids);
+    if(searchterm==="") {
+      setVideosList(props.prop);
+    }
+    else {
+      addSearchTerm();
+      const searchvids = props.prop.filter((vid) => {
+        if(vid.VideoTopic.toLowerCase().includes(searchterm.toLowerCase()) || vid.VideoUsername.toLowerCase().includes(searchterm.toLowerCase()) 
+        || vid.VideoHashtags.toLowerCase().includes(searchterm.toLowerCase()) || vid.VideoCreds.toLowerCase().includes(searchterm.toLowerCase())) {
+          return vid;
+        }
+      })
+      setVideosList(searchvids);
+    }
   }
 
   function VideoWatched(vid, hashtags) {
