@@ -24,7 +24,7 @@ function Header(props) {
                     TNG Originals
                 </Nav.Link>
                 <Nav.Link href="/ExperientialLearning" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
-                    Experimental Learning
+                    Experiential Learning
                 </Nav.Link>
                 <Nav.Link href="/SocialLearning" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
                     Social Learning

@@ -160,6 +160,7 @@ function NotALearnerPage() {
                 </div>
             </div>
         </span>
+        
         </div>
     );
 }

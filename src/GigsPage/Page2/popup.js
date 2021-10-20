@@ -89,8 +89,8 @@ function MyVerticallyPopUp(props) {
             <option selected >
               Select from dropdown*
             </option>
-            <option>Session</option>
-            <option>Expert</option>
+            <option>Domain</option>
+            <option>Company</option>
           </select>
           <input
             value={field2}

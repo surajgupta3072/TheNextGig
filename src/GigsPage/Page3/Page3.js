@@ -1,7 +1,7 @@
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import { ArrowLeft } from "react-bootstrap-icons";
+import { ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram } from "react-bootstrap-icons";
 import master from "../../MasterClassPage/Masterclass.json";
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
@@ -280,12 +280,14 @@ function Page3(props) {
                 className="lastcol_page3_gigs"
               >
                 <br/>
-                <h4>Gig Description:</h4>
+                <h4>Description:</h4>
                 {gigs[0].GigDescription}<br/><br/><br/>
                 <h4>Pre-requisites:</h4>
                 {gigs[0].GigPreRequisites}<br/><br/><br/>
-                <h4>Pre-selection tasks (if any):</h4>
-                {gigs[0].GigPreSelectionTask}
+                <h4>Related files (JD / case study / etc.):  <button style={{marginLeft:"2%"}}
+                    className="button2_slideview_page3 slide_right btn2_gigspage">
+                      View
+                    </button></h4>
                 <p style={{ marginTop: "3%"}}>
                     <span style={{color:"#F26C4F"}}> Apply by {gigs[0].GigApplyBy} </span>
                   </p>
@@ -353,6 +355,25 @@ function Page3(props) {
               </Carousel>
             </div>
           </div>
+          <div >
+            <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
+                <Col md={10}>
+                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}}>
+                © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
+                </h6>
+                </Col>
+                <Col className="soci_master_lap" style={{display:"flex",justifyContent:"center"}}>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                </Col>
+                <div className="soci_master" style={{display:"flex",justifyContent:"center"}}>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                </div>
+            </Row>
+            </div>
         </div>
       )}
     </div>

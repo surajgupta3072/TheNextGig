@@ -96,7 +96,7 @@ function Page1(props) {
   }
   return (
     <div>
-      <div className="gigs_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F"}}>ALL OPPORTUNITIES</h1><p style={{fontFamily:"Open Sans"}}>We believe the best way to learn something is by experiencing it yourself - pick out of gigs, internships or even a job </p><p style={{fontStyle:"Open Sans",marginTop:"-10px"}}>to make your learning complete.</p></Container></div>
+      <div className="gigs_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%"}}>ALL OPPORTUNITIES</h1><p style={{fontFamily:"Open Sans"}}>We believe the best way to learn something is by experiencing it yourself - pick out of gigs, internships or even a job </p><p style={{fontStyle:"Open Sans",marginTop:"-10px"}}>to make your learning complete.</p></Container></div>
       <br/>
       <Container>
       <input className="search" style={{ borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}}  value={searchterm} onChange={(e)=>{setSearchTerm(e.target.value);if(e.target.value==""){setVideosList(false)}}} placeholder="Search for companies or domains" type="search"/>&nbsp;&nbsp;&nbsp;

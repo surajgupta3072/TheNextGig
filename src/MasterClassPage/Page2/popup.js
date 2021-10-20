@@ -85,7 +85,7 @@ function MyVerticallyPopUp(props) {
             style={{ width: "100%" }}
             value={field1}
           >
-            <option selected disabled>
+            <option>
               Select from dropdown*
             </option>
             <option>Session</option>
