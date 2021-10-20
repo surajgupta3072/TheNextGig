@@ -147,7 +147,7 @@ function Blogs(props) {
           <h6 style={{padding:"0", margin:"0"}}>{blog.BlogUsername}-{blog.BlogCreds}</h6>
           <p style={{padding:"0", margin:"0",color:"grey"}}>{blog.BlogHashtags}</p>
           <br/>
-          <p style={{fontSize:"18px", textAlign:"left"}}>{blog.Blog}</p>
+          <p style={{fontSize:"16px", textAlign:"left",color:"grey"}}>{blog.Blog}</p>
         </div>
         </div>
       )}
