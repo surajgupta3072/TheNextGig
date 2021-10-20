@@ -222,16 +222,18 @@ function Page3(props) {
                     </Col >
                     <Col md={4}>
                       <div className="menu_card">   
-                        <h1 className="epi" style={{marginTop: "2%", marginLeft: "2%"}}>Episodes</h1>   
+                        <h1 className="epi" style={{marginTop: "2%", marginLeft: "2%"}}>Episodes</h1>  
+                        
                         <div className="vertical-menu">
-                        {session["episodes"].map(topic=>(
+                        {session["episodes"].map((topic, i)=>(
                           <div className="menu_list" style={{cursor:"pointer"}} onClick={() => {showDescription(topic.id)}}>
                           <span >
-                            <a style={{textDecoration: "none"}}>{topic.title}</a><br/>
+                            <a style={{textDecoration: "none", fontSize: "18px"}}>{topic.title}</a><br/>
                           </span>
                           </div>
                         ))}
-                        </div>      
+                        </div>
+                              
                       </div>
                     </Col>
                   </Row>                   
@@ -448,14 +450,14 @@ function Page3(props) {
                 </h6>
                 </Col>
                 <Col className="soci_master_lap" style={{display:"flex",justifyContent:"center"}}>
-                    <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <Whatsapp onClick={()=>window.location.href="https://api.whatsapp.com/send?phone=919920891546"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </Col>
                 <div className="soci_master" style={{display:"flex",justifyContent:"center"}}>
-                    <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <Whatsapp onClick={()=>window.location.href="https://api.whatsapp.com/send?phone=919920891546"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </div>
             </Row>
             </div>

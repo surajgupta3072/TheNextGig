@@ -287,7 +287,7 @@ function Page3(props) {
                 <h4>Pre-selection tasks (if any):</h4>
                 {gigs[0].GigPreSelectionTask}
                 <p style={{ marginTop: "3%"}}>
-                    <em style={{color:"#F26C4F"}}> Apply by {gigs[0].GigApplyBy} </em>
+                    <span style={{color:"#F26C4F"}}> Apply by {gigs[0].GigApplyBy} </span>
                   </p>
               </Col>
             </Row>

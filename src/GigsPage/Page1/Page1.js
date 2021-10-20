@@ -85,7 +85,7 @@ function Page1(props) {
       setbuck(1);
       setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");setColor3("white");setextColor3("#f26c4f");
     }
-    if(word==="Gigs/Projects"){
+    if(word==="Gigs"){
       setbuck(2);
      setColor1("white");setextColor1("#f26c4f");setColor2("#f26c4f");setextColor2("white");setColor3("white");setextColor3("#f26c4f");
    }
@@ -99,14 +99,14 @@ function Page1(props) {
       <div className="gigs_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F"}}>ALL OPPORTUNITIES</h1><p style={{fontFamily:"Open Sans"}}>We believe the best way to learn something is by experiencing it yourself - pick out of gigs, internships or even a job </p><p style={{fontStyle:"Open Sans",marginTop:"-10px"}}>to make your learning complete.</p></Container></div>
       <br/>
       <Container>
-      <input className="search" style={{ borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}}  value={searchterm} onChange={(e)=>{setSearchTerm(e.target.value);if(e.target.value==""){setVideosList(false)}}} placeholder="Search for companies / domains / profiles / etc." type="search"/>&nbsp;&nbsp;&nbsp;
+      <input className="search" style={{ borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}}  value={searchterm} onChange={(e)=>{setSearchTerm(e.target.value);if(e.target.value==""){setVideosList(false)}}} placeholder="Search for companies or domains" type="search"/>&nbsp;&nbsp;&nbsp;
       <button className="search_button"  onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button>
       <br/>
       <br/>
         <Row>
           <Col xs={9} className="SocialLearn_laptop">
             <button onClick={()=>{buttonColor("Jobs")}} style={{marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Jobs</button>
-            <button onClick={()=>{buttonColor("Gigs/Projects")}} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs/Projects</button>
+            <button onClick={()=>{buttonColor("Gigs")}} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs</button>
             <button onClick={()=>{buttonColor("Internships")}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Internships</button>
           </Col>
         </Row>
@@ -115,7 +115,7 @@ function Page1(props) {
       <div style={{marginTop:"5%"}} >
                 <div style={{display:"flex",justifyContent:"space-evenly"}}>
                   <div><button onClick={()=>{buttonColor("Jobs")}} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Jobs</button></div>
-                  <div><button onClick={()=>{buttonColor("Gigs/Projects")}} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs</button></div>
+                  <div><button onClick={()=>{buttonColor("Gigs")}} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs</button></div>
                   <div><button onClick={()=>{buttonColor("Internships")}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Internships</button></div>
                </div> 
              </div> 
@@ -149,7 +149,7 @@ function Page1(props) {
               />
             </div>
             <MDBCardBody>
-              <div className="Course_name">{carder.GigName}</div>
+              <div className="Course_name" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>{carder.GigName}</div>
               <hr
                 className="course_line"
                 style={{ height: "0.13rem", color: "#f26c4f" }}
@@ -172,7 +172,7 @@ function Page1(props) {
                 </div>
                 <div className="episode_course">&#8377; {carder.GigStipend}</div>
               </div>
-              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}><em>Apply by {carder.GigApplyBy}</em></div>
+              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
             </MDBCardBody>
           </MDBCard>
         }):videoslist.map((carder) => {
@@ -203,7 +203,7 @@ function Page1(props) {
                 />
               </div>
               <MDBCardBody>
-                <div className="Course_name">{carder.GigName}</div>
+                <div className="Course_name" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>{carder.GigName}</div>
                 <hr
                   className="course_line"
                   style={{ height: "0.13rem", color: "#f26c4f" }}
@@ -226,7 +226,7 @@ function Page1(props) {
                   </div>
                   <div className="episode_course">&#8377; {carder.GigStipend}</div>
                 </div>
-                <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}><em>Apply by {carder.GigApplyBy}</em></div>
+                <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
               </MDBCardBody>
             </MDBCard>
           })}
@@ -259,7 +259,7 @@ function Page1(props) {
                 />
               </div>
               <MDBCardBody>
-                <div className="Course_name">{carder.GigName}</div>
+                <div className="Course_name" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>{carder.GigName}</div>
                 <hr
                   className="course_line"
                   style={{ height: "0.13rem", color: "#f26c4f" }}
@@ -305,7 +305,7 @@ function Page1(props) {
       />
     </div>
     <MDBCardBody>
-      <div className="Course_name">{carder.GigName}</div>
+      <div className="Course_name" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>{carder.GigName}</div>
       <hr
         className="course_line"
         style={{ height: "0.13rem", color: "#f26c4f" }}
