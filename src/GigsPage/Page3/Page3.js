@@ -193,7 +193,7 @@ function Page3(props) {
                 </Row>
                 <br/>
                 <Row className="laptop_view_btn_gig" style={{ marginTop: "0%", paddingBottom: "1%" }}>
-                  <Col>
+                  {/* <Col>
                     <a href={"/company/" + gigs[0].GigId}>
                       <button
                         className="button_slide_page3 slide_right btn1_gigspage"
@@ -203,10 +203,10 @@ function Page3(props) {
                         <ArrowLeft className="button_arrow1_footer_gigspage3" />
                       </button>
                     </a>
-                  </Col>
+                  </Col> */}
                   { !appliedgigs.includes(gigs[0].GigId) ?
                     <Col>
-                      <button style={{marginLeft:"5%"}}
+                      <button style={{marginLeft:"27%"}}
                         className="button2_slide_page3 slide_right btn2_gigspage"
                         onClick={() => setModalShow(true)}
                       >
@@ -222,7 +222,7 @@ function Page3(props) {
                       />
                     </Col> :
                     <Col>
-                    <button style={{marginLeft:"12%"}}
+                    <button style={{marginLeft:"27%"}}
                     className="button2_slide_page3 slide_right btn2_gigspage">
                       Applied!
                     </button>
@@ -230,7 +230,7 @@ function Page3(props) {
                   }
                 </Row>
                 <div className="mobile_view_btn_gig" >
-                  <div>
+                  {/* <div>
                     <a href={"/company/" + gigs[0].GigId}>
                       <button
                         className="button_slide_page3 slide_right btn1_gigspage"
@@ -240,7 +240,7 @@ function Page3(props) {
                         <ArrowLeft className="button_arrow1_footer_gigspage3" />
                       </button>
                     </a>
-                  </div>
+                  </div> */}
                   { !appliedgigs.includes(gigs[0].GigId) ?
                     <div>
                       <button style={{marginLeft:"5%"}}
@@ -259,15 +259,14 @@ function Page3(props) {
                       />
                     </div> :
                     <div>
-                    <button style={{marginLeft:"12%"}}
+                    <button style={{marginLeft:"5%"}}
                     className="button2_slide_page3 slide_right btn2_gigspage">
                       Applied!
                     </button>
                   </div>
                   }
                 </div>
-                <div>
-                </div>
+                <br/>
               </Col>
               <Col
                 style={{

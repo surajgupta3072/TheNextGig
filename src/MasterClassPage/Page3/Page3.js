@@ -313,12 +313,12 @@ function Page3(props) {
             <h3 style={{marginTop:"-60px",marginLeft:"-320px",fontSize:"20px"}}>Lifetime access to 20 years of professional experience<br/><span style={{color: "#F26C4F"}}>compressed into 1.5 hours of learning</span></h3>
           </Col>
           <div className="night">
-      <div className="star"></div>
-      <div className="star"></div>
-      <div className="star"></div>
-      <div className="star"></div>
-      <div className="star"></div>
-    </div>
+          <div className="star"></div>
+          <div className="star"></div>
+          <div className="star"></div>
+          <div className="star"></div>
+          <div className="star"></div>
+        </div>
         </Row>
         <br/><br/>
         <Row>
@@ -345,7 +345,7 @@ function Page3(props) {
           <div style={{height:"2px",width:"100%",backgroundColor:"#F26C4F"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(242, 108, 79, 0.3)",border:"1px solid #F26C4F",paddingTop:"38px"}}>1</div>
             <h3 style={{marginTop:"-70px",marginLeft:"75px",fontSize:"15px"}}>Lifetime access to 20 years of professional experience 
- <span style={{color: "#F26C4F"}}> compressed into 1.5 hours of learning</span></h3>
+            <span style={{color: "#F26C4F"}}> compressed into 1.5 hours of learning</span></h3>
           </Col>
         </Row>
         <br/><br/>

@@ -7,7 +7,7 @@ import GigsDetails from "./GigsPage/GigsDetails";
 import MasterClassDetails from "./MasterClassPage/MasterClassDetails";
 import Page2 from "./ExpertPage/Page2/Page2";
 import ExpertPage from "./ExpertPage/ExpertPage";
-import CompanyPage from "./CompanyPage/ComapnyPage";
+// import CompanyPage from "./CompanyPage/ComapnyPage";
 import ProfilePage from "./ProfilePage/ProfilePage";
 import LoginPage from "./AuthPage/LoginPage";
 import RegisterPage from "./AuthPage/RegisterPage";
@@ -107,9 +107,9 @@ function App() {
               <ProtectedRoute exact path="/profile" auth={authProps}>
                 <ProfilePage auth={authProps}/>
               </ProtectedRoute>
-              <Route exact path="/company/:id">
+              {/* <Route exact path="/company/:id">
                 <CompanyPage />
-              </Route>
+              </Route> */}
               <Route exact path="/expert/:id">
                 <ExpertPage />
               </Route>
