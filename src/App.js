@@ -22,6 +22,7 @@ import ForgotPasswordPage from "./AuthPage/ForgotPasswordPage";
 import ChangePasswordPage from "./AuthPage/ChangePasswordPage";
 import NotALearnerPage from "./NotALearnerPage/NotALearnerPage";
 import AboutUs from "./AboutUsPage/AboutUs";
+import Legal from "./LegalPage/Legal";
 import "./App.css";
 
 function App() {
@@ -132,6 +133,9 @@ function App() {
               </Route>
               <Route exact path="/AboutUs">
                 <AboutUs />
+              </Route>
+              <Route exact path="/Legal">
+                <Legal />
               </Route>
               <Route exact path="/">
                 <HomePage />

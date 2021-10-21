@@ -1,5 +1,6 @@
 import Team from './Team';
-import Vision from './Vision'
+import Vision from './Vision';
+
 function AboutUs(){
     return(
       <div>  

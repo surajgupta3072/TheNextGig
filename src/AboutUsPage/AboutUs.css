@@ -1,0 +1,9 @@
+.AboutUs-p{
+    font-size: 36px;
+}
+
+@media screen and (max-width: 768px) {
+    .AboutUs-p{
+        font-size: 18px;
+    }
+}
