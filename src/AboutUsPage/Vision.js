@@ -19,12 +19,11 @@ function Vision(){
             </div>
             </div>
              <div style={{marginTop:"7%",marginLeft:"5%"}}> 
-            <Container style={{backgroundColor:"#32181E",width:"90%",height:"20%"}}>
-               <p className="AboutUs-p" style={{marginLeft:"1%",marginRight:"2%",marginTop:"2%",marginBottom:"0.001%"}}>Redefining how the world learns, shares knowledge, accesses opportunities and grows...</p>
-                <br/>
+            <Container style={{width:"90%",height:"20%"}}>
+               <p className="AboutUs-p" style={{marginLeft:"1%",marginRight:"2%",marginTop:"2%"}}>Redefining how the world learns, shares knowledge, accesses opportunities and grows...</p>
                <p className="AboutUs-p" style={{marginLeft:"58%",fontStyle:"italic"}}>...all at one place, and together.</p>
             </Container>
-            </div> 
+            </div>
        </div> 
     );
 }

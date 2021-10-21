@@ -99,12 +99,13 @@ function Page3(props) {
             </div>
             <div className="appreciation">
               <div >
-            <div  className="card1_page3" style={{marginTop: "3%"}}>
-                      <h1 className="text_page3_card">What you’ll learn:</h1>
+              <div className="card1_page3" style={{marginTop: "3%"}}>
+                <h1 className="text_page3_card">What you’ll learn:</h1>
               </div>
               <br/>
               <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Fundamentals of marketing</p>
                       <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Difference between product and brand</p>
+                      <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
                       <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
                       </div>
                       <div>
@@ -119,9 +120,10 @@ function Page3(props) {
                 <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Freelance marketing gigs</p>
                 </div>
                 </div>
+                <br/>
             <Row className="laptop_view_video_master">
               <Col>
-                <a href={"/expert/"+session.ExpertId}><button  className="button_slide_page3 slide_right">
+                <a href={"/expert/"+session.ExpertId}><button className="button_slide_page3 slide_right">
                 Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
                 </button></a>
               </Col>
@@ -222,8 +224,7 @@ function Page3(props) {
                     </Col >
                     <Col md={4}>
                       <div className="menu_card">   
-                        <h1 className="epi" style={{marginTop: "2%", marginLeft: "2%"}}>Episodes</h1>  
-                        
+                        <h1 className="epi" style={{marginTop: "2%", marginLeft: "2%"}}>Episodes</h1>
                         <div className="vertical-menu">
                         {session["episodes"].map((topic, i)=>(
                           <div className="menu_list" style={{cursor:"pointer"}} onClick={() => {showDescription(topic.id)}}>
@@ -308,9 +309,9 @@ function Page3(props) {
       <Container className="info">
         <Row>
           <Col style={{textAlign:"center"}}>
-          <div style={{height:"2px",width:"70%",backgroundColor:"#F26C4F"}}></div>
+          <div style={{height:"2px",width:"60%",backgroundColor:"#F26C4F"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(242, 108, 79, 0.3)",border:"1px solid #F26C4F",paddingTop:"38px"}}>1</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"-320px",fontSize:"20px"}}>Lifetime access to 20 years of professional experience<br/><span style={{color: "#F26C4F"}}>compressed into 1.5 hours of learning</span></h3>
+            <h3 style={{marginTop:"-70px",marginLeft:"8%",fontSize:"20px", textAlign:"left"}}>Lifetime access to 20 years of professional experience<br/><span style={{color: "#F26C4F"}}>compressed into 1.5 hours of learning</span></h3>
           </Col>
           <div className="night">
           <div className="star"></div>
@@ -323,17 +324,17 @@ function Page3(props) {
         <br/><br/>
         <Row>
           <Col style={{textAlign:"center",marginLeft:"20%"}}>
-            <div style={{height:"2px",width:"80%",backgroundColor:"#C89636"}}></div>
+            <div style={{height:"2px",width:"70%",backgroundColor:"#C89636"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(200, 150, 54, 0.3)",border:"1px solid #C89636",paddingTop:"38px"}}>2</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"-100px",fontSize:"20px"}}>Preference for experiential learning opportunities that we<br/><span style={{color: "#C89636"}}>source for you in this domain</span></h3>
+            <h3 style={{marginTop:"-70px",marginLeft:"10%",fontSize:"20px", textAlign:"left"}}>Preference for experiential learning opportunities that we<br/><span style={{color: "#C89636"}}>source for you in this domain</span></h3>
           </Col>
         </Row>
         <br/><br/>
         <Row>
           <Col style={{textAlign:"center",marginLeft:"40%"}}>
-          <div style={{height:"2px",width:"100%",backgroundColor:"#569670"}}></div>
+          <div style={{height:"2px",width:"95%",backgroundColor:"#569670"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(86, 150, 112, 0.3)",border:"1px solid #569670",paddingTop:"38px"}}>3</div>
-            <h3 style={{marginTop:"-60px",marginLeft:"90px",fontSize:"20px"}}>A certificate of completion and a chance to get your in-<br/><span style={{color: "#569670"}}>session case / project reviewed by the expert</span></h3>
+            <h3 style={{marginTop:"-70px",marginLeft:"13%",fontSize:"20px", textAlign:"left"}}>A certificate of completion and a chance to get your in-<br/><span style={{color: "#569670"}}>session case / project reviewed by the expert</span></h3>
           </Col>
         </Row>
       </Container>

@@ -25,7 +25,7 @@ function Team(){
                 <Container style={{marginTop:"7%"}}>
                     <Row>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)" }}>
-                        <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./rubix.jpeg" />
+                        <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./urmil.jpeg" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Urmil Vakharia</Card.Title>
                                 <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Founder</Card.Subtitle>

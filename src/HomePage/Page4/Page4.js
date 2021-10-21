@@ -37,18 +37,18 @@ function Page4() {
                         <Row className="row1">
                             <Col style={{width: "20"}}>
                                 <div class="grid_imgs">
-                                <img src="/captzack.png" alt="..." class="myimg" />
+                                <img src="./captzack.png" alt="..." class="myimg" />
                                 </div>
                             </Col>                       
                             <Col style={{width: "20"}}>
                                 <div class="grid_imgs">
-                                <img src="/superpro.png" alt="..." class="myimg" />
+                                <img src="./superpro.png" alt="..." class="myimg" />
                                 </div>
                             </Col> 
                             
                             <Col style={{width: "20"}}>
                                 <div class="grid_imgs">
-                                <img src="/grey.png" alt="..." class="myimg" />
+                                <img src="./orangewood.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                         </Row >
@@ -57,12 +57,12 @@ function Page4() {
                                                
                             <Col>
                                 <div class="grid_imgs">
-                                <img src="/scalenut.png" alt="..." class="myimg" />
+                                <img src="./scalenut.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                             <Col>
                                 <div class="grid_imgs">
-                                <img src="/fish.png" alt="..." class="myimg" />
+                                <img src="./fish.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                         </Row>
@@ -72,7 +72,7 @@ function Page4() {
                         <Col></Col>
                             <Col>
                                 <div class="grid_imgs">
-                                <img src="/synapisca.png" alt="..." class="myimg" />
+                                <img src="./synapisca.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                         </Row>
@@ -119,17 +119,17 @@ function Page4() {
                             <Col></Col>                       
                             <Col >
                                 <div  style={{width:"70px",height:"70px"}} class="grid_imgs">
-                                <img  src="/captzack.png" alt="..." class="myimg" />
+                                <img  src="./captzack.png" alt="..." class="myimg" />
                                 </div>
                             </Col> 
                             <Col >
                                 <div  style={{width:"70px",height:"70px"}} class="grid_imgs">
-                                <img  src="/superpro.png" alt="..." class="myimg" />
+                                <img  src="./superpro.png" alt="..." class="myimg" />
                                 </div>
                             </Col> 
                             <Col >
                                 <div  style={{width:"70px",height:"70px"}} class="grid_imgs">
-                                <img  src="/grey.png" alt="..." class="myimg" />
+                                <img  src="./orangewood.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                         </Row >
@@ -138,12 +138,12 @@ function Page4() {
                             <Col></Col>                   
                             <Col >
                                 <div style={{width:"70px",height:"70px"}} class="grid_imgs">
-                                <img  src="/scalenut.png" alt="..." class="myimg" />
+                                <img  src="./scalenut.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                             <Col>
                                 <div style={{width:"70px",height:"70px"}} class="grid_imgs">
-                                <img src="/fish.png" alt="..." class="myimg" />
+                                <img src="./fish.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                         </Row>
@@ -153,7 +153,7 @@ function Page4() {
                         <Col></Col> 
                             <Col>
                                 <div style={{width:"70px",height:"70px"}}  class="grid_imgs">
-                                <img src="/synapisca.png" alt="..." class="myimg" />
+                                <img src="./synapisca.png" alt="..." class="myimg" />
                                 </div>
                             </Col>
                         </Row>

@@ -1,0 +1,18 @@
+.t_c {
+  margin-right: 100px;
+}
+.footer_div2 {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .t_c {
+    margin-right: 0px;
+    margin-top: -80px;
+  }
+  .footer_div2_lap {
+    display: none;
+  }
+  .footer_div2 {
+    display: block;
+  }
+}

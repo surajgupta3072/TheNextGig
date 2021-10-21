@@ -8,7 +8,7 @@
     "instructor_creds": "IIM-A 2020, SRCC 2017",
     "course_timing": "1hr 20mins",
     "course_episode": "13 episodes",
-    "course_description": "The tools of Marketing might change from decade to decade (with recent buzz around social marketing) – however, the fundamentals remain the same.  The marketer that sticks to the fundamental can cut his way through decades",
+    "course_description": "The tools of Marketing might change from decade to decade (with recent buzz around social marketing) – however, the fundamentals remain the same.  The marketer that sticks to the fundamental",
     "course_role": "Marketing",
     "course_industry": "Agnostic",
     "fees": "899",
@@ -17,7 +17,7 @@
       {
         "id": 1,
         "title": "Marketing 101",
-        "description": "What is lorem irem ipsum has bnter took a galley ofambled it to make a type specimen book it has?",
+        "description": "What is lorem irem ipsum has bnter took a galley ofambled it to make a type specimen book it has? What is lorem irem ipsum has bnter took a galley ofambled it to make a type specimen book it has?",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/MVI_8172.mov"
       },
       {
@@ -34,6 +34,12 @@
       },
       {
         "id": 4,
+        "title": "Foundations of Marketing",
+        "description": "f type and scrambled it to maem irem ipsum has bnter took a galley oke a type specimen book it ha",
+        "epi_video": "/loger1.svg"
+      },
+      {
+        "id": 5,
         "title": "Foundations of Marketing",
         "description": "f type and scrambled it to maem irem ipsum has bnter took a galley oke a type specimen book it ha",
         "epi_video": "/loger1.svg"

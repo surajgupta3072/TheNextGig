@@ -18,8 +18,8 @@ function Page5() {
           </span>
         </p>
       </div>
-      <div style={{marginTop: "80px"}}>
-        <h4 className="page3_subtitle text3">...instead of the <text style={{color:"#f26c4f"}}> mindless </text>  scrolling on other social media platforms?</h4>
+      <div style={{marginTop: "70px"}}>
+        <h4 className="page3_subtitle text3">...instead of the mindless  scrolling on other social media platforms?</h4>
       </div>
       </div>
 
@@ -32,7 +32,7 @@ function Page5() {
                 <Card.Body style={{marginTop:"30px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >VIDEOS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Upload a video? Get rewarded. Watch a video? Learn something new. <br/>It’s a win-win!  
+                  Upload a video? Get rewarded. <br/>Watch a video? Learn something new. <br/>It’s a win-win!  
                   </Card.Text>
                 </Card.Body>
             </Card>
@@ -41,8 +41,7 @@ function Page5() {
                 <Card.Body style={{marginTop:"30px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >BLOGS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Read some; write some!
-                  The topic? Anything under the sun!
+                  Read some; write some!<br/> The topic? Anything under the sun!
                   </Card.Text>
                 </Card.Body>
                 <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/bloghome.jpg"/>

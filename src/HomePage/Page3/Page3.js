@@ -27,7 +27,7 @@ function Page3() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle">Curated, certified sessions to make <span className="page3_orange"> you </span> an expert</h4>
+        <h4 className="page3_subtitle">Curated, certified sessions to make <span className="page3_orange"> <em>you</em> </span> an expert</h4>
       </div>
       </div>
       <br/>

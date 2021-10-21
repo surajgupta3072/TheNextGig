@@ -1,5 +1,5 @@
 .homeimage {
-  background: url("./../../homepage4.jpg") no-repeat center;
+  background: url("./../../homepage4.png") no-repeat center;
   background-size: 380px 550px;
   max-width: 100%;
   height: auto;
@@ -138,7 +138,7 @@ div.heading > div:nth-child(4) > p {
     font-size: 50px;
   }
   .Opening_container {
-    background: url("./../../homepage4.jpg") no-repeat center;
+    background: url("./../../homepage4.png") no-repeat center;
     background-size: 80% 600px;
   }
   .heading {
