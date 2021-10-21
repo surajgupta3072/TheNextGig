@@ -136,7 +136,8 @@ function Page1(props) {
               cursor:"pointer",
               borderRadius: "0px",
               marginTop: "2%",
-              height:"30rem",
+              height:"fit-content",
+              minHeight:"410px",
               marginBottom: "4%",
               border: "2px solid rgba(242, 108, 79, 0.6)",
               backgroundColor: "#020312",
@@ -148,37 +149,32 @@ function Page1(props) {
                 style={{
                   marginLeft: "0.5%",
                   width: "100%",
-                  height: "22rem"
                 }}
                 src={carder.GigImage}
                 alt="..."
               />
             </div>
             <MDBCardBody>
-              <div className="Course_name" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>{carder.GigName}</div>
-              <hr
-                className="course_line"
-                style={{ height: "0.13rem", color: "#f26c4f" }}
-              />
-              <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
-                <div className="instructor_name" >
+              <div className="Course_name" style={{display: "flex", flexDirection: "row"}}>{carder.GigName}</div>
+                <div style={{color:"grey",marginTop:"5px"}} className="instructor_name" >
                   {carder.GigFunction} <sup data-tip data-for={carder.GigId+"g"}>&#9432;</sup>
                   <ReactTooltip id={carder.GigId+"g"} place="top" effect="solid">
                     {carder.GigDescription.substring(0, 150)}...
                   </ReactTooltip>
                 </div>
-                <div className="time_course">{carder.GigDuration}</div>
-              </div>
-              <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
+              <div style={{color:"grey",fontSize:"0.9rem"}}>
                 <div className="instructor_post">
                   {carder.CompanyName} <sup data-tip data-for={carder.GigId+"d"}>&#9432;</sup>
                   <ReactTooltip id={carder.GigId+"d"} place="top" effect="solid">
                     {carder.CompanyDescription.substring(0, 150)}...
                   </ReactTooltip>
                 </div>
-                <div className="episode_course">&#8377; {carder.GigStipend}</div>
               </div>
-              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
+              <div style={{display:"flex",justifyContent:"space-between",fontSize:"18px",marginTop:"10px"}}>
+              <div>{carder.GigDuration}</div>
+                <div>&#8377; {carder.GigStipend}</div>
+                </div>
+              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"20px"}}>Apply by {carder.GigApplyBy}</div>
             </MDBCardBody>
           </MDBCard>
         }):videoslist.map((carder) => {
@@ -190,7 +186,8 @@ function Page1(props) {
                 cursor:"pointer",
                 borderRadius: "0px",
                 marginTop: "2%",
-                height:"30rem",
+                height:"fit-content",
+                minHeight:"410px",
                 marginBottom: "4%",
                 border: "2px solid rgba(242, 108, 79, 0.6)",
                 backgroundColor: "#020312",
@@ -201,21 +198,20 @@ function Page1(props) {
                 <MDBCardImage className="mbd_image"
                   style={{
                     marginLeft: "0.5%",
-                    width: "100%",
-                    height: "22rem"
+                    width: "100%"
                   }}
                   src={carder.GigImage}
                   alt="..."
                 />
               </div>
               <MDBCardBody>
-                <div className="Course_name" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>{carder.GigName}</div>
+                <div className="Course_name" style={{display: "flex", flexDirection: "row"}}>{carder.GigName}</div>
                 <hr
                   className="course_line"
                   style={{ height: "0.13rem", color: "#f26c4f" }}
                 />
-                <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
-                  <div className="instructor_name" >
+                <div className="instruct_time">
+                  <div style={{color:"grey"}} className="instructor_name" >
                     {carder.GigFunction} <sup data-tip data-for={carder.GigId+"g"}>&#9432;</sup>
                     <ReactTooltip id={carder.GigId+"g"} place="top" effect="solid">
                       {carder.GigDescription.substring(0, 150)}...
@@ -223,7 +219,7 @@ function Page1(props) {
                   </div>
                   <div className="time_course">{carder.GigDuration}</div>
                 </div>
-                <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
+                <div className="post_episode">
                   <div className="instructor_post">
                     {carder.CompanyName} <sup data-tip data-for={carder.GigId+"d"}>&#9432;</sup>
                     <ReactTooltip id={carder.GigId+"d"} place="top" effect="solid">
@@ -265,24 +261,21 @@ function Page1(props) {
                 />
               </div>
               <MDBCardBody>
-                <div className="Course_name" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>{carder.GigName}</div>
-                <hr
-                  className="course_line"
-                  style={{ height: "0.13rem", color: "#f26c4f" }}
-                />
-                <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
-                  <div className="instructor_name">
+                <div className="Course_name" style={{display: "flex", flexDirection: "row"}}>{carder.GigName}</div>
+                <div className="instruct_time">
+                  <div style={{color:"grey",marginTop:"5px"}} className="instructor_name">
                     {carder.GigFunction}
                   </div>
-                  <div className="time_course">{carder.GigDuration}</div>
                 </div>
-                <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
+                <div className="post_episode">
                   <div className="instructor_post">
                     {carder.CompanyName}
                   </div>
-                  <div className="episode_course">&#8377; {carder.GigStipend}</div>
                 </div>
-              <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px",fontSize:"0.85rem"}}>Apply by {carder.GigApplyBy}</div>
+                <div style={{display:"flex",justifyContent:"space-between",marginTop:"5px"}}>
+                  <div className="time_course">{carder.GigDuration}</div>
+                  <div className="episode_course">&#8377; {carder.GigStipend}</div></div>
+              <div style={{textAlign:"center",paddingTop:"5px",fontSize:"0.85rem"}}>Apply by {carder.GigApplyBy}</div>
               </MDBCardBody>
             </MDBCard>
 }):videoslist.map((carder) => {
@@ -311,18 +304,18 @@ function Page1(props) {
       />
     </div>
     <MDBCardBody>
-      <div className="Course_name" style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>{carder.GigName}</div>
+      <div className="Course_name" style={{display: "flex", flexDirection: "row"}}>{carder.GigName}</div>
       <hr
         className="course_line"
         style={{ height: "0.13rem", color: "#f26c4f" }}
       />
-      <div style={{display:"flex",justifyContent:"space-between"}} className="instruct_time">
-        <div className="instructor_name">
+      <div className="instruct_time">
+        <div style={{color:"grey"}} className="instructor_name">
           {carder.GigFunction}
         </div>
         <div className="time_course">{carder.GigDuration}</div>
       </div>
-      <div style={{display:"flex",justifyContent:"space-between"}} className="post_episode">
+      <div className="post_episode">
         <div className="instructor_post">
           {carder.CompanyName}
         </div>

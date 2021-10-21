@@ -396,10 +396,11 @@ function Page3(props) {
                             <div style={{color:"grey"}} className="instructor_name">{company.company_name}</div>
                           </div>
                             <div style={{color:"grey"}} className="instructor_post">{company.industry}</div>
-                            <div style={{display:"flex",justifyContent:"space-between",marginTop:"20px"}}>
+                            <div style={{display:"flex",justifyContent:"space-between",marginTop:"10px"}}>
                             <div className="time_course">{company.duration}</div>
                             <div className="episode_course">&#8377;{company.fees}-&#8377;{company.stipend_range}</div>
                             </div>
+                            <div style={{textAlign:"center",paddingTop:"20px"}}>Apply by {company.GigApplyBy}</div>
                         </MDBCardBody>
                       </MDBCard>
                     )

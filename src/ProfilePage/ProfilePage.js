@@ -167,13 +167,13 @@ function ProfilePage(props) {
       setColor1(bg); setColor2({}); setColor3({}); setColor4({}); setColor5({});setColor6({}); setNavbarHeading("Personal");
     }
     else if(word==="Education") {
-      setColor2(bg); setColor1({}); setColor3({}); setColor4({}); setColor5({});setColor6({}); setNavbarHeading("Education");
+      setColor3(bg); setColor1({}); setColor2({}); setColor4({}); setColor5({});setColor6({}); setNavbarHeading("Education");
     }
     else if(word==="WorkEx") {
-      setColor3(bg); setColor1({}); setColor2({}); setColor4({}); setColor5({});setColor6({}); setNavbarHeading("Work Experience");
+      setColor4(bg); setColor1({}); setColor2({}); setColor3({}); setColor5({});setColor6({}); setNavbarHeading("Work Experience");
     }
     else if(word==="Skills") {
-      setColor4(bg); setColor1({}); setColor2({}); setColor3({}); setColor5({});setColor6({}); setNavbarHeading("Skills");
+      setColor2(bg); setColor1({}); setColor4({}); setColor3({}); setColor5({});setColor6({}); setNavbarHeading("Skills");
     }
     else if(word==="CvPitch") {
       setColor5(bg); setColor1({}); setColor2({}); setColor3({}); setColor4({});setColor6({}); setNavbarHeading("CV / Other documents");
@@ -200,11 +200,11 @@ function ProfilePage(props) {
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("Personal")} style={color1}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Personal</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("Education")} style={color2}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Education</p></Row>
+              <Row onClick={() => whichColor("Skills")} style={color2}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Skills</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("WorkEx")} style={color3}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Work Experience</p></Row>
+              <Row onClick={() => whichColor("Education")} style={color3}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Education</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("Skills")} style={color4}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Skills</p></Row>
+              <Row onClick={() => whichColor("WorkEx")} style={color4}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Work Experience</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("CvPitch")} style={color5}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>CV / Other Documents</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
