@@ -18,7 +18,7 @@ function TC(){
                     </div>
                     <div className="t_c" style={{color:"#C4C4C4"}}>
                     <br/><br/><br/><br/>
-                    <span style={{textDecoration:"underline",fontSize:"18px",fontWeight:"bold"}}>Terms and Conditions</span>
+
                     <br/>
 Welcome to TheNextGig… 
 <br/>

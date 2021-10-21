@@ -109,88 +109,28 @@ function Page3(props) {
           >
             <Row>
               <Col md={6}>
+              <Container>
                 <Row style={{ marginTop: "0%" }}>
                   <h2 className="page3_heading1">{gigs[0].CompanyName}</h2>
                 </Row>
-                <Row style={{ marginTop: "2%" }}>
-                  <p className="page3_3linetext">
-                    Domain: {gigs[0].GigFunction}
-                    <br /> Industry: {gigs[0].CompanyIndustry}<br />
-                    Co Description: {gigs[0].CompanyDescription}
-                  </p>
-                </Row>
-                <Row
-                  className="card1_page3"
-                  style={{ marginLeft: "0", marginTop: "2%" }}
-                >
-                  <div style={{width:"100%"}}>
-                    <p className="page3_cardtext">Project Details:</p>
-                    <Row>
-                      <Col md={7}>
-                        <div style={{display:"flex"}} className="proj_det_laptop">
-                          <div className="img_col">
-                            <img
-                              alt="..."
-                              className="img_page3_card"
-                              variant="top"
-                              src="/imagetime.png"
-                            />
-                          </div>
-                          <div className="text_col">
-                            <h1 style={{fontSize:"16px"}} className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
-                          </div>
-                        </div>
-                      </Col>
-                      <Col className="proj_det_mobile d1">
-                        <div>
-                          <div className="img_col">
-                            <img
-                              alt="..."
-                              className="img_page3_card"
-                              variant="top"
-                              src="/imagetime.png"
-                            />
-                          </div>
-                          <div  className="text_col">
-                            <h1 style={{fontSize:"16px"}} className="text_page3_card_gigs">{gigs[0].GigDuration}</h1>
-                          </div>
-                        </div>
-                      </Col>
-                      <Col>
-                        <Row className="proj_det_laptop d2">
-                          <Col className="img_col" md={5}>
-                            <img
-                              className="img_page3_card"
-                              variant="top"
-                              src="/imagestip.png"
-                              alt="..."
-                            />
-                          </Col>
-                          <Col className="text_col" md={7}>
-                            <h1  style={{fontSize:"16px"}} className="text_page3_card_gigs">
-                            {gigs[0].GigStipend}
-                            </h1>
-                          </Col>
-                        </Row>
-                        <div className="proj_det_mobile d3">
-                          <div  className="img_col">
-                            <img
-                              className="img_page3_card"
-                              variant="top"
-                              src="/imagestip.png"
-                              alt="..."
-                            />
-                          </div>
-                          <div className="text_col" md={8}>
-                            <h1 style={{fontSize:"16px"}} className="text_page3_card_gigs">
-                            {gigs[0].GigStipend}
-                            </h1>
-                          </div>
-                        </div>
-                      </Col>
-                    </Row>
-                  </div>
-                </Row>
+                </Container>
+                <div className="appreciation">
+                  <Container>
+              <div style={{fontSize:"20px"}}>
+              <br/>
+              <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Domain: {gigs[0].GigFunction}</p>
+                      <p className="img_text"><div style={{display:"flex",justifyContent:"flex-start"}}><div><img alt="..." src="/tick.png"/></div>&nbsp;&nbsp;<div>Industry: {gigs[0].CompanyIndustry}</div></div></p>
+                      <p className="img_text"><div style={{display:"flex",justifyContent:"flex-start"}}><div><img alt="..." src="/tick.png"/></div>&nbsp;&nbsp;<div>Company Description: {gigs[0].CompanyDescription}</div></div></p>
+                      <p className="img_text"><div style={{display:"flex",justifyContent:"flex-start"}}><div><img alt="..." src="/tick.png"/></div>&nbsp;&nbsp;<div>Duration: {gigs[0].GigDuration}</div></div></p>
+                      <p className="img_text"><div style={{display:"flex",justifyContent:"flex-start"}}><div><img alt="..." src="/tick.png"/></div>&nbsp;&nbsp;<div>Stipend: {gigs[0].GigStipend}</div></div><br/></p>
+                      </div>
+                      </Container>
+                      <div>
+                      <div>
+                </div>
+                <br/>
+                </div>
+                </div>
                 <br/>
                 <Row className="laptop_view_btn_gig" style={{ marginTop: "0%", paddingBottom: "1%" }}>
                   {/* <Col>

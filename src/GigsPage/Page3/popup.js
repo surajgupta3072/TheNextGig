@@ -116,7 +116,7 @@ function MyVerticallyPopUp(props) {
             <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
               <input min="0" onChange={(e)=>(setFees(e.target.value))} value={fees} style={{width:"40%"}} type="number"/>
               <select onChange={(e)=>(setChoice(e.target.value))} value={choice} style={{width:"50%"}}>
-                <option value="" selected disabled>Choose an Option*</option>
+              <option value="" selected disabled>Choose Option*</option>
                 <option value="pp">Per Project</option>
                 <option value="pm">Per Month</option>
               </select>

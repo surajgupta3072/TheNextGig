@@ -94,9 +94,11 @@ function Page3(props) {
       <Container style={{padding: "0%", maxWidth: "94%", marginBottom: "0%"}} className= "container1">
         <Row>
           <Col md={6} >
+            <Container style={{marginLeft:"2%"}}>
             <div style={{marginTop:"3%"}}>
               <p className="page3_3linetext">{session.course_description}</p>
             </div>
+            </Container>
             <div className="appreciation">
               <div >
               <div className="card1_page3" style={{marginTop: "3%"}}>
@@ -309,17 +311,17 @@ function Page3(props) {
       <Container className="info">
         <Row>
           <Col style={{textAlign:"center"}}>
-          <div style={{height:"2px",width:"60%",backgroundColor:"#F26C4F"}}></div>
+          <div style={{height:"2px",width:"60%",backgroundColor:"#F26C4F",marginTop:"30px"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(242, 108, 79, 0.3)",border:"1px solid #F26C4F",paddingTop:"38px"}}>1</div>
             <h3 style={{marginTop:"-70px",marginLeft:"8%",fontSize:"20px", textAlign:"left"}}>Lifetime access to 20 years of professional experience<br/><span style={{color: "#F26C4F"}}>compressed into 1.5 hours of learning</span></h3>
           </Col>
-          <div className="night">
+          {/* <div className="night">
           <div className="star"></div>
           <div className="star"></div>
           <div className="star"></div>
           <div className="star"></div>
           <div className="star"></div>
-        </div>
+        </div> */}
         </Row>
         <br/><br/>
         <Row>
@@ -394,12 +396,12 @@ function Page3(props) {
                           <div className="Course_name">{company.project_name}</div>
           
                           <div className="instruct_time">
-                            <div style={{color:"grey"}} className="instructor_name">{company.company_name}</div>
+                            <div style={{color:"grey",marginTop:"5px"}} className="instructor_name">{company.company_name}</div>
                           </div>
                             <div style={{color:"grey"}} className="instructor_post">{company.industry}</div>
                             <div style={{display:"flex",justifyContent:"space-between",marginTop:"10px"}}>
                             <div className="time_course">{company.duration}</div>
-                            <div className="episode_course">&#8377;{company.fees}-&#8377;{company.stipend_range}</div>
+                            <div className="episode_course">&#8377;&nbsp;{company.fees}&nbsp;-&nbsp;&#8377;&nbsp;{company.stipend_range}</div>
                             </div>
                             <div style={{textAlign:"center",paddingTop:"20px"}}>Apply by {company.GigApplyBy}</div>
                         </MDBCardBody>

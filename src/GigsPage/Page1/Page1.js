@@ -126,10 +126,11 @@ function Page1(props) {
                </div> 
              </div> 
       </div>
+      <Container>
       <div style={{display:"flex",justifyContent:"space-evenly"}} className="Mastercards">
         {videoslist===false?gigs.map((carder) => {
         if(carder.Bucket===buck)
-         return <MDBCard
+         return <MDBCard 
             onClick={() => {if(!redirectlogin) window.location.href="/ExperientialLearning/"+carder.GigId;  else window.location.href="/login";}}
             key={carder.GigId}
             style={{
@@ -233,6 +234,7 @@ function Page1(props) {
             </MDBCard>
           })}
       </div>
+      </Container>
       <div className="slider_mobile">
         <Carousel breakPoints={breakPoints}>
           {videoslist===false?gigs.map((carder) => {

@@ -34,8 +34,8 @@ function Footer(){
                 <Col>
                     <h3 style={{marginBottom:"7%", fontSize:"20px", display: "flex", justifyContent: "left"}}>Legal</h3>
                     <div className='footer-link'>
-                        <a href="/Legal" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>T&C</a>
-                        <a href="/Legal" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Privacy</a>
+                        <a href="/terms" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>T&C</a>
+                        <a href="/Privacy" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Privacy</a>
                     </div>
                 </Col>
             </Row>
@@ -83,8 +83,8 @@ function Footer(){
                 <Col>
                     <h3 style={{marginBottom:"7%", fontSize:"20px", display: "flex"}}>Legal</h3>
                     <div className='footer-link'>
-                        <a href="/Legal" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>T&C</a>
-                        <a href="/Legal" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Privacy</a>
+                        <a href="/terms" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>T&C</a>
+                        <a href="/Privacy" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Privacy</a>
                     </div>
                 </Col>
                 </div>

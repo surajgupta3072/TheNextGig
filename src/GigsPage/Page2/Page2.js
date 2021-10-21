@@ -76,7 +76,7 @@ function Page2() {
       <Container className="rectangle-box2" style={{marginTop:"5%"}}>
         <Row >
           <Col style={{padding:"2%"}} md={8}>
-            <p style={{marginBottom:"0%"}} className="mast_page2_p3">Looking for a gig in specific domain?</p>
+            <p style={{marginBottom:"0%"}} className="mast_page2_p3">Looking for a gig in a specific domain?</p>
             <p  className="mast_page2_p3">Want to work with a particular company?</p>
           </Col>
           <Col  className="col-button">

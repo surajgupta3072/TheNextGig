@@ -7,7 +7,7 @@ function Header(props) {
         try {
             // localStorage.removeItem("login");
             await Auth.signOut();
-            window.location.reload();
+            window.location.href="../";
         } catch (error) {
             console.log(error);
         }

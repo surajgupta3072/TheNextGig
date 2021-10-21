@@ -24,6 +24,8 @@ import NotALearnerPage from "./NotALearnerPage/NotALearnerPage";
 import AboutUs from "./AboutUsPage/AboutUs";
 import Legal from "./LegalPage/Legal";
 import "./App.css";
+import Privacy from "./LegalPage/Privacy";
+import TC from "./LegalPage/TC";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -136,6 +138,12 @@ function App() {
               </Route>
               <Route exact path="/Legal">
                 <Legal />
+              </Route>
+              <Route exact path="/Privacy">
+                <Privacy />
+              </Route>
+              <Route exact path="/terms">
+                <TC />
               </Route>
               <Route exact path="/">
                 <HomePage />
