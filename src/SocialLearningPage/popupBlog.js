@@ -24,7 +24,8 @@ function MyVerticallyPopUpBlog(props) {
               "BlogUsername": props.userid.attributes.name,
               "BlogHashtags": hashtag,
               "Blog": blog,
-              "isApproved": false
+              "isApproved": false,
+              "BlogDate": Date(Date.now())
             }
             var paramss = {
                 TableName: "BlogsTable",
@@ -65,14 +66,14 @@ function MyVerticallyPopUpBlog(props) {
                             "user_LuNukIHe37LdAF6nNkxao"
                           );
                           Swal.fire({
-                            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+                            title: "<h5 style='color:white'>" + "Congratulations! Your blog has been submitted! You will see it on the platform shortly." + "</h5>",
                             icon: 'success',
                             showConfirmButton: false,
-                            timer: 2000,
+                            timer: 4000,
                             background: '#020312',
                             color: 'white',
                             iconColor: "#F26C4F"
-                          });
+                          }).then(props.onHide());
                         }
                       });
                     }

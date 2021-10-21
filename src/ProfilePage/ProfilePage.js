@@ -4,7 +4,7 @@ import Education from './Education';
 import WorkEx from './WorkEx';
 import Skills from './Skills';
 import CvPitch from './CvPitch';
-import FeedBack  from './Feedback';
+// import FeedBack  from './Feedback';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -145,13 +145,13 @@ function ProfilePage(props) {
     setColor66("white");setextColor6("#f26c4f");
     setColor55("#f26c4f");setextColor5("white");
   }
-  if(word==="FeedBack"){
-    setColor11("white");setextColor1("#f26c4f");setColor22("white");setextColor2("#f26c4f");
-    setColor33("white");setextColor3("#f26c4f");
-    setColor44("white");setextColor4("#f26c4f");
-    setColor55("white");setextColor5("#f26c4f");
-    setColor66("#f26c4f");setextColor6("white");
-  }
+  // if(word==="FeedBack"){
+  //   setColor11("white");setextColor1("#f26c4f");setColor22("white");setextColor2("#f26c4f");
+  //   setColor33("white");setextColor3("#f26c4f");
+  //   setColor44("white");setextColor4("#f26c4f");
+  //   setColor55("white");setextColor5("#f26c4f");
+  //   setColor66("#f26c4f");setextColor6("white");
+  // }
   }
   wholedata.TotalRewards = rew;
   const pp = {
@@ -178,14 +178,14 @@ function ProfilePage(props) {
     else if(word==="CvPitch") {
       setColor5(bg); setColor1({}); setColor2({}); setColor3({}); setColor4({});setColor6({}); setNavbarHeading("CV / Other documents");
     }
-    else if(word==="FeedBack"){
-      setColor5({}); setColor1({}); setColor2({}); setColor3({}); setColor4({});setColor6(bg); setNavbarHeading("Feedback & Comments");
-    }
+    // else if(word==="FeedBack"){
+    //   setColor5({}); setColor1({}); setColor2({}); setColor3({}); setColor4({});setColor6(bg); setNavbarHeading("Feedback & Comments");
+    // }
   }
     return (
       <Container>
         <Row>
-            <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="Profile_list_laptop">
+            <Col xs={3} style={{backgroundColor:"#1B1C2A", height:"90vh"}} className="Profile_list_laptop">
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`}/>
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
               <Row style={{marginTop:"7%",marginLeft:"22%"}}>
@@ -198,17 +198,17 @@ function ProfilePage(props) {
               <Row><p style={{fontSize:"16px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></Row>
               <Row style={{marginBottom:"1%", textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{wholedata.ReferralCode}</b></p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("Personal")} style={color1}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Personal</p></Row>
+              <Row onClick={() => whichColor("Personal")} style={color1}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Personal</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("Skills")} style={color2}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Skills</p></Row>
+              <Row onClick={() => whichColor("Skills")} style={color2}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Skills</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("Education")} style={color3}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Education</p></Row>
+              <Row onClick={() => whichColor("Education")} style={color3}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Education</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("WorkEx")} style={color4}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Work Experience</p></Row>
+              <Row onClick={() => whichColor("WorkEx")} style={color4}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Work Experience</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("CvPitch")} style={color5}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>CV / Other Documents</p></Row>
-              <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("FeedBack")} style={color6}><p style={{fontSize:"24px", textAlign:"center", cursor: "pointer"}}>Feedback & Comments</p></Row>
+              <Row onClick={() => whichColor("CvPitch")} style={color5}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>CV / Other Documents</p></Row>
+              {/* <hr style={{color:"#F26C4F", margin:"2px 0px"}}/> */}
+              {/* <Row onClick={() => whichColor("FeedBack")} style={color6}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Feedback & Comments</p></Row> */}
             </Col>
             <Col xs={12}  className="Profile_list_mobile">
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`}/>
@@ -230,8 +230,8 @@ function ProfilePage(props) {
                   <br/>
                   <div style={{display:"flex",justifyContent:"space-evenly"}}> 
                   <div><button onClick={() => buttonColor("Skills")} style={{backgroundColor:color44,color:textColor4,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Skills</button></div>
-              <div><button onClick={() => buttonColor("CvPitch")} style={{backgroundColor:color55,color:textColor5,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>CV</button></div>
-              <div><button onClick={() => buttonColor("FeedBack")} style={{backgroundColor:color66,color:textColor6,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Feedback</button></div>
+                  <div><button onClick={() => buttonColor("CvPitch")} style={{backgroundColor:color55,color:textColor5,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>CV</button></div>
+                  {/* <div><button onClick={() => buttonColor("FeedBack")} style={{backgroundColor:color66,color:textColor6,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Feedback</button></div> */}
                   </div>
                 </div>
               </div>
@@ -244,7 +244,7 @@ function ProfilePage(props) {
                 {active === "WorkEx" && <WorkEx  p={pp}/>}
                 {active === "Skills" && <Skills  p={pp}/>}
                 {active === "CvPitch" && <CvPitch  p={pp} />}
-                {active === "FeedBack" && <FeedBack/>}
+                {/* {active === "FeedBack" && <FeedBack/>} */}
             </Col> 
         </Row>
       </Container>

@@ -24,6 +24,15 @@ function MyVerticallyPopUp(props) {
           setShowErr("Video File more than 200MB size");
         }
         else {
+          Swal.fire({
+            title: "<h5 style='color:white'>" + "We have received your submission. <br/> Do not close this page. We will inform you as soon as your video has been uploaded." + "</h5>",
+            icon: 'info',
+            showConfirmButton: false,
+            timer: 6000,
+            background: '#020312',
+            color: 'white',
+            iconColor: "#00A000"
+          }).then(props.onHide());
           ReactS3Client.uploadFile(vfile, vfile.name).then(data => {
             const adata = {
               "VideoID": crypto.randomBytes(8).toString("hex"),
@@ -73,10 +82,10 @@ function MyVerticallyPopUp(props) {
                           "user_LuNukIHe37LdAF6nNkxao"
                         );
                         Swal.fire({
-                          title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+                          title: "<h5 style='color:white'>" + "Congratulations! Your video has been uploaded! You will see it on the platform shortly." + "</h5>",
                           icon: 'success',
                           showConfirmButton: false,
-                          timer: 2000,
+                          timer: 4000,
                           background: '#020312',
                           color: 'white',
                           iconColor: "#F26C4F"
@@ -114,7 +123,7 @@ function MyVerticallyPopUp(props) {
            <p style={{marginTop:"10%",fontSize:"18px"}}>Hashtags <text style={{color:"#f26c4f"}}>*</text></p>
            <input onChange={(e)=>(setHashtag(e.target.value))} value={hashtag} style={{width:"100%",marginTop:"1%"}} placeholder="#datascience #webdev" />
            <p style={{marginTop:"10%",fontSize:"18px"}}>Upload Video <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(less than 200MB)</text></p>
-           <input onChange={(e)=>(setVfile(e.target.files[0]))} type="file"/>
+           <input onChange={(e)=>(setVfile(e.target.files[0]))} type="file" accept="video/mp4,video/x-m4v,video/*"/>
            <button onClick={handleApply} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"35%"}}>Submit<ArrowLeft className='button_arrow'/></button>
            {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
          </div>

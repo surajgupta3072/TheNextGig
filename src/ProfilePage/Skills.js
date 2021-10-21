@@ -54,7 +54,7 @@ function Skills(props) {
           props.p.setWholedata(props.p.wholedata)
           givereward()
           Swal.fire({
-            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+            title: "<h5 style='color:white'>" + "Saved" + "</h5>",
             icon: 'success',
             showConfirmButton: false,
             timer: 2000,
@@ -161,28 +161,39 @@ function Skills(props) {
           <Row>
             <Col md={12}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills acquired through the platform</p></Col>
             <Col md={12}>
-              <em><p style={{fontSize:"18px"}}>Through Mastersessions:<br/>
+              <p style={{fontSize:"18px"}}><u>Through TNG Originals:</u><br/>
+              <em>
               {props.p.wholedata.SkillsAcquiredMastersessions.map((msk)=> 
-                <span>{msk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              )}</p></em>
+                <span style={{fontSize:"16px"}}>{msk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              )}</em></p>
             </Col>
             <Col md={12}>
-              <em><p style={{fontSize:"18px"}}>Through Gigs / Internship:<br/>
+              <p style={{fontSize:"18px"}}><u>Through Experiential Learning:</u><br/>
+              <em>
               {props.p.wholedata.SkillsAcquiredGigs.map((gsk)=> 
-                <span>{gsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              )}</p></em>
+                <span style={{fontSize:"16px"}}>{gsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              )}</em></p>
             </Col>
             <Col md={12}>
-              <em><p style={{fontSize:"18px"}}>Through Social Learning - Videos:<br/>
-              {Array.from(new Map(props.p.wholedata.SkillsAcquiredVideos.map((p) => [p.join(), p])).values()).map((vsk)=> 
-                <span>{vsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              )}</p></em>
+              <p style={{fontSize:"18px", margin:"0"}}><u>Through Social Learning - Videos:</u></p>
+              <em>
+              <div style={{wordBreak:"break-all", wordWrap:"break-word"}}>
+                {Array.from(new Map(props.p.wholedata.SkillsAcquiredVideos.map((p) => [p.join(), p])).values()).map((vsk)=> 
+                  <span>{vsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                )}
+              </div>
+              </em>
             </Col>
             <Col md={12}>
-              <em><p style={{fontSize:"18px"}}>Through Social Learning - Blogs:<br/>
-              {Array.from(new Map(props.p.wholedata.SkillsAcquiredBlogs.map((p) => [p.join(), p])).values()).map((bsk)=> 
-                <span style={{wordWrap:"break-word"}}>{bsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              )}</p></em>
+              <br/>
+              <p style={{fontSize:"18px", margin:"0"}}><u>Through Social Learning - Blogs:</u></p>
+              <em>
+              <div style={{wordBreak:"break-all", wordWrap:"break-word"}}>
+                {Array.from(new Map(props.p.wholedata.SkillsAcquiredBlogs.map((p) => [p.join(), p])).values()).map((bsk)=> 
+                  <span>{bsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                )}
+              </div>
+              </em>
             </Col>
           </Row>
          </Container>

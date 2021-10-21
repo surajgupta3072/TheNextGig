@@ -139,6 +139,7 @@ function Blogs(props) {
               <p style={{padding:"0", margin:"0",color:"grey"}}>{blog.BlogHashtags}</p>
               <br/>
               <p style={{fontSize:"14px"}}>{blog.Blog.split(" ").slice(0,32).join(" ")+"  . . . "}</p>
+              <p style={{fontSize:"12px"}}>{blog.BlogDate}</p>
             </div>
             <br/>
           </div>
@@ -146,15 +147,15 @@ function Blogs(props) {
       </div>
       {readsingleblog && readsingleblog.map((blog)=>
       <div>
-      <span  style={{color:"#F26C4F"}}><button onClick={()=>setReadSingleBlog(false)} style={{marginLeft:"4%",position:"absolute"}} className="button_slide_MC_Page2_2 slide_right">Back
-            <ArrowLeft style={{marginLeft:"0.8%",marginTop:"-8px"}} className="button_arrow_MC_Page2_Right"/></button></span>
+        <ArrowLeft onClick={()=>setReadSingleBlog(false)} style={{marginLeft:"0.8%", marginTop:"-8px"}} className="button_arrow_MC_Page2_Right"/>
         <div style={{marginLeft:"3%",paddingBottom:"10px", textAlign:"center"}} key={blog.BlogID}>
           <h4 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h4>
           <br/>
           <h6 style={{padding:"0", margin:"0"}}>{blog.BlogUsername}-{blog.BlogCreds}</h6>
           <p style={{padding:"0", margin:"0",color:"grey"}}>{blog.BlogHashtags}</p>
+          <p style={{fontSize:"12px"}}>{blog.BlogDate}</p>
           <br/>
-          <p style={{fontSize:"16px", textAlign:"left",color:"grey"}}>{blog.Blog}</p>
+          <pre style={{fontSize:"16px", textAlign:"left",color:"grey", whiteSpace:"pre-wrap", fontFamily:"Open Sans"}}>{blog.Blog}</pre>
         </div>
         </div>
       )}

@@ -176,7 +176,7 @@ function Personal(props) {
           props.p.setWholedata(props.p.wholedata)
           givereward();
           Swal.fire({
-            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+            title: "<h5 style='color:white'>" + "Saved" + "</h5>",
             icon: 'success',
             showConfirmButton: false,
             timer: 2000,
@@ -195,15 +195,16 @@ function Personal(props) {
       <div>
         <Container style={{marginTop:"5%"}}>
           <Row>
-            <p><span style={{fontSize:"20px"}}>Full Name</span></p>
+            <p><span style={{fontSize:"20px"}}>Full Name<br/><span style={{fontSize:"16px"}}>(We need to know who to address all the certificates to!)</span></span></p>
             <p><input disabled value={fullName} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
+          <br/>
           <Row>
             <Col >
-              <p><span style={{fontSize:"20px"}}>Date of birth</span></p>
+              <p><span style={{fontSize:"20px"}}>Date of birth<br/><span style={{fontSize:"16px"}}>(Some birthday wishes coming your way)</span></span></p>
               <input value={dob} onChange={e => setDOB(e.target.value)} type="date" style={{width:"50%",height:"35px"}}></input>
             </Col>
-            <Col  className= "Gender_col">
+            <Col className= "Gender_col">
               <p style={{fontSize:"20px"}}>Gender</p>
               <div onChange={e => setGender(e.target.value)} style={{display:"flex",flexDirection:"row", alignItems:"center"}}>
                   <input value="male" type="radio" name="gender"/>&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -212,6 +213,7 @@ function Personal(props) {
               </div>
             </Col>
           </Row>
+          <br/>
           <Row style={{marginTop:"2%"}}>
             <p style={{fontSize:"20px"}}>Something quirky about you?</p>
             <p><input value={quirky} onChange={e => setQuirky(e.target.value)} style={{width:"100%",height:"35px"}}></input></p>

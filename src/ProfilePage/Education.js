@@ -125,7 +125,7 @@ function Education(props) {
             props.p.setWholedata(props.p.wholedata)
             givereward()
             Swal.fire({
-              title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+              title: "<h5 style='color:white'>" + "Saved" + "</h5>",
               icon: 'success',
               showConfirmButton: false,
               timer: 2000,

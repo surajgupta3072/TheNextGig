@@ -117,17 +117,17 @@ function Videos(props) {
           <div key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
                <div>
-              <video className="vid" style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video></div> :<div>
               <video className="video_social_learn" onEnded={()=> VideoWatched(vid.id, vid.VideoHashtags)} id={vid.VideoID} controls  controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video></div>
             }
-            <div>
-              <h5 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h5>
-              <h6 style={{padding:"0", margin:"0"}}>{vid.VideoUsername} - {vid.VideoCreds}</h6>
-              <p className="text" style={{padding:"0", margin:"0", color:"grey"}}>{vid.VideoHashtags}</p>
+            <div style={{marginLeft:"2%"}}>
+              <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
+              <p style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
+              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags}</p>
             </div>
             <br/>
           </div>
@@ -135,10 +135,10 @@ function Videos(props) {
         {videoslist!==false && videoslist.map((vid)=>
           <div key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
-              <video style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video> :
-              <video onEnded={()=> VideoWatched(vid.id, vid.VideoHashtags)} id={vid.VideoID} controls style={{ height: "250px", width: "350px" }} controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video onEnded={()=> VideoWatched(vid.id, vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video>
             }
