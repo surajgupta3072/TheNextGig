@@ -88,6 +88,9 @@
   margin-top: 12px;
   margin-left: 23px;
 }
+.explore_session{
+  margin-left: 55%;
+}
 @media screen and (max-width: 768px) {
   .container2_page3 {
     margin-right: 0%;
@@ -146,5 +149,11 @@
   }
   .d3 {
     margin-right: 60px;
+  }
+  .footer_page3_gigs{
+    text-align: center;
+  }
+  .explore_session{
+    margin-left: 50%;
   }
 }

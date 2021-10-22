@@ -8,7 +8,7 @@ function Page1() {
     return (
       <Container className="Opening_container">
          <Row>
-          <Col style={{marginTop:"8%", marginBottom:"12%"}} md={7}>
+          <Col style={{marginTop:"8%"}} className="left_col_openingpage" md={7}>
             <div>              
               <div className="heading">
                 <div>

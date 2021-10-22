@@ -238,12 +238,12 @@ function Page3(props) {
             <div className="header_masterclass">
               <Container>
                 <div className="top_masterclass">
-                  <h1>RELATED SESSIONS</h1>
+                  <h1>RELATED TNG ORIGINALS</h1>
                   <p className="subtitle_masterclass">
                     Learn before you actually{" "}
                     <span className="orange_text_masterclass">
-                      practise
-                      <span className="explore_session" style={{ marginLeft: "58%" }}>
+                      practice{" "}
+                      <span className="explore_session" >
                         <a
                           style={{ textDecoration: "none", color: "#f26c4f" }}
                           href="/TNGoriginals"
@@ -298,7 +298,7 @@ function Page3(props) {
           <div >
             <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
-                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}}>
+                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}} className="footer_page3_gigs">
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col>

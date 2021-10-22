@@ -25,7 +25,7 @@ function MyVerticallyPopUp(props) {
         }
         else {
           Swal.fire({
-            title: "<h5 style='color:white'>" + "We have received your submission. <br/> Do not close this page. We will inform you as soon as your video has been uploaded." + "</h5>",
+            title: "<h5 style='color:white'>" + "We have received your submission. Please stay on this page for a few seconds until your video has been uploaded - we'll let you know as soon as it is done!" + "</h5>",
             icon: 'info',
             showConfirmButton: false,
             timer: 6000,
