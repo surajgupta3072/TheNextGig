@@ -34,7 +34,7 @@ function LoginPage(props){
         const data1 = await docClient.query(paramss).promise();
         const per = data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC;
         if(per==100) {
-          window.location.href = "/TNGoriginals";
+          window.location.href = localStorage.getItem("lastURL");
         }
         else {
           setModalShow(true);

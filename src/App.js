@@ -74,6 +74,9 @@ function App() {
     setAuthenticatingStatus(false);
   }, []);
 
+  if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register")
+    localStorage.setItem('lastURL', window.location.href);
+
   const authProps = {
     isAuthenticated: isAuthenticated,
     user: user,
