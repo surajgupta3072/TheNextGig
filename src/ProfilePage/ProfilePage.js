@@ -25,7 +25,7 @@ function ProfilePage(props) {
   const [color3, setColor3] = useState({});
   const [color4, setColor4] = useState({});
   const [color5, setColor5] = useState({});
-  const [color6,setColor6]  = useState({});
+  // const [color6,setColor6]  = useState({});
   const [color11,setColor11] =useState("#f26c4f");
   const [textColor1,setextColor1] =useState("white");
   const [color22,setColor22] =useState("white");
@@ -36,8 +36,8 @@ function ProfilePage(props) {
   const [textColor4,setextColor4] =useState("#f26c4f");
   const [color55,setColor55] =useState("white");
   const [textColor5,setextColor5] =useState("#f26c4f");
-  const [color66,setColor66] =useState("white");
-  const [textColor6,setextColor6] =useState("#f26c4f");
+  // const [color66,setColor66] =useState("white");
+  // const [textColor6,setextColor6] =useState("#f26c4f");
   const [wholedata, setWholedata] = useState([]);
   const [rew, setRew] = useState(0);
   const [dplink, setDplink]=useState("./dpavtar.png");
@@ -117,32 +117,32 @@ function ProfilePage(props) {
       setColor11("#f26c4f");setextColor1("white");setColor22("white");setextColor2("#f26c4f");setColor33("white");setextColor3("#f26c4f");
       setColor44("white");setextColor4("#f26c4f");
       setColor55("white");setextColor5("#f26c4f");
-      setColor66("white");setextColor6("#f26c4f");
+      // setColor66("white");setextColor6("#f26c4f");
     }
     if(word==="Education"){
      setColor11("white");setextColor1("#f26c4f");setColor22("#f26c4f");setextColor2("white");setColor33("white");setextColor3("#f26c4f");
      setColor44("white");setextColor4("#f26c4f");
      setColor55("white");setextColor5("#f26c4f");
-     setColor66("white");setextColor6("#f26c4f");
+    //  setColor66("white");setextColor6("#f26c4f");
    }
    if(word==="WorkEx"){
      setColor11("white");setextColor1("#f26c4f");setColor22("white");setextColor2("#f26c4f");setColor33("#f26c4f");setextColor3("white");
      setColor44("white");setextColor4("#f26c4f");
      setColor55("white");setextColor5("#f26c4f");
-     setColor66("white");setextColor6("#f26c4f");
+    //  setColor66("white");setextColor6("#f26c4f");
    }
    if(word==="Skills"){
     setColor11("white");setextColor1("#f26c4f");setColor22("white");setextColor2("#f26c4f");
     setColor33("white");setextColor3("#f26c4f");
     setColor55("white");setextColor5("#f26c4f");
-    setColor66("white");setextColor6("#f26c4f");
+    // setColor66("white");setextColor6("#f26c4f");
     setColor44("#f26c4f");setextColor4("white");
   }
   if(word==="CvPitch"){
     setColor11("white");setextColor1("#f26c4f");setColor22("white");setextColor2("#f26c4f");
     setColor33("white");setextColor3("#f26c4f");
     setColor44("white");setextColor4("#f26c4f");
-    setColor66("white");setextColor6("#f26c4f");
+    // setColor66("white");setextColor6("#f26c4f");
     setColor55("#f26c4f");setextColor5("white");
   }
   // if(word==="FeedBack"){
@@ -164,19 +164,19 @@ function ProfilePage(props) {
   function whichColor(word) {
     setActive(word)
     if(word==="Personal") {
-      setColor1(bg); setColor2({}); setColor3({}); setColor4({}); setColor5({});setColor6({}); setNavbarHeading("Personal");
+      setColor1(bg); setColor2({}); setColor3({}); setColor4({}); setColor5({}); setNavbarHeading("Personal");
     }
     else if(word==="Education") {
-      setColor3(bg); setColor1({}); setColor2({}); setColor4({}); setColor5({});setColor6({}); setNavbarHeading("Education");
+      setColor3(bg); setColor1({}); setColor2({}); setColor4({}); setColor5({}); setNavbarHeading("Education");
     }
     else if(word==="WorkEx") {
-      setColor4(bg); setColor1({}); setColor2({}); setColor3({}); setColor5({});setColor6({}); setNavbarHeading("Work Experience");
+      setColor4(bg); setColor1({}); setColor2({}); setColor3({}); setColor5({}); setNavbarHeading("Work Experience");
     }
     else if(word==="Skills") {
-      setColor2(bg); setColor1({}); setColor4({}); setColor3({}); setColor5({});setColor6({}); setNavbarHeading("Skills");
+      setColor2(bg); setColor1({}); setColor4({}); setColor3({}); setColor5({}); setNavbarHeading("Skills");
     }
     else if(word==="CvPitch") {
-      setColor5(bg); setColor1({}); setColor2({}); setColor3({}); setColor4({});setColor6({}); setNavbarHeading("CV / Other documents");
+      setColor5(bg); setColor1({}); setColor2({}); setColor3({}); setColor4({}); setNavbarHeading("CV / Other documents");
     }
     // else if(word==="FeedBack"){
     //   setColor5({}); setColor1({}); setColor2({}); setColor3({}); setColor4({});setColor6(bg); setNavbarHeading("Feedback & Comments");
