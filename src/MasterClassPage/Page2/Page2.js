@@ -88,7 +88,7 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
            </div>
            <div>
               <div className="button_div_MC_Page2">
-                <a href="/ExperientialLearning"><button   className="button_slide_MC_Page2 slide_right">Gigs / projects / <br /> internships<ArrowRight className="button_arrow_MC_Page2"/></button></a>
+                <a href="/ExperientialLearning"><button   className="button_slide_MC_Page2 slide_right">Gigs / projects / <br /> internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
               </div>
             </div>
          </div>
