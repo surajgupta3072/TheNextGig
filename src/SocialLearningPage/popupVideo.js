@@ -20,8 +20,8 @@ function MyVerticallyPopUp(props) {
     
     function handleApply() {
       if(topic!=="" && creds!=="" && hashtag!=="" && vfile!==undefined) {
-        if(vfile.size>209715200) {
-          setShowErr("Video File more than 200MB size");
+        if(vfile.size>262144000) {
+          setShowErr("Video File more than 250MB size");
         }
         else {
           Swal.fire({
@@ -122,7 +122,7 @@ function MyVerticallyPopUp(props) {
            <input onChange={(e)=>(setCreds(e.target.value))} value={creds} style={{width:"100%"}} placeholder="Founder of TheNextGig"></input>
            <p style={{marginTop:"10%",fontSize:"18px"}}>Hashtags <text style={{color:"#f26c4f"}}>*</text></p>
            <input onChange={(e)=>(setHashtag(e.target.value))} value={hashtag} style={{width:"100%",marginTop:"1%"}} placeholder="#datascience #webdev" />
-           <p style={{marginTop:"10%",fontSize:"18px"}}>Upload Video <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(less than 200MB)</text></p>
+           <p style={{marginTop:"10%",fontSize:"18px"}}>Upload Video <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(less than 250MB)</text></p>
            <input onChange={(e)=>(setVfile(e.target.files[0]))} type="file" accept="video/mp4,video/x-m4v,video/*"/>
            <button onClick={handleApply} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"35%"}}>Submit<ArrowLeft className='button_arrow'/></button>
            {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
