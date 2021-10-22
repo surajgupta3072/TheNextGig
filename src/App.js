@@ -74,7 +74,7 @@ function App() {
     setAuthenticatingStatus(false);
   }, []);
 
-  if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register")
+  if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register" && window.location.href!="https://main.d2pb8vz95cq00i.amplifyapp.com/login" && window.location.href!="https://main.d2pb8vz95cq00i.amplifyapp.com/register")
     localStorage.setItem('lastURL', window.location.href);
 
   const authProps = {

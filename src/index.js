@@ -18,7 +18,7 @@ const isLocalhost = Boolean(
 );
 
 // Assuming you have two redirect URIs, and the first is for localhost and second is for production
-const [localRedirectSignIn, productionRedirectSignIn] = ["http://localhost:3000/", "https://main.d2pb8vz95cq00i.amplifyapp.com/"]
+const [localRedirectSignIn, productionRedirectSignIn] = [localStorage.getItem("lastURL"), localStorage.getItem("lastURL")]
 const [localRedirectSignOut, productionRedirectSignOut] = ["http://localhost:3000/", "https://main.d2pb8vz95cq00i.amplifyapp.com/"]
 
 Amplify.configure({

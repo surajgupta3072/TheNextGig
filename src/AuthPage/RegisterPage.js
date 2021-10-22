@@ -22,7 +22,9 @@ function RegisterPage() {
         email,
         name,
       },
-    });
+    }).catch((err)=>setShowErr(err.message));
+    if(signUpResponse===undefined)
+      return;
     setShowErr(false);
     var params = {
       TableName: "UsersTable",
@@ -77,7 +79,7 @@ function RegisterPage() {
         <input type="email" value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}/>
         <p style={{fontSize:"18px",marginTop:"20px"}}>Password<text style={{color:"#f26c4f"}}>*</text></p>
         <input type="password" value={password} onChange={e => setPassword(e.target.value)} style={{width:"100%"}}/>
-        <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"32%"}}>Signup<ArrowLeft className='button_arrow'/></button>
+        <button type="submit" onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%",marginLeft:"32%"}}>Signup<ArrowLeft className='button_arrow'/></button>
         {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
         <p style={{marginTop:"5%",textAlign:"center",fontStyle:"italic"}}>Already a member? <a href="/login" style={{color:"#f26c4f"}}>Login</a></p>
       </div>
