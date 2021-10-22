@@ -214,6 +214,7 @@ function ProfilePage(props) {
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`}/>
               <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn Reward points)</p>
               <div >
+                <input type="file" onChange={(e)=>onChangePicture(e)} style={{display:"none"}}/>
                 <div className="profile_logo_text_mobile"><div><img alt="dp" src={dplink} style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
                 <div>
                   <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></div>

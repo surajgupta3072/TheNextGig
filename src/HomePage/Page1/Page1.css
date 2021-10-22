@@ -4,7 +4,10 @@
   max-width: 100%;
   height: auto;
 }
-
+.homepge_header{
+  margin-top: 8%;
+  margin-left: 12%;
+}
 /*Headings*/
 .heading {
   position: relative;

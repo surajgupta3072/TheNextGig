@@ -92,7 +92,7 @@ function Page2() {
               </div>
             </Card.Body>
           </Card>
-          <Card onClick={()=>window.location.href="/community"} style={{width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(86, 150, 112,0.6)",marginTop:"10%", marginBottom: "10%"}}>
+          <Card onClick={()=>window.location.href="/SocialLearning"} style={{width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(86, 150, 112,0.6)",marginTop:"10%", marginBottom: "10%"}}>
             <Card.Body>
               <div style={{display: "flex", flexDirection: "row"}}>
                 <Col style={{marginTop:"8px"}}>
