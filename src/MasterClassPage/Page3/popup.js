@@ -63,7 +63,7 @@ function MyVerticallyPopUp(props) {
                   title: "<h5 style='color:white'>" + "PAYMENT SUCCESSFUL!" + "</h5>",
                   icon: 'success',
                   showConfirmButton: false,
-                  timer: 2000,
+                  timer: 3000,
                   background: '#020312',
                   color: 'white',
                   iconColor: "#F26C4F"
@@ -160,12 +160,20 @@ function MyVerticallyPopUp(props) {
           </div>
           <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", color: "#f26c4f", fontSize:"18px"}}>
               <p>Less: Reward <br/> points</p>
+              {props.fees-reward>=0 ?
               <p>-({reward})</p>
+              :
+              <p>-({props.fees})</p>
+              }
           </div>
           <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
           <div style={{display: "flex", flexDirection: "row", justifyContent: "space-between", fontSize:"18px"}}>
               <p>Net payable <br/> amount</p>
+              {props.fees-reward>=0 ?
               <p>{props.fees-reward}</p>
+              :
+              <p>0</p>
+              }
           </div>
           <div style={{textAlign:"center"}}>
             <button onClick={handlePayment} className="button_slide slide_right" style={{marginTop:"10%"}}>Proceed<ArrowLeft className='button_arrow'/></button>

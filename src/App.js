@@ -104,7 +104,7 @@ function App() {
                 <Community auth={authProps} />
               </Route>
               <Route exact path="/register">
-                <RegisterPage />
+                <RegisterPage auth={authProps}/>
               </Route>
               <Route exact path="/SocialLearning">
                 <SocialLearningPage auth={authProps}/>

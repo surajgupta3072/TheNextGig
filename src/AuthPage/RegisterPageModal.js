@@ -5,6 +5,8 @@ import './RegisterPageModal.css';
 function MyVerticallyCenteredModal(props) {
     return (
       <Modal
+        backdrop="static"
+        keyboard={false}
         {...props}
         aria-labelledby="contained-modal-title-vcenter"
         size="lg"
