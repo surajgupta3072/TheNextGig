@@ -11,7 +11,7 @@ function Legal(){
             <div className="footer_div2_lap">
             <Row style={{border:"1px solid #534D4D", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
-                <h6 style={{fontSize:"15px",color:"grey"}}>
+                <h6 style={{fontSize:"15px",color:"grey"}} className="footer_page3_gigs">
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
@@ -25,8 +25,8 @@ function Legal(){
             <div className="footer_div2">
             <Row style={{border:"1px solid #534D4D", padding:"1.5%", background: "#000", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
-                <h6 style={{fontSize:"15px",color:"grey"}}>
-                © 2021 TheNextGig. All Rights Reserved
+                <h6 style={{fontSize:"15px",color:"grey"}} className="footer_page3_gigs">
+                © 2021 TheNextGig. <br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
                 <div style={{display:"flex",justifyContent:"center"}} md={2}>

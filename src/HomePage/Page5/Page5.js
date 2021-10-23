@@ -19,7 +19,7 @@ function Page5() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle text3">...instead of the mindless  scrolling on other social media platforms?</h4>
+        <h4 className="page3_subtitle text3">...instead of the mindless scrolling on other social media platforms?</h4>
       </div>
       </div>
 
@@ -71,7 +71,7 @@ function Page5() {
                 <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/videohome.jpg"/>
               </Col>
               <Col>
-                <Card.Title style={{fontSize:"20px",textAlign:"center"}}>VIDEOS</Card.Title>
+                <Card.Title style={{fontSize:"20px"}}>VIDEOS</Card.Title>
                 <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
                 Upload a video? Get rewarded.<br /> Watch a video? Learn something new. <br />It’s a win-win!  
                 </Card.Text>
@@ -87,10 +87,10 @@ function Page5() {
                 <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/bloghome.jpg"/>
               </Col>
               <Col>
-                <Card.Title style={{fontSize:"20px",textAlign:"center"}}>BLOGS</Card.Title>
+                <Card.Title style={{fontSize:"20px"}}>BLOGS</Card.Title>
                 <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
-                Read some; write some! <br/>
-                The topic? Anything under the sun!
+                Read some; write some! 
+                The topic?  A-<br/>nything under the sun!
                 </Card.Text>
               </Col>
             </div>
@@ -106,7 +106,7 @@ function Page5() {
               <Col>
                 <Card.Title style={{fontSize:"20px"}}>COMMUNITY</Card.Title>
                 <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
-                Talk to your fellow learners <br/> and experts. Build your network!
+                Talk to your fellow learners  and expe-<br/>rts. Build your network!
                 </Card.Text>
               </Col>
             </div>

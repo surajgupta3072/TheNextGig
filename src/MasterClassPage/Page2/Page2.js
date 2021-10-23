@@ -65,7 +65,7 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
           <div >
             <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
-                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}}>
+                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}} className="footer_page3_gigs">
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
@@ -134,8 +134,8 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
           <div >
             <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col  md={10}>
-                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}}>
-                © 2021 TheNextGig. All Rights Reserved
+                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}}className="footer_page3_gigs">
+                © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
                 <div style={{display:"flex",justifyContent:"center"}} md={2}>

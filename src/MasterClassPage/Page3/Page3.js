@@ -155,14 +155,14 @@ function Page3(props) {
             <div className="mobile_view_video_master">
               <div>
                 <a href={"/expert/"+session.ExpertId}><button  className="button_slide_page3 slide_right">
-                Get to know<br /> your expert <ArrowLeft style={{width:"25px",height:"25px"}}className="button_arrow_Letsgo_Page3"/>
+                Get to know<br /> your expert 
                 </button></a>
               </div>
               { props.prop!==null ?
                 coursePurchased===false &&
                 <div style={{display: "flex", justifyContent: "space-between"}}>
                   <button className="button_slide_page3  slide_right " onClick={() => setModalShow(true)}>
-                  Learn @ INR<br/>{session.fees}<ArrowLeft style={{width:"25px",height:"25px",marginLeft:"30px"}} className="button_arrow_Letsgo_Page3"/>
+                  Learn @ INR<br/>{session.fees}
                   </button>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
@@ -176,7 +176,7 @@ function Page3(props) {
                 </div> :
                 <div style={{display: "flex", justifyContent: "space-between",marginLeft:"15%"}}>
                   <button  className="button_slide_page3 slide_right inr_button" onClick={() => window.location.href="/login"}>
-                  Learn @ INR {session.fees}<ArrowLeft style={{width:"25px",height:"25px"}}className="button_arrow_Letsgo_Page3"/>
+                  Learn @ INR {session.fees}
                   </button>
                 </div>
               }
@@ -449,7 +449,7 @@ function Page3(props) {
           <div >
             <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
-                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}}>
+                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}} className="footer_page3_gigs">
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col>

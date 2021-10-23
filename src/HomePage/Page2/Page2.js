@@ -66,12 +66,12 @@ function Page2() {
             <Card.Body>
               <div style={{display: "flex", flexDirection: "row"}}>
                 <Col style={{marginTop:"8px"}}>
-                  <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/tng_originals.png"/>
+                  <Card.Img style={{margin: "auto", height:"100px", width:"100px",borderRadius:"10px"}} variant="top" src="/tng_originals.png"/>
                 </Col>
                 <Col>
-                  <Card.Title style={{fontSize:"20px",textAlign:"center"}}>TNG <br /> ORIGINALS</Card.Title>
+                  <Card.Title style={{fontSize:"20px",textAlign:"left"}}>TNG <br /> ORIGINALS</Card.Title>
                   <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap",opacity:"0.7"}}>
-                  Short expert-driven sessions,<br/> real-life cases, And a <br/>  <em> whole lot of value </em>!
+                  Short expert-driven sessions,<br/> real-life cases, And a   <em> whole  lot  of<br/> value </em>!
                   </Card.Text>
                 </Col>
               </div>
@@ -81,12 +81,12 @@ function Page2() {
             <Card.Body>
               <div style={{display: "flex", flexDirection: "row"}}>
                 <Col style={{marginTop:"8px"}}>
-                  <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/exp_learn.png"/>
+                  <Card.Img style={{margin: "auto", height:"100px", width:"100px",borderRadius:"10px"}} variant="top" src="/exp_learn.png"/>
                 </Col>
                 <Col>
-                  <Card.Title style={{fontSize:"20px",textAlign:"center"}}>EXPERIENTIAL<br/> LEARNING</Card.Title>
+                  <Card.Title style={{fontSize:"20px",textAlign:"left"}}>EXPERIENTIAL<br/> LEARNING</Card.Title>
                   <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap",opacity:"0.7"}}>
-                  Gigs, internships, live projects<br/> and job opportunities!
+                  Gigs, internships, live projects a-<br/>nd job opportunities!
                   </Card.Text>
                 </Col>
               </div>
@@ -96,12 +96,12 @@ function Page2() {
             <Card.Body>
               <div style={{display: "flex", flexDirection: "row"}}>
                 <Col style={{marginTop:"8px"}}>
-                  <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="/soci.png"/>
+                  <Card.Img style={{margin: "auto", height:"100px", width:"100px",borderRadius:"10px"}} variant="top" src="/soci.png"/>
                 </Col>
                 <Col>
-                  <Card.Title style={{fontSize:"20px",textAlign:"center"}}>SOCIAL<br/> LEARNING</Card.Title>
+                  <Card.Title style={{fontSize:"20px",textAlign:"left"}}>SOCIAL<br/> LEARNING</Card.Title>
                   <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap",opacity:"0.7"}}>
-                  Learn <em> and teach </em> bite sized<br/> content; Videos, blogs and <br/>an exclusive community
+                  Learn <em> and teach </em> bite sized cont-<br/>ent; Videos, blogs and <br/>an exclusive community
                   </Card.Text>
                 </Col>
               </div>
