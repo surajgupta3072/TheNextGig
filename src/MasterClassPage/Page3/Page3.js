@@ -176,7 +176,7 @@ function Page3(props) {
                 </div> :
                 <div style={{display: "flex", justifyContent: "space-between",marginLeft:"15%"}}>
                   <button  className="button_slide_page3 slide_right inr_button" onClick={() => window.location.href="/login"}>
-                  Learn @ INR {session.fees}
+                  Learn @ INR<br/>{session.fees}
                   </button>
                 </div>
               }
