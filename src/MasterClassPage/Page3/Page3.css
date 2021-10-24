@@ -100,13 +100,12 @@
 }
 .card1_page3 {
   width: fit-content;
-  margin-left: "10%";
   padding-top: 8px;
   padding-bottom: 1px;
   padding-left: 10px;
   padding-right: 10px;
   background-color: rgba(242, 108, 79, 0.12);
-  margin-top: 20%;
+  margin-top: 5%;
 }
 .button_slide_page3 {
   font-family: "Open Sans", sans-serif !important;
@@ -117,7 +116,7 @@
   border: none;
   border-radius: 0px;
   padding: 8px 20px 12px 20px;
-  margin-top: 1%;
+  margin-top: 5%;
   margin-bottom: 10%;
   display: inline-block;
   font-size: 16px;
@@ -283,8 +282,7 @@
     text-align: center;
   }
   .page3_3linetext {
-    font-size: 14px;
-    
+    font-size: 14px; 
   }
   .page3_cardtext {
     font-size: 18px;

@@ -75,7 +75,7 @@ function RegisterPage(props) {
         try {
           const data1 = await docClient.query(paramss).promise();
           const per = data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC;
-          if(per==100) {
+          if(per===100) {
             Swal.fire({
               title: "<h5 style='color:white'>" + "Signed Up Successfully" + "</h5>",
               icon: 'success',

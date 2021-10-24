@@ -1,7 +1,7 @@
 import Modal from "react-bootstrap/Modal";
 import { ArrowLeft } from "react-bootstrap-icons";
 import { useState } from "react";
-import emailjs, { send } from "emailjs-com";
+import emailjs from "emailjs-com";
 import Swal from 'sweetalert2'
 
 function NotALearnerModal(props){

@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import {ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
+import {ArrowLeft,Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
 import MyVerticallyPopUp  from './popup';
 import './Page2.css'
 import { useState } from 'react';

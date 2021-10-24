@@ -145,7 +145,7 @@
 }
 
 .rectangle {
-  margin-top: 10%;
+  margin-top: 7%;
   margin-left: 2%;
   width: 100%;
   height: 300px;
@@ -206,6 +206,23 @@
   color: #f26c4f !important;
   font-weight: bold;
 }
+.discord_img {
+  height: 100%;
+  width: 100%;
+}
+
+.text2 {
+  font-family: "Open Sans", sans-serif !important;
+  padding-bottom: 100px;
+  padding-right: 7%;
+  font-size: 20px;
+  text-align: right;
+}
+
+.button_div_page5 {
+  margin-top: 4%;
+  margin-left: 45%;
+}
 
 @media screen and (max-width: 768px) {
   .SocialLearn_laptop {
@@ -255,15 +272,26 @@
     display: inline;
   }
   .discord_img {
+    height: 100%;
     width: 100%;
   }
   .rectangle {
     width: 80%;
-    height: 300px;
+    height: fit-content;
     margin: auto;
   }
-  .text1,
+  .text1 {
+    margin-top: -10px;
+  }
   .text2 {
     margin-top: -10px;
+    padding-right: 0%;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 0px;
+  }
+  .button_div_page5 {
+    margin-top: -15%;
+    margin-left: 50%;
   }
 }

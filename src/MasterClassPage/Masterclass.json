@@ -10,7 +10,9 @@
     "course_episode": "13 episodes",
     "course_description": "The tools of Marketing might change from decade to decade (with recent buzz around social marketing) – however, the fundamentals remain the same.  The marketer that sticks to the fundamental",
     "course_role": "Marketing",
-    "course_industry": "Agnostic",
+    "WhatYouLearn": ["Fundamentals of marketing", "Difference between product and brand", "How Google successfully created a brand for", "How Google successfully created a brand for"],
+    "PreparesYouFor": ["Marketing roles", "Branding and growth roles", "Freelance marketing gigs"],
+    "WhatsInForYou": ["Lifetime access to 20 years of professional experience", "compressed into 1.5 hours of learning" , "Preference for experiential learning opportunities that we", "source for you in this domain", "A certificate of completion and a chance to get your", "in-session case / project reviewed by the expert"],
     "fees": "899",
     "ExpertId": 1,
     "episodes": [
@@ -104,7 +106,6 @@
     "course_episode": "13 episodes",
     "course_description": "The tools of Marketing might change from decade to decade (with recent buzz around social marketing) – however, the fundamentals remain the same.  The marketer that sticks to the fundamental can cut his way through decades",
     "course_role": "Marketing",
-    "course_industry": "Agnostic",
     "fees": "899",
     "ExpertId": 1,
     "episodes": [
@@ -144,7 +145,6 @@
     "course_episode": "13 episodes",
     "course_description": "The tools of Marketing might change from decade to decade (with recent buzz around social marketing) – however, the fundamentals remain the same.  The marketer that sticks to the fundamental can cut his way through decades",
     "course_role": "Marketing",
-    "course_industry": "Agnostic",
     "fees": "899",
     "ExpertId": 1,
     "episodes": [

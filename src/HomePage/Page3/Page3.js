@@ -1,7 +1,6 @@
 import './Page3.css';
 import CardX from'./Card';
 import Carousel from "react-elastic-carousel";
-import { ArrowRight } from "react-bootstrap-icons";
 import Data from "./../../MasterClassPage/Masterclass.json"
 
 const breakPoints = [

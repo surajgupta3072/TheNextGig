@@ -17,7 +17,6 @@ const breakPoints = [
 
 function Page1(props) {
   const [searchterm, setSearchTerm] = useState("");
-  const [active, setActive] =  useState("Jobs");
   const [color1,setColor1] =useState("#f26c4f");
   const [textColor1,setextColor1] =useState("white");
   const [color2,setColor2] =useState("white");
@@ -86,7 +85,6 @@ function Page1(props) {
   }
 
   function buttonColor(word){
-    setActive(word)
     if(word==="Jobs"){
       setbuck(1);
       setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");setColor3("white");setextColor3("#f26c4f");
