@@ -20,12 +20,12 @@ function MyVerticallyCenteredModal(props) {
             <p style={{fontSize:"24px"}}>Complete your profile to: </p>
             <p style={{fontSize:"24px",marginLeft:"3%"}}>1. Earn <text style={{color:"#f26c4f"}}>reward points </text> (who doesn’t like free stuff after all?)<br/>2. Increase your chances of scoring a <text style={{color:"#f26c4f"}}> gig, project or job</text></p>
           <div className="popup_pro_back_btn_laptop">
-          <div><a href="/profile"><button style={{width:"100px",paddingLeft:"0px",paddingRight:"0px"}} className="button_slide slide_right">Back<ArrowLeft style={{marginLeft:"5px"}}  className='button_arrow'/></button></a></div> 
-           <div><a href="/profile"><button style={{width:"100px",paddingLeft:"0px",paddingRight:"0px"}} className="button_slide slide_right">Proceed<ArrowLeft style={{marginLeft:"5px"}}  className='button_arrow'/></button></a></div>
+            <div><button onClick={()=>{window.location.href = localStorage.getItem("lastURL")}} style={{width:"100px",paddingLeft:"0px",paddingRight:"0px"}} className="button_slide slide_right">Back<ArrowLeft style={{marginLeft:"5px"}} className='button_arrow'/></button></div> 
+            <div><a href="/profile"><button style={{width:"100px",paddingLeft:"0px",paddingRight:"0px"}} className="button_slide slide_right">Proceed<ArrowLeft style={{marginLeft:"5px"}} className='button_arrow'/></button></a></div>
           </div>
           <div className="popup_pro_back_btn_mobile"> 
-          <div><a href="/profile"><button className="btn_pop slide_right">Back<ArrowLeft className='button_arrow1'/></button></a></div>
-           <div><a href="/profile"><button className="btn_pop slide_right">Proceed<ArrowLeft className='button_arrow1'/></button></a></div>
+            <div><button onClick={()=>{window.location.href = localStorage.getItem("lastURL")}} className="btn_pop slide_right">Back<ArrowLeft className='button_arrow1'/></button></div>
+            <div><a href="/profile"><button className="btn_pop slide_right">Proceed<ArrowLeft className='button_arrow1'/></button></a></div>
           </div>
           </div>
         </Modal.Body>

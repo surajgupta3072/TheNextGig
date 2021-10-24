@@ -94,40 +94,39 @@ function Page3(props) {
       <Container style={{padding: "0%", maxWidth: "94%", marginBottom: "0%"}} className= "container1">
         <Row>
           <Col md={6} >
-            <Container style={{marginLeft:"2%"}}>
             <div style={{marginTop:"3%"}}>
               <p className="page3_3linetext">{session.course_description}</p>
             </div>
-            </Container>
             <div className="appreciation">
               <div >
-              <div className="card1_page3" style={{marginTop: "3%"}}>
+              <div className="card1_page3">
                 <h1 className="text_page3_card">What you’ll learn:</h1>
               </div>
               <br/>
-              <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Fundamentals of marketing</p>
-                      <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Difference between product and brand</p>
-                      <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
-                      <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;How Google successfully created a<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brand for themselves</p>
-                      </div>
-                      <div>
-                      <div>
-              <div className="card1_page3" style={{marginTop: "3%"}}>
-                      <h1 className="text_page3_card">Prepares you for:</h1>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;{session.WhatYouLearn[0]}</p>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;{session.WhatYouLearn[1]}</p>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;{session.WhatYouLearn[2]}</p>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;{session.WhatYouLearn[3]}</p>
+                </div>
+                <div>
+                <div>
+              <div className="card1_page3">
+                <h1 className="text_page3_card">Prepares you for:</h1>
                 </div>
                 </div>
                 <br/>
-                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Marketing roles</p>
-                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Branding and growth roles</p>
-                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Freelance marketing gigs</p>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;{session.PreparesYouFor[0]}</p>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;{session.PreparesYouFor[1]}</p>
+                <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;{session.PreparesYouFor[2]}</p>
                 </div>
                 </div>
-                <br/>
             <Row className="laptop_view_video_master">
               <Col>
-                <a href={"/expert/"+session.ExpertId}><button className="button_slide_page3 slide_right">
-                Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
-                </button></a>
+                <a href={"/expert/"+session.ExpertId}>
+                  <button className="button_slide_page3 slide_right">
+                  Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3"/>
+                  </button>
+                </a>
               </Col>
               { props.prop!==null ?
                 coursePurchased===false &&
@@ -188,8 +187,8 @@ function Page3(props) {
           </Row>
       </Container>
       <Container className="container2_page3 masterclass_video_laptop" style={{padding: "0%", maxWidth: "94.25%",  marginBottom:"0%"}}>
-      <br/><br/>
-        <Row className="main_cardbody_row" style={{marginLeft: "auto",marginRight:"auto"}}>
+      <br/><br/><br/><br/>
+        <Row className="main_cardbody_row" style={{margin:"auto"}}>
         <div className="main_card" >               
                 <div className="main_cardbody"> 
                   <Row >
@@ -313,7 +312,7 @@ function Page3(props) {
           <Col style={{textAlign:"center"}}>
           <div style={{height:"2px",width:"60%",backgroundColor:"#F26C4F",marginTop:"30px"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(242, 108, 79, 0.3)",border:"1px solid #F26C4F",paddingTop:"38px"}}>1</div>
-            <h3 style={{marginTop:"-70px",marginLeft:"8%",fontSize:"20px", textAlign:"left"}}>Lifetime access to 20 years of professional experience<br/><span style={{color: "#F26C4F"}}>compressed into 1.5 hours of learning</span></h3>
+            <h3 style={{marginTop:"-70px",marginLeft:"8%",fontSize:"20px", textAlign:"left"}}>{session.WhatsInForYou[0]}<br/><span style={{color: "#F26C4F"}}>{session.WhatsInForYou[1]}</span></h3>
           </Col>
           {/* <div className="night">
           <div className="star"></div>
@@ -328,7 +327,7 @@ function Page3(props) {
           <Col style={{textAlign:"center",marginLeft:"20%"}}>
             <div style={{height:"2px",width:"70%",backgroundColor:"#C89636"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(200, 150, 54, 0.3)",border:"1px solid #C89636",paddingTop:"38px"}}>2</div>
-            <h3 style={{marginTop:"-70px",marginLeft:"10%",fontSize:"20px", textAlign:"left"}}>Preference for experiential learning opportunities that we<br/><span style={{color: "#C89636"}}>source for you in this domain</span></h3>
+            <h3 style={{marginTop:"-70px",marginLeft:"10%",fontSize:"20px", textAlign:"left"}}>{session.WhatsInForYou[2]}<br/><span style={{color: "#C89636"}}>{session.WhatsInForYou[3]}</span></h3>
           </Col>
         </Row>
         <br/><br/>
@@ -336,7 +335,7 @@ function Page3(props) {
           <Col style={{textAlign:"center",marginLeft:"40%"}}>
           <div style={{height:"2px",width:"95%",backgroundColor:"#569670"}}></div>
             <div style={{height:"100px",width:"80px",backgroundColor:"rgba(86, 150, 112, 0.3)",border:"1px solid #569670",paddingTop:"38px"}}>3</div>
-            <h3 style={{marginTop:"-70px",marginLeft:"13%",fontSize:"20px", textAlign:"left"}}>A certificate of completion and a chance to get your in-<br/><span style={{color: "#569670"}}>session case / project reviewed by the expert</span></h3>
+            <h3 style={{marginTop:"-70px",marginLeft:"13%",fontSize:"20px", textAlign:"left"}}>{session.WhatsInForYou[4]}<br/><span style={{color: "#569670"}}>{session.WhatsInForYou[5]}</span></h3>
           </Col>
         </Row>
       </Container>

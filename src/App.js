@@ -17,15 +17,15 @@ import ProtectedRoute from "./GuardedRoute";
 import SocialLearningPage from "./SocialLearningPage/SocialLearningPage";
 import jwt_decode from "jwt-decode";
 import docClient from './GigsPage/GigsAWS';
-import Community from "./SocialLearningPage/Community";
+// import Community from "./SocialLearningPage/Community";
 import ForgotPasswordPage from "./AuthPage/ForgotPasswordPage";
 import ChangePasswordPage from "./AuthPage/ChangePasswordPage";
 import NotALearnerPage from "./NotALearnerPage/NotALearnerPage";
 import AboutUs from "./AboutUsPage/AboutUs";
 import Legal from "./LegalPage/Legal";
-import "./App.css";
 import Privacy from "./LegalPage/Privacy";
 import TC from "./LegalPage/TC";
+import "./App.css";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -100,9 +100,9 @@ function App() {
               <Route exact path="/changepassword">
                 <ChangePasswordPage/>
               </Route>
-              <Route exact path="/TheNextGigCommunity">
+              {/* <Route exact path="/TheNextGigCommunity">
                 <Community auth={authProps} />
-              </Route>
+              </Route> */}
               <Route exact path="/register">
                 <RegisterPage auth={authProps}/>
               </Route>

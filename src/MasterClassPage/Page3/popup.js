@@ -125,7 +125,7 @@ function MyVerticallyPopUp(props) {
       paymentFlowCase(reward - Number(props.fees));
     }
     else {
-      const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
+      await loadScript("https://checkout.razorpay.com/v1/checkout.js");
       const options = {
         "key": "rzp_test_2hJkSfRZOnRtZp", 
         "amount": Number(props.fees-reward) * 100,

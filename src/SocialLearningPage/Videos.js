@@ -126,7 +126,7 @@ function Videos(props) {
             }
             <div style={{marginLeft:"2%"}}>
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
-              <p style={{padding:"0", margin:"0", fontSize:"14px", textAlign: "center"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
+              <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
               <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags}</p>
             </div>
             <br/>
