@@ -185,7 +185,7 @@
 }
 @media only screen and (max-width: 576px) {
   .cardpage3 {
-    margin-top: -110px;
+    margin-top: 10px;
     width: 240px;
     height: 350px;
   }

@@ -7,7 +7,7 @@ import './Page2.css';
 function Page2() {
     return (
     <div id="ummm">
-      <br/><br/><br/>
+      {/* <br/><br/><br/> */}
       <div className="page2_laptop_view">
         <Container>
         <p style={{fontSize:"32px", fontWeight:"600",marginLeft:"1.5%",marginTop:"20px",marginBottom:"3%"}}>
@@ -68,10 +68,10 @@ function Page2() {
                 <Col style={{marginTop:"8px"}}>
                   <Card.Img style={{margin: "auto", height:"100px", width:"100px",borderRadius:"10px"}} variant="top" src="/tng_originals.png"/>
                 </Col>
-                <Col>
+                <Col style={{marginLeft:"-20%"}}>
                   <Card.Title style={{fontSize:"20px",textAlign:"left"}}>TNG <br /> ORIGINALS</Card.Title>
-                  <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap",opacity:"0.7"}}>
-                  Short expert-driven sessions,<br/> real-life cases, And a   <em> whole  lot  of<br/> value </em>!
+                  <Card.Text style={{fontSize:"12px",whiteSpace:"normal",opacity:"0.7",width:"100%"}}>
+                  Short expert-driven sessions,real-life cases, And a   <em> whole  lot  of value </em>!
                   </Card.Text>
                 </Col>
               </div>
@@ -83,10 +83,10 @@ function Page2() {
                 <Col style={{marginTop:"8px"}}>
                   <Card.Img style={{margin: "auto", height:"100px", width:"100px",borderRadius:"10px"}} variant="top" src="/exp_learn.png"/>
                 </Col>
-                <Col>
+                <Col style={{marginLeft:"-20%"}}>
                   <Card.Title style={{fontSize:"20px",textAlign:"left"}}>EXPERIENTIAL<br/> LEARNING</Card.Title>
-                  <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap",opacity:"0.7"}}>
-                  Gigs, internships, live projects a-<br/>nd job opportunities!
+                  <Card.Text style={{fontSize:"12px",whiteSpace:"normal",opacity:"0.7",width:"100%"}}>
+                  Gigs, internships, live projects and job opportunities!
                   </Card.Text>
                 </Col>
               </div>
@@ -98,10 +98,10 @@ function Page2() {
                 <Col style={{marginTop:"8px"}}>
                   <Card.Img style={{margin: "auto", height:"100px", width:"100px",borderRadius:"10px"}} variant="top" src="/soci.png"/>
                 </Col>
-                <Col>
+                <Col style={{marginLeft:"-20%"}}>
                   <Card.Title style={{fontSize:"20px",textAlign:"left"}}>SOCIAL<br/> LEARNING</Card.Title>
-                  <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap",opacity:"0.7"}}>
-                  Learn <em> and teach </em> bite sized cont-<br/>ent; Videos, blogs and <br/>an exclusive community
+                  <Card.Text style={{fontSize:"12px",whiteSpace:"normal",opacity:"0.7",width:"100%"}}>
+                  Learn <em> and teach </em> bite sized content; Videos, blogs and an exclusive community
                   </Card.Text>
                 </Col>
               </div>

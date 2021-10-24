@@ -4,7 +4,7 @@
   max-width: 100%;
   height: auto;
 }
-.homepge_header{
+.homepge_header {
   margin-top: 8%;
   margin-left: 12%;
 }
@@ -28,7 +28,7 @@
   color: #f26c4f;
   font-size: 40px;
 }
-.left_col_openingpage{
+.left_col_openingpage {
   margin-top: 18%;
   margin-bottom: 12%;
 }
@@ -146,10 +146,10 @@ div.heading > div:nth-child(4) > p {
   }
   .Opening_container {
     background: url("./../../homepage4.png") no-repeat center;
-    background-size: 80% 600px;
+    background-size: 90% 700px;
   }
   .heading {
-    margin-top: 45%;
+    margin-top: 5%;
     margin-left: 15px;
   }
   .subheading {
@@ -157,6 +157,7 @@ div.heading > div:nth-child(4) > p {
     margin-left: 20px;
   }
   .button_slide {
+    margin-top: 50%;
     margin-left: -45%;
   }
 }
