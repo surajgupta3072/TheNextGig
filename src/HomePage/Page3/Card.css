@@ -163,7 +163,7 @@
     font-size: 0.7rem;
   }
   .texting {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 @media only screen and (max-width: 670px) {
@@ -187,7 +187,7 @@
   .cardpage3 {
     margin-top: 10px;
     width: 240px;
-    height: 350px;
+    height: fit-content;
   }
   .card-image {
     width: 236px;
@@ -198,7 +198,7 @@
   }
   .like-text,
   .like-text1 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .texting {
     font-size: 1rem;
@@ -207,9 +207,9 @@
 @media only screen and (max-width: 450px) {
   .like-text,
   .like-text1 {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
   .texting {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }

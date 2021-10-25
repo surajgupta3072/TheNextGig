@@ -213,9 +213,10 @@ function Page3(props) {
               >
                 <br/>
                 <h4>Description:</h4>
-                {gigs[0].GigDescription}<br/><br/>
+                <pre style={{whiteSpace:"pre-wrap", fontFamily:"Open Sans",fontSize:"16px"}}>{gigs[0].GigDescription}</pre><br/><br/>
                 <h4>Pre-requisites:</h4>
-                {gigs[0].GigPreRequisites}<br/><br/>
+                <pre style={{whiteSpace:"pre-wrap", fontFamily:"Open Sans",fontSize:"16px"}}> {gigs[0].GigPreRequisites} 
+                </pre><br/><br/>
                 <h4>Related files (JD / case study / etc.):  <a target="_blank" href={gigs[0].GigsProjectFile}><button style={{marginLeft:"2%"}}
                   className="button2_slideview_page3 slide_right">
                     View
