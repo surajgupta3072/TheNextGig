@@ -7,6 +7,7 @@ import './Page3.css';
 import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
 import { useState, useEffect } from 'react';
+import ReactTooltip from 'react-tooltip';
 import docClient from '../../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popup';
 
@@ -24,6 +25,8 @@ function Page3(props) {
   const [epivid, setEpiVideo] = useState(session["episodes"][0]["epi_video"]);
   const [paymentshow, setPaymentShow] = useState(false);
   const [coursePurchased, setCoursePurchased] = useState(false);
+  const [redirectlogin, setRedirectLogin] = useState(false);
+  const [relatedgigs, setDataRelatedGigs] = useState([]);
 
   useEffect(() => {
     if(props.prop!==null) {
@@ -41,6 +44,25 @@ function Page3(props) {
         }
       });
     }
+    else {
+      setRedirectLogin(true);
+    }
+
+    let paramss = {
+      TableName: "GigsTable"
+    };
+    docClient.scan(paramss, function (err, data) {
+      if (err) {
+        console.log(err);
+      } 
+      else {
+        let gi = [];
+        for (var e of data.Items)
+          if(session.gigs.includes(e.GigId))
+            gi.push(e);
+        setDataRelatedGigs(gi);
+      }
+    });
   }, []);
 
   const showDescription = (epid) => {
@@ -56,32 +78,6 @@ function Page3(props) {
     }
   };
 
-  // const [relatedgigs, setDataRelatedGigs] = useState([]);
-  // async function queryCall(id) {
-  //   let params = {
-  //     TableName: "GigsTable",
-  //     KeyConditionExpression: "#Gid = :GigId",
-  //     ExpressionAttributeNames: {
-  //       "#Gid": "GigId",
-  //     },
-  //     ExpressionAttributeValues: {
-  //       ":GigId": id,
-  //     },
-  //   };
-  //   try {
-  //     const data1 = await docClient.query(params).promise()
-  //     return data1.Items[0]
-  //   } 
-  //   catch (err) {
-  //     return err
-  //   }
-  // };
-  // let finalResult = []
-  // for (let i = 0; i < session.gigs.length; i++) {
-  //   let singleResult = await queryCall(session.gigs[i]);
-  //   finalResult.push(singleResult);
-  // }
-  // setDataRelatedGigs(finalResult);
     return (
     <div>
       <div className="header_masterclass">
@@ -376,40 +372,74 @@ function Page3(props) {
           </div>
         </Container>
         </div>
-        <div  style={{display:"block"}}>
-          {session.gigs.length===0 ? <Container><h1 style={{marginTop:"15%"}}>We are constantly sourcing gigs / projects in this domain</h1>
-              <h5 style={{color:"#F26C4F"}}>Until then...</h5><div className="button_masterclass1">
-              <a style={{marginLeft:"%",marginBottom:"15%"}} href="../ExperientialLearning"><button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button></a>
-             </div></Container> : 
-            master.map(details => {
-              if(details.gigs===undefined)
-                return null;
-              else
-                return (<div><Carousel  breakPoints={breakPoints}>
-                    {details.gigs.map(company=>{
-                    return(
-                      <MDBCard onClick={()=>window.location.href="/ExperientialLearning/"+company.id} className="cax  card_mastercard" style={{borderRadius:"0px", margin:"4%",border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"fit-content"}}>
-                        <MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={company.internship_image} alt='...' />
+        <div style={{display:"block"}}>
+          { session.gigs.length===0 ?
+            <Container>
+              <h1 style={{marginTop:"15%"}}>We are constantly sourcing gigs / projects in this domain</h1>
+              <h5 style={{color:"#F26C4F"}}>Until then...</h5>
+              <div className="button_masterclass1">
+                <a style={{marginLeft:"%",marginBottom:"15%"}} href="/ExperientialLearning">
+                  <button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button>
+                </a>
+              </div>
+            </Container> :
+            <div>
+              <Carousel breakPoints={breakPoints}>
+                  {relatedgigs.map(carder=>{
+                    return (
+                      <MDBCard 
+                        onClick={() => {if(!redirectlogin) window.location.href="/ExperientialLearning/"+carder.GigId;  else window.location.href="/login";}}
+                        key={carder.GigId}
+                        style={{
+                          cursor:"pointer",
+                          borderRadius: "0px",
+                          marginTop: "2%",
+                          height:"fit-content",
+                          minHeight:"410px",
+                          marginBottom: "4%",
+                          border: "2px solid rgba(242, 108, 79, 0.6)",
+                          backgroundColor: "#020312",
+                        }}
+                        className="cax card_mastercard mbd_card"
+                      >
+                        <div className="image_card">
+                          <MDBCardImage className="mbd_image"
+                            style={{
+                              marginLeft: "0.5%",
+                              width: "100%",
+                            }}
+                            src={carder.GigImage}
+                            alt="..."
+                          />
+                        </div>
                         <MDBCardBody>
-                          <div className="Course_name">{company.project_name}</div>
-          
-                          <div className="instruct_time">
-                            <div style={{color:"grey",marginTop:"5px"}} className="instructor_name">{company.company_name}</div>
-                          </div>
-                            <div style={{color:"grey"}} className="instructor_post">{company.industry}</div>
-                            <div style={{display:"flex",justifyContent:"space-between",marginTop:"10px"}}>
-                            <div className="time_course">{company.duration}</div>
-                            <div className="episode_course">&#8377;&nbsp;{company.fees}&nbsp;-&nbsp;&#8377;&nbsp;{company.stipend_range}</div>
+                          <div className="Course_name" style={{display: "flex", flexDirection: "row"}}>{carder.GigName}</div>
+                            <div style={{color:"grey",marginTop:"5px"}} className="instructor_name" >
+                              {carder.GigDomain} <sup data-tip data-for={carder.GigId+"g"}>&#9432;</sup>
+                              <ReactTooltip id={carder.GigId+"g"} place="top" effect="solid">
+                                {carder.GigDescription.substring(0, 150)}...
+                              </ReactTooltip>
                             </div>
-                            <div style={{textAlign:"center",paddingTop:"20px"}}>Apply by {company.GigApplyBy}</div>
+                          <div style={{color:"grey",fontSize:"0.9rem"}}>
+                            <div className="instructor_post">
+                              {carder.CompanyName} <sup data-tip data-for={carder.GigId+"d"}>&#9432;</sup>
+                              <ReactTooltip id={carder.GigId+"d"} place="top" effect="solid">
+                                {carder.CompanyDescription.substring(0, 150)}...
+                              </ReactTooltip>
+                            </div>
+                          </div>
+                          <div style={{display:"flex",justifyContent:"space-between",fontSize:"18px",marginTop:"10px"}}>
+                          <div>{carder.GigDuration}</div>
+                            <div>&#8377; {carder.GigStipend}</div>
+                            </div>
+                          <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"20px"}}>Apply by {carder.GigApplyBy}</div>
                         </MDBCardBody>
                       </MDBCard>
                     )
-              })}
+                })}
               </Carousel>
-              </div>
-              )
-          })}
+            </div>
+          }
           </div>
           <div className="header_masterclass">
           <Container>

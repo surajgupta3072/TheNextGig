@@ -109,7 +109,7 @@ function App() {
               <Route exact path="/SocialLearning">
                 <SocialLearningPage auth={authProps}/>
               </Route>
-              <ProtectedRoute exact path="/profile" auth={authProps}>
+              <ProtectedRoute exact path="/profile">
                 <ProfilePage auth={authProps}/>
               </ProtectedRoute>
               {/* <Route exact path="/company/:id">
@@ -121,10 +121,10 @@ function App() {
               <Route exact path="/expert">
                 <Page2 />
               </Route>
-              <Route exact path="/ExperientialLearning/:id" auth={authProps}>
+              <Route exact path="/ExperientialLearning/:id">
                 <GigsDetails auth={authProps.user}/>
               </Route>
-              <Route exact path="/ExperientialLearning" auth={authProps}>
+              <Route exact path="/ExperientialLearning">
                 <GigsPage auth={authProps.user}/>
               </Route>
               <Route exact path="/TNGoriginals/:id">

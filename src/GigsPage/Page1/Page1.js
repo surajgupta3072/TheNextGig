@@ -3,7 +3,7 @@ import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import docClient from '../GigsAWS'
 import { useEffect, useState } from "react";
-import ReactTooltip from 'react-tooltip'
+import ReactTooltip from 'react-tooltip';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "./Page1.css";

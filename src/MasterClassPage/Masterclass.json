@@ -60,39 +60,7 @@
       }
     ],
     "gigs": [
-      {
-        "id": "a1",
-        "project_name": "Machine Learning",
-        "company_name": "Tata",
-        "duration": "3 months",
-        "industry": "Automobile",
-        "fees": "5k",
-        "GigApplyBy":"September 09,2021",
-        "stipend_range": "10k",
-        "internship_image": "https://media.istockphoto.com/photos/robot-with-education-hud-picture-id966248982?k=6&m=966248982&s=612x612&w=0&h=n4MgcVUV2D6kXpJGCyIMIgFuqsi63DkzjiwWQi4n0aE="
-      },
-      {
-        "id": "b2",
-        "project_name": "Computer Graphics",
-        "company_name": "Birla",
-        "duration": "1 month",
-        "industry": "fashion",
-        "fees": "10k",
-        "GigApplyBy":"September 09,2021",
-        "stipend_range": "40k",
-        "internship_image": "https://computerscienceassignmentshelp.com/wp-content/uploads/2017/01/Computer-Graphics-Assignment-Help.jpg"
-      },
-      {
-        "id": "e12a4ecc0d640624e452c00af223c86e",
-        "project_name": "Web Development",
-        "company_name": "next_gig",
-        "duration": "2 months",
-        "industry": "Eductional",
-        "fees": "10k",
-        "GigApplyBy":"September 09,2021",
-        "stipend_range": "40k",
-        "internship_image": "https://www.spinutech.com/webres/Image/web-design-development/articles/Web%20Dev-Blog.png"
-      }
+      "b2", "a1", "8a19f352cc07bc0331f7d532d479d81e"
     ]
   },
   {
