@@ -17,9 +17,6 @@
   height: 1.3rem;
   width: 1.5rem;
 }
-.cardpage3 {
-  background-color: #020312;
-}
 .cardpage3:hover {
   transform: scale(0.97);
   box-shadow: 0 10px 20px rgba(134, 50, 50, 0.8), 0 4px 8px #f26c4f;
@@ -185,9 +182,9 @@
 }
 @media only screen and (max-width: 576px) {
   .cardpage3 {
-    margin-top: 10px;
+    margin-top: 20px;
     width: 240px;
-    height: 350px;
+    height: fit-content;
   }
   .card-image {
     width: 236px;
