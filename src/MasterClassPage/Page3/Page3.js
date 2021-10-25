@@ -375,10 +375,10 @@ function Page3(props) {
         <div style={{display:"block"}}>
           { session.gigs.length===0 ?
             <Container>
-              <h1 style={{marginTop:"15%"}}>We are constantly sourcing gigs / projects in this domain</h1>
-              <h5 style={{color:"#F26C4F"}}>Until then...</h5>
+              <h1 style={{marginTop:"10%",textAlign:"center"}}>We are constantly sourcing gigs / projects in this domain</h1>
+              <h5 style={{color:"#F26C4F",textAlign:"center"}}>Until then...</h5>
               <div className="button_masterclass1">
-                <a style={{marginLeft:"%",marginBottom:"15%"}} href="/ExperientialLearning">
+                <a style={{marginLeft:"%",marginBottom:"10%"}} href="/ExperientialLearning">
                   <button style={{padding:"8px 14px"}} className="button_slide_new slide_right_new">Explore other gigs<ArrowRight style={{width:"30px",height:"30px", marginTop:"-3px"}} className="button_arrow_new"/></button>
                 </a>
               </div>

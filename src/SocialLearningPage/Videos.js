@@ -114,7 +114,7 @@ function Videos(props) {
       <br/><br/>
       <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around",marginTop:"-30px"}}>
         {videoslist===false && props.prop.map((vid)=>
-          <div key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
+          <div style={{height:"320px",width:"300px"}}key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
                <div>
               <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
@@ -133,7 +133,7 @@ function Videos(props) {
           </div>
         )}
         {videoslist!==false && videoslist.map((vid)=>
-          <div  key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
+          <div style={{height:"320px",width:"300px"}} key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
               <video controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
