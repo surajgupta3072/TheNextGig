@@ -18,7 +18,7 @@ function Page1() {
       <div className="Mastercards">
         {master.map((carder) => (
           <MDBCard
-            onClick={() => (window.location.href = "/TNGoriginals/" + carder.id)}
+            onClick={() => {if(carder.course_timing!=="...Coming Soon") window.location.href = "/TNGoriginals/" + carder.id}}
             style={{
               cursor: "pointer",
               borderRadius: "0px",

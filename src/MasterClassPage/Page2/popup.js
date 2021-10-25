@@ -1,6 +1,6 @@
 import Modal from "react-bootstrap/Modal";
 import "./popup.css";
-import emailjs, { send } from "emailjs-com";
+import emailjs from "emailjs-com";
 import { ArrowLeft } from "react-bootstrap-icons";
 import { useState } from "react";
 import Swal from 'sweetalert2'
@@ -22,8 +22,7 @@ function MyVerticallyPopUp(props) {
   const TEMPLATE_ID = "template_r0wbju9";
   const submit = (event) => {
     event.preventDefault();
-    emailjs
-      .send(
+    emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         { title: "Masterclasses", field1, field2, Details: data },

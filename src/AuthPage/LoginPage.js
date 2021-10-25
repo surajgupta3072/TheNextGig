@@ -30,19 +30,20 @@ function LoginPage(props){
           ":UserID": userLogin.username,
         },
       };
-      try {
-        const data1 = await docClient.query(paramss).promise();
-        const per = data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC;
-        if(per===100) {
-          window.location.href = localStorage.getItem("lastURL");
+      docClient.query(paramss, function (err, data) {
+        if (err) {
+          setShowErr(err.message)
         }
         else {
-          setModalShow(true);
+          const per = data.Items[0].RewardP + data.Items[0].RewardE + data.Items[0].RewardW + data.Items[0].RewardS + data.Items[0].RewardC;
+          if(per===100) {
+            window.location.href = localStorage.getItem("lastURL");
+          }
+          else {
+            setModalShow(true);
+          }
         }
-      }
-      catch (err) {
-        console.log(err);
-      }
+      });
     } 
     catch (error) {
       setShowErr(error.message);
