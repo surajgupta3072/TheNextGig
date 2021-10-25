@@ -216,7 +216,6 @@ function Page1(props) {
                       {carder.GigDescription.substring(0, 150)}...
                     </ReactTooltip>
                   </div>
-                  <div className="time_course">{carder.GigDuration}</div>
                 </div>
                 <div className="post_episode">
                   <div className="instructor_post">
@@ -225,7 +224,10 @@ function Page1(props) {
                       {carder.CompanyDescription.substring(0, 150)}...
                     </ReactTooltip>
                   </div>
-                  <div className="episode_course">&#8377; {carder.GigStipend}</div>
+                </div>
+                <div style={{display:"flex",justifyContent:"space-between",fontSize:"18px",marginTop:"10px"}}>
+              <div>{carder.GigDuration}</div>
+                <div>&#8377; {carder.GigStipend}</div>
                 </div>
                 <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px"}}>Apply by {carder.GigApplyBy}</div>
               </MDBCardBody>
@@ -313,14 +315,16 @@ function Page1(props) {
         <div style={{color:"grey"}} className="instructor_name">
           {carder.GigDomain}
         </div>
-        <div className="time_course">{carder.GigDuration}</div>
       </div>
       <div className="post_episode">
         <div className="instructor_post">
           {carder.CompanyName}
         </div>
-        <div className="episode_course">&#8377; {carder.GigStipend}</div>
       </div>
+      <div style={{display:"flex",justifyContent:"space-between",fontSize:"18px",marginTop:"10px"}}>
+              <div>{carder.GigDuration}</div>
+                <div>&#8377; {carder.GigStipend}</div>
+                </div>
     <div style={{display:"flex",justifyContent:"space-evenly",paddingTop:"10px",fontSize:"0.85rem"}}>Apply by {carder.GigApplyBy}</div>
     </MDBCardBody>
   </MDBCard>

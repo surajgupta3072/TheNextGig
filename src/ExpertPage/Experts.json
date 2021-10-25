@@ -1,32 +1,32 @@
 [
     {
         "ExpertId": 1,
-        "ExpertName": "Sundar Pichai 1",
-        "ExpertPic": "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
-        "ExpertDesignation": "CEO 1",
-        "ExpertCompany": "Google 1",
-        "ExpertCompaniesLogo": ["/loger1.svg", "/loger1.svg", "/loger1.svg", "/loger1.svg"],
-        "ExpertDescription": "IIT KGP MT Passout",
-        "ExpertLinkedIn": "https://www.linkedin.com/in/nikhil-agarwal-85a203189/"
+        "ExpertName": "Anil Nair",
+        "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
+        "ExpertDesignation": "Board member, strategy advisor, mentor and investor",
+        "ExpertCompany": "ThePrettyGeeky, Kalyan Jewellers, Goodwind Mototours",
+        "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/ThePrettyGeeky.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/Kalyan.jpeg"],
+        "ExpertDescription": "Anil Nair likes to create something new than work on things that are created by someone else. Creation rather than management is his strength.This is reflected in his career path as well. In his chosen field he always followed the upstart than the established. Launching new products and concepts,exploring different ways to do things, finding new revenue streams, taking risks etc always excite him. Anil have launched powerful brands and relaunched organisations in his 26 years of professional career. Goodwind Moto Tours and The Pretty Geeky are his latest passion projects. And he supports a bunch of spirited entrepreneurs from various impact tech industries as a mentor and investor.",
+        "ExpertLinkedIn": "https://www.linkedin.com/in/anilnairs/"
     },
     {
         "ExpertId": 2,
-        "ExpertName": "Sundar Pichai 2",
-        "ExpertPic": "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
-        "ExpertDesignation": "CEO 2",
-        "ExpertCompany": "Google 2",
-        "ExpertCompaniesLogo": ["/loger1.svg", "/loger1.svg"],
-        "ExpertDescription": "IIT KGP MT Passout",
-        "ExpertLinkedIn": "https://www.linkedin.com/in/nikhil-agarwal-85a203189/"
+        "ExpertName": "Anil Nair",
+        "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
+        "ExpertDesignation": "Board member, strategy advisor, mentor and investor",
+        "ExpertCompany": "ThePrettyGeeky, Kalyan Jewellers, Goodwind Mototours",
+        "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/ThePrettyGeeky.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/Kalyan.jpeg"],
+        "ExpertDescription": "Anil Nair likes to create something new than work on things that are created by someone else. Creation rather than management is his strength.This is reflected in his career path as well. In his chosen field he always followed the upstart than the established. Launching new products and concepts,exploring different ways to do things, finding new revenue streams, taking risks etc always excite him. Anil have launched powerful brands and relaunched organisations in his 26 years of professional career. Goodwind Moto Tours and The Pretty Geeky are his latest passion projects. And he supports a bunch of spirited entrepreneurs from various impact tech industries as a mentor and investor.",
+        "ExpertLinkedIn": "https://www.linkedin.com/in/anilnairs/"
     },
     {
         "ExpertId": 3,
-        "ExpertName": "Sundar Pichai 3",
-        "ExpertPic": "https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg",
-        "ExpertDesignation": "CEO 3",
-        "ExpertCompany": "Google 3",
-        "ExpertCompaniesLogo": ["/loger1.svg", "/loger1.svg", "/loger1.svg", "/loger1.svg", "/loger1.svg", "/loger1.svg"],
-        "ExpertDescription": "IIT KGP MT Passout",
-        "ExpertLinkedIn": "https://www.linkedin.com/in/nikhil-agarwal-85a203189/"
+        "ExpertName": "Anil Nair",
+        "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
+        "ExpertDesignation": "Board member, strategy advisor, mentor and investor",
+        "ExpertCompany": "ThePrettyGeeky, Kalyan Jewellers, Goodwind Mototours",
+        "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/ThePrettyGeeky.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/Kalyan.jpeg"],
+        "ExpertDescription": "Anil Nair likes to create something new than work on things that are created by someone else. Creation rather than management is his strength.This is reflected in his career path as well. In his chosen field he always followed the upstart than the established. Launching new products and concepts,exploring different ways to do things, finding new revenue streams, taking risks etc always excite him. Anil have launched powerful brands and relaunched organisations in his 26 years of professional career. Goodwind Moto Tours and The Pretty Geeky are his latest passion projects. And he supports a bunch of spirited entrepreneurs from various impact tech industries as a mentor and investor.",
+        "ExpertLinkedIn": "https://www.linkedin.com/in/anilnairs/"
     }
 ]

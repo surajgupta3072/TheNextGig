@@ -160,7 +160,7 @@
     font-size: 0.7rem;
   }
   .texting {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 @media only screen and (max-width: 670px) {
@@ -195,7 +195,7 @@
   }
   .like-text,
   .like-text1 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .texting {
     font-size: 1rem;
@@ -204,9 +204,9 @@
 @media only screen and (max-width: 450px) {
   .like-text,
   .like-text1 {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
   .texting {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }

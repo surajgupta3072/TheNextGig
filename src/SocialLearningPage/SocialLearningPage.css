@@ -223,10 +223,17 @@
   margin-top: 4%;
   margin-left: 45%;
 }
-
+.video_div {
+  height: 320px;
+  width: 300px;
+}
 @media screen and (max-width: 768px) {
   .SocialLearn_laptop {
     display: none;
+  }
+  .video_div {
+    height: fit-content;
+    width: fit-content;
   }
   .social_learning_top_image {
     padding-top: 15px;
