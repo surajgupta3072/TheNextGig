@@ -2,7 +2,7 @@
   {
     "id": 1,
     "course_name": "The ultimate guide to branding and marketing",
-    "course_image": "./thisisengineering.png",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
     "course_instructor": "Anil Nair",
     "course_instructor_post": "Vice President, Kedaara Capital",
     "instructor_creds": "IIM-A 2020, SRCC 2017",
@@ -98,7 +98,7 @@
   {
     "id": 2,
     "course_name": "The ultimate guide to branding and marketing",
-    "course_image": "./thisisengineering.png",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
     "course_instructor": "Anil Nair",
     "course_instructor_post": "Vice President, Kedaara Capital",
     "instructor_creds": "IIM-A 2020, SRCC 2017",
@@ -137,7 +137,7 @@
   },{
     "id": 3,
     "course_name": "The ultimate guide to branding and marketing",
-    "course_image": "./thisisengineering.png",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
     "course_instructor": "Anil Nair",
     "course_instructor_post": "Vice President, Kedaara Capital",
     "instructor_creds": "IIM-A 2020, SRCC 2017",

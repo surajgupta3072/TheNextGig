@@ -116,22 +116,16 @@ function Page3(props) {
                 </Container>
                 <div className="appreciation">
                   <Container>
-              <div style={{fontSize:"20px"}}>
-              <br/>
-              <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Domain: {gigs[0].GigFunction}</p>
+                    <div style={{fontSize:"20px"}}>
+                      <br/>
+                      <p className="img_text"><img alt="..." src="/tick.png"/>&nbsp;&nbsp;Domain: {gigs[0].GigDomain}</p>
                       <p className="img_text"><div style={{display:"flex",justifyContent:"flex-start"}}><div><img alt="..." src="/tick.png"/></div>&nbsp;&nbsp;<div>Industry: {gigs[0].CompanyIndustry}</div></div></p>
                       <p className="img_text"><div style={{display:"flex",justifyContent:"flex-start"}}><div><img alt="..." src="/tick.png"/></div>&nbsp;&nbsp;<div>Company Description: {gigs[0].CompanyDescription}</div></div></p>
                       <p className="img_text"><div style={{display:"flex",justifyContent:"flex-start"}}><div><img alt="..." src="/tick.png"/></div>&nbsp;&nbsp;<div>Duration: {gigs[0].GigDuration}</div></div></p>
                       <p className="img_text"><div style={{display:"flex",justifyContent:"flex-start"}}><div><img alt="..." src="/tick.png"/></div>&nbsp;&nbsp;<div>Stipend: {gigs[0].GigStipend}</div></div><br/></p>
-                      </div>
-                      </Container>
-                      <div>
-                      <div>
+                    </div>
+                  </Container>
                 </div>
-                <br/>
-                </div>
-                </div>
-                <br/>
                 <Row className="laptop_view_btn_gig" style={{ marginTop: "0%", paddingBottom: "1%" }}>
                   {/* <Col>
                     <a href={"/company/" + gigs[0].GigId}>
@@ -144,12 +138,13 @@ function Page3(props) {
                       </button>
                     </a>
                   </Col> */}
-                  { !appliedgigs.includes(gigs[0].GigId) ?
+                  { false ?
+                    <button style={{marginLeft:"27%", width:"25%"}} className="button2_slide_page3 slide_right">
+                      Closed
+                    </button> :
+                    !appliedgigs.includes(gigs[0].GigId) ?
                     <Col>
-                      <button style={{marginLeft:"27%"}}
-                        className="button2_slide_page3 slide_right btn2_gigspage"
-                        onClick={() => setModalShow(true)}
-                      >
+                      <button style={{marginLeft:"27%"}} className="button2_slide_page3 slide_right" onClick={() => setModalShow(true)}>
                         Apply now{" "}
                         <ArrowLeft className="button_arrow2_footer_gigspage3" />
                       </button>
@@ -162,9 +157,8 @@ function Page3(props) {
                       />
                     </Col> :
                     <Col>
-                    <button style={{marginLeft:"27%"}}
-                    className="button2_slide_page3 slide_right btn2_gigspage">
-                      Applied!
+                    <button style={{marginLeft:"27%", width:"25%"}} className="button2_slide_page3 slide_right">
+                      Applied
                     </button>
                   </Col>
                   }
@@ -181,12 +175,13 @@ function Page3(props) {
                       </button>
                     </a>
                   </div> */}
-                  { !appliedgigs.includes(gigs[0].GigId) ?
+                  { true ?
+                    <button style={{marginLeft:"5%", width:"25%"}} className="button2_slide_page3 slide_right">
+                      Closed
+                    </button> :
+                    !appliedgigs.includes(gigs[0].GigId) ?
                     <div>
-                      <button style={{marginLeft:"5%"}}
-                        className="button2_slide_page3 slide_right btn2_gigspage apply_now_button"
-                        onClick={() => setModalShow(true)}
-                      >
+                      <button style={{marginLeft:"5%"}} className="button2_slide_page3 slide_right apply_now_button" onClick={() => setModalShow(true)}>
                         Apply now{" "}
                         <ArrowLeft className="button_arrow2_footer_gigspage3" />
                       </button>
@@ -198,12 +193,9 @@ function Page3(props) {
                         onHide={() => setModalShow(false)}
                       />
                     </div> :
-                    <div>
-                    <button style={{marginLeft:"5%"}}
-                    className="button2_slide_page3 slide_right btn2_gigspage">
-                      Applied!
+                    <button style={{marginLeft:"5%"}} className="button2_slide_page3 slide_right">
+                      Applied
                     </button>
-                  </div>
                   }
                 </div>
                 <br/>
@@ -224,10 +216,10 @@ function Page3(props) {
                 {gigs[0].GigDescription}<br/><br/>
                 <h4>Pre-requisites:</h4>
                 {gigs[0].GigPreRequisites}<br/><br/>
-                <h4>Related files (JD / case study / etc.):  <button style={{marginLeft:"2%"}}
-                  className="button2_slideview_page3 slide_right btn2_gigspage">
+                <h4>Related files (JD / case study / etc.):  <a target="_blank" href={gigs[0].GigsProjectFile}><button style={{marginLeft:"2%"}}
+                  className="button2_slideview_page3 slide_right">
                     View
-                </button></h4>
+                </button></a></h4><br/>
                 <p>
                   <span style={{color:"#F26C4F"}}> Apply by {gigs[0].GigApplyBy} </span>
                 </p>

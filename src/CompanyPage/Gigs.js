@@ -21,7 +21,7 @@
 //                         <div className="Course_name">{Gig.GigName}</div>
 //                         <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
 //                         <div className="post_episode" style={{display:"flex",justifyContent:"space-between"}}>
-//                             <div className="instructor_post">{Gig.GigFunction}</div>
+//                             <div className="instructor_post">{Gig.GigDomain}</div>
 //                             <div className="episode_course">{Gig.GigDuration}</div>
 //                         </div>
 //                         <div className="like-text1" style={{display:"flex",justifyContent:"space-between",marginLeft:"0px",marginRight:"0px"}}>
@@ -43,7 +43,7 @@
 //                <div className="Course_name">{Gig.GigName}</div>
 //                <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
 //                <div className="post_episode">
-//                 <div className="instructor_post">{Gig.GigFunction}</div>
+//                 <div className="instructor_post">{Gig.GigDomain}</div>
 //                 <div className="episode_course">{Gig.GigDuration}</div>
 //                </div>
 //              </MDBCardBody>

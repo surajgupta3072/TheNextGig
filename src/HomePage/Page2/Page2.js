@@ -47,7 +47,7 @@ function Page2() {
           <Row style={{width:"500px",height:"70px", marginTop:"4%",  marginBottom:"5%", marginLeft:"59%", paddingTop:"10px"}}>
                   <span  className="border_box">
                     <Row className="learner" style={{border:"2px solid rgba(70, 83, 204, 0.6)"}}>
-            <Col md={1}><img style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="./Utkarsh_Chaturvedi.jpeg" height="40px" width="40px" /></Col>&nbsp;
+            <Col md={1}><img style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="./Anirudh_Solanki.jpeg" height="40px" width="40px" /></Col>&nbsp;
             <Col md={1}><img style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5603AQHPkzLQjERCyA/profile-displayphoto-shrink_800_800/0/1592377114860?e=1636588800&v=beta&t=BEeAKL7gV16KOEo9fNkH0U2SvmHaRsUF2eYwlQhoCpA" height="40px" width="40px" /></Col>&nbsp;
             <Col md={1} ><img  style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5103AQFg7zfzkiQE8Q/profile-displayphoto-shrink_800_800/0/1571626383719?e=1636588800&v=beta&t=m1mCj3Im7_GOEbeeq2JSqP5oEb07kfIUpZUQATUaVa4" height="40px" width="40px" /></Col>&nbsp;&nbsp;
             <Col ><p style={{fontSize:"20px", textAlign:"left", paddingTop: "14px",color:"white",opacity:"0.7",fontFamily:"Inter"}}>3,200+ learners on TNG</p></Col></Row>
@@ -108,7 +108,7 @@ function Page2() {
             </Card.Body>
           </Card>
           <div style={{width:"100%",height:"50px",border:"2px solid rgba(70, 83, 204, 0.6)", paddingTop:"5px", display: "flex", flexDirection: "row",margin:"auto"}}>
-              <Col  md={1} ><img style={{borderRadius:"8px",marginRight:"8px",marginLeft:"8px"}} alt="..." src="./Utkarsh_Chaturvedi.jpeg" height="40px" width="40px"  /></Col>
+              <Col  md={1} ><img style={{borderRadius:"8px",marginRight:"8px",marginLeft:"8px"}} alt="..." src="./Anirudh_Solanki.jpeg" height="40px" width="40px"  /></Col>
                 <Col md={1}><img style={{borderRadius:"8px",marginRight:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5603AQHPkzLQjERCyA/profile-displayphoto-shrink_800_800/0/1592377114860?e=1636588800&v=beta&t=BEeAKL7gV16KOEo9fNkH0U2SvmHaRsUF2eYwlQhoCpA" height="40px" width="40px" /></Col>
                 <Col md={1}><img style={{borderRadius:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5103AQFg7zfzkiQE8Q/profile-displayphoto-shrink_800_800/0/1571626383719?e=1636588800&v=beta&t=m1mCj3Im7_GOEbeeq2JSqP5oEb07kfIUpZUQATUaVa4" height="40px" width="40px" /></Col>&nbsp;&nbsp;&nbsp;
                 <Col><p style={{fontSize:"14px", textAlign:"left", paddingTop: "7px",color:"white",opacity:"0.7"}}>3,200+ learners on TNG</p></Col>

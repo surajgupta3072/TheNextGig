@@ -76,7 +76,7 @@ function Page1(props) {
     if(searchterm!="") {
       addSearchTerm();
       const searchvids = gigs.filter((vid)=>{
-        if(vid.GigFunction.toLowerCase().includes(searchterm.toLowerCase()) || vid.GigName.toLowerCase().includes(searchterm.toLowerCase()) || vid.CompanyName.toLowerCase().includes(searchterm.toLowerCase())) {
+        if(vid.GigDomain.toLowerCase().includes(searchterm.toLowerCase()) || vid.GigName.toLowerCase().includes(searchterm.toLowerCase()) || vid.CompanyName.toLowerCase().includes(searchterm.toLowerCase())) {
           return vid;
         }
       })
@@ -156,7 +156,7 @@ function Page1(props) {
             <MDBCardBody>
               <div className="Course_name" style={{display: "flex", flexDirection: "row"}}>{carder.GigName}</div>
                 <div style={{color:"grey",marginTop:"5px"}} className="instructor_name" >
-                  {carder.GigFunction} <sup data-tip data-for={carder.GigId+"g"}>&#9432;</sup>
+                  {carder.GigDomain} <sup data-tip data-for={carder.GigId+"g"}>&#9432;</sup>
                   <ReactTooltip id={carder.GigId+"g"} place="top" effect="solid">
                     {carder.GigDescription.substring(0, 150)}...
                   </ReactTooltip>
@@ -211,7 +211,7 @@ function Page1(props) {
                 />
                 <div className="instruct_time">
                   <div style={{color:"grey"}} className="instructor_name" >
-                    {carder.GigFunction} <sup data-tip data-for={carder.GigId+"g"}>&#9432;</sup>
+                    {carder.GigDomain} <sup data-tip data-for={carder.GigId+"g"}>&#9432;</sup>
                     <ReactTooltip id={carder.GigId+"g"} place="top" effect="solid">
                       {carder.GigDescription.substring(0, 150)}...
                     </ReactTooltip>
@@ -264,7 +264,7 @@ function Page1(props) {
                 <div className="Course_name" style={{display: "flex", flexDirection: "row"}}>{carder.GigName}</div>
                 <div className="instruct_time">
                   <div style={{color:"grey",marginTop:"5px"}} className="instructor_name">
-                    {carder.GigFunction}
+                    {carder.GigDomain}
                   </div>
                 </div>
                 <div className="post_episode">
@@ -311,7 +311,7 @@ function Page1(props) {
       />
       <div className="instruct_time">
         <div style={{color:"grey"}} className="instructor_name">
-          {carder.GigFunction}
+          {carder.GigDomain}
         </div>
         <div className="time_course">{carder.GigDuration}</div>
       </div>

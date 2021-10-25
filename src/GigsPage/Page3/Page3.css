@@ -24,9 +24,6 @@
   font-weight: bold;
   border: none;
   padding: 15px 30px 15px 30px;
-  margin-top: 7%;
-  margin-bottom: 10%;
-  display: inline-block;
   font-size: 16px;
   letter-spacing: 1px;
   cursor: pointer;
@@ -88,7 +85,7 @@
   margin-top: 12px;
   margin-left: 23px;
 }
-.explore_session{
+.explore_session {
   margin-left: 55%;
 }
 @media screen and (max-width: 768px) {
@@ -115,7 +112,7 @@
   .button2_slide_page3 {
     font-size: 12px;
     padding: 18px 22px;
-    margin-top: 22%;
+    margin-top: 0%;
   }
   .apply_now_button {
     font-size: 12px;
@@ -124,7 +121,6 @@
   }
   .lastcol_page3_gigs {
     margin-left: 10px;
-    
   }
   .laptop_view_btn_gig {
     display: none !important;
@@ -150,10 +146,10 @@
   .d3 {
     margin-right: 60px;
   }
-  .footer_page3_gigs{
+  .footer_page3_gigs {
     text-align: center;
   }
-  .explore_session{
+  .explore_session {
     margin-left: 50%;
   }
 }
