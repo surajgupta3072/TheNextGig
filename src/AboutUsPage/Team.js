@@ -71,14 +71,15 @@ function Team(){
                      </Row>
                      <Row style={{marginTop:"2%"}}>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)" }}>
-                        <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./rubix.jpeg" />
+                        <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/k954mM3/IMG-20210329-184036-modified-1.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
-                            <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Urmil Vakharia</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Founder</Card.Subtitle>
+                            <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Anurag Vaibhav</Card.Title>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Intern</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
-                                Passionate about education and an avid guitarist. Spends his free time learning new instruments and doing yoga. Will probably retire as a teacher in Bhutan.
+                                Technophile and a wanderlust who Loves to read theories about great mathematical equations like Riemann hypothesis and to know the science behind every phenomenon.
                                 </Card.Text>
-                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
+                                <a href="https://www.linkedin.com/in/av15
+                                " target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                           </Card>
                         <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(200, 150, 54, 0.07)", border: "2px solid rgba(200, 150, 54, 0.4)" }}>

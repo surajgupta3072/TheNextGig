@@ -43,7 +43,7 @@ function Header(props) {
                     </Nav.Link>
                 }
                 {props.auth.isAuthenticated===false && 
-                    <Nav.Link href="/login" style={{color: "#424242", fontWeight:"700", fontSize:"16px", paddingLeft:"35px"}}>
+                    <Nav.Link href="/login" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
                         Login
                     </Nav.Link>
                 }
