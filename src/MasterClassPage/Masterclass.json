@@ -10,9 +10,26 @@
     "course_episode": "16 episodes",
     "course_description": "The tools of Marketing might change often..but a true marketer sticks to the fundamentals! What makes a true marketing professional successful? What role does 'brand' have to play? Find out here!",
     "course_role": "Marketing, Branding",
-    "WhatYouLearn": ["Fundamentals of marketing", "Difference between product and brand", "How Google successfully created a brand for", "How the big-tech created their brands", "Case study applications of marketing concepts"],
-    "PreparesYouFor": ["Marketing roles", "Branding and growth roles", "Freelance marketing gigs"],
-    "WhatsInForYou": ["Lifetime access to 25 years of professional experience", "compressed into 1.5 hours of learning" , "Preference for experiential learning opportunities that we", "source for you in this domain", "A certificate of completion and a chance to get your", "in-session case / project reviewed by the expert"],
+    "WhatYouLearn": [
+      "Fundamentals of marketing",
+      "Difference between product and brand",
+      "How Google successfully created a brand for",
+      "How the big-tech created their brands",
+      "Case study applications of marketing concepts"
+    ],
+    "PreparesYouFor": [
+      "Marketing roles",
+      "Branding and growth roles",
+      "Freelance marketing gigs"
+    ],
+    "WhatsInForYou": [
+      "Lifetime access to 25 years of professional experience",
+      "compressed into 1.5 hours of learning",
+      "Preference for experiential learning opportunities that we",
+      "source for you in this domain",
+      "A certificate of completion and a chance to get your",
+      "in-session case / project reviewed by the expert"
+    ],
     "fees": "399",
     "ExpertId": 1,
     "trailer_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Anil+Nair+Trailer.mp4",
@@ -59,55 +76,55 @@
         "description": "The importance of getting to know your customers and the value it adds to your organisation.",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+7A.mp4"
       },
- {
+      {
         "id": 8,
         "title": "7B. Customer understanding - Decoded",
         "description": "The importance of getting to know your customers and the value it adds to your organisation.",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+7B.mp4"
       },
-{
+      {
         "id": 9,
         "title": "8. Test your consumer understanding",
         "description": "We have learnt what consumer understanding means but can you translate it to the real world and prove your worth as a marketer? Test it out.",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+14.mp4"
       },
-{
+      {
         "id": 10,
         "title": "9. The real meaning of ‘Brand’",
         "description": "Brand is a word which is a word thrown around quite lightly and used interchangeably with a lot of terms....But what does it actually mean?",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+8.mp4"
       },
-{
+      {
         "id": 11,
         "title": "10. 'Product' and how it correlates with ‘Brand’",
         "description": "We all know what a product is, but how does it correlate to the brand and how does it all fall into place with the bigger picture of marketing.",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+9.mp4"
       },
-{
+      {
         "id": 12,
         "title": "11. Product and brand - summarised",
         "description": "Everything we have learnt about product and brand in under a minute!",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+10.mp4"
       },
-{
+      {
         "id": 13,
         "title": "12A. Deep dive into the nuances of ‘Branding’",
         "description": "We have learnt what a brand is, so now let us take it a step further and understand the heart of a brand and how it resonates with marketing and the terms associated with it.",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+11A.mp4"
       },
-{
+      {
         "id": 14,
         "title": "12B. Deep dive into the nuances of ‘Branding’",
         "description": "We have learnt what a brand is, so now let us take it a step further and understand the heart of a brand and how it resonates with marketing and the terms associated with it.",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+11B.mp4"
       },
-{
+      {
         "id": 15,
         "title": "13. Marketing in a nutshell",
         "description": "Everything you can possibly learn about marketing..and more!",
         "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+12.mp4"
       },
-{
+      {
         "id": 16,
         "title": "14. Marketing in the real world",
         "description": "How to systematically and smartly apply everything you have just learnt about marketing in the real world. Take the world by a marketing storm!",
@@ -115,5 +132,139 @@
       }
     ],
     "gigs": []
+  },
+  {
+    "id": 2,
+    "course_name": "The ultimate guide to marketing, branding & customer understanding",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
+    "course_instructor": "Anil Nair",
+    "course_instructor_post": "Founder, ThePrettyGeeky",
+    "instructor_creds": "25+ years of launching powerful brands",
+    "course_timing": "...Coming Soon",
+    "course_episode": "16 episodes",
+    "course_description": "The tools of Marketing might change often..but a true marketer sticks to the fundamentals! What makes a true marketing professional successful? What role does 'brand' have to play? Find out here!",
+    "course_role": "Marketing, Branding",
+    "WhatYouLearn": [
+      "Fundamentals of marketing",
+      "Difference between product and brand",
+      "How Google successfully created a brand for",
+      "How the big-tech created their brands",
+      "Case study applications of marketing concepts"
+    ],
+    "PreparesYouFor": [
+      "Marketing roles",
+      "Branding and growth roles",
+      "Freelance marketing gigs"
+    ],
+    "WhatsInForYou": [
+      "Lifetime access to 25 years of professional experience",
+      "compressed into 1.5 hours of learning",
+      "Preference for experiential learning opportunities that we",
+      "source for you in this domain",
+      "A certificate of completion and a chance to get your",
+      "in-session case / project reviewed by the expert"
+    ],
+    "fees": "...",
+    "ExpertId": 1,
+    "trailer_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Anil+Nair+Trailer.mp4",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "1. Who is a “marketer”?",
+        "description": "You have heard this term before but what does it actually mean? Are you a marketer or are you just someone who has read marketing books?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+1.mp4"
+      },
+      {
+        "id": 2,
+        "title": "2. Anil's marketing journey",
+        "description": "26 years of experience summed up in just 3 minutes for you!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+2.mp4"
+      },
+      {
+        "id": 3,
+        "title": "3. The evil behind marketing “hacks”",
+        "description": "The truth behind glamorous, quick marketing “hacks” and the importance of learning the crux of marketing - the fundamentals.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+3.mp4"
+      },
+      {
+        "id": 4,
+        "title": "4. The fundamentals of marketing",
+        "description": "Ever felt confused about so many marketing terms being thrown around? Brand? Sales? Advertisement? Not after watching this episode.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+4.mp4"
+      },
+      {
+        "id": 5,
+        "title": "5. Test your marketing fundamentals",
+        "description": "Let us test whether you have understood the essence of marketing fundamentals and can put it to use!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+5.mp4"
+      },
+      {
+        "id": 6,
+        "title": "6. Marketing fundamentals at your workplace",
+        "description": "Applying everything you have learnt so far in your current/future workplace.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+6.mp4"
+      },
+      {
+        "id": 7,
+        "title": "7A. Customer understanding - Decoded",
+        "description": "The importance of getting to know your customers and the value it adds to your organisation.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+7A.mp4"
+      },
+      {
+        "id": 8,
+        "title": "7B. Customer understanding - Decoded",
+        "description": "The importance of getting to know your customers and the value it adds to your organisation.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+7B.mp4"
+      },
+      {
+        "id": 9,
+        "title": "8. Test your consumer understanding",
+        "description": "We have learnt what consumer understanding means but can you translate it to the real world and prove your worth as a marketer? Test it out.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+14.mp4"
+      },
+      {
+        "id": 10,
+        "title": "9. The real meaning of ‘Brand’",
+        "description": "Brand is a word which is a word thrown around quite lightly and used interchangeably with a lot of terms....But what does it actually mean?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+8.mp4"
+      },
+      {
+        "id": 11,
+        "title": "10. 'Product' and how it correlates with ‘Brand’",
+        "description": "We all know what a product is, but how does it correlate to the brand and how does it all fall into place with the bigger picture of marketing.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+9.mp4"
+      },
+      {
+        "id": 12,
+        "title": "11. Product and brand - summarised",
+        "description": "Everything we have learnt about product and brand in under a minute!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+10.mp4"
+      },
+      {
+        "id": 13,
+        "title": "12A. Deep dive into the nuances of ‘Branding’",
+        "description": "We have learnt what a brand is, so now let us take it a step further and understand the heart of a brand and how it resonates with marketing and the terms associated with it.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+11A.mp4"
+      },
+      {
+        "id": 14,
+        "title": "12B. Deep dive into the nuances of ‘Branding’",
+        "description": "We have learnt what a brand is, so now let us take it a step further and understand the heart of a brand and how it resonates with marketing and the terms associated with it.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+11B.mp4"
+      },
+      {
+        "id": 15,
+        "title": "13. Marketing in a nutshell",
+        "description": "Everything you can possibly learn about marketing..and more!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+12.mp4"
+      },
+      {
+        "id": 16,
+        "title": "14. Marketing in the real world",
+        "description": "How to systematically and smartly apply everything you have just learnt about marketing in the real world. Take the world by a marketing storm!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-AnilNair/Episode+13.mp4"
+      }
+    ],
+    "gigs": ["8a19f352cc07bc0331f7d532d479d81e", "b2", "20a39692fb2433d3f8669f24c6d946cd"]
   }
 ]
