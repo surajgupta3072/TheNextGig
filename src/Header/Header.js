@@ -39,7 +39,7 @@ function Header(props) {
                 }
                 {props.auth.isAuthenticated===true && 
                     <Nav.Link href="/profile" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
-                        {props.auth.user.attributes.name.split(" ")[0].toUpperCase()}
+                        {props.auth.user.attributes.name.split(" ")[0]}
                     </Nav.Link>
                 }
                 {props.auth.isAuthenticated===false && 

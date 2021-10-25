@@ -24,7 +24,7 @@ function Team(){
                 </div>
                 <Container style={{marginTop:"7%"}}>
                     <Row>
-                        <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)" }}>
+                        <Card style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)" }}>
                         <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./urmil.jpeg" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Urmil Vakharia</Card.Title>
@@ -39,25 +39,25 @@ function Team(){
                             <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./rubix.jpeg" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Dhairya Shah</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#C89636"}} >Founder</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Founder</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Huge fan of conspiracy theories and sci-fi movies. Likes to explore time travel and related theories. Can spend his entire day playing Poker and Catan.
                                 </Card.Text>
                                 <a href="https://www.linkedin.com/feed/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
-                        <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(86, 150, 112, 0.07)", border: " 2px solid rgba(86, 150, 112, 0.6)" }}>
+                        <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(86, 150, 112, 0.07)", border: "2px solid rgba(70, 83, 204, 0.6)" }}>
                             <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_800_800/0/1611408696050?e=1640822400&v=beta&t=nZ5uPQniKEvYqhaoV9Hxyj92J1CQP-CDU9Mdg0PM-OI" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Nikhil Agarwal</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#569670"}} >Head of Engineering</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Head of Engineering</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
-                                Passionate about dance and photography. Spends his free time doing internhsips. Will probably retire by doing Internhsip.
+                                Finds the need to develop products from scratch to be super fulfilling (and borderline compulsive lol!) <br/> But that’s not all - Nikhil loves dancing and photography🕺📷
                                 </Card.Text>
                                 <a href="https://www.linkedin.com/in/nikhil-agarwal-85a203189/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
-                        <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(70, 83, 204, 0.07)", border: "2px solid rgba(70, 83, 204, 0.6)" }}>
+                        <Card  style={{ width: "22%",height:"25%", marginLeft: "3%", backgroundColor: "rgba(70, 83, 204, 0.07)", border: "2px solid rgba(86, 150, 112, 0.6)" }}>
                             <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="./rubix.jpeg" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Prathamesh Palan</Card.Title>
