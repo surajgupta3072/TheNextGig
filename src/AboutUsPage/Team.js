@@ -76,7 +76,7 @@ function Team(){
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Anurag Vaibhav</Card.Title>
                                 <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Intern</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
-                                Technophile and a wanderlust who Loves to read theories about great mathematical equations like Riemann hypothesis and to know the science behind every phenomenon.
+                                Technophile and a wanderlust who Loves to read theories about mathematical equations like Riemann hypothesis and to know the science behind every phenomenon.
                                 </Card.Text>
                                 <a href="https://www.linkedin.com/in/av15
                                 " target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
