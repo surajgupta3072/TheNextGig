@@ -56,51 +56,21 @@ function RegisterPage(props) {
         }
         docClient.put(params, function (err, data) {
           if (err) {
-            console.log('Error', err)
+            setShowErr(err.message);
           }
         });
         props.auth.setUser(userLogin);
         props.auth.setAuthStatus(true);
         setShowErr(false);
-        let paramss = {
-          TableName: "UsersTable",
-          KeyConditionExpression: "#Uid = :UserID",
-          ExpressionAttributeNames: {
-            "#Uid": "UserID",
-          },
-          ExpressionAttributeValues: {
-            ":UserID": userLogin.username,
-          },
-        };
-        try {
-          const data1 = await docClient.query(paramss).promise();
-          const per = data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC;
-          if(per===100) {
-            Swal.fire({
-              title: "<h5 style='color:white'>" + "Signed Up Successfully" + "</h5>",
-              icon: 'success',
-              showConfirmButton: false,
-              timer: 2000,
-              background: '#020312',
-              color: 'white',
-              iconColor: "#F26C4F"
-            }).then(()=>window.location.href = localStorage.getItem("lastURL"));
-          }
-          else {
-            Swal.fire({
-              title: "<h5 style='color:white'>" + "Signed Up Successfully" + "</h5>",
-              icon: 'success',
-              showConfirmButton: false,
-              timer: 2000,
-              background: '#020312',
-              color: 'white',
-              iconColor: "#F26C4F"
-            }).then(()=>setModalShow(true));
-          }
-        }
-        catch (err) {
-          setShowErr(err.message);
-        }
+        Swal.fire({
+          title: "<h5 style='color:white'>" + "Signed Up Successfully" + "</h5>",
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 2000,
+          background: '#020312',
+          color: 'white',
+          iconColor: "#F26C4F"
+        }).then(()=>setModalShow(true));
       } 
       catch (err) {
         setShowErr(err.message);
