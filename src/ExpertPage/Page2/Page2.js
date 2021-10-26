@@ -32,7 +32,7 @@ function Page2(props) {
         <div className="Mastercards">
           {expertData.map(expertDetails=>(
                <MDBCard onClick={()=>window.location.href='/expert/'+expertDetails.ExpertId}  className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"30rem",width:""}}>
-                    <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"22rem",borderRadius:"15px"}} src="https://www.clipartkey.com/mpngs/m/153-1539728_cartoon-person-waving-cartoon-person-png.png" alt='...' /></div>
+                    <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"22rem",borderRadius:"15px"}} src={expertDetails.ExpertPic}  alt='...' /></div>
                     <MDBCardBody>
                     <div className="Course_name">{expertDetails.ExpertName}</div>
                     <p style={{fontSize: "18px", color: "#F26C4F", display: "flex", justifyContent: "center"}}>
@@ -60,7 +60,7 @@ function Page2(props) {
             <Carousel breakPoints={breakPoints}>
           {expertData.map(expertDetails=>(
                <MDBCard onClick={()=>window.location.href='/expert/'+expertDetails.ExpertId} className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
-                    <div className="image_card"><MDBCardImage style={{width:"100%",height:"14rem",borderRadius:"14px"}} src="https://www.clipartkey.com/mpngs/m/153-1539728_cartoon-person-waving-cartoon-person-png.png" alt='...' /></div>
+                    <div className="image_card"><MDBCardImage style={{width:"100%",height:"14rem",borderRadius:"14px"}} src={expertDetails.ExpertPic} alt='...' /></div>
                     <MDBCardBody>
                     <div className="Course_name">{expertDetails.ExpertName}</div>
                     <p style={{fontSize: "18px", color: "#F26C4F", display: "flex", justifyContent: "center"}}>
