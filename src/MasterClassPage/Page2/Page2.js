@@ -31,10 +31,10 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
          <Container>
            <Row>
              <Col style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}} md={3} xs={1}>
-               <img alt="..." style={{height:"50px",width:"50px",marginTop:"25%"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
-               <img alt="..." style={{height:"50px",width:"50px",marginLeft:"75%",marginTop:"30%"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
-               <img alt="..." style={{height:"50px",width:"50px",marginTop:"20%"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
-               <img alt="..." style={{height:"50px",width:"50px",marginLeft:"140%"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginTop:"25%"}} src="https://i.ibb.co/z8fFdSW/Anil-Nair.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginLeft:"75%",marginTop:"30%"}} src="https://i.ibb.co/F6s06Bn/Abhay.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginTop:"20%"}} src="https://i.ibb.co/h94kFCN/abhijay.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px",marginLeft:"140%"}} src="https://i.ibb.co/b1qqr1J/KK.jpg"/>
              </Col>
              <Col>
             <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the experts!</p></Row>
@@ -98,10 +98,10 @@ internships / jobs<ArrowRight className="button_arrow_MC_Page2"/></button></a>
          <Container>
            <div style={{display:"flex",justifyContent:"space-between"}}>
              <div style={{display:"flex",justifyContent:"space-between",flexDirection:"column"}} >
-               <img alt="..." style={{height:"50px",width:"50px"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
-               <img alt="..." style={{height:"50px",width:"50px"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
-               <img alt="..." style={{height:"50px",width:"50px"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
-               <img alt="..." style={{height:"50px",width:"50px"}} src="https://pbs.twimg.com/profile_images/864282616597405701/M-FEJMZ0_400x400.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px"}} src="https://i.ibb.co/z8fFdSW/Anil-Nair.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px"}} src="https://i.ibb.co/F6s06Bn/Abhay.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px"}} src="https://i.ibb.co/h94kFCN/abhijay.jpg"/>
+               <img alt="..." style={{height:"50px",width:"50px"}} src="https://i.ibb.co/b1qqr1J/KK.jpg"/>
              </div>
              <div style={{display:"flex",justifyContent:"space-evenly",flexDirection:"column"}}>
             <div>Meet the experts!</div>

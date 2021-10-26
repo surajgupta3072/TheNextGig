@@ -74,7 +74,10 @@ function Page1(props) {
 
   function searchFilter() {
     if(searchterm!="") {
+      if(!redirectlogin)
+      {
       addSearchTerm();
+      }
       const searchvids = gigs.filter((vid)=>{
         if(vid.GigDomain.toLowerCase().includes(searchterm.toLowerCase()) || vid.GigName.toLowerCase().includes(searchterm.toLowerCase()) || vid.CompanyName.toLowerCase().includes(searchterm.toLowerCase())) {
           return vid;
