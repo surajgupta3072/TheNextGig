@@ -178,7 +178,7 @@ function Page3(props) {
             </div>
           </Col>
           <Col style={{padding:"1px"}} md={6}>
-            <video className="anim_img" src={session.trailer_video} autoPlay controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
+            <video className="anim_img" src={session.trailer_video} playsInline autoPlay controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
           </Col>
           </Row>
       </Container>

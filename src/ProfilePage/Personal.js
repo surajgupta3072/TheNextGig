@@ -4,15 +4,15 @@ import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
 import './ProfilePage.css';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 function Personal(props) {
-  const [fullName,setFullName]=useState();
-  const [dob,setDOB]=useState();
-  const [gender,setGender]=useState();
-  const [mobile,setMobile]=useState();
-  const [quirky,setQuirky]=useState();
-  const [refcode, setRefCode] = useState("");
+  const [fullName,setFullName]=useState("");
+  const [dob,setDOB]=useState("");
+  const [gender,setGender]=useState("");
+  const [mobile,setMobile]=useState("");
+  const [quirky,setQuirky]=useState("");
+  // const [refcode, setRefCode] = useState("");
   const [showerr, setShowErr] = useState(false);
 
   useEffect(() => {
@@ -26,80 +26,80 @@ function Personal(props) {
     setQuirky(props.p.wholedata.QuirkyText);
   }, []);
 
-  function RefCodeSubmit() {
-    if(refcode!==props.p.wholedata.ReferralCode) {
-      var params = {
-        TableName: "UsersTable"
-      };
-      docClient.scan(params, function (err, data) {
-        if (err) {
-          console.log(err);
-        } 
-        else {
-          var refstatus = false;
-          for (var e of data.Items) {
-            if(e.ReferralCode===refcode) {
-              var refstatus = true;
-              var params = {
-                TableName: "UsersTable",
-                Key: { "UserID": e.UserID },
-                ProjectionExpression: "TotalRewards",
-              };
-              docClient.get(params, function(err, data) {
-                if (err) {
-                  console.log(err);
-                } 
-                else {
-                  var paramss = {
-                    TableName: "UsersTable",
-                    Key: { "UserID": e.UserID },
-                    UpdateExpression: "set TotalRewards = :tr",
-                    ExpressionAttributeValues:{
-                      ":tr": data.Item.TotalRewards + 50,
-                    },
-                    ReturnValues:"UPDATED_NEW"
-                  }
-                  docClient.update(paramss, function (err, data) {
-                    if (err) {
-                      console.log(err);
-                    } 
-                    else {
-                      var paramss = {
-                        TableName: "UsersTable",
-                        Key: { "UserID": props.p.wholedata.UserID },
-                        UpdateExpression: "set TotalRewards = :tr, ReferredBy = :rb",
-                        ExpressionAttributeValues:{
-                          ":tr": props.p.wholedata.TotalRewards + 50,
-                          ":rb": e.UserID,
-                        },
-                        ReturnValues:"UPDATED_NEW"
-                      }
-                      docClient.update(paramss, function (err, data) {
-                        if (err) {
-                          console.log(err);
-                        } 
-                        else {
-                          window.location.reload();
-                        }
-                      });
-                    }
-                  });
-                }
-              });
-              break;
-            }
-          }
-          if(refstatus===false) {
-            setShowErr("Referral Code is Invalid");
-            setRefCode("");
-          }
-        }
-      });
-    }
-    else {
-      setRefCode("");
-    }
-  }
+  // function RefCodeSubmit() {
+  //   if(refcode!==props.p.wholedata.ReferralCode) {
+  //     var params = {
+  //       TableName: "UsersTable"
+  //     };
+  //     docClient.scan(params, function (err, data) {
+  //       if (err) {
+  //         console.log(err);
+  //       } 
+  //       else {
+  //         var refstatus = false;
+  //         for (var e of data.Items) {
+  //           if(e.ReferralCode===refcode) {
+  //             var refstatus = true;
+  //             var params = {
+  //               TableName: "UsersTable",
+  //               Key: { "UserID": e.UserID },
+  //               ProjectionExpression: "TotalRewards",
+  //             };
+  //             docClient.get(params, function(err, data) {
+  //               if (err) {
+  //                 console.log(err);
+  //               } 
+  //               else {
+  //                 var paramss = {
+  //                   TableName: "UsersTable",
+  //                   Key: { "UserID": e.UserID },
+  //                   UpdateExpression: "set TotalRewards = :tr",
+  //                   ExpressionAttributeValues:{
+  //                     ":tr": data.Item.TotalRewards + 50,
+  //                   },
+  //                   ReturnValues:"UPDATED_NEW"
+  //                 }
+  //                 docClient.update(paramss, function (err, data) {
+  //                   if (err) {
+  //                     console.log(err);
+  //                   } 
+  //                   else {
+  //                     var paramss = {
+  //                       TableName: "UsersTable",
+  //                       Key: { "UserID": props.p.wholedata.UserID },
+  //                       UpdateExpression: "set TotalRewards = :tr, ReferredBy = :rb",
+  //                       ExpressionAttributeValues:{
+  //                         ":tr": props.p.wholedata.TotalRewards + 50,
+  //                         ":rb": e.UserID,
+  //                       },
+  //                       ReturnValues:"UPDATED_NEW"
+  //                     }
+  //                     docClient.update(paramss, function (err, data) {
+  //                       if (err) {
+  //                         console.log(err);
+  //                       } 
+  //                       else {
+  //                         window.location.reload();
+  //                       }
+  //                     });
+  //                   }
+  //                 });
+  //               }
+  //             });
+  //             break;
+  //           }
+  //         }
+  //         if(refstatus===false) {
+  //           setShowErr("Referral Code is Invalid");
+  //           setRefCode("");
+  //         }
+  //       }
+  //     });
+  //   }
+  //   else {
+  //     setRefCode("");
+  //   }
+  // }
 
   function givereward() {
     if(props.p.wholedata.RewardP===0) {
@@ -151,8 +151,9 @@ function Personal(props) {
     }
   }
 
-  function handleSubmit(){
-    if(dob!=="" && gender!=="" && mobile!=="" && quirky!=="") {
+  function handleSubmit() {
+    console.log(dob, gender, mobile, quirky)
+    if(dob!==undefined && gender!==undefined && mobile!==undefined && quirky!==undefined) {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID":props.p.wholedata.UserID },
@@ -188,7 +189,7 @@ function Personal(props) {
       });
     }
     else{
-      console.warn("Details not filled")
+      setShowErr("All the fields needs to filled");
     }
   }
     return (
@@ -198,13 +199,13 @@ function Personal(props) {
             <p><span style={{fontSize:"20px"}}>Full Name<br/><span style={{fontSize:"16px"}}>(We need to know who to address all the certificates to!)</span></span></p>
             <p><input disabled value={fullName} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
-          <br/>
           <Row>
             <Col >
               <p><span style={{fontSize:"20px"}}>Date of birth<br/><span style={{fontSize:"16px"}}>(Some birthday wishes coming your way)</span></span></p>
               <input value={dob} onChange={e => setDOB(e.target.value)} type="date" style={{width:"50%",height:"35px"}}></input>
             </Col>
             <Col className= "Gender_col">
+              <br/>
               <p style={{fontSize:"20px"}}>Gender</p>
               <div onChange={e => setGender(e.target.value)} style={{display:"flex",flexDirection:"row", alignItems:"center"}}>
                   <input value="male" type="radio" name="gender"/>&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -213,11 +214,17 @@ function Personal(props) {
               </div>
             </Col>
           </Row>
-          <br/>
+          <Row>
+            <Col style={{marginTop:"2%"}}>
+              <p><span style={{fontSize:"20px"}}>Mobile Number</span></p>
+              <input value={mobile} onChange={e => setMobile(e.target.value)} style={{height:"35px"}} className="Mobilenum_input"></input>
+            </Col>
+          </Row>
           <Row style={{marginTop:"2%"}}>
             <p style={{fontSize:"20px"}}>Something quirky about you?</p>
             <p><input value={quirky} onChange={e => setQuirky(e.target.value)} style={{width:"100%",height:"35px"}}></input></p>
           </Row>
+          {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
           <div className="button_div">
           <div><div><button style={{marginTop:"10%"}} onClick={handleSubmit} className="button_slide">Save</button></div></div>
           </div>

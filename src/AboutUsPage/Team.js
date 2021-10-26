@@ -52,12 +52,14 @@ function Team(){
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Nikhil Agarwal</Card.Title>
                                 <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"rgba(86, 150, 112,1)"}} >Head of Engineering</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
-                                Finds the need to develop products from scratch to be super fulfilling (and borderline compulsive lol!) <br/> But that’s not all - Nikhil loves dancing and photography🕺📷
+                                Finds the need to develop products from scratch to be super fulfilling (and borderline compulsive lol!) <br/> But that’s not all - Passionate about dancing and photography too
                                 </Card.Text>
                                 <a href="https://www.linkedin.com/in/nikhil-agarwal-85a203189/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
-                        <Card  style={{ width: "22%",minHeight:"25%", marginLeft: "3%", backgroundColor: "rgba(70, 83, 204, 0.07)", border: "2px solid rgba(70, 83, 204, 0.6)" }}>
+                     </Row>
+                     <Row style={{marginTop:"2%"}}>
+                        <Card style={{ width: "22%",minHeight:"25%", marginLeft: "3%", backgroundColor: "rgba(70, 83, 204, 0.07)", border: "2px solid rgba(70, 83, 204, 0.6)" }}>
                             <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/0C8Jbzc/IMG-20211026-005648-modified.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Prathamesh Palan</Card.Title>
@@ -68,8 +70,6 @@ function Team(){
                                 <a href="https://www.linkedin.com/in/prathamesh-palan-7a7511214" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
-                     </Row>
-                     <Row style={{marginTop:"2%"}}>
                         <Card  style={{ width: "22%",minHeight:"25%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)" }}>
                         <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/k954mM3/IMG-20210329-184036-modified-1.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
@@ -125,7 +125,7 @@ function Team(){
                 </div>
                 <Container style={{marginTop:"20px"}}>
                     <Col>
-                        <Card style={{ width: '100%',backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%" }}>
+                        <Card style={{ width: '100%',backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)",marginTop:"5%" }}>
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
@@ -142,7 +142,7 @@ function Team(){
                             </div>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '100%',backgroundColor: "rgba(200, 150, 54, 0.07)", border: "2px solid rgba(200, 150, 54, 0.4)",marginTop:"10%" }}>
+                        <Card style={{ width: '100%',backgroundColor: "rgba(200, 150, 54, 0.07)", border: "2px solid rgba(200, 150, 54, 0.4)",marginTop:"5%" }}>
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
@@ -159,7 +159,7 @@ function Team(){
                             </div>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '100%', backgroundColor: "rgba(86, 150, 112, 0.07)", border: " 2px solid rgba(86, 150, 112, 0.6)",marginTop:"10%" }}>
+                        <Card style={{ width: '100%', backgroundColor: "rgba(86, 150, 112, 0.07)", border: " 2px solid rgba(86, 150, 112, 0.6)",marginTop:"5%" }}>
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
@@ -169,14 +169,14 @@ function Team(){
                                 <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"12px"}}>Nikhil Agarwal</Card.Title>
                                 <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"#569670"}}>Head of Engineering</Card.Subtitle>
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"normal",marginLeft:"5px"}}>
-                                Passionate about dance and photography. Spends his free time doing internhsips. Will probably retire by doing Internhsip.
+                                Finds the need to develop products from scratch to be super fulfilling (and borderline compulsive lol!) <br/> But that’s not all - Passionate about dancing and photography too
                                 </Card.Text>
                                 <a href="https://www.linkedin.com/in/nikhil-agarwal-85a203189/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                                 </Col>
                             </div>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '100%', backgroundColor: "rgba(70, 83, 204, 0.07)", border: "2px solid rgba(70, 83, 204, 0.6)",marginTop:"10%" }}>
+                        <Card style={{ width: '100%', backgroundColor: "rgba(70, 83, 204, 0.07)", border: "2px solid rgba(70, 83, 204, 0.6)",marginTop:"5%" }}>
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
@@ -193,7 +193,7 @@ function Team(){
                             </div>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '100%', backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)",marginTop:"10%" }}>
+                        <Card style={{ width: '100%', backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)",marginTop:"5%" }}>
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
@@ -210,7 +210,7 @@ function Team(){
                             </div>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '100%', backgroundColor: "rgba(200, 150, 54, 0.07)", border: "2px solid rgba(200, 150, 54, 0.4)",marginTop:"10%" }}>
+                        <Card style={{ width: '100%', backgroundColor: "rgba(200, 150, 54, 0.07)", border: "2px solid rgba(200, 150, 54, 0.4)",marginTop:"5%" }}>
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
@@ -227,7 +227,7 @@ function Team(){
                             </div>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '100%', backgroundColor: "rgba(86, 150, 112, 0.07)", border: "2px solid rgba(86, 150, 112, 0.6)",marginTop:"10%" }}>
+                        <Card style={{ width: '100%', backgroundColor: "rgba(86, 150, 112, 0.07)", border: "2px solid rgba(86, 150, 112, 0.6)",marginTop:"5%" }}>
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>

@@ -175,7 +175,7 @@ function Page3(props) {
                       </button>
                     </a>
                   </div> */}
-                  { true ?
+                  { false ?
                     <button style={{marginLeft:"5%", width:"25%"}} className="button2_slide_page3 slide_right">
                       Closed
                     </button> :
@@ -253,9 +253,7 @@ function Page3(props) {
               <Carousel breakPoints={breakPoints}>
                 {master.map((carder) => (
                   <MDBCard
-                    onClick={() =>
-                      (window.location.href = "/TNGoriginals/" + carder.id)
-                    }
+                    onClick={() => {if(carder.course_timing!=="...Coming Soon") window.location.href = "/TNGoriginals/" + carder.id}}
                     className="cax card_mastercard"
                     style={{
                       borderRadius: "0px",
@@ -289,7 +287,7 @@ function Page3(props) {
             </div>
           </div>
           <div >
-            <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
+            <Row style={{border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
                 <h6 style={{fontSize:"15px",color:"#FFFFFF99"}} className="footer_page3_gigs">
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved

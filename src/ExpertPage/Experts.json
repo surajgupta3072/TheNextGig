@@ -1,32 +1,44 @@
 [
-    {
-        "ExpertId": 1,
-        "ExpertName": "Anil Nair",
-        "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
-        "ExpertDesignation": "Board member, strategy advisor, mentor and investor",
-        "ExpertCompany": "ThePrettyGeeky, Kalyan Jewellers, Goodwind Mototours",
-        "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/ThePrettyGeeky.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/Kalyan.jpeg"],
-        "ExpertDescription": "Anil Nair likes to create something new than work on things that are created by someone else. Creation rather than management is his strength.This is reflected in his career path as well. In his chosen field he always followed the upstart than the established. Launching new products and concepts,exploring different ways to do things, finding new revenue streams, taking risks etc always excite him. Anil have launched powerful brands and relaunched organisations in his 26 years of professional career. Goodwind Moto Tours and The Pretty Geeky are his latest passion projects. And he supports a bunch of spirited entrepreneurs from various impact tech industries as a mentor and investor.",
-        "ExpertLinkedIn": "https://www.linkedin.com/in/anilnairs/"
-    },
-    {
-        "ExpertId": 2,
-        "ExpertName": "Anil Nair",
-        "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
-        "ExpertDesignation": "Board member, strategy advisor, mentor and investor",
-        "ExpertCompany": "ThePrettyGeeky, Kalyan Jewellers, Goodwind Mototours",
-        "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/ThePrettyGeeky.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/Kalyan.jpeg"],
-        "ExpertDescription": "Anil Nair likes to create something new than work on things that are created by someone else. Creation rather than management is his strength.This is reflected in his career path as well. In his chosen field he always followed the upstart than the established. Launching new products and concepts,exploring different ways to do things, finding new revenue streams, taking risks etc always excite him. Anil have launched powerful brands and relaunched organisations in his 26 years of professional career. Goodwind Moto Tours and The Pretty Geeky are his latest passion projects. And he supports a bunch of spirited entrepreneurs from various impact tech industries as a mentor and investor.",
-        "ExpertLinkedIn": "https://www.linkedin.com/in/anilnairs/"
-    },
-    {
-        "ExpertId": 3,
-        "ExpertName": "Anil Nair",
-        "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
-        "ExpertDesignation": "Board member, strategy advisor, mentor and investor",
-        "ExpertCompany": "ThePrettyGeeky, Kalyan Jewellers, Goodwind Mototours",
-        "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/ThePrettyGeeky.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/Kalyan.jpeg"],
-        "ExpertDescription": "Anil Nair likes to create something new than work on things that are created by someone else. Creation rather than management is his strength.This is reflected in his career path as well. In his chosen field he always followed the upstart than the established. Launching new products and concepts,exploring different ways to do things, finding new revenue streams, taking risks etc always excite him. Anil have launched powerful brands and relaunched organisations in his 26 years of professional career. Goodwind Moto Tours and The Pretty Geeky are his latest passion projects. And he supports a bunch of spirited entrepreneurs from various impact tech industries as a mentor and investor.",
-        "ExpertLinkedIn": "https://www.linkedin.com/in/anilnairs/"
-    }
+  {
+    "ExpertId": 1,
+    "ExpertName": "Anil Nair",
+    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
+    "ExpertDesignation": "Board member, strategy advisor, mentor and investor",
+    "ExpertCompany": "ThePrettyGeeky, Kalyan Jewellers, Goodwind Mototours",
+    "ExpertCompaniesLogo": [
+      "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/ThePrettyGeeky.jpeg",
+      "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/Kalyan.jpeg",
+      "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/LK-Saatchi-Saatchi-top.jpeg"
+    ],
+    "ExpertDescription": "Anil Nair likes to create something new than work on things that are created by someone else. Creation rather than management is his strength.This is reflected in his career path as well. In his chosen field he always followed the upstart than the established. Launching new products and concepts,exploring different ways to do things, finding new revenue streams, taking risks etc always excite him. Anil have launched powerful brands and relaunched organisations in his 26 years of professional career. Goodwind Moto Tours and The Pretty Geeky are his latest passion projects. And he supports a bunch of spirited entrepreneurs from various impact tech industries as a mentor and investor.",
+    "ExpertLinkedIn": "https://www.linkedin.com/in/anilnairs/"
+  },
+  {
+    "ExpertId": 2,
+    "ExpertName": "Kartikey Gupta",
+    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kartikey+Homepage.jpg",
+    "ExpertDesignation": "Vice President - Kedaara Capital, Ex-BCG, IIM-A 2020 Gold Medalist",
+    "ExpertCompany": "Kedaara Capital, BCG",
+    "ExpertCompaniesLogo": [
+      "https://experts-master.s3.ap-south-1.amazonaws.com/Kartikey_Gupta/Kedaara.jpeg",
+      "https://experts-master.s3.ap-south-1.amazonaws.com/Kartikey_Gupta/IIMA.jpeg",
+      "https://experts-master.s3.ap-south-1.amazonaws.com/Kartikey_Gupta/BCG.jpeg",
+      "https://experts-master.s3.ap-south-1.amazonaws.com/Kartikey_Gupta/Stephens.jpeg"
+    ],
+    "ExpertDescription": "Kartikey is currently the Vice President at Kedaara Capital, an operationally oriented private equity firm pursuing control and minority investment opportunities in India. Kartikey was also an academic gold-medalist at IIM-Ahmedabad, where he graduated from in 2020. Kartikey brings in tonnes of experience - being a consultant, finance professional and vocationally extremely well-versed with current affairs. Some say, he's got a photographic memory :) It's not that hard to believe! ",
+    "ExpertLinkedIn": "https://www.linkedin.com/in/kartikey-gupta-703298112/"
+  },
+  {
+    "ExpertId": 3,
+    "ExpertName": "Anil Nair",
+    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
+    "ExpertDesignation": "Board member, strategy advisor, mentor and investor",
+    "ExpertCompany": "ThePrettyGeeky, Kalyan Jewellers, Goodwind Mototours",
+    "ExpertCompaniesLogo": [
+      "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/ThePrettyGeeky.jpeg",
+      "https://experts-master.s3.ap-south-1.amazonaws.com/Anil_Nair/Kalyan.jpeg"
+    ],
+    "ExpertDescription": "Anil Nair likes to create something new than work on things that are created by someone else. Creation rather than management is his strength.This is reflected in his career path as well. In his chosen field he always followed the upstart than the established. Launching new products and concepts,exploring different ways to do things, finding new revenue streams, taking risks etc always excite him. Anil have launched powerful brands and relaunched organisations in his 26 years of professional career. Goodwind Moto Tours and The Pretty Geeky are his latest passion projects. And he supports a bunch of spirited entrepreneurs from various impact tech industries as a mentor and investor.",
+    "ExpertLinkedIn": "https://www.linkedin.com/in/anilnairs/"
+  }
 ]

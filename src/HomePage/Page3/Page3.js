@@ -11,10 +11,8 @@ const breakPoints = [
 ];
 
 function Page3() {
-  var i=1;
     return (
-    <div  className="page3_homepage_maindiv">
-
+    <div className="page3_homepage_maindiv">
       <div className="heading_box">
       <div>
         <p className="btn">
@@ -34,20 +32,19 @@ function Page3() {
         <div className="carousel-wrapper">
           <Carousel breakPoints={breakPoints}>
             {Data.map(detail => (
-            <div className="Item_component">
-              <CardX 
-                text1={detail.course_instructor_post}
-                text2={detail.course_name}
-                text3={detail.instructor_creds}
-                card={detail.course_image}
-                logo={detail.course_image}
-                name={detail.course_instructor}
-                time={detail.course_timing}
-                fees={detail.fees}
-                key={detail.id}
-                carl={i++}
-              />
-            </div>  
+              <div className="Item_component">
+                <CardX 
+                  text1={detail.course_instructor_post}
+                  text2={detail.course_name}
+                  text3={detail.instructor_creds}
+                  card={detail.course_image}
+                  name={detail.course_instructor}
+                  time={detail.course_timing}
+                  fees={detail.fees}
+                  key={detail.id}
+                  carl={detail.id}
+                />
+              </div>  
             ))}
           </Carousel>
         </div>

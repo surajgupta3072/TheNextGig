@@ -15,34 +15,27 @@
   },
   {
     "id": 3,
-    "img": "https://i.ibb.co/DKHy8kP/Utkarsh-Chaturvedi.jpg",
-    "quotes": "My experience with the gig was one not only rich with application of domain knowledge (which for me was NLP and ML), but also with team management and professionalism. After all, we had great examples to draw from. Team TNG handled the intern-employer interactions flawlessly and gave me and my teammate an excellent primer on working in a corporate set-up.",
-    "name": "Utkarsh Chaturvedi",
-    "post": "IIT-Guwahati"
-  },
-  {
-    "id": 4,
     "img": "https://i.ibb.co/9gcVd2m/Anirudh-Solanki.jpg",
     "quotes": "The project actually helped me explore multiple dimensions in the overall business side. At Orangewood, I was involved in numerous projects learning about sales, marketing, investor relations, operations, and product management. It provided me with opportunities to explore and learn through experience.",
     "name": "Anirudh Solanki",
     "post": "IIT-Kharagpur"
   },
   {
-    "id": 5,
+    "id": 4,
     "img": "https://i.ibb.co/JR2qXPY/Sreedatri-Chandra.jpg",
     "quotes": "I am studying the subject B2B marketing at MICA and learning real time at Scalenut.",
     "name": "Sreedatri Chandra",
     "post": "MICA"
   },
   {
-    "id": 6,
+    "id": 5,
     "img": "https://i.ibb.co/RDLyLfN/Smayan-Das.jpg",
     "quotes": "I think the best thing that I gained is experience and some knowledge of how a tech-first product works.",
     "name": "Smayan Das",
     "post": "IIT-Kharagpur"
   },
   {
-    "id": 7,
+    "id": 6,
     "img": "https://i.ibb.co/3r4n1tk/Priyansh.jpg",
     "quotes": "The project overall was a great experience for me as the project had real scenarios unlike any previous project which meant that the stakes were high. Secondly, overall learning experience was great as we had the opportunity of diving deep in the project and getting to know things at a finer level, both from the commercial as well as the financial aspect",
     "name": "Priyansh Parwani",
