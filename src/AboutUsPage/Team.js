@@ -57,8 +57,6 @@ function Team(){
                                 <a href="https://www.linkedin.com/in/nikhil-agarwal-85a203189/" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
-                     </Row>
-                     <Row style={{marginTop:"2%"}}>
                         <Card style={{ width: "22%",minHeight:"25%", marginLeft: "3%", backgroundColor: "rgba(70, 83, 204, 0.07)", border: "2px solid rgba(70, 83, 204, 0.6)" }}>
                             <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/0C8Jbzc/IMG-20211026-005648-modified.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
@@ -70,6 +68,8 @@ function Team(){
                                 <a href="https://www.linkedin.com/in/prathamesh-palan-7a7511214" target="_blank" rel="noreferrer"><Linkedin style={{color: "white", cursor: "pointer",marginLeft:"45%"}} size={20}/></a>
                             </Card.Body>
                         </Card>
+                     </Row>
+                     <Row style={{marginTop:"2%"}}>
                         <Card  style={{ width: "22%",minHeight:"25%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)" }}>
                         <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/k954mM3/IMG-20210329-184036-modified-1.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
