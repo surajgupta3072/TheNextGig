@@ -11,6 +11,9 @@
 .Mobilenum_input {
   width: 22%;
 }
+.multiSelectContainer input {
+  color: #f26c4f;
+}
 .mobile_nav_profile {
   display: none;
 }

@@ -5,11 +5,10 @@ import { Multiselect } from 'multiselect-react-dropdown';
 import { useState, useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2'
-
+import skills from "../skills.json"
 function Skills(props) {
   const [skillPos, setSkillsPos] = useState([]);
   const [skillAcq, setSkillsAcq] = useState([]);
-
   useEffect(() => {
     if(props.p.wholedata.SkillsPossessed.length!==0) {
       setSkillsPos(props.p.wholedata.SkillsPossessed);
@@ -130,7 +129,7 @@ function Skills(props) {
                 onRemove={onRemove1}
                 selectedValues={skillPos}
                 selectionLimit={20}
-                options={["Item1", "Item2", "Item3", "Item4"]}
+                options={skills[0].skills}
                 isObject={false}
                 placeholder="Select Any"
                 style={{ chips:{background: "#f26c4f", fontSize:"17px", marginLeft:"5px"}, searchBox:{"border": "1px solid #f26c4f", "border-radius": "10px"}, optionContainer: {"border": "2px solid #f26c4f", "background": "#1B1C2A"} }}
@@ -146,7 +145,7 @@ function Skills(props) {
                 onRemove={onRemove2}
                 selectedValues={skillAcq}
                 selectionLimit={20}
-                options={["Item1", "Item2", "Item3", "Item4"]}
+                options={skills[0].skills}
                 isObject={false}
                 placeholder="Select Any"
                 style={{ chips:{background: "#f26c4f", fontSize:"17px", marginLeft:"5px"}, searchBox:{"border": "1px solid #f26c4f", "border-radius": "10px"}, optionContainer: {"border": "2px solid #f26c4f", "background": "#1B1C2A"} }}
