@@ -13,6 +13,7 @@ function CvPitch(props) {
   const [prevgigs, setPrevgigs]=useState([]);
   const [cv, setCV]=useState();
   const [cvlink, setCvlink]=useState("");
+  const [showerr, setShowErr] = useState(false);
 
   useEffect(() => {
     if(props.p.wholedata.CVlink!==undefined)
@@ -102,7 +103,7 @@ function CvPitch(props) {
       });
     }
     else{
-      console.warn("Details not filled")
+      setShowErr("Upload any valid File");
     }
   }
 
@@ -116,6 +117,7 @@ function CvPitch(props) {
           </Col>
          <Col><input accept=".doc, .docx, .pdf, .pages" onChange={(e)=>setCV(e.target.files[0])} type="file" style={{width:"100%",height:"35px"}}/></Col>
        </Row>
+       {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
        <button style={{marginLeft:"60%"}} onClick={handleSubmit} className="button_slide">Save</button>
        <br/><br/><br/>
        <p style={{fontSize:"25px",fontWeight:"bold"}}>Past Applications</p>

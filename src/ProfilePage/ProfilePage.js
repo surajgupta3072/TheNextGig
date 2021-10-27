@@ -200,13 +200,14 @@ function ProfilePage(props) {
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("Personal")} style={color1}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Personal</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("Skills")} style={color2}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Skills</p></Row>
-              <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("Education")} style={color3}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Education</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("WorkEx")} style={color4}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Work Experience</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("CvPitch")} style={color5}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>CV / Other Documents</p></Row>
+              <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
+              <Row onClick={() => whichColor("Skills")} style={color2}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Skills</p></Row>
+              <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               {/* <hr style={{color:"#F26C4F", margin:"2px 0px"}}/> */}
               {/* <Row onClick={() => whichColor("FeedBack")} style={color6}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Feedback & Comments</p></Row> */}
             </Col>
@@ -230,8 +231,8 @@ function ProfilePage(props) {
                   </div>
                   <br/>
                   <div style={{display:"flex",justifyContent:"space-evenly"}}> 
-                  <div><button onClick={() => buttonColor("Skills")} style={{backgroundColor:color44,color:textColor4,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Skills</button></div>
                   <div><button onClick={() => buttonColor("CvPitch")} style={{backgroundColor:color55,color:textColor5,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>CV</button></div>
+                  <div><button onClick={() => buttonColor("Skills")} style={{backgroundColor:color44,color:textColor4,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Skills</button></div>
                   {/* <div><button onClick={() => buttonColor("FeedBack")} style={{backgroundColor:color66,color:textColor6,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Feedback</button></div> */}
                   </div>
                 </div>

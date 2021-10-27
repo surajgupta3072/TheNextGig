@@ -6,6 +6,8 @@ import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2'
 
 function WorkEx(props) {
+  const [showerr, setShowErr] = useState(false);
+
   const [inputFields, setInputFields] = useState([
     { company:'', months: '', description:'' },
   ]);
@@ -104,9 +106,13 @@ function WorkEx(props) {
             background: '#020312',
             color: 'white',
             iconColor: "#F26C4F"
-          })
+          });
+          setShowErr(false);
         }
       });
+    }
+    else {
+      setShowErr("First two fields needs to filled");
     }
   }
     return (
@@ -134,6 +140,7 @@ function WorkEx(props) {
             </div>
             ))}
             <Row onClick={handleAddFields} style={{marginTop:"3%",cursor:"pointer"}}><p style={{textAlign:"end"}}>Add more +</p></Row>
+            {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
             <button onClick={handleSubmit} className="button_slide">Save</button>
           </Container>
         </div>
@@ -154,8 +161,10 @@ function WorkEx(props) {
               </div>
             ))}
             <Row onClick={handleAddFields} style={{marginTop:"3%",cursor:"pointer"}}><p style={{textAlign:"end"}}>Add more +</p></Row>
+            {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
             <div className="button_div">
-            <button onClick={handleSubmit} className="button_slide">Save</button></div>
+              <button onClick={handleSubmit} className="button_slide">Save</button>
+            </div>
           </Container>
         </div>
       </div>

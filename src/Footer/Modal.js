@@ -1,57 +1,55 @@
 import Modal from "react-bootstrap/Modal";
 import "./Modal.css";
-// import emailjs from "emailjs-com";
 import { ArrowLeft } from "react-bootstrap-icons";
 import { useState } from "react";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 function MyVerticallyCenteredModal(props) {
   const [feedback, setFeedback] = useState("");
   const [data, setData] = useState("");
-  const endpoint =
-  " https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
-// We use JSON.stringify here so the data can be sent as a string via HTTP
-const body = JSON.stringify({"body":{
-  "feedback":feedback,
-  "message":data
-}});
-const requestOptions = {
-  method: "POST",
-  body
-};
-const submit=(event)=>
-{ 
-fetch(endpoint, requestOptions)
-    .then((response) => {
-      if (!response.ok)
-      { throw new Error("Error in fetch");
-    }
-      else
-      {
-        setFeedback("");
-        setData("");
-        props.onHide();
-        Swal.fire({
-          title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
-          icon: 'success',
-          showConfirmButton: false,
-          timer: 2000,
-          background: '#020312',
-          color: 'white',
-          iconColor: "#F26C4F"
-        })
-      }
-      return response.json();
-    }).catch((error) => {
-      console.error("Failed to send feedback. Error: ", error)
-    });
-  }
+  const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+  // We use JSON.stringify here so the data can be sent as a string via HTTP
+  const body = JSON.stringify({
+    feedback: feedback,
+    message: data,
+  });
+  const requestOptions = {
+    method: "POST",
+    body,
+  };
+  const submit = (event) => {
+    fetch(endpoint, requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error in fetch");
+        } 
+        else {
+          setFeedback("");
+          setData("");
+          props.onHide();
+          Swal.fire({
+            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 2000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          });
+        }
+        // return response.json();
+      })
+      .catch((error) => {
+        console.error("Failed to send feedback. Error: ", error);
+      });
+  };
   const handleChange = (event) => {
     setFeedback(event.target.value);
   };
   const handleid = (event) => {
     setData(event.target.value);
   };
+
   return (
     <Modal
       {...props}

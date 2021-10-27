@@ -5,11 +5,14 @@ import { Multiselect } from 'multiselect-react-dropdown';
 import { useState, useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2';
-import skills from "../skills.json";
+import skills from "./Skills.json";
 
 function Skills(props) {
   const [skillPos, setSkillsPos] = useState([]);
   const [skillAcq, setSkillsAcq] = useState([]);
+  const [showerr, setShowErr] = useState(false);
+  // const [skillss, setSkillss] = useState(['A', 'B', 'C']);
+
   useEffect(() => {
     if(props.p.wholedata.SkillsPossessed.length!==0) {
       setSkillsPos(props.p.wholedata.SkillsPossessed);
@@ -33,6 +36,14 @@ function Skills(props) {
     setSkillsAcq(selectedList);
   }
 
+  // function examfunc(e) {
+  //   console.log(e);
+  //   if(e=="")
+  //     setSkillss([]);
+  //   else
+  //     setSkillss(skills);
+  // }
+
   function handleSubmit() {
     if(skillPos.length!==0 && skillAcq.length!==0) {
       var params = {
@@ -52,7 +63,7 @@ function Skills(props) {
           props.p.wholedata.SkillsPossessed = data.Attributes.SkillsPossessed
           props.p.wholedata.SkillsWantToAcquire = data.Attributes.SkillsWantToAcquire
           props.p.setWholedata(props.p.wholedata)
-          givereward()
+          givereward();
           Swal.fire({
             title: "<h5 style='color:white'>" + "Saved" + "</h5>",
             icon: 'success',
@@ -61,12 +72,13 @@ function Skills(props) {
             background: '#020312',
             color: 'white',
             iconColor: "#F26C4F"
-          })
+          });
+          setShowErr(false);
         }
       });
     }
     else{
-      console.warn("Details not filled")
+      setShowErr("Both the fields needs to filled");
     }
   }
 
@@ -126,11 +138,15 @@ function Skills(props) {
             <Col md={12}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills you possess</p></Col>
             <Col md={12}>
               <Multiselect
+                // disable={true}
+                // onSearch={examfunc}
+                closeOnSelect={false}
+                // loading={true}
                 onSelect={onSelect1}
                 onRemove={onRemove1}
                 selectedValues={skillPos}
                 selectionLimit={20}
-                options={skills[0].skills}
+                options={skills}
                 isObject={false}
                 placeholder="Select Any"
                 style={{ chips:{background: "#f26c4f", fontSize:"17px", marginLeft:"5px"}, searchBox:{"border": "1px solid #f26c4f", "border-radius": "10px"}, optionContainer: {"border": "2px solid #f26c4f", "background": "#1B1C2A"} }}
@@ -142,18 +158,24 @@ function Skills(props) {
             <Col md={12}><p style={{fontSize:"20px",fontWeight:"bold"}}>Skills you want to acquire</p></Col>
             <Col md={12}>
               <Multiselect
+                // disable={true}
+                // onSearch={examfunc}
+                closeOnSelect={false}
+                // loading={true}
                 onSelect={onSelect2}
                 onRemove={onRemove2}
                 selectedValues={skillAcq}
                 selectionLimit={20}
-                options={skills[0].skills}
+                options={skills}
                 isObject={false}
                 placeholder="Select Any"
                 style={{ chips:{background: "#f26c4f", fontSize:"17px", marginLeft:"5px"}, searchBox:{"border": "1px solid #f26c4f", "border-radius": "10px"}, optionContainer: {"border": "2px solid #f26c4f", "background": "#1B1C2A"} }}
               />
             </Col>
           </Row>
-          <br/><br/>
+          <br/>
+          {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
+          <br/>
           <div className="button_div">
             <button onClick={handleSubmit} style={{marginTop:"4%"}} className="button_slide">Save</button>
           </div>

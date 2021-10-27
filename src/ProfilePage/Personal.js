@@ -184,7 +184,8 @@ function Personal(props) {
             background: '#020312',
             color: 'white',
             iconColor: "#F26C4F"
-          })
+          });
+          setShowErr(false);
         }
       });
     }

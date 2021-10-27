@@ -7,24 +7,16 @@ import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2'
 
 function Education(props) {
-  const options = [
-    {value: '1', label: 'Item 1'},
-    {value: '2', label: 'Item 2'},
-    {value: '3', label: 'Item 3'},
-    {value: '4', label: 'Item 4'},
-    {value: '5', label: 'Item 5'},
-    {value: '6', label: 'Item 6'},
-    {value: '7', label: 'Item 7'},
-  ]
-   const [gradInst, setGradInst] = useState({});
+   const [gradInst, setGradInst] = useState("");
    const [gradBranch,setGradBranch]=useState("");
    const [gradyear,setGradyear]=useState("");
-   const [profInst,setProfInst]=useState({});
+   const [profInst,setProfInst]=useState("");
    const [profBranch,setprofBranch]=useState("");
    const [profyear,setProfyear]=useState("");
-   const [pgradInst,setpgradInst]=useState({});
+   const [pgradInst,setpgradInst]=useState("");
    const [pgradBranch,setpGradBranch]=useState("");
    const [pgradyear,setPgradyear]=useState("");
+   const [showerr, setShowErr] = useState(false);
 
     useEffect(() => {
       if(props.p.wholedata.GradBranch!==undefined) {
@@ -123,7 +115,7 @@ function Education(props) {
             props.p.wholedata.ProfInst = data.Attributes.ProfInst
             props.p.wholedata.PGradInst = data.Attributes.PGradInst
             props.p.setWholedata(props.p.wholedata)
-            givereward()
+            givereward();
             Swal.fire({
               title: "<h5 style='color:white'>" + "Saved" + "</h5>",
               icon: 'success',
@@ -132,12 +124,13 @@ function Education(props) {
               background: '#020312',
               color: 'white',
               iconColor: "#F26C4F"
-            })
+            });
+            setShowErr(false);
           }
         });
       }
       else{
-        console.warn("Details not filled")
+        setShowErr("All the first three fields needs to filled");
       }
     }
     
@@ -148,7 +141,8 @@ function Education(props) {
           <Row>
             <p style={{fontSize:"25px",fontWeight:"bold"}}>Graduation</p>
             <Col style={{fontSize:"20px"}} md={3}>Institution</Col>
-            <Col><Select value={gradInst} onChange={(e)=>setGradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Col>
+            <Col><input value={gradInst} onChange={e => setGradInst(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
+            {/* <Col><Select value={gradInst} onChange={(e)=>setGradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Col> */}
           </Row>
           <Row style={{marginTop:"5%"}}>
             <Col>
@@ -163,7 +157,8 @@ function Education(props) {
           <Row>
             <p style={{fontSize:"25px",fontWeight:"bold",marginTop:"5%"}}>Professional Degree</p>
             <Col style={{fontSize:"20px"}} md={3}>Institution</Col>
-            <Col><Select value={profInst} onChange={(e)=>setProfInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Col>
+            <Col><input value={profInst} onChange={e => setProfInst(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
+            {/* <Col><Select value={profInst} onChange={(e)=>setProfInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Col> */}
           </Row>
           <Row style={{marginTop:"5%"}}>
             <Col>
@@ -178,7 +173,8 @@ function Education(props) {
           <Row>
             <p style={{fontSize:"25px",fontWeight:"bold",marginTop:"5%"}}>Post Graduation</p>
             <Col style={{fontSize:"20px"}} md={3}>Institution</Col>
-            <Col><Select value={pgradInst} onChange={(e)=>setpgradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Col>
+            <Col><input value={pgradInst} onChange={e => setpgradInst(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
+            {/* <Col><Select value={pgradInst} onChange={(e)=>setpgradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Col> */}
           </Row>
           <Row style={{marginTop:"5%"}}>
             <Col>
@@ -190,6 +186,7 @@ function Education(props) {
             </Col>
             <Col><input min="1980" max="2030"  type="number" value={pgradyear} onChange={e => setPgradyear(e.target.value)} style={{width:"100%",height:"35px"}}></input></Col>
           </Row>
+          {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
           <button style={{marginTop:"3%"}} onClick={handleSubmit} className="button_slide">Save</button>
         </Container>
       </div>
@@ -199,7 +196,8 @@ function Education(props) {
           <div style={{marginTop:"30px"}}>
             <Row><p style={{fontSize:"25px",fontWeight:"bold"}}>Graduation</p></Row>
             <Row><span style={{fontSize:"20px", padding: "0"}}>Institution</span></Row>
-            <Row ><Select style={{padding: "0"}} value={gradInst} onChange={(e)=>setGradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Row>
+            <Row><input value={gradInst} onChange={e => setGradInst(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
+            {/* <Row ><Select style={{padding: "0"}} value={gradInst} onChange={(e)=>setGradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Row> */}
             <br/>
             <Row><span style={{fontSize:"18px", padding: "0"}}>Branch / Specialization</span></Row>
             <Row><input value={gradBranch} onChange={e => setGradBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
@@ -210,7 +208,8 @@ function Education(props) {
           <div style={{marginTop:"30px"}}>
             <Row><p style={{fontSize:"25px",fontWeight:"bold"}}>Professional Degree</p></Row>
             <Row><span style={{fontSize:"20px", padding: "0"}}>Institution</span></Row>
-            <Row><Select value={profInst} onChange={(e)=>setProfInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Row>
+            <Row><input value={profInst} onChange={e => setProfInst(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
+            {/* <Row><Select value={profInst} onChange={(e)=>setProfInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Row> */}
             <br/>
             <Row><span style={{fontSize:"18px", padding: "0"}}>Branch / Specialization</span></Row>
             <Row><input value={profBranch} onChange={e => setprofBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
@@ -221,7 +220,8 @@ function Education(props) {
           <div style={{marginTop:"30px"}}>
             <Row><p style={{fontSize:"25px",fontWeight:"bold",marginTop:"5%"}}>Post Graduation</p></Row>
             <Row><span style={{fontSize:"20px", padding: "0"}}>Institution</span></Row>
-            <Row><Select value={pgradInst} onChange={(e)=>setpgradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Row>
+            <Row><input value={pgradInst} onChange={e => setpgradInst(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
+            {/* <Row><Select value={pgradInst} onChange={(e)=>setpgradInst(e)} placeholder="Search..." options={options} className="searchDropdownStyle"/></Row> */}
             <br/>
             <Row><span style={{fontSize:"18px", padding: "0"}}>Branch / Specialization</span></Row>
             <Row><input value={pgradBranch} onChange={e => setpGradBranch(e.target.value)} style={{width:"100%",height:"35px"}}></input></Row>
@@ -232,6 +232,7 @@ function Education(props) {
           <div>
             <br/>
             <div className="button_div">
+            {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
             <button style={{marginTop:"3%", marginBottom: "10%"}} onClick={handleSubmit} className="button_slide">Save</button>
             </div>         
           </div>
