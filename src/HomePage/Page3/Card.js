@@ -12,7 +12,7 @@ export default function CardX(props) {
         <img className="card-image" src={props.card} alt="Logo"/>
         <div style={{display:"flex"}} className="card-like-bar">
           <div className="texting">
-            <b>{props.text2}</b>
+            <pre style={{fontFamily:"Inter",fontWeight:"bolder"}}>{props.text2}</pre>
           </div>
         </div><br />
         <div className="like-text1">{props.name}</div>

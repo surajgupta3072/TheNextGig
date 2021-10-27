@@ -226,7 +226,7 @@ function Page3(props) {
                         {session["episodes"].map((topic, i)=>(
                           <div className="menu_list" style={{cursor:"pointer"}} onClick={() => {showDescription(topic.id)}}>
                           <span >
-                            <a style={{textDecoration: "none", fontSize: "18px"}}>{topic.title}</a><br/>
+                           <div style={{display:"flex",justifyContent:"flex-start",fontSize:"18px"}}><div>&nbsp;&nbsp;</div><div style={{marginTop:"4%",marginBottom:"-2%"}}> {topic.title}</div></div><br/>
                           </span>
                           </div>
                         ))}
@@ -282,7 +282,7 @@ function Page3(props) {
                         {session["episodes"].map(topic=>(
                           <div className="menu_list" style={{cursor:"pointer"}} onClick={() => {showDescription(topic.id)}}>
                           <span >
-                            <a style={{textDecoration: "none"}}>{topic.title}</a><br/>
+                          <div style={{display:"flex",justifyContent:"flex-start",fontSize:"18px"}}><div>&nbsp;&nbsp;</div><div style={{marginTop:"4%",marginBottom:"-2%"}}> {topic.title}</div></div><br/>
                           </span>
                           </div>
                         ))}

@@ -59,6 +59,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+pre {
+  font-size: 1.15rem !important;
+}
 .instructor_name,
 .instructor_post {
   font-size: 0.9rem;

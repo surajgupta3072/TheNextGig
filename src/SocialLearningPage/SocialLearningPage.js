@@ -79,16 +79,25 @@ function SocialLearningPage(props) {
               <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src={dplink} style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>Reward Points: <b>{rew}</b></p></span>:<br/>}</Col></Row>
                 <br/>
                 {active!=="Community" ?
-                  <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading {active==="Videos"?"videos":"blogs"} :
+                  <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading {active==="Videos"?"videos":"blogs"} :{active==="Videos"?<span>
                     <br/>
                     <br/>
-                    <ul><li>Teach something you are good at or something you’ve learnt recently</li>
+                    <ul><li>Teach something that you have learnt through your real life experience</li>
                     <li>Talk about it as if you are explaining it to a 5 year old</li>
                     <li>Don’t worry about your background or surroundings - just open your camera, focus on what you want to say and smile</li>
                     </ul>
                     It’s easier than you think :)
                     <br/>
-                  </div> :
+                    <br/>
+                    <span style={{fontStyle:"italic"}}>PS: We don’t expect you to share confidential information and/or sit for hours to create content – just share what you have learnt and teach</span></span>:<span><br/><br/><ul>
+<li>Write about something you that you have learnt from your real life experience – and that excites you</li>
+<li>Make sure you aren’t plagiarising - noone likes a copycat! :)</li>
+<li>Don’t worry about your language style, the relevance to the larger audience, etc. - as long as you find it valuable, its your original work and there is a clear message that someone can learn from, you’re good to go!</li>
+</ul>
+It’s easier than you think :)
+<br/><br/>
+<p style={{fontStyle:"italic",fontSize:"14px"}}>PS: Uploading videos or blogs or being actively involved in community discussions earns you reward points, personal branding and a whole lot of confidence :)</p></span>}
+                  </div>:
                   <div style={{fontSize:"16px",marginLeft:"7px"}}>
                     <br/>
                     You don't really need guidance in this section. All you gotta do is click on the button down there and join our exclusive community of learners, industry professionals, students, freelancers, employees - basically everyone who is ready to change how the world thinks! :)

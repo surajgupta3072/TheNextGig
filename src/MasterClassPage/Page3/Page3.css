@@ -232,6 +232,7 @@
     margin-left: 2% !important;
   }
   .vertical-menu {
+    margin-left: 0%;
     height: 150px;
     overflow-y: auto;
     font-size: 16px;
@@ -282,7 +283,7 @@
     text-align: center;
   }
   .page3_3linetext {
-    font-size: 14px; 
+    font-size: 14px;
   }
   .page3_cardtext {
     font-size: 18px;

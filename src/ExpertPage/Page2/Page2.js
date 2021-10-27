@@ -67,7 +67,7 @@ function Page2(props) {
                     {expertDetails.ExpertDesignation}
                     </p>
                     <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
-                    <div className="img_arr" style={{marginLeft: "35px"}}>
+                    <div className="img_arr" style={{display:"flex",justifyContent:"space-evenly"}}>
                     {expertDetails.ExpertCompaniesLogo.map((
                       companyLogo, index)=>{ 
                       if(index<3){
@@ -92,7 +92,7 @@ function Page2(props) {
             <p  className="mast_page2_p3">Want to provide feedback about an expert?</p>
           </Col>
           <Col style={{paddingLeft:"12%"}} className="col-button">
-            <button style={{marginLeft:"20%"}} className="button_slide slide_right" onClick={() => setModalShow(true)}>Talk to us
+            <button style={{marginLeft:"20%",marginTop:"5%"}} className="button_slide slide_right" onClick={() => setModalShow(true)}>Talk to us
             <ArrowLeft className="button_arrow"/></button>
             <MyVerticallyPopUp
                   show={modalShow}
