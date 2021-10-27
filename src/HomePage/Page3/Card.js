@@ -14,7 +14,7 @@ export default function CardX(props) {
           <div className="texting">
             <pre style={{fontFamily:"Inter",fontWeight:"bolder"}}>{props.text2}</pre>
           </div>
-        </div><br />
+        </div>
         <div className="like-text1">{props.name}</div>
         <div className="like-text1" style={{display:"flex"}}>
         <div>{props.text1}</div>

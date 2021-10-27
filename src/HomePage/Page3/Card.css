@@ -144,6 +144,9 @@
   .like-text1 {
     font-size: 0.9rem;
   }
+  pre {
+    font-size: 0.9rem !important;
+  }
 }
 @media only screen and (max-width: 576px) {
   .cardpage3 {
@@ -207,6 +210,10 @@
     font-size: 0.7rem;
   }
   .texting {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
+  }
+  pre {
+    font-size: 0.9rem !important;
+    white-space:pre-wrap ;
   }
 }

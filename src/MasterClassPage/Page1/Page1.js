@@ -35,7 +35,7 @@ function Page1() {
                 alt="..."
               />
             <MDBCardBody>
-              <div className="Course_name"><pre style={{fontFamily:"Inter",fontWeight:"bolder"}}>{carder.course_name}</pre></div>
+              <div className="Course_name"><pre style={{fontFamily:"Inter",fontWeight:"bolder", whiteSpace:"pre-wrap"}}>{carder.course_name}</pre></div>
               <div className="instruct_time">
                 <div style={{color:"grey"}} className="instructor_name">
                   {carder.course_instructor}
