@@ -1,6 +1,6 @@
 import Modal from "react-bootstrap/Modal";
 import "./Modal.css";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 import { ArrowLeft } from "react-bootstrap-icons";
 import { useState } from "react";
 import Swal from 'sweetalert2'

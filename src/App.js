@@ -67,15 +67,14 @@ function App() {
       }
     } 
     catch (error) {
-      if (error !== "No current user") {
-        console.log(error);
-      }
+      if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register" && window.location.href!="https://www.thenextgig.net/login" && window.location.href!="https://www.thenextgig.net/register")
+        localStorage.setItem('lastURL', window.location.href);
+      // if (error !== "No current user") {
+      //   console.log(error);
+      // }
     }
     setAuthenticatingStatus(false);
   }, []);
-
-  if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register" && window.location.href!="https://main.d2pb8vz95cq00i.amplifyapp.com/login" && window.location.href!="https://main.d2pb8vz95cq00i.amplifyapp.com/register")
-    localStorage.setItem('lastURL', window.location.href);
 
   const authProps = {
     isAuthenticated: isAuthenticated,

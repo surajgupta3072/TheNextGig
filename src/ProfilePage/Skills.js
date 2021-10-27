@@ -4,8 +4,9 @@ import Col from 'react-bootstrap/Col';
 import { Multiselect } from 'multiselect-react-dropdown';
 import { useState, useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
-import Swal from 'sweetalert2'
-import skills from "../skills.json"
+import Swal from 'sweetalert2';
+import skills from "../skills.json";
+
 function Skills(props) {
   const [skillPos, setSkillsPos] = useState([]);
   const [skillAcq, setSkillsAcq] = useState([]);
