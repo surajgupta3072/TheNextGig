@@ -127,7 +127,7 @@ function MyVerticallyPopUp(props) {
     else {
       await loadScript("https://checkout.razorpay.com/v1/checkout.js");
       const options = {
-        "key": "rzp_test_2hJkSfRZOnRtZp", 
+        "key": "rzp_live_rahssUUGK2hnNy", 
         "amount": Number(props.fees-reward) * 100,
         "currency": "INR",
         "name": props.cname,

@@ -60,7 +60,7 @@
   justify-content: space-around;
 }
 pre {
-  font-size: 1.15rem !important;
+  font-size: 1.15rem ;
 }
 .instructor_name,
 .instructor_post {

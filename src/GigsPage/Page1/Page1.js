@@ -17,15 +17,15 @@ const breakPoints = [
 
 function Page1(props) {
   const [searchterm, setSearchTerm] = useState("");
-  const [color1,setColor1] =useState("#f26c4f");
-  const [textColor1,setextColor1] =useState("white");
-  const [color2,setColor2] =useState("white");
-  const [textColor2,setextColor2] =useState("#f26c4f");
+  const [color1,setColor1] =useState("white");
+  const [textColor1,setextColor1] =useState("#f26c4f");
+  const [color2,setColor2] =useState("#f26c4f");
+  const [textColor2,setextColor2] =useState("white");
   const [color3,setColor3] =useState("white");
   const [textColor3,setextColor3] =useState("#f26c4f");
   const [gigs, setGigs] = useState([]);
   const [redirectlogin, setRedirectLogin] = useState(false);
-  const [buck,setbuck]=useState(1)
+  const [buck,setbuck]=useState(2)
   const [videoslist, setVideosList] = useState(false);
   
   useEffect(() => {
@@ -88,10 +88,6 @@ function Page1(props) {
   }
 
   function buttonColor(word){
-    if(word==="Jobs"){
-      setbuck(1);
-      setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");setColor3("white");setextColor3("#f26c4f");
-    }
     if(word==="Gigs"){
       setbuck(2);
      setColor1("white");setextColor1("#f26c4f");setColor2("#f26c4f");setextColor2("white");setColor3("white");setextColor3("#f26c4f");
@@ -100,6 +96,10 @@ function Page1(props) {
     setbuck(3);
      setColor1("white");setextColor1("#f26c4f");setColor2("white");setextColor2("#f26c4f");setColor3("#f26c4f");setextColor3("white");
    }
+   if(word==="Jobs"){
+    setbuck(1);
+    setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");setColor3("white");setextColor3("#f26c4f");
+  }
   }
   return (
     <div>
@@ -112,18 +112,18 @@ function Page1(props) {
       <br/>
         <Row>
           <Col xs={9} className="SocialLearn_laptop">
-            <button onClick={()=>{buttonColor("Jobs")}} style={{marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Jobs</button>
             <button onClick={()=>{buttonColor("Gigs")}} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs</button>
-            <button onClick={()=>{buttonColor("Internships")}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Internships</button>
+            <button onClick={()=>{buttonColor("Internships")}} style={{marginRight:"5%",backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Internships</button>
+            <button onClick={()=>{buttonColor("Jobs")}} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Jobs</button>
           </Col>
         </Row>
       </Container>
       <div className="SocialLearn_list_mobile">
       <div style={{marginTop:"5%"}} >
-                <div style={{display:"flex",justifyContent:"space-evenly"}}>
-                  <div><button onClick={()=>{buttonColor("Jobs")}} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Jobs</button></div>
+                <div style={{display:"flex",justifyContent:"space-evenly"}}>                 
                   <div><button onClick={()=>{buttonColor("Gigs")}} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Gigs</button></div>
                   <div><button onClick={()=>{buttonColor("Internships")}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Internships</button></div>
+                  <div><button onClick={()=>{buttonColor("Jobs")}} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Jobs</button></div>
                </div> 
              </div> 
       </div>
