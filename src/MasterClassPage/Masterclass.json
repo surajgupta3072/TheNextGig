@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "course_name": "The ultimate guide to marketing, branding & customer understanding",
+    "course_name": "The ultimate guide to marketing, \n branding & customer understanding",
     "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
     "course_instructor": "Anil Nair",
     "course_instructor_post": "Founder, ThePrettyGeeky",
@@ -134,7 +134,7 @@
   },
   {
     "id": 2,
-    "course_name": "Private Equity Investing: The What and How!",
+    "course_name": "Private Equity Investing:\n The What and How!",
     "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kartikey+Homepage.jpg",
     "course_instructor": "Kartikey Gupta",
     "course_instructor_post": "Vice President - Kedaara Capital, Ex-BCG",
@@ -225,7 +225,7 @@
   },
   {
     "id": 3,
-    "course_name": "Chief of Staff - decoded! The MNC version",
+    "course_name": "Chief of Staff - decoded!\n The MNC version",
     "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kapil+Homepage.jpg",
     "course_instructor": "Kapil Dhiman",
     "course_instructor_post": "Chief of Staff - PWC",

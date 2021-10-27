@@ -458,7 +458,7 @@ function Page3(props) {
                <MDBCard  onClick={()=>window.location.href="/TNGoriginals/"+details.id} className="cax card_mastercard" style={{height:"fit-content",borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
              <div className="image_card"><MDBCardImage className="mbd_image" style={{marginLeft:"1px",width:"100%"}} src={details.course_image} alt='...' /></div>
              <MDBCardBody > 
-               <div className="Course_name">{details.course_name}</div>
+               <div className="Course_name">{details.course_name}</div><br />
                  <div style={{color:"grey"}} className="instructor_name">{details.course_instructor}
                </div>
                  <div style={{color:"grey"}} className="instructor_post">{details.course_instructor_post}</div>
