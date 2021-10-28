@@ -68,6 +68,8 @@ function App() {
                 method: "POST",
                 body,
               };
+              if(localStorage.getItem("login")!==decoded.sub)
+              {
               fetch(endpoint, requestOptions)
         .then((response) => {
           if (!response.ok) {
@@ -80,7 +82,9 @@ function App() {
         });
               localStorage.setItem("login", decoded.sub);
             }
+          }
           })
+          
         }
       }
       else {

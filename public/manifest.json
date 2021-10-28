@@ -3,17 +3,17 @@
   "name": "Learn. Share knowledge. Grow.",
   "icons": [
     {
-      "src": "TNG_logo.png",
+      "src": "TNG_logo_tab.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "TNG_logo.png",
+      "src": "TNG_logo_tab.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "TNG_logo.png",
+      "src": "TNG_logo_tab.png",
       "type": "image/png",
       "sizes": "512x512"
     }
