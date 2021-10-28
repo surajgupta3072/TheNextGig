@@ -18,7 +18,7 @@ function Page1() {
                 </div>
                 <div>
                   <p className="slide-down">
-                    <span>UPSKILL.</span>
+                    <span>SHARE.</span>
                   </p>
                 </div>
                 <div>

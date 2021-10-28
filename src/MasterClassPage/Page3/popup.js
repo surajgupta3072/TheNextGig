@@ -6,7 +6,20 @@ import Swal from 'sweetalert2'
 
 function MyVerticallyPopUp(props) {
   const [reward, setReward] = useState("");
-
+  const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+  console.log(props)
+  // We use JSON.stringify here so the data can be sent as a string via HTTP
+  const body = JSON.stringify({
+    feedback: `Uid:${props.uid}`,
+    user:props.email,
+    title:"User Pusrchased MasterSessions",
+    feedback1:"",
+    feedback2:""
+  });
+  const requestOptions = {
+    method: "POST",
+    body,
+  };
   useEffect(() => {
     var paramss = {
       TableName: "UsersTable",
@@ -55,47 +68,55 @@ function MyVerticallyPopUp(props) {
               ReturnValues:"UPDATED_NEW"
             }
             docClient.update(params, function (err, data) {
-              if (err) {
-                console.log(err);
-              } else {
-                setReward(0);
-                Swal.fire({
-                  title: "<h5 style='color:white'>" + "PAYMENT SUCCESSFUL!" + "</h5>",
-                  icon: 'success',
-                  showConfirmButton: false,
-                  timer: 3000,
-                  background: '#020312',
-                  color: 'white',
-                  iconColor: "#F26C4F"
-                });
-                var paramss = {
+              fetch(endpoint, requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error in fetch");
+        } 
+        else {
+          setReward(0);
+          Swal.fire({
+            title: "<h5 style='color:white'>" + "PAYMENT SUCCESSFUL!" + "</h5>",
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 3000,
+            background: '#020312',
+            color: 'white',
+            iconColor: "#F26C4F"
+          });
+          var paramss = {
+            TableName: "UsersTable",
+            Key: { "UserID":props.uid },
+            ProjectionExpression: "SkillsAcquiredMastersessions",
+          };
+          docClient.get(paramss, function(err, data) {
+            if (err) {
+              console.log(err);
+            } else {
+                var params = {
                   TableName: "UsersTable",
                   Key: { "UserID":props.uid },
-                  ProjectionExpression: "SkillsAcquiredMastersessions",
-                };
-                docClient.get(paramss, function(err, data) {
+                  UpdateExpression: "set SkillsAcquiredMastersessions["+data.Item.SkillsAcquiredMastersessions.length.toString()+"] = :sam",
+                  ExpressionAttributeValues:{
+                    ":sam":props.crole,
+                  },
+                  ReturnValues:"UPDATED_NEW"
+                }
+                docClient.update(params, function (err, data) {
                   if (err) {
                     console.log(err);
                   } else {
-                      var params = {
-                        TableName: "UsersTable",
-                        Key: { "UserID":props.uid },
-                        UpdateExpression: "set SkillsAcquiredMastersessions["+data.Item.SkillsAcquiredMastersessions.length.toString()+"] = :sam",
-                        ExpressionAttributeValues:{
-                          ":sam":props.crole,
-                        },
-                        ReturnValues:"UPDATED_NEW"
-                      }
-                      docClient.update(params, function (err, data) {
-                        if (err) {
-                          console.log(err);
-                        } else {
-                          window.location.reload();
-                        }
-                      });
-                    }
+                    window.location.reload();
+                  }
                 });
               }
+          });
+        }
+        // return response.json();
+      })
+      .catch((error) => {
+        console.error("Failed to send feedback. Error: ", error);
+      });
             });
           }
         });

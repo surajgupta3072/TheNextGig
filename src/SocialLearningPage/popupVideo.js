@@ -5,7 +5,6 @@ import S3 from 'react-aws-s3';
 import crypto from 'crypto';
 import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2'
-import emailjs from "emailjs-com";
 const config = {bucketName: "socialvideoslearn", region: process.env.REACT_APP_REGION, accessKeyId: process.env.REACT_APP_ACCESS_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY};
 const ReactS3Client = new S3(config);
 
@@ -15,9 +14,8 @@ function MyVerticallyPopUp(props) {
     const [hashtag,setHashtag]=useState("");
     const [vfile,setVfile]=useState();
     const [showerr, setShowErr] = useState(false);
-    const SERVICE_ID = "service_mztzudb";
-    const TEMPLATE_ID = "template_4od9vgl";
-    
+    const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+  // We use JSON.stringify here so the data can be sent as a string via HTTP
     function handleApply() {
       if(topic!=="" && creds!=="" && hashtag!=="" && vfile!==undefined) {
         if(vfile.size>1073741824) {
@@ -74,22 +72,43 @@ function MyVerticallyPopUp(props) {
                       if (err) {
                         console.log(err);
                       } else {
-                        props.onHide();
-                        emailjs.send(
-                          SERVICE_ID,
-                          TEMPLATE_ID,
-                          {feedback:props.userid.attributes.name, Details:topic},
-                          "user_LuNukIHe37LdAF6nNkxao"
-                        );
-                        Swal.fire({
-                          title: "<h5 style='color:white'>" + "Congratulations! Your video has been uploaded! You will see it on the platform shortly." + "</h5>",
-                          icon: 'success',
-                          showConfirmButton: false,
-                          timer: 4000,
-                          background: '#020312',
-                          color: 'white',
-                          iconColor: "#F26C4F"
+                        const body = JSON.stringify({
+                          feedback:`Topic:${topic}`,
+                          feedback1: `Hastags:${hashtag}`,
+                          feedback2:adata.VideoLink,
+                          title:"Video",
+                          user:props.userid.attributes.name
                         });
+                        const requestOptions = {
+                          method: "POST",
+                          body,
+                        };
+                        fetch(endpoint, requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error in fetch");
+        } 
+        else {
+          props.onHide();
+          
+          setTopic("")
+          setCreds("")
+          setHashtag("")
+          Swal.fire({
+            title: "<h5 style='color:white'>" + "Congratulations! Your video has been uploaded! You will see it on the platform shortly." + "</h5>",
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 4000,
+            background: '#020312',
+            color: 'white',
+            iconColor: "#F26C4F"
+          });
+        }
+        // return response.json();
+      })
+      .catch((error) => {
+        console.error("Failed to send feedback. Error: ", error);
+      });
                       }
                     });
                   }

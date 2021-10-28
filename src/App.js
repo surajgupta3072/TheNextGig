@@ -82,7 +82,7 @@ function App() {
     setAuthStatus: setAuthStatus,
     setUser: setUser,
   };
-  // console.log("NIK authProps=", authProps);
+   console.log("NIK authProps=", authProps);
   return (
     <div>
       {!isAuthenticating && (

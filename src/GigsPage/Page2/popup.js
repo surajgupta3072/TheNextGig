@@ -1,6 +1,5 @@
 import Modal from "react-bootstrap/Modal";
 import "./popup.css";
-import emailjs from "emailjs-com";
 import { ArrowLeft } from "react-bootstrap-icons";
 import { useState } from "react";
 import Swal from 'sweetalert2'
@@ -18,34 +17,45 @@ function MyVerticallyPopUp(props) {
   const handleid = (event) => {
     setdata(event.target.value);
   };
-  const SERVICE_ID = "service_mztzudb";
-  const TEMPLATE_ID = "template_r0wbju9";
+  const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+  // We use JSON.stringify here so the data can be sent as a string via HTTP
+  const body = JSON.stringify({
+    feedback:`Recommedation Field: ${field1}`,
+    user: data,
+    title:"Recommedation From Gigs",
+    feedback1:`Recommedation Text:${field2}`
+  });
+  const requestOptions = {
+    method: "POST",
+    body,
+  };
   const submit = (event) => {
     event.preventDefault();
-    emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        { title: "Gigs", field1, field2, Details: data },
-        "user_LuNukIHe37LdAF6nNkxao"
-      )
-      .then((res) => {
-        if (res.status === 200) {
-          setdata("");
-          setfield1("");
-          setfield2("");
+    fetch(endpoint, requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error in fetch");
+        } 
+        else {
           props.onHide();
+          setdata("")
+          setfield1("")
+          setfield2("")
           Swal.fire({
             title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
-            icon: 'success',
+            icon: "success",
             showConfirmButton: false,
             timer: 2000,
-            background: '#020312',
-            color: 'white',
-            iconColor: "#F26C4F"
-          })
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          });
         }
+        // return response.json();
       })
-      .catch((err) => console.error("Failed to send feedback. Error: ", err));
+      .catch((error) => {
+        console.error("Failed to send feedback. Error: ", error);
+      });
   };
 
   return (

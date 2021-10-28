@@ -4,7 +4,6 @@ import { ArrowLeft } from 'react-bootstrap-icons'
 import crypto from 'crypto';
 import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2'
-import emailjs from "emailjs-com";
 
 function MyVerticallyPopUpBlog(props) {
     const [topic, setTopic] = useState("");
@@ -12,9 +11,8 @@ function MyVerticallyPopUpBlog(props) {
     const [hashtag, setHashtag] = useState("");
     const [blog, setBlog] = useState();
     const [showerr, setShowErr] = useState(false);
-    const SERVICE_ID = "service_mztzudb";
-    const TEMPLATE_ID = "template_4od9vgl";
-
+    const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+    // We use JSON.stringify here so the data can be sent as a string via HTTP
     function handleApply() {
         if (topic !== "" && creds!=="" && hashtag !== "" && blog !== "") {
             const adata = {
@@ -59,21 +57,43 @@ function MyVerticallyPopUpBlog(props) {
                           console.log(err);
                         } else {
                           props.onHide();
-                          emailjs.send(
-                            SERVICE_ID,
-                            TEMPLATE_ID,
-                            {feedback:props.userid.attributes.name, Details:blog},
-                            "user_LuNukIHe37LdAF6nNkxao"
-                          );
-                          Swal.fire({
-                            title: "<h5 style='color:white'>" + "Congratulations! Your blog has been submitted! You will see it on the platform shortly." + "</h5>",
-                            icon: 'success',
-                            showConfirmButton: false,
-                            timer: 4000,
-                            background: '#020312',
-                            color: 'white',
-                            iconColor: "#F26C4F"
-                          }).then(props.onHide());
+                          const body = JSON.stringify({
+                            feedback:`Topic:${topic}`,
+                            feedback1:`Blog:${blog}`,
+                            title:"Blog",
+                            user:props.userid.attributes.name,
+                            feedback2:`Hastag:${hashtag}`
+                          });
+                          const requestOptions = {
+                            method: "POST",
+                            body,
+                          };
+                          fetch(endpoint, requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error in fetch");
+        } 
+        else {
+          props.onHide();
+          setBlog("")
+          setTopic("")
+          setCreds("")
+          setHashtag("")
+          Swal.fire({
+            title: "<h5 style='color:white'>" + "Congratulations! Your blog has been submitted! You will see it on the platform shortly." + "</h5>",
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 4000,
+            background: '#020312',
+            color: 'white',
+            iconColor: "#F26C4F"
+          }).then(props.onHide());
+        }
+        // return response.json();
+      })
+      .catch((error) => {
+        console.error("Failed to send feedback. Error: ", error);
+      });
                         }
                       });
                     }

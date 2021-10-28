@@ -16,6 +16,8 @@ function MyVerticallyPopUp(props) {
   const [showerr, setShowErr] = useState(false);
 
   function handleApply() {
+    const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+  // We use JSON.stringify here so the data can be sent as a string via HTTP
     if(fees!=0 && choice!=="" && hours!=0 && afile!==undefined) {
       config.dirName = props.userid
       ReactS3Client.uploadFile(afile, props.gigid+"----"+afile.name).then(data => {
@@ -71,22 +73,42 @@ function MyVerticallyPopUp(props) {
                       ReturnValues:"UPDATED_NEW"
                     }
                     docClient.update(params, function (err, data) {
-                      if (err) {
-                        console.log(err);
-                      } 
-                      else {
-                        props.onHide();
-                        Swal.fire({
-                          title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
-                          icon: 'success',
-                          showConfirmButton: false,
-                          timer: 2000,
-                          background: '#020312',
-                          color: 'white',
-                          iconColor: "#F26C4F"
-                        }).then(()=>window.location.href="/ExperientialLearning")
-                        // alert("APPLIED SUCCESSFULLY")
-                      }
+                      const body = JSON.stringify({
+                        feedback:`Name of Gig Applied:${adata.GigName}`,
+                        user:props.userid,
+                        title:"Gigs Applied",
+                        feedback1:`Choice:${choice} Fees:${fees} Hours:${hours}`,
+                        feedback2:`Resume Link:${adata.upload}`
+                      });
+                      const requestOptions = {
+                        method: "POST",
+                        body,
+                      };
+                      fetch(endpoint, requestOptions)
+                      .then((response) => {
+                        if (!response.ok) {
+                          throw new Error("Error in fetch");
+                        } 
+                        else {
+                          props.onHide();
+                          setFees("")
+                          setChoice("")
+                          setHours("")
+                          Swal.fire({
+                            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 2000,
+                            background: '#020312',
+                            color: 'white',
+                            iconColor: "#F26C4F"
+                          }).then(()=>window.location.href="/ExperientialLearning")
+                        }
+                        // return response.json();
+                      })
+                      .catch((error) => {
+                        console.error("Failed to send feedback. Error: ", error);
+                      });
                     });
                   }
                 });

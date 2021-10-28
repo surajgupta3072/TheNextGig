@@ -77,7 +77,6 @@ function Page3(props) {
       setPaymentShow(true);
     }
   };
-
     return (
     <div>
       <div className="header_masterclass">
@@ -133,6 +132,7 @@ function Page3(props) {
                   <MyVerticallyPopUp
                     uid={props.prop.username}
                     cid={session.id}
+                    email={props.prop.attributes.email}
                     cname={session.course_name}
                     crole={session.course_role}
                     fees={session.fees}
@@ -162,6 +162,7 @@ function Page3(props) {
                   <MyVerticallyPopUp
                     uid={props.prop.username}
                     cid={session.id}
+                    email={props.prop.attributes.email}
                     cname={session.course_name}
                     crole={session.course_role}
                     fees={session.fees}

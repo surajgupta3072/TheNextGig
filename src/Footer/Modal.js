@@ -10,8 +10,11 @@ function MyVerticallyCenteredModal(props) {
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   // We use JSON.stringify here so the data can be sent as a string via HTTP
   const body = JSON.stringify({
-    feedback: feedback,
-    message: data,
+    feedback: `Feedback:${feedback}`,
+    title:"Feedback",
+    feedback2:"",
+    user:data,
+    feedback1:""
   });
   const requestOptions = {
     method: "POST",
