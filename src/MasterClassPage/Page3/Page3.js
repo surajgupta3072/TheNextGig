@@ -27,7 +27,6 @@ function Page3(props) {
   const [coursePurchased, setCoursePurchased] = useState(false);
   const [redirectlogin, setRedirectLogin] = useState(false);
   const [relatedgigs, setDataRelatedGigs] = useState([]);
-
   useEffect(() => {
     if(props.prop!==null) {
       var params = {
@@ -132,6 +131,7 @@ function Page3(props) {
                   <MyVerticallyPopUp
                     uid={props.prop.username}
                     cid={session.id}
+                    name={props.prop.attributes.name}
                     email={props.prop.attributes.email}
                     cname={session.course_name}
                     crole={session.course_role}
@@ -162,6 +162,7 @@ function Page3(props) {
                   <MyVerticallyPopUp
                     uid={props.prop.username}
                     cid={session.id}
+                    name={props.prop.attributes.name}
                     email={props.prop.attributes.email}
                     cname={session.course_name}
                     crole={session.course_role}
@@ -205,6 +206,7 @@ function Page3(props) {
                           <MyVerticallyPopUp
                             uid={props.prop.username}
                             cid={session.id}
+                            name={props.prop.attributes.name}
                             cname={session.course_name}
                             crole={session.course_role}
                             fees={session.fees}
@@ -263,6 +265,7 @@ function Page3(props) {
                             cid={session.id}
                             cname={session.course_name}
                             crole={session.course_role}
+                            name={props.prop.attributes.name}
                             fees={session.fees}
                             show={modalShow}
                             onHide={() => setModalShow(false)}
