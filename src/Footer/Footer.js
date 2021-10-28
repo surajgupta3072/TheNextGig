@@ -29,6 +29,7 @@ function Footer(){
                     <div className='footer-link'>
                         <a href="/AboutUs" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Team</a>
                         <a href="/AboutUs" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Vision</a>
+                        <a href="/AboutUs" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Contact Us</a>
                     </div>
                 </Col>
                 <Col>
@@ -76,6 +77,7 @@ function Footer(){
                     <div className='footer-link'>
                         <a href="/AboutUs" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Team</a>
                         <a href="/AboutUs" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Vision</a>
+                        <a href="/AboutUs" style={{display:"block", marginBottom:"5%", fontSize:"18px"}}>Contact Us</a>
                     </div>
                 </Col>
                 </div>
