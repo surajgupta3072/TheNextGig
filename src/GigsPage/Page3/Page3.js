@@ -271,7 +271,7 @@ function Page3(props) {
                       alt="..."
                     />
                     <MDBCardBody>
-                    <div className="Course_name"><pre style={{fontFamily:"Inter",fontWeight:"bolder"}}>{carder.course_name}</pre></div>
+                    <div className="Course_name"><pre style={{whiteSpace:"pre-wrap",fontFamily:"Inter",fontWeight:"bolder"}}>{carder.course_name}</pre></div>
                  <div style={{color:"grey"}} className="instructor_name">{carder.course_instructor}
                </div>
                  <div style={{color:"grey"}} className="instructor_post">{carder.course_instructor_post}</div>

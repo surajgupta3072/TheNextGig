@@ -111,7 +111,7 @@ function NotALearnerPage() {
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
-                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="./maarten.jpeg"/>
+                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"10px"}} variant="top" src="https://i.ibb.co/r6fwNQJ/maarten.jpg"/>
                                 </Col>
                                 <Col>
                                 <Card.Text style={{fontSize:"12px",whiteSpace:"nowrap"}}>
@@ -167,7 +167,7 @@ function NotALearnerPage() {
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
                 </Col> 
-                <Col md={2}>
+                <Col style={{display:"flex",justifyContent:"center"}} md={2}>
                     <Linkedin onClick={()=>window.location.href="https://www.linkedin.com/company/thenextgig/"} style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                     <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;

@@ -142,6 +142,22 @@ function TC() {
           same.
           <br />
           <br />
+          <span style={{ fontSize: "18px", fontWeight: "bold" }}>Disclaimer</span><br /><br />
+          The Company will not be liable for any loss that may arise due to any
+           content accessed through Social Learning and / or any opportunities
+            availed through the Experiential Learning section.  The loss (if any)
+             on account of viewing TNG Originals will be restricted to the actual 
+             amount (excluding rewards / credits) paid by the User. Such loss shall
+              be reviewed on a case-by-case basis.<br /><br />
+
+          <span style={{ fontSize: "18px", fontWeight: "bold" }}>Refund & Cancellation Policy</span><br /><br />
+          You can review the first session (and trailer) of the course before
+           purchasing a session. Hence, the request for a refund (if any) will
+            be evaluated on a case-by-case basis and will be at the sole discretion
+             of the Company. Further, no refund will be allowed in cases where
+              the session has been purchased using credits.<br /><br />
+
+          All the refund requests (and/or query) must be sent across to hello@thenextgig.net.<br /><br />
         </div>
       </div>
     </div>
