@@ -5,7 +5,11 @@ import { Linkedin } from 'react-bootstrap-icons';
 // import MasterSessions from './../MasterSessions';
 
 function Page1(props) {
-  const expert = expertData[props.Eid-1];
+  var filteredArray = expertData.filter(function(ob){
+    if(ob.ExpertId===Number(props.Eid))
+      return ob;
+  });
+  const expert = filteredArray[0];
   return (
     <div>
       <div className="header_masterclass">

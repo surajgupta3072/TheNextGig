@@ -225,6 +225,133 @@
   },
   {
     "id": 3,
+    "course_name": "The Practical Guide to /n‘Investment Banking’",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhay+Homepage.jpg",
+    "course_instructor": "Abhay Agrawal ",
+    "course_instructor_post": "VP @ Pvt. Investment Office | Ex-Citi | Ex-BAML",
+    "instructor_creds": "IIM-A 2020 | CA (AIR 48)",
+    "course_timing": "1hr 2mins",
+    "course_episode": "15 episodes",
+    "course_description": "Investment Banking is super intense, financially rewarding, and extremely exciting! Right from brainstorming potential M&As to sourcing deals to pitching to analysis to project management to final closure - the Investment Banker does it all...and with utmost skill!",
+    "course_role": "M&A, Finance, Banking, Investment Banking",
+    "WhatYouLearn": [
+      "Investment Banking basics, meaning",
+      "The IB process and breakdown of each stage",
+      "Real-life case study of an IB deal",
+      "Skills required to be in IB"
+    ],
+    "PreparesYouFor": [
+      "Finance Roles",
+      "Investment Banking Roles",
+      "M&A roles"
+    ],
+    "WhatsInForYou": [
+      "Lifetime access to 'inside information' in the IB space",
+      "compressed into 1 hour of learning",
+      "Preference for experiential learning opportunities that we",
+      "source for you in this domain",
+      "A certificate of completion and a chance to get your",
+      "in-session case / project reviewed by the expert"
+    ],
+    "fees": "399",
+    "ExpertId": 5,
+    "trailer_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+Trailer.mp4",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "1. Investment banks in a nutshell",
+        "description": "Investment banking is a term which catches everyone’s attention but what exactly are they? What work do they do? How are they structured? Everything you have ever wondered about investment banks in this episode.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+Episode+1.mp4"
+      },
+      {
+        "id": 2,
+        "title": "2. Mergers and Acquisitions - introduction",
+        "description": "Zee -Sony merger, Vodafone-Idea merger, Walmart’s acquisition of Flipkart. I am sure you have heard of these multi-billion dollar transactions but do you know what they mean and is that all investment banks do?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+2.mp4"
+      },
+      {
+        "id": 3,
+        "title": "3. The reason why M&As are done",
+        "description": "We can never fully understand what mergers and acquisitions are until we know why they take place? What drives these companies to take the billion dollar step? Let’s find out.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+3.mp4"
+      },
+      {
+        "id": 4,
+        "title": "4. The M&A process - decoded",
+        "description": "A deep dive into the entire process, right from the first handshake to the closing of the deal and who better to guide us through it than an investment banker himself.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+4.mp4"
+      },
+      {
+        "id": 5,
+        "title": "5. Test it out!",
+        "description": "One of the biggest and most exciting acquisitions of all time simplified - for you to decipher and analyse. Can you think like the best?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+5.mp4"
+      },
+      {
+        "id": 6,
+        "title": "6. Role of investment banks in the M&A process",
+        "description": "Now that we know everything about M&A, let us hangout with the experts, learn what they do, how they do and derive insights from their work so we can master it.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+6.mp4"
+      },
+      {
+        "id": 7,
+        "title": "7. ‘Pitching’ under a microscope",
+        "description": "Inbound pitches v/s. Outbound pitches. Information from public sources v/s. private sources. The story, the structure, the valuation estimates. All very interesting and intricate!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+7.mp4"
+      },
+      {
+        "id": 8,
+        "title": "8. The IB transaction process post mandate",
+        "description": "Teaser, information memorandum, business plans, client discussions, etc. All these terms probably seem alien to you - let’s change that by learning how a typical IB transaction takes place after a mandate has been won.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+8.mp4"
+      },
+      {
+        "id": 9,
+        "title": "9. Transaction process elements - in depth",
+        "description": "We learnt the transaction process and we know what the elements are but let us now learn those elements in detail with real life examples.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+9.mp4"
+      },
+      {
+        "id": 10,
+        "title": "10. Valuation in a deal",
+        "description": "Valuation, the single most powerful term which shapes every deal. Let us learn how it takes place, terms associated with it, it’s position in a transaction and what follows it.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+10.mp4"
+      },
+      {
+        "id": 11,
+        "title": "11. Deal proces - summary",
+        "description": "Everything we have learnt so far in under a minute, let’s revise!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+11.mp4"
+      },
+      {
+        "id": 12,
+        "title": "12. Evaluation and selection of bids",
+        "description": "We have got tons of offers from lots of investors…what now? How to evaluate bids (yes, there is more to it than money) and select the perfect partner, since there is nothing worse than selecting an investor or a partner who is not compatible with the organisation.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+12.mp4"
+      },
+      {
+        "id": 13,
+        "title": "13. An Investment Banker’s time and skills",
+        "description": "I am sure by now you’ve decided that you want to become an investment banker too, but do you know what their long (yet fulfilling) 18h day comprises? Or what it actually takes to get into investment banking and excel at it? Let’s find out.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+13.mp4"
+      },
+      {
+        "id": 14,
+        "title": "14. Where is the IB industry headed",
+        "description": "Everyday new industries come up and some industries go extinct with the rise of AI and machines. How do all these factors affect the Investment banking industry? What is the future looking like? Find out here!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+14.mp4"
+      },
+      {
+        "id": 15,
+        "title": "15. Conclusion",
+        "description": "Wrapping up the series :) Reach out on: hello@thenextgig.net with your questions!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhay/Abhay+-+Conclusion.mp4"
+      }
+    ],
+    "gigs": []
+  },
+  {
+    "id": 4,
     "course_name": "Chief of Staff - decoded!\nThe MNC version",
     "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kapil+Homepage.jpg",
     "course_instructor": "Kapil Dhiman",
@@ -239,7 +366,7 @@
     "fees": ""
   },
   {
-    "id": 4,
+    "id": 5,
     "course_name": "Investing through the Venture Capital Lens",
     "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhijay+homepage.jpg",
     "course_instructor": "Abhijay Thacker",
