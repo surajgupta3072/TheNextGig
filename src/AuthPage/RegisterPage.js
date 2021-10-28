@@ -16,6 +16,7 @@ function RegisterPage(props) {
   const [otp, setOtp] = useState("");
   const [showerr, setShowErr] = useState(false);
   const [showVerifyBox, setShowVerifiyBox] = useState(false);
+  
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   async function RegisterUser() {
     const username = email;
@@ -52,7 +53,7 @@ function RegisterPage(props) {
           Item: {"UserID": userLogin.username, "FullName":name, "Email":email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards": 399, 
           "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], 
           "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": email.split("@")[0], "ReferredBy": "",
-          "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": []}
+          "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": false}
         }
         docClient.put(params, function (err, data) {
           if (err) {

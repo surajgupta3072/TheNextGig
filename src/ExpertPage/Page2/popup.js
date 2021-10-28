@@ -71,8 +71,7 @@ function MyVerticallyPopUp(props) {
            <select 
               onChange={handlefield2}
               style={{ width: "100%" }}
-              value={field2}
-              style={{width:"100%"}}>
+              value={field2}>
                 <option selected disabled>Select from dropdown*</option>
                 <option>Reccomendation</option>
                 <option>Feedback</option>

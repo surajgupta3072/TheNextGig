@@ -152,7 +152,6 @@ function Personal(props) {
   }
 
   function handleSubmit() {
-    console.log(dob, gender, mobile, quirky)
     if(dob!==undefined && gender!==undefined && mobile!==undefined && quirky!==undefined) {
       var params = {
         TableName: "UsersTable",

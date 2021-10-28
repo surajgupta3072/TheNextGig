@@ -35,57 +35,56 @@ function App() {
 
   useEffect(async () => {
     try {
-      const session = await Auth.currentSession();
+      await Auth.currentSession();
       setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
-      // console.log(user);
       if(user.username.includes("google")) {
         var decoded = jwt_decode(user.signInUserSession.idToken.jwtToken);
-        // console.log(decoded);
         let guser = {
-          "attributes": {"name": decoded.name,email:decoded.email},
+          "attributes": {"name":decoded.name, "email":decoded.email},
           "username": decoded.sub
-        }
+        };
         setUser(guser);
-        if(localStorage.getItem("login")!==decoded.sub) {
-          var params = {
-            TableName: "UsersTable",
-            Item: {"UserID":decoded.sub, "FullName":decoded.name, "Email":decoded.email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards": 399, "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0], "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": []}
-          }
-          docClient.put(params, function (err, data) {
-            if (err) {
-              console.log('Error', err)
+        var params = {
+          TableName: "UsersTable",
+          Key: { "UserID": decoded.sub },
+          ProjectionExpression: "Gflag",
+        };
+        docClient.get(params, function(err, data) {
+          if(data.Item===undefined) {
+            var paramss = {
+              TableName: "UsersTable",
+              Item: {"UserID":decoded.sub, "FullName":decoded.name, "Email":decoded.email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards": 399, "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0], "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag":true}
             }
-            else {
-              const body = JSON.stringify({
-                feedback:"",
-                feedback1: params.Item.FullName,
-                feedback2:"",
-                title:"You're in! Welcome to TNG 🥳",
-                user:params.Item.Email
-              });
-              const requestOptions = {
-                method: "POST",
-                body,
-              };
-              if(localStorage.getItem("login")!==decoded.sub)
-              {
-              fetch(endpoint, requestOptions)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Error in fetch");
+            docClient.put(paramss, function (err, data) {
+              if (err) {
+                console.log('Error', err)
+              }
+              else {
+                const body = JSON.stringify({
+                  feedback: "",
+                  feedback1: paramss.Item.FullName,
+                  feedback2: "",
+                  title: "You're in! Welcome to TNG 🥳",
+                  user: paramss.Item.Email
+                });
+                const requestOptions = {
+                  method: "POST",
+                  body,
+                };
+                fetch(endpoint, requestOptions)
+                  .then((response) => {
+                    if (!response.ok) {
+                      throw new Error("Error in fetch");
+                    }
+                  })
+                  .catch((error) => {
+                    console.error("Failed to send feedback. Error: ", error);
+                  });
+              }
+            });
           }
-          // return response.json();
-        })
-        .catch((error) => {
-          console.error("Failed to send feedback. Error: ", error);
         });
-              localStorage.setItem("login", decoded.sub);
-            }
-          }
-          })
-          
-        }
       }
       else {
         setUser(user);
@@ -94,9 +93,6 @@ function App() {
     catch (error) {
       if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register" && window.location.href!="https://www.thenextgig.net/login" && window.location.href!="https://www.thenextgig.net/register")
         localStorage.setItem('lastURL', window.location.href);
-      // if (error !== "No current user") {
-      //   console.log(error);
-      // }
     }
     setAuthenticatingStatus(false);
   }, []);

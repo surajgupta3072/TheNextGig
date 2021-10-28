@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Personal from './Personal';
 import Education from './Education';
 import WorkEx from './WorkEx';
-import Skills from './Skills';
+// import Skills from './Skills';
 import CvPitch from './CvPitch';
 // import FeedBack  from './Feedback';
 import Container from 'react-bootstrap/Container';
@@ -57,7 +57,7 @@ function ProfilePage(props) {
     };
     try {
       const data1 = await docClient.query(paramss).promise();
-      setWholedata(data1);
+      setWholedata(data1.Items[0]);
       setActive("Personal");
       setNavbarHeading("Personal");
       const per = data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC
@@ -206,8 +206,8 @@ function ProfilePage(props) {
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("CvPitch")} style={color5}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>CV / Other Documents</p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
-              <Row onClick={() => whichColor("Skills")} style={color2}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Skills</p></Row>
-              <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
+              {/* <Row onClick={() => whichColor("Skills")} style={color2}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Skills</p></Row>
+              <hr style={{color:"#F26C4F", margin:"2px 0px"}}/> */}
               {/* <hr style={{color:"#F26C4F", margin:"2px 0px"}}/> */}
               {/* <Row onClick={() => whichColor("FeedBack")} style={color6}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Feedback & Comments</p></Row> */}
             </Col>
@@ -232,7 +232,7 @@ function ProfilePage(props) {
                   <br/>
                   <div style={{display:"flex",justifyContent:"space-evenly"}}> 
                   <div><button onClick={() => buttonColor("CvPitch")} style={{backgroundColor:color55,color:textColor5,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>CV</button></div>
-                  <div><button onClick={() => buttonColor("Skills")} style={{backgroundColor:color44,color:textColor4,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Skills</button></div>
+                  {/* <div><button onClick={() => buttonColor("Skills")} style={{backgroundColor:color44,color:textColor4,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Skills</button></div> */}
                   {/* <div><button onClick={() => buttonColor("FeedBack")} style={{backgroundColor:color66,color:textColor6,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Feedback</button></div> */}
                   </div>
                 </div>
@@ -244,7 +244,7 @@ function ProfilePage(props) {
                 {active === "Personal" && <Personal p={pp}/>}
                 {active === "Education" && <Education p={pp}/>}
                 {active === "WorkEx" && <WorkEx  p={pp}/>}
-                {active === "Skills" && <Skills  p={pp}/>}
+                {/* {active === "Skills" && <Skills  p={pp}/>} */}
                 {active === "CvPitch" && <CvPitch  p={pp} />}
                 {/* {active === "FeedBack" && <FeedBack/>} */}
             </Col> 
