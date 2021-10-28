@@ -42,7 +42,7 @@ function App() {
         var decoded = jwt_decode(user.signInUserSession.idToken.jwtToken);
         // console.log(decoded);
         let guser = {
-          "attributes": {"name": decoded.name},
+          "attributes": {"name": decoded.name,email:decoded.email},
           "username": decoded.sub
         }
         setUser(guser);
@@ -82,7 +82,7 @@ function App() {
     setAuthStatus: setAuthStatus,
     setUser: setUser,
   };
-  //console.log("NIK authProps=", authProps);
+  console.log("NIK authProps=", authProps);
   return (
     <div>
       {!isAuthenticating && (

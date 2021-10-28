@@ -3,18 +3,16 @@ import { useState, useEffect } from 'react';
 import {ArrowLeft} from 'react-bootstrap-icons';
 import docClient from './../../GigsPage/GigsAWS';
 import Swal from 'sweetalert2'
-
 function MyVerticallyPopUp(props) {
   const [reward, setReward] = useState("");
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
-  console.log(props)
   // We use JSON.stringify here so the data can be sent as a string via HTTP
   const body = JSON.stringify({
     feedback: `Uid:${props.uid}`,
     user:props.email,
     title:"User Pusrchased MasterSessions",
-    feedback1:"",
-    feedback2:""
+    feedback1:props.name,
+    feedback2:props.cname
   });
   const requestOptions = {
     method: "POST",
@@ -83,7 +81,7 @@ function MyVerticallyPopUp(props) {
             background: '#020312',
             color: 'white',
             iconColor: "#F26C4F"
-          });
+          }).then(()=>{
           var paramss = {
             TableName: "UsersTable",
             Key: { "UserID":props.uid },
@@ -106,20 +104,23 @@ function MyVerticallyPopUp(props) {
                   if (err) {
                     console.log(err);
                   } else {
-                    window.location.reload();
+                    window.location.reload(); 
                   }
                 });
               }
           });
+        });
         }
         // return response.json();
-      })
-      .catch((error) => {
+    }).catch((error) => {
         console.error("Failed to send feedback. Error: ", error);
       });
+      
             });
+            
           }
         });
+        
       }
     });
   }
