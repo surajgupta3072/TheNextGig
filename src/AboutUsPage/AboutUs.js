@@ -1,5 +1,6 @@
 import Team from './Team';
 import Vision from './Vision';
+import ContactUs from './ContactUs'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
@@ -9,6 +10,7 @@ function AboutUs(){
       <div>  
        <Vision/> 
        <Team/>
+       <ContactUs />
         <div >
           <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
               <Col md={10}>
