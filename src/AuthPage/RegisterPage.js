@@ -16,7 +16,7 @@ function RegisterPage(props) {
   const [otp, setOtp] = useState("");
   const [showerr, setShowErr] = useState(false);
   const [showVerifyBox, setShowVerifiyBox] = useState(false);
-
+  const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   async function RegisterUser() {
     const username = email;
     const signUpResponse = await Auth.signUp({
@@ -62,15 +62,38 @@ function RegisterPage(props) {
         props.auth.setUser(userLogin);
         props.auth.setAuthStatus(true);
         setShowErr(false);
-        Swal.fire({
-          title: "<h5 style='color:white'>" + "Signed Up Successfully" + "</h5>",
-          icon: 'success',
-          showConfirmButton: false,
-          timer: 2000,
-          background: '#020312',
-          color: 'white',
-          iconColor: "#F26C4F"
-        }).then(()=>setModalShow(true));
+        const body = JSON.stringify({
+          feedback:"",
+          feedback1: params.Item.FullName,
+          feedback2:"",
+          title:"You're in! Welcome to TNG 🥳",
+          user:params.Item.Email
+        });
+        const requestOptions = {
+          method: "POST",
+          body,
+        };
+        fetch(endpoint, requestOptions)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Error in fetch");
+          } 
+          else {
+            Swal.fire({
+              title: "<h5 style='color:white'>" + "Signed Up Successfully" + "</h5>",
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 2000,
+              background: '#020312',
+              color: 'white',
+              iconColor: "#F26C4F"
+            }).then(()=>setModalShow(true));
+          }
+          // return response.json();
+        })
+        .catch((error) => {
+          console.error("Failed to send feedback. Error: ", error);
+        });
       } 
       catch (err) {
         setShowErr(err.message);

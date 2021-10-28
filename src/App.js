@@ -28,6 +28,7 @@ import TC from "./LegalPage/TC";
 import "./App.css";
 
 function App() {
+  const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   const [user, setUser] = useState(null);
   const [isAuthenticating, setAuthenticatingStatus] = useState(true);
   const [isAuthenticated, setAuthStatus] = useState(false);
@@ -56,7 +57,28 @@ function App() {
               console.log('Error', err)
             }
             else {
-              console.log(data);
+              /* console.log(data); */
+              const body = JSON.stringify({
+                feedback:"",
+                feedback1: params.Item.FullName,
+                feedback2:"",
+                title:"You're in! Welcome to TNG 🥳",
+                user:params.Item.Email
+              });
+              const requestOptions = {
+                method: "POST",
+                body,
+              };
+              fetch(endpoint, requestOptions)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Error in fetch");
+          }
+          // return response.json();
+        })
+        .catch((error) => {
+          console.error("Failed to send feedback. Error: ", error);
+        });
               localStorage.setItem("login", decoded.sub);
             }
           })

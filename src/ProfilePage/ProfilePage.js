@@ -57,7 +57,7 @@ function ProfilePage(props) {
     };
     try {
       const data1 = await docClient.query(paramss).promise();
-      setWholedata(data1.Items[0]);
+      setWholedata(data1);
       setActive("Personal");
       setNavbarHeading("Personal");
       const per = data1.Items[0].RewardP + data1.Items[0].RewardE + data1.Items[0].RewardW + data1.Items[0].RewardS + data1.Items[0].RewardC
