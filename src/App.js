@@ -57,7 +57,6 @@ function App() {
               console.log('Error', err)
             }
             else {
-              /* console.log(data); */
               const body = JSON.stringify({
                 feedback:"",
                 feedback1: params.Item.FullName,
@@ -104,7 +103,7 @@ function App() {
     setAuthStatus: setAuthStatus,
     setUser: setUser,
   };
-  console.log("NIK authProps=", authProps);
+  // console.log("NIK authProps=", authProps);
   return (
     <div>
       {!isAuthenticating && (

@@ -217,10 +217,17 @@ function Page3(props) {
                 <h4>Pre-requisites:</h4>
                 <pre style={{whiteSpace:"pre-wrap", fontFamily:"Open Sans",fontSize:"16px"}}> {gigs[0].GigPreRequisites} 
                 </pre><br/><br/>
-                <h4>Related files (JD / case study / etc.):  <a target="_blank" href={gigs[0].GigsProjectFile}><button style={{marginLeft:"2%"}}
+                {gigs[0].GigsProjectFile ==="" ?  
+                <h4>Related files (JD / case study / etc.):  <a><button style={{marginLeft:"2%"}}
                   className="button2_slideview_page3 slide_right">
-                    View
-                </button></a></h4><br/>
+                    None
+                </button></a></h4>:
+                <h4>Related files (JD / case study / etc.):  <a target="_blank" href={gigs[0].GigsProjectFile}><button style={{marginLeft:"2%"}}
+                className="button2_slideview_page3 slide_right">
+                   View
+              </button></a></h4>
+                }
+                <br/>
                 <p>
                   <span style={{color:"#F26C4F"}}> Apply by {gigs[0].GigApplyBy} </span>
                 </p>

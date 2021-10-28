@@ -182,8 +182,8 @@
   width: 300px;
 }
 .vid {
-  height: 200px !important;
-  width: 250px !important;
+  height: 200px;
+  width: 250px;
 }
 .social_learning_top_image {
   width: 100%;
@@ -224,7 +224,7 @@
   margin-left: 45%;
 }
 .video_div {
-  height: 320px;
+  height: 380px;
   width: 300px;
 }
 @media screen and (max-width: 768px) {

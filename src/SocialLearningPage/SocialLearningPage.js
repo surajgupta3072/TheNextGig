@@ -90,13 +90,13 @@ function SocialLearningPage(props) {
                     <br/>
                     <br/>
                     <span style={{fontStyle:"italic"}}>PS: We don’t expect you to share confidential information and/or sit for hours to create content – just share what you have learnt and teach</span></span>:<span><br/><br/><ul>
-<li>Write about something you that you have learnt from your real life experience – and that excites you</li>
-<li>Make sure you aren’t plagiarising - noone likes a copycat! :)</li>
-<li>Don’t worry about your language style, the relevance to the larger audience, etc. - as long as you find it valuable, its your original work and there is a clear message that someone can learn from, you’re good to go!</li>
-</ul>
-It’s easier than you think :)
-<br/><br/>
-<p style={{fontStyle:"italic",fontSize:"14px"}}>PS: Uploading videos or blogs or being actively involved in community discussions earns you reward points, personal branding and a whole lot of confidence :)</p></span>}
+                      <li>Write about something you that you have learnt from your real life experience – and that excites you</li>
+                      <li>Make sure you aren’t plagiarising - noone likes a copycat! :)</li>
+                      <li>Don’t worry about your language style, the relevance to the larger audience, etc. - as long as you find it valuable, its your original work and there is a clear message that someone can learn from, you’re good to go!</li>
+                      </ul>
+                      It’s easier than you think :)
+                      <br/><br/>
+                      <p style={{fontStyle:"italic",fontSize:"14px"}}>PS: Uploading videos or blogs or being actively involved in community discussions earns you reward points, personal branding and a whole lot of confidence :)</p></span>}
                   </div>:
                   <div style={{fontSize:"16px",marginLeft:"7px"}}>
                     <br/>

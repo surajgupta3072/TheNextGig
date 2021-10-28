@@ -1,7 +1,6 @@
 import "./Card.css";
 
 export default function CardX(props) {
-  console.log(props)
   return (
     <div 
       onClick={() => {if(props.time!=="...Coming Soon") window.location.href = "/TNGoriginals/" + props.carl}} className="container_card">
