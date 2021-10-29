@@ -91,9 +91,7 @@ function MyVerticallyPopUp(props) {
                         icon: "success",
                         showCloseButton: true,
                         focusConfirm: true,
-                        confirmButtonText:
-                          '<i class="fa fa-thumbs-up"></i> Great!',
-                        confirmButtonAriaLabel: 'Thumbs up, great!',
+                        confirmButtonText: 'Great!',
                         timer: 20000,
                         background: "#020312",
                         color: "white",

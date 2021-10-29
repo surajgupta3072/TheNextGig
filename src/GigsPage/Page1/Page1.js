@@ -128,7 +128,7 @@ function Page1(props) {
              </div> 
       </div>
       <Container>
-      <div style={{display:"flex",justifyContent:"space-evenly"}} className="Mastercards">
+      <div className="Mastercards" style={{display:"flex",justifyContent:"space-evenly", marginRight:"2%", marginLeft:"2%"}}>
         {videoslist===false?gigs.map((carder) => {
         if(carder.Bucket===buck)
          return <MDBCard 
