@@ -39,7 +39,7 @@ function Page2(props) {
                     {expertDetails.ExpertDesignation}
                     </p>
                     <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
-                    <div className="img_arr" style={{marginLeft: "35px", display: "flex", justifyContent: "center"}}>
+                    <div className="img_arr" style={{ display: "flex", justifyContent: "space-evenly"}}>
                     {expertDetails.ExpertCompaniesLogo.map((
                       companyLogo, index)=>{ 
                       if(index<3){

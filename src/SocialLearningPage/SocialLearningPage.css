@@ -224,9 +224,10 @@
   margin-left: 45%;
 }
 .video_div {
-  height: 380px;
+  height: 400px;
   width: 300px;
 }
+
 @media screen and (max-width: 768px) {
   .SocialLearn_laptop {
     display: none;

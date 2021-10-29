@@ -53,8 +53,8 @@
   padding-bottom: 20px;
 }
 .Mastercards {
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 4%;
+  margin-right: 4%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
