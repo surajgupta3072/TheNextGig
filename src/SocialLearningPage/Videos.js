@@ -111,18 +111,18 @@ function Videos(props) {
     <div>
       <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
       <button className="search_button" onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button>
-      <br/><br/>
-      <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around",marginTop:"-30px"}}>
+      <br/><br/><br/>
+      <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
         {videoslist===false && props.prop.map((vid)=>
           <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
-               <div>
               <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
-              </video></div> :<div>
-              <video className="video_social_learn" onEnded={()=> VideoWatched(vid.id, vid.VideoHashtags)} id={vid.VideoID} controls  controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              </video>
+              :
+              <video className="video_social_learn" onEnded={()=> VideoWatched(vid.id, vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
-              </video></div>
+              </video>
             }
             <div style={{marginLeft:"2%"}}>
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
@@ -133,19 +133,19 @@ function Videos(props) {
           </div>
         )}
         {videoslist!==false && videoslist.map((vid)=>
-          <div style={{height:"320px",width:"300px"}} key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
+          <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
-              <video controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video> :
-              <video onEnded={()=> VideoWatched(vid.id, vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video className="video_social_learn" onEnded={()=> VideoWatched(vid.id, vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video>
             }
-            <div>
-              <h5 style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h5>
-              <h6 style={{padding:"0", margin:"0"}}>{vid.VideoUsername} - {vid.VideoCreds}</h6>
-              <p style={{padding:"0", margin:"0", color:"grey"}}>{vid.VideoHashtags}</p>
+            <div style={{marginLeft:"2%"}}>
+              <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
+              <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
+              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags}</p>
             </div>
             <br/>
           </div>

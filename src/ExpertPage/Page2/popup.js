@@ -1,6 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
 import {ArrowLeft} from 'react-bootstrap-icons'
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 import { useState } from "react";
 import Swal from 'sweetalert2'
 
@@ -8,6 +8,7 @@ function MyVerticallyPopUp(props) {
   const [feedback, setFeedback] = useState("");
   const [data, setData] = useState("");
   const [field2, setfield2] = useState("");
+  
   const handlefield2 = (event) => {
     setfield2(event.target.value);
   };
@@ -17,35 +18,34 @@ function MyVerticallyPopUp(props) {
   const handleid = (event) => {
     setData(event.target.value);
   };
-  const SERVICE_ID = "service_mztzudb";
-  const TEMPLATE_ID = "template_4od9vgl";
+  
   const submit = (event) => {
     event.preventDefault();
-    emailjs
-      .send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        { feedback,field2, Details: data },
-        "user_LuNukIHe37LdAF6nNkxao"
-      )
-      .then((res) => {
-        if (res.status === 200) {
-          setFeedback("");
-          setData("");
-          setfield2("");
-          props.onHide();
-          Swal.fire({
-            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
-            icon: 'success',
-            showConfirmButton: false,
-            timer: 2000,
-            background: '#020312',
-            color: 'white',
-            iconColor: "#F26C4F"
-          })
-        }
-      })
-      .catch((err) => console.error("Failed to send feedback. Error: ", err));
+    // emailjs
+    //   .send(
+    //     SERVICE_ID,
+    //     TEMPLATE_ID,
+    //     { feedback,field2, Details: data },
+    //     "user_LuNukIHe37LdAF6nNkxao"
+    //   )
+    //   .then((res) => {
+    //     if (res.status === 200) {
+    //       setFeedback("");
+    //       setData("");
+    //       setfield2("");
+    //       props.onHide();
+    //       Swal.fire({
+    //         title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+    //         icon: 'success',
+    //         showConfirmButton: false,
+    //         timer: 2000,
+    //         background: '#020312',
+    //         color: 'white',
+    //         iconColor: "#F26C4F"
+    //       })
+    //     }
+    //   })
+    //   .catch((err) => console.error("Failed to send feedback. Error: ", err));
   };
 
     return (

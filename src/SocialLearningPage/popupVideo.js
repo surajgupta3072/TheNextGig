@@ -34,7 +34,7 @@ function MyVerticallyPopUp(props) {
             "</h5>",
           icon: "info",
           showConfirmButton: false,
-          timer: 40000,
+          timer: 600000,
           background: "#020312",
           color: "white",
           iconColor: "#00A000",
@@ -89,8 +89,12 @@ function MyVerticallyPopUp(props) {
                           "Congratulations! Your video has been uploaded! You will see it on the platform shortly." +
                           "</h5>",
                         icon: "success",
-                        showConfirmButton: false,
-                        timer: 5000,
+                        showCloseButton: true,
+                        focusConfirm: true,
+                        confirmButtonText:
+                          '<i class="fa fa-thumbs-up"></i> Great!',
+                        confirmButtonAriaLabel: 'Thumbs up, great!',
+                        timer: 20000,
                         background: "#020312",
                         color: "white",
                         iconColor: "#F26C4F",

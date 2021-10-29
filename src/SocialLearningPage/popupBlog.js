@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { ArrowLeft } from 'react-bootstrap-icons'
 import crypto from 'crypto';
 import docClient from '../GigsPage/GigsAWS';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+// import ReactQuill from 'react-quill';
 
 function MyVerticallyPopUpBlog(props) {
     const [topic, setTopic] = useState("");
     const [creds,setCreds]=useState("");
     const [hashtag, setHashtag] = useState("");
-    const [blog, setBlog] = useState();
+    const [blog, setBlog] = useState("");
     const [showerr, setShowErr] = useState(false);
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
     // We use JSON.stringify here so the data can be sent as a string via HTTP
@@ -69,31 +70,31 @@ function MyVerticallyPopUpBlog(props) {
                             body,
                           };
                           fetch(endpoint, requestOptions)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error in fetch");
-        } 
-        else {
-          props.onHide();
-          setBlog("")
-          setTopic("")
-          setCreds("")
-          setHashtag("")
-          Swal.fire({
-            title: "<h5 style='color:white'>" + "Congratulations! Your blog has been submitted! You will see it on the platform shortly." + "</h5>",
-            icon: 'success',
-            showConfirmButton: false,
-            timer: 4000,
-            background: '#020312',
-            color: 'white',
-            iconColor: "#F26C4F"
-          }).then(props.onHide());
-        }
-        // return response.json();
-      })
-      .catch((error) => {
-        console.error("Failed to send feedback. Error: ", error);
-      });
+                            .then((response) => {
+                              if (!response.ok) {
+                                throw new Error("Error in fetch");
+                              } 
+                              else {
+                                props.onHide();
+                                setBlog("")
+                                setTopic("")
+                                setCreds("")
+                                setHashtag("")
+                                Swal.fire({
+                                  title: "<h5 style='color:white'>" + "Congratulations! Your blog has been submitted! You will see it on the platform shortly." + "</h5>",
+                                  icon: 'success',
+                                  showConfirmButton: false,
+                                  timer: 4000,
+                                  background: '#020312',
+                                  color: 'white',
+                                  iconColor: "#F26C4F"
+                                }).then(props.onHide());
+                              }
+                              // return response.json();
+                            })
+                            .catch((error) => {
+                              console.error("Failed to send feedback. Error: ", error);
+                            });
                         }
                       });
                     }
@@ -126,7 +127,8 @@ function MyVerticallyPopUpBlog(props) {
                   <input onChange={(e) => (setHashtag(e.target.value))} value={hashtag} style={{ width: "100%", marginTop: "1%" }} placeholder="#datascience #webdev" />
                   <p style={{ marginTop: "10%", fontSize: "18px" }}>Blogs <text style={{ color: "#f26c4f" }}>*</text></p>
                   <textarea placeholder="ABC is ..." value={blog} onChange={(e) => (setBlog(e.target.value))} style={{ height: "100px", width: "100%" }}></textarea>
-                  <button  onClick={handleApply} className="button_slide slide_right" style={{ marginTop: "10%", marginLeft: "35%" }}>Submit<ArrowLeft className='button_arrow' /></button>
+                  {/* <ReactQuill placeholder="ABC is ..." value={blog} onChange={(e) => setBlog(e)}/> */}
+                  <button onClick={handleApply} className="button_slide slide_right" style={{ marginTop: "10%", marginLeft: "35%" }}>Submit<ArrowLeft className='button_arrow' /></button>
                   {showerr !== false && <p style={{ color: "red", textAlign: "center" }}><br />*{showerr}</p>}
               </div>
           </Modal.Body>
