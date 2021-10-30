@@ -13,7 +13,6 @@ function Skills(props) {
   const [showerr, setShowErr] = useState(false);
   const [skills1, setSkills1] = useState([]);
   const [skills2, setSkills2] = useState([]);
-
   useEffect(() => {
     if (props.p.wholedata.SkillsPossessed.length !== 0) {
       setSkillsPos(props.p.wholedata.SkillsPossessed);

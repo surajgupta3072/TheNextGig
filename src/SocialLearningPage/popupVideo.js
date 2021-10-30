@@ -1,10 +1,12 @@
 import Modal from "react-bootstrap/Modal";
-import { useState } from "react";
+import { useState,useEffect} from "react";
 import { ArrowLeft } from "react-bootstrap-icons";
 import S3 from "react-aws-s3";
 import crypto from "crypto";
 import docClient from "../GigsPage/GigsAWS";
 import Swal from "sweetalert2";
+import Multiselect from "multiselect-react-dropdown";
+import skillsData from "../ProfilePage/Skills.json"
 const config = {
   bucketName: "socialvideoslearn",
   region: process.env.REACT_APP_REGION,
@@ -19,11 +21,35 @@ function MyVerticallyPopUp(props) {
   const [hashtag, setHashtag] = useState("");
   const [vfile, setVfile] = useState();
   const [showerr, setShowErr] = useState(false);
+  const [skillPos, setSkillsPos] = useState([]);
+  const [skills1, setSkills1] = useState([]);
+  function onSelect1(selectedList) {
+    setSkillsPos(selectedList);
+  }
+  function onRemove1(selectedList) {
+    setSkillsPos(selectedList);
+  }
+  function examfunc1(e) {
+    var skills1 = [];
+    if (e === "") {
+      setSkills1([]);
+    } else {
+      for (var i = 0; i < skillsData.length; i++)
+        if (skillsData[i].toLowerCase().startsWith(e.toLowerCase()) === true)
+          skills1.push(skillsData[i]);
+      setSkills1(skills1);
+    }
+  }
   const endpoint =
     "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   // We use JSON.stringify here so the data can be sent as a string via HTTP
   function handleApply() {
-    if (topic !== "" && creds !== "" && hashtag !== "" && vfile !== undefined) {
+    var hash="";
+    for(var i=0;i<skillPos.length;i++)
+    {
+       hash=hash+"#"+skillPos[i]+" "; 
+    }
+    if (topic !== "" && creds !== "" && hash !== "" && vfile !== undefined) {
       if (vfile.size > 1073741824) {
         setShowErr("Video File more than 1GB size");
       } else {
@@ -46,8 +72,8 @@ function MyVerticallyPopUp(props) {
             VideoTopic: topic,
             VideoCreds: creds,
             VideoUsername: props.userid.attributes.name,
-            VideoHashtags: hashtag,
-            VideoLink: data.location,
+            VideoHashtags: hash,
+            VideoLink: "https://dty09xroi0av3.cloudfront.net"+"/"+vfile.name,
             isApproved: false,
           };
           var paramss = {
@@ -99,7 +125,7 @@ function MyVerticallyPopUp(props) {
                       });
                       const body = JSON.stringify({
                         feedback: `Topic:${topic}`,
-                        feedback1: `Hastags:${hashtag}`,
+                        feedback1: `Hastags:${hash}`,
                         feedback2: adata.VideoLink,
                         title: "Video",
                         user: props.userid.attributes.name,
@@ -175,12 +201,32 @@ function MyVerticallyPopUp(props) {
           <p style={{ marginTop: "10%", fontSize: "18px" }}>
             Hashtags <text style={{ color: "#f26c4f" }}>*</text>
           </p>
-          <input
-            onChange={(e) => setHashtag(e.target.value)}
-            value={hashtag}
-            style={{ width: "100%", marginTop: "1%" }}
-            placeholder="#datascience #webdev"
-          />
+          <Multiselect
+              emptyRecordMsg="Start Searching..."
+              onSearch={examfunc1}
+              onSelect={onSelect1}
+              onRemove={onRemove1}
+              electedValues={skillPos}
+              selectionLimit={10}
+              options={skills1}
+              isObject={false}
+              placeholder="Select Video Hastags"
+              style={{
+                chips: {
+                  background: "#f26c4f",
+                  fontSize: "17px",
+                  marginLeft: "5px",
+                },
+                searchBox: {
+                  border: "1px solid #f26c4f",
+                  "border-radius": "10px",
+                },
+                optionContainer: {
+                  border: "2px solid #f26c4f",
+                  background: "#1B1C2A",
+                },
+              }}
+            />
           <p style={{ marginTop: "10%", fontSize: "18px" }}>
             Upload Video <text style={{ color: "#f26c4f" }}>*</text>
             <text style={{ color: "#f26c4f", fontSize: "14px" }}>

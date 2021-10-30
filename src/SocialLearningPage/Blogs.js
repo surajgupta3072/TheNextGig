@@ -136,10 +136,9 @@ function Blogs(props) {
             <div className="blog-box">
               <h5 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h5>
               <h6 style={{padding:"0", margin:"0"}}>{blog.BlogUsername} - {blog.BlogCreds}</h6>
-              <p style={{padding:"0", margin:"0",color:"grey"}}>{blog.BlogHashtags}</p>
-              <br/>
-              <p style={{fontSize:"14px"}}>{blog.Blog.split(" ").slice(0,32).join(" ")+"  . . . "}</p>
+              <p style={{padding:"0", margin:"0",color:"grey"}}>#{blog.BlogHashtags.split("#")[1]} #{blog.BlogHashtags.split("#")[2]}</p>
               <p style={{fontSize:"12px"}}>{blog.BlogDate}</p>
+              <p style={{fontSize:"14px"}}>{blog.Blog.split(" ").slice(0,18).join(" ")+"  . . . "}</p>
             </div>
             <br/>
           </div>

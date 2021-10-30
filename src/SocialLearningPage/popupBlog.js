@@ -4,6 +4,8 @@ import { ArrowLeft } from 'react-bootstrap-icons'
 import crypto from 'crypto';
 import docClient from '../GigsPage/GigsAWS';
 import Swal from 'sweetalert2';
+import Multiselect from "multiselect-react-dropdown";
+import skillsData from "../ProfilePage/Skills.json"
 // import ReactQuill from 'react-quill';
 
 function MyVerticallyPopUpBlog(props) {
@@ -12,16 +14,40 @@ function MyVerticallyPopUpBlog(props) {
     const [hashtag, setHashtag] = useState("");
     const [blog, setBlog] = useState("");
     const [showerr, setShowErr] = useState(false);
+    const [skillPos, setSkillsPos] = useState([]);
+  const [skills1, setSkills1] = useState([]);
+  function onSelect1(selectedList) {
+    setSkillsPos(selectedList);
+  }
+  function onRemove1(selectedList) {
+    setSkillsPos(selectedList);
+  }
+  function examfunc1(e) {
+    var skills1 = [];
+    if (e === "") {
+      setSkills1([]);
+    } else {
+      for (var i = 0; i < skillsData.length; i++)
+        if (skillsData[i].toLowerCase().startsWith(e.toLowerCase()) === true)
+          skills1.push(skillsData[i]);
+      setSkills1(skills1);
+    }
+  }
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
     // We use JSON.stringify here so the data can be sent as a string via HTTP
     function handleApply() {
-        if (topic !== "" && creds!=="" && hashtag !== "" && blog !== "") {
+        var hash="";
+        for(var i=0;i<skillPos.length;i++)
+          {
+              hash=hash+"#"+skillPos[i]+" ";
+          }
+        if (topic !== "" && creds!=="" && hash !== "" && blog !== "") {
             const adata = {
               "BlogID": crypto.randomBytes(8).toString("hex"),
               "BlogTopic": topic,
               "BlogCreds": creds,
               "BlogUsername": props.userid.attributes.name,
-              "BlogHashtags": hashtag,
+              "BlogHashtags": hash,
               "Blog": blog,
               "isApproved": false,
               "BlogDate": Date(Date.now())
@@ -63,7 +89,7 @@ function MyVerticallyPopUpBlog(props) {
                             feedback1:`Blog:${blog}`,
                             title:"Blog",
                             user:props.userid.attributes.name,
-                            feedback2:`Hastag:${hashtag}`
+                            feedback2:`Hastag:${hash}`
                           });
                           const requestOptions = {
                             method: "POST",
@@ -122,9 +148,34 @@ function MyVerticallyPopUpBlog(props) {
                   <p style={{ fontSize: "18px" }} >Topic <text style={{ color: "#f26c4f" }}>*</text></p>
                   <input onChange={(e) => (setTopic(e.target.value))} value={topic} style={{ width: "100%" }} placeholder="ABC"></input>
                   <p style={{marginTop:"10%",fontSize:"18px"}} >Credentials <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(Highlight relevant creds)</text></p>
+                  
                   <input onChange={(e)=>(setCreds(e.target.value))} value={creds} style={{width:"100%"}} placeholder="Founder of TheNextGig"></input>
                   <p style={{ marginTop: "10%", fontSize: "18px" }}>Hashtags <text style={{ color: "#f26c4f" }}>*</text></p>
-                  <input onChange={(e) => (setHashtag(e.target.value))} value={hashtag} style={{ width: "100%", marginTop: "1%" }} placeholder="#datascience #webdev" />
+                  <Multiselect
+                    emptyRecordMsg="Start Searching..."
+                    onSearch={examfunc1}
+                    onSelect={onSelect1}
+                    onRemove={onRemove1}
+                    electedValues={skillPos}
+                    selectionLimit={10}
+                    options={skills1}
+                    isObject={false}
+                    placeholder="Select Video Hastags"
+                    style={{
+                    chips: {
+                        background: "#f26c4f",
+                        fontSize: "17px",
+                        marginLeft: "5px",
+                    },
+                    searchBox: {
+                        border: "1px solid #f26c4f",
+                        "border-radius": "10px",
+                    },
+                    optionContainer: {
+                        border: "2px solid #f26c4f",
+                        background: "#1B1C2A",
+                    },
+                    }}/>
                   <p style={{ marginTop: "10%", fontSize: "18px" }}>Blogs <text style={{ color: "#f26c4f" }}>*</text></p>
                   <textarea placeholder="ABC is ..." value={blog} onChange={(e) => (setBlog(e.target.value))} style={{ height: "100px", width: "100%" }}></textarea>
                   {/* <ReactQuill placeholder="ABC is ..." value={blog} onChange={(e) => setBlog(e)}/> */}
