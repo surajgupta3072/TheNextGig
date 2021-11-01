@@ -50,13 +50,13 @@ function Videos(props) {
     }
   }
 
-  function VideoWatched(vid, hashtags) {
-    var params = {
+  function VideoEnded(hashtags) {
+    var paramss = {
       TableName: "UsersTable",
       Key: { "UserID":props.userid },
-      ProjectionExpression: "SocialLearningVideosWatched",
+      ProjectionExpression: "SkillsAcquiredVideos",
     };
-    docClient.get(params, function(err, data) {
+    docClient.get(paramss, function(err, data) {
       if (err) {
         console.log(err);
       } 
@@ -64,9 +64,9 @@ function Videos(props) {
         var params = {
           TableName: "UsersTable",
           Key: { "UserID":props.userid },
-          UpdateExpression: "set SocialLearningVideosWatched["+data.Item.SocialLearningVideosWatched.length.toString()+"] = :slvw",
+          UpdateExpression: "set SkillsAcquiredVideos["+data.Item.SkillsAcquiredVideos.length.toString()+"] = :sav",
           ExpressionAttributeValues:{
-            ":slvw": {timestamp: `${Date.now()}`, vid: vid}
+            ":sav": hashtags.split(" ")
           },
           ReturnValues:"UPDATED_NEW"
         }
@@ -74,36 +74,73 @@ function Videos(props) {
           if (err) {
             console.log(err);
           }
-          else {
-            var paramss = {
-              TableName: "UsersTable",
-              Key: { "UserID":props.userid },
-              ProjectionExpression: "SkillsAcquiredVideos",
-            };
-            docClient.get(paramss, function(err, data) {
-              if (err) {
-                console.log(err);
-              } else {
-                  var params = {
-                    TableName: "UsersTable",
-                    Key: { "UserID":props.userid },
-                    UpdateExpression: "set SkillsAcquiredVideos["+data.Item.SkillsAcquiredVideos.length.toString()+"] = :sav",
-                    ExpressionAttributeValues:{
-                      ":sav": hashtags.split(" ")
-                    },
-                    ReturnValues:"UPDATED_NEW"
-                  }
-                  docClient.update(params, function (err, data) {
-                    if (err) {
-                      console.log(err);
-                    }
-                  });
-                }
-            });
-          }
         });
       }
     });
+  }
+
+  function VideoStarted(vid, ct) {
+    if(ct==0) {
+      var params = {
+        TableName: "UsersTable",
+        Key: { "UserID":props.userid },
+        ProjectionExpression: "SocialLearningVideosWatched",
+      };
+      docClient.get(params, function(err, data) {
+        if (err) {
+          console.log(err);
+        } 
+        else {
+          var flag=0;
+          for(var i=0; i<data.Item.SocialLearningVideosWatched.length; i++) {
+            if(data.Item.SocialLearningVideosWatched[i].vid===vid)
+              var flag=1;
+          }
+          if(flag===0) {
+            var params = {
+              TableName: "UsersTable",
+              Key: { "UserID":props.userid },
+              UpdateExpression: "set SocialLearningVideosWatched["+data.Item.SocialLearningVideosWatched.length.toString()+"] = :slvw",
+              ExpressionAttributeValues:{
+                ":slvw": {"timestamp": `${Date.now()}`, "vid": vid}
+              },
+              ReturnValues:"UPDATED_NEW"
+            }
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              }
+            });
+            var params = {
+              TableName: "VideosTable",
+              Key: { "VideoID":vid },
+              ProjectionExpression: "VideoViews",
+            };
+            docClient.get(params, function(err, data) {
+              if (err) {
+                console.log(err);
+              } 
+              else {
+                var params = {
+                  TableName: "VideosTable",
+                  Key: { "VideoID":vid },
+                  UpdateExpression: "set VideoViews = :slvv",
+                  ExpressionAttributeValues:{
+                    ":slvv": data.Item.VideoViews + 1
+                  },
+                  ReturnValues:"UPDATED_NEW"
+                }
+                docClient.update(params, function (err, data) {
+                  if (err) {
+                    console.log(err);
+                  }
+                });
+              }
+            });
+          }
+        }
+      });
+    }
   }
 
 
@@ -120,7 +157,7 @@ function Videos(props) {
                 <source src={vid.VideoLink} />
               </video>
               :
-              <video className="video_social_learn" onEnded={()=> VideoWatched(vid.id, vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video>
             }
@@ -128,6 +165,7 @@ function Videos(props) {
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
               <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
               <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags}</p>
+              <p className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</p>
             </div>
             <br/>
           </div>
@@ -138,7 +176,7 @@ function Videos(props) {
               <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video> :
-              <video className="video_social_learn" onEnded={()=> VideoWatched(vid.id, vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video>
             }
@@ -146,6 +184,7 @@ function Videos(props) {
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
               <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
               <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags}</p>
+              <p className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</p>
             </div>
             <br/>
           </div>
