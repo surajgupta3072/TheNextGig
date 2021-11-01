@@ -150,7 +150,7 @@ function MyVerticallyPopUpBlog(props) {
                   <p style={{marginTop:"10%",fontSize:"18px"}} >Credentials <text style={{color:"#f26c4f"}}>*</text><text style={{color:"#f26c4f", fontSize:"14px"}}>(Highlight relevant creds)</text></p>
                   
                   <input onChange={(e)=>(setCreds(e.target.value))} value={creds} style={{width:"100%"}} placeholder="Founder of TheNextGig"></input>
-                  <p style={{ marginTop: "10%", fontSize: "18px" }}>Hashtags <text style={{ color: "#f26c4f" }}>*</text></p>
+                  <p style={{ marginTop: "10%", fontSize: "18px" }}>Skills (Skills that people will learn) <text style={{ color: "#f26c4f" }}>*</text></p>
                   <Multiselect
                     emptyRecordMsg="Start Searching..."
                     onSearch={examfunc1}
@@ -160,7 +160,7 @@ function MyVerticallyPopUpBlog(props) {
                     selectionLimit={10}
                     options={skills1}
                     isObject={false}
-                    placeholder="Select Video Hastags"
+                    placeholder="Select Skills"
                     style={{
                     chips: {
                         background: "#f26c4f",

@@ -76,7 +76,7 @@ function SocialLearningPage(props) {
       <Container>
         <Row>
             <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="SocialLearn_laptop">
-              <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src={dplink} style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG coins: <b>{rew}</b></p></span>:<br/>}</Col></Row>
+              <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src={dplink} style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG Coins: <b>{rew}</b></p></span>:<br/>}</Col></Row>
                 <br/>
                 {active!=="Community" ?
                   <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading {active==="Videos"?"videos":"blogs"} :{active==="Videos"?<span>
@@ -110,7 +110,7 @@ function SocialLearningPage(props) {
                 <div className="profile_logo_text_mobile" ><div><img alt="dp" src={dplink} style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
                 <div>
                   {user.attributes!==undefined && <div><p style={{fontSize:"18px", textAlign:"center"}}>{user.attributes.name}</p></div>}
-                  <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG coins: <b>{rew}</b></p></div>
+                  <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG Coins: <b>{rew}</b></p></div>
                   <div style={{textAlign:"center"}}></div>
                 </div> 
                 </div>
@@ -120,7 +120,7 @@ function SocialLearningPage(props) {
                 <div style={{display:"flex",justifyContent:"space-evenly"}}>
                   <div><button onClick={()=>buttonColor("Videos")} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Videos</button></div>
                   <div><button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button></div>
-                  <div><button onClick={()=>{buttonColor("Community")}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button></div>
+                  <div><button onClick={()=>{buttonColor("Community")}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button></div>
                </div> 
              </div> 
             </div>

@@ -199,7 +199,7 @@ function MyVerticallyPopUp(props) {
             placeholder="Founder of TheNextGig"
           ></input>
           <p style={{ marginTop: "10%", fontSize: "18px" }}>
-            Hashtags <text style={{ color: "#f26c4f" }}>*</text>
+          Skills (Skills that people will learn)<text style={{ color: "#f26c4f" }}>*</text>
           </p>
           <Multiselect
               emptyRecordMsg="Start Searching..."
@@ -210,7 +210,7 @@ function MyVerticallyPopUp(props) {
               selectionLimit={10}
               options={skills1}
               isObject={false}
-              placeholder="Select Video Hastags"
+              placeholder="Select Skills"
               style={{
                 chips: {
                   background: "#f26c4f",

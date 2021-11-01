@@ -23,7 +23,7 @@ export default function CardX(props) {
         </div>
         <div style={{display:"flex",justifyContent:"space-between",color:"white",marginLeft:"10px",marginTop:"20px"}}>
         <div style={{fontSize:"18px"}}>{props.time}</div>
-        <div style={{marginRight:"10px", fontSize:"18px"}}>₹ {props.fees}</div>
+        <div style={{marginRight:"10px", fontSize:"18px"}}>{(props.time!=="...Coming Soon")? ("₹") : ("")}  {props.fees}</div>
         </div>
         <br/>
       </div>

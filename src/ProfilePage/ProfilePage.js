@@ -184,7 +184,7 @@ function ProfilePage(props) {
         <Row>
             <Col xs={3} style={{backgroundColor:"#1B1C2A", height:"90vh"}} className="Profile_list_laptop">
               <ProgressBar style={{marginTop:"10%", backgroundColor:"white", marginBottom:"1%"}} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`}/>
-              <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn TNG coins)</p>
+              <p style={{fontSize:"14px", textAlign:"center"}}>(Complete the profile to earn TNG Coins)</p>
               <Row style={{marginTop:"7%",marginLeft:"22%"}}>
                 <label> 
                   <input type="file" onChange={(e)=>onChangePicture(e)} style={{display:"none"}}/>
@@ -192,7 +192,7 @@ function ProfilePage(props) {
                 </label> 
               </Row>
               <br/>
-              <Row><p style={{fontSize:"16px", textAlign:"center",color:"#F26C4F"}}>TNG coins: <b>{rew}</b></p></Row>
+              <Row><p style={{fontSize:"16px", textAlign:"center",color:"#F26C4F"}}>TNG Coins: <b>{rew}</b></p></Row>
               <Row style={{marginBottom:"1%", textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{wholedata.ReferralCode}</b></p></Row>
               <hr style={{color:"#F26C4F", margin:"2px 0px"}}/>
               <Row onClick={() => whichColor("Personal")} style={color1}><p style={{fontSize:"20px", textAlign:"center", cursor: "pointer"}}>Personal</p></Row>
@@ -215,7 +215,7 @@ function ProfilePage(props) {
                 <input type="file" onChange={(e)=>onChangePicture(e)} style={{display:"none"}}/>
                 <div className="profile_logo_text_mobile"><div><img alt="dp" src={dplink} style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
                 <div>
-                  <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG coins: <b>{rew}</b></p></div>
+                  <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG Coins: <b>{rew}</b></p></div>
                   <div style={{marginBottom:"2%", textAlign:"center"}}><p style={{margin:"0"}}>Your Referral Code:</p><p style={{color:"#F26C4F"}}><b>{wholedata.ReferralCode}</b></p></div>
                 </div>
                 </div>

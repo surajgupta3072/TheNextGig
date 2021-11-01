@@ -22,12 +22,13 @@ function ContactUs(){
             <Container style={{width:"90%",height:"20%"}}>
                
                <p className="AboutUs-p" style={{display: "flex", justifyContent: "center",fontStyle:"italic"}}>Next Gig Private Limited<br />Room no 3, 1st floor<br/>
-148, Shaheen Chambers<br/>
-Fort<br/>
-Mumbai 400001<br/>
-M: +91 9821903645 / +91 99208 91546<br/>
-CIN: U72200MH2021PTC355663<br/>
-GST no: 27AAHCN4501B1ZY</p>
+                    148, Shaheen Chambers<br/>
+                    Fort<br/>
+                    Mumbai 400001<br/>
+                    M: +91 9821903645 / +91 99208 91546<br/>
+                    CIN: U72200MH2021PTC355663<br/>
+                    GST no: 27AAHCN4501B1ZY
+                </p>
             </Container>
             </div>
        </div> 
