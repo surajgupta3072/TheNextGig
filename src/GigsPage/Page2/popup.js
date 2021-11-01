@@ -23,7 +23,8 @@ function MyVerticallyPopUp(props) {
     feedback:`Recommedation Field: ${field1}`,
     user: data,
     title:"Recommedation From Gigs",
-    feedback1:`Recommedation Text:${field2}`
+    feedback1:`Recommedation Text:${field2}`,
+    feedback2:""
   });
   const requestOptions = {
     method: "POST",
