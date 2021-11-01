@@ -80,47 +80,54 @@ function Blogs(props) {
         console.log(err);
       } 
       else {
-        var params = {
-          TableName: "UsersTable",
-          Key: { "UserID":props.userid },
-          UpdateExpression: "set SocialLearningBlogsRead["+data.Item.SocialLearningBlogsRead.length.toString()+"] = :slbr",
-          ExpressionAttributeValues:{
-            ":slbr": {timestamp: `${Date.now()}`, bid: blog.BlogID},
-          },
-          ReturnValues:"UPDATED_NEW"
+        var flag=0;
+        for(var i=0; i<data.Item.SocialLearningBlogsRead.length; i++) {
+          if(data.Item.SocialLearningBlogsRead[i].bid===blog.BlogID)
+            var flag=1;
         }
-        docClient.update(params, function (err, data) {
-          if (err) {
-            console.log(err);
+        if(flag===0) {
+          var params = {
+            TableName: "UsersTable",
+            Key: { "UserID":props.userid },
+            UpdateExpression: "set SocialLearningBlogsRead["+data.Item.SocialLearningBlogsRead.length.toString()+"] = :slbr",
+            ExpressionAttributeValues:{
+              ":slbr": {timestamp: `${Date.now()}`, bid: blog.BlogID},
+            },
+            ReturnValues:"UPDATED_NEW"
           }
-          else {
-            var paramss = {
-              TableName: "UsersTable",
-              Key: { "UserID":props.userid },
-              ProjectionExpression: "SkillsAcquiredBlogs",
-            };
-            docClient.get(paramss, function(err, data) {
-              if (err) {
-                console.log(err);
-              } else {
-                  var params = {
-                    TableName: "UsersTable",
-                    Key: { "UserID":props.userid },
-                    UpdateExpression: "set SkillsAcquiredBlogs["+data.Item.SkillsAcquiredBlogs.length.toString()+"] = :sab",
-                    ExpressionAttributeValues:{
-                      ":sab": blog.BlogHashtags.split(" ")
-                    },
-                    ReturnValues:"UPDATED_NEW"
-                  }
-                  docClient.update(params, function (err, data) {
-                    if (err) {
-                      console.log(err);
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+            else {
+              var paramss = {
+                TableName: "UsersTable",
+                Key: { "UserID":props.userid },
+                ProjectionExpression: "SkillsAcquiredBlogs",
+              };
+              docClient.get(paramss, function(err, data) {
+                if (err) {
+                  console.log(err);
+                } else {
+                    var params = {
+                      TableName: "UsersTable",
+                      Key: { "UserID":props.userid },
+                      UpdateExpression: "set SkillsAcquiredBlogs["+data.Item.SkillsAcquiredBlogs.length.toString()+"] = :sab",
+                      ExpressionAttributeValues:{
+                        ":sab": blog.BlogHashtags.split(" ")
+                      },
+                      ReturnValues:"UPDATED_NEW"
                     }
-                  });
-                }
-            });
-          }
-        });
+                    docClient.update(params, function (err, data) {
+                      if (err) {
+                        console.log(err);
+                      }
+                    });
+                  }
+              });
+            }
+          });
+        }
       }
     });
   }

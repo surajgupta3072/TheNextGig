@@ -11,11 +11,11 @@ import skillsData from "../ProfilePage/Skills.json"
 function MyVerticallyPopUpBlog(props) {
     const [topic, setTopic] = useState("");
     const [creds,setCreds]=useState("");
-    const [hashtag, setHashtag] = useState("");
     const [blog, setBlog] = useState("");
     const [showerr, setShowErr] = useState(false);
     const [skillPos, setSkillsPos] = useState([]);
-  const [skills1, setSkills1] = useState([]);
+    const [skills1, setSkills1] = useState([]);
+    
   function onSelect1(selectedList) {
     setSkillsPos(selectedList);
   }
@@ -105,7 +105,7 @@ function MyVerticallyPopUpBlog(props) {
                                 setBlog("")
                                 setTopic("")
                                 setCreds("")
-                                setHashtag("")
+                                setSkillsPos("")
                                 Swal.fire({
                                   title: "<h5 style='color:white'>" + "Congratulations! Your blog has been submitted! You will see it on the platform shortly." + "</h5>",
                                   icon: 'success',

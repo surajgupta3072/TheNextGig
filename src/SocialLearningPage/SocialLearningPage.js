@@ -32,7 +32,7 @@ function SocialLearningPage(props) {
       if (err) {
         console.log(err);
       } else {
-        setAllvideos(data.Items.filter((e)=>{if(e.isApproved===true) return e}));
+        setAllvideos(data.Items.sort(() => Math.random()-0.5).filter((e)=>{if(e.isApproved===true) return e}));
       }
     });
     if(props.auth.user===null) {

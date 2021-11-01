@@ -1,5 +1,5 @@
 import Modal from "react-bootstrap/Modal";
-import { useState,useEffect} from "react";
+import { useState } from "react";
 import { ArrowLeft } from "react-bootstrap-icons";
 import S3 from "react-aws-s3";
 import crypto from "crypto";
@@ -18,7 +18,6 @@ const ReactS3Client = new S3(config);
 function MyVerticallyPopUp(props) {
   const [topic, setTopic] = useState("");
   const [creds, setCreds] = useState("");
-  const [hashtag, setHashtag] = useState("");
   const [vfile, setVfile] = useState();
   const [showerr, setShowErr] = useState(false);
   const [skillPos, setSkillsPos] = useState([]);
@@ -47,7 +46,7 @@ function MyVerticallyPopUp(props) {
     var hash="";
     for(var i=0;i<skillPos.length;i++)
     {
-       hash=hash+"#"+skillPos[i]+" "; 
+      hash=hash+"#"+skillPos[i]+" "; 
     }
     if (topic !== "" && creds !== "" && hash !== "" && vfile !== undefined) {
       if (vfile.size > 1073741824) {
@@ -75,6 +74,7 @@ function MyVerticallyPopUp(props) {
             VideoHashtags: hash,
             VideoLink: "https://dty09xroi0av3.cloudfront.net"+"/"+vfile.name,
             isApproved: false,
+            VideoViews: 0
           };
           var paramss = {
             TableName: "VideosTable",
@@ -141,7 +141,7 @@ function MyVerticallyPopUp(props) {
                           } else {
                             setTopic("");
                             setCreds("");
-                            setHashtag("");
+                            setSkillsPos("");
                           }
                         })
                         .catch((error) => {
@@ -206,7 +206,7 @@ function MyVerticallyPopUp(props) {
               onSearch={examfunc1}
               onSelect={onSelect1}
               onRemove={onRemove1}
-              electedValues={skillPos}
+              selectedValues={skillPos}
               selectionLimit={10}
               options={skills1}
               isObject={false}

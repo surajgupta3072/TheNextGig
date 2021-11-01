@@ -166,7 +166,7 @@ function Skills(props) {
               onSearch={examfunc1}
               onSelect={onSelect1}
               onRemove={onRemove1}
-              electedValues={skillPos}
+              selectedValues={skillPos}
               selectionLimit={20}
               options={skills1}
               isObject={false}
