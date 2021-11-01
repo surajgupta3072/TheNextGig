@@ -101,7 +101,7 @@ function Page5() {
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col>
-                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/communityhome.webp"/>
+                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/communityhome.png"/>
               </Col>
               <Col style={{marginLeft:"-20%"}}>
                 <Card.Title style={{fontSize:"20px"}}>COMMUNITY</Card.Title>
