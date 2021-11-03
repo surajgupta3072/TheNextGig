@@ -8,7 +8,7 @@ function Community() {
         <div className="rectangle">
           <Row style={{height:"100%"}}>
             <Col style={{padding:"0px"}} md={4}>
-              <img src="discord.jpg" className="discord_img" alt="img1"/>
+              <img src="/discord.jpg" className="discord_img" alt="img1"/>
             </Col>
             <Col md={8}>
               <p className="text1">We’re on Discord!</p>

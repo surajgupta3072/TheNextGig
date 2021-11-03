@@ -15,6 +15,8 @@ import { useEffect, useState } from "react";
 import Auth from "@aws-amplify/auth";
 import ProtectedRoute from "./GuardedRoute";
 import SocialLearningPage from "./SocialLearningPage/SocialLearningPage";
+import SocialVideoPage from "./SocialLearningPage/SocialVideoPage";
+import SocialBlogPage from "./SocialLearningPage/SocialBlogPage";
 import jwt_decode from "jwt-decode";
 import docClient from './GigsPage/GigsAWS';
 // import Community from "./SocialLearningPage/Community";
@@ -128,6 +130,12 @@ function App() {
               </Route>
               <Route exact path="/SocialLearning">
                 <SocialLearningPage auth={authProps}/>
+              </Route>
+              <Route exact path="/SocialLearning/Video/:id">
+                <SocialVideoPage auth={authProps}/>
+              </Route>
+              <Route exact path="/SocialLearning/Blog/:id">
+                <SocialBlogPage auth={authProps}/>
               </Route>
               <ProtectedRoute exact path="/profile" auth={authProps}>
                 <ProfilePage auth={authProps}/>
