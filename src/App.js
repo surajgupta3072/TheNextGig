@@ -27,6 +27,7 @@ import AboutUs from "./AboutUsPage/AboutUs";
 import Legal from "./LegalPage/Legal";
 import Privacy from "./LegalPage/Privacy";
 import TC from "./LegalPage/TC";
+import RedirectPage from './RedirectPage';
 import "./App.css";
 import LearnCoins from "./LearnCoins/LearnCoins";
 
@@ -96,6 +97,10 @@ function App() {
     catch (error) {
       if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register" && window.location.href!="https://www.thenextgig.net/login" && window.location.href!="https://www.thenextgig.net/register")
         localStorage.setItem('lastURL', window.location.href);
+      if(window.location.href.includes("/SocialLearning/Blog/") || window.location.href.includes("/SocialLearning/Video/")) {
+        localStorage.setItem('lastLastURL', window.location.href);
+        localStorage.setItem('lastURL', "https://www.thenextgig.net/Redirecting");
+      }
     }
     setAuthenticatingStatus(false);
   }, []);
@@ -182,6 +187,9 @@ function App() {
               </Route>
               <Route exact path="/">
                 <HomePage />
+              </Route>
+              <Route exact path="/Redirecting">
+                <RedirectPage />
               </Route>
             </Switch>
           </Router>

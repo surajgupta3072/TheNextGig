@@ -114,7 +114,7 @@ function Blogs(props) {
                       Key: { "UserID":props.userid },
                       UpdateExpression: "set SkillsAcquiredBlogs["+data.Item.SkillsAcquiredBlogs.length.toString()+"] = :sab",
                       ExpressionAttributeValues:{
-                        ":sab": blog.BlogHashtags.split(" ")
+                        ":sab": blog.BlogHashtags.split("--")
                       },
                       ReturnValues:"UPDATED_NEW"
                     }
@@ -124,6 +124,32 @@ function Blogs(props) {
                       }
                     });
                   }
+              });
+              var params = {
+                TableName: "BlogsTable",
+                Key: { "BlogID":blog.BlogID },
+                ProjectionExpression: "BlogViews",
+              };
+              docClient.get(params, function(err, data) {
+                if (err) {
+                  console.log(err);
+                } 
+                else {
+                  var params = {
+                    TableName: "BlogsTable",
+                    Key: { "BlogID":blog.BlogID },
+                    UpdateExpression: "set BlogViews = :slbv",
+                    ExpressionAttributeValues:{
+                      ":slbv": data.Item.BlogViews + 1
+                    },
+                    ReturnValues:"UPDATED_NEW"
+                  }
+                  docClient.update(params, function (err, data) {
+                    if (err) {
+                      console.log(err);
+                    }
+                  });
+                }
               });
             }
           });
@@ -149,8 +175,9 @@ function Blogs(props) {
             <div className="blog-box">
               <h5 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h5>
               <h6 style={{padding:"0", margin:"0"}}>{blog.BlogUsername} - {blog.BlogCreds}</h6>
-              <p style={{padding:"0", margin:"0",color:"grey"}}>#{blog.BlogHashtags.split("#")[1]} #{blog.BlogHashtags.split("#")[2]}</p>
-              <p style={{fontSize:"12px"}}>{blog.BlogDate}</p>
+              <p style={{padding:"0", margin:"0",color:"grey"}}>#{blog.BlogHashtags.split("#")[1].replaceAll("--","  ")} #{blog.BlogHashtags.split("#")[2]}</p>
+              <p className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{blog.BlogViews} views</p>
+              <p style={{fontSize:"10px"}}>{blog.BlogDate}</p>
               <p style={{fontSize:"14px"}}>{blog.Blog.split(" ").slice(0,18).join(" ")+"  . . . "}</p>
             </div>
             <br/>
@@ -160,13 +187,14 @@ function Blogs(props) {
         )}
       </div>
       {readsingleblog && readsingleblog.map((blog)=>
-      <div>
+      <div key={blog.BlogID}>
         <ArrowLeft onClick={()=>setReadSingleBlog(false)} style={{marginLeft:"0.8%", marginTop:"-8px"}} className="button_arrow_MC_Page2_Right"/>
         <div style={{marginLeft:"3%",paddingBottom:"10px", textAlign:"center"}} key={blog.BlogID}>
           <h4 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h4>
           <br/>
           <h6 style={{padding:"0", margin:"0"}}>{blog.BlogUsername}-{blog.BlogCreds}</h6>
-          <p style={{padding:"0", margin:"0",color:"grey"}}>{blog.BlogHashtags}</p>
+          <p style={{padding:"0", margin:"0",color:"grey"}}>{blog.BlogHashtags.replaceAll("--","  ")}</p>
+          <p className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{blog.BlogViews} views</p>
           <p style={{fontSize:"12px"}}>{blog.BlogDate}</p>
           <br/>
           <pre style={{fontSize:"16px", textAlign:"left",color:"grey", whiteSpace:"pre-wrap", fontFamily:"Open Sans"}}>{blog.Blog}</pre>
