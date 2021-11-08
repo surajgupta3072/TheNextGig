@@ -149,7 +149,6 @@ function Videos(props) {
 
   function myClipboard(vidlink) { 
     navigator.clipboard.writeText(vidlink);
-    alert("Copied the link: " + vidlink);  
   }
 
  
@@ -177,7 +176,7 @@ function Videos(props) {
              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
              <Row>
               <Col md={9} className="text" style={{padding:"0", marginLeft:"4%", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</Col>
-              <Col onClick={()=>myClipboard("https://www.thenextgig.net/SocialLearning/Video/"+vid.VideoID)} className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px",cursor:"pointer"}}>Copy Link <Clipboard/></Col>
+              <Col onClick={()=>myClipboard(window.location.href+"/Video/"+vid.VideoID)} className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px",cursor:"pointer"}}>Copy Link <Clipboard/></Col>
              </Row>
             </div>
             <br/>

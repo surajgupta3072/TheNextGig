@@ -160,7 +160,6 @@ function Blogs(props) {
 
   function myClipboard(bloglink) { 
     navigator.clipboard.writeText(bloglink);  
-    alert("Copied the link: " + bloglink);  
   }
 
 
@@ -183,7 +182,7 @@ function Blogs(props) {
             </div>
             <br/>
           </div>
-          <p onClick={()=>myClipboard("https://www.thenextgig.net/SocialLearning/Blog/"+blog.BlogID)} className="text" style={{padding:"0", color:"rgb(242, 108, 79)", fontSize:"14px"}}>Copy Link <Clipboard/></p>
+          <p onClick={()=>myClipboard(window.location.href+"/Blog/"+blog.BlogID)} className="text" style={{padding:"0", color:"rgb(242, 108, 79)", fontSize:"14px"}}>Copy Link <Clipboard/></p>
          </div> 
         )}
       </div>
