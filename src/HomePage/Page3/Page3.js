@@ -48,9 +48,8 @@ function Page3() {
               </div>  
             ))}
           </Carousel>
-          <div style={{marginLeft: "6%"}}>
-        <h4 className="page3_subtitle_asterik" ><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a href="/LearnCoins" style={{color: "#f26c4f", textDecoration: "none"}}> TNG Learn Coins</a></h4>
-        </div>
+          <div style={{marginLeft: "6%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a href="/LearnCoins" style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div>
+
         </div>
         
       </div>

@@ -148,7 +148,8 @@ function Videos(props) {
   }
 
   function myClipboard(vidlink) { 
-    navigator.clipboard.writeText(vidlink);  
+    navigator.clipboard.writeText(vidlink);
+    alert("Copied the link: " + vidlink);  
   }
 
  

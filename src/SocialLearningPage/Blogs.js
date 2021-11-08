@@ -160,6 +160,7 @@ function Blogs(props) {
 
   function myClipboard(bloglink) { 
     navigator.clipboard.writeText(bloglink);  
+    alert("Copied the link: " + bloglink);  
   }
 
 

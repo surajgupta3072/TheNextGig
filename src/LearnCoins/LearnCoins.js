@@ -3,12 +3,11 @@ import Container from "react-bootstrap/Container";
 import './LearnCoins.css'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { ArrowRight } from "react-bootstrap-icons";
 import Card from 'react-bootstrap/Card';
 import Carousel from "react-elastic-carousel";
 import Data from "../MasterClassPage/Masterclass.json"
 import CardX from'../HomePage/Page3/Card';
-import ReactTooltip from 'react-tooltip';
+import { ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram } from "react-bootstrap-icons";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -20,17 +19,30 @@ const breakPoints = [
 function TNGCoins() {
     return (
         <div>
+          
             <div className="tngcoins_top_image">
         <Container>
-          <h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%"}}>TNG LEARN COINS</h1>
-          <p style={{fontFamily:"Open Sans"}}>Specially curated courses - they’re short, binge-able and based on real-life experiences.</p>
-          <p style={{fontStyle:"italic",fontSize:"14px",marginTop:"-10px"}}>PS: You get a certificate too!</p>
+          <h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%", opacity: "1"}}>TNG LEARN COINS</h1>
+          <p style={{fontFamily:"Open Sans"}}>Learn and share knowledge using our platform currency</p>
         </Container>
       </div>
       <div >
         <Container style={{marginBottom:"0"}}>
-          <div className="top_masterclass"><h1>Earn Coins</h1>
-            <p className="subtitle_masterclass">Earn while you share</p>
+          <div className="top_masterclass">
+            <div className="heading_box" style={{marginBottom: "6%", marginLeft: "0%"}}>
+      <div>
+        <p className="btn">
+          <span>
+            <span>
+              <span className="border_box">Earn coins</span>
+            </span>
+          </span>
+        </p>
+      </div>
+      <div style={{marginTop: "70px"}}>
+        <h4 className="page3_subtitle">Earn while you share</h4>
+      </div>
+      </div>
           </div>
         </Container>
       </div>
@@ -126,13 +138,22 @@ function TNGCoins() {
       </Container>
     </div>
     </div>
-    <div >
-        <Container style={{marginBottom:"0"}}>
-          <div className="top_masterclass"><h1>Redeem Coins</h1>
-            <p className="subtitle_masterclass">Binge short curated sessions</p>
-          </div>
-        </Container>
+      <div className="top_masterclass" style={{marginLeft: "9%", marginTop: "2%"}}>
+            <div className="heading_box" style={{marginBottom: "6%", marginLeft: "0%"}}>
+      <div>
+        <p className="btn">
+          <span>
+            <span>
+              <span className="border_box">Redeem Coins</span>
+            </span>
+          </span>
+        </p>
       </div>
+      <div style={{marginTop: "70px"}}>
+        <h4 className="page3_subtitle">Binge short curated sessions</h4>
+      </div>
+      </div>
+          </div>
       <div>
         <div className="carousel-wrapper" style={{width: "90%", justifyContent: "center", alignItems: "center", marginLeft: "6%"}}>
           <Carousel breakPoints={breakPoints}>
@@ -155,6 +176,26 @@ function TNGCoins() {
         </div>
         
       </div>
+      <div style={{marginLeft: "6%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a  style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div>
+      <div >
+            <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
+                <Col md={10}>
+                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}} className="footer_page3_gigs">
+                © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
+                </h6>
+                </Col>
+                <Col className="soci_master_lap" style={{display:"flex",justifyContent:"center"}}>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                </Col>
+                <div className="soci_master" style={{display:"flex",justifyContent:"center"}}>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                </div>
+            </Row>
+            </div>
         </div>
     )
 }
