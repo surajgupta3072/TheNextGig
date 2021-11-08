@@ -1,5 +1,8 @@
 import { useState } from "react";
 import docClient from '../GigsPage/GigsAWS';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import { Clipboard } from 'react-bootstrap-icons';
 
 function Videos(props) {
   const [videoslist, setVideosList] = useState(false);
@@ -136,6 +139,7 @@ function Videos(props) {
                   }
                 });
               }
+              
             });
           }
         }
@@ -143,8 +147,13 @@ function Videos(props) {
     }
   }
 
+  function myClipboard(vidlink) { 
+    navigator.clipboard.writeText(vidlink);  
+  }
 
+ 
   return (
+    
     <div>
       <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
       <button className="search_button" onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button>
@@ -164,8 +173,11 @@ function Videos(props) {
             <div style={{marginLeft:"2%"}}>
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
               <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
-              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
-              <p className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</p>
+             <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
+             <Row>
+              <Col md={9} className="text" style={{padding:"0", marginLeft:"4%", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</Col>
+              <Col onClick={()=>myClipboard("https://www.thenextgig.net/SocialLearning/Video/"+vid.VideoID)} className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px",cursor:"pointer"}}>Copy Link <Clipboard/></Col>
+             </Row>
             </div>
             <br/>
           </div>

@@ -2,6 +2,7 @@ import './Page3.css';
 import CardX from'./Card';
 import Carousel from "react-elastic-carousel";
 import Data from "./../../MasterClassPage/Masterclass.json"
+import ReactTooltip from 'react-tooltip';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -47,8 +48,13 @@ function Page3() {
               </div>  
             ))}
           </Carousel>
+          <div style={{marginLeft: "6%"}}>
+        <h4 className="page3_subtitle_asterik" ><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a href="/LearnCoins" style={{color: "#f26c4f", textDecoration: "none"}}> TNG Learn Coins</a></h4>
         </div>
+        </div>
+        
       </div>
+      
       </div>
     );
   }

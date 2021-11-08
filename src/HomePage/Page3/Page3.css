@@ -34,6 +34,10 @@ button.rec-dot {
   font-size: 1.3rem;
   margin-bottom: -60px;
 }
+.page3_subtitle_asterik{
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1.3rem;
+}
 .Item_component {
   display: flex;
   justify-content: center;
@@ -183,6 +187,10 @@ button.rec-dot {
   }
   .page3_subtitle {
     font-size: 15px;
+  }
+  .page3_subtitle_asterik{
+    font-size: 15px;
+    margin-left: 3%;
   }
   .button_div_page3 {
     margin-top: -120px;
