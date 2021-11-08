@@ -66,7 +66,7 @@ function Videos(props) {
           Key: { "UserID":props.userid },
           UpdateExpression: "set SkillsAcquiredVideos["+data.Item.SkillsAcquiredVideos.length.toString()+"] = :sav",
           ExpressionAttributeValues:{
-            ":sav": hashtags.split(" ")
+            ":sav": hashtags.split("--")
           },
           ReturnValues:"UPDATED_NEW"
         }
@@ -80,7 +80,7 @@ function Videos(props) {
   }
 
   function VideoStarted(vid, ct) {
-    if(ct==0) {
+    if(ct<=0.1) {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID":props.userid },
@@ -111,12 +111,12 @@ function Videos(props) {
                 console.log(err);
               }
             });
-            var params = {
+            var paramss = {
               TableName: "VideosTable",
               Key: { "VideoID":vid },
               ProjectionExpression: "VideoViews",
             };
-            docClient.get(params, function(err, data) {
+            docClient.get(paramss, function(err, data) {
               if (err) {
                 console.log(err);
               } 
@@ -164,7 +164,7 @@ function Videos(props) {
             <div style={{marginLeft:"2%"}}>
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
               <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
-              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags}</p>
+              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
               <p className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</p>
             </div>
             <br/>
@@ -183,7 +183,7 @@ function Videos(props) {
             <div style={{marginLeft:"2%"}}>
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
               <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
-              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags}</p>
+              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
               <p className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</p>
             </div>
             <br/>

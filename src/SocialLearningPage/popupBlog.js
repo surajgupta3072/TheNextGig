@@ -38,9 +38,9 @@ function MyVerticallyPopUpBlog(props) {
     function handleApply() {
         var hash="";
         for(var i=0;i<skillPos.length;i++)
-          {
-              hash=hash+"#"+skillPos[i]+" ";
-          }
+        {
+          hash=hash+"#"+skillPos[i]+"--";
+        }
         if (topic !== "" && creds!=="" && hash !== "" && blog !== "") {
             const adata = {
               "BlogID": crypto.randomBytes(8).toString("hex"),
@@ -50,7 +50,8 @@ function MyVerticallyPopUpBlog(props) {
               "BlogHashtags": hash,
               "Blog": blog,
               "isApproved": false,
-              "BlogDate": Date(Date.now())
+              "BlogDate": Date(Date.now()),
+              "BlogViews": 0
             }
             var paramss = {
                 TableName: "BlogsTable",

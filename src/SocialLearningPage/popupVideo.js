@@ -46,7 +46,7 @@ function MyVerticallyPopUp(props) {
     var hash="";
     for(var i=0;i<skillPos.length;i++)
     {
-      hash=hash+"#"+skillPos[i]+" "; 
+      hash=hash+"#"+skillPos[i]+"--";
     }
     if (topic !== "" && creds !== "" && hash !== "" && vfile !== undefined) {
       if (vfile.size > 1073741824) {

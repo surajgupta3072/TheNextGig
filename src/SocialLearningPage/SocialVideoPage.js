@@ -4,13 +4,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import docClient from '../GigsPage/GigsAWS';
 import { ArrowLeft } from "react-bootstrap-icons";
+import { useParams } from "react-router-dom";
+
 function SocialVideoPage(props) {
-  const [active, setActive] =  useState("");
+  const { id } = useParams();
   const [rew, setRew] = useState(0);
   const [videos, setvideos] = useState([]);
   const [user, setUser] = useState("");
-  const [redirectlogin, setRedirectLogin] = useState(true);
   const [dplink, setDplink]=useState("/dpavtar.png");
+
   useEffect(() => {
     var paramss = {
       TableName: "VideosTable",
@@ -19,7 +21,7 @@ function SocialVideoPage(props) {
         "#Vid": "VideoID",
       },
       ExpressionAttributeValues: {
-        ":VideoID":window.location.href.split("/")[5],
+        ":VideoID": id,
       }
     };
     docClient.query(paramss, function(err, data) {
@@ -29,12 +31,9 @@ function SocialVideoPage(props) {
         setvideos(data.Items);
       }
     });
-    if(props.auth.user===null) {
+    if(props.auth.user===null)
       setUser("");
-      setRedirectLogin(true);
-    }
     else {
-      setRedirectLogin(false);
       setUser(props.auth.user);
       var params = {
         TableName: "UsersTable",
@@ -51,10 +50,11 @@ function SocialVideoPage(props) {
       });
     }
   }, []);
+
   function VideoEnded(hashtags) {
     var paramss = {
       TableName: "UsersTable",
-      Key: { "UserID":props.userid },
+      Key: { "UserID":props.auth.user.username },
       ProjectionExpression: "SkillsAcquiredVideos",
     };
     docClient.get(paramss, function(err, data) {
@@ -64,10 +64,10 @@ function SocialVideoPage(props) {
       else {
         var params = {
           TableName: "UsersTable",
-          Key: { "UserID":props.userid },
+          Key: { "UserID":props.auth.user.username },
           UpdateExpression: "set SkillsAcquiredVideos["+data.Item.SkillsAcquiredVideos.length.toString()+"] = :sav",
           ExpressionAttributeValues:{
-            ":sav": hashtags.split(" ")
+            ":sav": hashtags.split("--")
           },
           ReturnValues:"UPDATED_NEW"
         }
@@ -79,11 +79,12 @@ function SocialVideoPage(props) {
       }
     });
   }
+
   function VideoStarted(vid, ct) {
-    if(ct==0) {
+    if(ct<=0.1) {
       var params = {
         TableName: "UsersTable",
-        Key: { "UserID":props.userid },
+        Key: { "UserID":props.auth.user.username },
         ProjectionExpression: "SocialLearningVideosWatched",
       };
       docClient.get(params, function(err, data) {
@@ -99,7 +100,7 @@ function SocialVideoPage(props) {
           if(flag===0) {
             var params = {
               TableName: "UsersTable",
-              Key: { "UserID":props.userid },
+              Key: { "UserID":props.auth.user.username },
               UpdateExpression: "set SocialLearningVideosWatched["+data.Item.SocialLearningVideosWatched.length.toString()+"] = :slvw",
               ExpressionAttributeValues:{
                 ":slvw": {"timestamp": `${Date.now()}`, "vid": vid}
@@ -111,12 +112,12 @@ function SocialVideoPage(props) {
                 console.log(err);
               }
             });
-            var params = {
+            var paramss = {
               TableName: "VideosTable",
               Key: { "VideoID":vid },
               ProjectionExpression: "VideoViews",
             };
-            docClient.get(params, function(err, data) {
+            docClient.get(paramss, function(err, data) {
               if (err) {
                 console.log(err);
               } 
@@ -152,8 +153,8 @@ function SocialVideoPage(props) {
             <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="SocialLearn_laptop">
               <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src={dplink} style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG Coins: <b>{rew}</b></p></span>:<br/>}</Col></Row>
                 <br/>
-                {active!=="Community" ?
-                  <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading {active==="Videos"?"videos":"blogs"} :{active==="Videos"?<span>
+                <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading "videos" :
+                  <span>
                     <br/>
                     <br/>
                     <ul><li>Teach something that you have learnt through your real life experience</li>
@@ -163,46 +164,35 @@ function SocialVideoPage(props) {
                     It’s easier than you think :)
                     <br/>
                     <br/>
-                    <span style={{fontStyle:"italic"}}>PS: We don’t expect you to share confidential information and/or sit for hours to create content – just share what you have learnt and teach</span></span>:<span><br/><br/><ul>
-                      <li>Write about something you that you have learnt from your real life experience – and that excites you</li>
-                      <li>Make sure you aren’t plagiarising - noone likes a copycat! :)</li>
-                      <li>Don’t worry about your language style, the relevance to the larger audience, etc. - as long as you find it valuable, its your original work and there is a clear message that someone can learn from, you’re good to go!</li>
-                      </ul>
-                      It’s easier than you think :)
-                      <br/><br/>
-                      <p style={{fontStyle:"italic",fontSize:"14px"}}>PS: Uploading videos or blogs or being actively involved in community discussions earns you reward points, personal branding and a whole lot of confidence :)</p></span>}
-                  </div>:
-                  <div style={{fontSize:"16px",marginLeft:"7px"}}>
-                    <br/>
-                    You don't really need guidance in this section. All you gotta do is click on the button down there and join our exclusive community of learners, industry professionals, students, freelancers, employees - basically everyone who is ready to change how the world thinks! :)
-                    <br/>
-                  </div>
-                }
+                    <span style={{fontStyle:"italic"}}>PS: We don’t expect you to share confidential information and/or sit for hours to create content – just share what you have learnt and teach</span>
+                  </span>
+                </div>
             </Col>
             <Col>
             <ArrowLeft onClick={()=>window.location.href="/SocialLearning"} style={{marginLeft:"0%", marginTop:"40px"}} className="button_arrow_MC_Page2_Right"/>
-            <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
-        {videos.map((vid)=>
-          <div style={{width:"80%",height:"100%",marginTop:"35px"}} className="video_div" key={vid.VideoID} onClick={() => {if(!props.auth.isAuthenticated) window.location.href="/login";}}>
-            {!props.auth.isAuthenticated ? 
-              <video style={{width:"100%",height:"0%"}} className="video_social_learn" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink} />
-              </video>
-              :
-              <video style={{width:"100%",height:"0%"}} className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink} />
-              </video>
-            }
-            <div style={{marginLeft:"2%"}}>
-              <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
-              <p className="text" style={{padding:"0", margin:"0", fontSize:"16px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
-              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"14px"}}>{vid.VideoHashtags}</p>
-              <p className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"12px"}}>{vid.VideoViews} views</p>
-            </div>
             <br/>
-          </div>
-        )}
-      </div>
+            <div style={{display:"flex", justifyContent:"space-around"}}>
+              {videos.map((vid)=>
+                <div style={{marginTop:"35px", height:"400px", width:"650px"}} className="video_div" key={vid.VideoID} onClick={() => {if(!props.auth.isAuthenticated) window.location.href="/login";}}>
+                  {!props.auth.isAuthenticated ? 
+                    <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                      <source src={vid.VideoLink} />
+                    </video>
+                    :
+                    <video style={{height:"400px", width:"650px"}} className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                      <source src={vid.VideoLink} />
+                    </video>
+                  }
+                  <div style={{marginLeft:"2%"}}>
+                    <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
+                    <p className="text" style={{padding:"0", margin:"0", fontSize:"16px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
+                    <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"14px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
+                    <p className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"12px"}}>{vid.VideoViews} views</p>
+                  </div>
+                  <br/>
+                </div>
+              )}
+            </div>
             </Col>
           </Row>
       </Container>
