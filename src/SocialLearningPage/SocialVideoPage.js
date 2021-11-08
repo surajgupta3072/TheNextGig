@@ -171,15 +171,15 @@ function SocialVideoPage(props) {
             <Col>
             <ArrowLeft onClick={()=>window.location.href="/SocialLearning"} style={{marginLeft:"0%", marginTop:"40px"}} className="button_arrow_MC_Page2_Right"/>
             <br/>
-            <div style={{display:"flex", justifyContent:"space-around"}}>
+            <div style={{display:"flex", justifyContent:"space-evenly"}}>
               {videos.map((vid)=>
-                <div style={{marginTop:"35px", height:"400px", width:"650px"}} className="video_div" key={vid.VideoID} onClick={() => {if(!props.auth.isAuthenticated) window.location.href="/login";}}>
+                <div style={{marginTop:"35px"}} className="video_div" key={vid.VideoID} onClick={() => {if(!props.auth.isAuthenticated) window.location.href="/login";}}>
                   {!props.auth.isAuthenticated ? 
-                    <video style={{height:"380px", width:"600px"}} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                    <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                       <source src={vid.VideoLink} />
                     </video>
                     :
-                    <video style={{height:"380px", width:"630px"}} className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                    <video className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                       <source src={vid.VideoLink} />
                     </video>
                   }

@@ -165,10 +165,11 @@ function SocialBlogPage(props) {
                 </div>
             </Col>
             <Col>
+            <ArrowLeft onClick={()=>window.location.href="/SocialLearning"} style={{marginLeft:"0.8%", marginTop:"20px"}} className="button_arrow_MC_Page2_Right"/>
+            <br/>
             {props.auth.isAuthenticated ?
               blogs.map((blog)=>
               <div key={blog.BlogID}>
-                <ArrowLeft onClick={()=>window.location.href="/SocialLearning"} style={{marginLeft:"0.8%", marginTop:"20px"}} className="button_arrow_MC_Page2_Right"/>
                 <div style={{marginLeft:"3%",paddingBottom:"10px", textAlign:"center"}} key={blog.BlogID}>
                   <h4 style={{padding:"0", margin:"0",color:"#F26C4F",marginTop:"50px"}}>{blog.BlogTopic}</h4>
                   <br/>

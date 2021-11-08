@@ -3,6 +3,7 @@ import docClient from '../GigsPage/GigsAWS';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Clipboard } from 'react-bootstrap-icons';
+import Swal from "sweetalert2";
 
 function Videos(props) {
   const [videoslist, setVideosList] = useState(false);
@@ -147,7 +148,15 @@ function Videos(props) {
     }
   }
 
-  function myClipboard(vidlink) { 
+  function myClipboard(vidlink) {
+    Swal.fire({
+      title: "<h6 style='color:white'>" + "Link Copied!" + "</h6>",
+      showConfirmButton: false,
+      timer: 2000,
+      background: '#020312',
+      color: 'white',
+      iconColor: "#F26C4F"
+    });
     navigator.clipboard.writeText(vidlink);
   }
 
@@ -175,8 +184,8 @@ function Videos(props) {
               <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
              <Row>
-              <Col md={9} className="text" style={{padding:"0", marginLeft:"4%", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</Col>
-              <Col onClick={()=>myClipboard(window.location.href+"/Video/"+vid.VideoID)} className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"10px",cursor:"pointer"}}>Copy Link <Clipboard/></Col>
+              <Col md={8} className="text" style={{padding:"0", marginLeft:"4%", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</Col>
+              <Col onClick={()=>myClipboard(window.location.href+"/Video/"+vid.VideoID)} className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"12px",cursor:"pointer"}}>Copy Link <Clipboard/></Col>
              </Row>
             </div>
             <br/>

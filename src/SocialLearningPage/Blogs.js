@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import docClient from '../GigsPage/GigsAWS';
 import './SocialLearningPage.css';
 import { ArrowLeft,Clipboard } from "react-bootstrap-icons";
+import Swal from "sweetalert2";
 
 function Blogs(props) {
   const [allBlogs, setAllBlogs] = useState([]);
@@ -158,8 +159,16 @@ function Blogs(props) {
     });
   }
 
-  function myClipboard(bloglink) { 
-    navigator.clipboard.writeText(bloglink);  
+  function myClipboard(bloglink) {
+    Swal.fire({
+      title: "<h6 style='color:white'>" + "Link Copied!" + "</h6>",
+      showConfirmButton: false,
+      timer: 2000,
+      background: '#020312',
+      color: 'white',
+      iconColor: "#F26C4F"
+    });
+    navigator.clipboard.writeText(bloglink);
   }
 
 
@@ -170,8 +179,8 @@ function Blogs(props) {
       <br/><br/>
       <div  style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around",cursor:"pointer"}}>
         {!readsingleblog && allBlogs.map((blog)=>
-       <div key={blog.BlogID}> 
-          <div  onClick={() => {if(!props.redirlog) BlogRead(blog);  else window.location.href="/login";}}>
+        <div key={blog.BlogID}> 
+          <div onClick={() => {if(!props.redirlog) BlogRead(blog);  else window.location.href="/login";}}>
             <div className="blog-box">
               <h5 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h5>
               <h6 style={{padding:"0", margin:"0"}}>{blog.BlogUsername} - {blog.BlogCreds}</h6>
@@ -180,9 +189,9 @@ function Blogs(props) {
               <p style={{fontSize:"10px"}}>{blog.BlogDate}</p>
               <p style={{fontSize:"14px"}}>{blog.Blog.split(" ").slice(0,18).join(" ")+"  . . . "}</p>
             </div>
-            <br/>
           </div>
-          <p onClick={()=>myClipboard(window.location.href+"/Blog/"+blog.BlogID)} className="text" style={{padding:"0", color:"rgb(242, 108, 79)", fontSize:"14px"}}>Copy Link <Clipboard/></p>
+          <p onClick={()=>myClipboard(window.location.href+"/Blog/"+blog.BlogID)} className="text" style={{marginTop:"5px", color:"rgb(242, 108, 79)", fontSize:"12px"}}>Copy Link <Clipboard/></p>
+          <br/>
          </div> 
         )}
       </div>
