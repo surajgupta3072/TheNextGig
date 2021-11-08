@@ -28,7 +28,7 @@ function Team(){
                         <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/pyfdVLy/Urmil-image-for-website-modified.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Urmil Vakharia</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Founder</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Co-Founder</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Passionate about education and an avid guitarist. Spends his free time learning new instruments and doing yoga. Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
@@ -61,7 +61,7 @@ function Team(){
                             <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/0C8Jbzc/IMG-20211026-005648-modified.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Prathamesh Palan</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"rgba(70, 83, 204, 0.6)"}} >Intern</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"rgba(70, 83, 204, 0.6)"}} >Strategy & Operations</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Music, puzzles and philosophy. Gets tilted at chess and relaxes with drumming. Picks up a new hobby every month, currently stuck trying to solve the rubik's cube in under 40 seconds, will most likely be something else by the time you're reading this.
                                 </Card.Text>
@@ -74,7 +74,7 @@ function Team(){
                         <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/k954mM3/IMG-20210329-184036-modified-1.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Anurag Vaibhav</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Intern</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"#F26C4F"}} >Tech Team</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Technophile and a wanderlust who Loves to read theories about mathematical equations like Riemann hypothesis and to know the science behind every phenomenon.
                                 </Card.Text>
@@ -86,7 +86,7 @@ function Team(){
                             <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/SB1My9x/My-Image-modified.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Suraj Gupta</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"rgba(200, 150, 54,1)"}} >Intern</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"rgba(200, 150, 54,1)"}} >Tech Team</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 A space enthusiast and young web developer ready to go out for adventurous trips with friends anytime. Write poems and stories when free and enjoy teaching kids! And yes, I love making friends!
                                 </Card.Text>
@@ -97,7 +97,7 @@ function Team(){
                             <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://i.ibb.co/GTcmv8z/Harsh-modified.png" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Harsh Lohia</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"rgba(86, 150, 112,1)"}} >Intern</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"rgba(86, 150, 112,1)"}} >Tech Team</Card.Subtitle>
                                 <Card.Text style={{ fontSize:"12px", textAlign: "center" }}>
                                 Really passionate about coding. Has two plans for life. Plan A- Do the above and make it big. Plan B- Don the Professor's hat and plan a heist
                                 </Card.Text>
@@ -133,7 +133,7 @@ function Team(){
                                 </Col>
                                 <Col>
                                 <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"12px"}}>Urmil Vakharia</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"#F26C4F"}} >Founder</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"#F26C4F"}} >Co-Founder</Card.Subtitle>
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"normal",marginLeft:"5px"}}>
                                 Passionate about education and an avid guitarist. Spends his free time learning new instruments and doing yoga. Will probably retire as a teacher in Bhutan.
                                 </Card.Text>
@@ -150,7 +150,7 @@ function Team(){
                                 </Col>
                                 <Col>
                                 <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"12px"}}>Dhairya Shah</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"#C89636"}} >Founder</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"#C89636"}} >Co-Founder</Card.Subtitle>
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"normal",marginLeft:"5px"}}>
                                 Huge fan of conspiracy theories and sci-fi movies. Likes to explore time travel and related theories. Can spend his entire day playing Poker and Catan.
                                 </Card.Text>
@@ -184,7 +184,7 @@ function Team(){
                                 </Col>
                                 <Col>
                                 <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"12px"}}>Prathamesh Palan</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"rgba(70, 83, 204, 0.6)"}} >Intern</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"rgba(70, 83, 204, 0.6)"}} >Strategy & Operations</Card.Subtitle>
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"normal",marginLeft:"5px"}}>
                                 Music, puzzles and philosophy. Gets tilted at chess and relaxes with drumming. Picks up a new hobby every month, currently stuck trying to solve the rubik's cube in under 40 seconds, will most likely be something else by the time you're reading this.
                                 </Card.Text>
@@ -201,7 +201,7 @@ function Team(){
                                 </Col>
                                 <Col>
                                 <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"12px"}}>Anurag Vaibhav</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"#F26C4F"}} >Intern</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"#F26C4F"}} >Tech Team</Card.Subtitle>
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"normal",marginLeft:"5px"}}>
                                 Technophile and a wanderlust who Loves to read theories about mathematical equations like Riemann hypothesis and to know the science behind every phenomenon.
                                 </Card.Text>
@@ -218,7 +218,7 @@ function Team(){
                                 </Col>
                                 <Col>
                                 <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"12px"}}>Suraj Gupta</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"#C89636"}} >Intern</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"#C89636"}} >Tech Team</Card.Subtitle>
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"normal",marginLeft:"5px"}}>
                                 A space enthusiast and young web developer ready to go out for adventurous trips with friends anytime. Write poems and stories when free and enjoy teaching kids! And yes, I love making friends!
                                 </Card.Text>
@@ -235,7 +235,7 @@ function Team(){
                                 </Col>
                                 <Col>
                                 <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"12px"}}>Harsh Lohia</Card.Title>
-                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"rgba(86, 150, 112, 1)"}} >Intern</Card.Subtitle>
+                                <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",fontSize:"10px",color:"rgba(86, 150, 112, 1)"}} >Tech Team</Card.Subtitle>
                                 <Card.Text style={{fontSize:"8px",whiteSpace:"normal",marginLeft:"5px"}}>
                                 Really passionate about coding. Has two plans for life. Plan A- Do the above and make it big. Plan B- Don the Professor's hat and plan a heist
                                 </Card.Text>

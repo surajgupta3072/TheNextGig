@@ -31,6 +31,9 @@ function Header(props) {
                 <Nav.Link href="/NotALearner" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
                     Not a Learner?
                 </Nav.Link>
+                <Nav.Link href="/LearnCoins" style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
+                    TNG Learn Coins
+                </Nav.Link>
                 {props.auth.isAuthenticated===true && 
                     <Nav.Link onClick={LogOutFunc} style={{color: "#424242", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
                         Logout

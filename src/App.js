@@ -28,6 +28,7 @@ import Legal from "./LegalPage/Legal";
 import Privacy from "./LegalPage/Privacy";
 import TC from "./LegalPage/TC";
 import "./App.css";
+import LearnCoins from "./LearnCoins/LearnCoins";
 
 function App() {
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
@@ -163,6 +164,9 @@ function App() {
               </Route>
               <Route exact path="/NotALearner">
                 <NotALearnerPage />
+              </Route>
+              <Route exact path="/LearnCoins">
+                <LearnCoins/>
               </Route>
               <Route exact path="/AboutUs">
                 <AboutUs />

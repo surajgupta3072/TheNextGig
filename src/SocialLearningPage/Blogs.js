@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import docClient from '../GigsPage/GigsAWS';
 import './SocialLearningPage.css';
-import { ArrowLeft } from "react-bootstrap-icons";
+import { ArrowLeft,Clipboard } from "react-bootstrap-icons";
 
 function Blogs(props) {
   const [allBlogs, setAllBlogs] = useState([]);
@@ -132,6 +132,11 @@ function Blogs(props) {
     });
   }
 
+  function myClipboard(bloglink) { 
+    navigator.clipboard.writeText(bloglink);  
+  }
+
+
   return (
     <div>
       <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}}  value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Blog..." type="search"/>&nbsp;&nbsp;&nbsp;
@@ -139,7 +144,8 @@ function Blogs(props) {
       <br/><br/>
       <div  style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around",cursor:"pointer"}}>
         {!readsingleblog && allBlogs.map((blog)=>
-          <div key={blog.BlogID} onClick={() => {if(!props.redirlog) BlogRead(blog);  else window.location.href="/login";}}>
+       <div key={blog.BlogID}> 
+          <div  onClick={() => {if(!props.redirlog) BlogRead(blog);  else window.location.href="/login";}}>
             <div className="blog-box">
               <h5 style={{padding:"0", margin:"0",color:"#F26C4F"}}>{blog.BlogTopic}</h5>
               <h6 style={{padding:"0", margin:"0"}}>{blog.BlogUsername} - {blog.BlogCreds}</h6>
@@ -149,6 +155,8 @@ function Blogs(props) {
             </div>
             <br/>
           </div>
+          <p onClick={()=>myClipboard("https://www.thenextgig.net/SocialLearning/Blog/"+blog.BlogID)} className="text" style={{padding:"0", color:"rgb(242, 108, 79)", fontSize:"14px"}}>Copy Link <Clipboard/></p>
+         </div> 
         )}
       </div>
       {readsingleblog && readsingleblog.map((blog)=>

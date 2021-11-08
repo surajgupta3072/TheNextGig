@@ -14,8 +14,14 @@ const breakPoints = [
 function Page1() {
   return (
     <div>
-      <div className="masterclass_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%"}}>ALL TNG ORIGINALS</h1><p style={{fontFamily:"Open Sans"}}>Specially curated courses - they’re short, binge-able and based on real-life experiences.</p><p style={{fontStyle:"italic",fontSize:"14px",marginTop:"-10px"}}>PS: You get a certificate too!</p></Container></div>
-      <div className="Mastercards">
+      <div className="masterclass_top_image">
+        <Container>
+          <h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%"}}>ALL TNG ORIGINALS</h1>
+          <p style={{fontFamily:"Open Sans"}}>Specially curated courses - they’re short, binge-able and based on real-life experiences.</p>
+          <p style={{fontStyle:"italic",fontSize:"14px",marginTop:"-10px"}}>PS: You get a certificate too!</p>
+        </Container>
+      </div>
+    <div className="Mastercards">
         {master.map((carder) => (
           <MDBCard
             onClick={() => {if(carder.course_timing!=="...Coming Soon") window.location.href = "/TNGoriginals/" + carder.id}}
