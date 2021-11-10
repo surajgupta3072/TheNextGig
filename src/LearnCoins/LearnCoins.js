@@ -138,7 +138,10 @@ function TNGCoins() {
       </Container>
     </div>
     </div>
-      <div className="top_masterclass" style={{marginLeft: "9%", marginTop: "2%"}}>
+      
+          <div >
+        <Container style={{marginBottom:"0"}}>
+          <div className="top_masterclass">
             <div className="heading_box" style={{marginBottom: "6%", marginLeft: "0%"}}>
       <div>
         <p className="btn">
@@ -154,6 +157,8 @@ function TNGCoins() {
       </div>
       </div>
           </div>
+        </Container>
+      </div>
       <div>
         <div className="carousel-wrapper" style={{width: "90%", justifyContent: "center", alignItems: "center", marginLeft: "6%"}}>
           <Carousel breakPoints={breakPoints}>
