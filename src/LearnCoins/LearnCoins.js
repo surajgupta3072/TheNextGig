@@ -138,10 +138,10 @@ function TNGCoins() {
     </div>
     </div>
       
-          <div >
+          <div style={{marginTop: "2%"}}>
         <Container style={{marginBottom:"0"}}>
           <div className="top_masterclass">
-            <div className="heading_box" style={{marginBottom: "6%", marginLeft: "0%"}}>
+            <div className="heading_box Learncoins_headings" >
       <div>
         <p className="btn">
           <span>
@@ -152,7 +152,7 @@ function TNGCoins() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle">Binge short curated sessions</h4>
+        <h4 className="page3_subtitle">Binge on our short, curated TNG Originals</h4>
       </div>
       </div>
           </div>
@@ -180,9 +180,9 @@ function TNGCoins() {
         </div>
         
       </div>
-      <div style={{marginLeft: "6%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a  style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div>
+      <div style={{marginLeft: "11%",marginTop: "-1%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a  style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div>
       <div >
-            <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
+            <Row style={{marginTop: "2%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>
                 <h6 style={{fontSize:"15px",color:"#FFFFFF99"}} className="footer_page3_gigs">
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved

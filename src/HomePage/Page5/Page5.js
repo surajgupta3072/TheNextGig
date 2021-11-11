@@ -131,7 +131,7 @@ function Page5() {
         <p class="btn">
           <span>
             <span>
-              <span className="border_box">TNG Learn Coins</span>
+              <span className="border_box">TNG LEARN COINS</span>
             </span>
           </span>
         </p>
@@ -146,7 +146,7 @@ function Page5() {
         <Container>
           <Row style={{display: "flex", flexDirection: "row"}}>
             <Card onClick={()=>window.location.href="/SocialLearning"}  className="page2card" style={{ width: "29.9%", marginLeft:"2.5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px", cursor: 'pointer' }}>
-                <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginTop:"40px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/Earn Coin.jpg"/>
+                <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginTop:"40px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/earn.jpg"/>
                 <Card.Body style={{marginTop:"30px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >EARN</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
@@ -162,11 +162,11 @@ function Page5() {
                   Check your coin balance under <br /> <i>Profile</i> section
                   </Card.Text>
                 </Card.Body>
-                <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/Accumulate coins.jpg"/>
+                <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/accumulate.jpg"/>
             </Card>
 
             <Card onClick={()=>window.location.href="/TNGoriginals"} className="page2card3" style={{width: "29.9%", marginLeft:"3%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgb(86, 150, 112,0.6)",borderRadius:"12px", cursor: 'pointer'}}>
-                <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginTop:"40px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/Redeem coins.jpg"/>
+                <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginTop:"40px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/redeem.jpg"/>
                 <Card.Body style={{marginTop:"30px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >REDEEM</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
@@ -186,7 +186,7 @@ function Page5() {
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col >
-                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/Earn Coin.jpg"/>
+                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/earn.jpg"/>
               </Col>
               <Col style={{marginLeft:"-20%"}}>
                 <Card.Title style={{fontSize:"20px"}}>EARN</Card.Title>
@@ -202,7 +202,7 @@ function Page5() {
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col>
-                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/Accumulate coins.jpg"/>
+                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/accumulate.jpg"/>
               </Col>
               <Col style={{marginLeft:"-20%"}}>
                 <Card.Title style={{fontSize:"20px"}}>ACCUMULATE</Card.Title>
@@ -218,7 +218,7 @@ function Page5() {
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col>
-                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/Redeem coins.jpg"/>
+                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/redeem.jpg"/>
               </Col>
               <Col style={{marginLeft:"-20%"}}>
                 <Card.Title style={{fontSize:"20px"}}>REDEEM</Card.Title>
