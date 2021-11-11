@@ -48,8 +48,8 @@ function Page2() {
                   <span  className="border_box">
                     <Row className="learner" style={{border:"2px solid rgba(70, 83, 204, 0.6)"}}>
             <Col md={1}><img style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_400_400/0/1611408696050?e=1640822400&v=beta&t=gyUkDp-JNAWDx42bs37835W4R9lRha2jCwh7DWhvJpc" height="40px" width="40px" /></Col>&nbsp;
-            <Col md={1}><img style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5603AQHPkzLQjERCyA/profile-displayphoto-shrink_800_800/0/1592377114860?e=1636588800&v=beta&t=BEeAKL7gV16KOEo9fNkH0U2SvmHaRsUF2eYwlQhoCpA" height="40px" width="40px" /></Col>&nbsp;
-            <Col md={1} ><img  style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5103AQFg7zfzkiQE8Q/profile-displayphoto-shrink_800_800/0/1571626383719?e=1636588800&v=beta&t=m1mCj3Im7_GOEbeeq2JSqP5oEb07kfIUpZUQATUaVa4" height="40px" width="40px" /></Col>&nbsp;&nbsp;
+            <Col md={1}><img style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5603AQHPkzLQjERCyA/profile-displayphoto-shrink_800_800/0/1592377114860?e=1642032000&v=beta&t=88lsJ9am_fBoxTYbodLnziarzdQ6m_QensSoOliDsl8" height="40px" width="40px" /></Col>&nbsp;
+            <Col md={1} ><img  style={{borderRadius:"5px",marginTop:"-8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5603AQF8VT12SJJdpw/profile-displayphoto-shrink_800_800/0/1623307765357?e=1642032000&v=beta&t=4G85yP3vXR0WVtfOuih7vRtQ4nPBGXBdHsLC8QnUEBg" height="40px" width="40px" /></Col>&nbsp;&nbsp;
             <Col ><p style={{fontSize:"20px", textAlign:"left", paddingTop: "14px",color:"white",opacity:"0.7",fontFamily:"Inter"}}>3,200+ learners on TNG</p></Col></Row>
             </span>
           </Row>
@@ -109,8 +109,8 @@ function Page2() {
           </Card>
           <div style={{width:"100%",height:"50px",border:"2px solid rgba(70, 83, 204, 0.6)", paddingTop:"5px", display: "flex", flexDirection: "row",margin:"auto"}}>
               <Col  md={1} ><img style={{borderRadius:"8px",marginRight:"8px",marginLeft:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_400_400/0/1611408696050?e=1640822400&v=beta&t=gyUkDp-JNAWDx42bs37835W4R9lRha2jCwh7DWhvJpc" height="40px" width="40px"  /></Col>
-                <Col md={1}><img style={{borderRadius:"8px",marginRight:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5603AQHPkzLQjERCyA/profile-displayphoto-shrink_800_800/0/1592377114860?e=1636588800&v=beta&t=BEeAKL7gV16KOEo9fNkH0U2SvmHaRsUF2eYwlQhoCpA" height="40px" width="40px" /></Col>
-                <Col md={1}><img style={{borderRadius:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5103AQFg7zfzkiQE8Q/profile-displayphoto-shrink_800_800/0/1571626383719?e=1636588800&v=beta&t=m1mCj3Im7_GOEbeeq2JSqP5oEb07kfIUpZUQATUaVa4" height="40px" width="40px" /></Col>&nbsp;&nbsp;&nbsp;
+                <Col md={1}><img style={{borderRadius:"8px",marginRight:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5603AQHPkzLQjERCyA/profile-displayphoto-shrink_800_800/0/1592377114860?e=1642032000&v=beta&t=88lsJ9am_fBoxTYbodLnziarzdQ6m_QensSoOliDsl8" height="40px" width="40px" /></Col>
+                <Col md={1}><img style={{borderRadius:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5603AQF8VT12SJJdpw/profile-displayphoto-shrink_800_800/0/1623307765357?e=1642032000&v=beta&t=4G85yP3vXR0WVtfOuih7vRtQ4nPBGXBdHsLC8QnUEBg" height="40px" width="40px" /></Col>&nbsp;&nbsp;&nbsp;
                 <Col><p style={{fontSize:"14px", textAlign:"left", paddingTop: "7px",color:"white",opacity:"0.7"}}>3,200+ learners on TNG</p></Col>
               </div>
           </Col>

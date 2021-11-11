@@ -113,7 +113,7 @@ function App() {
   };
   // console.log("NIK authProps=", authProps);
   return (
-    <div>
+    <div onContextMenu={e => e.preventDefault()}>
       {!isAuthenticating && (
         <div>
           <Header auth={authProps} />

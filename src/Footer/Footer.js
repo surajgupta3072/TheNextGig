@@ -52,7 +52,7 @@ function Footer(){
                 </Col> 
                 <Col md={2}>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
-                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                     <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </Col>
             </Row>
@@ -102,7 +102,7 @@ function Footer(){
                 </Col> 
                 <div style={{display:"flex",justifyContent:"center"}} md={2}>
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
-                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                     <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </div>
             </Row>

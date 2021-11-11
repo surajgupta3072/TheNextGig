@@ -74,7 +74,8 @@ function MyVerticallyPopUp(props) {
             VideoHashtags: hash,
             VideoLink: "https://dty09xroi0av3.cloudfront.net"+"/"+vfile.name,
             isApproved: false,
-            VideoViews: 0
+            VideoViews: 0,
+            VideoDomains: []
           };
           var paramss = {
             TableName: "VideosTable",

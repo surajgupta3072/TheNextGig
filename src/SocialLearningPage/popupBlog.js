@@ -51,7 +51,8 @@ function MyVerticallyPopUpBlog(props) {
               "Blog": blog,
               "isApproved": false,
               "BlogDate": Date(Date.now()),
-              "BlogViews": 0
+              "BlogViews": 0,
+              "BlogDomains": []
             }
             var paramss = {
                 TableName: "BlogsTable",

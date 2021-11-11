@@ -182,11 +182,11 @@ function Videos(props) {
             <div style={{marginLeft:"2%"}}>
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
               <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
-             <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
-             <Row>
-              <Col md={8} className="text" style={{padding:"0", marginLeft:"4%", color:"rgb(242, 108, 79)", fontSize:"10px"}}>{vid.VideoViews} views</Col>
-              <Col onClick={()=>myClipboard(window.location.href+"/Video/"+vid.VideoID)} className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"12px",cursor:"pointer"}}>Copy Link <Clipboard/></Col>
-             </Row>
+              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
+              <Row>
+                <Col md={8} className="text" style={{padding:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
+                <Col md={4} onClick={()=>myClipboard(window.location.href+"/Video/"+vid.VideoID)} className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"12px",cursor:"pointer"}}>&nbsp;&nbsp;&nbsp;Copy Link <Clipboard/></Col>
+              </Row>
             </div>
             <br/>
           </div>

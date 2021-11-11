@@ -1,13 +1,13 @@
 import React from 'react'
 import Container from "react-bootstrap/Container";
-import './LearnCoins.css'
+import './LearnCoins.css';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card';
 import Carousel from "react-elastic-carousel";
 import Data from "../MasterClassPage/Masterclass.json"
 import CardX from'../HomePage/Page3/Card';
-import { ArrowRight,ArrowLeft,Linkedin,Whatsapp,Instagram } from "react-bootstrap-icons";
+import { Linkedin,Whatsapp,Instagram } from "react-bootstrap-icons";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -19,7 +19,6 @@ const breakPoints = [
 function TNGCoins() {
     return (
         <div>
-          
             <div className="tngcoins_top_image">
         <Container>
           <h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%", opacity: "1"}}>TNG LEARN COINS</h1>
@@ -190,14 +189,14 @@ function TNGCoins() {
                 </h6>
                 </Col>
                 <Col className="soci_master_lap" style={{display:"flex",justifyContent:"center"}}>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
-                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </Col>
                 <div className="soci_master" style={{display:"flex",justifyContent:"center"}}>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
-                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </div>
             </Row>
             </div>

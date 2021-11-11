@@ -18,6 +18,7 @@ const breakPoints = [
 ];
 
 function Page3(props) {
+  let today = new Date().toISOString().slice(0, 10);
   const [modalShow, setModalShow] = useState(false);
   const [gigs, setGigs] = useState([]);
   const [appliedgigs, setAppliedGigs] = useState([]);
@@ -138,7 +139,7 @@ function Page3(props) {
                       </button>
                     </a>
                   </Col> */}
-                  { false ?
+                  { gigs[0].GigBackendDate<=today ?
                     <button style={{marginLeft:"27%", width:"25%"}} className="button2_slide_page3 slide_right">
                       Closed
                     </button> :
@@ -175,7 +176,7 @@ function Page3(props) {
                       </button>
                     </a>
                   </div> */}
-                  { false ?
+                  { gigs[0].GigBackendDate<=today ?
                     <button style={{marginLeft:"5%", width:"25%"}} className="button2_slide_page3 slide_right">
                       Closed
                     </button> :
@@ -301,14 +302,14 @@ function Page3(props) {
                 </h6>
                 </Col>
                 <Col className="soci_master_lap" style={{display:"flex",justifyContent:"center"}}>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
-                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </Col>
                 <div className="soci_master" style={{display:"flex",justifyContent:"center"}}>
-                <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
-                    <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
-                    <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                  <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </div>
             </Row>
             </div>
