@@ -7,6 +7,37 @@
   border: 1px solid rgb(212, 71, 41);
   background: transparent;
 }
+label > input[type="checkbox"] {
+  display: none;
+}
+label > input[type="checkbox"] + *::before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.3rem;
+  border-radius: 10%;
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: #f26c4f;
+  flex-shrink: 0;
+}
+label > input[type="checkbox"]:checked + * {
+  color: #f26c4f;
+}
+label > input[type="checkbox"]:checked + *::before {
+  content: "✔";
+  color: white;
+  text-align: center;
+  background: black;
+  border-color: #f26c4f;
+}
+
+/* basic layout */
+label > input[type="checkbox"] + * {
+  display: inline-flex;
+}
 .night {
   position: relative; /* position: relative; */
   width: 100%;
