@@ -135,6 +135,7 @@ function Videos(props) {
                   },
                   ReturnValues:"UPDATED_NEW"
                 }
+
                 docClient.update(params, function (err, data) {
                   if (err) {
                     console.log(err);
@@ -171,14 +172,15 @@ function Videos(props) {
           <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
               <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink} />
+                <source src={vid.VideoLink+"#t=1"} />
               </video>
               :
-              <video className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink} />
+              <video id="myvid" className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                <source src={vid.VideoLink+"#t=1"} />
               </video>
             }
             <div style={{marginLeft:"2%"}}>
+            {/* <p className="text" style={{padding:"0", margin:"0", marginLeft:"90%", color:"grey", fontSize:"12px"}}>3.14</p> */}
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
               <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
               <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
@@ -194,10 +196,10 @@ function Videos(props) {
           <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
               <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink} />
+                <source src={vid.VideoLink+"#t=1"} />
               </video> :
               <video className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink} />
+                <source src={vid.VideoLink+"#t=1"} />
               </video>
             }
             <div style={{marginLeft:"2%"}}>

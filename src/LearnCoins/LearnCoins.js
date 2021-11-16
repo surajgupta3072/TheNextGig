@@ -152,7 +152,7 @@ function TNGCoins() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle">Binge on our short, curated TNG Originals</h4>
+        <h4 className="page3_subtitle">Binge on our short, curated TNG Originals (once after our Launch offer is over)</h4>
       </div>
       </div>
           </div>
@@ -180,7 +180,7 @@ function TNGCoins() {
         </div>
         
       </div>
-      <div style={{marginLeft: "11%",marginTop: "-1%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a  style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div>
+      {/* <div style={{marginLeft: "11%",marginTop: "-1%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a  style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div> */}
       <div >
             <Row style={{marginTop: "2%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
                 <Col md={10}>

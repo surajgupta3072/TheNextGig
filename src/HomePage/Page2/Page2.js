@@ -15,13 +15,25 @@ function Page2() {
         </p>
           <Row>
             <Card className="page2card" onClick={()=>window.location.href="/TNGoriginals"} style={{ width: "29.9%", marginLeft:"2%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(242, 108, 79,0.6)", borderRadius:"12px",cursor:"pointer"}}>
-                <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginTop:"30px", background:"white", borderRadius:"50%",border:"none"}} variant="to1p" src="/tng_originals.png"/>
+                
                 <Card.Body style={{marginTop:"30px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >TNG <br /> ORIGINALS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
                   Short expert-driven sessions, real-life cases, And a  <em> whole lot of value </em>!  
                   </Card.Text>
                 </Card.Body>
+                <Card.Img style={{margin: "auto", height:"170px", width:"170px",  marginBottom:"30px", background:"white", borderRadius:"50%",border:"none"}} variant="to1p" src="/tng_originals.png"/>
+            </Card>
+
+            <Card className="page2card3" onClick={()=>window.location.href="/SocialLearning"} style={{ width: "29.9%", marginLeft:"3%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgb(86, 150, 112,0.6)",borderRadius:"12px",cursor:"pointer"}}>
+                
+                <Card.Body style={{marginTop:"30px"}}>
+                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SOCIAL <br /> LEARNING</Card.Title>
+                  <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
+                  Learn <em> and teach </em> bite sized content; <br/> Videos, blogs and an exclusive community
+                  </Card.Text>
+                </Card.Body >
+                <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"none"}} variant="to1p" src="/soci.png"/>
             </Card>
             
             <Card className="page2card2" onClick={()=>window.location.href="/ExperientialLearning"} style={{ width: "29.9%", marginLeft:"3%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(200, 150, 54,0.4)", borderRadius:"12px",cursor:"pointer"}}>
@@ -34,15 +46,7 @@ function Page2() {
                 <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"none"}} variant="to1p" src="/exp_learn.png"/>
             </Card>
 
-            <Card className="page2card3" onClick={()=>window.location.href="/SocialLearning"} style={{ width: "29.9%", marginLeft:"3%",backgroundColor:"rgba(242, 108, 79, 0.07)",border:"2px solid rgb(86, 150, 112,0.6)",borderRadius:"12px",cursor:"pointer"}}>
-                <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginTop:"30px", background:"white", borderRadius:"50%",border:"none"}} variant="to1p" src="/soci.png"/>
-                <Card.Body style={{marginTop:"30px"}}>
-                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SOCIAL <br /> LEARNING</Card.Title>
-                  <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Learn <em> and teach </em> bite sized content; <br/> Videos, blogs and an exclusive community
-                  </Card.Text>
-                </Card.Body >
-            </Card>
+           
           </Row>
           <Row style={{width:"500px",height:"70px", marginTop:"4%",  marginBottom:"5%", marginLeft:"59%", paddingTop:"10px"}}>
                   <span  className="border_box">
@@ -77,22 +81,7 @@ function Page2() {
               </div>
             </Card.Body>
           </Card>
-          <Card onClick={()=>window.location.href="/ExperientialLearning"} style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(200, 150, 54,0.4)",marginTop:"10%"}}>
-            <Card.Body>
-              <div style={{display: "flex", flexDirection: "row"}}>
-                <Col style={{marginTop:"8px"}}>
-                  <Card.Img style={{margin: "auto", height:"100px", width:"100px",borderRadius:"10px"}} variant="top" src="/exp_learn.png"/>
-                </Col>
-                <Col style={{marginLeft:"-20%"}}>
-                  <Card.Title style={{fontSize:"20px",textAlign:"left"}}>EXPERIENTIAL<br/> LEARNING</Card.Title>
-                  <Card.Text style={{fontSize:"12px",whiteSpace:"normal",opacity:"0.7",width:"100%"}}>
-                  Gigs, internships, live projects and job opportunities!
-                  </Card.Text>
-                </Col>
-              </div>
-            </Card.Body>
-          </Card>
-          <Card onClick={()=>window.location.href="/SocialLearning"} style={{width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(86, 150, 112,0.6)",marginTop:"10%", marginBottom: "10%"}}>
+          <Card onClick={()=>window.location.href="/SocialLearning"} style={{width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(86, 150, 112,0.6)",marginTop:"10%"}}>
             <Card.Body>
               <div style={{display: "flex", flexDirection: "row"}}>
                 <Col style={{marginTop:"8px"}}>
@@ -107,6 +96,22 @@ function Page2() {
               </div>
             </Card.Body>
           </Card>
+          <Card onClick={()=>window.location.href="/ExperientialLearning"} style={{ width: '100%',borderRadius:"12px",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(200, 150, 54,0.4)",marginTop:"10%", marginBottom: "10%"}}>
+            <Card.Body>
+              <div style={{display: "flex", flexDirection: "row"}}>
+                <Col style={{marginTop:"8px"}}>
+                  <Card.Img style={{margin: "auto", height:"100px", width:"100px",borderRadius:"10px"}} variant="top" src="/exp_learn.png"/>
+                </Col>
+                <Col style={{marginLeft:"-20%"}}>
+                  <Card.Title style={{fontSize:"20px",textAlign:"left"}}>EXPERIENTIAL<br/> LEARNING</Card.Title>
+                  <Card.Text style={{fontSize:"12px",whiteSpace:"normal",opacity:"0.7",width:"100%"}}>
+                  Gigs, internships, live projects and job opportunities!
+                  </Card.Text>
+                </Col>
+              </div>
+            </Card.Body>
+          </Card>
+        
           <div style={{width:"100%",height:"50px",border:"2px solid rgba(70, 83, 204, 0.6)", paddingTop:"5px", display: "flex", flexDirection: "row",margin:"auto"}}>
               <Col  md={1} ><img style={{borderRadius:"8px",marginRight:"8px",marginLeft:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_400_400/0/1611408696050?e=1640822400&v=beta&t=gyUkDp-JNAWDx42bs37835W4R9lRha2jCwh7DWhvJpc" height="40px" width="40px"  /></Col>
                 <Col md={1}><img style={{borderRadius:"8px",marginRight:"8px"}} alt="..." src="https://media-exp1.licdn.com/dms/image/C5603AQHPkzLQjERCyA/profile-displayphoto-shrink_800_800/0/1592377114860?e=1642032000&v=beta&t=88lsJ9am_fBoxTYbodLnziarzdQ6m_QensSoOliDsl8" height="40px" width="40px" /></Col>

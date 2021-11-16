@@ -21,7 +21,7 @@ function Page5() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle text3">...instead of the mindless scrolling on other social media platforms?</h4>
+        <h4 className="page3_subtitle text3">...a social media platform for <text style={{color:"#F26C4F"}}>practical learning!</text></h4>
       </div>
       </div>
 
@@ -119,7 +119,7 @@ function Page5() {
     </div>
     </div>
         <div className="button_div_page5">
-          <a href="/SocialLearning"><button  className="button_slide slide_right">Let's go!<ArrowRight className="button_arrow"/></button></a>
+          <a href="/SocialLearning"><button  className="button_slide slide_right">Let’s socialize!<ArrowRight className="button_arrow"/></button></a>
         </div>
     </div>
 

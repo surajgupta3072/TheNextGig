@@ -9,7 +9,7 @@ import MyVerticallyPopUp  from './popupVideo';
 import MyVerticallyPopUpBlog  from './popupBlog';
 import Popupinfovide from './popupvideoinfo';
 import Community from './Community';
-import {InfoCircle} from 'react-bootstrap-icons';
+import {InfoCircle,ArrowRight,Plus} from 'react-bootstrap-icons';
 
 
 function SocialLearningPage(props) {
@@ -277,7 +277,7 @@ function SocialLearningPage(props) {
                <div>
                {active==="Videos" &&
                <div style={{display:"flex",justifyContent:"center",flexDirection:"column"}}>
-                  {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><div style={{display:"flex",justifyContent:"center"}}><button style={{paddingBottom:"0px",margin:"auto"}}  className="button_slide slide_right"><p style={{fontWeight:"bold",fontSize:"16px",color:"white"}}>Add your video <span className="plus">+</span></p></button></div></a>}
+                  {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><div style={{display:"flex",justifyContent:"center"}}><button style={{paddingBottom:"0px",margin:"auto"}}  className="button_slide slide_right"><p style={{fontWeight:"bold",fontSize:"16px",color:"white"}}>Add your video <Plus size={50} className="button_arrow_footer_footer"/></p></button></div></a>}
                   <MyVerticallyPopUp
                     userid={user}
                     show={modalShow}

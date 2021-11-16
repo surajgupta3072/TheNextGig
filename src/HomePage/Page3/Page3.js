@@ -25,7 +25,7 @@ function Page3() {
         </p>
       </div>
       <div style={{marginTop: "70px"}}>
-        <h4 className="page3_subtitle">Curated, certified sessions to make <span className="page3_orange"> <em>you</em> </span> an expert</h4>
+        <h4 className="page3_subtitle">Practical learning <em>ONLY</em> ~ <span className="page3_orange">Industry professionals</span> teaching you real-life skills!</h4>
       </div>
       </div>
       <br/>
@@ -41,14 +41,14 @@ function Page3() {
                   card={detail.course_image}
                   name={detail.course_instructor}
                   time={detail.course_timing}
-                  fees={detail.fees}
+                  fees={detail.course_episode}
                   key={detail.id}
                   carl={detail.id}
                 />
               </div>  
             ))}
           </Carousel>
-          <div style={{marginLeft: "6%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a href="/LearnCoins" style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div>
+          {/* <div style={{marginLeft: "6%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a href="/LearnCoins" style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div> */}
 
         </div>
         
