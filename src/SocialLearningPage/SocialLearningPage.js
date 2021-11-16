@@ -7,10 +7,19 @@ import Blogs from './Blogs';
 import docClient from '../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popupVideo';
 import MyVerticallyPopUpBlog  from './popupBlog';
+import Popupinfovide from './popupvideoinfo';
 import Community from './Community';
+import {InfoCircle} from 'react-bootstrap-icons';
+
 
 function SocialLearningPage(props) {
   const [modalShow, setModalShow] = useState(false);
+  const [modalShowvideo, setModalShowvideo] = useState(false);
+  function handleClose()
+   { console.log(modalShowvideo)
+     console.log("hii");
+     setModalShowvideo(false);
+  }
   const [active, setActive] =  useState("Videos");
   const [color1,setColor1] =useState("#f26c4f");
   const [textColor1,setextColor1] =useState("white");
@@ -22,8 +31,9 @@ function SocialLearningPage(props) {
   const [allvideos, setAllvideos] = useState([]);
   const [user, setUser] = useState("");
   const [redirectlogin, setRedirectLogin] = useState(true);
-  const [dplink, setDplink]=useState("./dpavtar.png");
-
+  const [videoslist, setVideosList] = useState(false);
+  const [filter,setfilter]=useState([])
+  const [data,setdata]=useState([])
   useEffect(() => {
     var paramss = {
       TableName: "VideosTable"
@@ -33,6 +43,7 @@ function SocialLearningPage(props) {
         console.log(err);
       } else {
         setAllvideos(data.Items.filter((e)=>{if(e.isApproved===true) return e}));
+        setdata(data.Items.filter((e)=>{if(e.isApproved===true) return e}))
         // setAllvideos(data.Items.sort(() => Math.random()-0.5).filter((e)=>{if(e.isApproved===true) return e}));
       }
     });
@@ -52,13 +63,36 @@ function SocialLearningPage(props) {
           console.log(err);
         } else {
           setRew(data.Item.TotalRewards);
-          if(data.Item.DPlink!==undefined)
-            setDplink(data.Item.DPlink);
         }
       });
     }
   }, []);
+  const searchfilter=(e)=>
+  {
+    var filternumber=filter;
+    if(filternumber.indexOf(parseInt(e.target.value))===-1)
+    {
+      filternumber.push(parseInt(e.target.value))
+    }
+    else{
+    filternumber.splice(filternumber.indexOf(parseInt(e.target.value)),1)
+    }
 
+    var videofilterlist=[];
+    if(filternumber.indexOf(0)!==-1)
+    {
+      setVideosList(data)
+    }
+    else{
+    for(var i=0;i<data.length;i++)
+    {
+      const result = filternumber.every(val => data[i].VideoDomains.includes(val));
+      if(result===true)
+      videofilterlist.push(data[i]);
+    }
+    setVideosList(videofilterlist)
+  }
+  }
    function buttonColor(word){
      setActive(word)
      if(word==="Videos"){
@@ -73,24 +107,81 @@ function SocialLearningPage(props) {
    }
     return (
       <div>
-        <div className="social_learning_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%"}}>SOCIAL LEARNING</h1><p style={{fontFamily:"Open Sans"}}>This is your one-stop solution for learning anything under the sun......in anything less than 10 minutes!</p><p style={{fontStyle:"italic",fontSize:"12px",marginTop:"-10px"}}>PS: Uploading videos or blogs or being actively involved in community discussions earns you reward points, personal branding and a whole lot of confidence :)</p></Container></div>
+        <div className="social_learning_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%"}}>SOCIAL LEARNING</h1><p style={{fontFamily:"Open Sans"}}>
+        Learn and share knowledge - from <span style={{color:"#F26C4F"}}>real-life experiences</span></p><p style={{fontStyle:"italic",fontSize:"15px",marginTop:"10px"}}> PS: This is your social media platform for practical learning.</p></Container></div>
       <Container>
         <Row>
-            <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="SocialLearn_laptop">
-              <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src={dplink} style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG Learn Coins: <b>{rew}</b></p></span>:<br/>}</Col></Row>
+            <Col xs={2} style={{backgroundColor:"#1B1C2A"}} className="SocialLearn_laptop">
+              <Row style={{marginTop:"3%",marginLeft:"0%"}}></Row>
                 <br/>
                 {active!=="Community" ?
-                  <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading {active==="Videos"?"videos":"blogs"} :{active==="Videos"?<span>
+                  <div style={{fontSize:"14px",marginLeft:"7px"}}> {active==="Videos"?<div style={{ display:"flex",flexDirection:"column",justifyContent:"flex-start"}}>
+                    <div style={{fontWeight:"300",fontSize:"30px"}}>Filters</div>
+                    <hr style={{color:"rgb(145, 44, 38)",height:"2px"}}/>
+                    <div>
+                      <label>
+                          <input onChange={searchfilter} type="checkbox" name="checkbox" value="0"  />
+                          <span>&nbsp;All</span>
+                      </label>
+                    </div>
                     <br/>
+                    <div>
+                      <label>
+                        <input onChange={searchfilter} type="checkbox" name="checkbox" value="1"  />
+                        <span>&nbsp;Finance</span>
+                      </label>
+                    </div>
                     <br/>
-                    <ul><li>Teach something that you have learnt through your real life experience</li>
-                    <li>Talk about it as if you are explaining it to a 5 year old</li>
-                    <li>Don’t worry about your background or surroundings - just open your camera, focus on what you want to say and smile</li>
-                    </ul>
-                    It’s easier than you think :)
+                    <div>
+                        <label>
+                          <input onChange={searchfilter} type="checkbox" name="checkbox" value="2"  />
+                          <span>&nbsp;Economics</span>
+                        </label>
+                    </div>
                     <br/>
+                    <div>
+                        <label>
+                          <input onChange={searchfilter} type="checkbox" name="checkbox" value="3"  />
+                          <span>&nbsp;Technology</span>
+                        </label>
+                    </div>
                     <br/>
-                    <span style={{fontStyle:"italic"}}>PS: We don’t expect you to share confidential information and/or sit for hours to create content – just share what you have learnt and teach</span></span>:<span><br/><br/><ul>
+                    <div>
+                        <label>
+                          <input onChange={searchfilter} type="checkbox" name="checkbox" value="4"  />
+                          <span>&nbsp;Consulting</span>
+                        </label>
+                    </div>
+                    <br/>
+                    <div>
+                        <label>
+                          <input onChange={searchfilter} type="checkbox" name="checkbox" value="5"  />
+                          <span>&nbsp;Marketing</span>
+                        </label>
+                    </div>
+                    <br/>
+                    <div>
+                        <label>
+                          <input onChange={searchfilter} type="checkbox" name="checkbox" value="6"  />
+                          <span>&nbsp;Business Development</span>
+                        </label>
+                    </div>
+                    <br/>
+                    <div>
+                        <label>
+                          <input  onChange={searchfilter} type="checkbox" name="checkbox" value="7"  />
+                          <span>&nbsp;Soft Sills</span>
+                        </label>
+                    </div>
+                    <br/>
+                    <div>
+                        <label>
+                          <input onChange={searchfilter} type="checkbox" name="checkbox" value="8"  />
+                          <span>&nbsp;Others</span>
+                        </label>
+                    </div>
+                    </div>
+                    :<span><br/><br/><ul>
                       <li>Write about something you that you have learnt from your real life experience – and that excites you</li>
                       <li>Make sure you aren’t plagiarising - noone likes a copycat! :)</li>
                       <li>Don’t worry about your language style, the relevance to the larger audience, etc. - as long as you find it valuable, its your original work and there is a clear message that someone can learn from, you’re good to go!</li>
@@ -106,35 +197,112 @@ function SocialLearningPage(props) {
                   </div>
                 }
             </Col>
-            <div className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>       
-               <div>
-                <div className="profile_logo_text_mobile" ><div><img alt="dp" src={dplink} style={{height:"100px",width:"100px",borderRadius:"50%"}}/></div>
-                <div>
-                  {user.attributes!==undefined && <div><p style={{fontSize:"18px", textAlign:"center"}}>{user.attributes.name}</p></div>}
-                  <div><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG Learn Coins: <b>{rew}</b></p></div>
-                  <div style={{textAlign:"center"}}></div>
-                </div> 
+            <div className="SocialLearn_list_mobile" style={{marginTop: "10%"}}>
+              <div style={{display:"flex",justifyContent:"space-evenly",flexWrap:"wrap"}}>
+              <div>
+                <label>
+                    <input onChange={searchfilter} type="checkbox" name="checkbox" value="0"  />
+                    <span>&nbsp;All</span>
+                </label>
+              </div>
+              <div>
+                <label>
+                    <input onChange={searchfilter} type="checkbox" name="checkbox" value="1"  />
+                    <span>&nbsp;Finance</span>
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input onChange={searchfilter} type="checkbox" name="checkbox" value="2"  />
+                  <span>&nbsp;Economics</span>
+                </label>
+              </div>
+              <div>
+                <label>
+                  <input onChange={searchfilter} type="checkbox" name="checkbox" value="3"  />
+                  <span>&nbsp;Technology</span>
+                </label>
+              </div>
+              <div>
+                  <label>
+                    <input onChange={searchfilter} type="checkbox" name="checkbox" value="4"  />
+                    <span>&nbsp;Consulting</span>
+                  </label>
+              </div>
+              <div>
+                  <label>
+                    <input onChange={searchfilter} type="checkbox" name="checkbox" value="5"  />
+                    <span>&nbsp;Marketing</span>
+                  </label>
+              </div>
+              <div>
+                  <label>
+                    <input  onChange={searchfilter} type="checkbox" name="checkbox" value="7"  />
+                    <span>&nbsp;Soft Sills</span>
+                  </label>
+              </div>
+              <div>
+                  <label>
+                    <input onChange={searchfilter} type="checkbox" name="checkbox" value="6"  />
+                    <span>&nbsp;Business Development</span>
+                  </label>
+              </div>
+              <div>
+                  <label>
+                    <input onChange={searchfilter} type="checkbox" name="checkbox" value="8"  />
+                    <span>&nbsp;Others</span>
+                  </label>
+              </div>
+              </div>
+               {/* <div style={{marginTop:"4%"}} >
+               <div style={{display:"flex",justifyContent:"center",marginTop:"20px",marginBottom:"0px"}}><div  onClick={() => { setModalShowvideo(true)}} style={{cursor: "pointer",color:"#F26C4F"}}>
+                  <Popupinfovide
+                    show={modalShowvideo}
+                    onHide={handleClose}
+                  />
+                   <div> <span><InfoCircle/></span> <span>Quick tips to create<br/> your video</span></div> 
                 </div>
-              </div> 
-              <br/>
-               <div style={{marginTop:"4%"}} >
-                <div style={{display:"flex",justifyContent:"space-evenly"}}>
-                  <div><button onClick={()=>buttonColor("Videos")} style={{backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Videos</button></div>
-                  <div><button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,color:textColor2,borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button></div>
-                  <div><button onClick={()=>{buttonColor("Community")}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button></div>
-               </div> 
-             </div> 
+                </div> 
+             </div> */}
             </div>
             <Col>
-             <Row style={{marginTop:"4%"}} >
-               <Col xs={9} className="SocialLearn_laptop">
-                  <button onClick={()=>buttonColor("Videos")} style={{marginLeft:"2%",marginRight:"5%",backgroundColor:color1,color:textColor1,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Videos</button>
-                  <button onClick={()=>buttonColor("Blogs")} style={{backgroundColor:color2,marginRight:"5%",color:textColor2,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Blogs</button>
-                  <button onClick={()=>{buttonColor("Community")}} style={{backgroundColor:color3,color:textColor3,borderRadius:"40px",width:"120px",height:"30px",fontWeight:"bold",border:"0px"}}>Community</button>
-               </Col>
-             </Row>
+             {/* <Row style={{marginTop:"4%"}} >
+               <div style={{display:"flex",justifyContent:"flex-end",marginTop:"-40px"}}><div className="SocialLearn_laptop" onClick={() => { setModalShowvideo(true)}} style={{cursor: "pointer",color:"#F26C4F"}}>
+                  <div> <span><InfoCircle/></span> <span>Quick tips to create<br/> your video</span></div> 
+                  <Popupinfovide
+                    show={modalShowvideo}
+                    onHide={handleClose}
+                  />
+                </div>
+                </div>
+             </Row> */}
              <br/>
-              <div className="imp_know"> {active==="Videos" &&
+             <div >
+               <div>
+               {active==="Videos" &&
+               <div style={{display:"flex",justifyContent:"center",flexDirection:"column"}}>
+                  {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><div style={{display:"flex",justifyContent:"center"}}><button style={{paddingBottom:"0px",margin:"auto"}}  className="button_slide slide_right"><p style={{fontWeight:"bold",fontSize:"16px",color:"white"}}>Add your video <span className="plus">+</span></p></button></div></a>}
+                  <MyVerticallyPopUp
+                    userid={user}
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                  />
+                <p style={{fontSize:"12px",margin:"auto",marginBottom:"-6%"}}>Knowledge shared = <text style={{color:"#F26C4F"}}>Knowledge2</text></p>
+                </div>
+                }
+                {active==="Blogs" &&
+                <div>
+                  <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Add your blog post <span className="plus">+</span></p></a>
+                  <MyVerticallyPopUpBlog
+                    userid={user}
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                  />
+                </div>
+              }
+               </div>
+             </div>
+              {/* <div className="imp_know"> {active==="Videos" &&
                 <div>
                   {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Add your video <span className="plus">+</span></p></a>}
                   <MyVerticallyPopUp
@@ -154,8 +322,8 @@ function SocialLearningPage(props) {
                   />
                 </div>
                 } 
-              </div>
-                {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin}/>}
+              </div> */}
+                {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin} filter={videoslist}/>}
                 {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Community" && <Community/>}
             </Col> 

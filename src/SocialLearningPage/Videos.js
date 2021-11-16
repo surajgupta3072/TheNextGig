@@ -160,99 +160,14 @@ function Videos(props) {
     });
     navigator.clipboard.writeText(vidlink);
   }
-
-  const searchfilter=(e)=>
-  {
-    var filternumber=filter;
-    if(filternumber.indexOf(parseInt(e.target.value))===-1)
-    {
-      filternumber.push(parseInt(e.target.value))
-    }
-    else{
-    filternumber.splice(filternumber.indexOf(parseInt(e.target.value)),1)
-    }
-
-    var videofilterlist=[];
-    if(filternumber.indexOf(0)!==-1)
-    {
-      setVideosList(props.prop)
-    }
-    else{
-    for(var i=0;i<props.prop.length;i++)
-    {
-      const result = filternumber.every(val => props.prop[i].VideoDomains.includes(val));
-      if(result===true)
-      videofilterlist.push(props.prop[i]);
-    }
-    setVideosList(videofilterlist)
-  }
-  }
   return (
     
     <div>
       {/* <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
       <button className="search_button" onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button> */}
-      <div /* style={{display:"flex",justifyContent:"space-evenly"}} */>
-        <div style={{display:"flex",justifyContent:"space-evenly",flexWrap:"wrap"}}>
-        <div>
-            <label>
-              <input onChange={searchfilter} type="checkbox" name="checkbox" value="0"  />
-              <span>&nbsp;All</span>
-            </label>
-        </div>
-          <div>
-            <label>
-              <input onChange={searchfilter} type="checkbox" name="checkbox" value="1"  />
-              <span>&nbsp;Finance</span>
-            </label>
-        </div>
-        <div>
-            <label>
-              <input onChange={searchfilter} type="checkbox" name="checkbox" value="2"  />
-              <span>&nbsp;Economics</span>
-            </label>
-        </div>
-        <div>
-            <label>
-              <input onChange={searchfilter} type="checkbox" name="checkbox" value="3"  />
-              <span>&nbsp;Technology</span>
-            </label>
-        </div>
-        <div>
-            <label>
-              <input onChange={searchfilter} type="checkbox" name="checkbox" value="4"  />
-              <span>&nbsp;Consulting</span>
-            </label>
-        </div>
-        <div>
-            <label>
-              <input onChange={searchfilter} type="checkbox" name="checkbox" value="5"  />
-              <span>&nbsp;Marketing</span>
-            </label>
-        </div>
-        <div>
-            <label>
-              <input onChange={searchfilter} type="checkbox" name="checkbox" value="6"  />
-              <span>&nbsp;Business Development</span>
-            </label>
-        </div>
-        <div>
-            <label>
-              <input  onChange={searchfilter} type="checkbox" name="checkbox" value="7"  />
-              <span>&nbsp;Soft Sills</span>
-            </label>
-        </div>
-        <div>
-            <label>
-              <input onChange={searchfilter} type="checkbox" name="checkbox" value="8"  />
-              <span>&nbsp;Others</span>
-            </label>
-        </div>
-        </div>
-      </div>
       <br/><br/><br/>
       <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
-        {videoslist===false && props.prop.map((vid)=>
+        {props.filter===false && props.prop.map((vid)=>
           <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
               <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
@@ -275,7 +190,7 @@ function Videos(props) {
             <br/>
           </div>
         )}
-        {videoslist!==false && videoslist.map((vid)=>
+        {props.filter!==false && props.filter.map((vid)=>
           <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
               <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
