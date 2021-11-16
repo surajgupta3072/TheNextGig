@@ -15,11 +15,6 @@ import {InfoCircle} from 'react-bootstrap-icons';
 function SocialLearningPage(props) {
   const [modalShow, setModalShow] = useState(false);
   const [modalShowvideo, setModalShowvideo] = useState(false);
-  function handleClose()
-   { console.log(modalShowvideo)
-     console.log("hii");
-     setModalShowvideo(false);
-  }
   const [active, setActive] =  useState("Videos");
   const [color1,setColor1] =useState("#f26c4f");
   const [textColor1,setextColor1] =useState("white");
@@ -254,29 +249,30 @@ function SocialLearningPage(props) {
                   </label>
               </div>
               </div>
-               {/* <div style={{marginTop:"4%"}} >
-               <div style={{display:"flex",justifyContent:"center",marginTop:"20px",marginBottom:"0px"}}><div  onClick={() => { setModalShowvideo(true)}} style={{cursor: "pointer",color:"#F26C4F"}}>
-                  <Popupinfovide
+               <div style={{marginTop:"4%"}} >
+               <div style={{display:"flex",justifyContent:"center",marginTop:"20px",marginBottom:"0px"}}><div  style={{cursor: "pointer",color:"#F26C4F"}}>
+                  
+                   <div onClick={() => { setModalShowvideo(true)}} > <span><InfoCircle/></span> <span>Quick tips to create<br/> your video</span></div> 
+                   <Popupinfovide
                     show={modalShowvideo}
-                    onHide={handleClose}
+                    onHide={()=>setModalShowvideo(false)}
                   />
-                   <div> <span><InfoCircle/></span> <span>Quick tips to create<br/> your video</span></div> 
                 </div>
                 </div> 
-             </div> */}
+             </div>
             </div>
             <Col>
-             {/* <Row style={{marginTop:"4%"}} >
-               <div style={{display:"flex",justifyContent:"flex-end",marginTop:"-40px"}}><div className="SocialLearn_laptop" onClick={() => { setModalShowvideo(true)}} style={{cursor: "pointer",color:"#F26C4F"}}>
-                  <div> <span><InfoCircle/></span> <span>Quick tips to create<br/> your video</span></div> 
+             <Row style={{marginTop:"4%"}} >
+               <div style={{display:"flex",justifyContent:"flex-end",marginTop:"-5px"}}><div className="SocialLearn_laptop"  style={{cursor: "pointer",color:"#F26C4F"}}>
+                  <div onClick={() => { setModalShowvideo(true)}}> <span><InfoCircle/></span> <span>Quick tips to create<br/> your video</span></div> 
                   <Popupinfovide
                     show={modalShowvideo}
-                    onHide={handleClose}
+                    onHide={()=>setModalShowvideo(false)}
                   />
                 </div>
                 </div>
-             </Row> */}
-             <br/>
+             </Row>
+          
              <div >
                <div>
                {active==="Videos" &&
@@ -287,7 +283,6 @@ function SocialLearningPage(props) {
                     show={modalShow}
                     onHide={() => setModalShow(false)}
                   />
-                <p style={{fontSize:"12px",margin:"auto",marginBottom:"-6%"}}>Knowledge shared = <text style={{color:"#F26C4F"}}>Knowledge2</text></p>
                 </div>
                 }
                 {active==="Blogs" &&

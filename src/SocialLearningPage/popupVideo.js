@@ -200,7 +200,7 @@ function MyVerticallyPopUp(props) {
             placeholder="Founder of TheNextGig"
           ></input>
           <p style={{ marginTop: "10%", fontSize: "18px" }}>
-          Skills (Skills that people will learn)<text style={{ color: "#f26c4f" }}>*</text>
+          Skills that people will learn<text style={{ color: "#f26c4f" }}>*</text>
           </p>
           <Multiselect
               emptyRecordMsg="Start Searching..."

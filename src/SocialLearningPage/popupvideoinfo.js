@@ -1,8 +1,6 @@
 import Modal from "react-bootstrap/Modal";
 
 function Popupinfovide(props){
-
-  console.log(props)
     return (
         <Modal
           {...props}
@@ -30,7 +28,7 @@ function Popupinfovide(props){
             <button
             className="button_slide slide_right"
             style={{ marginTop: "2%", marginLeft: "35%" }}
-            onClick={()=>props.onHide}
+            onClick={()=>props.onHide()}
           >
             Close
           </button>
