@@ -294,7 +294,7 @@ function Skills(props) {
               </div>
             </em>
           </Col>
-          <Col md={12}>
+          {/* <Col md={12}>
             <br />
             <p style={{ fontSize: "18px", margin: "0" }}>
               <u>Through Social Learning - Blogs:</u>
@@ -313,7 +313,7 @@ function Skills(props) {
                 ))}
               </div>
             </em>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </div>

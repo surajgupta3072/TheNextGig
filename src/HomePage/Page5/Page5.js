@@ -4,8 +4,6 @@ import { ArrowRight } from "react-bootstrap-icons";
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import './Page5.css';
-import SocialLearning from "../../SocialLearningPage/SocialLearningPage"
-
 function Page5() {
     return (
       <>
@@ -68,7 +66,7 @@ function Page5() {
           </Col>
           <Col  md={6}>
             <div style={{padding: "0", margin: "0", border:"2px solid rgba(242, 108, 79, 0.6)"}}>
-            <video  className="anim_img" src="/Social Learning Home Page.mp4" playsInline controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
+            <video  className="anim_img" src="https://socialvideoslearn.s3.ap-south-1.amazonaws.com/Social+Learning+Home+Page.mp4" playsInline controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
             </div>
           </Col>
           </Row>
@@ -113,7 +111,7 @@ function Page5() {
         </Col>
         <Col >
             <div style={{display: "flex", flexDirection: "row", justifyContent: "center", marginTop:"2%"}}>
-            <video style={{padding: "0", margin: "0", border:"2px solid rgba(242, 108, 79, 0.6)" }} width="320" height="182" src="/Social Learning Home Page.mp4" playsInline controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
+            <video style={{padding: "0", margin: "0", border:"2px solid rgba(242, 108, 79, 0.6)" }} width="320" height="182" src="https://socialvideoslearn.s3.ap-south-1.amazonaws.com/Social+Learning+Home+Page.mp4" playsInline controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
             </div>
           </Col>
       </Container>

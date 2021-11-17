@@ -74,17 +74,23 @@ function SocialLearningPage(props) {
     }
 
     var videofilterlist=[];
-    if(filternumber.indexOf(0)!==-1)
+    if(filternumber.indexOf(0)!==-1||filternumber.length===0)
     {
       setVideosList(data)
     }
     else{
-    for(var i=0;i<data.length;i++)
+    for(var i=0;i<filternumber.length;i++)
     {
-      const result = filternumber.every(val => data[i].VideoDomains.includes(val));
-      if(result===true)
-      videofilterlist.push(data[i]);
+       for(var j=0;j<data.length;j++)
+       {
+         if(data[j].VideoDomains.includes(filternumber[i])===true&&videofilterlist.includes(data[j])===false)
+         {
+           videofilterlist.push(data[j]);
+         }
+       }
     }
+    console.log(filternumber)
+    console.log(videofilterlist);
     setVideosList(videofilterlist)
   }
   }
@@ -262,8 +268,8 @@ function SocialLearningPage(props) {
              </div>
             </div>
             <Col>
-             <Row style={{marginTop:"4%"}} >
-               <div style={{display:"flex",justifyContent:"flex-end",marginTop:"-5px"}}><div className="SocialLearn_laptop"  style={{cursor: "pointer",color:"#F26C4F"}}>
+            {/*  <Row style={{marginTop:"0%"}} >
+               <div style={{display:"flex",justifyContent:"flex-end",marginTop:"0px"}}><div className="SocialLearn_laptop"  style={{cursor: "pointer",color:"#F26C4F"}}>
                   <div onClick={() => { setModalShowvideo(true)}}> <span><InfoCircle/></span> <span>Quick tips to create<br/> your video</span></div> 
                   <Popupinfovide
                     show={modalShowvideo}
@@ -272,11 +278,11 @@ function SocialLearningPage(props) {
                 </div>
                 </div>
              </Row>
-          
+           */}
              <div >
                <div>
                {active==="Videos" &&
-               <div style={{display:"flex",justifyContent:"center",flexDirection:"column"}}>
+               <div style={{marginTop:"30px",display:"flex"}}><div style={{flexGrow:"1"}}></div><div style={{flexGrow:"4"}}>
                   {<a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><div style={{display:"flex",justifyContent:"center"}}><button style={{paddingBottom:"0px",margin:"auto"}}  className="button_slide slide_right"><p style={{fontWeight:"bold",fontSize:"16px",color:"white"}}>Add your video <Plus size={50} className="button_arrow_footer_footer"/></p></button></div></a>}
                   <MyVerticallyPopUp
                     userid={user}
@@ -284,8 +290,16 @@ function SocialLearningPage(props) {
                     onHide={() => setModalShow(false)}
                   />
                 </div>
+                <div style={{flexGrow:"1"}} className="SocialLearn_laptop"  style={{cursor: "pointer",color:"#F26C4F"}}>
+                  <div onClick={() => { setModalShowvideo(true)}}> <span><InfoCircle/></span> <span>Quick tips to create<br/> your video</span></div> 
+                  <Popupinfovide
+                    show={modalShowvideo}
+                    onHide={()=>setModalShowvideo(false)}
+                  />
+                </div>
+                </div>
                 }
-                {active==="Blogs" &&
+                {/* {active==="Blogs" &&
                 <div>
                   <a onClick={() => {if(!redirectlogin) setModalShow(true);  else window.location.href="/login";}} style={{cursor: "pointer"}}><p className="impart_know" style={{fontWeight:"bold",fontSize:"16px",color:"rgba(242, 108, 79, 1)"}}>Add your blog post <span className="plus">+</span></p></a>
                   <MyVerticallyPopUpBlog
@@ -294,7 +308,7 @@ function SocialLearningPage(props) {
                     onHide={() => setModalShow(false)}
                   />
                 </div>
-              }
+              } */}
                </div>
              </div>
               {/* <div className="imp_know"> {active==="Videos" &&

@@ -194,7 +194,7 @@ function Page4() {
                 <Card.Body style={{marginTop:"30px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >EARN</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Signup! Get 399 Coins <br /> Upload a video / blog! Get 50 Coins  
+                  Signup! Get 399 Coins <br /> Upload a video! Get 50 Coins  
                   </Card.Text>
                 </Card.Body>
             </Card>
@@ -235,7 +235,7 @@ function Page4() {
               <Col style={{marginLeft:"-20%"}}>
                 <Card.Title style={{fontSize:"20px"}}>EARN</Card.Title>
                 <Card.Text style={{fontSize:"12px",whiteSpace:"normal",width:"100%"}}>
-                Signup! Get 399 Coins <br /> Upload a video / blog! Get 50 Coins   
+                Signup! Get 399 Coins <br /> Upload a video! Get 50 Coins   
                 </Card.Text>
               </Col>
             </div>

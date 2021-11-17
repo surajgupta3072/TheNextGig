@@ -52,18 +52,18 @@ function TNGCoins() {
             <Card onClick={()=>window.location.href="/SocialLearning"}  className="page2card" style={{ width: "29.9%", marginLeft:"2.5%",backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgba(242, 108, 79, 0.6)", borderRadius:"12px", cursor: 'pointer' }}>
                 <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginTop:"40px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/videohome.jpg"/>
                 <Card.Body style={{marginTop:"30px"}}>
-                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >UPLOAD VIDEOS</Card.Title>
+                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SIGNUP</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Upload bite-sized videos teaching something that you have learnt through your real life experience
+                  Sign up and become part of our TNG family.
                   </Card.Text>
                 </Card.Body>
             </Card>
             
             <Card onClick={()=>window.location.href="/SocialLearning"} className="page2card2"  style={{width: "29.9%", marginLeft:"3%", backgroundColor:"rgba(242, 108, 79, 0.07)", border:"2px solid rgb(200, 150, 54,0.4)", borderRadius:"12px", cursor: 'pointer' }}>
                 <Card.Body style={{marginTop:"30px"}}>
-                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >UPLOAD BLOGS</Card.Title>
+                  <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >UPLOAD VIDEOS</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Write about something you that you have learnt from your real life experience – and that excites you
+                  Upload bite-sized videos teaching something that you have learnt through your real life experience
                   </Card.Text>
                 </Card.Body>
                 <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"0px"}} variant="top" src="/bloghome.jpg"/>
@@ -93,9 +93,9 @@ function TNGCoins() {
                 <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/videohome.jpg"/>
               </Col>
               <Col style={{marginLeft:"-20%"}}>
-                <Card.Title style={{fontSize:"20px"}}>UPLOAD VIDEOS</Card.Title>
+                <Card.Title style={{fontSize:"20px"}}>SIGNUP</Card.Title>
                 <Card.Text style={{fontSize:"12px",whiteSpace:"normal",width:"100%"}}>
-                Upload bite-sized videos teaching something that you have learnt through your real life experience   
+                Sign up and become part of our TNG family and earn by sharing knowledge.
                 </Card.Text>
               </Col>
             </div>
@@ -109,9 +109,9 @@ function TNGCoins() {
                 <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/bloghome.jpg"/>
               </Col>
               <Col style={{marginLeft:"-20%"}}>
-                <Card.Title style={{fontSize:"20px"}}>UPLOAD BLOGS</Card.Title>
+                <Card.Title style={{fontSize:"20px"}}>UPLOAD VIDEOS</Card.Title>
                 <Card.Text style={{fontSize:"12px",whiteSpace:"normal",width:"100%"}}>
-                Write about something you that you have learnt from your real life experience – and that excites you
+                Upload bite-sized videos teaching something that you have learnt through your real life experience
                 </Card.Text>
               </Col>
             </div>
