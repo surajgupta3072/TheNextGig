@@ -14,6 +14,12 @@ const breakPoints = [
 function Page1() {
   return (
     <div>
+      <div className="page2_laptop_view">
+        <img width="100%" marginTop="0" src="/TNG Originals banner.png" />
+      </div>
+      <div className="page2_mobile_view">
+        <img width="100%" marginTop="0" src="/Mobile banner - TNGO page.png" />
+      </div>
       <div className="masterclass_top_image">
         <Container>
           <h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%"}}>ALL TNG ORIGINALS</h1>
