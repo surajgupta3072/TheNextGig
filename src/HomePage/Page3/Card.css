@@ -12,6 +12,20 @@
   cursor: pointer;
   border-radius: 12px;
 }
+.figure.tag {
+  position: relative;
+}
+.figure::before {
+  position: absolute;
+  top: 0%;
+  display: block;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  background: #f26c4f;
+  opacity: 0.8;
+  content: attr(data-content);
+}
 .company_image {
   margin-right: 0.8rem;
   height: 1.3rem;
@@ -214,6 +228,6 @@
   }
   pre {
     font-size: 0.9rem !important;
-    white-space:pre-wrap ;
+    white-space: pre-wrap;
   }
 }

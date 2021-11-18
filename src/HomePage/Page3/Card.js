@@ -1,6 +1,7 @@
 import "./Card.css";
 
 export default function CardX(props) {
+  console.log(props)
   return (
     <div 
       onClick={() => {if(props.time!=="...Coming Soon") window.location.href = "/TNGoriginals/" + props.carl}} className="container_card">
@@ -8,7 +9,10 @@ export default function CardX(props) {
         <div className="card-header">
           <div className="card-title-group"></div>
         </div>
-        <img className="card-image" src={props.card} alt="Logo"/>
+        <figure data-content={props.course_domain} className="figure tag">
+    <img src={props.card} alt="featured image" className=" card-image"/>
+  </figure>
+        {/* <img className="card-image"  alt="Logo"/> */}
         <div style={{display:"flex"}} className="card-like-bar">
           <div className="texting">
             <pre style={{fontFamily:"Inter",fontWeight:"bolder"}}>{props.text2}</pre>

@@ -258,7 +258,23 @@ label > input[type="checkbox"] + * {
   height: 400px;
   width: 300px;
 }
-
+.figurex.tag {
+  position: relative;
+}
+.figurex::before {
+  position: absolute;
+  bottom: 0%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: block;
+  color: white;
+  font-size: 13px;
+  padding: 0.5rem 0.7rem;
+  font-weight: bold;
+  background: #020312;
+  opacity: 0.75;
+  content: attr(data-content);
+}
 @media screen and (max-width: 768px) {
   .SocialLearn_laptop {
     display: none;

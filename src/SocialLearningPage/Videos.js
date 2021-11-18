@@ -171,9 +171,9 @@ function Videos(props) {
         {props.filter===false && props.prop.map((vid)=>
           <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
-              <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink+"#t=1"} />
+              <figure  className="tag figurex" data-content={vid.VideoDuration}><video src={vid.VideoLink+"#t=1"} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
               </video>
+              </figure>
               :
               <video id="myvid" className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink+"#t=1"} />

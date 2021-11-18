@@ -18,7 +18,7 @@ function Page1() {
         <img width="100%" marginTop="0" src="/TNG Originals banner.png" />
       </div>
       <div className="page2_mobile_view">
-        <img width="100%" marginTop="0" src="/Mobile banner - TNGO page.png" />
+        <img width="100%" marginTop="0" src="/TNGO page mobile banner.png" />
       </div>
       <div className="masterclass_top_image">
         <Container>

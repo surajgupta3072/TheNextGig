@@ -44,6 +44,7 @@ function Page3() {
                   fees={detail.course_episode}
                   key={detail.id}
                   carl={detail.id}
+                  course_domain={detail.course_domain}
                 />
               </div>  
             ))}

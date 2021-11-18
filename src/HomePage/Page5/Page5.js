@@ -26,7 +26,7 @@ function Page5() {
     <div className="page2_laptop_view">
     <Container style={{padding: "0%", maxWidth: "94%", marginBottom: "0%"}} className= "container1">
         <Row style={{width: "93%"}}>
-          <Col md={6} >
+          <Col md={5} >
           <Container>
         <Col style={{width: "95%"}}>
         <Card style={{ width: '100%',borderRadius:"12px",backgroundColor:"#020312",marginTop: "4%" }}>
@@ -35,7 +35,7 @@ function Page5() {
               <Col >
                 <Card.Img style={{margin: "auto", height:"130px", width:"130px",borderRadius:"50%"}} variant="top" src="/Social Learning - Learn.png"/>
               </Col>
-              <Col style={{marginLeft:"-20%"}}>
+              <Col style={{marginLeft:"0%"}}>
                 <Card.Title style={{fontSize:"40px"}}>LEARN...</Card.Title>
                 <Card.Text style={{fontSize:"18px",whiteSpace:"normal",width:"100%"}}>
                 ..something new in {"<"} 10 mins through experiences shared by others   
@@ -51,7 +51,7 @@ function Page5() {
               <Col>
                 <Card.Img style={{margin: "auto", height:"130px", width:"130px",borderRadius:"50%"}} variant="top" src="/Social Learning - Share.png"/>
               </Col>
-              <Col style={{marginLeft:"-20%"}}>
+              <Col style={{marginLeft:"0%"}}>
                 <Card.Title style={{fontSize:"40px"}}>SHARE...</Card.Title>
                 <Card.Text style={{fontSize:"18px",whiteSpace:"normal",width:"100%"}}>
                 ..knowledge acquired through your real-life experiences
@@ -64,8 +64,8 @@ function Page5() {
         </Col>
       </Container>
           </Col>
-          <Col  md={6}>
-            <div style={{padding: "0", margin: "0", border:"2px solid rgba(242, 108, 79, 0.6)"}}>
+          <Col  md={7}>
+            <div style={{padding: "0", margin: "0"}}>
             <video  className="anim_img" src="https://socialvideoslearn.s3.ap-south-1.amazonaws.com/Social+Learning+Home+Page.mp4" playsInline controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
             </div>
           </Col>
@@ -111,13 +111,13 @@ function Page5() {
         </Col>
         <Col >
             <div style={{display: "flex", flexDirection: "row", justifyContent: "center", marginTop:"2%"}}>
-            <video style={{padding: "0", margin: "0", border:"2px solid rgba(242, 108, 79, 0.6)" }} width="320" height="182" src="https://socialvideoslearn.s3.ap-south-1.amazonaws.com/Social+Learning+Home+Page.mp4" playsInline controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
+            <video style={{padding: "0", margin: "0" }} width="320" height="182" src="https://socialvideoslearn.s3.ap-south-1.amazonaws.com/Social+Learning+Home+Page.mp4" playsInline controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()}/>
             </div>
           </Col>
       </Container>
     </div>
 
-        <div className="button_div_page5">
+        <div style={{marginTop:"20px"}} className="button_div_page5">
           <a href="/SocialLearning"><button  className="button_slide slide_right">Let’s socialize!<ArrowRight className="button_arrow"/></button></a>
         </div>
     </div>
