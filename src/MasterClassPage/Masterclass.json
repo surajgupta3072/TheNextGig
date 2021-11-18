@@ -355,10 +355,144 @@
   },
   {
     "id": 4,
+    "course_name": "Investing through the Venture \n Capital Lens",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhijay+homepage.jpg",
+    "course_instructor": "Abhijay Thacker ",
+    "course_instructor_post": "Associate - Picus Capital | Ex-Citi",
+    "instructor_creds": "IIM-A, Copenhagen Business School, NMIMS",
+    "course_timing": "1hr 3mins",
+    "course_episode": "16 episodes",
+    "course_description": "As a VC, you've got to think like a founder, an investor, a strategist, a consultant and sometimes, even a friend. Exciting, isn't it? You get: immense learning AND to be a part of one of the most prestigious roles in the world! Figure out why in this TNG Original!",
+    "course_role": "Venture Capital, Finance, Investing",
+    "course_domain":"Finance",
+    "WhatYouLearn": [
+      "Venture Capital basics, meaning",
+      "The VC process and breakdown of each stage",
+      "Real-life case study of a VC deal",
+      "Skills required to be in a VC firm"
+    ],
+    "PreparesYouFor": [
+      "Finance Roles",
+      "Venture Capital Roles",
+      "Entering the startup investment space"
+    ],
+    "WhatsInForYou": [
+      "Lifetime access to 'inside information' in the VC space",
+      "compressed into 1 hour of learning",
+      "Preference for experiential learning opportunities that we",
+      "source for you in this domain",
+      "A certificate of completion and a chance to get your",
+      "in-session case / project reviewed by the expert"
+    ],
+    "fees": "0",
+    "ExpertId": 4,
+    "trailer_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Abhijay+Trailer.mp4",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "1. The Private Investor landscape in India",
+        "description": "Like startups and companies, there are multiple types of investors too. Each with a different focus, agenda and mode of operation. Here’s why it’s important to know the difference.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+1.mp4"
+      },
+      {
+        "id": 2,
+        "title": "2.  VC funds - the two types",
+        "description": "Traditional funds v/s. Evergreen funds. Which type do you think is more popular? Which one performs better? Take a guess!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+2.mp4"
+      },
+      {
+        "id": 3,
+        "title": "3. Stage 1: Ideation",
+        "description": "As much as the world undermines the importance of “ideation”, it is the first, most logical, step to take towards building a valuable VC portfolio. Go wrong in this step and the VC is doomed. Find out why in this episode.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+3.mp4"
+      },
+      {
+        "id": 4,
+        "title": "4. Stage 2: Sourcing a deal",
+        "description": "A deep dive into the entire process, right from the first handshake to the closing of the deal and who better to guide us through it than an investment banker himself.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+4.mp4"
+      },
+      {
+        "id": 5,
+        "title": "5. Stage 3: Diligence processes",
+        "description": "Betting your money on something without checking it thoroughly is illogical (and risky, duh!). The founders, the market, the competitive landscape - everything is subject to diligence. (Play close attention to some funky terms coming your way in this episode)",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+5.mp4"
+      },
+      {
+        "id": 6,
+        "title": "6. Due diligence - the PE angle v/s. the VC angle",
+        "description": "One concept - due diligence. But very different motives & outcomes of the DD between PEs and VCs. Each has its own metrics - let’s find out what they are, why they are important and to what extent they differ.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+6.mp4"
+      },
+      {
+        "id": 7,
+        "title": "7. Stage 4: Negotiations",
+        "description": "The word ‘negotiations’ is exciting enough. Think of founders doing it with venture capital investors and you’ve got some super explosive discussions taking place. See how, as a VC, you navigate the tricky waters of deciding how to ‘value’ a startup.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+7.mp4"
+      },
+      {
+        "id": 8,
+        "title": "8. Stage 5: Portfolio Management",
+        "description": "If you thought that the work of a VC firm ended after money hit the startup’s bank account - think again! VC firms take pride in working with founders in reshaping how their product, and the world, is seen - here’s how.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+8.mp4"
+      },
+      {
+        "id": 9,
+        "title": "9. Stage 6: Exiting the investment",
+        "description": "What is a “fund life”? How does the “term sheet” come into play here? How can a VC actually exit its investment and what are the “protocols” for exit? Where does the stake go? Too many questions - equal number of answers.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+9.mp4"
+      },
+      {
+        "id": 10,
+        "title": "10. A week in the life of a VC",
+        "description": "No two days are the same. As someone who will potentially work in a VC soon (we’re hoping), here’s your cheat sheet into what skills you’d require, what your work week would look like and whether you’d be a good fit in the VC or not - we’ll obviously let you judge for yourself!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+10.mp4"
+      },
+      {
+        "id": 11,
+        "title": "11. The case study - setting up the context",
+        "description": "An interesting, live, case study of a Creator Economy startup. Here is the link to the document for your ready reference: https://drive.google.com/file/d/1RdEeXLLouNBMBf6ytKkudCSY7Yp1KdFq/view?usp=sharing",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+11.mp4"
+      },
+      {
+        "id": 12,
+        "title": "12. The case study - deep dive #1",
+        "description": "What are the initial points of work for you as a VC analyst when you’ve “found” Credifluencer. Or even before that - how did you find Credifluencer? What were your first thoughts? How will you get the ball rolling in the process? Answers - here.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+12.mp4"
+      },
+      {
+        "id": 13,
+        "title": "13. The case study - deep dive #2",
+        "description": "You’ve done all your pre-work. Now you’re on the founder call. And this sounds exciting, doesn’t it? Collaborative discussions are how you, as a VC, will answer the question - “Was I correct in thinking about Credifluencer in the way I did?”",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+13.mp4"
+      },
+      {
+        "id": 14,
+        "title": "14. The case study - deep dive #3",
+        "description": "THE IC MEETING! It’s finally here. What’s the decision going to be? How well convinced are YOU, as a VC, about Credifluencer.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+14.mp4"
+      },
+      {
+        "id": 15,
+        "title": "15. The case study - deep dive #4",
+        "description": "Congratulations on your first deal!! Is that it? Is the process over? Definitely not. What next? Find out here.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+15.mp4"
+      },
+      {
+        "id": 16,
+        "title": "16. Conclusion",
+        "description": "Just a summary of the entire session - spoon feeding you so that you ensure you haven’t missed out on anything during the episodes!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Abhijay/Episode+16.mp4"
+      }
+    ],
+    "gigs": []
+  },
+  {
+    "id": 5,
     "course_name": "Chief of Staff - decoded!\nThe MNC version",
     "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kapil+Homepage.jpg",
     "course_instructor": "Kapil Dhiman",
-    "course_domain":"Finance",
+    "course_domain":"Strategy",
     "course_instructor_post": "Chief of Staff - PWC",
     "instructor_creds": "CA, Author - The Relationship Graph",
     "course_timing": "...Coming Soon",
@@ -368,21 +502,6 @@
     "PreparesYouFor": ["A", "B", "C"],
     "WhatsInForYou": ["A", "B", "C", "D", "E", "F"],
     "fees": ""
-  },
-  {
-    "id": 5,
-    "course_name": "Investing through the Venture \nCapital Lens",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhijay+homepage.jpg",
-    "course_instructor": "Abhijay Thacker",
-    "course_domain":"Strategy",
-    "course_instructor_post": "Associate - Picus Capital, Ex-Citi",
-    "instructor_creds": "IIM-A, Copenhagen Business School, NMIMS",
-    "course_timing": "...Coming Soon",
-    "course_episode": " ",
-    "course_description": "This has to be filled in properly once the session is completely recorded",
-    "WhatYouLearn": ["A", "B", "C", "D"],
-    "PreparesYouFor": ["A", "B", "C"],
-    "WhatsInForYou": ["A", "B", "C", "D", "E", "F"],
-    "fees": ""
   }
+ 
 ]
