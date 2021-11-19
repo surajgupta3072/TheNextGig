@@ -3,7 +3,7 @@ import Vision from './Vision';
 import ContactUs from './ContactUs'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import {Linkedin,Whatsapp,Instagram} from 'react-bootstrap-icons';
+import {Linkedin,Whatsapp,Instagram, Discord} from 'react-bootstrap-icons';
 
 function AboutUs(){
     return(
@@ -22,6 +22,7 @@ function AboutUs(){
                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/EEVcU7ZzAQ"><Discord  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
               </Col>
           </Row>
         </div>
@@ -36,6 +37,7 @@ function AboutUs(){
               <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                   <Instagram style={{color: "white", cursor: "pointer"}} size={34}/>&nbsp;&nbsp;
                   <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+
               </div>
           </Row>
           </div> */}
