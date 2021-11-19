@@ -111,8 +111,8 @@ function Page2() {
           </Col>
         </Container>
         <div style={{width:"100%", paddingTop:"5px", display: "flex", flexDirection: "row",margin:"auto"}}>
-          <img width="100%" marginTop="0" src="/Mobile banner.png" />
-              </div>
+          <img width="100%" marginTop="0" src="/Mobilebanner.png" />
+        </div>
       </div>
     </div> 
     );
