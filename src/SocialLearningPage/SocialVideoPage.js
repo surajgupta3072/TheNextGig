@@ -169,7 +169,9 @@ function SocialVideoPage(props) {
                 </div>
             </Col>
             <Col>
-            <ArrowLeft onClick={()=>window.location.href="/SocialLearning"} style={{marginLeft:"0%", marginTop:"40px"}} className="button_arrow_MC_Page2_Right"/>
+            <div style={{display:"flex",justifyContent:"flex-start"}}>
+              <ArrowLeft onClick={()=>window.location.href="/SocialLearning"} style={{marginLeft:"0%", marginTop:"40px",cursor:"pointer"}} className="button_arrow_MC_Page2_Right"/>
+              <a style={{color:"rgb(242, 108, 79)",textDecoration:"none",marginTop:"10px"}} href="/SocialLearning">Check Other Videos</a></div>
             <br/>
             <div style={{display:"flex", justifyContent:"space-evenly"}}>
               {videos.map((vid)=>

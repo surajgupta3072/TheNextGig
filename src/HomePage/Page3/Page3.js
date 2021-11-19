@@ -3,7 +3,6 @@ import CardX from'./Card';
 import Carousel from "react-elastic-carousel";
 import Data from "./../../MasterClassPage/Masterclass.json"
 import ReactTooltip from 'react-tooltip';
-
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1},
@@ -12,8 +11,9 @@ const breakPoints = [
 ];
 
 function Page3() {
+
     return (
-    <div className="page3_homepage_maindiv">
+    <div className="page3_homepage_maindiv" >
       <div className="heading_box">
       <div>
         <p className="btn">
@@ -31,7 +31,7 @@ function Page3() {
       <br/>
       <div>
         <div className="carousel-wrapper">
-          <Carousel breakPoints={breakPoints}>
+          <Carousel  breakPoints={breakPoints}>
             {Data.map(detail => (
               <div className="Item_component">
                 <CardX 

@@ -30,7 +30,7 @@ import TC from "./LegalPage/TC";
 import RedirectPage from './RedirectPage';
 import "./App.css";
 import LearnCoins from "./LearnCoins/LearnCoins";
-
+import Comet from "../src/SocialLearningPage/Comet";
 function App() {
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   const [user, setUser] = useState(null);
@@ -97,7 +97,7 @@ function App() {
     catch (error) {
       if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register" && window.location.href!="https://www.thenextgig.net/login" && window.location.href!="https://www.thenextgig.net/register")
         localStorage.setItem('lastURL', window.location.href);
-      if(window.location.href.includes("/SocialLearning/Blog/") || window.location.href.includes("/SocialLearning/Video/")) {
+      if(window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/")) {
         localStorage.setItem('lastLastURL', window.location.href);
         localStorage.setItem('lastURL', "https://www.thenextgig.net/Redirecting");
       }
@@ -191,6 +191,9 @@ function App() {
               <Route exact path="/Redirecting">
                 <RedirectPage />
               </Route>
+              <Route exact path="/SocialLearning/CometChat">
+                <Comet props={authProps}/>
+              </Route> 
             </Switch>
           </Router>
         </div>
