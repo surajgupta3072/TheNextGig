@@ -30,7 +30,7 @@ function Page2() {
                 <Card.Body style={{marginTop:"30px"}}>
                   <Card.Title style={{textAlign:"center",fontSize:"33px",fontWeight:"600"}} >SOCIAL <br /> LEARNING</Card.Title>
                   <Card.Text class="opensans_text" style={{fontSize:"16px",textAlign:"center"}}>
-                  Learn <em> and teach </em> bite sized content; <br/> Videos, blogs and an exclusive community
+                  Learn <em> and teach </em> through bite-sized video content. Practical knowledge and experiences trump everything else!<br/>   
                   </Card.Text>
                 </Card.Body >
                 <Card.Img style={{margin: "auto", height:"170px", width:"170px", marginBottom:"30px", background:"white", borderRadius:"50%",border:"none"}} variant="to1p" src="/soci.png"/>
@@ -85,7 +85,7 @@ function Page2() {
                 <Col style={{marginLeft:"-20%"}}>
                   <Card.Title style={{fontSize:"20px",textAlign:"left"}}>SOCIAL<br/> LEARNING</Card.Title>
                   <Card.Text style={{fontSize:"12px",whiteSpace:"normal",opacity:"0.7",width:"100%"}}>
-                  Learn <em> and teach </em> bite sized content; Videos, blogs and an exclusive community
+                  Learn <em> and teach </em>through bite-sized video content. Practical knowledge and experiences trump everything else!
                   </Card.Text>
                 </Col>
               </div>
