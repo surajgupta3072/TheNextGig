@@ -89,8 +89,6 @@ function SocialLearningPage(props) {
          }
        }
     }
-    console.log(filternumber)
-    console.log(videofilterlist);
     setVideosList(videofilterlist)
   }
   }

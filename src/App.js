@@ -155,12 +155,12 @@ function App() {
               <Route exact path="/expert">
                 <Page2 />
               </Route>
-              <Route exact path="/ExperientialLearning/:id">
+              <ProtectedRoute auth={authProps} exact path="/ExperientialLearning/:id">
                 <GigsDetails auth={authProps.user}/>
-              </Route>
-              <Route exact path="/ExperientialLearning">
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/ExperientialLearning"  auth={authProps}>
                 <GigsPage auth={authProps.user}/>
-              </Route>
+              </ProtectedRoute>
               <Route exact path="/TNGoriginals/:id">
                 <MasterClassDetails auth={authProps.user}/>
               </Route>
