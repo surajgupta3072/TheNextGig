@@ -30,7 +30,7 @@ import TC from "./LegalPage/TC";
 import RedirectPage from './RedirectPage';
 import "./App.css";
 import LearnCoins from "./LearnCoins/LearnCoins";
-import Comet from "../src/SocialLearningPage/Comet";
+// import Comet from "../src/SocialLearningPage/Comet";
 
 function App() {
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
@@ -192,9 +192,9 @@ function App() {
               <Route exact path="/Redirecting">
                 <RedirectPage />
               </Route>
-              <Route exact path="/SocialLearning/Community">
+              {/* <Route exact path="/SocialLearning/Community">
                 <Comet props={authProps}/>
-              </Route> 
+              </Route>  */}
             </Switch>
           </Router>
         </div>
