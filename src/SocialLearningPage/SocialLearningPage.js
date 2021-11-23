@@ -3,32 +3,32 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Videos from './Videos';
-import Blogs from './Blogs';
+// import Blogs from './Blogs';
 import docClient from '../GigsPage/GigsAWS';
 import MyVerticallyPopUp  from './popupVideo';
-import MyVerticallyPopUpBlog  from './popupBlog';
+// import MyVerticallyPopUpBlog  from './popupBlog';
 import Popupinfovide from './popupvideoinfo';
-import Community from './Community';
-import {InfoCircle,ArrowRight,Plus} from 'react-bootstrap-icons';
-
+// import Community from './Community';
+import {InfoCircle,Plus} from 'react-bootstrap-icons';
+import './SocialLearningPage.css';
 
 function SocialLearningPage(props) {
   const [modalShow, setModalShow] = useState(false);
   const [modalShowvideo, setModalShowvideo] = useState(false);
   const [active, setActive] =  useState("Videos");
-  const [color1,setColor1] =useState("#f26c4f");
-  const [textColor1,setextColor1] =useState("white");
-  const [color2,setColor2] =useState("white");
-  const [textColor2,setextColor2] =useState("#f26c4f");
-  const [color3,setColor3] =useState("white");
-  const [textColor3,setextColor3] =useState("#f26c4f");
-  const [rew, setRew] = useState(0);
+  // const [color1,setColor1] =useState("#f26c4f");
+  // const [textColor1,setextColor1] =useState("white");
+  // const [color2,setColor2] =useState("white");
+  // const [textColor2,setextColor2] =useState("#f26c4f");
+  // const [color3,setColor3] =useState("white");
+  // const [textColor3,setextColor3] =useState("#f26c4f");
+  // const [rew, setRew] = useState(0);
   const [allvideos, setAllvideos] = useState([]);
   const [user, setUser] = useState("");
   const [redirectlogin, setRedirectLogin] = useState(true);
   const [videoslist, setVideosList] = useState(false);
-  const [filter,setfilter]=useState([])
-  const [data,setdata]=useState([])
+  const [filter,setfilter]=useState([]);
+  const [data,setdata]=useState([]);
   useEffect(() => {
     var paramss = {
       TableName: "VideosTable"
@@ -49,17 +49,17 @@ function SocialLearningPage(props) {
     else {
       setRedirectLogin(false);
       setUser(props.auth.user);
-      var params = {
-        TableName: "UsersTable",
-        Key: { "UserID":props.auth.user.username },
-      };
-      docClient.get(params, function(err, data) {
-        if (err) {
-          console.log(err);
-        } else {
-          setRew(data.Item.TotalRewards);
-        }
-      });
+      // var params = {
+      //   TableName: "UsersTable",
+      //   Key: { "UserID":props.auth.user.username },
+      // };
+      // docClient.get(params, function(err, data) {
+      //   if (err) {
+      //     console.log(err);
+      //   } else {
+      //     setRew(data.Item.TotalRewards);
+      //   }
+      // });
     }
   }, []);
   const searchfilter=(e)=>
@@ -92,18 +92,18 @@ function SocialLearningPage(props) {
     setVideosList(videofilterlist)
   }
   }
-   function buttonColor(word){
-     setActive(word)
-     if(word==="Videos"){
-       setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");setColor3("white");setextColor3("#f26c4f");
-     }
-     if(word==="Blogs"){
-      setColor1("white");setextColor1("#f26c4f");setColor2("#f26c4f");setextColor2("white");setColor3("white");setextColor3("#f26c4f");
-    }
-    if(word==="Community"){
-      setColor1("white");setextColor1("#f26c4f");setColor2("white");setextColor2("#f26c4f");setColor3("#f26c4f");setextColor3("white");
-    }
-   }
+  //  function buttonColor(word){
+  //    setActive(word)
+  //    if(word==="Videos"){
+  //      setColor1("#f26c4f");setextColor1("white");setColor2("white");setextColor2("#f26c4f");setColor3("white");setextColor3("#f26c4f");
+  //    }
+  //    if(word==="Blogs"){
+  //     setColor1("white");setextColor1("#f26c4f");setColor2("#f26c4f");setextColor2("white");setColor3("white");setextColor3("#f26c4f");
+  //   }
+  //   if(word==="Community"){
+  //     setColor1("white");setextColor1("#f26c4f");setColor2("white");setextColor2("#f26c4f");setColor3("#f26c4f");setextColor3("white");
+  //   }
+  //  }
     return (
       <div>
         <div className="social_learning_top_image"><Container><h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%"}}>SOCIAL LEARNING</h1><p style={{fontFamily:"Open Sans"}}>
@@ -331,8 +331,8 @@ function SocialLearningPage(props) {
                 } 
               </div> */}
                 {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin} filter={videoslist}/>}
-                {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
-                {active === "Community" && <Community/>}
+                {/* {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
+                {active === "Community" && <Community/>} */}
             </Col> 
           </Row>
       </Container>

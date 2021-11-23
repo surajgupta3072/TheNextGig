@@ -1,4 +1,3 @@
-import { useState } from "react";
 import docClient from '../GigsPage/GigsAWS';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -6,10 +5,10 @@ import { Clipboard } from 'react-bootstrap-icons';
 import Swal from "sweetalert2";
 
 function Videos(props) {
-  const [videoslist, setVideosList] = useState(false);
+  // const [videoslist, setVideosList] = useState(false);
 /*   const [searchterm, setSearchTerm] = useState(""); */
-  const [filter,setfilter]=useState([])
-  const [all,setall]=useState(0)
+  // const [filter,setfilter]=useState([]);
+  // const [all,setall]=useState(0);
   /* function addSearchTerm() {
     var params = {
       TableName: "UsersTable",
@@ -171,16 +170,15 @@ function Videos(props) {
         {props.filter===false && props.prop.map((vid)=>
           <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
-              <figure  className="tag figurex" data-content={vid.VideoDuration}><video src={vid.VideoLink+"#t=1"} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <figure  className="tag figurex" data-content={vid.VideoDuration}><video src={vid.VideoLink+"#t=0.5"} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
               </video>
               </figure>
               :
               <video id="myvid" className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink+"#t=1"} />
+                <source src={vid.VideoLink+"#t=0.5"} />
               </video>
             }
             <div style={{marginLeft:"2%"}}>
-            {/* <p className="text" style={{padding:"0", margin:"0", marginLeft:"90%", color:"grey", fontSize:"12px"}}>3.14</p> */}
               <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
               <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
               <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
@@ -196,10 +194,10 @@ function Videos(props) {
           <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
             {props.redirlog ? 
               <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink+"#t=1"} />
+                <source src={vid.VideoLink+"#t=0.5"} />
               </video> :
               <video className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink+"#t=1"} />
+                <source src={vid.VideoLink+"#t=0.5"} />
               </video>
             }
             <div style={{marginLeft:"2%"}}>

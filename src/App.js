@@ -16,7 +16,7 @@ import Auth from "@aws-amplify/auth";
 import ProtectedRoute from "./GuardedRoute";
 import SocialLearningPage from "./SocialLearningPage/SocialLearningPage";
 import SocialVideoPage from "./SocialLearningPage/SocialVideoPage";
-import SocialBlogPage from "./SocialLearningPage/SocialBlogPage";
+// import SocialBlogPage from "./SocialLearningPage/SocialBlogPage";
 import jwt_decode from "jwt-decode";
 import docClient from './GigsPage/GigsAWS';
 // import Community from "./SocialLearningPage/Community";
@@ -31,6 +31,7 @@ import RedirectPage from './RedirectPage';
 import "./App.css";
 import LearnCoins from "./LearnCoins/LearnCoins";
 import Comet from "../src/SocialLearningPage/Comet";
+
 function App() {
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   const [user, setUser] = useState(null);
@@ -140,9 +141,9 @@ function App() {
               <Route exact path="/SocialLearning/Video/:id">
                 <SocialVideoPage auth={authProps}/>
               </Route>
-              <Route exact path="/SocialLearning/Blog/:id">
+              {/* <Route exact path="/SocialLearning/Blog/:id">
                 <SocialBlogPage auth={authProps}/>
-              </Route>
+              </Route> */}
               <ProtectedRoute exact path="/profile" auth={authProps}>
                 <ProfilePage auth={authProps}/>
               </ProtectedRoute>
@@ -158,7 +159,7 @@ function App() {
               <ProtectedRoute auth={authProps} exact path="/ExperientialLearning/:id">
                 <GigsDetails auth={authProps.user}/>
               </ProtectedRoute>
-              <ProtectedRoute exact path="/ExperientialLearning"  auth={authProps}>
+              <ProtectedRoute exact path="/ExperientialLearning" auth={authProps}>
                 <GigsPage auth={authProps.user}/>
               </ProtectedRoute>
               <Route exact path="/TNGoriginals/:id">
@@ -191,7 +192,7 @@ function App() {
               <Route exact path="/Redirecting">
                 <RedirectPage />
               </Route>
-              <Route exact path="/SocialLearning/CometChat">
+              <Route exact path="/SocialLearning/Community">
                 <Comet props={authProps}/>
               </Route> 
             </Switch>
