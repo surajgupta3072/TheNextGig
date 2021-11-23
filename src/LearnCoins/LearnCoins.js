@@ -122,7 +122,7 @@ function TNGCoins() {
           <Card.Body>
             <div style={{display: "flex", flexDirection: "row"}}>
               <Col>
-                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/Redeem coins.jpg"/>
+                <Card.Img style={{margin: "auto", height:"80px", width:"80px",borderRadius:"50%"}} variant="top" src="/TNG Learn Coins - Profile picture card.png"/>
               </Col>
               <Col style={{marginLeft:"-20%"}}>
                 <Card.Title style={{fontSize:"20px"}}>COMPLETE YOUR PROFILE</Card.Title>
@@ -181,20 +181,30 @@ function TNGCoins() {
         
       </div>
       {/* <div style={{marginLeft: "11%",marginTop: "-1%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a  style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div> */}
-      <div >
-            <Row style={{marginTop: "2%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
-                <Col md={10}>
+      <div className="laptop_view">
+            <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
+                <Col md={9}>
                 <h6 style={{fontSize:"15px",color:"#FFFFFF99"}} className="footer_page3_gigs">
                 © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
                 </h6>
-                </Col>
-                <Col className="soci_master_lap" style={{display:"flex",justifyContent:"center"}}>
+                </Col> 
+                <Col md={3}>
                   <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                   <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                   <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                   <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/EEVcU7ZzAQ"><Discord  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </Col>
-                <div className="soci_master" style={{display:"flex",justifyContent:"center"}}>
+            </Row>
+            </div>
+            <Container  className="top-container mobile_view_masterclass_page2">
+            <div >
+            <Row style={{marginTop: "6%", border:"1px solid #534D4D", padding:"1.5%", background: "transparent", marginLeft:"9%", marginRight: "9%"}}>
+                <Col  md={10}>
+                <h6 style={{fontSize:"15px",color:"#FFFFFF99"}}className="footer_page3_gigs">
+                © 2021 TheNextGig.<br className="footer_linespace" /> All Rights Reserved
+                </h6>
+                </Col> 
+                <div style={{display:"flex",justifyContent:"center"}} md={2}>
                   <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                   <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                   <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
@@ -202,6 +212,7 @@ function TNGCoins() {
                 </div>
             </Row>
             </div>
+            </Container>
         </div>
     )
 }
