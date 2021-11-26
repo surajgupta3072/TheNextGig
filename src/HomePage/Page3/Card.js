@@ -4,7 +4,7 @@ export default function CardX(props) {
   return (
     <div
       onClick={() => { if (props.time !== "...Coming Soon") window.location.href = "/TNGoriginals/" + props.carl }} className="container_card">
-      <div id={"Tng_originals_courses_homepage" + props.carl} className="cardpage3">
+      <div id={props.textid + props.carl} className="cardpage3">
         <div className="card-header">
           <div className="card-title-group"></div>
         </div>
@@ -30,6 +30,6 @@ export default function CardX(props) {
         </div>
         <br />
       </div>
-    </div>
+    </div >
   );
 }

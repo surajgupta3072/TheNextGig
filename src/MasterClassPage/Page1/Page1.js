@@ -22,15 +22,15 @@ function Page1() {
       </div>
       <div className="masterclass_top_image">
         <Container>
-          <h1 style={{textShadow:"0px 4px 4px #F26C4F",marginTop:"1.5%"}}>ALL TNG ORIGINALS</h1>
-          <p style={{fontFamily:"Open Sans"}}>Specially curated courses - they’re short, binge-able and based on real-life experiences.</p>
-          <p style={{fontStyle:"italic",fontSize:"14px",marginTop:"-10px"}}>PS: You get a certificate too!</p>
+          <h1 style={{ textShadow: "0px 4px 4px #F26C4F", marginTop: "1.5%" }}>ALL TNG ORIGINALS</h1>
+          <p style={{ fontFamily: "Open Sans" }}>Specially curated courses - they’re short, binge-able and based on real-life experiences.</p>
+          <p style={{ fontStyle: "italic", fontSize: "14px", marginTop: "-10px" }}>PS: You get a certificate too!</p>
         </Container>
       </div>
-    <div className="Mastercards">
-        {master.map((carder) => (
-          <MDBCard
-            onClick={() => {if(carder.course_timing!=="...Coming Soon") window.location.href = "/TNGoriginals/" + carder.id}}
+      <div className="Mastercards">
+        {master.map((carder, index) => (
+          <MDBCard id={"tng_originals_page_card" + (index + 1)}
+            onClick={() => { if (carder.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + carder.id }}
             style={{
               cursor: "pointer",
               borderRadius: "0px",
@@ -41,37 +41,37 @@ function Page1() {
             }}
             className="cax card_mastercard"
           >
-              <MDBCardImage className="mbd_image"
-                style={{ width: "100%"}}
-                src={carder.course_image}
-                alt="..."
-              />
+            <MDBCardImage className="mbd_image"
+              style={{ width: "100%" }}
+              src={carder.course_image}
+              alt="..."
+            />
             <MDBCardBody>
-              <div className="Course_name"><pre style={{fontFamily:"Inter",fontWeight:"bolder", whiteSpace:"pre-wrap"}}>{carder.course_name}</pre></div>
+              <div className="Course_name"><pre style={{ fontFamily: "Inter", fontWeight: "bolder", whiteSpace: "pre-wrap" }}>{carder.course_name}</pre></div>
               <div className="instruct_time">
-                <div style={{color:"grey"}} className="instructor_name">
+                <div style={{ color: "grey" }} className="instructor_name">
                   {carder.course_instructor}
                 </div>
               </div>
-                <div style={{color:"grey"}} className="instructor_post">
-                  {carder.course_instructor_post}
-                  
-                </div>
-                <div style={{color:"grey"}} className="instructor_post">
+              <div style={{ color: "grey" }} className="instructor_post">
+                {carder.course_instructor_post}
+
+              </div>
+              <div style={{ color: "grey" }} className="instructor_post">
                 {carder.instructor_creds}
-                </div>
-                <div style={{display:"flex",justifyContent:"space-between",marginTop:"20px"}}>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
                 <div className="time_course">{carder.course_timing}</div>
                 <div className="episode_course">{carder.course_episode}</div>
-                </div>
+              </div>
             </MDBCardBody>
           </MDBCard>
         ))}
       </div>
       <div className="slider_mobile">
         <Carousel breakPoints={breakPoints}>
-          {master.map((carder) => (
-            <MDBCard
+          {master.map((carder, index) => (
+            <MDBCard id={"tng_originals_page_card" + (index + 1)}
               onClick={() => (window.location.href = "/TNGoriginals/" + carder.id)}
               className="mbd_card card_mastercard"
               style={{
@@ -82,7 +82,7 @@ function Page1() {
                 backgroundColor: "#020312"
               }}
             >
-              <div  className="image_card">
+              <div className="image_card">
                 <MDBCardImage className="mbd_image"
                   style={{
                     marginLeft: "1px",
@@ -93,18 +93,18 @@ function Page1() {
                 />
               </div>
               <MDBCardBody>
-                <div className="Course_name"><pre style={{fontFamily:"Inter",fontWeight:"bolder"}}>{carder.course_name}</pre></div>
+                <div className="Course_name"><pre style={{ fontFamily: "Inter", fontWeight: "bolder" }}>{carder.course_name}</pre></div>
                 <div className="instruct_time">
-                  <div style={{color:"grey"}} className="instructor_name">
+                  <div style={{ color: "grey" }} className="instructor_name">
                     {carder.course_instructor}
                   </div>
                 </div>
-                  <div style={{color:"grey"}} className="instructor_post">
-                    {carder.course_instructor_post}
-                    <div style={{color:"grey"}} className="instructor_post">{carder.instructor_creds}</div>
-                  <div style={{display:"flex",justifyContent:"space-between",marginTop:"20px"}}>
-                  <div style={{color:"white"}} className="time_course">{carder.course_timing}</div>
-                  <div style={{color:"white"}} className="episode_course">{carder.course_episode}</div>
+                <div style={{ color: "grey" }} className="instructor_post">
+                  {carder.course_instructor_post}
+                  <div style={{ color: "grey" }} className="instructor_post">{carder.instructor_creds}</div>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
+                    <div style={{ color: "white" }} className="time_course">{carder.course_timing}</div>
+                    <div style={{ color: "white" }} className="episode_course">{carder.course_episode}</div>
                   </div>
                 </div>
               </MDBCardBody>
