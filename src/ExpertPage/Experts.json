@@ -53,5 +53,15 @@
     "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Abhijay+Thacker/Picus+logo.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Abhay+Agrawal/Abhay+3.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Abhay+Agrawal/Abhay+4.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Abhijay+Thacker/CBS.png"],
     "ExpertDescription": "Abhijay is an economics major and venture capitalist interested in startups, finance, pharmacology, and writing short stories. He seeks to learn more about investment strategies and philosophies. Else, Abhijay is well known for his comic wit and positive attitude and has the superpower of owning the room with his intellect and excellent conversation skills.",
     "ExpertLinkedIn": "https://www.linkedin.com/in/abhijaythacker/"
+},
+{
+  "ExpertId": 5,
+  "ExpertName": "Kapil Dhiman",
+  "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kapil+Homepage.jpg",
+  "ExpertDesignation": "Chief of Staff - PwC India | 6+ years of experience as a CoS | Chartered Accountant",
+  "ExpertCompany": "PwC India | BMR Advisors",
+  "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Kapil+Dhiman/PWC+logo.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Kapil+Dhiman/bmr+logo.png"],
+  "ExpertDescription": "Passionate for strategic planning and creative solutions to complex business problems, Kapil has a knack for early stage startups and growth planning.Unwind - writer, music producer, rapper, poet, DJ, gamer and reader.",
+  "ExpertLinkedIn": "https://www.linkedin.com/in/kapil-dhiman-5a68b0138/"
 }
 ]
