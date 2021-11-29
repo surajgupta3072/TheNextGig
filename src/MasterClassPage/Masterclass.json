@@ -519,7 +519,7 @@
     ],
     "fees": "0",
     "ExpertId": 5,
-    "trailer_video": "hhttps://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Kapil/Kapil_Trailer.mp4",
+    "trailer_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Kapil/Kapil_Trailer.mp4",
     "episodes": [
       {
         "id": 1,
