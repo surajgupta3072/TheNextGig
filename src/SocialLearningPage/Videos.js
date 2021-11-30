@@ -208,7 +208,10 @@ function Videos(props) {
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
               <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p>
               <Row>
-                <Col md={8} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
+                <Col md={4} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
+                <Col md={4}><a href={'whatsapp://send?text=' + `${window.location.href}` + '/Video/' + `${vid.VideoID}`} data-action="share/whatsapp/share"
+                  target="_blank"><Whatsapp style={{ fontSize: "20px" }} /></a>&nbsp;&nbsp;<a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + `${window.location.href}` + '/Video/' + `${vid.VideoID}`}
+                    target="_blank"><Linkedin style={{ fontSize: "20px" }} /></a></Col>
                 <Col md={4} onClick={() => myClipboard(window.location.href + "/Video/" + vid.VideoID)} className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "12px", cursor: "pointer" }}>&nbsp;&nbsp;&nbsp;Copy Link <Clipboard /></Col>
               </Row>
             </div>
