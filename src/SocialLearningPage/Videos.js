@@ -1,12 +1,12 @@
 import docClient from '../GigsPage/GigsAWS';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Clipboard } from 'react-bootstrap-icons';
+import { Clipboard, Linkedin, Whatsapp } from 'react-bootstrap-icons';
 import Swal from "sweetalert2";
 
 function Videos(props) {
   // const [videoslist, setVideosList] = useState(false);
-/*   const [searchterm, setSearchTerm] = useState(""); */
+  /*   const [searchterm, setSearchTerm] = useState(""); */
   // const [filter,setfilter]=useState([]);
   // const [all,setall]=useState(0);
   /* function addSearchTerm() {
@@ -57,22 +57,22 @@ function Videos(props) {
   function VideoEnded(hashtags) {
     var paramss = {
       TableName: "UsersTable",
-      Key: { "UserID":props.userid },
+      Key: { "UserID": props.userid },
       ProjectionExpression: "SkillsAcquiredVideos",
     };
-    docClient.get(paramss, function(err, data) {
+    docClient.get(paramss, function (err, data) {
       if (err) {
         console.log(err);
-      } 
+      }
       else {
         var params = {
           TableName: "UsersTable",
-          Key: { "UserID":props.userid },
-          UpdateExpression: "set SkillsAcquiredVideos["+data.Item.SkillsAcquiredVideos.length.toString()+"] = :sav",
-          ExpressionAttributeValues:{
+          Key: { "UserID": props.userid },
+          UpdateExpression: "set SkillsAcquiredVideos[" + data.Item.SkillsAcquiredVideos.length.toString() + "] = :sav",
+          ExpressionAttributeValues: {
             ":sav": hashtags.split("--")
           },
-          ReturnValues:"UPDATED_NEW"
+          ReturnValues: "UPDATED_NEW"
         }
         docClient.update(params, function (err, data) {
           if (err) {
@@ -84,31 +84,31 @@ function Videos(props) {
   }
 
   function VideoStarted(vid, ct) {
-    if(ct<=0.1) {
+    if (ct <= 0.1) {
       var params = {
         TableName: "UsersTable",
-        Key: { "UserID":props.userid },
+        Key: { "UserID": props.userid },
         ProjectionExpression: "SocialLearningVideosWatched",
       };
-      docClient.get(params, function(err, data) {
+      docClient.get(params, function (err, data) {
         if (err) {
           console.log(err);
-        } 
+        }
         else {
-          var flag=0;
-          for(var i=0; i<data.Item.SocialLearningVideosWatched.length; i++) {
-            if(data.Item.SocialLearningVideosWatched[i].vid===vid)
-              var flag=1;
+          var flag = 0;
+          for (var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
+            if (data.Item.SocialLearningVideosWatched[i].vid === vid)
+              var flag = 1;
           }
-          if(flag===0) {
+          if (flag === 0) {
             var params = {
               TableName: "UsersTable",
-              Key: { "UserID":props.userid },
-              UpdateExpression: "set SocialLearningVideosWatched["+data.Item.SocialLearningVideosWatched.length.toString()+"] = :slvw",
-              ExpressionAttributeValues:{
-                ":slvw": {"timestamp": `${Date.now()}`, "vid": vid}
+              Key: { "UserID": props.userid },
+              UpdateExpression: "set SocialLearningVideosWatched[" + data.Item.SocialLearningVideosWatched.length.toString() + "] = :slvw",
+              ExpressionAttributeValues: {
+                ":slvw": { "timestamp": `${Date.now()}`, "vid": vid }
               },
-              ReturnValues:"UPDATED_NEW"
+              ReturnValues: "UPDATED_NEW"
             }
             docClient.update(params, function (err, data) {
               if (err) {
@@ -117,22 +117,22 @@ function Videos(props) {
             });
             var paramss = {
               TableName: "VideosTable",
-              Key: { "VideoID":vid },
+              Key: { "VideoID": vid },
               ProjectionExpression: "VideoViews",
             };
-            docClient.get(paramss, function(err, data) {
+            docClient.get(paramss, function (err, data) {
               if (err) {
                 console.log(err);
-              } 
+              }
               else {
                 var params = {
                   TableName: "VideosTable",
-                  Key: { "VideoID":vid },
+                  Key: { "VideoID": vid },
                   UpdateExpression: "set VideoViews = :slvv",
-                  ExpressionAttributeValues:{
+                  ExpressionAttributeValues: {
                     ":slvv": data.Item.VideoViews + 1
                   },
-                  ReturnValues:"UPDATED_NEW"
+                  ReturnValues: "UPDATED_NEW"
                 }
 
                 docClient.update(params, function (err, data) {
@@ -141,7 +141,7 @@ function Videos(props) {
                   }
                 });
               }
-              
+
             });
           }
         }
@@ -161,59 +161,62 @@ function Videos(props) {
     navigator.clipboard.writeText(vidlink);
   }
   return (
-    
+
     <div>
       {/* <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
       <button className="search_button" onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button> */}
-      <br/><br/><br/>
-      <div style={{display:"flex", flexWrap:"wrap", justifyContent:"space-around"}}>
-        {props.filter===false && props.prop.map((vid)=>
-          <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
-            {props.redirlog ? 
-              <figure  className="tag figurex" data-content={vid.VideoDuration}><video src={vid.VideoLink+"#t=0.5"} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+      <br /><br /><br />
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
+        {props.filter === false && props.prop.map((vid) =>
+          <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
+            {props.redirlog ?
+              <figure className="tag figurex" data-content={vid.VideoDuration}><video src={vid.VideoLink + "#t=0.5"} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
               </video>
               </figure>
               :
-              <video id="myvid" className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink+"#t=0.5"} />
+              <video id="myvid" className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                <source src={vid.VideoLink + "#t=0.5"} />
               </video>
             }
-            <div style={{marginLeft:"2%"}}>
-              <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
-              <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
-              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
+            <div style={{ marginLeft: "2%" }}>
+              <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
+              <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p>
               <Row>
-                <Col md={8} className="text" style={{padding:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
-                <Col md={4} onClick={()=>myClipboard(window.location.href+"/Video/"+vid.VideoID)} className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"12px",cursor:"pointer"}}>&nbsp;&nbsp;&nbsp;Copy Link <Clipboard/></Col>
+                <Col md={4} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
+                <Col md={4}><a href={'whatsapp://send?text=' + `${window.location.href}` + '/Video/' + `${vid.VideoID}`} data-action="share/whatsapp/share"
+                  target="_blank"><Whatsapp style={{ fontSize: "20px" }} /></a>&nbsp;&nbsp;<a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + `${window.location.href}` + '/Video/' + `${vid.VideoID}`}
+                    target="_blank"><Linkedin style={{ fontSize: "20px" }} /></a></Col>
+                <Col md={4} onClick={() => myClipboard(window.location.href + "/Video/" + vid.VideoID)} className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "12px", cursor: "pointer" }}>&nbsp;&nbsp;&nbsp;Copy Link <Clipboard /></Col>
               </Row>
             </div>
-            <br/>
+            <br />
           </div>
         )}
-        {props.filter!==false && props.filter.map((vid)=>
-          <div className="video_div" key={vid.VideoID} onClick={() => {if(props.redirlog) window.location.href="/login";}}>
-            {props.redirlog ? 
+        {props.filter !== false && props.filter.map((vid) =>
+          <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
+            {props.redirlog ?
               <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink+"#t=0.5"} />
+                <source src={vid.VideoLink + "#t=0.5"} />
               </video> :
-              <video className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink+"#t=0.5"} />
+              <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                <source src={vid.VideoLink + "#t=0.5"} />
               </video>
             }
-            <div style={{marginLeft:"2%"}}>
-              <h6 className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)"}}>{vid.VideoTopic}</h6>
-              <p className="text" style={{padding:"0", margin:"0", fontSize:"14px"}}>{vid.VideoUsername} - {vid.VideoCreds}</p>
-              <p className="text" style={{padding:"0", margin:"0", color:"grey", fontSize:"12px"}}>{vid.VideoHashtags.replaceAll("--","  ")}</p>
+            <div style={{ marginLeft: "2%" }}>
+              <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
+              <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p>
               <Row>
-                <Col md={8} className="text" style={{padding:"0", color:"rgb(242, 108, 79)", fontSize:"10px"}}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
-                <Col md={4} onClick={()=>myClipboard(window.location.href+"/Video/"+vid.VideoID)} className="text" style={{padding:"0", margin:"0", color:"rgb(242, 108, 79)", fontSize:"12px",cursor:"pointer"}}>&nbsp;&nbsp;&nbsp;Copy Link <Clipboard/></Col>
+                <Col md={8} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
+                <Col md={4} onClick={() => myClipboard(window.location.href + "/Video/" + vid.VideoID)} className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "12px", cursor: "pointer" }}>&nbsp;&nbsp;&nbsp;Copy Link <Clipboard /></Col>
               </Row>
             </div>
-            <br/>
+            <br />
           </div>
         )}
       </div>
-    </div>
+    </div >
   );
 }
 
