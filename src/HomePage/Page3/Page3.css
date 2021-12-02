@@ -6,12 +6,8 @@ button.rec-dot {
   background-color: #f26c4f;
 }
 .Item_component {
-  margin-left: 12%;
+  margin-left: 20%;
   margin-right: 12%;
-}
-.slick-dots {
-  bottom: 10px !important;
-  margin-bottom: 20px;
 }
 .slick-dots li button {
   background-color: #808080 !important;
@@ -207,6 +203,9 @@ li.slick-active button {
   .border_box {
     margin-left: 0%;
     font-size: 25px;
+  }
+  .carousel-wrapper {
+    margin-top: 0px;
   }
   .Item_component {
     height: 471px;

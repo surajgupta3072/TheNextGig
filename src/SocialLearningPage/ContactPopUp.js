@@ -2,7 +2,58 @@ import Modal from "react-bootstrap/Modal";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Container from 'react-bootstrap/Container';
 import Swal from "sweetalert2";
+import { useState } from "react";
+import './../Footer/Modal.css'
+
 function MyVerticallyCenteredModal(props) {
+  const [feedback, setFeedback] = useState("");
+  const [data, setData] = useState("");
+  const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+  // We use JSON.stringify here so the data can be sent as a string via HTTP
+  const body = JSON.stringify({
+    feedback: `Feedback:${feedback}`,
+    title:"Feedback",
+    feedback2:"",
+    user:data,
+    feedback1:""
+  });
+  const requestOptions = {
+    method: "POST",
+    body,
+  };
+  const submit = (event) => {
+    fetch(endpoint, requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error in fetch");
+        } 
+        else {
+          setFeedback("");
+          setData("");
+          props.onHide();
+          Swal.fire({
+            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 2000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          });
+        }
+        // return response.json();
+      })
+      .catch((error) => {
+        console.error("Failed to send feedback. Error: ", error);
+      });
+  };
+  const handleChange = (event) => {
+    setFeedback(event.target.value);
+  };
+  const handleid = (event) => {
+    setData(event.target.value);
+  };
+
   function myClipboard(vidlink) {
     Swal.fire({
       title: "<h6 style='color:white'>" + "Link Copied!" + "</h6>",
