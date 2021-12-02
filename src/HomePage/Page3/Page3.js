@@ -1,17 +1,28 @@
 import './Page3.css';
 import CardX from './Card';
-import Carousel from "react-elastic-carousel";
 import Data from "./../../MasterClassPage/Masterclass.json"
-import ReactTooltip from 'react-tooltip';
-const breakPoints = [
-  { width: 1, itemsToShow: 1 },
-  { width: 500, itemsToShow: 1 },
-  { width: 750, itemsToShow: 2 },
-  { width: 1200, itemsToShow: 3 }
-];
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useState } from 'react';
 function Page3() {
-
+  const [show_no, setshowno] = useState(3)
+  useEffect(() => {
+    if (window.innerWidth <= 1324 && window.innerWidth >= 1000) {
+      setshowno(2)
+    }
+    if (window.innerWidth <= 1000) {
+      setshowno(1)
+    }
+  }, [])
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: show_no,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
+  };
   return (
     <div className="page3_homepage_maindiv" >
       <div className="heading_box">
@@ -31,7 +42,7 @@ function Page3() {
       <br />
       <div>
         <div className="carousel-wrapper">
-          <Carousel breakPoints={breakPoints}>
+          <Slider {...settings}>
             {Data.map(detail => (
               <div className="Item_component">
                 <CardX
@@ -49,7 +60,7 @@ function Page3() {
                 />
               </div>
             ))}
-          </Carousel>
+          </Slider>
           {/* <div style={{marginLeft: "6%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a href="/LearnCoins" style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div> */}
 
         </div>

@@ -5,9 +5,38 @@ button.rec-dot {
   color: white;
   background-color: #f26c4f;
 }
+.Item_component {
+  margin-left: 12%;
+  margin-right: 12%;
+}
+.slick-dots {
+  margin-bottom: 40px !important
+  ;
+}
+.slick-dots li button {
+  background-color: #808080 !important;
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 50%;
+}
+.slick-dots li button::before {
+  content: "" !important;
+}
+li.slick-active button {
+  background-color: #f26c4f !important;
+}
 .button_div_page3 {
   position: absolute;
   margin-top: 0px;
+}
+.carousel-wrapper {
+  margin-top: 60px;
+}
+.slick-arrow.slick-prev {
+  left: 10px !important;
+}
+.slick-arrow.slick-next {
+  right: 20px !important;
 }
 .rec.rec-arrow {
   border-radius: 50%;
@@ -34,7 +63,7 @@ button.rec-dot {
   font-size: 1.3rem;
   margin-bottom: -60px;
 }
-.page3_subtitle_asterik{
+.page3_subtitle_asterik {
   font-family: "Open Sans", sans-serif !important;
   font-size: 1.3rem;
 }
@@ -188,7 +217,7 @@ button.rec-dot {
   .page3_subtitle {
     font-size: 15px;
   }
-  .page3_subtitle_asterik{
+  .page3_subtitle_asterik {
     font-size: 15px;
     margin-left: 3%;
   }

@@ -1,10 +1,12 @@
 import docClient from '../GigsPage/GigsAWS';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Clipboard, Linkedin, Whatsapp } from 'react-bootstrap-icons';
-import Swal from "sweetalert2";
-
+import MyVerticallyCenteredModal from './ContactPopUp'
+import { useState } from "react";
+import './SocialLearningPage.css'
+import { GiShare } from "react-icons/gi";
 function Videos(props) {
+  const [modalShow, setModalShow] = useState(false);
   // const [videoslist, setVideosList] = useState(false);
   /*   const [searchterm, setSearchTerm] = useState(""); */
   // const [filter,setfilter]=useState([]);
@@ -149,17 +151,7 @@ function Videos(props) {
     }
   }
 
-  function myClipboard(vidlink) {
-    Swal.fire({
-      title: "<h6 style='color:white'>" + "Link Copied!" + "</h6>",
-      showConfirmButton: false,
-      timer: 2000,
-      background: '#020312',
-      color: 'white',
-      iconColor: "#F26C4F"
-    });
-    navigator.clipboard.writeText(vidlink);
-  }
+
   return (
 
     <div>
@@ -181,13 +173,16 @@ function Videos(props) {
             <div style={{ marginLeft: "2%" }}>
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
-              <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p>
               <Row>
-                <Col md={4} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
-                <Col md={4}><a href={'whatsapp://send?text=' + `${window.location.href}` + '/Video/' + `${vid.VideoID}`} data-action="share/whatsapp/share"
-                  target="_blank"><Whatsapp style={{ fontSize: "20px" }} /></a>&nbsp;&nbsp;<a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + `${window.location.href}` + '/Video/' + `${vid.VideoID}`}
-                    target="_blank"><Linkedin style={{ fontSize: "20px" }} /></a></Col>
-                <Col md={4} onClick={() => myClipboard(window.location.href + "/Video/" + vid.VideoID)} className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "12px", cursor: "pointer" }}>&nbsp;&nbsp;&nbsp;Copy Link <Clipboard /></Col>
+                <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
+                <Col md={3} className="text" style={{ padding: "0", margin: "0", color: "#000", fontSize: "12px", cursor: "pointer" }}>
+                  <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => setModalShow(true)}>
+                    Share <GiShare style={{ width: "15px", height: "15px" }} /></button>
+                  <MyVerticallyCenteredModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                  />
+                </Col>
               </Row>
             </div>
             <br />
@@ -208,11 +203,16 @@ function Videos(props) {
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
               <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p>
               <Row>
-                <Col md={4} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
-                <Col md={4}><a href={'whatsapp://send?text=' + `${window.location.href}` + '/Video/' + `${vid.VideoID}`} data-action="share/whatsapp/share"
-                  target="_blank"><Whatsapp style={{ fontSize: "20px" }} /></a>&nbsp;&nbsp;<a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + `${window.location.href}` + '/Video/' + `${vid.VideoID}`}
-                    target="_blank"><Linkedin style={{ fontSize: "20px" }} /></a></Col>
-                <Col md={4} onClick={() => myClipboard(window.location.href + "/Video/" + vid.VideoID)} className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "12px", cursor: "pointer" }}>&nbsp;&nbsp;&nbsp;Copy Link <Clipboard /></Col>
+                <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
+                <Col md={3} className="text" style={{ padding: "0", margin: "0", color: "#000", fontSize: "12px", cursor: "pointer" }}>
+                  <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => setModalShow(true)}>
+                    Share <GiShare style={{ width: "15px", height: "15px" }} /></button>
+                  <MyVerticallyCenteredModal
+                    show={modalShow}
+                    VideoID={vid.VideoID}
+                    onHide={() => setModalShow(false)}
+                  />
+                </Col>
               </Row>
             </div>
             <br />
