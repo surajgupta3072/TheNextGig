@@ -10,8 +10,8 @@ button.rec-dot {
   margin-right: 12%;
 }
 .slick-dots {
-  margin-bottom: 40px !important
-  ;
+  bottom: 10px !important;
+  margin-bottom: 20px;
 }
 .slick-dots li button {
   background-color: #808080 !important;

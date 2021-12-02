@@ -180,6 +180,7 @@ function Videos(props) {
                     Share <GiShare style={{ width: "15px", height: "15px" }} /></button>
                   <MyVerticallyCenteredModal
                     show={modalShow}
+                    VideoID={vid.VideoID}
                     onHide={() => setModalShow(false)}
                   />
                 </Col>
