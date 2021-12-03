@@ -608,6 +608,71 @@
       }
     ],
     "gigs": []
-  }
+  },
+  {
+    "id": 96,
+    "course_name": "Product Management: Fundamentals \n The Startup Edition",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Shreya+Homepage.jpg",
+    "course_domain":"ProdMan",
+    "course_instructor": "Shreya Bajaj",
+    "course_instructor_post": "Product @ Invideo, Ex-Cisco, Verizon",
+    "instructor_creds": "Cornell University, NTU",
+    "course_timing": "...Coming Soon",
+    "course_episode": " ",
+    "course_description": "This has to be filled in properly once the session is completely recorded",
+    "WhatYouLearn": ["A", "B", "C", "D"],
+    "PreparesYouFor": ["A", "B", "C"],
+    "WhatsInForYou": ["A", "B" , "C", "D", "E", "F"],
+    "fees": ""
+},
+  {
+    "id": 97,
+    "course_name": "Product Management in detail: \n New feature rollouts",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Arun+homepage.png",
+    "course_domain":"ProdMan",
+    "course_instructor": "Arun Sreelalan Iyer",
+    "course_instructor_post": "Product @ Bajaj Finserv, Ex-Ola, McKinsey",
+    "instructor_creds": "8+ years of ProdMan experience, IIM Calcutta",
+    "course_timing": "...Coming Soon",
+    "course_episode": " ",
+    "course_description": "This has to be filled in properly once the session is completely recorded",
+    "WhatYouLearn": ["A", "B", "C", "D"],
+    "PreparesYouFor": ["A", "B", "C"],
+    "WhatsInForYou": ["A", "B" , "C", "D", "E", "F"],
+    "fees": ""
+  },
+  {
+    "id": 98,
+    "course_name": "Limited Partners: Investing in \n private equity funds",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Naveen+homepage.png",
+    "course_domain":"Finance",
+    "course_instructor": "Naveen Changoiwala",
+    "course_instructor_post": "Investment Professional - Miras, Ex-NIIF, Temasek",
+    "instructor_creds": "IIM Ahmedabad, Chartered Accountant",
+    "course_timing": "...Coming Soon",
+    "course_episode": " ",
+    "course_description": "This has to be filled in properly once the session is completely recorded",
+    "WhatYouLearn": ["A", "B", "C", "D"],
+    "PreparesYouFor": ["A", "B", "C"],
+    "WhatsInForYou": ["A", "B" , "C", "D", "E", "F"],
+    "fees": ""
+},
+{
+  "id": 99,
+  "course_name": "Climate Finance: \n Making finance sustainable",
+  "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Simmi+homepage.png",
+  "course_instructor": "Simmi Sareen",
+  "course_domain":"Finance",
+  "course_instructor_post": "Director - Unitus Capital, Founder - Climake",
+  "instructor_creds": "London Business School, Chartered Accountant",
+  "course_timing": "...Coming Soon",
+  "course_episode": " ",
+  "course_description": "This has to be filled in properly once the session is completely recorded",
+  "WhatYouLearn": ["A", "B", "C", "D"],
+  "PreparesYouFor": ["A", "B", "C"],
+  "WhatsInForYou": ["A", "B" , "C", "D", "E", "F"],
+  "fees": ""
+}
+  
  
 ]
