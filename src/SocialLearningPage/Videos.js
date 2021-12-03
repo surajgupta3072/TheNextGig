@@ -181,6 +181,8 @@ function Videos(props) {
                   <MyVerticallyCenteredModal
                     show={modalShow}
                     VideoID={vid.VideoID}
+                    VideoLink={vid.VideoLink}
+                    VideoTopic={vid.VideoTopic}
                     onHide={() => setModalShow(false)}
                   />
                 </Col>
@@ -211,6 +213,7 @@ function Videos(props) {
                   <MyVerticallyCenteredModal
                     show={modalShow}
                     VideoID={vid.VideoID}
+                    VideoLink={vid.VideoLink}
                     onHide={() => setModalShow(false)}
                   />
                 </Col>

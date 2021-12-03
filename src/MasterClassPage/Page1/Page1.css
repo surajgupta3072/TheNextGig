@@ -60,7 +60,7 @@
   justify-content: space-around;
 }
 pre {
-  font-size: 1.15rem ;
+  font-size: 1.15rem;
 }
 .instructor_name,
 .instructor_post {
@@ -197,6 +197,11 @@ pre {
     justify-self: center;
   }
 }
+@media only screen and (max-width: 500px) {
+  .rec {
+    margin-top: 0.5%;
+  }
+}
 @media only screen and (max-width: 420px) {
   .instruct_time {
     font-size: 0.9rem;
@@ -208,6 +213,9 @@ pre {
 @media only screen and (max-width: 385px) {
   .instruct_time {
     font-size: 0.8rem;
+  }
+  .rec {
+    margin-top: 1%;
   }
   .post_episode {
     font-size: 0.75rem;
