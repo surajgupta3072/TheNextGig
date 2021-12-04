@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Swal from "sweetalert2";
 import { useState } from "react";
 import './../Footer/Modal.css'
-
 function MyVerticallyCenteredModal(props) {
   const [feedback, setFeedback] = useState("");
   const [data, setData] = useState("");

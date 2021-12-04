@@ -81,7 +81,7 @@ function Page1() {
             <div>
               <label>
                 <input onChange={searchfilter} type="checkbox" name="checkbox" value="4" />
-                <span>&nbsp;Product Mangement</span>
+                <span>&nbsp;Product Management</span>
               </label>
             </div>
           </div>
