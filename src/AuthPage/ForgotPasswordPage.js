@@ -12,21 +12,26 @@ function ForgotPasswordPage(){
     try {
       var params = {
         TableName: "UsersTable",
-        ProjectionExpression: "Email"
+        ProjectionExpression: "Email, Gflag"
       };
       docClient.scan(params, async function (err, data) {
         if (err) {
           console.log(err);
         } 
         else {
+          console.log(data.Items)
           for(var i=0; i<data.Items.length; i++) {
-            if(data.Items[i].Email==email) {
+            if(data.Items[i].Email==email && data.Items[i].Gflag==false) {
               await Auth.forgotPassword(email);
-              window.location.href="/changepassword";
+              setTimeout(function() {
+                window.location.href="/changepassword/" + email;
+              }, 1500);              
               break;
             }
           }
-          setShowErr("Email does not exist, Please Sign Up or try with an alternate Email");
+          setTimeout(function() {
+            setShowErr("Email does not exist.");
+          }, 2000);
         }
       });
     } 
@@ -41,6 +46,7 @@ function ForgotPasswordPage(){
         <p style={{fontSize:"18px"}}>Email<text style={{color:"#f26c4f"}}>*</text></p>
         <input value={email} onChange={e => setEmail(e.target.value)} style={{width:"100%"}}></input>
         {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
+        {showerr==="Email does not exist." && <p style={{color:"red", textAlign:"center"}}>Please <a href="/register" style={{ color: "#f26c4f" }}>Sign Up</a> or try with an alternate Email</p>}
         </div>
         <button onClick={handleSubmit} className="button_slide slide_right" style={{marginTop:"10%", marginLeft:"33%", marginBottom:"10%"}}>Submit<ArrowLeft className='button_arrow'/></button>
     </div>

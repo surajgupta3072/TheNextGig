@@ -1,6 +1,11 @@
 import "./Card.css";
+import MyVerticallyCenteredModal from './Modal.js'
+import { ArrowLeft } from "react-bootstrap-icons";
+import { useState }  from 'react';
+import './Page3.css'
 
 export default function CardX(props) {
+  const [modalShow, setModalShow] = useState(false);
   return (
     <div
       onClick={() => { if (props.time !== "...Coming Soon") window.location.href = "/TNGoriginals/" + props.carl }} className="container_card">
@@ -26,7 +31,15 @@ export default function CardX(props) {
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", color: "white", marginLeft: "10px", marginTop: "20px" }}>
           <div style={{ fontSize: "18px" }}>{props.time}</div>
-          <div style={{ marginRight: "10px", fontSize: "18px" }}>{(props.time !== "...Coming Soon") ? ("") : ("")}  {props.fees} {(props.time !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
+          <div style={{ marginRight: "10px", fontSize: "18px" }}>{(props.time !== "...Coming Soon") ? ("") : (
+            <div style={{marginRight: "10px",display:"flex",justifyContent:"center"}}> <button style={{marginTop:"0px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
+            Keep me <br/> posted <ArrowLeft className="button_arrow_tngorig"/></button>
+            <MyVerticallyCenteredModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+              TNGoriginalInput = {props.text2}
+            /></div>
+          )}  {props.fees} {(props.time !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
         </div>
         <br />
       </div>

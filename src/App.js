@@ -126,7 +126,7 @@ function App() {
               <Route exact path="/forgotpassword">
                 <ForgotPasswordPage/>
               </Route>
-              <Route exact path="/changepassword">
+              <Route exact path="/changepassword/:emailid">
                 <ChangePasswordPage/>
               </Route>
               {/* <Route exact path="/TheNextGigCommunity">
