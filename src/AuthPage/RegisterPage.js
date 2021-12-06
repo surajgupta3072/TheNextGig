@@ -5,7 +5,7 @@ import { ArrowLeft } from 'react-bootstrap-icons'
 import { FaGoogle } from 'react-icons/fa';
 import docClient from './../GigsPage/GigsAWS';
 import './AuthPage.css';
-import MyVerticallyCenteredModal from "./RegisterPageModal";
+// import MyVerticallyCenteredModal from "./RegisterPageModal";
 import Swal from 'sweetalert2';
 
 function RegisterPage(props) {
@@ -139,12 +139,12 @@ function RegisterPage(props) {
 
   return (
     <div className="register_container" style={{ marginTop: "7%", backgroundColor: "#020312", border: "1px solid #f26c4f" }}>
-      <div style={{ paddingRight: "7%", paddingLeft: "7%", paddingTop: "7%", paddingBottom: "5%" }}>
-        <Container onClick={() => Auth.federatedSignIn({ provider: 'Google' })} style={{ cursor: "pointer", backgroundColor: "#f26c4f", height: "30px", display: "flex", alignItems: "center", justifyContent: "space-evenly" }}>
-          <FaGoogle />
-          <b>Signup with Google</b>
-        </Container>
-        {showVerifyBox === false ?
+      {showVerifyBox === false ?
+        <div style={{ paddingRight: "7%", paddingLeft: "7%", paddingTop: "7%", paddingBottom: "5%" }}>
+          <Container onClick={() => Auth.federatedSignIn({ provider: 'Google' })} style={{ cursor: "pointer", backgroundColor: "#f26c4f", height: "30px", display: "flex", alignItems: "center", justifyContent: "space-evenly" }}>
+            <FaGoogle />
+            <b>Signup with Google</b>
+          </Container>
           <div>
             <p style={{ textAlign: "center", marginTop: "10px", fontWeight: "bold", color: "rgba(242, 108, 79, 1)" }}>OR</p>
             <p style={{ fontSize: "18px" }}>Full Name <text style={{ color: "#f26c4f" }}>*</text></p>
@@ -157,7 +157,9 @@ function RegisterPage(props) {
             {showerr !== false && <p style={{ color: "red", textAlign: "center" }}><br />*{showerr}</p>}
             <p style={{ marginTop: "5%", textAlign: "center", fontStyle: "italic" }}>Already a member? <a href="/login" style={{ color: "#f26c4f" }}>Login</a></p>
           </div>
-          :
+        </div>
+        :
+        <div style={{ paddingRight: "7%", paddingLeft: "7%", paddingTop: "7%", paddingBottom: "5%" }}>
           <div>
             <p style={{ fontSize: "18px", marginTop: "8%" }}>Verification Code <text style={{ color: "#f26c4f" }}>*</text></p>
             <input value={otp} onChange={e => setOtp(e.target.value)} style={{ width: "100%" }} />
@@ -165,8 +167,8 @@ function RegisterPage(props) {
             {/* <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} /> */}
             {showerr !== false && <p style={{ color: "red", textAlign: "center" }}><br />*{showerr}</p>}
           </div>
-        }
-      </div>
+        </div>
+      }
     </div>
   );
 }

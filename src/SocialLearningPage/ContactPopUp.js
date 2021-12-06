@@ -3,7 +3,8 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import Container from 'react-bootstrap/Container';
 import Swal from "sweetalert2";
 import { useState } from "react";
-import './../Footer/Modal.css'
+import './../Footer/Modal.css';
+
 function MyVerticallyCenteredModal(props) {
   const [feedback, setFeedback] = useState("");
   const [data, setData] = useState("");

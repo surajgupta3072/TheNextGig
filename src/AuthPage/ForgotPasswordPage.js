@@ -1,6 +1,7 @@
 import Auth from "@aws-amplify/auth";
 import { useState } from "react";
 import {ArrowLeft} from 'react-bootstrap-icons';
+import docClient from './../GigsPage/GigsAWS';
 import './AuthPage.css';
 
 function ForgotPasswordPage(){
@@ -9,8 +10,25 @@ function ForgotPasswordPage(){
 
   async function handleSubmit() {
     try {
-        await Auth.forgotPassword(email);
-        window.location.href="/changepassword";
+      var params = {
+        TableName: "UsersTable",
+        ProjectionExpression: "Email"
+      };
+      docClient.scan(params, async function (err, data) {
+        if (err) {
+          console.log(err);
+        } 
+        else {
+          for(var i=0; i<data.Items.length; i++) {
+            if(data.Items[i].Email==email) {
+              await Auth.forgotPassword(email);
+              window.location.href="/changepassword";
+              break;
+            }
+          }
+          setShowErr("Email does not exist, Please Sign Up or try with an alternate Email");
+        }
+      });
     } 
     catch (error) {
       setShowErr(error.message);
