@@ -4,6 +4,9 @@ import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import "./Page1.css";
 import { useState } from "react";
+import MyVerticallyCenteredModal from './Modal.js'
+import { ArrowLeft } from "react-bootstrap-icons";
+
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -12,6 +15,7 @@ const breakPoints = [
 ];
 
 function Page1() {
+  const [modalShow, setModalShow] = useState(false);
   const [cardslist, setcardsList] = useState(master);
   const [filter, setfilter] = useState([]);
   function searchfilter(e) {
@@ -123,7 +127,15 @@ function Page1() {
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
                 <div className="time_course">{carder.course_timing}</div>
-                <div className="episode_course">{carder.course_episode}</div>
+                <div className="episode_course">{carder.course_episode}{(carder.course_timing !== "...Coming Soon") ? ("") : (
+            <div style={{marginRight: "10px",display:"flex",justifyContent:"center"}}> <button style={{marginTop:"0px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
+            Keep me <br/> posted <ArrowLeft className="button_arrow_tngorig"/></button>
+            <MyVerticallyCenteredModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+              TNGoriginalInput = {carder.course_instructor_post}
+            /></div>
+          )} {(carder.course_timing !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
               </div>
             </MDBCardBody>
           </MDBCard>
@@ -133,7 +145,7 @@ function Page1() {
         <Carousel breakPoints={breakPoints}>
           {cardslist.map((carder, index) => (
             <MDBCard id={"tng_originals_page_card" + (index + 1)}
-              onClick={() => (window.location.href = "/TNGoriginals/" + carder.id)}
+            onClick={() => { if (carder.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + carder.id }}
               className="mbd_card card_mastercard"
               style={{
                 cursor: "pointer",
@@ -165,7 +177,15 @@ function Page1() {
                   <div style={{ color: "grey" }} className="instructor_post">{carder.instructor_creds}</div>
                   <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
                     <div style={{ color: "white" }} className="time_course">{carder.course_timing}</div>
-                    <div style={{ color: "white" }} className="episode_course">{carder.course_episode}</div>
+                    <div style={{ color: "white" }} className="episode_course">{carder.course_episode}{(carder.course_timing !== "...Coming Soon") ? ("") : (
+            <div style={{marginRight: "10px",display:"flex",justifyContent:"center"}}> <button style={{marginTop:"0px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
+            Keep me <br/> posted <ArrowLeft className="button_arrow_tngorig"/></button>
+            <MyVerticallyCenteredModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+              TNGoriginalInput = {carder.course_instructor_post}
+            /></div>
+          )} {(carder.course_timing !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
                   </div>
                 </div>
               </MDBCardBody>

@@ -32,7 +32,7 @@ export default function CardX(props) {
         <div style={{ display: "flex", justifyContent: "space-between", color: "white", marginLeft: "10px", marginTop: "20px" }}>
           <div style={{ fontSize: "18px" }}>{props.time}</div>
           <div style={{ marginRight: "10px", fontSize: "18px" }}>{(props.time !== "...Coming Soon") ? ("") : (
-            <div style={{marginRight: "10px",display:"flex",justifyContent:"center"}}> <button style={{marginTop:"0px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
+            <div style={{marginRight: "20px",display:"flex",justifyContent:"center"}}> <button style={{marginTop:"0px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
             Keep me <br/> posted <ArrowLeft className="button_arrow_tngorig"/></button>
             <MyVerticallyCenteredModal
               show={modalShow}
