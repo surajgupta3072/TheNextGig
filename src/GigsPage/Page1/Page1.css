@@ -6,12 +6,14 @@
   background-position-y: -10px;
   padding-top: 25px;
 }
-
+.figure_tag_gigs::before {
+  top: 7% !important;
+}
 @media screen and (max-width: 768px) {
-  .brtag_page1_gigs{
+  .brtag_page1_gigs {
     display: none;
   }
-  .search{
+  .search {
     font-size: 10px;
   }
 }
