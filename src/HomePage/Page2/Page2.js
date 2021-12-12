@@ -45,14 +45,8 @@ function Page2() {
               </Card.Body>
               <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "none" }} variant="to1p" src="/exp_learn.png" />
             </Card>
-
-
           </Row>
-
         </Container>
-        <div style={{ width: "100%", marginTop: "4%", marginBottom: "5%", marginLeft: "0%", paddingTop: "10px" }}>
-          <img width="100%" marginTop="0" src="/Website banner.png" />
-        </div>
       </div>
 
       <div className="page2_mobile_view" >
@@ -106,13 +100,8 @@ function Page2() {
                 </div>
               </Card.Body>
             </Card>
-
-
           </Col>
         </Container>
-        <div style={{ width: "100%", paddingTop: "5px", display: "flex", flexDirection: "row", margin: "auto" }}>
-          <img width="100%" marginTop="0" src="/Mobilebanner.png" />
-        </div>
       </div>
     </div>
   );

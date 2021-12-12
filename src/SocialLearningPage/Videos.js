@@ -193,19 +193,19 @@ function Videos(props) {
           <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
               <figure className="tag figurex" data-content={vid.VideoDuration}>
-                <video src={vid.VideoLink + "#t=0.08"} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}></video>
+                <video src={vid.VideoLink} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}></video>
               </figure>
               :
               <video id="myvid" className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink + "#t=0.08"} />
+                <source src={vid.VideoLink} />
               </video>
             }
             <div style={{ marginLeft: "2%" }}>
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
               <Row>
-                <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
-                <Col md={3} className="text" style={{ padding: "0", margin: "0", color: "#000", fontSize: "12px", cursor: "pointer" }}>
+                {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
+                <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft:"7px" }}>
                   <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => setModalShow(true)}>
                     Share <GiShare style={{ width: "15px", height: "15px" }} /></button>
                   <MyVerticallyCenteredModal
@@ -226,21 +226,21 @@ function Videos(props) {
             {props.redirlog ?
               <figure className="tag figurex" data-content={vid.VideoDuration}>
                 <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                  <source src={vid.VideoLink + "#t=0.08"} />
+                  <source src={vid.VideoLink} />
                 </video>
               </figure> 
               :
               <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink + "#t=0.08"} />
+                <source src={vid.VideoLink} />
               </video>
             }
             <div style={{ marginLeft: "2%" }}>
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
-              <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p>
+              {/* <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p> */}
               <Row>
-                <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
-                <Col md={3} className="text" style={{ padding: "0", margin: "0", color: "#000", fontSize: "12px", cursor: "pointer" }}>
+                {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
+                <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft:"7px" }}>
                   <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => setModalShow(true)}>
                     Share <GiShare style={{ width: "15px", height: "15px" }} />
                   </button>

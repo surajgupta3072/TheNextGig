@@ -3,21 +3,21 @@ import { ArrowLeft } from "react-bootstrap-icons";
 import Swal from "sweetalert2";
 
 function MyVerticallyPopUp(props) {
-  const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
-  // We use JSON.stringify here so the data can be sent as a string via HTTP
-  const body = JSON.stringify({
-    feedback: `Uid:${props.uid}`,
-    user: props.email,
-    title: "Congratulations! You've purchased a TNG Original!",
-    feedback1: props.name,
-    feedback2: props.cname,
-  });
-  const requestOptions = {
-    method: "POST",
-    body,
-  };
 
   function getNotified() {
+    const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+    // We use JSON.stringify here so the data can be sent as a string via HTTP
+    const body = JSON.stringify({
+      feedback: `Uid:${props.uid}`,
+      user: props.email,
+      title: "Congratulations! You've purchased a TNG Original!",
+      feedback1: props.name,
+      feedback2: props.cname,
+    });
+    const requestOptions = {
+      method: "POST",
+      body,
+    };
     fetch(endpoint, requestOptions)
       .then((response) => {
         if (!response.ok) {

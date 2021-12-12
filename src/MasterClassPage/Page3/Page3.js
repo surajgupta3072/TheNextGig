@@ -29,19 +29,6 @@ function Page3(props) {
   const [redirectlogin, setRedirectLogin] = useState(false);
   const [relatedgigs, setDataRelatedGigs] = useState([]);
   const [reward, setReward] = useState("");
-  const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
-  // We use JSON.stringify here so the data can be sent as a string via HTTP
-  const body = JSON.stringify({
-    feedback: `Uid:${props.prop.username}`,
-    user: props.prop.attributes.email,
-    title: "Congratulations! You've purchased a TNG Original!",
-    feedback1: props.prop.attributes.name,
-    feedback2: session.course_name
-  });
-  const requestOptions = {
-    method: "POST",
-    body,
-  };
 
   useEffect(() => {
     if(props.prop !== null) {
@@ -125,6 +112,19 @@ function Page3(props) {
               ReturnValues: "UPDATED_NEW",
             };
             docClient.update(params, function (err, data) {
+              const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+              // We use JSON.stringify here so the data can be sent as a string via HTTP
+              const body = JSON.stringify({
+                feedback: `Uid:${props.prop.username}`,
+                user: props.prop.attributes.email,
+                title: "Congratulations! You've purchased a TNG Original!",
+                feedback1: props.prop.attributes.name,
+                feedback2: session.course_name
+              });
+              const requestOptions = {
+                method: "POST",
+                body,
+              };
               fetch(endpoint, requestOptions)
                 .then((response) => {
                   if (!response.ok) {
@@ -197,6 +197,19 @@ function Page3(props) {
   }
 
   function getNotified() {
+    const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+    // We use JSON.stringify here so the data can be sent as a string via HTTP
+    const body = JSON.stringify({
+      feedback: `Uid:${props.prop.username}`,
+      user: props.prop.attributes.email,
+      title: "Congratulations! You've purchased a TNG Original!",
+      feedback1: props.prop.attributes.name,
+      feedback2: session.course_name
+    });
+    const requestOptions = {
+      method: "POST",
+      body,
+    };
     fetch(endpoint, requestOptions)
       .then((response) => {
         if (!response.ok) {
@@ -280,10 +293,11 @@ function Page3(props) {
               </Col> */}
               {props.prop !== null ?
                 coursePurchased === false &&
-                <Col style={{ display: "flex", justifyContent: "space-between", marginLeft: "20%" }}>
-                  <button className="button_slide_page3  slide_right" onClick={handlePayment}>
+                <Col style={{ textAlign:"center" }}>
+                  <button className="button_slide_page3 slide_right" onClick={handlePayment}>
                     Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                   </button>
+                  <p>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor:"pointer" }}>Reach out to us!</em></p>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
                     cid={session.id}
@@ -297,7 +311,7 @@ function Page3(props) {
                   />
                 </Col> :
                 <Col style={{ display: "flex", justifyContent: "space-between", marginLeft: "20%" }}>
-                  <button className="button_slide_page3  slide_right" onClick={() => window.location.href = "/login"}>
+                  <button className="button_slide_page3 slide_right" onClick={() => window.location.href = "/login"}>
                     Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                   </button>
                 </Col>
@@ -311,10 +325,11 @@ function Page3(props) {
               </div> */}
               {props.prop !== null ?
                 coursePurchased === false &&
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <button className="button_slide_page3  slide_right " onClick={handlePayment}>
+                <div style={{ textAlign:"center" }}>
+                  <button className="button_slide_page3 slide_right" onClick={handlePayment}>
                     Redeem<br />{session.course_duration} free minutes
                   </button>
+                  <p>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor:"pointer" }}>Reach out to us!</em></p>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
                     cid={session.id}
@@ -327,14 +342,13 @@ function Page3(props) {
                     onHide={() => setModalShow(false)}
                   />
                 </div> :
-                <div style={{ display: "flex", justifyContent: "space-between", marginLeft: "15%" }}>
-                  <button className="button_slide_page3 slide_right inr_button" onClick={() => window.location.href = "/login"}>
+                <div>
+                  <button className="button_slide_page3 slide_right" onClick={() => window.location.href = "/login"}>
                     Redeem<br />{session.course_duration} free minutes
                   </button>
                 </div>
               }
             </div>
-            <p style={{textAlign:"center"}}>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor:"pointer" }}>Reach out to us!</em></p>
           </Col>
           <Col style={{ padding: "1px" }} md={6}>
             <video className="anim_img" src={session.trailer_video} playsInline autoPlay controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()} />
