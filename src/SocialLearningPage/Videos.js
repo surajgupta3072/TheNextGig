@@ -5,6 +5,7 @@ import MyVerticallyCenteredModal from './ContactPopUp'
 import { useState } from "react";
 import './SocialLearningPage.css'
 import { GiShare } from "react-icons/gi";
+
 function Videos(props) {
   const [modalShow, setModalShow] = useState(false);
   // const [videoslist, setVideosList] = useState(false);
@@ -85,7 +86,7 @@ function Videos(props) {
     });
   }
 
-  function VideoStarted(vid, ct) {
+  function VideoStarted(vid, ct, vidDuration) {
     if (ct <= 0.1) {
       var params = {
         TableName: "UsersTable",
@@ -98,11 +99,11 @@ function Videos(props) {
         }
         else {
           var flag = 0;
-          for (var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
-            if (data.Item.SocialLearningVideosWatched[i].vid === vid)
+          for(var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
+            if(data.Item.SocialLearningVideosWatched[i].vid === vid)
               var flag = 1;
           }
-          if (flag === 0) {
+          if(flag === 0) {
             var params = {
               TableName: "UsersTable",
               Key: { "UserID": props.userid },
@@ -136,14 +137,43 @@ function Videos(props) {
                   },
                   ReturnValues: "UPDATED_NEW"
                 }
-
                 docClient.update(params, function (err, data) {
                   if (err) {
                     console.log(err);
                   }
+                  else {
+                    var params = {
+                      TableName: "UsersTable",
+                      Key: { "UserID": props.userid },
+                      ProjectionExpression: "TotalRewards",
+                    };
+                    docClient.get(params, function (err, data) {
+                      if (err) {
+                        console.log(err);
+                      }
+                      else {
+                        var params = {
+                          TableName: "UsersTable",
+                          Key: { "UserID": props.userid },
+                          UpdateExpression: "set TotalRewards = :tr",
+                          ExpressionAttributeValues: {
+                            ":tr": data.Item.TotalRewards-(Number(vidDuration.split(":")[0]))
+                          },
+                          ReturnValues: "UPDATED_NEW"
+                        }
+                        docClient.update(params, function (err, data) {
+                          if (err) {
+                            console.log(err);
+                          }
+                          else {
+                            //TRANSACTIONS HISTORY CODE
+                          }
+                        });
+                      }
+                    });
+                  }
                 });
               }
-
             });
           }
         }
@@ -162,12 +192,12 @@ function Videos(props) {
         {props.filter === false && props.prop.map((vid) =>
           <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
-              <figure className="tag figurex" data-content={vid.VideoDuration}><video src={vid.VideoLink + "#t=0.1"} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-              </video>
+              <figure className="tag figurex" data-content={vid.VideoDuration}>
+                <video src={vid.VideoLink + "#t=0.08"} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}></video>
               </figure>
               :
-              <video id="myvid" className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink + "#t=0.1"} />
+              <video id="myvid" className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                <source src={vid.VideoLink + "#t=0.08"} />
               </video>
             }
             <div style={{ marginLeft: "2%" }}>
@@ -194,11 +224,14 @@ function Videos(props) {
         {props.filter !== false && props.filter.map((vid) =>
           <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
-              <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink + "#t=0.1"} />
-              </video> :
-              <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink + "#t=0.1"} />
+              <figure className="tag figurex" data-content={vid.VideoDuration}>
+                <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                  <source src={vid.VideoLink + "#t=0.08"} />
+                </video>
+              </figure> 
+              :
+              <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                <source src={vid.VideoLink + "#t=0.08"} />
               </video>
             }
             <div style={{ marginLeft: "2%" }}>
@@ -209,7 +242,8 @@ function Videos(props) {
                 <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col>
                 <Col md={3} className="text" style={{ padding: "0", margin: "0", color: "#000", fontSize: "12px", cursor: "pointer" }}>
                   <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => setModalShow(true)}>
-                    Share <GiShare style={{ width: "15px", height: "15px" }} /></button>
+                    Share <GiShare style={{ width: "15px", height: "15px" }} />
+                  </button>
                   <MyVerticallyCenteredModal
                     show={modalShow}
                     VideoID={vid.VideoID}

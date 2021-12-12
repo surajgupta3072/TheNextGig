@@ -1,0 +1,222 @@
+// import Modal from "react-bootstrap/Modal";
+// import { useState, useEffect } from "react";
+// import { ArrowLeft } from "react-bootstrap-icons";
+// import docClient from "./../../GigsPage/GigsAWS";
+// import Swal from "sweetalert2";
+
+// function MyVerticallyPopUp(props) {
+//   const [reward, setReward] = useState("");
+//   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+//   // We use JSON.stringify here so the data can be sent as a string via HTTP
+//   const body = JSON.stringify({
+//     feedback: `Uid:${props.uid}`,
+//     user: props.email,
+//     title: "Congratulations! You've purchased a TNG Original!",
+//     feedback1: props.name,
+//     feedback2: props.cname,
+//   });
+//   const requestOptions = {
+//     method: "POST",
+//     body,
+//   };
+
+//   useEffect(() => {
+//     var paramss = {
+//       TableName: "UsersTable",
+//       Key: { UserID: props.uid },
+//       ProjectionExpression: "TotalRewards",
+//     };
+//     docClient.get(paramss, function (err, data) {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         setReward(data.Item.TotalRewards);
+//       }
+//     });
+//   }, []);
+
+//   function paymentFlowCase(deduct) {
+//     var paramss = {
+//       TableName: "UsersTable",
+//       Key: { UserID: props.uid },
+//       ProjectionExpression: "MasterclassesPurchased",
+//     };
+//     docClient.get(paramss, function (err, data) {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         var params = {
+//           TableName: "UsersTable",
+//           Key: { UserID: props.uid },
+//           UpdateExpression:
+//             "set MasterclassesPurchased[" +
+//             data.Item.MasterclassesPurchased.length.toString() +
+//             "] = :ms",
+//           ExpressionAttributeValues: {
+//             ":ms": props.cid,
+//           },
+//           ReturnValues: "UPDATED_NEW",
+//         };
+//         docClient.update(params, function (err, data) {
+//           if (err) {
+//             console.log(err);
+//           } else {
+//             var params = {
+//               TableName: "UsersTable",
+//               Key: { UserID: props.uid },
+//               UpdateExpression: "set TotalRewards = :tr",
+//               ExpressionAttributeValues: {
+//                 ":tr": reward - deduct,
+//               },
+//               ReturnValues: "UPDATED_NEW",
+//             };
+//             docClient.update(params, function (err, data) {
+//               fetch(endpoint, requestOptions)
+//                 .then((response) => {
+//                   if (!response.ok) {
+//                     throw new Error("Error in fetch");
+//                   } else {
+//                     Swal.fire({
+//                       title:
+//                         "<h5 style='color:white'>" +
+//                         "PAYMENT SUCCESSFUL!" +
+//                         "</h5>",
+//                       icon: "success",
+//                       showConfirmButton: false,
+//                       timer: 3000,
+//                       background: "#020312",
+//                       color: "white",
+//                       iconColor: "#F26C4F",
+//                     }).then(() => {
+//                       var paramss = {
+//                         TableName: "UsersTable",
+//                         Key: { UserID: props.uid },
+//                         ProjectionExpression: "SkillsAcquiredMastersessions",
+//                       };
+//                       docClient.get(paramss, function (err, data) {
+//                         if (err) {
+//                           console.log(err);
+//                         } else {
+//                           var params = {
+//                             TableName: "UsersTable",
+//                             Key: { UserID: props.uid },
+//                             UpdateExpression:
+//                               "set SkillsAcquiredMastersessions[" +
+//                               data.Item.SkillsAcquiredMastersessions.length.toString() +
+//                               "] = :sam",
+//                             ExpressionAttributeValues: {
+//                               ":sam": props.crole,
+//                             },
+//                             ReturnValues: "UPDATED_NEW",
+//                           };
+//                           docClient.update(params, function (err, data) {
+//                             if (err) {
+//                               console.log(err);
+//                             } else {
+//                               window.location.reload();
+//                             }
+//                           });
+//                         }
+//                       });
+//                     });
+//                   }
+//                 })
+//                 .catch((error) => {
+//                   console.error("Failed to send feedback. Error: ", error);
+//                 });
+//             });
+//           }
+//         });
+//       }
+//     });
+//   }
+
+//   function handlePayment() {
+//     if(reward>=60) {
+//       paymentFlowCase(60);
+//     } 
+//     else {
+//       console.log("REWARD SHORTAGE");
+//     } 
+//   }
+
+//   return (
+//     <Modal
+//       {...props}
+//       aria-labelledby="contained-modal-title-vcenter"
+//       centered
+//       contentClassName="custom-modal-style"
+//       dialogClassName="modal-w"
+//       className="mobile_view"
+//       transparent={true}
+//     >
+//       <Modal.Body
+//         style={{ backgroundColor: "#020312", border: "1px solid #f26c4f" }}
+//       >
+//         <div style={{ padding: "7%" }}>
+//           <p style={{ fontSize: "22px", fontStyle: "bold" }}>
+//             Name of the session
+//           </p>
+//           <div
+//             style={{
+//               display: "flex",
+//               flexDirection: "row",
+//               justifyContent: "space-between",
+//               fontSize: "18px",
+//             }}
+//           >
+//             <p>Price (in INR)</p>
+//             <p>{60}</p>
+//           </div>
+//           <div
+//             style={{
+//               display: "flex",
+//               flexDirection: "row",
+//               justifyContent: "space-between",
+//               color: "#f26c4f",
+//               fontSize: "18px",
+//             }}
+//           >
+//             <p>
+//               Less: Reward <br /> points
+//             </p>
+//             {60 - reward >= 0 ? (
+//               <p>-({reward})</p>
+//             ) : (
+//               <p>-({60})</p>
+//             )}
+//           </div>
+//           <hr
+//             className="course_line"
+//             style={{ height: "0.13rem", color: "#f26c4f" }}
+//           />
+//           <div
+//             style={{
+//               display: "flex",
+//               flexDirection: "row",
+//               justifyContent: "space-between",
+//               fontSize: "18px",
+//             }}
+//           >
+//             <p>
+//               Net payable <br /> amount
+//             </p>
+//             {60 - reward >= 0 ? <p>{60 - reward}</p> : <p>0</p>}
+//           </div>
+//           <div style={{ textAlign: "center" }}>
+//             <button
+//               onClick={handlePayment}
+//               className="button_slide slide_right"
+//               style={{ marginTop: "10%" }}
+//             >
+//               Proceed
+//               <ArrowLeft className="button_arrow" />
+//             </button>
+//           </div>
+//         </div>
+//       </Modal.Body>
+//     </Modal>
+//   );
+// }
+
+// export default MyVerticallyPopUp;

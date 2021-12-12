@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import ReactTooltip from 'react-tooltip';
 import docClient from '../../GigsPage/GigsAWS';
 import MyVerticallyPopUp from './popup';
+import Swal from "sweetalert2";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -27,8 +28,23 @@ function Page3(props) {
   const [coursePurchased, setCoursePurchased] = useState(false);
   const [redirectlogin, setRedirectLogin] = useState(false);
   const [relatedgigs, setDataRelatedGigs] = useState([]);
+  const [reward, setReward] = useState("");
+  const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+  // We use JSON.stringify here so the data can be sent as a string via HTTP
+  const body = JSON.stringify({
+    feedback: `Uid:${props.prop.username}`,
+    user: props.prop.attributes.email,
+    title: "Congratulations! You've purchased a TNG Original!",
+    feedback1: props.prop.attributes.name,
+    feedback2: session.course_name
+  });
+  const requestOptions = {
+    method: "POST",
+    body,
+  };
+
   useEffect(() => {
-    if (props.prop !== null) {
+    if(props.prop !== null) {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID": props.prop.username },
@@ -37,35 +53,176 @@ function Page3(props) {
       docClient.get(params, function (err, data) {
         if (err) {
           console.log(err);
-        } else {
-          if (data.Item.MasterclassesPurchased !== undefined)
+        } 
+        else {
+          if(data.Item.MasterclassesPurchased !== undefined)
             setCoursePurchased(data.Item.MasterclassesPurchased.includes(Number(session.id)));
+        }
+      });
+      var paramss = {
+        TableName: "UsersTable",
+        Key: { UserID: props.prop.username },
+        ProjectionExpression: "TotalRewards",
+      };
+      docClient.get(paramss, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          setReward(data.Item.TotalRewards);
         }
       });
     }
     else {
       setRedirectLogin(true);
     }
-
-    let paramss = {
-      TableName: "GigsTable"
-    };
-    docClient.scan(paramss, function (err, data) {
-      if (err) {
+    docClient.scan({TableName: "GigsTable"}, function (err, data) {
+      if(err) {
         console.log(err);
       }
       else {
         let gi = [];
-        for (var e of data.Items)
-          if (session.gigs.includes(e.GigId))
+        for(var e of data.Items)
+          if(session.gigs.includes(e.GigId))
             gi.push(e);
         setDataRelatedGigs(gi);
       }
     });
   }, []);
 
+  function paymentFlowCase(deduct) {
+    var paramss = {
+      TableName: "UsersTable",
+      Key: { UserID: props.prop.username },
+      ProjectionExpression: "MasterclassesPurchased",
+    };
+    docClient.get(paramss, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var params = {
+          TableName: "UsersTable",
+          Key: { UserID: props.prop.username },
+          UpdateExpression:
+            "set MasterclassesPurchased[" +
+            data.Item.MasterclassesPurchased.length.toString() +
+            "] = :ms",
+          ExpressionAttributeValues: {
+            ":ms": session.id,
+          },
+          ReturnValues: "UPDATED_NEW",
+        };
+        docClient.update(params, function (err, data) {
+          if (err) {
+            console.log(err);
+          } else {
+            var params = {
+              TableName: "UsersTable",
+              Key: { UserID: props.prop.username },
+              UpdateExpression: "set TotalRewards = :tr",
+              ExpressionAttributeValues: {
+                ":tr": reward - deduct,
+              },
+              ReturnValues: "UPDATED_NEW",
+            };
+            docClient.update(params, function (err, data) {
+              fetch(endpoint, requestOptions)
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error("Error in fetch");
+                  } else {
+                    Swal.fire({
+                      title:
+                        "<h5 style='color:white'>" +
+                        "PAYMENT SUCCESSFUL!" +
+                        "</h5>",
+                      icon: "success",
+                      showConfirmButton: false,
+                      timer: 3000,
+                      background: "#020312",
+                      color: "white",
+                      iconColor: "#F26C4F",
+                    }).then(() => {
+                      var paramss = {
+                        TableName: "UsersTable",
+                        Key: { UserID: props.prop.username },
+                        ProjectionExpression: "SkillsAcquiredMastersessions",
+                      };
+                      docClient.get(paramss, function (err, data) {
+                        if (err) {
+                          console.log(err);
+                        } else {
+                          var params = {
+                            TableName: "UsersTable",
+                            Key: { UserID: props.prop.username },
+                            UpdateExpression:
+                              "set SkillsAcquiredMastersessions[" +
+                              data.Item.SkillsAcquiredMastersessions.length.toString() +
+                              "] = :sam",
+                            ExpressionAttributeValues: {
+                              ":sam": session.course_role,
+                            },
+                            ReturnValues: "UPDATED_NEW",
+                          };
+                          docClient.update(params, function (err, data) {
+                            if (err) {
+                              console.log(err);
+                            } else {
+                              window.location.reload();
+                            }
+                          });
+                        }
+                      });
+                    });
+                  }
+                })
+                .catch((error) => {
+                  console.error("Failed to send feedback. Error: ", error);
+                });
+            });
+          }
+        });
+      }
+    });
+  }
+
+  function handlePayment() {
+    if(reward>=60) {
+      // console.log("REWARD EXCESS", reward);
+      paymentFlowCase(60);
+    } 
+    else {
+      setModalShow(true);
+      // console.log("REWARD SHORTAGE");
+    } 
+  }
+
+  function getNotified() {
+    fetch(endpoint, requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error in fetch");
+        } else {
+          Swal.fire({
+            title:
+              "<h5 style='color:white'>" +
+              "NOTIFIED!" +
+              "</h5>",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 3000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          })
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to send feedback. Error: ", error);
+      });
+  }
+
   const showDescription = (epid) => {
-    if (coursePurchased === true || session["episodes"][epid - 1].id === 1) {
+    if(coursePurchased === true || session["episodes"][epid - 1].id === 1) {
       setDes(session["episodes"][epid - 1]["description"]);
       setEpiVideo(session["episodes"][epid - 1]["epi_video"]);
       setPaymentShow(false);
@@ -114,18 +271,18 @@ function Page3(props) {
               </div>
             </div>
             <Row className="laptop_view_video_master">
-              <Col>
+              {/* <Col>
                 <a href={"/expert/" + session.ExpertId}>
                   <button className="button_slide_page3 slide_right">
                     Get to know<br /> your expert <ArrowLeft className="button_arrow_Letsgo_Page3" />
                   </button>
                 </a>
-              </Col>
+              </Col> */}
               {props.prop !== null ?
                 coursePurchased === false &&
-                <Col style={{ display: "flex", justifyContent: "space-between" }}>
-                  <button className="button_slide_page3  slide_right " onClick={() => setModalShow(true)}>
-                    Learn @ INR<br />{session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3x" />
+                <Col style={{ display: "flex", justifyContent: "space-between", marginLeft: "20%" }}>
+                  <button className="button_slide_page3  slide_right" onClick={handlePayment}>
+                    Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                   </button>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
@@ -139,24 +296,24 @@ function Page3(props) {
                     onHide={() => setModalShow(false)}
                   />
                 </Col> :
-                <Col style={{ display: "flex", justifyContent: "space-between", marginLeft: "15%" }}>
-                  <button className="button_slide_page3 slide_right inr_button" onClick={() => window.location.href = "/login"}>
-                    Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3" />
+                <Col style={{ display: "flex", justifyContent: "space-between", marginLeft: "20%" }}>
+                  <button className="button_slide_page3  slide_right" onClick={() => window.location.href = "/login"}>
+                    Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                   </button>
                 </Col>
               }
             </Row>
             <div className="mobile_view_video_master">
-              <div>
+              {/* <div>
                 <a href={"/expert/" + session.ExpertId}><button className="button_slide_page3 slide_right">
                   Get to know<br /> your expert
                 </button></a>
-              </div>
+              </div> */}
               {props.prop !== null ?
                 coursePurchased === false &&
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
-                  <button className="button_slide_page3  slide_right " onClick={() => setModalShow(true)}>
-                    Learn @ INR<br />{session.fees}
+                  <button className="button_slide_page3  slide_right " onClick={handlePayment}>
+                    Redeem<br />{session.course_duration} free minutes
                   </button>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
@@ -172,11 +329,12 @@ function Page3(props) {
                 </div> :
                 <div style={{ display: "flex", justifyContent: "space-between", marginLeft: "15%" }}>
                   <button className="button_slide_page3 slide_right inr_button" onClick={() => window.location.href = "/login"}>
-                    Learn @ INR<br />{session.fees}
+                    Redeem<br />{session.course_duration} free minutes
                   </button>
                 </div>
               }
             </div>
+            <p style={{textAlign:"center"}}>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor:"pointer" }}>Reach out to us!</em></p>
           </Col>
           <Col style={{ padding: "1px" }} md={6}>
             <video className="anim_img" src={session.trailer_video} playsInline autoPlay controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()} />
@@ -199,8 +357,8 @@ function Page3(props) {
                   {paymentshow === true && (
                     props.prop !== null ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
-                        <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
-                          Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3" />
+                        <button className="button_slide_page3 slide_right" onClick={handlePayment}>
+                          Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                         </button>
                         <MyVerticallyPopUp
                           uid={props.prop.username}
@@ -215,7 +373,7 @@ function Page3(props) {
                       </div>) :
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => window.location.href = "/login"}>
-                          Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3" />
+                          Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                         </button>
                       </div>
                   )
@@ -233,7 +391,6 @@ function Page3(props) {
                         </div>
                       ))}
                     </div>
-
                   </div>
                 </Col>
               </Row>
@@ -256,8 +413,8 @@ function Page3(props) {
                   {paymentshow === true && (
                     props.prop !== null ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
-                        <button className="button_slide_page3 slide_right" onClick={() => setModalShow(true)}>
-                          Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3" />
+                        <button className="button_slide_page3 slide_right" onClick={handlePayment}>
+                          Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                         </button>
                         <MyVerticallyPopUp
                           uid={props.prop.username}
@@ -272,7 +429,7 @@ function Page3(props) {
                       </div>) :
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => window.location.href = "/login"}>
-                          Learn @ INR {session.fees}<ArrowLeft className="button_arrow_Letsgo_Page3" />
+                          Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                         </button>
                       </div>
                   )
@@ -458,7 +615,7 @@ function Page3(props) {
               return null;
             else
               return (
-                <MDBCard onClick={() => window.location.href = "/TNGoriginals/" + details.id} className="cax card_mastercard" style={{ height: "fit-content", borderRadius: "0px", margin: "4%", border: "2px solid rgba(242, 108, 79, 0.6)", backgroundColor: "#020312" }}>
+                <MDBCard onClick={() => {if(details.course_timing!=="...Coming Soon") window.location.href = "/TNGoriginals/" + details.id}} className="cax card_mastercard" style={{ height: "fit-content", borderRadius: "0px", margin: "4%", border: "2px solid rgba(242, 108, 79, 0.6)", backgroundColor: "#020312" }}>
                   <div className="image_card"><MDBCardImage className="mbd_image" style={{ marginLeft: "1px", width: "100%" }} src={details.course_image} alt='...' /></div>
                   <MDBCardBody >
                     <div className="Course_name">{details.course_name}</div><br />

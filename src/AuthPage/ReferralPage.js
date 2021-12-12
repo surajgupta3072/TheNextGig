@@ -22,7 +22,7 @@ function ReferralPage(props) {
               Key: { "UserID": wholedata.UserID },
               UpdateExpression: "set TotalRewards = :tr, ReferredBy = :rb",
               ExpressionAttributeValues:{
-                ":tr": wholedata.TotalRewards + 70,
+                ":tr": wholedata.TotalRewards + 20,
                 ":rb": refcode,
               },
               ReturnValues:"UPDATED_NEW"
@@ -55,7 +55,7 @@ function ReferralPage(props) {
                       Key: { "UserID": e.UserID },
                       UpdateExpression: "set TotalRewards = :tr",
                       ExpressionAttributeValues:{
-                        ":tr": data.Item.TotalRewards + 60,
+                        ":tr": data.Item.TotalRewards + 10,
                       },
                       ReturnValues:"UPDATED_NEW"
                     }
@@ -69,7 +69,7 @@ function ReferralPage(props) {
                           Key: { "UserID": wholedata.UserID },
                           UpdateExpression: "set TotalRewards = :tr, ReferredBy = :rb",
                           ExpressionAttributeValues:{
-                            ":tr": wholedata.TotalRewards + 60,
+                            ":tr": wholedata.TotalRewards + 10,
                             ":rb": e.UserID,
                           },
                           ReturnValues:"UPDATED_NEW"
@@ -132,12 +132,12 @@ function ReferralPage(props) {
   return(
     <div style={{marginTop:"10%",backgroundColor:"#020312", border: "1px solid #f26c4f"}} className="login_container">
       <div style={{paddingRight:"7%",paddingLeft:"7%",paddingTop:"7%"}}>
-        <p style={{fontSize:"18px"}}>Referral Code<text style={{color:"#f26c4f"}}>*</text></p>
+        <p style={{fontSize:"18px"}}>Do you have a Referral code?<text style={{color:"#f26c4f"}}>*</text></p>
         <input value={refcode} onChange={e => setRefCode(e.target.value)} style={{width:"100%"}}></input>
         {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
       </div>
       <button onClick={RefCodeSubmit} className="button_slide slide_right" style={{marginTop:"10%", marginLeft:"33%", marginBottom:"10%"}}>Submit<ArrowLeft className='button_arrow'/></button>
-      <button onClick={()=>window.location.href = localStorage.getItem("lastURL")} className="button_slide slide_right" style={{marginLeft:"35%", marginBottom:"10%"}}>Close<ArrowLeft className='button_arrow'/></button>
+      <button onClick={()=>window.location.href = localStorage.getItem("lastURL")} className="button_slide slide_right" style={{marginLeft:"35%", marginBottom:"10%"}}>No<ArrowLeft className='button_arrow'/></button>
     </div>
   );
 }
