@@ -30,6 +30,7 @@ import TC from "./LegalPage/TC";
 import RedirectPage from './RedirectPage';
 import "./App.css";
 import LearnCoins from "./LearnCoins/LearnCoins";
+import ReferralPage from "./AuthPage/ReferralPage";
 // import Comet from "../src/SocialLearningPage/Comet";
 
 function App() {
@@ -79,8 +80,11 @@ function App() {
                 };
                 fetch(endpoint, requestOptions)
                   .then((response) => {
-                    if (!response.ok) {
+                    if(!response.ok) {
                       throw new Error("Error in fetch");
+                    }
+                    else {
+                      window.location.href = "/Referral";
                     }
                   })
                   .catch((error) => {
@@ -96,7 +100,7 @@ function App() {
       }
     } 
     catch (error) {
-      if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register" && window.location.href!="https://www.thenextgig.net/login" && window.location.href!="https://www.thenextgig.net/register")
+      if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register" && window.location.href!="http://localhost:3000/Referral" && window.location.href!="https://www.thenextgig.net/login" && window.location.href!="https://www.thenextgig.net/register" && window.location.href!="https://www.thenextgig.net/Referral")
         localStorage.setItem('lastURL', window.location.href);
       if(window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/")) {
         localStorage.setItem('lastLastURL', window.location.href);
@@ -191,6 +195,9 @@ function App() {
               </Route>
               <Route exact path="/Redirecting">
                 <RedirectPage />
+              </Route>
+              <Route exact path="/Referral">
+                <ReferralPage auth={authProps.user}/>
               </Route>
               {/* <Route exact path="/SocialLearning/Community">
                 <Comet props={authProps}/>

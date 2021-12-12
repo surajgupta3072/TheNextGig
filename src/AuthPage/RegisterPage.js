@@ -9,7 +9,7 @@ import './AuthPage.css';
 import Swal from 'sweetalert2';
 
 function RegisterPage(props) {
-  const [modalShow, setModalShow] = useState(false);
+  // const [modalShow, setModalShow] = useState(false);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -91,7 +91,7 @@ function RegisterPage(props) {
                 color: 'white',
                 iconColor: "#F26C4F"
               }).then(() => { /* setModalShow(true) */
-                window.location.href = "../TNGoriginals"
+                window.location.href = "/Referral";
               });
             }
             // return response.json();

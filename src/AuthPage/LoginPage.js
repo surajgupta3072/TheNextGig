@@ -4,11 +4,11 @@ import Container from 'react-bootstrap/Container';
 import { ArrowLeft } from 'react-bootstrap-icons';
 import './AuthPage.css';
 import { FaGoogle } from 'react-icons/fa';
-import MyVerticallyCenteredModal from "./RegisterPageModal";
+// import MyVerticallyCenteredModal from "./RegisterPageModal";
 import docClient from '../GigsPage/GigsAWS';
 
 function LoginPage(props) {
-  const [modalShow, setModalShow] = useState(false);
+  // const [modalShow, setModalShow] = useState(false);
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
   const [showerr, setShowErr] = useState(false);
@@ -40,8 +40,8 @@ function LoginPage(props) {
             window.location.href = localStorage.getItem("lastURL");
           }
           else {
-            window.location.href = "../TNGoriginals"
-            /*  setModalShow(true); */
+            window.location.href = localStorage.getItem("lastURL");
+            // setModalShow(true);
           }
         }
       });
