@@ -9,9 +9,9 @@ import { GiShare } from "react-icons/gi";
 function Videos(props) {
   const [modalShow, setModalShow] = useState(false);
   const [reward, setReward] = useState("");
-    
+
   useEffect(() => {
-    if(props.auth.isAuthenticated===true) {
+    if (props.auth.isAuthenticated === true) {
       var paramss = {
         TableName: "UsersTable",
         Key: { UserID: props.auth.user.username },
@@ -105,7 +105,7 @@ function Videos(props) {
   }
 
   function VideoStarted(vid, ct, vidDuration) {
-    if(reward>=vidDuration) {
+    if (reward >= vidDuration) {
       if (ct <= 0.1) {
         var params = {
           TableName: "UsersTable",
@@ -118,11 +118,11 @@ function Videos(props) {
           }
           else {
             var flag = 0;
-            for(var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
-              if(data.Item.SocialLearningVideosWatched[i].vid === vid)
+            for (var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
+              if (data.Item.SocialLearningVideosWatched[i].vid === vid)
                 var flag = 1;
             }
-            if(flag === 0) {
+            if (flag === 0) {
               var params = {
                 TableName: "UsersTable",
                 Key: { "UserID": props.userid },
@@ -166,7 +166,7 @@ function Videos(props) {
                         Key: { "UserID": props.userid },
                         UpdateExpression: "set TotalRewards = :tr",
                         ExpressionAttributeValues: {
-                          ":tr": reward-(Number(vidDuration.split(":")[0]))
+                          ":tr": reward - (Number(vidDuration.split(":")[0]))
                         },
                         ReturnValues: "UPDATED_NEW"
                       }
@@ -200,13 +200,13 @@ function Videos(props) {
     <div>
       {/* <input className="search" style={{marginLeft:"2%", borderRadius:"20px", background:"white", color:"rgb(242, 108, 79)", border:"0px"}} value={searchterm} onChange={(e)=>setSearchTerm(e.target.value)} placeholder="Search Video..." type="search"/>&nbsp;&nbsp;&nbsp;
       <button className="search_button" onClick={searchFilter} style={{backgroundColor:"rgb(242, 108, 79)",color:"white",borderRadius:"40px",width:"100px",height:"30px",fontWeight:"bold",border:"0"}}>Search</button> */}
-      <br/><br/><br/>
+      <br /><br /><br />
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
         {props.filter === false && props.prop.map((vid) =>
           <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
               <figure className="tag figurex" data-content={vid.VideoDuration}>
-                <video src={vid.VideoLink} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}></video>
+                <img style={{ height: "135px", width: "240px" }} src={vid.VideoThumbnail} />
               </figure>
               :
               <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
@@ -218,7 +218,7 @@ function Videos(props) {
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
               <Row>
                 {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
-                <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft:"7px" }}>
+                <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft: "7px" }}>
                   <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => setModalShow(true)}>
                     Share <GiShare style={{ width: "15px", height: "15px" }} /></button>
                   <MyVerticallyCenteredModal
@@ -241,7 +241,7 @@ function Videos(props) {
                 <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                   <source src={vid.VideoLink} />
                 </video>
-              </figure> 
+              </figure>
               :
               <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
@@ -253,7 +253,7 @@ function Videos(props) {
               {/* <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p> */}
               <Row>
                 {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
-                <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft:"7px" }}>
+                <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft: "7px" }}>
                   <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => setModalShow(true)}>
                     Share <GiShare style={{ width: "15px", height: "15px" }} />
                   </button>

@@ -4,15 +4,16 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 function MyVerticallyCenteredModal(props) {
+  console.log(props)
   const [userEmail, setUserEmail] = useState("");
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   // We use JSON.stringify here so the data can be sent as a string via HTTP
   const body = JSON.stringify({
     feedback: userEmail,
-    title:props.TNGoriginalInput,
-    feedback2:"",
-    user:"",
-    feedback1:""
+    title: props.TNGoriginalInput,
+    feedback2: "",
+    user: "",
+    feedback1: ""
   });
   const requestOptions = {
     method: "POST",
@@ -23,7 +24,7 @@ function MyVerticallyCenteredModal(props) {
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error in fetch");
-        } 
+        }
         else {
           props.onHide();
           Swal.fire({
@@ -60,21 +61,21 @@ function MyVerticallyCenteredModal(props) {
       >
         <div style={{ padding: "7%" }}>
           <h5>We will send an email to you as soon as this TNG Original is live!</h5>
-          <p style={{marginTop: "25px", fontSize: "18px" }}>
-          TNG Original <text style={{ color: "#f26c4f" }}>*</text>
+          <p style={{ marginTop: "25px", fontSize: "18px" }}>
+            TNG Original <text style={{ color: "#f26c4f" }}>*</text>
           </p>
           <input
             style={{ width: "100%" }}
             value={props.TNGoriginalInput}
           ></input>
           <p style={{ marginTop: "10%", fontSize: "18px" }}>
-          Your Email ID
+            Your Email ID
             <text style={{ color: "#f26c4f" }}>*</text>
           </p>
           <input
             onChange={handleChange}
             value={userEmail}
-            style={{ width: "100%"}}
+            style={{ width: "100%" }}
           ></input>
           <button
             onClick={submit}

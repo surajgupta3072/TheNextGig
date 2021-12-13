@@ -5,44 +5,56 @@ import Col from 'react-bootstrap/Col';
 import './Page1.css';
 // import { Link } from 'react-scroll';
 // import { ArrowLeft } from "react-bootstrap-icons";
-// import { useState }  from 'react';
+import { useState, useEffect } from 'react';
 
 function Page1() {
+  const [videolink, setvlink] = useState("https://master-sessions.s3.ap-south-1.amazonaws.com/home+page+video.mp4");
+  useEffect(() => {
+    if (window.innerWidth <= 786) {
+      setvlink("");
+    }
+    else {
+      setvlink("");
+    }
+  }, [])
   return (
-    <Container className="Opening_container">
+    <div className='videoframe'>
       <video className='videoTag' autoPlay playsInline loop muted width="100%" height="400vh">
-        <source src="./HomePageVideo.mp4" type='video/mp4' />
+        <source src="https://master-sessions.s3.ap-south-1.amazonaws.com/home+page+video+mobile.mp4" type='video/mp4' />
+      </video>
+      <video className='videoTag1' autoPlay playsInline loop muted width="100%" height="400vh">
+        <source src="https://master-sessions.s3.ap-south-1.amazonaws.com/home+page+video.mp4" type='video/mp4' />
       </video>
       <div className="overlay_page1">
-      <Row style={{height: "50vh"}}>
-        <Col style={{ marginTop: "8%" }} className="left_col_openingpage" md={7}>
-          <div>
-            <div className="heading">
-              <div>
-                <p className="slide-down">
-                  <span>SHARE</span>
-                  <span style={{color: "#fff", fontSize: "16px"}}><i> knowledge!</i></span>
-                </p>
-              </div>
-              <div>
-                <p className="slide-down">
-                  <span>ACQUIRE</span>
-                  <span style={{color: "#fff", fontSize: "16px"}}><i> skills!</i></span>
-                </p>
-              </div>
-              <div>
-                <p className="slide-down">
-                  <span>GROW</span>
-                  <span style={{color: "#fff", fontSize: "16px"}}><i>professionally!</i></span>
-                </p>
+        <Row style={{ height: "50vh" }}>
+          <Col style={{ marginTop: "8%" }} className="left_col_openingpage" md={7}>
+            <div>
+              <div className="heading">
+                <div>
+                  <p className="slide-down">
+                    <span className='large_orange_text' >SHARE</span>
+                    <span className='small_white_text' > knowledge!</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="slide-down">
+                    <span className='large_orange_text' >ACQUIRE</span>
+                    <span className='small_white_text' > skills!</span>
+                  </p>
+                </div>
+                <div>
+                  <p className="slide-down">
+                    <span className='large_orange_text' >GROW</span>
+                    <span className='small_white_text' >professionally!</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </Col>
-        
-      </Row>
-      </div>
-    </Container>
+          </Col>
+
+        </Row >
+      </div >
+    </div >
     // <Container className="Opening_container">
     //   <Row>
     //     <Col style={{ marginTop: "8%" }} className="left_col_openingpage" md={7}>

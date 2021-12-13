@@ -1,3 +1,20 @@
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255,255,255,1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+.referral_code {
+  text-align: center;
+}
+.reward_mins_mobile {
+  display: none;
+}
+@media screen and (max-width: 786px) {
+  .reward_mins {
+    display: none !important;
+  }
+  .referral_code {
+    text-align: left;
+  }
+  .reward_mins_mobile {
+    display: block;
+  }
 }

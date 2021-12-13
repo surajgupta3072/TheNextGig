@@ -44,54 +44,30 @@ function HomeVideoPage(props) {
     }, []);
 
     function VideoStarted(vid, ct, vidDuration) {
-        if(reward>=vidDuration) {
-            if(ct <= 0.1){
+        if (reward >= vidDuration) {
+            if (ct <= 0.1) {
                 var params = {
-                TableName: "UsersTable",
-                Key: { "UserID": props.auth.username },
-                ProjectionExpression: "SocialLearningVideosWatched",
+                    TableName: "UsersTable",
+                    Key: { "UserID": props.auth.username },
+                    ProjectionExpression: "SocialLearningVideosWatched",
                 };
                 docClient.get(params, function (err, data) {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    var flag = 0;
-                    for(var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
-                    if(data.Item.SocialLearningVideosWatched[i].vid === vid)
-                        var flag = 1;
-                    }
-                    if(flag === 0) {
-                    var params = {
-                        TableName: "UsersTable",
-                        Key: { "UserID": props.auth.username },
-                        UpdateExpression: "set SocialLearningVideosWatched[" + data.Item.SocialLearningVideosWatched.length.toString() + "] = :slvw",
-                        ExpressionAttributeValues: {
-                        ":slvw": { "timestamp": `${Date.now()}`, "vid": vid }
-                        },
-                        ReturnValues: "UPDATED_NEW"
-                    }
-                    docClient.update(params, function (err, data) {
-                        if (err) {
+                    if (err) {
                         console.log(err);
+                    }
+                    else {
+                        var flag = 0;
+                        for (var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
+                            if (data.Item.SocialLearningVideosWatched[i].vid === vid)
+                                var flag = 1;
                         }
-                    });
-                    var paramss = {
-                        TableName: "VideosTable",
-                        Key: { "VideoID": vid },
-                        ProjectionExpression: "VideoViews",
-                    };
-                    docClient.get(paramss, function (err, data) {
-                        if (err) {
-                            console.log(err);
-                        }
-                        else {
+                        if (flag === 0) {
                             var params = {
-                                TableName: "VideosTable",
-                                Key: { "VideoID": vid },
-                                UpdateExpression: "set VideoViews = :slvv",
+                                TableName: "UsersTable",
+                                Key: { "UserID": props.auth.username },
+                                UpdateExpression: "set SocialLearningVideosWatched[" + data.Item.SocialLearningVideosWatched.length.toString() + "] = :slvw",
                                 ExpressionAttributeValues: {
-                                ":slvv": data.Item.VideoViews + 1
+                                    ":slvw": { "timestamp": `${Date.now()}`, "vid": vid }
                                 },
                                 ReturnValues: "UPDATED_NEW"
                             }
@@ -99,30 +75,54 @@ function HomeVideoPage(props) {
                                 if (err) {
                                     console.log(err);
                                 }
+                            });
+                            var paramss = {
+                                TableName: "VideosTable",
+                                Key: { "VideoID": vid },
+                                ProjectionExpression: "VideoViews",
+                            };
+                            docClient.get(paramss, function (err, data) {
+                                if (err) {
+                                    console.log(err);
+                                }
                                 else {
                                     var params = {
-                                        TableName: "UsersTable",
-                                        Key: { "UserID": props.auth.username },
-                                        UpdateExpression: "set TotalRewards = :tr",
+                                        TableName: "VideosTable",
+                                        Key: { "VideoID": vid },
+                                        UpdateExpression: "set VideoViews = :slvv",
                                         ExpressionAttributeValues: {
-                                        ":tr": reward-(Number(vidDuration.split(":")[0]))
+                                            ":slvv": data.Item.VideoViews + 1
                                         },
                                         ReturnValues: "UPDATED_NEW"
                                     }
                                     docClient.update(params, function (err, data) {
                                         if (err) {
-                                        console.log(err);
+                                            console.log(err);
                                         }
                                         else {
-                                        //TRANSACTIONS HISTORY CODE
+                                            var params = {
+                                                TableName: "UsersTable",
+                                                Key: { "UserID": props.auth.username },
+                                                UpdateExpression: "set TotalRewards = :tr",
+                                                ExpressionAttributeValues: {
+                                                    ":tr": reward - (Number(vidDuration.split(":")[0]))
+                                                },
+                                                ReturnValues: "UPDATED_NEW"
+                                            }
+                                            docClient.update(params, function (err, data) {
+                                                if (err) {
+                                                    console.log(err);
+                                                }
+                                                else {
+                                                    //TRANSACTIONS HISTORY CODE
+                                                }
+                                            });
                                         }
                                     });
                                 }
                             });
                         }
-                    });
                     }
-                }
                 });
             }
         }
@@ -141,23 +141,23 @@ function HomeVideoPage(props) {
         };
         docClient.get(paramss, function (err, data) {
             if (err) {
-            console.log(err);
+                console.log(err);
             }
             else {
-            var params = {
-                TableName: "UsersTable",
-                Key: { "UserID": props.auth.username },
-                UpdateExpression: "set SkillsAcquiredVideos[" + data.Item.SkillsAcquiredVideos.length.toString() + "] = :sav",
-                ExpressionAttributeValues: {
-                ":sav": hashtags.split("--")
-                },
-                ReturnValues: "UPDATED_NEW"
-            }
-            docClient.update(params, function (err, data) {
-                if (err) {
-                console.log(err);
+                var params = {
+                    TableName: "UsersTable",
+                    Key: { "UserID": props.auth.username },
+                    UpdateExpression: "set SkillsAcquiredVideos[" + data.Item.SkillsAcquiredVideos.length.toString() + "] = :sav",
+                    ExpressionAttributeValues: {
+                        ":sav": hashtags.split("--")
+                    },
+                    ReturnValues: "UPDATED_NEW"
                 }
-            });
+                docClient.update(params, function (err, data) {
+                    if (err) {
+                        console.log(err);
+                    }
+                });
             }
         });
     }
@@ -166,8 +166,8 @@ function HomeVideoPage(props) {
         <div style={{ display: "flex", justifyContent: "center" }}>
             {videos.map((vid, index) =>
                 <div style={{ height: "80vh" }}>
-                    <video controlsList="nodownload" onContextMenu={e => e.preventDefault()} onEnded={() => VideoEnded(vid.VideoHashtags)} onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} controls key={index} style={{ height: "100%", width: "70vw" }}>
-                        <source src={vid.VideoLink}/>
+                    <video controlsList="nodownload" /* onContextMenu={e => e.preventDefault()} onEnded={() => VideoEnded(vid.VideoHashtags)} onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} */ controls key={index} style={{ height: "100%", width: "70vw" }}>
+                        <source src={vid.VideoLink} />
                     </video>
                     <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                         <div>

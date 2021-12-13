@@ -50,7 +50,7 @@ label > input[type="checkbox"] + * {
   margin-top: -40px;
 }
 
-.button_slide_video{
+.button_slide_video {
   font-family: "Open Sans", sans-serif !important;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: transparent;
@@ -227,7 +227,7 @@ label > input[type="checkbox"] + * {
   display: none;
 }
 .video_social_learn {
-  height: 240px;
+  height: 240px !important;
   width: 300px;
 }
 .vid {

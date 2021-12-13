@@ -22,18 +22,20 @@ function Page2(props) {
   const settings = {
     dots: true,
     row: 1,
+    centerMode: true,
     infinite: true,
     slidesToShow: show_no,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000
   };
   const settings1 = {
     dots: true,
     row: 1,
+    centerMode: true,
     infinite: true,
     slidesToShow: show_no1,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000
   };
@@ -109,7 +111,7 @@ function Page2(props) {
   return (
     <div style={{ marginTop: "2%", marginLeft: "2%" }}>
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Popular</h4>
-      <Slider {...settings}>
+      <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele) => {
           if (ele.id === 2 || ele.id === 5) {
             return <div style={{ height: "300px", width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }}>
@@ -445,9 +447,9 @@ function Page2(props) {
         })}
       </Slider>
       <br /><br /><br />
-      <div style={{ display: "flex", justifyContent: "space-between", width: "45%", marginLeft: "25%" }}>
-        <a href="/TNGOriginals"><button id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All TNG Originals<ArrowRight className="button_arrow" /></button></a>
-        <a href="/SocialLearning"><button id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All bite-sized videos<ArrowRight className="button_arrow" /></button></a>
+      <div className="btn_div_homepage_new" style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <div><a href="/TNGOriginals"><button style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All TNG Originals<ArrowRight className="button_arrow" /></button></a></div>
+        <div><a href="/SocialLearning"><button id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} className="button_slide slide_right orange_button_page3">All bite-sized videos<ArrowRight className="button_arrow" /></button></a></div>
       </div>
     </div >
   );
