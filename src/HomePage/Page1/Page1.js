@@ -1,22 +1,8 @@
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import { ArrowDown } from "react-bootstrap-icons";
 import './Page1.css';
-// import { Link } from 'react-scroll';
-// import { ArrowLeft } from "react-bootstrap-icons";
-import { useState, useEffect } from 'react';
 
 function Page1() {
-  const [videolink, setvlink] = useState("https://master-sessions.s3.ap-south-1.amazonaws.com/home+page+video.mp4");
-  useEffect(() => {
-    if (window.innerWidth <= 786) {
-      setvlink("");
-    }
-    else {
-      setvlink("");
-    }
-  }, [])
   return (
     <div className='videoframe'>
       <video className='videoTag' autoPlay playsInline loop muted width="100%" height="400vh">

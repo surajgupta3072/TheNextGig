@@ -140,18 +140,30 @@ function SocialVideoPage(props) {
                       var params = {
                         TableName: "UsersTable",
                         Key: { "UserID": props.auth.user.username  },
-                        UpdateExpression: "set TotalRewards = :tr",
-                        ExpressionAttributeValues: {
-                          ":tr": rew-vidDuration
-                        },
-                        ReturnValues: "UPDATED_NEW"
-                      }
-                      docClient.update(params, function (err, data) {
+                        ProjectionExpression: "TotalRewards",
+                      };
+                      docClient.get(params, function (err, data) {
                         if (err) {
                           console.log(err);
                         }
                         else {
-                          //TRANSACTIONS HISTORY CODE
+                          var params = {
+                            TableName: "UsersTable",
+                            Key: { "UserID": props.auth.user.username  },
+                            UpdateExpression: "set TotalRewards = :tr",
+                            ExpressionAttributeValues: {
+                              ":tr": data.Item.TotalRewards-vidDuration
+                            },
+                            ReturnValues: "UPDATED_NEW"
+                          }
+                          docClient.update(params, function (err, data) {
+                            if (err) {
+                              console.log(err);
+                            }
+                            else {
+                              //TRANSACTIONS HISTORY CODE
+                            }
+                          });
                         }
                       });
                     }

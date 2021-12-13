@@ -4,16 +4,7 @@ import './LearnCoins.css';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card';
-import Data from "../MasterClassPage/Masterclass.json"
-import CardX from '../HomePage/Page3/Card';
 import { Linkedin, Whatsapp, Instagram, Discord } from "react-bootstrap-icons";
-
-const breakPoints = [
-  { width: 1, itemsToShow: 1 },
-  { width: 500, itemsToShow: 1 },
-  { width: 750, itemsToShow: 2 },
-  { width: 1200, itemsToShow: 3 }
-];
 
 function TNGCoins() {
   return (

@@ -17,9 +17,9 @@ const breakPoints = [
 function Page1() {
   const [modalShow, setModalShow] = useState(false);
   const [cardslist, setcardsList] = useState(master);
-  const [filter, setfilter] = useState([]);
+  
   function searchfilter(e) {
-    var filternumber = filter;
+    var filternumber = [];
     if (filternumber.indexOf(parseInt(e.target.value)) === -1) {
       filternumber.push(parseInt(e.target.value))
     }
