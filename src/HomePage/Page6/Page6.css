@@ -20,7 +20,7 @@
 }
 @property --num3 {
   syntax: "<integer>";
-  initial-value: 150;
+  initial-value: 450;
   inherits: false;
 }
 @property --num4 {
@@ -77,7 +77,7 @@
     --num3: 0;
   }
   to {
-    --num3: 150;
+    --num3: 450;
   }
 }
 @keyframes counter3 {
