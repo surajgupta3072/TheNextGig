@@ -41,7 +41,7 @@ function MyVerticallyCenteredModal(props) {
                 </div>
                 <div>
                   <a style={{ textDecoration: "none", color: "white" }} href={"https://www.linkedin.com/sharing/share-offsite/?url=" + `https://www.thenextgig.net/SocialLearning` + '/Video/' + `${props.VideoID}`}
-                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="LinkedIn_Homepage.png" height="60px"></img>
+                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="/LinkedIn_Homepage.png" height="60px"></img>
                     <p>LinkedIn &nbsp; </p></a>
                 </div>
               </div>
@@ -49,11 +49,11 @@ function MyVerticallyCenteredModal(props) {
               <div style={{ display: "flex", justifyContent: "space-between", flexDirection: "row" }}>
                 <div>
                   <a style={{ textDecoration: "none", color: "white" }} href={"mailto:?" + "subject=Shared Link Of Social Learning Videos" + "&body=Social Learning Video Link From" + "https://www.thenextgig.net/" + " is " + `https://www.thenextgig.net/SocialLearning` + '/Video/' + `${props.VideoID}`}
-                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="Gmail_Homepage.png" height="45px"></img>
+                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="/Gmail_Homepage.png" height="45px"></img>
                     <p>&nbsp; Gmail</p></a>
                 </div>
-                <div onClick={() => myClipboard(window.location.href + "/Video/" + props.VideoID)}>
-                  < img style={{ cursor: "pointer", alignItems: "center" }} src="copylink_homepage.png" height="45px"></img>
+                <div onClick={() => myClipboard(window.location.href)}>
+                  <img style={{ cursor: "pointer", alignItems: "center" }} src="/copylink_homepage.png" height="45px"></img>
                   <p style={{ marginLeft: "-5px" }}>Copy Link</p>
                 </div>
               </div>

@@ -127,7 +127,7 @@ function App() {
           <Router>
             <Switch>
               <Route exact path="/Video/:vidId">
-                <HomeVideoPage auth={authProps} />
+                <HomeVideoPage auth={authProps.user} />
               </Route>
               <Route exact path="/login">
                 <LoginPage auth={authProps} />
@@ -196,7 +196,7 @@ function App() {
                 <TC />
               </Route>
               <Route exact path="/">
-                <HomePage />
+                <HomePage auth={authProps.isAuthenticated}/>
               </Route>
               <Route exact path="/Redirecting">
                 <RedirectPage />

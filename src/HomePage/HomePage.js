@@ -7,11 +7,11 @@ import Page6 from './Page6/Page6';
 import Page7 from './Page7/Page7';
 import Footer from '../Footer/Footer';
 
-function HomePage() {
+function HomePage(props) {
   return (
     <div>
       <Page1/>
-      <Page2/>
+      <Page2 auth={props.auth}/>
       {/* <Page3/> */}
       {/* <Page5/> */} 
       <Page4/>
