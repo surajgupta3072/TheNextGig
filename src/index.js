@@ -41,7 +41,9 @@ Amplify.configure({
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <h1 style={{textAlign:"center", marginTop:"15%"}}>We're Upgrading!</h1>
+    <h2 style={{textAlign:"center"}}>Hang in there, we'll be back super soon!</h2>
   </React.StrictMode>,
   document.getElementById("root")
 );
