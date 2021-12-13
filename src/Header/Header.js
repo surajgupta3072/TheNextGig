@@ -9,9 +9,9 @@ import './Header.css';
 function Header(props) {
     const [reward, setReward] = useState("__");
     const [refcode, setRefCode] = useState("_______");
-    
+
     useEffect(() => {
-        if(props.auth.isAuthenticated===true) {
+        if (props.auth.isAuthenticated === true) {
             var paramss = {
                 TableName: "UsersTable",
                 Key: { UserID: props.auth.user.username },
@@ -31,57 +31,60 @@ function Header(props) {
     async function LogOutFunc() {
         try {
             await Auth.signOut();
-            window.location.href="/TNGoriginals";
+            window.location.href = "/TNGoriginals";
         } catch (error) {
             console.log(error);
         }
     }
 
-    return (
-    <Navbar style={{backgroundColor:"black", padding:"0px", width:"100%", position:"sticky", top:"0", zIndex:"100"}} expand="lg" variant="dark">
-        <Navbar.Brand style={{marginLeft:"2%", paddingTop:"10px", paddingBottom:"10px"}} href="/">
-            <img style={{height:"48px", width:"72px"}} src="/TNG_logo_tab.png" alt="logo"/>
-        </Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-            <Nav className="me-auto">
-                <NavDropdown style={{color: "white", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}} title="Access all videos">
-                    <NavDropdown.Item style={{color: "black", fontWeight:"700", fontSize:"15px"}} href="/TNGOriginals">TNG Originals</NavDropdown.Item>
-                    <NavDropdown.Item style={{color: "black", fontWeight:"700", fontSize:"15px"}} href="/SocialLearning">Bite-Sized Videos</NavDropdown.Item>
-                </NavDropdown>
-                <NavDropdown style={{color: "white", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}} title="Become an expert">
-                    <NavDropdown.Item style={{color: "black", fontWeight:"700", fontSize:"15px"}} href="/NotALearner">Collaborate for Session</NavDropdown.Item>
-                    <NavDropdown.Item style={{color: "black", fontWeight:"700", fontSize:"15px"}} href="/SocialLearning">Add Bite-Sized Video</NavDropdown.Item>
-                </NavDropdown>
-                <Nav.Link href="/ExperientialLearning" style={{color: "white", fontWeight:"700", fontSize:"15px", paddingLeft:"35px"}}>
-                    Opportunities
-                </Nav.Link>
-            </Nav>
-            <Nav style={{paddingRight:"50px"}}>
-                {props.auth.isAuthenticated===true && 
-                    <Nav.Link href="/LearnCoins" style={{color: "white", fontWeight:"700", fontSize:"15px", paddingLeft:"35px", display:"flex", flexDirection:"column", justifyContent:"center"}}>
-                        {reward} mins free
-                    </Nav.Link>
-                }
-                {props.auth.isAuthenticated===true && 
-                    <Nav.Link href="/profile" style={{color: "white", fontWeight:"700", fontSize:"15px", paddingLeft:"35px", textAlign:"center"}}>
-                        {props.auth.user.attributes.name.split(" ")[0]}<br/>(Referral Code: {refcode})
-                    </Nav.Link>
-                }
-                {props.auth.isAuthenticated===false && 
-                    <Nav.Link href="/login" style={{color: "white", fontWeight:"700", fontSize:"15px", paddingLeft:"35px", display:"flex", flexDirection:"column", justifyContent:"center"}}>
-                        Login
-                    </Nav.Link>
-                }
-                {props.auth.isAuthenticated===true && 
-                    <Nav.Link onClick={LogOutFunc} style={{color: "white", fontWeight:"700", fontSize:"15px", paddingLeft:"35px", display:"flex", flexDirection:"column", justifyContent:"center"}}>
-                        Logout
-                    </Nav.Link>
-                }
-            </Nav>             
-        </Navbar.Collapse>
-    </Navbar>
-  );
+    return (<div>
+        {window.innerWidth <= 786 ? null :
+            < Navbar style={{ backgroundColor: "black", padding: "0px", width: "100%", position: "sticky", top: "0", zIndex: "100" }
+            } expand="lg" variant="dark" >
+                <Navbar.Brand style={{ marginLeft: "2%", paddingTop: "10px", paddingBottom: "10px" }} href="/">
+                    <img style={{ height: "48px", width: "72px" }} src="/TNG_logo_tab.png" alt="logo" />
+                </Navbar.Brand>
+                <Navbar.Toggle />
+                <Navbar.Collapse>
+                    <Nav className="me-auto">
+                        <NavDropdown style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px" }} title="Access all videos">
+                            <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/TNGOriginals">TNG Originals</NavDropdown.Item>
+                            <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SocialLearning">Bite-Sized Videos</NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px" }} title="Become an expert">
+                            <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/NotALearner">Collaborate for Session</NavDropdown.Item>
+                            <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SocialLearning">Add Bite-Sized Video</NavDropdown.Item>
+                        </NavDropdown>
+                        <Nav.Link href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px" }}>
+                            Opportunities
+                        </Nav.Link>
+                    </Nav>
+                    <Nav style={{ paddingRight: "50px" }}>
+                        {props.auth.isAuthenticated === true &&
+                            <Nav.Link href="/LearnCoins" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                                {reward} mins free
+                            </Nav.Link>
+                        }
+                        {props.auth.isAuthenticated === true &&
+                            <Nav.Link href="/profile" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", textAlign: "center" }}>
+                                {props.auth.user.attributes.name.split(" ")[0]}<br />(Referral Code: {refcode})
+                            </Nav.Link>
+                        }
+                        {props.auth.isAuthenticated === false &&
+                            <Nav.Link href="/login" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                                Login
+                            </Nav.Link>
+                        }
+                        {props.auth.isAuthenticated === true &&
+                            <Nav.Link onClick={LogOutFunc} style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                                Logout
+                            </Nav.Link>
+                        }
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar >}
+    </div>
+    );
 }
 
 export default Header;

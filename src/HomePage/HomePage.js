@@ -10,14 +10,17 @@ import Footer from '../Footer/Footer';
 function HomePage(props) {
   return (
     <div>
-      <Page1/>
-      <Page2 auth={props.auth}/>
-      {/* <Page3/> */}
-      {/* <Page5/> */} 
-      <Page4/>
-      <Page6/>
-      <Page7/>
-      <Footer/> 
+      {window.innerWidth <= 786 ? <div>
+        <h1 style={{ textAlign: "center", marginTop: "15%" }}>We're Upgrading our mobile version!</h1>
+        <h2 style={{ textAlign: "center" }}>Hang in there, we'll be back super soon!</h2></div> : <div>
+        <Page1 />
+        <Page2 auth={props.auth} />
+        {/* <Page3/> */}
+        {/* <Page5/> */}
+        <Page4 />
+        <Page6 />
+        <Page7 />
+        <Footer /></div>}
     </div>
   );
 }

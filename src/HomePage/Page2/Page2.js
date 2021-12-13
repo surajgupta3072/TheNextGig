@@ -10,6 +10,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 
 function Page2(props) {
   const [show_no, setshowno] = useState(5);
+  const [show_no1, setshowno1] = useState(4);
   const [data_finance, setdatafinance] = useState([])
   const [data_pop, setdatapop] = useState([])
   const [data_prod, setdataprod] = useState([])
@@ -31,7 +32,7 @@ function Page2(props) {
     dots: true,
     row: 1,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: show_no1,
     slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 4000
@@ -97,9 +98,11 @@ function Page2(props) {
     /* } */
     if (window.innerWidth <= 1324 && window.innerWidth >= 1000) {
       setshowno(2)
+      setshowno1(2)
     }
     if (window.innerWidth <= 1000) {
       setshowno(1)
+      setshowno1(1)
     }
   }, []);
 
