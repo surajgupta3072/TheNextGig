@@ -231,7 +231,7 @@ function Page2(props) {
         })}
       </Slider>
       <br />
-      <h4>Product Management</h4>
+      {/* <h4>Product Management</h4>
       <br />
       <Slider {...settings1}>
         {masterdata.map((ele) => {
@@ -278,7 +278,7 @@ function Page2(props) {
 
         })}
       </Slider>
-      <br />
+      <br /> */}
       <h4>Marketing & Strategy</h4>
       <br />
       <Slider {...settings}>
