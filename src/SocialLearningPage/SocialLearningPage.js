@@ -29,7 +29,7 @@ function SocialLearningPage(props) {
   const [videoslist, setVideosList] = useState(false);
   const [filter, setfilter] = useState([]);
   const [data, setdata] = useState([]);
-  
+
   useEffect(() => {
     var paramss = {
       TableName: "VideosTable"
@@ -101,7 +101,7 @@ function SocialLearningPage(props) {
   //  }
   return (
     <div>
-      <div className="social_learning_top_image"><Container><h1 style={{ textShadow: "0px 4px 4px #F26C4F", marginTop: "1.5%" }}>SOCIAL LEARNING</h1><p style={{ fontFamily: "Open Sans" }}>
+      <div className="social_learning_top_image"><Container><h1 style={{ textShadow: "0px 4px 4px #F26C4F", marginTop: "1.5%" }}>BITE-SIZED VIDEOS</h1><p style={{ fontFamily: "Open Sans" }}>
         Learn and share knowledge - from <span style={{ color: "#F26C4F" }}>real-life experiences</span></p><p style={{ fontStyle: "italic", fontSize: "15px", marginTop: "10px" }}> PS: This is your social media platform for practical learning.</p></Container></div>
       <Container>
         <Row>
@@ -283,7 +283,7 @@ function SocialLearningPage(props) {
                       onHide={() => setModalShow(false)}
                     />
                   </div>
-                    <div className="SocialLearn_laptop" style={{flexGrow: "1", cursor: "pointer", color: "#F26C4F"}}>
+                    <div className="SocialLearn_laptop" style={{ flexGrow: "1", cursor: "pointer", color: "#F26C4F" }}>
                       <div onClick={() => { setModalShowvideo(true) }}> <span><InfoCircle /></span> <span>Quick tips to create<br /> your video</span></div>
                       <Popupinfovide
                         show={modalShowvideo}
