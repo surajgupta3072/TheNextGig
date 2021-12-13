@@ -39,15 +39,51 @@ function Header(props) {
         }
     }
 
+    // function doRewardChange() {
+    //     var params = {
+    //         TableName: "UsersTable",
+    //         ProjectionExpression: "UserID"
+    //     };
+    //     docClient.scan(params, async function (err, data) {
+    //         if (err) {
+    //           console.log(err);
+    //         } 
+    //         else {
+    //             console.log(data);
+    //             for(var i=0; i<data.Count; i++) {
+    //                 var paramss = {
+    //                     TableName: "UsersTable",
+    //                     Key: { "UserID": data.Items[i].UserID },
+    //                     UpdateExpression: "set TotalRewards = :tr",
+    //                     ExpressionAttributeValues:{
+    //                     ":tr": 200,
+    //                     },
+    //                     ReturnValues:"UPDATED_NEW"
+    //                 }
+    //                 docClient.update(paramss, function (err, data) {
+    //                     if (err) {
+    //                         console.log(err);
+    //                     } 
+    //                     else {
+    //                         console.log(data);
+    //                     }
+    //                 });
+    //                 await new Promise(r => setTimeout(r, 1000));
+    //             }
+    //         }
+    //     });
+    // }
+
     return (<div>
-        < Navbar style={{ backgroundColor: "black", padding: "0px", width: "100%", position: "sticky", top: "0", zIndex: "100" }
-        } expand="lg" variant="dark" >
+        <Navbar style={{ backgroundColor: "black", padding: "0px", width: "100%", position: "sticky", top: "0", zIndex: "100" }} expand="lg" variant="dark" >
             <Navbar.Brand style={{ marginLeft: "2%", paddingTop: "10px", paddingBottom: "10px" }} href="/">
                 <img style={{ height: "48px", width: "72px" }} src="/TNG_logo_tab.png" alt="logo" />
             </Navbar.Brand>
-            <Nav.Link className="reward_mins_mobile" href="/LearnCoins" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", textAlign: "right" }}>
-                {reward} mins free
-            </Nav.Link>
+            {props.auth.isAuthenticated === true &&
+                <Nav.Link className="reward_mins_mobile" href="/LearnCoins" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", textAlign: "right" }}>
+                    {reward} mins free
+                </Nav.Link>
+            }
             <Navbar.Toggle />
             <Navbar.Collapse>
                 <Nav className="me-auto">
@@ -75,7 +111,7 @@ function Header(props) {
                     }
                     {props.auth.isAuthenticated === true &&
                         <Nav.Link className='referral_code' href="/profile" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px" }}>
-                            {props.auth.user.attributes.name.split(" ")[0]}<br />(Referral Code: {refcode})
+                            {props.auth.user.attributes.name.split(" ")[0]}<br />(Ref Code: {refcode})
                         </Nav.Link>
                     }
                     {props.auth.isAuthenticated === false &&
@@ -88,6 +124,9 @@ function Header(props) {
                             Logout
                         </Nav.Link>
                     }
+                    {/* <Nav.Link onClick={doRewardChange} style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                        FIRE
+                    </Nav.Link> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar >
