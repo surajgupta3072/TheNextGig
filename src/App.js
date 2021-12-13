@@ -31,6 +31,7 @@ import RedirectPage from './RedirectPage';
 import "./App.css";
 import LearnCoins from "./LearnCoins/LearnCoins";
 import ReferralPage from "./AuthPage/ReferralPage";
+import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 // import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 // import Comet from "../src/SocialLearningPage/Comet";
 
@@ -45,10 +46,10 @@ function App() {
       await Auth.currentSession();
       setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
-      if(user.username.includes("google")) {
+      if (user.username.includes("google")) {
         var decoded = jwt_decode(user.signInUserSession.idToken.jwtToken);
         let guser = {
-          "attributes": {"name":decoded.name, "email":decoded.email},
+          "attributes": { "name": decoded.name, "email": decoded.email },
           "username": decoded.sub
         };
         setUser(guser);
@@ -57,11 +58,11 @@ function App() {
           Key: { "UserID": decoded.sub },
           ProjectionExpression: "Gflag",
         };
-        docClient.get(params, function(err, data) {
-          if(data.Item===undefined) {
+        docClient.get(params, function (err, data) {
+          if (data.Item === undefined) {
             var paramss = {
               TableName: "UsersTable",
-              Item: {"UserID":decoded.sub, "FullName":decoded.name, "Email":decoded.email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards": 180, "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0]+String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag":true}
+              Item: { "UserID": decoded.sub, "FullName": decoded.name, "Email": decoded.email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 180, "MasterclassesPurchased": [], "gigsApplications": [], "SocialLearningVideosUploaded": [], "SocialLearningBlogsUploaded": [], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0] + String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": true }
             }
             docClient.put(paramss, function (err, data) {
               if (err) {
@@ -81,7 +82,7 @@ function App() {
                 };
                 fetch(endpoint, requestOptions)
                   .then((response) => {
-                    if(!response.ok) {
+                    if (!response.ok) {
                       throw new Error("Error in fetch");
                     }
                     else {
@@ -99,11 +100,11 @@ function App() {
       else {
         setUser(user);
       }
-    } 
+    }
     catch (error) {
-      if(window.location.href!="http://localhost:3000/login" && window.location.href!="http://localhost:3000/register" && window.location.href!="http://localhost:3000/Referral" && window.location.href!="https://www.thenextgig.net/login" && window.location.href!="https://www.thenextgig.net/register" && window.location.href!="https://www.thenextgig.net/Referral")
+      if (window.location.href != "http://localhost:3000/login" && window.location.href != "http://localhost:3000/register" && window.location.href != "http://localhost:3000/Referral" && window.location.href != "https://www.thenextgig.net/login" && window.location.href != "https://www.thenextgig.net/register" && window.location.href != "https://www.thenextgig.net/Referral")
         localStorage.setItem('lastURL', window.location.href);
-      if(window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/")) {
+      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/")) {
         localStorage.setItem('lastLastURL', window.location.href);
         localStorage.setItem('lastURL', "https://www.thenextgig.net/Redirecting");
       }
@@ -125,35 +126,35 @@ function App() {
           <Header auth={authProps} />
           <Router>
             <Switch>
-              {/* <Route exact path="/Video/:vidId">
+              <Route exact path="/Video/:vidId">
                 <HomeVideoPage auth={authProps} />
-              </Route> */}
+              </Route>
               <Route exact path="/login">
                 <LoginPage auth={authProps} />
               </Route>
               <Route exact path="/forgotpassword">
-                <ForgotPasswordPage/>
+                <ForgotPasswordPage />
               </Route>
               <Route exact path="/changepassword/:emailid">
-                <ChangePasswordPage/>
+                <ChangePasswordPage />
               </Route>
               {/* <Route exact path="/TheNextGigCommunity">
                 <Community auth={authProps} />
               </Route> */}
               <Route exact path="/register">
-                <RegisterPage auth={authProps}/>
+                <RegisterPage auth={authProps} />
               </Route>
               <Route exact path="/SocialLearning">
-                <SocialLearningPage auth={authProps}/>
+                <SocialLearningPage auth={authProps} />
               </Route>
               <Route exact path="/SocialLearning/Video/:id">
-                <SocialVideoPage auth={authProps}/>
+                <SocialVideoPage auth={authProps} />
               </Route>
               {/* <Route exact path="/SocialLearning/Blog/:id">
                 <SocialBlogPage auth={authProps}/>
               </Route> */}
               <ProtectedRoute exact path="/profile" auth={authProps}>
-                <ProfilePage auth={authProps}/>
+                <ProfilePage auth={authProps} />
               </ProtectedRoute>
               {/* <Route exact path="/company/:id">
                 <CompanyPage />
@@ -165,13 +166,13 @@ function App() {
                 <Page2 />
               </Route>
               <ProtectedRoute auth={authProps} exact path="/ExperientialLearning/:id">
-                <GigsDetails auth={authProps.user}/>
+                <GigsDetails auth={authProps.user} />
               </ProtectedRoute>
               <ProtectedRoute exact path="/ExperientialLearning" auth={authProps}>
-                <GigsPage auth={authProps.user}/>
+                <GigsPage auth={authProps.user} />
               </ProtectedRoute>
               <Route exact path="/TNGoriginals/:id">
-                <MasterClassDetails auth={authProps.user}/>
+                <MasterClassDetails auth={authProps.user} />
               </Route>
               <Route exact path="/TNGoriginals">
                 <MasterClassPage />
@@ -180,7 +181,7 @@ function App() {
                 <NotALearnerPage />
               </Route>
               <Route exact path="/LearnCoins">
-                <LearnCoins/>
+                <LearnCoins />
               </Route>
               <Route exact path="/AboutUs">
                 <AboutUs />
@@ -201,7 +202,7 @@ function App() {
                 <RedirectPage />
               </Route>
               <ProtectedRoute exact path="/Referral" auth={authProps}>
-                <ReferralPage auth={authProps.user}/>
+                <ReferralPage auth={authProps.user} />
               </ProtectedRoute>
               {/* <Route exact path="/SocialLearning/Community">
                 <Comet props={authProps}/>

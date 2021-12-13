@@ -13,6 +13,7 @@ import './Page2.css';
 function Page2(props) {
   const [show_no, setshowno] = useState(4)
   const [modalShow, setModalShow] = useState(false);
+  const [click, setclick] = useState([false, ""]);
   const [allvideos, setAllvideos] = useState([]);
   const [user, setUser] = useState("");
   const [popupvideo, setpopupvideo] = useState("");
@@ -123,50 +124,51 @@ function Page2(props) {
       <Slider {...settings}>
         {masterdata.map((ele) => {
           if (ele.id === 2 || ele.id === 5) {
-            return <div style={{ height: "300px",  width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "https://www.thenextgig.net/TNGoriginals/" + `${ele.id}` }}>
+            return <div style={{ height: "300px", width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "https://www.thenextgig.net/TNGoriginals/" + `${ele.id}`; }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode}>
-                <img width="250px" height="200px"  src={ele.course_image} />
+                <img width="250px" height="200px" src={ele.course_image} />
               </figure>
-              <div style={{ marginLeft: "2%",  width: "260px" }}>
+              <div style={{ marginLeft: "2%", width: "260px" }}>
                 <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", whiteSpace: "pre-wrap" }}>{ele.course_name}</h6>
                 <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor}</p>
-              {((ele.course_instructor_post.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post.substring(0,31 )}...</p>)
-              )
-              }
+                {((ele.course_instructor_post.length) < 27) ?
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post}</p>)
+                  ) :
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post.substring(0, 31)}...</p>)
+                  )
+                }
               </div>
             </div>
 
           }
         })}
-        {data_pop.map((vid) => {
-          return <div style={{ width: "260px" }} onClick={() => { setModalShow(true); setpopupvideo(vid.VideoLink); setpopupvideotopic(vid.VideoTopic); setpopupvideousername(vid.VideoUsername); setpopupvideocreds(vid.VideoCreds); setpopupvideoid(vid.VideoID); }}>
+        {data_pop.map((vid, index) => {
+          return <div key={index} style={{ width: "260px" }} onClick={() => { window.location.href = window.location.href + "Video/" + vid.VideoID }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img src={vid.VideoThumbnail} width="250px" height="200px" />
             </figure>
-            <MyVerticallyCenteredModal
-              show={modalShow}
-              Topic={popupvideotopic}
-              Username={popupvideousername}
-              Creds={popupvideocreds}
-              Link={popupvideo}
-              VideoID={popupvideoid}
-              onHide={() => setModalShow(false)}
-            />
-            <div style={{ marginLeft: "2%",  width: "260px" }} >
+            {/* 
+              <MyVerticallyCenteredModal
+                show={modalShow}
+                Topic={popupvideotopic}
+                Username={popupvideousername}
+                Creds={popupvideocreds}
+                Link={popupvideo}
+                VideoID={popupvideoid}
+                onHide={() => setModalShow(false)}
+              />  */}
+            <div style={{ marginLeft: "2%", width: "260px" }} >
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername}</p>              
-              {((vid.VideoCreds.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0,31 )}...</p>)
-              )
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername}</p>
+              {((vid.VideoCreds.length) < 27) ?
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
+                ) :
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0, 31)}...</p>)
+                )
               }
             </div>
           </div>
@@ -180,30 +182,30 @@ function Page2(props) {
           if (ele.course_domain === "Finance") {
             return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "https://www.thenextgig.net/TNGoriginals/" + `${ele.id}` }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode}>
-                <img width="250px" height="200px"  src={ele.course_image} />
+                <img width="250px" height="200px" src={ele.course_image} />
               </figure>
-              <div style={{ marginLeft: "2%",  width: "260px" }}>
+              <div style={{ marginLeft: "2%", width: "260px" }}>
                 <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", whiteSpace: "pre-wrap" }}>{ele.course_name}</h6>
                 <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor}</p>
-                {((ele.course_instructor_post.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post.substring(0,31 )}...</p>)
-              )
-              }
+                {((ele.course_instructor_post.length) < 27) ?
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post}</p>)
+                  ) :
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post.substring(0, 31)}...</p>)
+                  )
+                }
               </div>
             </div>
 
           }
         })}
         {data_finance.map((vid) => {
-          return <div style={{ width: "260px" }} onClick={() => { setModalShow(true); setpopupvideo(vid.VideoLink); setpopupvideotopic(vid.VideoTopic); setpopupvideousername(vid.VideoUsername); setpopupvideocreds(vid.VideoCreds); setpopupvideoid(vid.VideoID); }}>
+          return <div style={{ width: "260px" }} onClick={() => { window.location.href = window.location.href + "Video/" + vid.VideoID }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img src={vid.VideoThumbnail} width="250px" height="200px" />
             </figure>
-            <MyVerticallyCenteredModal
+            {/* <MyVerticallyCenteredModal
               show={modalShow}
               Topic={popupvideotopic}
               Username={popupvideousername}
@@ -211,17 +213,17 @@ function Page2(props) {
               Link={popupvideo}
               VideoID={popupvideoid}
               onHide={() => setModalShow(false)}
-            />
-            <div style={{ marginLeft: "2%",  width: "260px" }} >
+            /> */}
+            <div style={{ marginLeft: "2%", width: "260px" }} >
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername}</p>
-              {((vid.VideoCreds.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0,31 )}...</p>)
-              )
+              {((vid.VideoCreds.length) < 27) ?
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
+                ) :
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0, 31)}...</p>)
+                )
               }
             </div>
           </div>
@@ -236,48 +238,40 @@ function Page2(props) {
           if (ele.course_domain === "ProdMan") {
             return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "https://www.thenextgig.net/TNGoriginals/" + `${ele.id}` }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode}>
-                <img width="250px" height="200px"  src={ele.course_image} />
+                <img width="250px" height="200px" src={ele.course_image} />
               </figure>
-              <div style={{ marginLeft: "2%",  width: "260px" }}>
+              <div style={{ marginLeft: "2%", width: "260px" }}>
                 <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", whiteSpace: "pre-wrap" }}>{ele.course_name}</h6>
                 <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor}</p>
-                {((ele.course_instructor_post.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post.substring(0,31 )}...</p>)
-              )
-              }
+                {((ele.course_instructor_post.length) < 27) ?
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post}</p>)
+                  ) :
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post.substring(0, 31)}...</p>)
+                  )
+                }
               </div>
             </div>
 
           }
         })}
         {data_prod.map((vid) => {
-          return <div style={{ height: "300px", width: "200px" }} onClick={() => { setModalShow(true); setpopupvideo(vid.VideoLink); setpopupvideotopic(vid.VideoTopic); setpopupvideousername(vid.VideoUsername); setpopupvideocreds(vid.VideoCreds); setpopupvideoid(vid.VideoID); }}>
+          return <div style={{ height: "300px", width: "200px" }} onClick={() => { window.location.href = window.location.href + "Video/" + vid.VideoID }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="250px" height="200px"  src={vid.VideoThumbnail} />
+              <img width="250px" height="200px" src={vid.VideoThumbnail} />
             </figure>
-            <MyVerticallyCenteredModal
-              show={modalShow}
-              Topic={popupvideotopic}
-              Username={popupvideousername}
-              Creds={popupvideocreds}
-              Link={popupvideo}
-              VideoID={popupvideoid}
-              onHide={() => setModalShow(false)}
-            />
-            <div style={{ marginLeft: "2%",  width: "260px" }}>
+
+            <div style={{ marginLeft: "2%", width: "260px" }}>
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername}</p>
-              {((vid.VideoCreds.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0,31 )}...</p>)
-              )
+              {((vid.VideoCreds.length) < 27) ?
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
+                ) :
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0, 31)}...</p>)
+                )
               }
             </div>
           </div>
@@ -289,33 +283,33 @@ function Page2(props) {
       <br />
       <Slider {...settings}>
         {masterdata.map((ele) => {
-          if (ele.course_domain === "Marketing" || ele.course_domain === "Strategy" ) {
+          if (ele.course_domain === "Marketing" || ele.course_domain === "Strategy") {
             return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "https://www.thenextgig.net/TNGoriginals/" + `${ele.id}` }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode}>
-                <img width="250px" height="200px"  src={ele.course_image} />
+                <img width="250px" height="200px" src={ele.course_image} />
               </figure>
-              <div style={{ marginLeft: "2%",  width: "260px" }}>
+              <div style={{ marginLeft: "2%", width: "260px" }}>
                 <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", whiteSpace: "pre-wrap" }}>{ele.course_name}</h6>
                 <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor}</p>
-                {((ele.course_instructor_post.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post.substring(0,31 )}...</p>)
-              )
-              }
+                {((ele.course_instructor_post.length) < 27) ?
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post}</p>)
+                  ) :
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{ele.course_instructor_post.substring(0, 31)}...</p>)
+                  )
+                }
               </div>
             </div>
 
           }
         })}
         {data_markstra.map((vid) => {
-          return <div style={{ height: "300px", width: "200px" }} onClick={() => { setModalShow(true); setpopupvideo(vid.VideoLink); setpopupvideotopic(vid.VideoTopic); setpopupvideousername(vid.VideoUsername); setpopupvideocreds(vid.VideoCreds); setpopupvideoid(vid.VideoID); }}>
+          return <div style={{ height: "300px", width: "200px" }} onClick={() => { window.location.href = window.location.href + "Video/" + vid.VideoID }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="250px" height="200px"  src={vid.VideoThumbnail} />
+              <img width="250px" height="200px" src={vid.VideoThumbnail} />
             </figure>
-            <MyVerticallyCenteredModal
+            {/* <MyVerticallyCenteredModal
               show={modalShow}
               Topic={popupvideotopic}
               Username={popupvideousername}
@@ -323,28 +317,28 @@ function Page2(props) {
               Link={popupvideo}
               VideoID={popupvideoid}
               onHide={() => setModalShow(false)}
-            />
-            <div style={{ marginLeft: "2%",  width: "260px" }}>
+            /> */}
+            <div style={{ marginLeft: "2%", width: "260px" }}>
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername}</p>
-              {((vid.VideoCreds.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0,31 )}...</p>)
-              )
+              {((vid.VideoCreds.length) < 27) ?
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
+                ) :
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0, 31)}...</p>)
+                )
               }
             </div>
           </div>
 
         })}
         {data_consult.map((vid) => {
-          return <div style={{ height: "300px", width: "200px" }} onClick={() => { setModalShow(true); setpopupvideo(vid.VideoLink); setpopupvideotopic(vid.VideoTopic); setpopupvideousername(vid.VideoUsername); setpopupvideocreds(vid.VideoCreds); setpopupvideoid(vid.VideoID); }}>
+          return <div style={{ height: "300px", width: "200px" }} onClick={() => { window.location.href = window.location.href + "Video/" + vid.VideoID }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="250px" height="200px"  src={vid.VideoThumbnail} />
+              <img width="250px" height="200px" src={vid.VideoThumbnail} />
             </figure>
-            <MyVerticallyCenteredModal
+            {/* <MyVerticallyCenteredModal
               show={modalShow}
               Topic={popupvideotopic}
               Username={popupvideousername}
@@ -352,17 +346,17 @@ function Page2(props) {
               Link={popupvideo}
               VideoID={popupvideoid}
               onHide={() => setModalShow(false)}
-            />
-            <div style={{ marginLeft: "2%",  width: "260px" }}>
+            /> */}
+            <div style={{ marginLeft: "2%", width: "260px" }}>
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername}</p>
-              {((vid.VideoCreds.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0,31 )}...</p>)
-              )
+              {((vid.VideoCreds.length) < 27) ?
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
+                ) :
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0, 31)}...</p>)
+                )
               }
             </div>
           </div>
@@ -373,11 +367,11 @@ function Page2(props) {
       <br />
       <Slider {...settings}>
         {data_other.map((vid) => {
-          return <div style={{ width: "260px" }} onClick={() => { setModalShow(true); setpopupvideo(vid.VideoLink); setpopupvideotopic(vid.VideoTopic); setpopupvideousername(vid.VideoUsername); setpopupvideocreds(vid.VideoCreds); setpopupvideoid(vid.VideoID); }}>
+          return <div style={{ width: "260px" }} onClick={() => { window.location.href = window.location.href + "Video/" + vid.VideoID }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="250px" height="200px"  src={vid.VideoThumbnail} />
+              <img width="250px" height="200px" src={vid.VideoThumbnail} />
             </figure>
-            <MyVerticallyCenteredModal
+            {/* <MyVerticallyCenteredModal
               show={modalShow}
               Topic={popupvideotopic}
               Username={popupvideousername}
@@ -385,17 +379,17 @@ function Page2(props) {
               Link={popupvideo}
               VideoID={popupvideoid}
               onHide={() => setModalShow(false)}
-            />
-            <div style={{ marginLeft: "2%",  width: "260px" }}>
+            /> */}
+            <div style={{ marginLeft: "2%", width: "260px" }}>
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername}</p>
-              {((vid.VideoCreds.length)<27)?
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
-              ):
-              (
-              (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0,31 )}...</p>)
-              )
+              {((vid.VideoCreds.length) < 27) ?
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds}</p>)
+                ) :
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoCreds.substring(0, 31)}...</p>)
+                )
               }
             </div>
           </div>

@@ -24,7 +24,7 @@ function MyVerticallyCenteredModal(props) {
         style={{ padding: "0%", backgroundColor: "#020312", border: "1px solid #f26c4f" }}
       >
         <div style={{ padding: "0%", margin: "auto" }}>
-        <AiFillCloseCircle onClick={() => props.onHide()} style={{ width: "30px", height: "30px", color: "rgb(242, 108, 79)", cursor:"pointer", marginLeft: "97%" }} />
+          <AiFillCloseCircle onClick={() => props.onHide()} style={{ width: "30px", height: "30px", color: "rgb(242, 108, 79)", cursor: "pointer", marginLeft: "97%" }} />
           <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
             <video style={{ margin: "auto" }} width="1220px" height="602px" src={props.Link} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()} />
           </div>
