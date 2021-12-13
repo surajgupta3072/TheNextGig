@@ -282,7 +282,7 @@ function SocialLearningPage(props) {
                       onHide={() => setModalShow(false)}
                     />
                   </div>
-                    <div style={{ flexGrow: "1" }} className="SocialLearn_laptop" style={{ cursor: "pointer", color: "#F26C4F" }}>
+                    <div className="SocialLearn_laptop" style={{flexGrow: "1", cursor: "pointer", color: "#F26C4F"}}>
                       <div onClick={() => { setModalShowvideo(true) }}> <span><InfoCircle /></span> <span>Quick tips to create<br /> your video</span></div>
                       <Popupinfovide
                         show={modalShowvideo}

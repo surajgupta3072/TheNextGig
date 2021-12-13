@@ -80,7 +80,7 @@ function SocialVideoPage(props) {
     });
   }
 
-  function VideoStarted(vid, ct) {
+  function VideoStarted(vid, ct, vidDuration) {
     if(ct<=0.1) {
       var params = {
         TableName: "UsersTable",
@@ -135,6 +135,37 @@ function SocialVideoPage(props) {
                   if (err) {
                     console.log(err);
                   }
+                  else {
+                    var params = {
+                      TableName: "UsersTable",
+                      Key: { "UserID": props.auth.user.username  },
+                      ProjectionExpression: "TotalRewards",
+                    };
+                    docClient.get(params, function (err, data) {
+                      if (err) {
+                        console.log(err);
+                      }
+                      else {
+                        var params = {
+                          TableName: "UsersTable",
+                          Key: { "UserID": props.auth.user.username  },
+                          UpdateExpression: "set TotalRewards = :tr",
+                          ExpressionAttributeValues: {
+                            ":tr": data.Item.TotalRewards-(Number(vidDuration.split(":")[0]))
+                          },
+                          ReturnValues: "UPDATED_NEW"
+                        }
+                        docClient.update(params, function (err, data) {
+                          if (err) {
+                            console.log(err);
+                          }
+                          else {
+                            //TRANSACTIONS HISTORY CODE
+                          }
+                        });
+                      }
+                    });
+                  }
                 });
               }
             });
@@ -181,7 +212,7 @@ function SocialVideoPage(props) {
                       <source src={vid.VideoLink} />
                     </video>
                     :
-                    <video className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+                    <video className="video_social_learn" onPlay={(e)=>VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} onEnded={()=> VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                       <source src={vid.VideoLink} />
                     </video>
                   }
