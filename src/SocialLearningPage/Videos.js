@@ -166,7 +166,7 @@ function Videos(props) {
                         Key: { "UserID": props.userid },
                         UpdateExpression: "set TotalRewards = :tr",
                         ExpressionAttributeValues: {
-                          ":tr": reward-vidDuration
+                          ":tr": reward - vidDuration
                         },
                         ReturnValues: "UPDATED_NEW"
                       }
@@ -206,7 +206,7 @@ function Videos(props) {
           <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
               <figure className="tag figurex" data-content={vid.VideoDuration}>
-                <img style={{ height: "135px", width: "240px" }} src={vid.VideoThumbnail} />
+                <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
               </figure>
               :
               <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, (Number(vid.VideoDuration.split(":")[0])))} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
