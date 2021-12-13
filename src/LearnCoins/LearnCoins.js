@@ -4,7 +4,6 @@ import './LearnCoins.css';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card';
-import Carousel from "react-elastic-carousel";
 import Data from "../MasterClassPage/Masterclass.json"
 import CardX from '../HomePage/Page3/Card';
 import { Linkedin, Whatsapp, Instagram, Discord } from "react-bootstrap-icons";
@@ -21,8 +20,8 @@ function TNGCoins() {
     <div>
       <div className="tngcoins_top_image">
         <Container>
-          <h1 style={{ textShadow: "0px 4px 4px #F26C4F", marginTop: "1.5%", opacity: "1" }}>TNG LEARN COINS</h1>
-          <p style={{ fontFamily: "Open Sans" }}>Learn and share knowledge using our platform currency</p>
+          <h1 style={{ textShadow: "0px 4px 4px #F26C4F", marginTop: "1.5%", opacity: "1" }}>TNG MINUTES</h1>
+          <p style={{ fontFamily: "Open Sans" }}>To help you learn and share knowledge</p>
         </Container>
       </div>
       <div >
@@ -33,7 +32,7 @@ function TNGCoins() {
                 <p className="btn">
                   <span>
                     <span>
-                      <span className="border_box">Earn coins</span>
+                      <span className="border_box">Earn Minutes</span>
                     </span>
                   </span>
                 </p>
@@ -49,21 +48,21 @@ function TNGCoins() {
         <div className="page2_laptop_view">
           <Container>
             <Row style={{ display: "flex", flexDirection: "row" }}>
-              <Card id="tng_learn_coin_signup_card" onClick={() => window.location.href = "/register"} className="page2card" style={{ width: "29.9%", marginLeft: "2.5%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)", borderRadius: "12px", cursor: 'pointer' }}>
+              <Card id="tng_learn_coin_signup_card" onClick={() => window.location.href = "/login"} className="page2card" style={{ width: "29.9%", marginLeft: "2.5%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)", borderRadius: "12px", cursor: 'pointer' }}>
                 <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/videohome.jpg" />
                 <Card.Body style={{ marginTop: "30px" }}>
-                  <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >SIGNUP</Card.Title>
+                  <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >LOGIN DAILY</Card.Title>
                   <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                    Sign up and become part of our TNG family.
+                    Login daily to earn 5 minutes of free content
                   </Card.Text>
                 </Card.Body>
               </Card>
 
               <Card id="tng_learn_coin_video_card" onClick={() => window.location.href = "/SocialLearning"} className="page2card2" style={{ width: "29.9%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgb(200, 150, 54,0.4)", borderRadius: "12px", cursor: 'pointer' }}>
                 <Card.Body style={{ marginTop: "30px" }}>
-                  <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >UPLOAD VIDEOS</Card.Title>
+                  <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >UPLOAD BITE-SIZED VIDEOS</Card.Title>
                   <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                    Upload bite-sized videos teaching something that you have learnt through your real life experience
+                    Upload bite-sized videos sharing knowledge gained from your experience to earn 10 minutes of free content
                   </Card.Text>
                 </Card.Body>
                 <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/bloghome.jpg" />
@@ -74,7 +73,7 @@ function TNGCoins() {
                 <Card.Body style={{ marginTop: "30px" }}>
                   <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >COMPLETE YOUR PROFILE</Card.Title>
                   <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                    Basic information on what you have learnt in the past
+                    Complete your profile to earn 20 minutes of free content
                   </Card.Text>
                 </Card.Body >
               </Card>
@@ -86,16 +85,16 @@ function TNGCoins() {
         <div className="page2_mobile_view" >
           <Container>
             <Col>
-              <Card id="tng_learn_coin_signup_card" onClick={() => window.location.href = "/register"} style={{ width: '100%', borderRadius: "12px", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)", marginTop: "15%", cursor: 'pointer' }}>
+              <Card id="tng_learn_coin_signup_card" onClick={() => window.location.href = "/login"} style={{ width: '100%', borderRadius: "12px", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)", marginTop: "15%", cursor: 'pointer' }}>
                 <Card.Body>
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <Col >
                       <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/videohome.jpg" />
                     </Col>
                     <Col style={{ marginLeft: "-20%" }}>
-                      <Card.Title style={{ fontSize: "20px" }}>SIGNUP</Card.Title>
+                      <Card.Title style={{ fontSize: "20px" }}>LOGIN DAILY</Card.Title>
                       <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                        Sign up and become part of our TNG family and earn by sharing knowledge.
+                      Login daily to earn 5 minutes of free content
                       </Card.Text>
                     </Col>
                   </div>
@@ -109,9 +108,9 @@ function TNGCoins() {
                       <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/bloghome.jpg" />
                     </Col>
                     <Col style={{ marginLeft: "-20%" }}>
-                      <Card.Title style={{ fontSize: "20px" }}>UPLOAD VIDEOS</Card.Title>
+                      <Card.Title style={{ fontSize: "20px" }}>UPLOAD BITE-SIZED VIDEOS</Card.Title>
                       <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                        Upload bite-sized videos teaching something that you have learnt through your real life experience
+                      Upload bite-sized videos sharing knowledge gained from your experience to earn 10 minutes of free content
                       </Card.Text>
                     </Col>
                   </div>
@@ -127,7 +126,7 @@ function TNGCoins() {
                     <Col style={{ marginLeft: "-20%" }}>
                       <Card.Title style={{ fontSize: "20px" }}>COMPLETE YOUR PROFILE</Card.Title>
                       <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                        Basic information on what you have learnt in the past
+                      Complete your profile to earn 20 minutes of free content
                       </Card.Text>
                     </Col>
                   </div>
@@ -138,48 +137,88 @@ function TNGCoins() {
         </div>
       </div>
 
-      <div style={{ marginTop: "2%" }}>
-        <Container style={{ marginBottom: "0" }}>
+      <div >
+        <Container style={{ marginTop: "5%" }}>
           <div className="top_masterclass">
-            <div className="heading_box Learncoins_headings" >
+            <div className="heading_box" style={{ marginBottom: "2%", marginLeft: "0%" }}>
               <div>
                 <p className="btn">
                   <span>
                     <span>
-                      <span className="border_box">Redeem Coins</span>
+                      <span className="border_box">Redeem Minutes</span>
                     </span>
                   </span>
                 </p>
               </div>
               <div style={{ marginTop: "70px" }}>
-                <h4 className="page3_subtitle">Binge on our short, curated TNG Originals (once after our Launch offer is over)</h4>
+                <h4 className="page3_subtitle">Watch experts share their real-life experience</h4>
               </div>
             </div>
           </div>
         </Container>
       </div>
       <div>
-        <div className="carousel-wrapper" style={{ width: "90%", justifyContent: "center", alignItems: "center", marginLeft: "6%" }}>
-          <Carousel breakPoints={breakPoints}>
-            {Data.map(detail => (
-              <div className="Item_component">
-                <CardX
-                  text1={detail.course_instructor_post}
-                  text2={detail.course_name}
-                  text3={detail.instructor_creds}
-                  card={detail.course_image}
-                  name={detail.course_instructor}
-                  time={detail.course_timing}
-                  fees={detail.fees}
-                  key={detail.id}
-                  carl={detail.id}
-                  textid="learn_coin_page_redeem_coin_cards"
-                />
-              </div>
-            ))}
-          </Carousel>
+        <div className="page2_laptop_view">
+          <br/><br/><br/>
+          <Container>
+            <Row style={{ display: "flex", justifyContent:"space-around" }}>
+              <Card id="tng_learn_coin_signup_card" onClick={() => window.location.href = "/TNGOriginals"} className="page2card" style={{ width: "29.9%", marginLeft: "2.5%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)", borderRadius: "12px", cursor: 'pointer' }}>
+                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/videohome.jpg" />
+                <Card.Body style={{ marginTop: "30px" }}>
+                  <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >TNG ORIGINALS</Card.Title>
+                  <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
+                    Specially curated - they’re short, binge-able and based on real-life experiences.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+              <Card id="tng_learn_coin_video_card" onClick={() => window.location.href = "/SocialLearning"} className="page2card2" style={{ width: "29.9%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgb(200, 150, 54,0.4)", borderRadius: "12px", cursor: 'pointer' }}>
+                <Card.Body style={{ marginTop: "30px" }}>
+                  <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >BITE-SIZED VIDEOS</Card.Title>
+                  <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
+                  Acquire a skill in less than 10 minutes
+                  </Card.Text>
+                </Card.Body>
+                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/bloghome.jpg" />
+              </Card>
+            </Row>
+          </Container>
         </div>
-
+        <div className="page2_mobile_view" >
+          <Container>
+            <Col>
+              <Card id="tng_learn_coin_signup_card" onClick={() => window.location.href = "/TNGOriginals"} style={{ width: '100%', borderRadius: "12px", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)", marginTop: "15%", cursor: 'pointer' }}>
+                <Card.Body>
+                  <div style={{ display: "flex", flexDirection: "row" }}>
+                    <Col >
+                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/videohome.jpg" />
+                    </Col>
+                    <Col style={{ marginLeft: "-20%" }}>
+                      <Card.Title style={{ fontSize: "20px" }}>TNG ORIGINALS</Card.Title>
+                      <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
+                      Specially curated - they’re short, binge-able and based on real-life experiences.
+                      </Card.Text>
+                    </Col>
+                  </div>
+                </Card.Body>
+              </Card>
+              <Card id="tng_learn_coin_video_card" onClick={() => window.location.href = "/SocialLearning"} style={{ width: '100%', borderRadius: "12px", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgb(200, 150, 54,0.4)", marginTop: "10%", cursor: 'pointer' }}>
+                <Card.Body>
+                  <div style={{ display: "flex", flexDirection: "row" }}>
+                    <Col>
+                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/bloghome.jpg" />
+                    </Col>
+                    <Col style={{ marginLeft: "-20%" }}>
+                      <Card.Title style={{ fontSize: "20px" }}>BITE-SIZED VIDEOS</Card.Title>
+                      <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
+                      Acquire a skill in less than 10 minutes
+                      </Card.Text>
+                    </Col>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Container>
+        </div>
       </div>
       {/* <div style={{marginLeft: "11%",marginTop: "-1%", fontSize: "18px", color: "#fff"}} className="like-text1"><text style={{color:"#f26c4f"}}>*</text> Or redeem using <a  style={{color: "#f26c4f", textDecoration: "none"}}><i> TNG Learn Coins</i></a></div> */}
       <div className="laptop_view">

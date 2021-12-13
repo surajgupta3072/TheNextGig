@@ -15,7 +15,7 @@ function Page4() {
             <p class="btn">
               <span>
                 <span>
-                  <span className="border_box">EXPERIENTIAL LEARNING</span>
+                  <span className="border_box">OPPORTUNITIES</span>
                 </span>
               </span>
             </p>
@@ -97,7 +97,7 @@ function Page4() {
             <p class="btn">
               <span>
                 <span>
-                  <span className="border_box">EXPERIENTIAL LEARNING </span>
+                  <span className="border_box">OPPORTUNITIES</span>
                 </span>
               </span>
             </p>
@@ -176,13 +176,13 @@ function Page4() {
             <p class="btn">
               <span>
                 <span>
-                  <span className="border_box">TNG LEARN COINS</span>
+                  <span className="border_box">TNG MINUTES</span>
                 </span>
               </span>
             </p>
           </div>
           <div style={{ marginTop: "70px" }}>
-            <h4 className="page3_subtitle text3">Learn and share knowledge using our platform currency</h4>
+            <h4 className="page3_subtitle text3">To help you learn and share knowledge</h4>
           </div>
         </div>
 
@@ -195,7 +195,7 @@ function Page4() {
                   <Card.Body style={{ marginTop: "30px" }}>
                     <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >EARN</Card.Title>
                     <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                      Signup! Get 399 Coins <br /> Upload a video! Get 50 Coins
+                      Signup! Get 180 minutes of content free <br /> Upload a video! Get additional 10 minutes 
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -204,7 +204,7 @@ function Page4() {
                   <Card.Body style={{ marginTop: "30px" }}>
                     <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >ACCUMULATE</Card.Title>
                     <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                      Check your coin balance under <br /> <i>Profile</i> section
+                    Check your minutes balance in the <br /> <i>navigation bar</i> at the top
                     </Card.Text>
                   </Card.Body>
                   <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/accumulate.jpg" />
@@ -215,7 +215,7 @@ function Page4() {
                   <Card.Body style={{ marginTop: "30px" }}>
                     <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >REDEEM</Card.Title>
                     <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                      Use coins to unlock TNG Originals <br />( 1 TNG Coin = ₹ 1 )
+                     Redeem minutes to access TNG Originals and Bite-Sized Videos
                     </Card.Text>
                   </Card.Body >
                 </Card>
@@ -236,7 +236,7 @@ function Page4() {
                       <Col style={{ marginLeft: "-20%" }}>
                         <Card.Title style={{ fontSize: "20px" }}>EARN</Card.Title>
                         <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                          Signup! Get 399 Coins <br /> Upload a video! Get 50 Coins
+                        Signup! Get 180 minutes of content free <br /> Upload a video! Get additional 10 minutes 
                         </Card.Text>
                       </Col>
                     </div>
@@ -252,7 +252,7 @@ function Page4() {
                       <Col style={{ marginLeft: "-20%" }}>
                         <Card.Title style={{ fontSize: "20px" }}>ACCUMULATE</Card.Title>
                         <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                          Check your coin balance under <br /> <i>Profile</i> section
+                          Check your minutes balance in the <br /> <i>navigation bar</i> at the top
                         </Card.Text>
                       </Col>
                     </div>
@@ -268,7 +268,7 @@ function Page4() {
                       <Col style={{ marginLeft: "-20%" }}>
                         <Card.Title style={{ fontSize: "20px" }}>REDEEM</Card.Title>
                         <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                          Use coins to unlock TNG Originals <br />( 1 TNG Coin = ₹ 1 )
+                        Redeem minutes to access TNG Originals and Bite-Sized Videos
                         </Card.Text>
                       </Col>
                     </div>

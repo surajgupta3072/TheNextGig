@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 function SocialVideoPage(props) {
   const { id } = useParams();
-  const [rew, setRew] = useState(0);
+  const [rew, setRew] = useState("");
   const [videos, setvideos] = useState([]);
   const [user, setUser] = useState("");
   const [dplink, setDplink]=useState("/dpavtar.png");
@@ -81,97 +81,92 @@ function SocialVideoPage(props) {
   }
 
   function VideoStarted(vid, ct, vidDuration) {
-    if(ct<=0.1) {
-      var params = {
-        TableName: "UsersTable",
-        Key: { "UserID":props.auth.user.username },
-        ProjectionExpression: "SocialLearningVideosWatched",
-      };
-      docClient.get(params, function(err, data) {
-        if (err) {
-          console.log(err);
-        } 
-        else {
-          var flag=0;
-          for(var i=0; i<data.Item.SocialLearningVideosWatched.length; i++) {
-            if(data.Item.SocialLearningVideosWatched[i].vid===vid)
-              var flag=1;
-          }
-          if(flag===0) {
-            var params = {
-              TableName: "UsersTable",
-              Key: { "UserID":props.auth.user.username },
-              UpdateExpression: "set SocialLearningVideosWatched["+data.Item.SocialLearningVideosWatched.length.toString()+"] = :slvw",
-              ExpressionAttributeValues:{
-                ":slvw": {"timestamp": `${Date.now()}`, "vid": vid}
-              },
-              ReturnValues:"UPDATED_NEW"
+    if(rew>=vidDuration) {
+      if(ct<=0.1) {
+        var params = {
+          TableName: "UsersTable",
+          Key: { "UserID":props.auth.user.username },
+          ProjectionExpression: "SocialLearningVideosWatched",
+        };
+        docClient.get(params, function(err, data) {
+          if (err) {
+            console.log(err);
+          } 
+          else {
+            var flag=0;
+            for(var i=0; i<data.Item.SocialLearningVideosWatched.length; i++) {
+              if(data.Item.SocialLearningVideosWatched[i].vid===vid)
+                var flag=1;
             }
-            docClient.update(params, function (err, data) {
-              if (err) {
-                console.log(err);
+            if(flag===0) {
+              var params = {
+                TableName: "UsersTable",
+                Key: { "UserID":props.auth.user.username },
+                UpdateExpression: "set SocialLearningVideosWatched["+data.Item.SocialLearningVideosWatched.length.toString()+"] = :slvw",
+                ExpressionAttributeValues:{
+                  ":slvw": {"timestamp": `${Date.now()}`, "vid": vid}
+                },
+                ReturnValues:"UPDATED_NEW"
               }
-            });
-            var paramss = {
-              TableName: "VideosTable",
-              Key: { "VideoID":vid },
-              ProjectionExpression: "VideoViews",
-            };
-            docClient.get(paramss, function(err, data) {
-              if (err) {
-                console.log(err);
-              } 
-              else {
-                var params = {
-                  TableName: "VideosTable",
-                  Key: { "VideoID":vid },
-                  UpdateExpression: "set VideoViews = :slvv",
-                  ExpressionAttributeValues:{
-                    ":slvv": data.Item.VideoViews + 1
-                  },
-                  ReturnValues:"UPDATED_NEW"
+              docClient.update(params, function (err, data) {
+                if (err) {
+                  console.log(err);
                 }
-                docClient.update(params, function (err, data) {
-                  if (err) {
-                    console.log(err);
+              });
+              var paramss = {
+                TableName: "VideosTable",
+                Key: { "VideoID":vid },
+                ProjectionExpression: "VideoViews",
+              };
+              docClient.get(paramss, function(err, data) {
+                if (err) {
+                  console.log(err);
+                } 
+                else {
+                  var params = {
+                    TableName: "VideosTable",
+                    Key: { "VideoID":vid },
+                    UpdateExpression: "set VideoViews = :slvv",
+                    ExpressionAttributeValues:{
+                      ":slvv": data.Item.VideoViews + 1
+                    },
+                    ReturnValues:"UPDATED_NEW"
                   }
-                  else {
-                    var params = {
-                      TableName: "UsersTable",
-                      Key: { "UserID": props.auth.user.username  },
-                      ProjectionExpression: "TotalRewards",
-                    };
-                    docClient.get(params, function (err, data) {
-                      if (err) {
-                        console.log(err);
+                  docClient.update(params, function (err, data) {
+                    if (err) {
+                      console.log(err);
+                    }
+                    else {
+                      var params = {
+                        TableName: "UsersTable",
+                        Key: { "UserID": props.auth.user.username  },
+                        UpdateExpression: "set TotalRewards = :tr",
+                        ExpressionAttributeValues: {
+                          ":tr": rew-(Number(vidDuration.split(":")[0]))
+                        },
+                        ReturnValues: "UPDATED_NEW"
                       }
-                      else {
-                        var params = {
-                          TableName: "UsersTable",
-                          Key: { "UserID": props.auth.user.username  },
-                          UpdateExpression: "set TotalRewards = :tr",
-                          ExpressionAttributeValues: {
-                            ":tr": data.Item.TotalRewards-(Number(vidDuration.split(":")[0]))
-                          },
-                          ReturnValues: "UPDATED_NEW"
+                      docClient.update(params, function (err, data) {
+                        if (err) {
+                          console.log(err);
                         }
-                        docClient.update(params, function (err, data) {
-                          if (err) {
-                            console.log(err);
-                          }
-                          else {
-                            //TRANSACTIONS HISTORY CODE
-                          }
-                        });
-                      }
-                    });
-                  }
-                });
-              }
-            });
+                        else {
+                          //TRANSACTIONS HISTORY CODE
+                        }
+                      });
+                    }
+                  });
+                }
+              });
+            }
           }
-        }
-      });
+        });
+      }
+    }
+    else {
+      console.log("MINUTES NOT SUFFICIENT");
+      // setModalShow1(true);
+      window.location.href = "/SocialLearning";
     }
   }
 
@@ -182,7 +177,7 @@ function SocialVideoPage(props) {
       <Container>
         <Row>
             <Col xs={3} style={{backgroundColor:"#1B1C2A"}} className="SocialLearn_laptop">
-              <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src={dplink} style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG Learn Coins: <b>{rew}</b></p></span>:<br/>}</Col></Row>
+              <Row style={{marginTop:"3%",marginLeft:"0%"}}><Col><img alt="dp" src={dplink} style={{height:"100px",width:"110px",borderRadius:"50%"}}/></Col><Col>{user.attributes!==undefined ? <span><p style={{fontSize:"20px", textAlign:"center", marginTop:"0px"}}>{user.attributes.name}</p><p style={{fontSize:"14px", textAlign:"center",color:"#F26C4F"}}>TNG Minutes: <b>{rew}</b></p></span>:<br/>}</Col></Row>
                 <br/>
                 <div style={{fontSize:"14px",marginLeft:"7px"}}>In case you want some guidance on uploading "videos" :
                   <span>

@@ -29,6 +29,7 @@ function SocialLearningPage(props) {
   const [videoslist, setVideosList] = useState(false);
   const [filter, setfilter] = useState([]);
   const [data, setdata] = useState([]);
+  
   useEffect(() => {
     var paramss = {
       TableName: "VideosTable"
@@ -163,7 +164,7 @@ function SocialLearningPage(props) {
                 <div>
                   <label>
                     <input onChange={searchfilter} type="checkbox" name="checkbox" value="7" />
-                    <span>&nbsp;Soft Sills</span>
+                    <span>&nbsp;Soft Skills</span>
                   </label>
                 </div>
                 <br />
@@ -231,7 +232,7 @@ function SocialLearningPage(props) {
               <div>
                 <label>
                   <input onChange={searchfilter} type="checkbox" name="checkbox" value="7" />
-                  <span>&nbsp;Soft Sills</span>
+                  <span>&nbsp;Soft Skills</span>
                 </label>
               </div>
               <div>
@@ -324,7 +325,7 @@ function SocialLearningPage(props) {
                 </div>
                 } 
               </div> */}
-            {active === "Videos" && <Videos prop={allvideos} userid={user.username} redirlog={redirectlogin} filter={videoslist} />}
+            {active === "Videos" && <Videos auth={props.auth} prop={allvideos} userid={user.username} redirlog={redirectlogin} filter={videoslist} />}
             {/* {active === "Blogs" && <Blogs userid={user.username} redirlog={redirectlogin}/>}
                 {active === "Community" && <Community/>} */}
           </Col>

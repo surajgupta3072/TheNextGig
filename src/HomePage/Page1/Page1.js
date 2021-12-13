@@ -11,7 +11,7 @@ function Page1() {
   return (
     <Container className="Opening_container">
       <video className='videoTag' autoPlay playsInline loop muted width="100%" height="400vh">
-        <source src="https://socialvideoslearn.s3.ap-south-1.amazonaws.com/Social+Learning+Home+Page.mp4" type='video/mp4' />
+        <source src="./HomePageVideo.mp4" type='video/mp4' />
       </video>
       <div className="overlay_page1">
       <Row style={{height: "50vh"}}>

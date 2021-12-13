@@ -2,12 +2,30 @@ import docClient from '../GigsPage/GigsAWS';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import MyVerticallyCenteredModal from './ContactPopUp'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './SocialLearningPage.css'
 import { GiShare } from "react-icons/gi";
 
 function Videos(props) {
   const [modalShow, setModalShow] = useState(false);
+  const [reward, setReward] = useState("");
+    
+  useEffect(() => {
+    if(props.auth.isAuthenticated===true) {
+      var paramss = {
+        TableName: "UsersTable",
+        Key: { UserID: props.auth.user.username },
+        ProjectionExpression: "TotalRewards",
+      };
+      docClient.get(paramss, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          setReward(data.Item.TotalRewards);
+        }
+      });
+    }
+  }, []);
   // const [videoslist, setVideosList] = useState(false);
   /*   const [searchterm, setSearchTerm] = useState(""); */
   // const [filter,setfilter]=useState([]);
@@ -87,97 +105,92 @@ function Videos(props) {
   }
 
   function VideoStarted(vid, ct, vidDuration) {
-    if (ct <= 0.1) {
-      var params = {
-        TableName: "UsersTable",
-        Key: { "UserID": props.userid },
-        ProjectionExpression: "SocialLearningVideosWatched",
-      };
-      docClient.get(params, function (err, data) {
-        if (err) {
-          console.log(err);
-        }
-        else {
-          var flag = 0;
-          for(var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
-            if(data.Item.SocialLearningVideosWatched[i].vid === vid)
-              var flag = 1;
+    if(reward>=vidDuration) {
+      if (ct <= 0.1) {
+        var params = {
+          TableName: "UsersTable",
+          Key: { "UserID": props.userid },
+          ProjectionExpression: "SocialLearningVideosWatched",
+        };
+        docClient.get(params, function (err, data) {
+          if (err) {
+            console.log(err);
           }
-          if(flag === 0) {
-            var params = {
-              TableName: "UsersTable",
-              Key: { "UserID": props.userid },
-              UpdateExpression: "set SocialLearningVideosWatched[" + data.Item.SocialLearningVideosWatched.length.toString() + "] = :slvw",
-              ExpressionAttributeValues: {
-                ":slvw": { "timestamp": `${Date.now()}`, "vid": vid }
-              },
-              ReturnValues: "UPDATED_NEW"
+          else {
+            var flag = 0;
+            for(var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
+              if(data.Item.SocialLearningVideosWatched[i].vid === vid)
+                var flag = 1;
             }
-            docClient.update(params, function (err, data) {
-              if (err) {
-                console.log(err);
+            if(flag === 0) {
+              var params = {
+                TableName: "UsersTable",
+                Key: { "UserID": props.userid },
+                UpdateExpression: "set SocialLearningVideosWatched[" + data.Item.SocialLearningVideosWatched.length.toString() + "] = :slvw",
+                ExpressionAttributeValues: {
+                  ":slvw": { "timestamp": `${Date.now()}`, "vid": vid }
+                },
+                ReturnValues: "UPDATED_NEW"
               }
-            });
-            var paramss = {
-              TableName: "VideosTable",
-              Key: { "VideoID": vid },
-              ProjectionExpression: "VideoViews",
-            };
-            docClient.get(paramss, function (err, data) {
-              if (err) {
-                console.log(err);
-              }
-              else {
-                var params = {
-                  TableName: "VideosTable",
-                  Key: { "VideoID": vid },
-                  UpdateExpression: "set VideoViews = :slvv",
-                  ExpressionAttributeValues: {
-                    ":slvv": data.Item.VideoViews + 1
-                  },
-                  ReturnValues: "UPDATED_NEW"
+              docClient.update(params, function (err, data) {
+                if (err) {
+                  console.log(err);
                 }
-                docClient.update(params, function (err, data) {
-                  if (err) {
-                    console.log(err);
+              });
+              var paramss = {
+                TableName: "VideosTable",
+                Key: { "VideoID": vid },
+                ProjectionExpression: "VideoViews",
+              };
+              docClient.get(paramss, function (err, data) {
+                if (err) {
+                  console.log(err);
+                }
+                else {
+                  var params = {
+                    TableName: "VideosTable",
+                    Key: { "VideoID": vid },
+                    UpdateExpression: "set VideoViews = :slvv",
+                    ExpressionAttributeValues: {
+                      ":slvv": data.Item.VideoViews + 1
+                    },
+                    ReturnValues: "UPDATED_NEW"
                   }
-                  else {
-                    var params = {
-                      TableName: "UsersTable",
-                      Key: { "UserID": props.userid },
-                      ProjectionExpression: "TotalRewards",
-                    };
-                    docClient.get(params, function (err, data) {
-                      if (err) {
-                        console.log(err);
+                  docClient.update(params, function (err, data) {
+                    if (err) {
+                      console.log(err);
+                    }
+                    else {
+                      var params = {
+                        TableName: "UsersTable",
+                        Key: { "UserID": props.userid },
+                        UpdateExpression: "set TotalRewards = :tr",
+                        ExpressionAttributeValues: {
+                          ":tr": reward-(Number(vidDuration.split(":")[0]))
+                        },
+                        ReturnValues: "UPDATED_NEW"
                       }
-                      else {
-                        var params = {
-                          TableName: "UsersTable",
-                          Key: { "UserID": props.userid },
-                          UpdateExpression: "set TotalRewards = :tr",
-                          ExpressionAttributeValues: {
-                            ":tr": data.Item.TotalRewards-(Number(vidDuration.split(":")[0]))
-                          },
-                          ReturnValues: "UPDATED_NEW"
+                      docClient.update(params, function (err, data) {
+                        if (err) {
+                          console.log(err);
                         }
-                        docClient.update(params, function (err, data) {
-                          if (err) {
-                            console.log(err);
-                          }
-                          else {
-                            //TRANSACTIONS HISTORY CODE
-                          }
-                        });
-                      }
-                    });
-                  }
-                });
-              }
-            });
+                        else {
+                          //TRANSACTIONS HISTORY CODE
+                        }
+                      });
+                    }
+                  });
+                }
+              });
+            }
           }
-        }
-      });
+        });
+      }
+    }
+    else {
+      console.log("MINUTES NOT SUFFICIENT");
+      // setModalShow1(true);
+      window.location.href = "/SocialLearning";
     }
   }
 

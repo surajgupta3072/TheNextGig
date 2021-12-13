@@ -83,54 +83,42 @@ function HomeVideoPage(props) {
                     };
                     docClient.get(paramss, function (err, data) {
                         if (err) {
-                        console.log(err);
+                            console.log(err);
                         }
                         else {
-                        var params = {
-                            TableName: "VideosTable",
-                            Key: { "VideoID": vid },
-                            UpdateExpression: "set VideoViews = :slvv",
-                            ExpressionAttributeValues: {
-                            ":slvv": data.Item.VideoViews + 1
-                            },
-                            ReturnValues: "UPDATED_NEW"
-                        }
-                        docClient.update(params, function (err, data) {
-                            if (err) {
-                            console.log(err);
-                            }
-                            else {
                             var params = {
-                                TableName: "UsersTable",
-                                Key: { "UserID": props.auth.username },
-                                ProjectionExpression: "TotalRewards",
-                            };
-                            docClient.get(params, function (err, data) {
+                                TableName: "VideosTable",
+                                Key: { "VideoID": vid },
+                                UpdateExpression: "set VideoViews = :slvv",
+                                ExpressionAttributeValues: {
+                                ":slvv": data.Item.VideoViews + 1
+                                },
+                                ReturnValues: "UPDATED_NEW"
+                            }
+                            docClient.update(params, function (err, data) {
                                 if (err) {
-                                console.log(err);
+                                    console.log(err);
                                 }
                                 else {
-                                var params = {
-                                    TableName: "UsersTable",
-                                    Key: { "UserID": props.auth.username },
-                                    UpdateExpression: "set TotalRewards = :tr",
-                                    ExpressionAttributeValues: {
-                                    ":tr": data.Item.TotalRewards-(Number(vidDuration.split(":")[0]))
-                                    },
-                                    ReturnValues: "UPDATED_NEW"
-                                }
-                                docClient.update(params, function (err, data) {
-                                    if (err) {
-                                    console.log(err);
+                                    var params = {
+                                        TableName: "UsersTable",
+                                        Key: { "UserID": props.auth.username },
+                                        UpdateExpression: "set TotalRewards = :tr",
+                                        ExpressionAttributeValues: {
+                                        ":tr": reward-(Number(vidDuration.split(":")[0]))
+                                        },
+                                        ReturnValues: "UPDATED_NEW"
                                     }
-                                    else {
-                                    //TRANSACTIONS HISTORY CODE
-                                    }
-                                });
+                                    docClient.update(params, function (err, data) {
+                                        if (err) {
+                                        console.log(err);
+                                        }
+                                        else {
+                                        //TRANSACTIONS HISTORY CODE
+                                        }
+                                    });
                                 }
                             });
-                            }
-                        });
                         }
                     });
                     }

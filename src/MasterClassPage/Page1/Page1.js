@@ -122,12 +122,14 @@ function Page1() {
               <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
                 <div className="time_course">{carder.course_timing}</div>
                 <div className="episode_course">{carder.course_episode}{(carder.course_timing !== "...Coming Soon") ? ("") : (
-            <div style={{marginRight: "10px",display:"flex",justifyContent:"center"}}> <button style={{marginTop:"0px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
-            Keep me <br/> posted <ArrowLeft className="button_arrow_tngorig"/></button>
+            <div style={{marginRight: "10px",display:"flex",justifyContent:"center"}}> 
+            <button style={{marginTop:"0px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
+              Keep me <br/> posted <ArrowLeft className="button_arrow_tngorig"/>
+            </button>
             <MyVerticallyCenteredModal
               show={modalShow}
               onHide={() => setModalShow(false)}
-              TNGoriginalInput = {carder.course_instructor_post}
+              TNGoriginalInput = {carder.course_name}
             /></div>
           )} {(carder.course_timing !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
               </div>
@@ -177,7 +179,7 @@ function Page1() {
             <MyVerticallyCenteredModal
               show={modalShow}
               onHide={() => setModalShow(false)}
-              TNGoriginalInput = {carder.course_instructor_post}
+              TNGoriginalInput = {carder.course_name}
             /></div>
           )} {(carder.course_timing !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
                   </div>
