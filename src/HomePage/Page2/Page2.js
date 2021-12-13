@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Page2.css';
+import './../Page3/Page3.css';
 import MyVerticallyCenteredModal from './ModalPosted.js';
 import { ArrowRight } from "react-bootstrap-icons";
 

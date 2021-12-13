@@ -15,7 +15,7 @@ function ReferralPage(props) {
         } 
         else {
           var refstatus = false;
-          if(refcode=="TNGPARTNER") {
+          if(["IIMAPARTNER01", "XLRIPARTNER60", "IIMLPARTNER04", "MDIPARTNER02", "IIMKPARTNER90", "FMSPARTNER20", "IIFTPARTNER1", "IIMSPARTNER45", "IIMNPARTNER02", "MITPARTNER20", "MICAPARTNER01"].includes(refcode)) {
             var refstatus = true;
             var paramss = {
               TableName: "UsersTable",

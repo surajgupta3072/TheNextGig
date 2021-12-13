@@ -90,7 +90,7 @@ function NotALearnerModal(props){
             Email Id <text style={{ color: "#f26c4f" }}>*</text>
           </p>
           <input 
-             onChange={handleid}
+            onChange={handleid}
             value={data} style={{ width: "100%" }}></input>
           <p style={{ fontSize: "16px",marginTop:"10%" }}>
             Mobile Number <text style={{ color: "#f26c4f" }}>*</text>
