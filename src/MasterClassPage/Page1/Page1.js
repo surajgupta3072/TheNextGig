@@ -4,7 +4,7 @@ import Carousel from "react-elastic-carousel";
 import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import "./Page1.css";
 import { useState } from "react";
-import MyVerticallyCenteredModal from './Modal.js'
+import MyVerticallyCenteredModal from '../../HomePage/Page2/ModalPosted'
 import { ArrowLeft } from "react-bootstrap-icons";
 
 const breakPoints = [
@@ -122,16 +122,16 @@ function Page1() {
               <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
                 <div className="time_course">{carder.course_timing}</div>
                 <div className="episode_course">{carder.course_episode}{(carder.course_timing !== "...Coming Soon") ? ("") : (
-            <div style={{marginRight: "10px",display:"flex",justifyContent:"center"}}> 
-            <button style={{marginTop:"0px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
-              Keep me <br/> posted <ArrowLeft className="button_arrow_tngorig"/>
-            </button>
-            <MyVerticallyCenteredModal
-              show={modalShow}
-              onHide={() => setModalShow(false)}
-              TNGoriginalInput = {carder.course_name}
-            /></div>
-          )} {(carder.course_timing !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
+                  <div style={{ marginRight: "10px", display: "flex", justifyContent: "center" }}>
+                    <button style={{ marginTop: "0px" }} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
+                      Keep me <br /> posted <ArrowLeft className="button_arrow_tngorig" />
+                    </button>
+                    <MyVerticallyCenteredModal
+                      show={modalShow}
+                      onHide={() => setModalShow(false)}
+                      TNGoriginalInput={carder.course_name}
+                    /></div>
+                )} {(carder.course_timing !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
               </div>
             </MDBCardBody>
           </MDBCard>
@@ -141,7 +141,7 @@ function Page1() {
         <Carousel breakPoints={breakPoints}>
           {cardslist.map((carder, index) => (
             <MDBCard id={"tng_originals_page_card" + (index + 1)}
-            onClick={() => { if (carder.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + carder.id }}
+              onClick={() => { if (carder.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + carder.id }}
               className="mbd_card card_mastercard"
               style={{
                 cursor: "pointer",
@@ -174,14 +174,14 @@ function Page1() {
                   <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
                     <div style={{ color: "white" }} className="time_course">{carder.course_timing}</div>
                     <div style={{ color: "white" }} className="episode_course">{carder.course_episode}{(carder.course_timing !== "...Coming Soon") ? ("") : (
-            <div style={{marginRight: "10px",display:"flex",justifyContent:"center"}}> <button style={{marginTop:"0px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
-            Keep me <br/> posted <ArrowLeft className="button_arrow_tngorig"/></button>
-            <MyVerticallyCenteredModal
-              show={modalShow}
-              onHide={() => setModalShow(false)}
-              TNGoriginalInput = {carder.course_name}
-            /></div>
-          )} {(carder.course_timing !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
+                      <div style={{ marginRight: "10px", display: "flex", justifyContent: "center" }}> <button style={{ marginTop: "0px" }} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
+                        Keep me <br /> posted <ArrowLeft className="button_arrow_tngorig" /></button>
+                        <MyVerticallyCenteredModal
+                          show={modalShow}
+                          onHide={() => setModalShow(false)}
+                          TNGoriginalInput={carder.course_name}
+                        /></div>
+                    )} {(carder.course_timing !== "...Coming Soon") ? (<text style={{ color: "#f26c4f" }}></text>) : ("")}</div>
                   </div>
                 </div>
               </MDBCardBody>
