@@ -11,12 +11,12 @@ import 'font-awesome/css/font-awesome.min.css';
 
 const isLocalhost = Boolean(
   window.location.hostname === "localhost" ||
-    // [::1] is the IPv6 localhost address.
-    window.location.hostname === "[::1]" ||
-    // 127.0.0.1/8 is considered localhost for IPv4.
-    window.location.hostname.match(
-      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-    )
+  // [::1] is the IPv6 localhost address.
+  window.location.hostname === "[::1]" ||
+  // 127.0.0.1/8 is considered localhost for IPv4.
+  window.location.hostname.match(
+    /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+  )
 );
 
 // Assuming you have two redirect URIs, and the first is for localhost and second is for production
@@ -41,9 +41,9 @@ Amplify.configure({
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <h1 style={{textAlign:"center", marginTop:"15%"}}>We're Upgrading!</h1>
-    <h2 style={{textAlign:"center"}}>Hang in there, we'll be back super soon!</h2>
+    <App />
+    {/* <h1 style={{ textAlign: "center", marginTop: "15%" }}>We're Upgrading!</h1>
+    <h2 style={{ textAlign: "center" }}>Hang in there, we'll be back super soon!</h2> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -17,7 +17,7 @@ function Page2(props) {
   const [data_markstra, setdatamark] = useState([])
   const [data_other, setother] = useState([]);
   const [modalShow, setModalShow] = useState(false);
-  
+
   const settings = {
     dots: true,
     row: 1,
@@ -27,7 +27,15 @@ function Page2(props) {
     autoplay: true,
     autoplaySpeed: 4000
   };
-
+  const settings1 = {
+    dots: true,
+    row: 1,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 4000
+  };
   useEffect(() => {
     var paramss = {
       TableName: "VideosTable"
@@ -96,8 +104,8 @@ function Page2(props) {
   }, []);
 
   return (
-    <div style={{marginTop:"2%", marginLeft:"2%"}}>
-      <h4 style={{fontFamily:"Open Sans", fontWeight:"800"}}>Popular</h4>
+    <div style={{ marginTop: "2%", marginLeft: "2%" }}>
+      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Popular</h4>
       <Slider {...settings}>
         {masterdata.map((ele) => {
           if (ele.id === 2 || ele.id === 5) {
@@ -114,13 +122,13 @@ function Page2(props) {
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name.substring(0, 25)}...</h6>)
                   )
                 }
-                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {ele.course_instructor}</p>
+                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {ele.course_instructor}</p>
                 {((ele.course_instructor_post.length) < 27) ?
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post}</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post}</p>)
                   ) :
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
                   )
                 }
               </div>
@@ -128,7 +136,7 @@ function Page2(props) {
           }
         })}
         {data_pop.map((vid, index) => {
-          return <div key={index} style={{ width: "260px" }} onClick={() => { if(props.auth){window.location.href = "/Video/" + vid.VideoID} else{window.location.href = "/login"} }}>
+          return <div key={index} style={{ width: "260px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img src={vid.VideoThumbnail} width="240px" />
             </figure>
@@ -141,22 +149,22 @@ function Page2(props) {
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic.substring(0, 30)}...</h6>)
                 )
               }
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {vid.VideoUsername}</p>
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {vid.VideoUsername}</p>
               {((vid.VideoCreds.length) < 27) ?
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds}</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds}</p>)
                 ) :
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
                 )
               }
             </div>
-            <br/>
+            <br />
           </div>
         })}
       </Slider>
-      <br/><br/>
-      <h4 style={{fontFamily:"Open Sans", fontWeight:"800"}}>Finance</h4>
+      <br /><br />
+      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Finance</h4>
       <Slider {...settings}>
         {masterdata.map((ele) => {
           if (ele.course_domain === "Finance") {
@@ -173,13 +181,13 @@ function Page2(props) {
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name.substring(0, 25)}...</h6>)
                   )
                 }
-                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {ele.course_instructor}</p>
+                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {ele.course_instructor}</p>
                 {((ele.course_instructor_post.length) < 27) ?
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post}</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post}</p>)
                   ) :
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
                   )
                 }
               </div>
@@ -187,9 +195,9 @@ function Page2(props) {
           }
         })}
         {data_finance.map((vid) => {
-          return <div style={{ width: "260px" }} onClick={() => { if(props.auth){window.location.href = "/Video/" + vid.VideoID} else{window.location.href = "/login"} }}>
+          return <div style={{ width: "260px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img src={vid.VideoThumbnail} width="240px"/>
+              <img src={vid.VideoThumbnail} width="240px" />
             </figure>
             <div style={{ marginLeft: "2%", width: "260px" }} >
               {(vid.VideoTopic.length < 30) ?
@@ -200,25 +208,25 @@ function Page2(props) {
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic.substring(0, 30)}...</h6>)
                 )
               }
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {vid.VideoUsername}</p>
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {vid.VideoUsername}</p>
               {((vid.VideoCreds.length) < 27) ?
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds}</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds}</p>)
                 ) :
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
                 )
               }
             </div>
-            <br/>
+            <br />
           </div>
         })}
       </Slider>
-      <br/><br/>
-      <h4 style={{fontFamily:"Open Sans", fontWeight:"800"}}>Product Management & Tech</h4>
+      <br /><br />
+      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Product Management & Tech</h4>
       <Slider {...settings}>
         {masterdata.map((ele) => {
-          if(ele.course_domain === "ProdMan") {
+          if (ele.course_domain === "ProdMan") {
             return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img width="240px" src={ele.course_image} />
@@ -232,13 +240,13 @@ function Page2(props) {
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name.substring(0, 25)}...</h6>)
                   )
                 }
-                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {ele.course_instructor}</p>
+                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {ele.course_instructor}</p>
                 {((ele.course_instructor_post.length) < 27) ?
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post}</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post}</p>)
                   ) :
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
                   )
                 }
               </div>
@@ -247,7 +255,7 @@ function Page2(props) {
           }
         })}
         {data_prod.map((vid) => {
-          return <div style={{ height: "300px", width: "200px" }} onClick={() => { if(props.auth){window.location.href = "/Video/" + vid.VideoID} else{window.location.href = "/login"} }}>
+          return <div style={{ height: "300px", width: "200px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} />
             </figure>
@@ -260,22 +268,22 @@ function Page2(props) {
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic.substring(0, 30)}...</h6>)
                 )
               }
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {vid.VideoUsername}</p>
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {vid.VideoUsername}</p>
               {((vid.VideoCreds.length) < 27) ?
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds}</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds}</p>)
                 ) :
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
                 )
               }
             </div>
-            <br/>
+            <br />
           </div>
         })}
       </Slider>
-      <br/><br/>
-      <h4 style={{fontFamily:"Open Sans", fontWeight:"800"}}>Marketing & Strategy</h4>
+      <br /><br />
+      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Marketing & Strategy</h4>
       <Slider {...settings}>
         {masterdata.map((ele) => {
           if (ele.course_domain === "Marketing" || ele.course_domain === "Strategy") {
@@ -292,13 +300,13 @@ function Page2(props) {
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name.substring(0, 25)}...</h6>)
                   )
                 }
-                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {ele.course_instructor}</p>
+                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {ele.course_instructor}</p>
                 {((ele.course_instructor_post.length) < 27) ?
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post}</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post}</p>)
                   ) :
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
                   )
                 }
               </div>
@@ -307,7 +315,7 @@ function Page2(props) {
           }
         })}
         {data_markstra.map((vid) => {
-          return <div style={{ height: "300px", width: "200px" }} onClick={() => { if(props.auth){window.location.href = "/Video/" + vid.VideoID} else{window.location.href = "/login"} }}>
+          return <div style={{ height: "300px", width: "200px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} />
             </figure>
@@ -320,13 +328,13 @@ function Page2(props) {
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic.substring(0, 30)}...</h6>)
                 )
               }
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {vid.VideoUsername}</p>
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {vid.VideoUsername}</p>
               {((vid.VideoCreds.length) < 27) ?
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds}</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds}</p>)
                 ) :
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
                 )
               }
             </div>
@@ -334,7 +342,7 @@ function Page2(props) {
 
         })}
         {data_consult.map((vid) => {
-          return <div style={{ height: "300px", width: "200px" }} onClick={() => { if(props.auth){window.location.href = "/Video/" + vid.VideoID} else{window.location.href = "/login"} }}>
+          return <div style={{ height: "300px", width: "200px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} />
             </figure>
@@ -347,25 +355,25 @@ function Page2(props) {
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic.substring(0, 30)}...</h6>)
                 )
               }
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {vid.VideoUsername}</p>
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {vid.VideoUsername}</p>
               {((vid.VideoCreds.length) < 27) ?
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds}</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds}</p>)
                 ) :
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
                 )
               }
             </div>
-            <br/>
+            <br />
           </div>
         })}
       </Slider>
-      <br/><br/>
-      <h4 style={{fontFamily:"Open Sans", fontWeight:"800"}}>Others</h4>
+      <br /><br />
+      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Others</h4>
       <Slider {...settings}>
         {data_other.map((vid) => {
-          return <div style={{ width: "260px" }} onClick={() => { if(props.auth){window.location.href = "/Video/" + vid.VideoID} else{window.location.href = "/login"} }}>
+          return <div style={{ width: "260px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} />
             </figure>
@@ -378,34 +386,34 @@ function Page2(props) {
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic.substring(0, 30)}...</h6>)
                 )
               }
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {vid.VideoUsername}</p>
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {vid.VideoUsername}</p>
               {((vid.VideoCreds.length) < 27) ?
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds}</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds}</p>)
                 ) :
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
                 )
               }
             </div>
-            <br/>
+            <br />
           </div>
         })}
       </Slider>
-      <br/><br/>
-      <h4 style={{fontFamily:"Open Sans", fontWeight:"800", display:"inline"}}>Upcoming</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <button style={{height:"40px"}} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
+      <br /><br />
+      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", display: "inline" }}>Upcoming</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button style={{ height: "40px" }} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
         Keep me posted
       </button>
-      <br/><br/>
+      <br /><br />
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
-      <Slider {...settings}>
+      <Slider {...settings1}>
         {masterdata.map((ele) => {
-          if (ele.course_domain === "Finance") {
-            return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }}>
+          if (ele.course_timing === "...Coming Soon") {
+            return <div style={{ width: "260px" }} >
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img width="240px" src={ele.course_image} />
               </figure>
@@ -418,23 +426,23 @@ function Page2(props) {
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name.substring(0, 25)}...</h6>)
                   )
                 }
-                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>by {ele.course_instructor}</p>
+                <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {ele.course_instructor}</p>
                 {((ele.course_instructor_post.length) < 27) ?
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post}</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post}</p>)
                   ) :
                   (
-                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color:"grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
                   )
                 }
               </div>
-              <br/>
+              <br />
             </div>
           }
         })}
       </Slider>
-      <br/><br/><br/>
-      <div style={{display:"flex", justifyContent:"space-between", width:"45%", marginLeft:"25%"}}>
+      <br /><br /><br />
+      <div style={{ display: "flex", justifyContent: "space-between", width: "45%", marginLeft: "25%" }}>
         <a href="/TNGOriginals"><button id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All TNG Originals<ArrowRight className="button_arrow" /></button></a>
         <a href="/SocialLearning"><button id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All bite-sized videos<ArrowRight className="button_arrow" /></button></a>
       </div>
