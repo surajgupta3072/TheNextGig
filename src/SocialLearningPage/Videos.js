@@ -166,7 +166,7 @@ function Videos(props) {
                         Key: { "UserID": props.userid },
                         UpdateExpression: "set TotalRewards = :tr",
                         ExpressionAttributeValues: {
-                          ":tr": reward-(Number(vidDuration.split(":")[0]))
+                          ":tr": reward-vidDuration
                         },
                         ReturnValues: "UPDATED_NEW"
                       }
@@ -209,7 +209,7 @@ function Videos(props) {
                 <video src={vid.VideoLink} className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}></video>
               </figure>
               :
-              <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, (Number(vid.VideoDuration.split(":")[0])))} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video>
             }
@@ -243,7 +243,7 @@ function Videos(props) {
                 </video>
               </figure> 
               :
-              <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, vid.VideoDuration)} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
+              <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, (Number(vid.VideoDuration.split(":")[0])))} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
                 <source src={vid.VideoLink} />
               </video>
             }
