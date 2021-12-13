@@ -8,6 +8,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 function Page4() {
   return (
     <div>
+      <br/><br/>
       <div className="page4_maindiv laptop_view">
         <div className="heading_box">
           <div>
@@ -168,7 +169,7 @@ function Page4() {
       </div>
 
       {/*TNG Learn Coins Page*/}
-
+      <br/><br/><br/>
       <div className="page5_maindiv" >
         <div className="heading_box" style={{ marginBottom: "6%" }}>
           <div>

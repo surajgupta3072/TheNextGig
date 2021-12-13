@@ -31,6 +31,7 @@ import RedirectPage from './RedirectPage';
 import "./App.css";
 import LearnCoins from "./LearnCoins/LearnCoins";
 import ReferralPage from "./AuthPage/ReferralPage";
+// import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 // import Comet from "../src/SocialLearningPage/Comet";
 
 function App() {
@@ -60,7 +61,7 @@ function App() {
           if(data.Item===undefined) {
             var paramss = {
               TableName: "UsersTable",
-              Item: {"UserID":decoded.sub, "FullName":decoded.name, "Email":decoded.email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards": 50, "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0]+String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag":true}
+              Item: {"UserID":decoded.sub, "FullName":decoded.name, "Email":decoded.email, "RewardP":0, "RewardE":0, "RewardW":0, "RewardS":0, "RewardC":0, "TotalRewards": 180, "MasterclassesPurchased":[], "gigsApplications":[], "SocialLearningVideosUploaded":[], "SocialLearningBlogsUploaded":[], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0]+String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag":true}
             }
             docClient.put(paramss, function (err, data) {
               if (err) {
@@ -124,6 +125,9 @@ function App() {
           <Header auth={authProps} />
           <Router>
             <Switch>
+              {/* <Route exact path="/Video/:vidId">
+                <HomeVideoPage auth={authProps} />
+              </Route> */}
               <Route exact path="/login">
                 <LoginPage auth={authProps} />
               </Route>
@@ -196,9 +200,9 @@ function App() {
               <Route exact path="/Redirecting">
                 <RedirectPage />
               </Route>
-              <Route exact path="/Referral">
+              <ProtectedRoute exact path="/Referral" auth={authProps}>
                 <ReferralPage auth={authProps.user}/>
-              </Route>
+              </ProtectedRoute>
               {/* <Route exact path="/SocialLearning/Community">
                 <Comet props={authProps}/>
               </Route>  */}

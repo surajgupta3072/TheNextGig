@@ -15,7 +15,7 @@ function ReferralPage(props) {
         } 
         else {
           var refstatus = false;
-          if(refcode=="IITKGPTNG") {
+          if(refcode=="TNGPARTNER") {
             var refstatus = true;
             var paramss = {
               TableName: "UsersTable",
@@ -131,13 +131,18 @@ function ReferralPage(props) {
 
   return(
     <div style={{marginTop:"10%",backgroundColor:"#020312", border: "1px solid #f26c4f"}} className="login_container">
+      <br/>
       <div style={{paddingRight:"7%",paddingLeft:"7%",paddingTop:"7%"}}>
         <p style={{fontSize:"18px"}}>Do you have a Referral code?<text style={{color:"#f26c4f"}}>*</text></p>
         <input value={refcode} onChange={e => setRefCode(e.target.value)} style={{width:"100%"}}></input>
         {showerr!==false && <p style={{color:"red", textAlign:"center"}}><br/>*{showerr}</p>}
       </div>
-      <button onClick={RefCodeSubmit} className="button_slide slide_right" style={{marginTop:"10%", marginLeft:"33%", marginBottom:"10%"}}>Submit<ArrowLeft className='button_arrow'/></button>
-      <button onClick={()=>window.location.href = localStorage.getItem("lastURL")} className="button_slide slide_right" style={{marginLeft:"35%", marginBottom:"10%"}}>No<ArrowLeft className='button_arrow'/></button>
+      <br/><br/>
+      <div style={{display:"flex", justifyContent:"space-around"}}>
+        <button onClick={()=>window.location.href = localStorage.getItem("lastURL")} className="button_slide slide_right" style={{width:"100px"}}>No<ArrowLeft className='button_arrow'/></button>
+        <button onClick={RefCodeSubmit} className="button_slide slide_right" style={{}}>Submit<ArrowLeft className='button_arrow'/></button>   
+      </div>
+      <br/><br/>
     </div>
   );
 }

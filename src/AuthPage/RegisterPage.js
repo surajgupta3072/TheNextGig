@@ -51,7 +51,7 @@ function RegisterPage(props) {
         var params = {
           TableName: "UsersTable",
           Item: {
-            "UserID": userLogin.username, "FullName": name, "Email": email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 50,
+            "UserID": userLogin.username, "FullName": name, "Email": email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 180,
             "MasterclassesPurchased": [], "gigsApplications": [], "SocialLearningVideosUploaded": [], "SocialLearningBlogsUploaded": [], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [],
             "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": email.split("@")[0] + String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "",
             "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": false

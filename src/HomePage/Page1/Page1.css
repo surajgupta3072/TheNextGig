@@ -1,8 +1,13 @@
-.homeimage {
-  background: url("./../../homepage4.png") no-repeat center;
-  background-size: 380px 550px;
-  max-width: 100%;
-  height: auto;
+.Opening_container { position:relative; }
+.Opening_container video {
+    position:relative;
+    z-index:0;
+}
+.overlay_page1 {
+    position:absolute;
+    top:7%;
+    left:0;
+    z-index:1;
 }
 .homepge_header {
   margin-top: 8%;
@@ -11,13 +16,14 @@
 /*Headings*/
 .heading {
   position: relative;
-  margin-top: 3%;
+  color: #f26c4f;
+  margin-top: 2%;
   margin-left: 45px;
-  font-size: 86px;
+  font-size: 36px;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  font-weight: 600;
+  font-weight: 800;
   box-shadow: 0px 4px 4px 0px #00000040 inset;
 }
 .subheading {
@@ -51,7 +57,7 @@
   width: max-content;
   white-space: nowrap;
   margin: 0;
-  line-height: 117%;
+  line-height: 210%;
 }
 
 div.heading > div {
@@ -142,10 +148,14 @@ div.heading > div:nth-child(4) > p {
 /*Media Query for Mobile version*/
 @media screen and (max-width: 768px) {
   .slide-down {
-    font-size: 50px;
+    font-size: 20px;
   }
+  .overlay_page1 {
+    position:absolute;
+    top:28%;
+}
   .Opening_container {
-    background: url("./../../homepage4.png") no-repeat center;
+    background: url("https://socialvideoslearn.s3.ap-south-1.amazonaws.com/Social+Learning+Home+Page.mp4") no-repeat center;
     background-size: 90% 700px;
   }
   .heading {
