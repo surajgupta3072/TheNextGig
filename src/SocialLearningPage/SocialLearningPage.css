@@ -272,10 +272,7 @@ label > input[type="checkbox"] + * {
   margin-top: 4%;
   margin-left: 45%;
 }
-.video_div {
-  height: 400px;
-  width: 300px;
-}
+
 .figurex.tag {
   position: relative;
 }
