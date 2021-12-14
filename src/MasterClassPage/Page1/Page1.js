@@ -5,7 +5,7 @@ import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import "./Page1.css";
 import { useState } from "react";
 import MyVerticallyCenteredModal from '../../HomePage/Page2/ModalPosted'
-import { ArrowLeft } from "react-bootstrap-icons";
+import { ArrowLeft, FilterRight } from "react-bootstrap-icons";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -17,31 +17,33 @@ const breakPoints = [
 function Page1() {
   const [modalShow, setModalShow] = useState(false);
   const [cardslist, setcardsList] = useState(master);
-  
+  const [filternumber, setfilternumber] = useState([])
   function searchfilter(e) {
-    var filternumber = [];
-    if (filternumber.indexOf(parseInt(e.target.value)) === -1) {
-      filternumber.push(parseInt(e.target.value))
+    var filterword = filternumber;
+    if (filterword.includes(e.target.value) === false) {
+      filterword.push(e.target.value)
     }
     else {
-      filternumber.splice(filternumber.indexOf(parseInt(e.target.value)), 1)
+      filterword.splice(filterword.indexOf(e.target.value), 1)
     }
-
     var videofilterlist = [];
-    if (filternumber.indexOf(0) !== -1 || filternumber.length === 0) {
+    if (filterword.indexOf("All") !== -1 || filterword.length === 0) {
       setcardsList(master)
     }
     else {
-      for (var i = 0; i < filternumber.length; i++) {
+      console.log(filterword)
+      for (var i = 0; i < filterword.length; i++) {
         for (var j = 0; j < master.length; j++) {
-          if (master[j].course_id === filternumber[i] && videofilterlist.includes(master[j]) === false) {
+          if (master[j].course_domain === filterword[i] && videofilterlist.includes(master[j]) === false) {
             videofilterlist.push(master[j]);
           }
         }
       }
       setcardsList(videofilterlist)
     }
+
   }
+
   return (
     <div>
       <div className="masterclass_top_image">
@@ -54,31 +56,31 @@ function Page1() {
           <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
             <div>
               <label>
-                <input onChange={searchfilter} type="checkbox" name="checkbox" value="0" />
+                <input onChange={searchfilter} type="checkbox" name="checkbox" value="All" />
                 <span>&nbsp;All</span>
               </label>
             </div>
             <div>
               <label>
-                <input onChange={searchfilter} type="checkbox" name="checkbox" value="1" />
+                <input onChange={searchfilter} type="checkbox" name="checkbox" value="Finance" />
                 <span>&nbsp;Finance</span>
               </label>
             </div>
             <div>
               <label>
-                <input onChange={searchfilter} type="checkbox" name="checkbox" value="2" />
+                <input onChange={searchfilter} type="checkbox" name="checkbox" value="Strategy" />
                 <span>&nbsp;Strategy</span>
               </label>
             </div>
             <div>
               <label>
-                <input onChange={searchfilter} type="checkbox" name="checkbox" value="3" />
+                <input onChange={searchfilter} type="checkbox" name="checkbox" value="Marketing" />
                 <span>&nbsp;Marketing</span>
               </label>
             </div>
             <div>
               <label>
-                <input onChange={searchfilter} type="checkbox" name="checkbox" value="4" />
+                <input onChange={searchfilter} type="checkbox" name="checkbox" value="ProdMan" />
                 <span>&nbsp;Product Management</span>
               </label>
             </div>

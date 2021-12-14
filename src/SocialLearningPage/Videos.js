@@ -221,9 +221,7 @@ function Videos(props) {
                 <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
               </figure>
               :
-              <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, (Number(vid.VideoDuration.split(":")[0])))} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink} />
-              </video>
+              <img onClick={() => window.location.href = "../Video/" + vid.VideoID} className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
             <div style={{ marginLeft: "2%" }}>
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
@@ -250,14 +248,10 @@ function Videos(props) {
           <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
               <figure className="tag figurex" data-content={vid.VideoDuration}>
-                <video className="vid" controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                  <source src={vid.VideoLink} />
-                </video>
+                <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
               </figure>
               :
-              <video className="video_social_learn" onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, (Number(vid.VideoDuration.split(":")[0])))} onEnded={() => VideoEnded(vid.VideoHashtags)} id={vid.VideoID} controls controlsList="nodownload" onContextMenu={e => e.preventDefault()}>
-                <source src={vid.VideoLink} />
-              </video>
+              <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
             <div style={{ marginLeft: "2%" }}>
               <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
@@ -280,8 +274,9 @@ function Videos(props) {
             </div>
             <br />
           </div>
-        )}
-      </div>
+        )
+        }
+      </div >
     </div >
   );
 }
