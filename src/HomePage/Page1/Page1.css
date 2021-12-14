@@ -113,7 +113,7 @@ div.heading > div:nth-child(4) > p {
 
 @keyframes slide-down {
   0% {
-    transform: translateY(-100px);
+    transform: translateY(-50px);
   }
 
   100% {
@@ -128,7 +128,7 @@ div.heading > div:nth-child(4) > p {
 }
 
 .subheading {
-  opacity: 0;
+  /* opacity: 0; */
   -moz-animation: cssAnimation 2s;
   /* Firefox */
   -webkit-animation: cssAnimation 2s;
