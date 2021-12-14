@@ -9,6 +9,20 @@
 .figure_tag_gigs::before {
   top: 7% !important;
 }
+.figure.tag {
+  position: relative;
+}
+.figure::before {
+  position: absolute;
+  top: 0%;
+  display: block;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  background: #f26c4f;
+  opacity: 0.8;
+  content: attr(data-content);
+}
 @media screen and (max-width: 768px) {
   .brtag_page1_gigs {
     display: none;

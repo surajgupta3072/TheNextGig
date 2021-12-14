@@ -115,11 +115,11 @@ function Page2(props) {
       <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele) => {
           if (ele.id === 2 || ele.id === 5) {
-            return <div style={{ height: "300px", width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }}>
-              <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} />
+            return <div style={{ height: "300px", width: "260px", cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }}>
+              <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
+                <img width="240px" src={ele.course_image} style={{cursor: "pointer"}}/>
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px" }}>
+              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name}</h6>)
@@ -142,11 +142,11 @@ function Page2(props) {
           }
         })}
         {data_pop.map((vid, index) => {
-          return <div key={index} style={{ width: "260px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
-            <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img src={vid.VideoThumbnail} width="240px" />
+          return <div key={index} style={{ width: "260px", cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
+            <figure className="tag1 figurex1" data-content={vid.VideoDuration} >
+              <img src={vid.VideoThumbnail} width="240px" style={{cursor: "pointer"}}/>
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }} >
+            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }} >
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -176,9 +176,9 @@ function Page2(props) {
           if (ele.course_domain === "Finance") {
             return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} />
+                <img width="240px" src={ele.course_image}  style={{cursor: "pointer"}}/>
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px" }}>
+              <div style={{ marginLeft: "2%", width: "260px" }} style={{cursor: "pointer"}}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name}</h6>)
@@ -203,9 +203,9 @@ function Page2(props) {
         {data_finance.map((vid) => {
           return <div style={{ width: "260px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img src={vid.VideoThumbnail} width="240px" />
+              <img src={vid.VideoThumbnail} width="240px"  style={{cursor: "pointer"}}/>
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }} >
+            <div style={{ marginLeft: "2%", width: "260px" }}  style={{cursor: "pointer"}}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -235,9 +235,9 @@ function Page2(props) {
           if (ele.course_domain === "ProdMan") {
             return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} />
+                <img width="240px" src={ele.course_image}  style={{cursor: "pointer"}}/>
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px" }}>
+              <div style={{ marginLeft: "2%", width: "260px" }} style={{cursor: "pointer"}}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name}</h6>)
@@ -263,9 +263,9 @@ function Page2(props) {
         {data_prod.map((vid) => {
           return <div style={{ height: "300px", width: "200px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} />
+              <img width="240px" src={vid.VideoThumbnail} style={{cursor: "pointer"}} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }}>
+            <div style={{ marginLeft: "2%", width: "260px" }} style={{cursor: "pointer"}}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -295,9 +295,9 @@ function Page2(props) {
           if (ele.course_domain === "Marketing" || ele.course_domain === "Strategy") {
             return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} />
+                <img width="240px" src={ele.course_image}  style={{cursor: "pointer"}}/>
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px" }}>
+              <div style={{ marginLeft: "2%", width: "260px" }} style={{cursor: "pointer"}}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name}</h6>)
@@ -323,9 +323,9 @@ function Page2(props) {
         {data_markstra.map((vid) => {
           return <div style={{ height: "300px", width: "200px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} />
+              <img width="240px" src={vid.VideoThumbnail}  style={{cursor: "pointer"}}/>
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }}>
+            <div style={{ marginLeft: "2%", width: "260px" }} style={{cursor: "pointer"}}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -350,9 +350,9 @@ function Page2(props) {
         {data_consult.map((vid) => {
           return <div style={{ height: "300px", width: "200px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} />
+              <img width="240px" src={vid.VideoThumbnail}  style={{cursor: "pointer"}}/>
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }}>
+            <div style={{ marginLeft: "2%", width: "260px" }} style={{cursor: "pointer"}}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -381,9 +381,9 @@ function Page2(props) {
         {data_other.map((vid) => {
           return <div style={{ width: "260px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} />
+              <img width="240px" src={vid.VideoThumbnail} style={{cursor: "pointer"}} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }}>
+            <div style={{ marginLeft: "2%", width: "260px" }} style={{cursor: "pointer"}}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -421,9 +421,9 @@ function Page2(props) {
           if (ele.course_timing === "...Coming Soon") {
             return <div style={{ width: "260px" }} >
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} />
+                <img width="240px" src={ele.course_image}  style={{cursor: "pointer"}}/>
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px" }}>
+              <div style={{ marginLeft: "2%", width: "260px" }} style={{cursor: "pointer"}}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name}</h6>)

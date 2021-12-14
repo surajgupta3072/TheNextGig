@@ -155,6 +155,9 @@ function Page1(props) {
                     src={carder.GigImage}
                     alt="..."
                   />
+                  <figure data-content={props.course_domain} className="figure tag">
+                    <img src={props.card}  className=" card-image" />
+                  </figure>
                 </div>
               </figure>
               <MDBCardBody>
