@@ -105,7 +105,7 @@ function HomeVideoPage(props) {
                                                 Key: { "UserID": props.auth.username },
                                                 UpdateExpression: "set TotalRewards = :tr",
                                                 ExpressionAttributeValues: {
-                                                    ":tr": reward-vidDuration
+                                                    ":tr": reward - vidDuration
                                                 },
                                                 ReturnValues: "UPDATED_NEW"
                                             }
@@ -166,8 +166,8 @@ function HomeVideoPage(props) {
         <div style={{ display: "flex", justifyContent: "center" }}>
             {videos.map((vid, index) =>
                 <div style={{ height: "80vh" }}>
-                    <video controlsList="nodownload" onContextMenu={e => e.preventDefault()} onEnded={() => VideoEnded(vid.VideoHashtags)} onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, (Number(vid.VideoDuration.split(":")[0])))} controls key={index} style={{ height: "100%", width: "70vw" }}>
-                        <source src={vid.VideoLink}/>
+                    <video controlsList="nodownload" onContextMenu={e => e.preventDefault()} onEnded={() => VideoEnded(vid.VideoHashtags)} onPlay={(e) => VideoStarted(vid.VideoID, e.target.currentTime, (Number(vid.VideoDuration.split(":")[0])))} controls key={index} style={{ height: "100%", width: "fit-content" }}>
+                        <source src={vid.VideoLink} />
                     </video>
                     <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                         <div>
