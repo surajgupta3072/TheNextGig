@@ -11,8 +11,12 @@
   left: 0;
   z-index: 1;
 }
-video {
+.videoTag,
+.videoTag1 {
   object-fit: cover !important;
+}
+video {
+  object-fit: contain !important;
   height: 500px !important;
 }
 .homepge_header {
