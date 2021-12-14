@@ -215,7 +215,7 @@ function Videos(props) {
       <br /><br /><br />
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
         {props.filter === false && props.prop.map((vid) =>
-          <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
+          <div style={{ cursor: "pointer" }} className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
               <figure className="tag figurex" data-content={vid.VideoDuration}>
                 <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
@@ -223,9 +223,24 @@ function Videos(props) {
               :
               <img onClick={() => window.location.href = "../Video/" + vid.VideoID} className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
-            <div style={{ marginLeft: "2%" }}>
-              <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
+            <div style={{ marginTop: "7%", marginLeft: "2%", width: "250px", cursor: "pointer" }} >
+              {(vid.VideoTopic.length < 30) ?
+                (
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
+                ) :
+                (
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic.substring(0, 30)}...</h6>)
+                )
+              }
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {vid.VideoUsername}</p>
+              {((vid.VideoCreds.length) < 27) ?
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds}</p>)
+                ) :
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                )
+              }
               <Row>
                 {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
                 <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft: "7px" }}>
@@ -245,7 +260,7 @@ function Videos(props) {
           </div>
         )}
         {props.filter !== false && props.filter.map((vid) =>
-          <div className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
+          <div style={{ cursor: "pointer" }} className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
               <figure className="tag figurex" data-content={vid.VideoDuration}>
                 <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
@@ -253,9 +268,24 @@ function Videos(props) {
               :
               <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
-            <div style={{ marginLeft: "2%" }}>
-              <h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{vid.VideoUsername} - {vid.VideoCreds}</p>
+            <div style={{ marginTop: "7%", marginLeft: "2%", width: "240px", cursor: "pointer" }} >
+              {(vid.VideoTopic.length < 30) ?
+                (
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
+                ) :
+                (
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic.substring(0, 30)}...</h6>)
+                )
+              }
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>by {vid.VideoUsername}</p>
+              {((vid.VideoCreds.length) < 27) ?
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds}</p>)
+                ) :
+                (
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "14px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                )
+              }
               {/* <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p> */}
               <Row>
                 {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
