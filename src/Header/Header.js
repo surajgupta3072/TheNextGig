@@ -42,7 +42,7 @@ function Header(props) {
     // function doRewardChange() {
     //     var params = {
     //         TableName: "UsersTable",
-    //         ProjectionExpression: "UserID"
+    //         ProjectionExpression: "UserID, TotalRewards"
     //     };
     //     docClient.scan(params, async function (err, data) {
     //         if (err) {
@@ -56,7 +56,7 @@ function Header(props) {
     //                     Key: { "UserID": data.Items[i].UserID },
     //                     UpdateExpression: "set TotalRewards = :tr",
     //                     ExpressionAttributeValues:{
-    //                     ":tr": 200,
+    //                     ":tr": Number(data.Items[i].TotalRewards) + 10,
     //                     },
     //                     ReturnValues:"UPDATED_NEW"
     //                 }
@@ -68,7 +68,7 @@ function Header(props) {
     //                         console.log(data);
     //                     }
     //                 });
-    //                 await new Promise(r => setTimeout(r, 1000));
+    //                 await new Promise(r => setTimeout(r, 500));
     //             }
     //         }
     //     });

@@ -46,6 +46,10 @@ function App() {
       await Auth.currentSession();
       setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
+      console.log(window.location.href.includes("/Video/"));
+      if(window.location.href.includes("/Video/")!=true) {
+        localStorage.setItem('LoginlastURL', window.location.href);
+      }
       if (user.username.includes("google")) {
         var decoded = jwt_decode(user.signInUserSession.idToken.jwtToken);
         let guser = {

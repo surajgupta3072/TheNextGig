@@ -104,7 +104,6 @@ function MyVerticallyPopUp(props) {
                             iconColor: "#F26C4F"
                           }).then(()=>window.location.href="/ExperientialLearning")
                         }
-                        // return response.json();
                       })
                       .catch((error) => {
                         console.error("Failed to send feedback. Error: ", error);

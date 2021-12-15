@@ -19,27 +19,29 @@ function MyVerticallyCenteredModal(props) {
     body,
   };
   const submit = (event) => {
-    fetch(endpoint, requestOptions)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error in fetch");
-        } 
-        else {
-          props.onHide();
-          Swal.fire({
-            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 4000,
-            background: "#020312",
-            color: "white",
-            iconColor: "#F26C4F",
-          });
-        }
-      })
-      .catch((error) => {
-        console.error("Failed to send userEmail. Error: ", error);
-      });
+    if(userEmail!="") {
+      fetch(endpoint, requestOptions)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Error in fetch");
+          } 
+          else {
+            props.onHide();
+            Swal.fire({
+              title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+              icon: "success",
+              showConfirmButton: false,
+              timer: 4000,
+              background: "#020312",
+              color: "white",
+              iconColor: "#F26C4F",
+            });
+          }
+        })
+        .catch((error) => {
+          console.error("Failed to send userEmail. Error: ", error);
+        });
+    }
   };
   const handleChange = (event) => {
     setUserEmail(event.target.value);

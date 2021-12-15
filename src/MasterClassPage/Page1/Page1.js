@@ -5,7 +5,7 @@ import { MDBCard, MDBCardBody, MDBCardImage } from "mdb-react-ui-kit";
 import "./Page1.css";
 import { useState } from "react";
 import MyVerticallyCenteredModal from '../../HomePage/Page2/ModalPosted'
-import { ArrowLeft, FilterRight } from "react-bootstrap-icons";
+import { ArrowLeft } from "react-bootstrap-icons";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },

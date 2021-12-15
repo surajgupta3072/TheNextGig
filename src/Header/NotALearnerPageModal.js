@@ -35,33 +35,34 @@ function NotALearnerModal(props){
     };
   const submit = (event) => {
     event.preventDefault();
-    fetch(endpoint, requestOptions)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error in fetch");
-        } 
-        else {
-          props.onHide();
-          setdata("");
-          setfield1("");
-          setfield2("");
-          setfield3("")
-          props.onHide();
-          Swal.fire({
-            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
-            icon: 'success',
-            showConfirmButton: false,
-            timer: 2000,
-            background: '#020312',
-            color: 'white',
-            iconColor: "#F26C4F"
-          }).then(props.onHide());
-        }
-        // return response.json();
-      })
-      .catch((error) => {
-        console.error("Failed to send feedback. Error: ", error);
-      });
+    if(data!="" && field1!="" && field2!="" && field3!="") {
+      fetch(endpoint, requestOptions)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Error in fetch");
+          } 
+          else {
+            props.onHide();
+            setdata("");
+            setfield1("");
+            setfield2("");
+            setfield3("")
+            props.onHide();
+            Swal.fire({
+              title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 2000,
+              background: '#020312',
+              color: 'white',
+              iconColor: "#F26C4F"
+            }).then(props.onHide());
+          }
+        })
+        .catch((error) => {
+          console.error("Failed to send feedback. Error: ", error);
+        });
+    }
   };
 
   return(

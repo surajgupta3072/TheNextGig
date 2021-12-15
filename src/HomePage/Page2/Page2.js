@@ -178,7 +178,7 @@ function Page2(props) {
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px" }} style={{ cursor: "pointer" }}>
+              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name}</h6>)
@@ -205,7 +205,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }} style={{ cursor: "pointer" }}>
+            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -237,7 +237,7 @@ function Page2(props) {
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px" }} style={{ cursor: "pointer" }}>
+              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name}</h6>)
@@ -265,7 +265,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }} style={{ cursor: "pointer" }}>
+            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -297,7 +297,7 @@ function Page2(props) {
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px" }} style={{ cursor: "pointer" }}>
+              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name}</h6>)
@@ -325,7 +325,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }} style={{ cursor: "pointer" }}>
+            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -352,7 +352,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }} style={{ cursor: "pointer" }}>
+            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -383,7 +383,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px" }} style={{ cursor: "pointer" }}>
+            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{vid.VideoTopic}</h6>)
@@ -423,7 +423,7 @@ function Page2(props) {
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px" }} style={{ cursor: "pointer" }}>
+              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{ele.course_name}</h6>)

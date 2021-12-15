@@ -162,9 +162,18 @@ function HomeVideoPage(props) {
         });
     }
 
+    function BackRedirectFunc() {
+        if(localStorage.getItem("LoginlastURL").includes("/SocialLearning")) {
+            window.location.href = "/SocialLearning";
+        }
+        else {
+            window.location.href = "/";
+        }
+    }
+
     return (
         <div>
-            <AiFillCloseCircle onClick={() => window.location.href = "../"} style={{ color: "rgb(242, 108, 79)", height: "30px", width: "30px", marginLeft: "85%", marginTop: "1%", marginBottom: "2%" }} />
+            <AiFillCloseCircle onClick={BackRedirectFunc} style={{ color: "rgb(242, 108, 79)", height: "30px", width: "30px", marginLeft: "85%", marginTop: "1%", marginBottom: "2%" }} />
             <div style={{ display: "flex", justifyContent: "center" }}>
                 {videos.map((vid, index) =>
                     <div style={{ height: "80vh" }}>
