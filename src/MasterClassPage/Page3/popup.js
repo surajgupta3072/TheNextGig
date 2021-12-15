@@ -10,7 +10,7 @@ function MyVerticallyPopUp(props) {
     const body = JSON.stringify({
       feedback: `Uid:${props.uid}`,
       user: props.email,
-      title: "Congratulations! You've purchased a TNG Original!",
+      title: "Reach Out For Minutes",
       feedback1: props.name,
       feedback2: props.cname,
     });
