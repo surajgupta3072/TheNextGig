@@ -78,7 +78,7 @@ function Page1(props) {
   }
 
   /* function buttonColor(word) {
-    if (word === "Gigs") {
+    if (word === "Gig") {
       setbuck(2);
       setColor1("white"); setextColor1("#f26c4f"); setColor2("#f26c4f"); setextColor2("white"); setColor3("white"); setextColor3("#f26c4f");
     }
@@ -86,7 +86,7 @@ function Page1(props) {
       setbuck(3);
       setColor1("white"); setextColor1("#f26c4f"); setColor2("white"); setextColor2("#f26c4f"); setColor3("#f26c4f"); setextColor3("white");
     }
-    if (word === "Jobs") {
+    if (word === "Job") {
       setbuck(1);
       setColor1("#f26c4f"); setextColor1("white"); setColor2("white"); setextColor2("#f26c4f"); setColor3("white"); setextColor3("#f26c4f");
     }
@@ -102,18 +102,18 @@ function Page1(props) {
         <br />
         {/* <Row>
           <Col xs={9} className="SocialLearn_laptop">
-            <button id="gigs_page_gigs_button" onClick={() => { buttonColor("Gigs") }} style={{ backgroundColor: color2, marginRight: "5%", color: textColor2, borderRadius: "40px", width: "120px", height: "30px", fontWeight: "bold", border: "0px" }}>Gigs</button>
+            <button id="gigs_page_gigs_button" onClick={() => { buttonColor("Gig") }} style={{ backgroundColor: color2, marginRight: "5%", color: textColor2, borderRadius: "40px", width: "120px", height: "30px", fontWeight: "bold", border: "0px" }}>Gig</button>
             <button id="gigs_page_internship_button" onClick={() => { buttonColor("Internships") }} style={{ marginRight: "5%", backgroundColor: color3, color: textColor3, borderRadius: "40px", width: "120px", height: "30px", fontWeight: "bold", border: "0px" }}>Internships</button>
-            <button id="gigs_page_jobs_button" onClick={() => { buttonColor("Jobs") }} style={{ backgroundColor: color1, color: textColor1, borderRadius: "40px", width: "120px", height: "30px", fontWeight: "bold", border: "0px" }}>Jobs</button>
+            <button id="gigs_page_jobs_button" onClick={() => { buttonColor("Job") }} style={{ backgroundColor: color1, color: textColor1, borderRadius: "40px", width: "120px", height: "30px", fontWeight: "bold", border: "0px" }}>Job</button>
           </Col>
         </Row> */}
       </Container>
       {/* <div className="SocialLearn_list_mobile">
         <div style={{ marginTop: "5%" }} >
           <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-            <div><button id="gigs_page_gigs_button" onClick={() => { buttonColor("Gigs") }} style={{ backgroundColor: color2, color: textColor2, borderRadius: "40px", width: "100px", height: "30px", fontWeight: "bold", border: "0px" }}>Gigs</button></div>
+            <div><button id="gigs_page_gigs_button" onClick={() => { buttonColor("Gig") }} style={{ backgroundColor: color2, color: textColor2, borderRadius: "40px", width: "100px", height: "30px", fontWeight: "bold", border: "0px" }}>Gig</button></div>
             <div><button id="gigs_page_internship_button" onClick={() => { buttonColor("Internships") }} style={{ backgroundColor: color3, color: textColor3, borderRadius: "40px", width: "100px", height: "30px", fontWeight: "bold", border: "0px" }}>Internships</button></div>
-            <div><button id="gigs_page_jobs_button" onClick={() => { buttonColor("Jobs") }} style={{ backgroundColor: color1, color: textColor1, borderRadius: "40px", width: "100px", height: "30px", fontWeight: "bold", border: "0px" }}>Jobs</button></div>
+            <div><button id="gigs_page_jobs_button" onClick={() => { buttonColor("Job") }} style={{ backgroundColor: color1, color: textColor1, borderRadius: "40px", width: "100px", height: "30px", fontWeight: "bold", border: "0px" }}>Job</button></div>
           </div>
         </div>
       </div> */}
@@ -122,10 +122,10 @@ function Page1(props) {
           {videoslist === false ? gigs.map((carder) => {
             var x;
             if (carder.Bucket === 1) {
-              x = "Jobs";
+              x = "Job";
             }
             else if (carder.Bucket === 2) {
-              x = "Gigs";
+              x = "Gig";
             }
             else {
               x = "Internship";
@@ -186,10 +186,10 @@ function Page1(props) {
           }) : videoslist.map((carder) => {
             var x;
             if (carder.Bucket === 1) {
-              x = "Jobs";
+              x = "Job";
             }
             else if (carder.Bucket === 2) {
-              x = "Gigs";
+              x = "Gig";
             }
             else {
               x = "Internship";
@@ -258,10 +258,10 @@ function Page1(props) {
           {videoslist === false ? gigs.map((carder) => {
             var x;
             if (carder.Bucket === 1) {
-              x = "Jobs";
+              x = "Job";
             }
             else if (carder.Bucket === 2) {
-              x = "Gigs";
+              x = "Gig";
             }
             else {
               x = "Internship";
@@ -312,10 +312,10 @@ function Page1(props) {
           }) : videoslist.map((carder) => {
             var x;
             if (carder.Bucket === 1) {
-              x = "Jobs";
+              x = "Job";
             }
             else if (carder.Bucket === 2) {
-              x = "Gigs";
+              x = "Gig";
             }
             else {
               x = "Internship";
