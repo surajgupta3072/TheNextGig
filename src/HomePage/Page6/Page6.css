@@ -10,12 +10,12 @@
 }
 @property --num1 {
   syntax: "<integer>";
-  initial-value: 3200;
+  initial-value: 6500;
   inherits: false;
 }
 @property --num2 {
   syntax: "<integer>";
-  initial-value: 172;
+  initial-value: 200;
   inherits: false;
 }
 @property --num3 {
@@ -25,7 +25,7 @@
 }
 @property --num4 {
   syntax: "<integer>";
-  initial-value: 30;
+  initial-value: 80;
   inherits: false;
 }
 .number1 {
@@ -61,7 +61,7 @@
     --num1: 0;
   }
   to {
-    --num1: 3200;
+    --num1: 6500;
   }
 }
 @keyframes counter1 {
@@ -69,7 +69,7 @@
     --num2: 0;
   }
   to {
-    --num2: 172;
+    --num2: 200;
   }
 }
 @keyframes counter2 {
@@ -85,7 +85,7 @@
     --num4: 0;
   }
   to {
-    --num4: 30;
+    --num4: 80;
   }
 }
 .numbers_page6_mobile,
