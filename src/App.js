@@ -33,7 +33,7 @@ import LearnCoins from "./LearnCoins/LearnCoins";
 import ReferralPage from "./AuthPage/ReferralPage";
 import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 // import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
-import Comet from "../src/SocialLearningPage/Comet";
+// import Comet from "../src/SocialLearningPage/Comet";
 
 function App() {
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
@@ -208,9 +208,9 @@ function App() {
               <ProtectedRoute exact path="/Referral" auth={authProps}>
                 <ReferralPage auth={authProps.user} />
               </ProtectedRoute>
-              <Route exact path="/SocialLearning/Community">
+              {/* <Route exact path="/SocialLearning/Community">
                 <Comet props={authProps} />
-              </Route>
+              </Route> */}
             </Switch>
           </Router>
         </div>
