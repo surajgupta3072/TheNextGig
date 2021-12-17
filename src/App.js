@@ -33,7 +33,7 @@ import LearnCoins from "./LearnCoins/LearnCoins";
 import ReferralPage from "./AuthPage/ReferralPage";
 import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 // import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
-// import Comet from "../src/SocialLearningPage/Comet";
+import Comet from "../src/SocialLearningPage/Comet";
 
 function App() {
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
@@ -47,7 +47,7 @@ function App() {
       setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
       console.log(window.location.href.includes("/Video/"));
-      if(window.location.href.includes("/Video/")!=true) {
+      if (window.location.href.includes("/Video/") != true) {
         localStorage.setItem('LoginlastURL', window.location.href);
       }
       if (user.username.includes("google")) {
@@ -200,7 +200,7 @@ function App() {
                 <TC />
               </Route>
               <Route exact path="/">
-                <HomePage auth={authProps.isAuthenticated}/>
+                <HomePage auth={authProps.isAuthenticated} />
               </Route>
               <Route exact path="/Redirecting">
                 <RedirectPage />
@@ -208,9 +208,9 @@ function App() {
               <ProtectedRoute exact path="/Referral" auth={authProps}>
                 <ReferralPage auth={authProps.user} />
               </ProtectedRoute>
-              {/* <Route exact path="/SocialLearning/Community">
-                <Comet props={authProps}/>
-              </Route>  */}
+              <Route exact path="/SocialLearning/Community">
+                <Comet props={authProps} />
+              </Route>
             </Switch>
           </Router>
         </div>
