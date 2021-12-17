@@ -12,6 +12,9 @@ function HomeVideoPage(props) {
     // const [modalShow1, setModalShow1] = useState(false);
 
     useEffect(() => {
+        if (props.auth === null) {
+            window.location.href = "../login"
+        }
         var paramss = {
             TableName: "VideosTable",
             KeyConditionExpression: "#Vid = :VideoID",
@@ -163,7 +166,7 @@ function HomeVideoPage(props) {
     }
 
     function BackRedirectFunc() {
-        if(localStorage.getItem("LoginlastURL").includes("/SocialLearning")) {
+        if (localStorage.getItem("LoginlastURL").includes("/SocialLearning")) {
             window.location.href = "/SocialLearning";
         }
         else {
