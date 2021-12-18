@@ -2,6 +2,7 @@ import './Page6.css';
 import { BsSlash } from 'react-icons/bs';
 
 function Page6() {
+
     return (
         <div className="page6_maindiv">
             <div className="image_page6">
