@@ -9,7 +9,7 @@ function HomeVideoPage(props) {
     const [videos, setvideos] = useState([]);
     const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("");
-    // const [modalShow1, setModalShow1] = useState(false);
+    // const [modalShow1, setModalShow1] = useState(false)
     useEffect(() => {
         if (props.auth === null) {
             window.location.href = "../login"
