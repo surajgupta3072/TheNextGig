@@ -63,5 +63,15 @@
   "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Kapil+Dhiman/PWC+logo.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Kapil+Dhiman/bmr+logo.png"],
   "ExpertDescription": "Passionate for strategic planning and creative solutions to complex business problems, Kapil has a knack for early stage startups and growth planning.Unwind - writer, music producer, rapper, poet, DJ, gamer and reader.",
   "ExpertLinkedIn": "https://www.linkedin.com/in/kapil-dhiman-5a68b0138/"
+},
+{
+  "ExpertId": 6,
+  "ExpertName": "Shreya Bajaj",
+  "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Shreya+Homepage+image.jpg",
+  "ExpertDesignation": "Product @ Invideo, Ex-Cisco, Verizon",
+  "ExpertCompany": "Cornell University, NTU",
+  "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Shreya+Bajaj/YIb_-XXCVD01593687874666-Logo+LinkedIn+InVideo-min.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Shreya+Bajaj/Cisco-Logo-min.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Shreya+Bajaj/1200px-Cornell_University_seal.svg-min.png"],
+  "ExpertDescription": "An engineer who tried banking, then opted for consulting, and finally ended up in tech product management.Now, she’s basically a curious problem-solver and tech-enthusiast who is passionate about building products that make the world a better, smaller, and more interesting place.",
+  "ExpertLinkedIn": "https://www.linkedin.com/in/shreya-bajaj/"
 }
 ]
