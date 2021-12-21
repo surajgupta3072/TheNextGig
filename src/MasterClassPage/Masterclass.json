@@ -625,22 +625,126 @@
     "gigs": []
   },
   {
-    "id": 96,
-    "course_name": "Product Management: Fundamentals \nThe Startup Edition",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Shreya+-+Newhomepage+thumbnail.jpg",
-    "course_domain": "ProdMan",
-    "course_id": 4,
+    "id": 6,
+    "course_name": "Product Management Fundamentals:/n The Startup Edition",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Shreya+Homepage+image.jpg",
     "course_instructor": "Shreya Bajaj",
     "course_instructor_post": "Product @ Invideo, Ex-Cisco, Verizon",
     "instructor_creds": "Cornell University, NTU",
-    "course_timing": "...Coming Soon",
-    "course_episode": "",
-    "course_episode_HomePage": "Coming Soon",
-    "course_description": "This has to be filled in properly once the session is completely recorded",
-    "WhatYouLearn": ["A", "B", "C", "D"],
-    "PreparesYouFor": ["A", "B", "C"],
-    "WhatsInForYou": ["A", "B", "C", "D", "E", "F"],
-    "fees": ""
+    "course_timing": "1hr 1min",
+    "course_domain":"ProdMan",
+    "course_episode": "14 episodes",
+    "course_description": "The most exciting role - that has not only survived the pandemic - but also taken the startup and tech world by storm - the Product Management role is exciting and scary from Day-1. Watch this session to get an inside view of what product management in startups is all about",
+    "course_role": "Product Management, Product",
+    "WhatYouLearn": [
+      "Product Management basics, meaning",
+      "The roles of a product manager",
+      "Must-have tools for PMs",
+      "Skills required to get into PM"
+    ],
+    "PreparesYouFor": [
+      "Product Roles",
+      "Product Management Roles",
+      "Strategy & Managerial roles"
+    ],
+    "WhatsInForYou": [
+      "Lifetime access to 'inside information' in the PM space",
+      "compressed into 1 hour of learning",
+      "Preference for experiential learning opportunities that we",
+      "source for you in this domain",
+      "A certificate of completion and a chance to get your",
+      "in-session case / project reviewed by the expert"
+    ],
+    "fees": "",
+    "ExpertId": 6,
+    "trailer_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Trailer.mp4",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "1. Introducing you to PM",
+        "description": "There is a new definition everytime you check the internet, so what does product management actually mean and how did it come into existence? Let's find out!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+1.mp4"
+      },
+      {
+        "id": 2,
+        "title": "2. Popular PM definitions and associations",
+        "description": "A Product manager is a Mini - CEO? Product management is the same as project/program management? Product management is an intersection of business, design and tech? So many popular beliefs, which one is true?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+2.mp4"
+      },
+      {
+        "id": 3,
+        "title": "3. The Product Team and PDLC",
+        "description": "User research, competitor research, design briefs, brainstorming, implementation are just some of the things a product manager needs to take care of. Let’s deep dive and find out what it is that a product manager actually does.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+3.mp4"
+      },
+      {
+        "id": 4,
+        "title": "4. Understanding current product",
+        "description": "Why is it so important for a product manager to know the product in depth? How much time should we invest in understanding the product? What are the ways through which we can learn about the product?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+4.mp4"
+      },
+      {
+        "id": 5,
+        "title": "5. User research",
+        "description": "Understanding user needs, user feedback. Deriving useful insights from user feedback and the importance of continuous user feedback. Everything to learn about user research in one episode.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+5.mp4"
+      },
+      {
+        "id": 6,
+        "title": "6. Market and competitor research",
+        "description": "What is market research? Importance of market research? Application of competitive research in prioritisation, benchmarking performance etc. Let’s find out.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+6.mp4"
+      },
+      {
+        "id": 7,
+        "title": "7. Designing and prototyping",
+        "description": "How does a product manager go about preparing a brief for the designers and the tools they use to create both low fidelity and high fidelity prototypes and designs.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+7.mp4"
+      },
+      {
+        "id": 8,
+        "title": "8. Down to execution",
+        "description": "How do we go about putting our designs to the test and transforming our imagination into reality? What is the role and importance of PRDs amidst all of this?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+8.mp4"
+      },
+      {
+        "id": 9,
+        "title": "9. Release strategy",
+        "description": "How do we release our product to the users? Direct release, Phase release, A/B test, which release is more appropriate for what kind of situations? How do we inform the users about our release?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+9.mp4"
+      },
+      {
+        "id": 10,
+        "title": "10. Product analytics and refining modifications",
+        "description": "How do we evaluate the performance of our product? What indices do we use? North star metric, customer journey metrics, net promoter score, what do these words even mean? You won’t ask any of these questions after watching this episode.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+10.mp4"
+      },
+      {
+        "id": 11,
+        "title": "11. Tools for a product manager",
+        "description": "Notion, FigJam, Balsamiq, Figma, Linear and Clevertap. Confused? These are just some of the tools which a product manager uses extensively! Let’s familiarise ourselves with these tools.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+11.mp4"
+      },
+      {
+        "id": 12,
+        "title": "12. What do organisations look for in PMs",
+        "description": "Ever wondered if you have what it takes to be a brilliant product manager? Let’s discuss the ingredients to get you the recipe of success.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+12.mp4"
+      },
+      {
+        "id": 13,
+        "title": "13. Case study - Do it yourself",
+        "description": "We have learnt every little detail and intricacy about the product management role, so put your knowledge to the test and help inVideo with a new feature release. Goodluck! PS: opportunities await :)",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+13.mp4"
+      },
+      {
+        "id": 14,
+        "title": "14. Conclusion & the way forward",
+        "description": "We have learnt how exciting and interesting the role of a product manager is, but is it sustainable? Let’s conclude by figuring out the direction in which product management as a role is headed.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Shreya/Shreya+-+Episode+14.mp4"
+      }
+    ],
+    "gigs":[]
   },
   {
     "id": 97,
