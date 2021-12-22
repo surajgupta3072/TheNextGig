@@ -2,7 +2,7 @@
   {
     "ExpertId": 1,
     "ExpertName": "Anil Nair",
-    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/AnilNair.jpeg",
+    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Anil%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "ExpertDesignation": "Board member, strategy advisor, mentor and investor",
     "ExpertCompany": "ThePrettyGeeky, Kalyan Jewellers, Goodwind Mototours",
     "ExpertCompaniesLogo": [
@@ -16,7 +16,7 @@
   {
     "ExpertId": 2,
     "ExpertName": "Kartikey Gupta",
-    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kartikey+Homepage.jpg",
+    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kartikey%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "ExpertDesignation": "Vice President - Kedaara Capital, Ex-BCG, IIM-A 2020 Gold Medalist",
     "ExpertCompany": "Kedaara Capital, BCG",
     "ExpertCompaniesLogo": [
@@ -31,7 +31,7 @@
   {
     "ExpertId": 5,
     "ExpertName": "Abhay Agrawal",
-    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhay+Homepage.jpg",
+    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhay%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "ExpertDesignation": "Investment Professional | Citi IB | Deloitte | IIM Ahmedabad | CA (AIR 48)",
     "ExpertCompany": "Private Office Investment Prof. | Citi IB | Deloitte",
     "ExpertCompaniesLogo": [
@@ -47,7 +47,7 @@
   {
     "ExpertId": 4,
     "ExpertName": "Abhijay Thacker",
-    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhijay+homepage.jpg",
+    "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhijay%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "ExpertDesignation": "Associate - Picus Capital | Ex-Citi | IIM-A | Copenhagen Business School",
     "ExpertCompany": "Picus Capital | Citi IB",
     "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Abhijay+Thacker/Picus+logo.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Abhay+Agrawal/Abhay+3.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Abhay+Agrawal/Abhay+4.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Abhijay+Thacker/CBS.png"],
@@ -57,7 +57,7 @@
 {
   "ExpertId": 3,
   "ExpertName": "Kapil Dhiman",
-  "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kapil+Homepage.jpg",
+  "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kapil%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
   "ExpertDesignation": "Chief of Staff - PwC India | 6+ years of experience as a CoS | Chartered Accountant",
   "ExpertCompany": "PwC India | BMR Advisors",
   "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Kapil+Dhiman/PWC+logo.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Kapil+Dhiman/bmr+logo.png"],
@@ -67,11 +67,21 @@
 {
   "ExpertId": 6,
   "ExpertName": "Shreya Bajaj",
-  "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Shreya+Homepage+image.jpg",
+  "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Shreya%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
   "ExpertDesignation": "Product @ Invideo, Ex-Cisco, Verizon",
   "ExpertCompany": "Cornell University, NTU",
   "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Shreya+Bajaj/YIb_-XXCVD01593687874666-Logo+LinkedIn+InVideo-min.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Shreya+Bajaj/Cisco-Logo-min.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Shreya+Bajaj/1200px-Cornell_University_seal.svg-min.png"],
   "ExpertDescription": "An engineer who tried banking, then opted for consulting, and finally ended up in tech product management.Now, she’s basically a curious problem-solver and tech-enthusiast who is passionate about building products that make the world a better, smaller, and more interesting place.",
   "ExpertLinkedIn": "https://www.linkedin.com/in/shreya-bajaj/"
+},
+{
+  "ExpertId": 8,
+  "ExpertName": "Naveen Changoiwala",
+  "ExpertPic": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Naveen%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
+  "ExpertDesignation": "Investment Professional | Miras | Ex-NIIF | Temasek| IIM Ahmedabad | CA",
+  "ExpertCompany": "Investment Professional | Miras | NIIF | Temasek",
+  "ExpertCompaniesLogo": ["https://experts-master.s3.ap-south-1.amazonaws.com/Naveen/miras.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Naveen/niif+logo.png", "https://experts-master.s3.ap-south-1.amazonaws.com/Naveen/tema+logo.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Abhay+Agrawal/Abhay+4.jpeg", "https://experts-master.s3.ap-south-1.amazonaws.com/Abhay+Agrawal/Abhay+5.jpeg"],
+  "ExpertDescription": "Naveen is currently working as an Investment Professional at Miras Management Ltd as part of team managing Public Equities, Private Debt and Real Estate investments. Before that, he worked as an Investment Professional at National Investment and Infrastructure Fund (India) for 15 months. He has also completed 2-months internship with Temasek (Singapore SWF, India office)Naveen is an MBA (PGP 2017-19) from IIM Ahmedabad where he secured Institute Rank 18 and was part of multiple clubs (finance, alumni and cultural fest).Prior to joining IIM Ahmedabad, he completed his Chartered Accountancy securing AIR 9 (CA-Final May’2016) and AIR 19 (CA-IPCC May’2013).",
+  "ExpertLinkedIn": "https://www.linkedin.com/in/naveenchangoiwala/"
 }
 ]

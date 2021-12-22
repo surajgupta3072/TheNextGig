@@ -634,6 +634,7 @@
     "course_timing": "1hr 1min",
     "course_domain":"ProdMan",
     "course_duration":60,
+    "course_episode_HomePage":"14 episodes",
     "course_episode": "14 episodes",
     "course_description": "The most exciting role - that has not only survived the pandemic - but also taken the startup and tech world by storm - the Product Management role is exciting and scary from Day-1. Watch this session to get an inside view of what product management in startups is all about",
     "course_role": "Product Management, Product",
@@ -766,22 +767,103 @@
     "fees": ""
   },
   {
-    "id": 98,
-    "course_name": "Limited Partners: Investing in \nprivate equity funds",
+    "id": 8,
+    "course_name": "Limited Partners: Investing in \n private equity funds",
     "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Naveen%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
-    "course_domain": "Finance",
-    "course_id": 1,
     "course_instructor": "Naveen Changoiwala",
-    "course_instructor_post": "IP - Miras, Ex-NIIF, Temasek",
+    "course_instructor_post": "Investment Prof. - Miras, Ex-NIIF & Temasek",
     "instructor_creds": "IIM Ahmedabad, Chartered Accountant",
-    "course_timing": "...Coming Soon",
-    "course_episode": "",
-    "course_episode_HomePage": "Coming Soon",
-    "course_description": "This has to be filled in properly once the session is completely recorded",
-    "WhatYouLearn": ["A", "B", "C", "D"],
-    "PreparesYouFor": ["A", "B", "C"],
-    "WhatsInForYou": ["A", "B", "C", "D", "E", "F"],
-    "fees": ""
+    "course_timing": "1hr 1min",
+    "course_domain":"Finance",
+    "course_episode_HomePage": "10 episodes",
+    "course_duration":61,
+    "course_episode": "10 episodes",
+    "course_description": "If you thought the buck ended at Private Equity and Venture Capital - think again. There are folks who are sitting at the top of the finance value chain - and they're called Limited Partners. Watch this series to find out who calls the shots and how investments take place at a global level",
+    "course_role": "Investing, Finance",
+    "WhatYouLearn": [
+      "LP investing basics, meaning",
+      "Evaluating Private Equity Funds",
+      "Investing across borders and asset classes",
+      "Skills required to be a Inv. Prof. at an LP"
+    ],
+    "PreparesYouFor": [
+      "Finance Roles",
+      "Investing and LP investing Roles"
+    ],
+    "WhatsInForYou": [
+      "Lifetime access to 'inside information' in the LP investing space",
+      "compressed into 1 hour of learning",
+      "Preference for experiential learning opportunities that we",
+      "source for you in this domain",
+      "A certificate of completion and a chance to get your",
+      "in-session case / project reviewed by the expert"
+    ],
+    "fees": "",
+    "ExpertId": 8,
+    "trailer_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___Naveen__Trailerpprenderfs_1640103343448.mp4",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "1. Introduction to LP investing",
+        "description": "Let’s dive headfirst into the world of LP investing. What are the different types of investors, where and how do they invest? Let’s fortify our basics",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___Naveen__1pprenderfs_1638682517176.mp4"
+      },
+      {
+        "id": 2,
+        "title": "2. Allocation of funds",
+        "description": "Billions of dollars at your disposal, hundreds of investment avenues, how do you choose?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___Naveen___2pprenderfs_1639289475217.mp4"
+      },
+      {
+        "id": 3,
+        "title": "3. Deep dive into LP investment terms",
+        "description": "We hear so many complicated terms batted around regularly, general partner, investment strategy, investment life cycle, investment timeline, what do these terms even mean? Let’s find out",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___Naveen__3pprenderfs_1639289416308.mp4"
+      },
+      {
+        "id": 4,
+        "title": "4. Evaluation of investment",
+        "description": "Ever wondered what sets the expert apart from the rest? Let’s step into the mind of an LP, how they evaluate investments and the parameters they use to find hidden gems.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___Naveen__4pprenderfs_1639289694715.mp4"
+      },
+      {
+        "id": 5,
+        "title": "5. What are co-investments",
+        "description": "Sounds pretty self explanatory but is it? What are co-investments, why do they take place and all the terms and intricacies associated with it",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___Naveen__5pprenderfs_1639289756008.mp4"
+      },
+      {
+        "id": 6,
+        "title": "6. Management of investments",
+        "description": "We learnt the ‘how’ of investing but what happens after we have made the investment? Do we just relax and wait for the returns to sprout? Well, I wish it were that easy.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___naveen__6pprenderfs_1639290321329.mp4"
+      },
+      {
+        "id": 7,
+        "title": "7. Exiting an LP investment",
+        "description": "Exiting an investment can be a tricky and tedious process with lots of questions to be answered. Can LPs sell interest free? Can LPs sell their stake to other LPs? Can LPs sell their stake in a secondary market? Let’s find out.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___naveen__7pprenderfs_1640103182459.mp4"
+      },
+      {
+        "id": 8,
+        "title": "8. Day in the life of an LP investment professional",
+        "description": "Take a peek behind the curtain, spend a day with an LP investment professional. Find out how they actually spend their time and if you have what it takes to make it as an investment professional in the LP industry.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___Naveen__8pprenderfs_1639290474795.mp4"
+      },
+      {
+        "id": 9,
+        "title": "9. Future of LP industry",
+        "description": "Industries which grew exponentially over the years get uprooted in the blink of an eye. Some industries are on a consistent upward trend, others are struggling. Amidst all this, where does the LP industry lie? What does the future have in store for them?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___Naveen__9pprenderfs_1639290651461.mp4"
+      },
+      {
+        "id": 10,
+        "title": "10. Case study",
+        "description": "Step into the shoes of a big global manager handling a private real estate fund. Can you make the right decisions and evaluate on the basis of the 5 key areas: Strategy, team, performance, benchmarking and investor profile.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals+-+Naveen/InVideo___Naveen__case_stpprenderfs_1640025085806.mp4"
+      }
+    ],
+    "gigs":[]
   },
   {
     "id": 99,

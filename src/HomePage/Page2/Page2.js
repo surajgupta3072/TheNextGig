@@ -12,7 +12,7 @@ import ReactTooltip from 'react-tooltip';
 
 function Page2(props) {
   const [show_no, setshowno] = useState(5);
-  const [show_no1, setshowno1] = useState(3);
+  const [show_no1, setshowno1] = useState(2);
   const [data_finance, setdatafinance] = useState([])
   const [data_pop, setdatapop] = useState([])
   const [data_prod, setdataprod] = useState([])
@@ -102,7 +102,7 @@ function Page2(props) {
     /* } */
     if (window.innerWidth <= 1324 && window.innerWidth >= 1000) {
       setshowno(2)
-      setshowno1(2)
+      setshowno1(1)
     }
     if (window.innerWidth <= 1000) {
       setshowno(1)
