@@ -2,7 +2,7 @@
   {
     "id": 1,
     "course_name": "The ultimate guide to marketing, \nbranding & customer understanding",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Anil+-+Newhomepage+thumbnail.jpg",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Anil%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_instructor": "Anil Nair",
     "course_domain": "Marketing",
     "course_id": 3,
@@ -139,7 +139,7 @@
   {
     "id": 2,
     "course_name": "Private Equity Investing:\nThe What and How!",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kartikey+-+Newhomepage+thumbnail.jpg",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kartikey%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_instructor": "Kartikey Gupta",
     "course_domain": "Finance",
     "course_id": 1,
@@ -234,7 +234,7 @@
   {
     "id": 3,
     "course_name": "The Practical Guide to \n‘Investment Banking’",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhay+-+Newhomepage+thumbnail.jpg",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhay%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_instructor": "Abhay Agrawal ",
     "course_domain": "Finance",
     "course_id": 1,
@@ -365,7 +365,7 @@
   {
     "id": 4,
     "course_name": "Investing through the Venture \nCapital Lens",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhijay+-+Newhomepage+thumbnail.jpg",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Abhijay%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_instructor": "Abhijay Thacker ",
     "course_instructor_post": "Associate - Picus Capital | Ex-Citi",
     "instructor_creds": "IIM-A, Copenhagen Business School, NMIMS",
@@ -502,7 +502,7 @@
   {
     "id": 5,
     "course_name": "Chief of Staff ~ Decoded \nThe MNC version",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kapil+-+Newhomepage+thumbnail.jpg",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Kapil%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_instructor": "Kapil Dhiman",
     "course_instructor_post": "Chief of Staff - PWC | Author",
     "instructor_creds": "CA | 6+ years of being a Chief of Staff",
@@ -627,7 +627,7 @@
   {
     "id": 6,
     "course_name": "Product Management Fundamentals:\n The Startup Edition",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Shreya+Homepage+image.jpg",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Shreya%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_instructor": "Shreya Bajaj",
     "course_instructor_post": "Product @ Invideo, Ex-Cisco, Verizon",
     "instructor_creds": "Cornell University, NTU",
@@ -750,7 +750,7 @@
   {
     "id": 97,
     "course_name": "Product Management in detail: \n New feature rollouts",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Arun+-+Newhomepage+thumbnail.jpg",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Arun%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_domain": "ProdMan",
     "course_id": 4,
     "course_instructor": "Arun Sreelalan Iyer",
@@ -768,7 +768,7 @@
   {
     "id": 98,
     "course_name": "Limited Partners: Investing in \nprivate equity funds",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Naveen+-+Newhomepage+thumbnail.jpg",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Naveen%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_domain": "Finance",
     "course_id": 1,
     "course_instructor": "Naveen Changoiwala",
@@ -786,7 +786,7 @@
   {
     "id": 99,
     "course_name": "Climate Finance: \nMaking finance sustainable",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Simmi+-+Newhomepage+thumbnail.jpg",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Simmi%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_instructor": "Simmi Sareen",
     "course_domain": "Finance",
     "course_timing": "...Coming Soon",
