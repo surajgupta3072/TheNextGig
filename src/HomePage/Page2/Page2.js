@@ -115,7 +115,7 @@ function Page2(props) {
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Popular</h4>
       <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele, i) => {
-          if (ele.id === 2 || ele.id === 5) {
+          if (ele.id === 2 || ele.id === 5 || ele.id===6) {
             return <div style={{ height: "300px", width: "260px", cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
                 <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
