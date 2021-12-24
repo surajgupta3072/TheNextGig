@@ -12,7 +12,7 @@ import ReactTooltip from 'react-tooltip';
 
 function Page2(props) {
   const [show_no, setshowno] = useState(5);
-  const [show_no1, setshowno1] = useState(3);
+  const [show_no1, setshowno1] = useState(2);
   const [data_finance, setdatafinance] = useState([])
   const [data_pop, setdatapop] = useState([])
   const [data_prod, setdataprod] = useState([])
@@ -102,7 +102,7 @@ function Page2(props) {
     /* } */
     if (window.innerWidth <= 1324 && window.innerWidth >= 1000) {
       setshowno(2)
-      setshowno1(2)
+      setshowno1(1)
     }
     if (window.innerWidth <= 1000) {
       setshowno(1)
@@ -115,7 +115,7 @@ function Page2(props) {
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Popular</h4>
       <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele, i) => {
-          if (ele.id === 2 || ele.id === 5) {
+          if (ele.id === 2 || ele.id === 5 || ele.id===6) {
             return <div style={{ height: "300px", width: "260px", cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
                 <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
