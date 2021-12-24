@@ -151,9 +151,9 @@ function Page2(props) {
                     (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
 
                   )
-                }/*<div>
+                }{/*<div>
                   <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
-                </div>*/
+                </div>*/}
               </div>
             </div>
           }
