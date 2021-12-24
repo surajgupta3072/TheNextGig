@@ -4,6 +4,15 @@
 .figurex1.tag1 {
   position: relative;
 }
+.textbox {
+  width: 40px;
+  background-color: transparent;
+  color: #f26c4f;
+  border: 0px;
+}
+.boxtextarea {
+  width: 100%;
+}
 .figurex1::before {
   position: absolute;
   bottom: 0%;

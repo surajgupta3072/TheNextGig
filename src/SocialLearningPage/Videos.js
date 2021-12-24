@@ -9,7 +9,9 @@ import { GiShare } from "react-icons/gi";
 function Videos(props) {
   const [modalShow, setModalShow] = useState(false);
   const [reward, setReward] = useState("");
-
+  const [videoid, setvideoid] = useState("");
+  const [videolink, setvideolink] = useState("");
+  const [videotopic, setvideotopic] = useState("");
   useEffect(() => {
     if (props.auth.isAuthenticated === true) {
       var paramss = {
@@ -244,21 +246,21 @@ function Videos(props) {
               <Row>
                 {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
                 <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft: "7px" }}>
-                  <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => setModalShow(true)}>
+                  <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => { setvideoid(vid.VideoID); setvideolink(vid.VideoLink); setvideotopic(vid.VideoTopic); setModalShow(true) }}>
                     Share <GiShare style={{ width: "15px", height: "15px" }} /></button>
-                  <MyVerticallyCenteredModal
-                    show={modalShow}
-                    VideoID={vid.VideoID}
-                    VideoLink={vid.VideoLink}
-                    VideoTopic={vid.VideoTopic}
-                    onHide={() => setModalShow(false)}
-                  />
                 </Col>
               </Row>
             </div>
             <br />
           </div>
         )}
+        <MyVerticallyCenteredModal
+          show={modalShow}
+          VideoID={videoid}
+          VideoLink={videolink}
+          VideoTopic={videotopic}
+          onHide={() => setModalShow(false)}
+        />
         {props.filter !== false && props.filter.map((vid) =>
           <div style={{ cursor: "pointer" }} className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
@@ -290,15 +292,9 @@ function Videos(props) {
               <Row>
                 {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
                 <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft: "7px" }}>
-                  <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => setModalShow(true)}>
+                  <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => { setvideoid(vid.VideoID); setvideolink(vid.VideoLink); setvideotopic(vid.VideoTopic); setModalShow(true) }}>
                     Share <GiShare style={{ width: "15px", height: "15px" }} />
                   </button>
-                  <MyVerticallyCenteredModal
-                    show={modalShow}
-                    VideoID={vid.VideoID}
-                    VideoLink={vid.VideoLink}
-                    onHide={() => setModalShow(false)}
-                  />
                 </Col>
               </Row>
             </div>

@@ -7,9 +7,10 @@ import "slick-carousel/slick/slick-theme.css";
 import './Page2.css';
 import './../Page3/Page3.css';
 import MyVerticallyCenteredModal from './ModalPosted.js';
+import Modalx from './Contactinstructorpopup';
 import { ArrowRight } from "react-bootstrap-icons";
 import ReactTooltip from 'react-tooltip';
-
+import { FcContacts } from "react-icons/fc"
 function Page2(props) {
   const [show_no, setshowno] = useState(5);
   const [show_no1, setshowno1] = useState(2);
@@ -20,7 +21,11 @@ function Page2(props) {
   const [data_markstra, setdatamark] = useState([])
   const [data_other, setother] = useState([]);
   const [modalShow, setModalShow] = useState(false);
-
+  var [j, setj] = useState(0);
+  var [k, setk] = useState(1);
+  const [modalShow2, setModalShow2] = useState({
+    data: "", check: false
+  });
   const settings = {
     dots: true,
     row: 1,
@@ -115,10 +120,10 @@ function Page2(props) {
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Popular</h4>
       <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele, i) => {
-          if (ele.id === 2 || ele.id === 5 || ele.id===6) {
-            return <div style={{ height: "300px", width: "260px", cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }}>
+          if (ele.id === 2 || ele.id === 5 || ele.id === 6) {
+            return <div style={{ height: "300px", width: "260px", cursor: "pointer" }} >
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
-                <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
+                <img onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
               <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
@@ -144,16 +149,20 @@ function Page2(props) {
                   ) :
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
+
                   )
-                }
+                }<div>
+                  <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
+                </div>
               </div>
             </div>
           }
-        })}
+        }
+        )}
         {data_pop.map((vid, index) => {
-          return <div key={index} style={{ width: "260px", cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
+          return <div key={index} style={{ width: "260px", cursor: "pointer" }} >
             <figure className="tag1 figurex1" data-content={vid.VideoDuration} >
-              <img src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
+              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
             </figure>
             <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }} >
               {(vid.VideoTopic.length < 26) ?
@@ -182,6 +191,9 @@ function Page2(props) {
                 )
               }
             </div>
+            {/* <div>
+              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+            </div> */}
             <br />
           </div>
         })}
@@ -191,9 +203,9 @@ function Page2(props) {
       <Slider {...settings}>
         {masterdata.map((ele) => {
           if (ele.course_domain === "Finance") {
-            return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }}>
+            return <div style={{ width: "260px" }} >
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
+                <img onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
               <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
@@ -218,13 +230,16 @@ function Page2(props) {
                   )
                 }
               </div>
+              {/* <div>
+                <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
+              </div> */}
             </div>
           }
         })}
         {data_finance.map((vid, index) => {
-          return <div style={{ width: "260px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
+          return <div style={{ width: "260px" }} >
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
+              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
             </figure>
             <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 27) ?
@@ -249,6 +264,9 @@ function Page2(props) {
                 )
               }
             </div>
+            {/* <div>
+              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+            </div> */}
             <br />
           </div>
         })}
@@ -258,9 +276,9 @@ function Page2(props) {
       <Slider {...settings}>
         {masterdata.map((ele) => {
           if (ele.course_domain === "ProdMan") {
-            return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }}>
+            return <div style={{ width: "260px" }}>
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
+                <img onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
               <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
@@ -285,14 +303,17 @@ function Page2(props) {
                   )
                 }
               </div>
+              {/* <div>
+                <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
+              </div> */}
             </div>
 
           }
         })}
         {data_prod.map((vid, index) => {
-          return <div style={{ height: "300px", width: "200px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
+          return <div style={{ height: "300px", width: "200px" }} >
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
+              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
             <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 26) ?
@@ -317,6 +338,9 @@ function Page2(props) {
                 )
               }
             </div>
+            {/* <div>
+              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+            </div> */}
             <br />
           </div>
         })}
@@ -353,14 +377,17 @@ function Page2(props) {
                   )
                 }
               </div>
+              {/* <div>
+                <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
+              </div> */}
             </div>
 
           }
         })}
         {data_markstra.map((vid, index) => {
-          return <div style={{ height: "300px", width: "200px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
+          return <div style={{ height: "300px", width: "200px" }} >
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
+              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
             <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
@@ -385,13 +412,16 @@ function Page2(props) {
                 )
               }
             </div>
+            {/* <div>
+              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+            </div> */}
           </div>
 
         })}
         {data_consult.map((vid, index) => {
-          return <div style={{ height: "300px", width: "200px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
+          return <div style={{ height: "300px", width: "200px" }}>
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
+              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
             <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
@@ -416,6 +446,9 @@ function Page2(props) {
                 )
               }
             </div>
+            {/* <div>
+              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+            </div> */}
             <br />
           </div>
         })}
@@ -424,9 +457,9 @@ function Page2(props) {
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Others</h4>
       <Slider {...settings}>
         {data_other.map((vid, index) => {
-          return <div style={{ width: "260px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
+          return <div style={{ width: "260px" }} >
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
+              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
             <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
@@ -451,6 +484,9 @@ function Page2(props) {
                 )
               }
             </div>
+            {/* <div>
+              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+            </div> */}
             <br />
           </div>
         })}
@@ -500,6 +536,11 @@ function Page2(props) {
           }
         })}
       </Slider>
+      < Modalx
+        data={modalShow2.data}
+        show={modalShow2.check}
+        onHide={() => { setModalShow2(false) }}
+      />
       <br /><br /><br />
       <div className="btn_div_homepage_new" style={{ display: "flex", justifyContent: "space-evenly" }}>
         <div><a href="/TNGOriginals"><button style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All TNG Originals<ArrowRight className="button_arrow" /></button></a></div>
