@@ -17,21 +17,21 @@ function Page1() {
             <div>
               <div className="heading">
                 <div>
-                  <p className="slide-down">
-                    <span className='large_orange_text' >SHARE</span>
-                    <span className='small_white_text' > knowledge!</span>
+                  <p className="">
+                    <span className='large_orange_text' >SHARE<span className='small_white_text' > knowledge!</span></span>
+                    
                   </p>
                 </div>
                 <div>
-                  <p className="slide-down">
-                    <span className='large_orange_text' >ACQUIRE</span>
-                    <span className='small_white_text' > skills!</span>
+                  <p className="">
+                    <span className='large_orange_text' >ACQUIRE<span className='small_white_text' > skills!</span></span>
+                    
                   </p>
                 </div>
                 <div>
-                  <p className="slide-down">
-                    <span className='large_orange_text' >GROW</span>
-                    <span className='small_white_text' >professionally!</span>
+                  <p className="">
+                    <span className='large_orange_text' >GROW<span className='small_white_text' >professionally!</span></span>
+                    
                   </p>
                 </div>
               </div>
