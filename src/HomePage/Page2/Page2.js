@@ -5,12 +5,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './Page2.css';
+import Swal from "sweetalert2";
 import './../Page3/Page3.css';
 import MyVerticallyCenteredModal from './ModalPosted.js';
 import Modalx from './Contactinstructorpopup';
 import { ArrowRight } from "react-bootstrap-icons";
 import ReactTooltip from 'react-tooltip';
 import { FcContacts } from "react-icons/fc"
+import { RiUserFollowLine } from "react-icons/ri"
 function Page2(props) {
   const [show_no, setshowno] = useState(5);
   const [show_no1, setshowno1] = useState(2);
@@ -114,7 +116,115 @@ function Page2(props) {
       setshowno1(1)
     }
   }, []);
-
+  const follow = (createrid) => {
+    if (!props.auth.isAuthenticated) {
+      window.location.href = "../login";
+    }
+    if (createrid === "") {
+      Swal.fire({
+        title:
+          "<h5 style='color:white'>" +
+          "Sorry you can't follow this person as this session is posted by admin!" +
+          "</h5>",
+        icon: "warning",
+        showConfirmButton: false,
+        timer: 3000,
+        background: "#020312",
+        color: "white",
+        iconColor: "#F26C4F",
+      })
+    }
+    else {
+      var params = {
+        TableName: "UsersTable",
+        Key: { UserID: createrid },
+        ProjectionExpression: "Follower",
+      };
+      docClient.get(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          if (!data.Item.Follower.includes(props.auth.user.username)) {
+            var params = {
+              TableName: "UsersTable",
+              Key: { UserID: createrid },
+              UpdateExpression:
+                "set Follower[" +
+                data.Item.Follower.length.toString() +
+                "] = :ms",
+              ExpressionAttributeValues: {
+                ":ms": { "id": props.auth.user.username, "date": Date.now() },
+              },
+              ReturnValues: "UPDATED_NEW",
+            };
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+              }
+            })
+          }
+        }
+      })
+      var paramss = {
+        TableName: "UsersTable",
+        Key: { UserID: props.auth.user.username },
+        ProjectionExpression: "Following",
+      };
+      docClient.get(paramss, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          if (!data.Item.Following.includes(createrid)) {
+            var params = {
+              TableName: "UsersTable",
+              Key: { UserID: props.auth.user.username },
+              UpdateExpression:
+                "set Following[" +
+                data.Item.Following.length.toString() +
+                "] = :ms",
+              ExpressionAttributeValues: {
+                ":ms": { "id": createrid, "date": Date.now() },
+              },
+              ReturnValues: "UPDATED_NEW",
+            };
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                Swal.fire({
+                  title:
+                    "<h5 style='color:white'>" +
+                    "Creator want to say to thank you for following him" +
+                    "</h5>",
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 3000,
+                  background: "#020312",
+                  color: "white",
+                  iconColor: "#F26C4F",
+                })
+              }
+            })
+          }
+          else {
+            Swal.fire({
+              title:
+                "<h5 style='color:white'>" +
+                "You already follow this person" +
+                "</h5>",
+              icon: "success",
+              showConfirmButton: false,
+              timer: 3000,
+              background: "#020312",
+              color: "white",
+              iconColor: "#F26C4F",
+            })
+          }
+        }
+      })
+    }
+  }
   return (
     <div style={{ marginTop: "2%", marginLeft: "2%" }}>
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Popular</h4>
@@ -125,7 +235,7 @@ function Page2(props) {
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
                 <img onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+              <div onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
@@ -151,9 +261,12 @@ function Page2(props) {
                     (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
 
                   )
-                }<div>
+                }{/* <div>
                   <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
-                </div>
+                </div> */}
+                {/* <div>
+                  <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)" }} />
+                </div> */}
               </div>
             </div>
           }
@@ -164,7 +277,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration} >
               <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }} >
+            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }} >
               {(vid.VideoTopic.length < 26) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
@@ -192,6 +305,9 @@ function Page2(props) {
               }
             </div>
             {/* <div>
+              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)" }} />
+            </div> */}
+            {/* <div>
               <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
             </div> */}
             <br />
@@ -207,7 +323,7 @@ function Page2(props) {
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+              <div onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{ele.course_name}</h8>)
@@ -241,7 +357,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 27) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
@@ -280,7 +396,7 @@ function Page2(props) {
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+              <div onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{ele.course_name}</h8>)
@@ -315,7 +431,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 26) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
@@ -389,7 +505,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
@@ -423,7 +539,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
@@ -461,7 +577,7 @@ function Page2(props) {
             <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
             </figure>
-            <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)

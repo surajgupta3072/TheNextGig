@@ -1,7 +1,8 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Page1.css';
-
+import { useEffect, useState } from 'react';
+import docClient from "../../GigsPage/GigsAWS";
 function Page1() {
   return (
     <div className='videoframe'>
@@ -19,19 +20,19 @@ function Page1() {
                 <div>
                   <p className="">
                     <span className='large_orange_text' >SHARE<span className='small_white_text' > knowledge!</span></span>
-                    
+
                   </p>
                 </div>
                 <div>
                   <p className="">
                     <span className='large_orange_text' >ACQUIRE<span className='small_white_text' > skills!</span></span>
-                    
+
                   </p>
                 </div>
                 <div>
                   <p className="">
                     <span className='large_orange_text' >GROW<span className='small_white_text' >professionally!</span></span>
-                    
+
                   </p>
                 </div>
               </div>

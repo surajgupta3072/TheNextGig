@@ -43,10 +43,9 @@ function MyVerticallyPopUp(props) {
     "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   // We use JSON.stringify here so the data can be sent as a string via HTTP
   function handleApply() {
-    var hash="";
-    for(var i=0;i<skillPos.length;i++)
-    {
-      hash=hash+"#"+skillPos[i]+"--";
+    var hash = "";
+    for (var i = 0; i < skillPos.length; i++) {
+      hash = hash + "#" + skillPos[i] + "--";
     }
     if (topic !== "" && creds !== "" && hash !== "" && vfile !== undefined) {
       if (vfile.size > 1073741824) {
@@ -72,10 +71,11 @@ function MyVerticallyPopUp(props) {
             VideoCreds: creds,
             VideoUsername: props.userid.attributes.name,
             VideoHashtags: hash,
-            VideoLink: "https://dty09xroi0av3.cloudfront.net"+"/"+vfile.name,
+            VideoLink: "https://dty09xroi0av3.cloudfront.net" + "/" + vfile.name,
             isApproved: false,
             VideoViews: 0,
-            VideoDomains: []
+            VideoDomains: [],
+            VideoUploaderID: props.userid.username
           };
           var paramss = {
             TableName: "VideosTable",
@@ -200,34 +200,34 @@ function MyVerticallyPopUp(props) {
             placeholder="Founder of TheNextGig"
           ></input>
           <p style={{ marginTop: "10%", fontSize: "18px" }}>
-          Skills that people will learn<text style={{ color: "#f26c4f" }}>*</text>
+            Skills that people will learn<text style={{ color: "#f26c4f" }}>*</text>
           </p>
           <Multiselect
-              emptyRecordMsg="Start Searching..."
-              onSearch={examfunc1}
-              onSelect={onSelect1}
-              onRemove={onRemove1}
-              selectedValues={skillPos}
-              selectionLimit={10}
-              options={skills1}
-              isObject={false}
-              placeholder="Select Skills"
-              style={{
-                chips: {
-                  background: "#f26c4f",
-                  fontSize: "17px",
-                  marginLeft: "5px",
-                },
-                searchBox: {
-                  border: "1px solid #f26c4f",
-                  "border-radius": "10px",
-                },
-                optionContainer: {
-                  border: "2px solid #f26c4f",
-                  background: "#1B1C2A",
-                },
-              }}
-            />
+            emptyRecordMsg="Start Searching..."
+            onSearch={examfunc1}
+            onSelect={onSelect1}
+            onRemove={onRemove1}
+            selectedValues={skillPos}
+            selectionLimit={10}
+            options={skills1}
+            isObject={false}
+            placeholder="Select Skills"
+            style={{
+              chips: {
+                background: "#f26c4f",
+                fontSize: "17px",
+                marginLeft: "5px",
+              },
+              searchBox: {
+                border: "1px solid #f26c4f",
+                "border-radius": "10px",
+              },
+              optionContainer: {
+                border: "2px solid #f26c4f",
+                background: "#1B1C2A",
+              },
+            }}
+          />
           <p style={{ marginTop: "10%", fontSize: "18px" }}>
             Upload Video <text style={{ color: "#f26c4f" }}>*</text>
             <text style={{ color: "#f26c4f", fontSize: "14px" }}>
