@@ -32,6 +32,7 @@ import "./App.css";
 import LearnCoins from "./LearnCoins/LearnCoins";
 import ReferralPage from "./AuthPage/ReferralPage";
 import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
+import Follow from "./Follow/Follow";
 // import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 // import Comet from "../src/SocialLearningPage/Comet";
 
@@ -148,6 +149,9 @@ function App() {
               <Route exact path="/register">
                 <RegisterPage auth={authProps} />
               </Route>
+              {/* <Route exact path="/follow">
+                <Follow auth={authProps} />
+              </Route> */}
               <Route exact path="/SocialLearning">
                 <SocialLearningPage auth={authProps} />
               </Route>
@@ -200,7 +204,7 @@ function App() {
                 <TC />
               </Route>
               <Route exact path="/">
-                <HomePage auth={authProps.isAuthenticated} />
+                <HomePage auth={authProps} />
               </Route>
               <Route exact path="/Redirecting">
                 <RedirectPage />
