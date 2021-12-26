@@ -11,7 +11,6 @@ import MyVerticallyCenteredModal from './ModalPosted.js';
 import Modalx from './Contactinstructorpopup';
 import { ArrowRight } from "react-bootstrap-icons";
 import ReactTooltip from 'react-tooltip';
-import { FcContacts } from "react-icons/fc"
 import { RiUserFollowLine } from "react-icons/ri"
 function Page2(props) {
   const [show_no, setshowno] = useState(5);
@@ -289,9 +288,9 @@ function Page2(props) {
                 {/* <div>
                   <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
                 </div> */}
-                {/*  <div>
-                  <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
-                </div> */}
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} >Connect</p>
+                </div>
               </div>
             </div>
           }
@@ -332,9 +331,9 @@ function Page2(props) {
             {/* <div>
               <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
             </div> */}
-            {/* <div>
-              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
-            </div> */}
+            <div>
+              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            </div>
             <br />
           </div>
         })}
@@ -374,9 +373,9 @@ function Page2(props) {
               {/* <div>
                 <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
               </div> */}
-              {/* <div>
-                <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
-              </div> */}
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} >&nbsp;Connect</p>
+              </div>
             </div>
           }
         })}
@@ -411,9 +410,9 @@ function Page2(props) {
             {/*  <div>
               <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
             </div> */}
-            {/* <div>
-              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
-            </div> */}
+            <div>
+              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            </div>
             <br />
           </div>
         })}
@@ -453,9 +452,9 @@ function Page2(props) {
               {/* <div>
                 <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
               </div> */}
-              {/* <div>
-                <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
-              </div> */}
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} >&nbsp;Connect</p>
+              </div>
             </div>
 
           }
@@ -491,9 +490,9 @@ function Page2(props) {
             {/* <div>
               <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
             </div> */}
-            {/* <div>
-              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
-            </div> */}
+            <div>
+              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            </div>
             <br />
           </div>
         })}
@@ -533,9 +532,9 @@ function Page2(props) {
               {/* <div>
                 <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
               </div> */}
-              {/* <div>
-                <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
-              </div> */}
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} >&nbsp;Connect</p>
+              </div>
             </div>
 
           }
@@ -571,9 +570,9 @@ function Page2(props) {
             {/* <div>
               <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
             </div> */}
-            {/* <div>
-              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
-            </div> */}
+            <div>
+              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            </div>
           </div>
 
         })}
@@ -608,9 +607,9 @@ function Page2(props) {
             {/* <div>
               <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
             </div> */}
-            {/* <div>
-              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
-            </div> */}
+            <div>
+              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            </div>
             <br />
           </div>
         })}
@@ -649,9 +648,9 @@ function Page2(props) {
             {/* <div>
               <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
             </div> */}
-            {/* <div>
-              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
-            </div> */}
+            <div>
+              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            </div>
             <br />
           </div>
         })}
