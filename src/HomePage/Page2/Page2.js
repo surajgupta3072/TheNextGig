@@ -255,11 +255,11 @@ function Page2(props) {
       <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele, i) => {
           if (ele.id === 2 || ele.id === 5 || ele.id === 6) {
-            return <div style={{ height: "300px", width: "260px", cursor: "pointer" }} >
-              <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
-                <img onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
+            return <div style={{ height: "300px", width: "260px" }} >
+              <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
+                <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+              <div width="240px" src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
@@ -285,11 +285,12 @@ function Page2(props) {
                     (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.course_instructor_post.substring(0, 27)}...</p>)
 
                   )
-                }{/* <div>
-                  <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
-                </div> */}
+                }
                 {/* <div>
-                  <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)" }} />
+                  <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
+                </div> */}
+                {/*  <div>
+                  <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
                 </div> */}
               </div>
             </div>
@@ -298,10 +299,10 @@ function Page2(props) {
         )}
         {data_pop.map((vid, index) => {
           return <div key={index} style={{ width: "260px", cursor: "pointer" }} >
-            <figure className="tag1 figurex1" data-content={vid.VideoDuration} >
-              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration} >
+              <img src={vid.VideoThumbnail} width="240px" />
             </figure>
-            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }} >
+            <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }} >
               {(vid.VideoTopic.length < 26) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
@@ -329,10 +330,10 @@ function Page2(props) {
               }
             </div>
             {/* <div>
-              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)" }} />
+              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
             </div> */}
             {/* <div>
-              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
             </div> */}
             <br />
           </div>
@@ -344,10 +345,10 @@ function Page2(props) {
         {masterdata.map((ele) => {
           if (ele.course_domain === "Finance") {
             return <div style={{ width: "260px" }} >
-              <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
+              <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
+                <img width="240px" src={ele.course_image} />
               </figure>
-              <div onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+              <div width="240px" src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{ele.course_name}</h8>)
@@ -371,17 +372,20 @@ function Page2(props) {
                 }
               </div>
               {/* <div>
-                <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
+                <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
+              </div> */}
+              {/* <div>
+                <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
               </div> */}
             </div>
           }
         })}
         {data_finance.map((vid, index) => {
           return <div style={{ width: "260px" }} >
-            <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+              <img src={vid.VideoThumbnail} width="240px" />
             </figure>
-            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 27) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
@@ -404,8 +408,11 @@ function Page2(props) {
                 )
               }
             </div>
+            {/*  <div>
+              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
+            </div> */}
             {/* <div>
-              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
             </div> */}
             <br />
           </div>
@@ -417,10 +424,10 @@ function Page2(props) {
         {masterdata.map((ele) => {
           if (ele.course_domain === "ProdMan") {
             return <div style={{ width: "260px" }}>
-              <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
+              <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
+                <img width="240px" src={ele.course_image} />
               </figure>
-              <div onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} width="240px" src={ele.course_image} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+              <div width="240px" src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{ele.course_name}</h8>)
@@ -444,7 +451,10 @@ function Page2(props) {
                 }
               </div>
               {/* <div>
-                <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
+                <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
+              </div> */}
+              {/* <div>
+                <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
               </div> */}
             </div>
 
@@ -452,10 +462,10 @@ function Page2(props) {
         })}
         {data_prod.map((vid, index) => {
           return <div style={{ height: "300px", width: "200px" }} >
-            <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+              <img width="240px" src={vid.VideoThumbnail} />
             </figure>
-            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 26) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
@@ -479,7 +489,10 @@ function Page2(props) {
               }
             </div>
             {/* <div>
-              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
+            </div> */}
+            {/* <div>
+              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
             </div> */}
             <br />
           </div>
@@ -490,9 +503,9 @@ function Page2(props) {
       <Slider {...settings}>
         {masterdata.map((ele) => {
           if (ele.course_domain === "Marketing" || ele.course_domain === "Strategy") {
-            return <div style={{ width: "260px" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }}>
-              <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
+            return <div style={{ width: "260px" }} >
+              <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
+                <img width="240px" src={ele.course_image} />
               </figure>
               <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
@@ -518,7 +531,10 @@ function Page2(props) {
                 }
               </div>
               {/* <div>
-                <FcContacts onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
+                <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
+              </div> */}
+              {/* <div>
+                <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} />
               </div> */}
             </div>
 
@@ -526,10 +542,10 @@ function Page2(props) {
         })}
         {data_markstra.map((vid, index) => {
           return <div style={{ height: "300px", width: "200px" }} >
-            <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+              <img width="240px" src={vid.VideoThumbnail} />
             </figure>
-            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
@@ -553,17 +569,20 @@ function Page2(props) {
               }
             </div>
             {/* <div>
-              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
+            </div> */}
+            {/* <div>
+              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
             </div> */}
           </div>
 
         })}
         {data_consult.map((vid, index) => {
           return <div style={{ height: "300px", width: "200px" }}>
-            <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+              <img width="240px" src={vid.VideoThumbnail} />
             </figure>
-            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
@@ -587,7 +606,10 @@ function Page2(props) {
               }
             </div>
             {/* <div>
-              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
+            </div> */}
+            {/* <div>
+              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
             </div> */}
             <br />
           </div>
@@ -598,10 +620,10 @@ function Page2(props) {
       <Slider {...settings}>
         {data_other.map((vid, index) => {
           return <div style={{ width: "260px" }} >
-            <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} />
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+              <img width="240px" src={vid.VideoThumbnail} />
             </figure>
-            <div onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} width="240px" src={vid.VideoThumbnail} style={{ cursor: "pointer" }} style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+            <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
@@ -625,7 +647,10 @@ function Page2(props) {
               }
             </div>
             {/* <div>
-              <FcContacts onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
+              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
+            </div> */}
+            {/* <div>
+              <FcContacts style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} />
             </div> */}
             <br />
           </div>
