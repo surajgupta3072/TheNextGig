@@ -144,7 +144,12 @@ function Page2(props) {
         if (err) {
           console.log(err);
         } else {
-          if (!data.Item.Follower.includes(props.auth.user.username)) {
+          var flag = 0;
+          data.Item.Follower.forEach(ele => {
+            if (ele.id === props.auth.user.username)
+              flag = 1
+          });
+          if (flag === 0) {
             var params = {
               TableName: "UsersTable",
               Key: { UserID: createrid },
@@ -175,7 +180,26 @@ function Page2(props) {
         if (err) {
           console.log(err);
         } else {
-          if (!data.Item.Following.includes(createrid)) {
+          var flag1 = 0;
+          data.Item.Following.forEach(ele => {
+            if (ele.id === createrid)
+              flag1 = 1
+          });
+          if (flag1 === 1) {
+            Swal.fire({
+              title:
+                "<h5 style='color:white'>" +
+                "You Already follow him" +
+                "</h5>",
+              icon: "success",
+              showConfirmButton: false,
+              timer: 3000,
+              background: "#020312",
+              color: "white",
+              iconColor: "#F26C4F",
+            })
+          }
+          if (flag1 === 0) {
             var params = {
               TableName: "UsersTable",
               Key: { UserID: props.auth.user.username },
