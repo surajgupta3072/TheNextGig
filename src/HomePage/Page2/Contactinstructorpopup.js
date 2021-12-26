@@ -9,22 +9,37 @@ function MyVerticallyCenteredModal(props) {
     const [modalShow, setModalShow] = useState(false);
     const [popupsharelinkid, setpopupsharelinkid] = useState("");
     const [userEmail, setUserEmail] = useState("");
-    const [date, setdate] = useState("");
-    const [min, setmin] = useState("");
-    const [month, setmonth] = useState("");
-    const [year, setyear] = useState("");
-    const [hour, sethour] = useState("");
-    const [event, setevent] = useState("");
+    const [question, setquestion] = useState("");
     const [session, setsession] = useState("");
+    const [questioncheck, setquestioncheck] = useState("")
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
     // We use JSON.stringify here so the data can be sent as a string via HTTP
     if (props.data !== undefined) {
+        var val, val1, val2;
+        if (props.data.VideoUsername === undefined) {
+            val1 = props.data.course_instructor;
+        }
+        else {
+            val1 = props.data.VideoUsername;
+        }
+        if (props.data.VideoTopic === undefined) {
+            val = props.data.course_name;
+        }
+        else {
+            val = props.data.VideoTopic;
+        }
+        if (session === "Ask a specific question") {
+            val2 = session;
+        }
+        else {
+            val2 = "Request for 30 mins 1-1 session"
+        }
         var body = JSON.stringify({
-            feedback: [date, month, year, hour, min],
+            feedback: question,
             title: "Contact",
-            feedback2: session,
+            feedback2: val2,
             user: userEmail,
-            feedback1: props.data.course_instructor
+            feedback1: [val, val1]
         });
     }
     const requestOptions = {
@@ -32,7 +47,7 @@ function MyVerticallyCenteredModal(props) {
         body,
     };
     const submit = (event) => {
-        if (userEmail !== "") {
+        if (userEmail !== "" && session !== "") {
             fetch(endpoint, requestOptions)
                 .then((response) => {
                     if (!response.ok) {
@@ -69,28 +84,12 @@ function MyVerticallyCenteredModal(props) {
             });
         }
         setUserEmail("")
-        setdate("")
     };
     const handleChange = (event) => {
         setUserEmail(event.target.value);
     };
-    const handledate = (event) => {
-        setdate(event.target.value);
-    };
-    const handlemonth = (event) => {
-        setmonth(event.target.value);
-    };
-    const handleyear = (event) => {
-        setyear(event.target.value);
-    };
-    const handlehour = (event) => {
-        sethour(event.target.value);
-    };
-    const handlemin = (event) => {
-        setmin(event.target.value);
-    };
-    const timehandle = (event) => {
-        setevent(event.target.value);
+    const handlequestion = (event) => {
+        setquestion(event.target.value);
     };
     const handlesession = (event) => {
         setsession(event.target.value);
@@ -108,51 +107,29 @@ function MyVerticallyCenteredModal(props) {
             <Modal.Body
                 style={{ padding: "0%", backgroundColor: "#020312", border: "1px solid #f26c4f" }}
             >
-                <div style={{ marginLeft: "5%", marginTop: "20px", marginBottom: "20px", marginRight: "5%" }}><AiFillCloseCircle style={{ color: "#f26c4f", width: "30px", height: "30px", position: "absolute", right: "20px" }} onClick={() => props.onHide()} />
-                    <h4>Contant Creator</h4>
+                <div style={{ marginLeft: "5%", marginTop: "10px", marginBottom: "20px", marginRight: "5%" }}><AiFillCloseCircle style={{ color: "#f26c4f", width: "30px", height: "30px", position: "absolute", right: "5px" }} onClick={() => props.onHide()} />
+                    <h4 style={{ justifyContent: "center" }}>Connect with expert</h4>
                     <select required={true} value={session} onChange={handlesession} style={{ width: "100%" }}>
-                        <option selected >Session </option>
-                        <option>&nbsp;Want do one on one session</option>
-                        <option>&nbsp;Want to ask few questions</option>
+                        <option selected >Please select an option</option>
+                        <option>Ask a specific question</option>
+                        <option>Request for 30 mins 1-1 session</option>
                     </select>
-                    <label>
-                        <input onChange={timehandle} type="checkbox" name="checkbox" value="9" />
-                        <span>&nbsp;Can have one on one session any time any day</span>
-                    </label>
                     <p style={{ fontSize: "18px" }}>
                         Your Email ID
                         <text style={{ color: "#f26c4f" }}>*</text>
                     </p>
                     <input required={true}
+                        type="email"
                         onChange={handleChange}
                         value={userEmail}
                         style={{ width: "100%" }}
                     ></input>
-                    <h6>Enter preffered date and time for session:</h6>
-                    Date:&nbsp;&nbsp;<input value={date} onChange={handledate} className="textbox" type="number" placeholder="DD" />&nbsp;/&nbsp;
-                    <input onChange={handlemonth} value={month} className="textbox" type="number" placeholder="MM" />&nbsp;/
-                    <input value={year} onChange={handleyear} className="textbox" type="number" placeholder="YY" />
+                    {session === "Ask a specific question" ?
+                        <><label>
+                            <span>Question )&nbsp;</span>
+                        </label>
+                            <textarea onChange={handlequestion} className="boxtextarea" placeholder="Type Your Questions" ></textarea></> : null}
                     <br />
-                    Time:&nbsp;<input value={hour} onChange={handlehour} className="textbox" type="number" placeholder="HR" />&nbsp;:&nbsp;
-                    <input value={min} onChange={handlemin} className="textbox" type="number" placeholder="Min" />
-                    <br />
-                    <label>
-                        <span>Question 1)&nbsp;</span>
-                    </label>
-                    <br />
-                    <textarea /* onChange={handleChange} */ className="boxtextarea" placeholder="Type Your Questions" ></textarea>
-                    <br />
-                    <label>
-                        <span>Question 2)&nbsp;</span>
-                    </label>
-                    <br />
-                    <textarea /* onChange={handleChange} */ className="boxtextarea" placeholder="Type Your Questions" ></textarea>
-                    <br />
-                    <label>
-                        <span>Question 3)&nbsp;</span>
-                    </label>
-                    <br />
-                    <textarea /* onChange={handleChange} */ className="boxtextarea" placeholder="Type Your Questions" ></textarea>
                     <button
                         onClick={submit}
                         className="button_slide slide_right"
