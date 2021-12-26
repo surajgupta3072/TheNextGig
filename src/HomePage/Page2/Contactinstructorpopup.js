@@ -12,6 +12,7 @@ function MyVerticallyCenteredModal(props) {
     const [question, setquestion] = useState("");
     const [session, setsession] = useState("");
     const [questioncheck, setquestioncheck] = useState("")
+    const [caution, setcaution] = useState("")
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
     // We use JSON.stringify here so the data can be sent as a string via HTTP
     if (props.data !== undefined) {
@@ -48,42 +49,38 @@ function MyVerticallyCenteredModal(props) {
     };
     const submit = (event) => {
         if (userEmail !== "" && session !== "") {
-            fetch(endpoint, requestOptions)
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error("Error in fetch");
-                    }
-                    else {
-                        props.onHide();
-                        Swal.fire({
-                            title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
-                            icon: "success",
-                            showConfirmButton: false,
-                            timer: 4000,
-                            background: "#020312",
-                            color: "white",
-                            iconColor: "#F26C4F",
-                        });
-                    }
-                })
-                .catch((error) => {
-                    console.error("Failed to send userEmail. Error: ", error);
-                });
+            if (session === "Ask a specific question" && question === "") {
+                setcaution("Please fill in the details **")
+            }
+            else {
+                fetch(endpoint, requestOptions)
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("Error in fetch");
+                        }
+                        else {
+                            props.onHide();
+                            Swal.fire({
+                                title: "<h5 style='color:white'>" + "Submitted!" + "</h5>",
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 4000,
+                                background: "#020312",
+                                color: "white",
+                                iconColor: "#F26C4F",
+                            });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Failed to send userEmail. Error: ", error);
+                    });
+            }
         }
         else {
-            props.onHide();
-            Swal.fire({
-                title: "<h5 style='color:white'>" + "Discarded" + "</h5>",
-                icon: "warning",
-                text: 'Unable to send notification.Please Fill in the details.',
-                showConfirmButton: false,
-                timer: 4000,
-                background: "#020312",
-                color: "white",
-                iconColor: "#F26C4F",
-            });
+            setcaution("Please fill in the details **")
         }
-        setUserEmail("")
+        if (question !== "")
+            setUserEmail("")
     };
     const handleChange = (event) => {
         setUserEmail(event.target.value);
@@ -126,10 +123,11 @@ function MyVerticallyCenteredModal(props) {
                     ></input>
                     {session === "Ask a specific question" ?
                         <><label>
-                            <span>Question )&nbsp;</span>
+                            <span>Question&nbsp;</span>
                         </label>
                             <textarea onChange={handlequestion} className="boxtextarea" placeholder="Type Your Questions" ></textarea></> : null}
                     <br />
+                    <p style={{ color: "red" }}>{caution}</p>
                     <button
                         onClick={submit}
                         className="button_slide slide_right"

@@ -13,6 +13,10 @@
 .boxtextarea {
   width: 100%;
 }
+.connect_text {
+  color: #f26c4f;
+  font-size: 12px;
+}
 .figurex1::before {
   position: absolute;
   bottom: 0%;
