@@ -75,6 +75,7 @@ function MyVerticallyPopUp(props) {
             isApproved: false,
             VideoViews: 0,
             VideoDomains: [],
+            VideoThumbnail: "",
             VideoUploaderID: props.userid.username
           };
           var paramss = {
