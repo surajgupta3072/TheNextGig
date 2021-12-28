@@ -1,6 +1,7 @@
 import Modal from "react-bootstrap/Modal";
 import { ArrowLeft } from "react-bootstrap-icons";
 import Swal from "sweetalert2";
+import './Page3.css'
 
 function MyVerticallyPopUp(props) {
 
@@ -60,7 +61,7 @@ function MyVerticallyPopUp(props) {
             <p style={{ fontSize: "20px" }}>Sorry! You don't have enough minute balance!</p>
             <button
               onClick={getNotified}
-              className="button_slide slide_right"
+              className="button_slide_popuppage3 slide_right"
             >
               Reach out to us!
               <ArrowLeft className="button_arrow" />

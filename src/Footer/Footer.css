@@ -14,8 +14,8 @@
 }
 .button_arrow_footer_footer {
   position: absolute;
-  margin-top: -10px;
-  margin-left: 10px;
+  margin-top: -0.5%;
+  margin-left: 1%;
   width: 40px;
   height: 40px;
   padding: 7px;
@@ -76,5 +76,8 @@
   }
   .footer_linespace {
     display: inline;
+  }
+  .button_arrow_footer_footer{
+    margin-top: -1.5%;
   }
 }
