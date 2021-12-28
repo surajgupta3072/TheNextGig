@@ -31,7 +31,7 @@ function Page3(props) {
   const [reward, setReward] = useState("");
 
   useEffect(() => {
-    if(props.prop !== null) {
+    if (props.prop !== null) {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID": props.prop.username },
@@ -40,9 +40,9 @@ function Page3(props) {
       docClient.get(params, function (err, data) {
         if (err) {
           console.log(err);
-        } 
+        }
         else {
-          if(data.Item.MasterclassesPurchased !== undefined)
+          if (data.Item.MasterclassesPurchased !== undefined)
             setCoursePurchased(data.Item.MasterclassesPurchased.includes(Number(session.id)));
         }
       });
@@ -62,14 +62,14 @@ function Page3(props) {
     else {
       setRedirectLogin(true);
     }
-    docClient.scan({TableName: "GigsTable"}, function (err, data) {
-      if(err) {
+    docClient.scan({ TableName: "GigsTable" }, function (err, data) {
+      if (err) {
         console.log(err);
       }
       else {
         let gi = [];
-        for(var e of data.Items)
-          if(session.gigs.includes(e.GigId))
+        for (var e of data.Items)
+          if (session.gigs.includes(e.GigId))
             gi.push(e);
         setDataRelatedGigs(gi);
       }
@@ -185,15 +185,15 @@ function Page3(props) {
     });
   }
 
-  function handlePayment() {
-    if(reward>=60) {
+  function handlePayment(x) {
+    if (reward >= parseInt(x)) {
       // console.log("REWARD EXCESS", reward);
-      paymentFlowCase(60);
-    } 
+      paymentFlowCase(parseInt(x));
+    }
     else {
       setModalShow(true);
       // console.log("REWARD SHORTAGE");
-    } 
+    }
   }
 
   function getNotified() {
@@ -235,7 +235,7 @@ function Page3(props) {
   }
 
   const showDescription = (epid) => {
-    if(coursePurchased === true || session["episodes"][epid - 1].id === 1) {
+    if (coursePurchased === true || session["episodes"][epid - 1].id === 1) {
       setDes(session["episodes"][epid - 1]["description"]);
       setEpiVideo(session["episodes"][epid - 1]["epi_video"]);
       setPaymentShow(false);
@@ -293,11 +293,11 @@ function Page3(props) {
               </Col> */}
               {props.prop !== null ?
                 coursePurchased === false &&
-                <Col style={{ textAlign:"center" }}>
-                  <button className="button_slide_page3 slide_right" onClick={handlePayment}>
+                <Col style={{ textAlign: "center" }}>
+                  <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                     Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                   </button>
-                  <p>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor:"pointer" }}>Reach out to us!</em></p>
+                  <p>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor: "pointer" }}>Reach out to us!</em></p>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
                     cid={session.id}
@@ -325,11 +325,11 @@ function Page3(props) {
               </div> */}
               {props.prop !== null ?
                 coursePurchased === false &&
-                <div style={{ textAlign:"center" }}>
-                  <button className="button_slide_page3 slide_right" onClick={handlePayment}>
+                <div style={{ textAlign: "center" }}>
+                  <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                     Redeem<br />{session.course_duration} free minutes
                   </button>
-                  <p>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor:"pointer" }}>Reach out to us!</em></p>
+                  <p>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor: "pointer" }}>Reach out to us!</em></p>
                   <MyVerticallyPopUp
                     uid={props.prop.username}
                     cid={session.id}
@@ -371,7 +371,7 @@ function Page3(props) {
                   {paymentshow === true && (
                     props.prop !== null ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
-                        <button className="button_slide_page3 slide_right" onClick={handlePayment}>
+                        <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                         </button>
                         <MyVerticallyPopUp
@@ -427,7 +427,7 @@ function Page3(props) {
                   {paymentshow === true && (
                     props.prop !== null ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
-                        <button className="button_slide_page3 slide_right" onClick={handlePayment}>
+                        <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                         </button>
                         <MyVerticallyPopUp
@@ -629,7 +629,7 @@ function Page3(props) {
               return null;
             else
               return (
-                <MDBCard onClick={() => {if(details.course_timing!=="...Coming Soon") window.location.href = "/TNGoriginals/" + details.id}} className="cax card_mastercard" style={{ height: "fit-content", borderRadius: "0px", margin: "4%", border: "2px solid rgba(242, 108, 79, 0.6)", backgroundColor: "#020312" }}>
+                <MDBCard onClick={() => { if (details.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + details.id }} className="cax card_mastercard" style={{ height: "fit-content", borderRadius: "0px", margin: "4%", border: "2px solid rgba(242, 108, 79, 0.6)", backgroundColor: "#020312" }}>
                   <div className="image_card"><MDBCardImage className="mbd_image" style={{ marginLeft: "1px", width: "100%" }} src={details.course_image} alt='...' /></div>
                   <MDBCardBody >
                     <div className="Course_name">{details.course_name}</div><br />
