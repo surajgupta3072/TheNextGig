@@ -29,7 +29,10 @@ function Page3(props) {
   const [redirectlogin, setRedirectLogin] = useState(false);
   const [relatedgigs, setDataRelatedGigs] = useState([]);
   const [reward, setReward] = useState("");
-
+  const [id, setid] = useState("")
+  const [name, setname] = useState("")
+  const [coursename, setcoursename] = useState("")
+  const [email, setemail] = useState("")
   useEffect(() => {
     if (props.prop !== null) {
       var params = {
@@ -117,7 +120,7 @@ function Page3(props) {
               const body = JSON.stringify({
                 feedback: `Uid:${props.prop.username}`,
                 user: props.prop.attributes.email,
-                title: "Reach Out For Minutes",
+                title: "Congratulations! You've purchased a TNG Original!",
                 feedback1: props.prop.attributes.name,
                 feedback2: session.course_name
               });
@@ -186,6 +189,10 @@ function Page3(props) {
   }
 
   function handlePayment(x) {
+    setname(props.prop.attributes.name)
+    setid(props.prop.username)
+    setemail(props.prop.attributes.email)
+    setcoursename(session.course_name)
     if (reward >= parseInt(x)) {
       // console.log("REWARD EXCESS", reward);
       paymentFlowCase(parseInt(x));
@@ -195,14 +202,13 @@ function Page3(props) {
       // console.log("REWARD SHORTAGE");
     }
   }
-
   function getNotified() {
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
     // We use JSON.stringify here so the data can be sent as a string via HTTP
     const body = JSON.stringify({
       feedback: `Uid:${props.prop.username}`,
       user: props.prop.attributes.email,
-      title: "Congratulations! You've purchased a TNG Original!",
+      title: "Reach Out For Minutes",
       feedback1: props.prop.attributes.name,
       feedback2: session.course_name
     });
@@ -297,18 +303,7 @@ function Page3(props) {
                   <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                     Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                   </button>
-                  <p>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor: "pointer" }}>Reach out to us!</em></p>
-                  <MyVerticallyPopUp
-                    uid={props.prop.username}
-                    cid={session.id}
-                    name={props.prop.attributes.name}
-                    email={props.prop.attributes.email}
-                    cname={session.course_name}
-                    crole={session.course_role}
-                    fees={session.fees}
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                  />
+                  <p>Don't have enough minutes? <em onClick={() => getNotified()} style={{ color: "#f26c4f", cursor: "pointer" }}>Reach out to us!</em></p>
                 </Col> :
                 <Col style={{ display: "flex", justifyContent: "space-between", marginLeft: "20%" }}>
                   <button className="button_slide_page3 slide_right" onClick={() => window.location.href = "/login"}>
@@ -317,6 +312,14 @@ function Page3(props) {
                 </Col>
               }
             </Row>
+            <MyVerticallyPopUp
+              show={modalShow}
+              name={name}
+              id={id}
+              email={email}
+              course_name={coursename}
+              onHide={() => setModalShow(false)}
+            />
             <div className="mobile_view_video_master">
               {/* <div>
                 <a href={"/expert/" + session.ExpertId}><button className="button_slide_page3 slide_right">
@@ -329,18 +332,7 @@ function Page3(props) {
                   <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                     Redeem<br />{session.course_duration} free minutes
                   </button>
-                  <p>Don't have enough minutes? <em onClick={getNotified} style={{ color: "#f26c4f", cursor: "pointer" }}>Reach out to us!</em></p>
-                  <MyVerticallyPopUp
-                    uid={props.prop.username}
-                    cid={session.id}
-                    name={props.prop.attributes.name}
-                    email={props.prop.attributes.email}
-                    cname={session.course_name}
-                    crole={session.course_role}
-                    fees={session.fees}
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                  />
+                  <p>Don't have enough minutes? <em onClick={() => getNotified()} style={{ color: "#f26c4f", cursor: "pointer" }}>Reach out to us!</em></p>
                 </div> :
                 <div>
                   <button className="button_slide_page3 slide_right" onClick={() => window.location.href = "/login"}>
@@ -374,16 +366,6 @@ function Page3(props) {
                         <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                         </button>
-                        <MyVerticallyPopUp
-                          uid={props.prop.username}
-                          cid={session.id}
-                          name={props.prop.attributes.name}
-                          cname={session.course_name}
-                          crole={session.course_role}
-                          fees={session.fees}
-                          show={modalShow}
-                          onHide={() => setModalShow(false)}
-                        />
                       </div>) :
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => window.location.href = "/login"}>
@@ -430,16 +412,6 @@ function Page3(props) {
                         <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
                         </button>
-                        <MyVerticallyPopUp
-                          uid={props.prop.username}
-                          cid={session.id}
-                          cname={session.course_name}
-                          crole={session.course_role}
-                          name={props.prop.attributes.name}
-                          fees={session.fees}
-                          show={modalShow}
-                          onHide={() => setModalShow(false)}
-                        />
                       </div>) :
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => window.location.href = "/login"}>
