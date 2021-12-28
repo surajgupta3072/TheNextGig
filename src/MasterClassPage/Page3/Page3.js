@@ -117,7 +117,7 @@ function Page3(props) {
               const body = JSON.stringify({
                 feedback: `Uid:${props.prop.username}`,
                 user: props.prop.attributes.email,
-                title: "Congratulations! You've purchased a TNG Original!",
+                title: "Reach Out For Minutes",
                 feedback1: props.prop.attributes.name,
                 feedback2: session.course_name
               });
