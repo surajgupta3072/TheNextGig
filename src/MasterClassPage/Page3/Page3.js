@@ -34,6 +34,14 @@ function Page3(props) {
   const [coursename, setcoursename] = useState("")
   const [email, setemail] = useState("")
   useEffect(() => {
+    if (window.location.href.split("/")[4] === "6") {
+      if (window.innerWidth < 786) {
+        window.scrollTo(0, document.getElementsByClassName("masterclass_video_mobile container")[0].getBoundingClientRect().top)
+      }
+      else {
+        window.scrollTo(0, document.getElementsByClassName("container2_page3")[0].getBoundingClientRect().top)
+      }
+    }
     if (props.prop !== null) {
       var params = {
         TableName: "UsersTable",
