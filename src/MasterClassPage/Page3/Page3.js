@@ -92,101 +92,109 @@ function Page3(props) {
       if (err) {
         console.log(err);
       } else {
-        var params = {
-          TableName: "UsersTable",
-          Key: { UserID: props.prop.user.username },
-          UpdateExpression:
-            "set MasterclassesPurchased[" +
-            data.Item.MasterclassesPurchased.length.toString() +
-            "] = :ms",
-          ExpressionAttributeValues: {
-            ":ms": session.id,
-          },
-          ReturnValues: "UPDATED_NEW",
-        };
-        docClient.update(params, function (err, data) {
-          if (err) {
-            console.log(err);
-          } else {
-            var params = {
-              TableName: "UsersTable",
-              Key: { UserID: props.prop.user.username },
-              UpdateExpression: "set TotalRewards = :tr",
-              ExpressionAttributeValues: {
-                ":tr": reward - deduct,
-              },
-              ReturnValues: "UPDATED_NEW",
-            };
-            docClient.update(params, function (err, data) {
-              const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
-              // We use JSON.stringify here so the data can be sent as a string via HTTP
-              const body = JSON.stringify({
-                feedback: `Uid:${props.prop.user.username}`,
-                user: props.prop.user.attributes.email,
-                title: "Congratulations! You've purchased a TNG Original!",
-                feedback1: props.prop.user.attributes.name,
-                feedback2: session.course_name
-              });
-              const requestOptions = {
-                method: "POST",
-                body,
+        var flag = 0;
+        data.Item.MasterclassesPurchased.forEach((ele) => {
+          if (ele === session.id)
+            flag = 1;
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "UsersTable",
+            Key: { UserID: props.prop.user.username },
+            UpdateExpression:
+              "set MasterclassesPurchased[" +
+              data.Item.MasterclassesPurchased.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": session.id,
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            } else {
+              var params = {
+                TableName: "UsersTable",
+                Key: { UserID: props.prop.user.username },
+                UpdateExpression: "set TotalRewards = :tr",
+                ExpressionAttributeValues: {
+                  ":tr": reward - deduct,
+                },
+                ReturnValues: "UPDATED_NEW",
               };
-              fetch(endpoint, requestOptions)
-                .then((response) => {
-                  if (!response.ok) {
-                    throw new Error("Error in fetch");
-                  } else {
-                    Swal.fire({
-                      title:
-                        "<h5 style='color:white'>" +
-                        "PAYMENT SUCCESSFUL!" +
-                        "</h5>",
-                      icon: "success",
-                      showConfirmButton: false,
-                      timer: 3000,
-                      background: "#020312",
-                      color: "white",
-                      iconColor: "#F26C4F",
-                    }).then(() => {
-                      var paramss = {
-                        TableName: "UsersTable",
-                        Key: { UserID: props.prop.user.username },
-                        ProjectionExpression: "SkillsAcquiredMastersessions",
-                      };
-                      docClient.get(paramss, function (err, data) {
-                        if (err) {
-                          console.log(err);
-                        } else {
-                          var params = {
-                            TableName: "UsersTable",
-                            Key: { UserID: props.prop.user.username },
-                            UpdateExpression:
-                              "set SkillsAcquiredMastersessions[" +
-                              data.Item.SkillsAcquiredMastersessions.length.toString() +
-                              "] = :sam",
-                            ExpressionAttributeValues: {
-                              ":sam": session.course_role,
-                            },
-                            ReturnValues: "UPDATED_NEW",
-                          };
-                          docClient.update(params, function (err, data) {
-                            if (err) {
-                              console.log(err);
-                            } else {
-                              window.location.reload();
-                            }
-                          });
-                        }
-                      });
-                    });
-                  }
-                })
-                .catch((error) => {
-                  console.error("Failed to send feedback. Error: ", error);
+              docClient.update(params, function (err, data) {
+                const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+                // We use JSON.stringify here so the data can be sent as a string via HTTP
+                const body = JSON.stringify({
+                  feedback: `Uid:${props.prop.user.username}`,
+                  user: props.prop.user.attributes.email,
+                  title: "Congratulations! You've purchased a TNG Original!",
+                  feedback1: props.prop.user.attributes.name,
+                  feedback2: session.course_name
                 });
-            });
-          }
-        });
+
+                const requestOptions = {
+                  method: "POST",
+                  body,
+                };
+                fetch(endpoint, requestOptions)
+                  .then((response) => {
+                    if (!response.ok) {
+                      throw new Error("Error in fetch");
+                    } else {
+                      Swal.fire({
+                        title:
+                          "<h5 style='color:white'>" +
+                          "PAYMENT SUCCESSFUL!" +
+                          "</h5>",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        background: "#020312",
+                        color: "white",
+                        iconColor: "#F26C4F",
+                      }).then(() => {
+                        var paramss = {
+                          TableName: "UsersTable",
+                          Key: { UserID: props.prop.user.username },
+                          ProjectionExpression: "SkillsAcquiredMastersessions",
+                        };
+                        docClient.get(paramss, function (err, data) {
+                          if (err) {
+                            console.log(err);
+                          } else {
+                            var params = {
+                              TableName: "UsersTable",
+                              Key: { UserID: props.prop.user.username },
+                              UpdateExpression:
+                                "set SkillsAcquiredMastersessions[" +
+                                data.Item.SkillsAcquiredMastersessions.length.toString() +
+                                "] = :sam",
+                              ExpressionAttributeValues: {
+                                ":sam": session.course_role,
+                              },
+                              ReturnValues: "UPDATED_NEW",
+                            };
+                            docClient.update(params, function (err, data) {
+                              if (err) {
+                                console.log(err);
+                              } else {
+                                window.location.reload();
+                              }
+                            });
+                          }
+                        });
+                      });
+                    }
+                  })
+                  .catch((error) => {
+                    console.error("Failed to send feedback. Error: ", error);
+                  });
+              });
+            }
+          });
+        }
       }
     });
   }

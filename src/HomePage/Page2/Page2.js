@@ -294,6 +294,178 @@ function Page2(props) {
       })
     }
   }
+  const like = (id) => {
+    var paramss = {
+      TableName: "UsersTable",
+      Key: { UserID: props.auth.user.username },
+      ProjectionExpression: "SocialLearningVideosLiked",
+    };
+    docClient.get(paramss, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var flag = 0;
+        data.Item.SocialLearningVideosLiked.forEach((ele) => {
+          if (ele.vid === id) {
+            flag = 1;
+          }
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "UsersTable",
+            Key: { UserID: props.auth.user.username },
+            UpdateExpression:
+              "set SocialLearningVideosLiked[" +
+              data.Item.SocialLearningVideosLiked.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": { vid: id, date: Date.now },
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+            else {
+              Swal.fire({
+                title:
+                  "<h5 style='color:white'>" +
+                  "Creator want to say to thank you for liking this video" +
+                  "</h5>",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 3000,
+                background: "#020312",
+                color: "white",
+                iconColor: "#F26C4F",
+              })
+            }
+          })
+        }
+        else {
+          Swal.fire({
+            title:
+              "<h5 style='color:white'>" +
+              "Already Liked" +
+              "</h5>",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 3000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          })
+        }
+      }
+    })
+    var params1 = {
+      TableName: "VideosTable",
+      Key: { VideoID: id },
+      ProjectionExpression: "Likes",
+    };
+    docClient.get(params1, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var flag = 0;
+        data.Item.Likes.forEach((ele) => {
+          if (ele.uid === props.auth.user.username) {
+            flag = 1;
+          }
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "VideosTable",
+            Key: { VideoID: id },
+            UpdateExpression:
+              "set Likes[" +
+              data.Item.Likes.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": { uid: props.auth.user.username, date: Date.now() },
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+            else {
+              Swal.fire({
+                title:
+                  "<h5 style='color:white'>" +
+                  "Creator want to say to thank you for liking this video" +
+                  "</h5>",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 3000,
+                background: "#020312",
+                color: "white",
+                iconColor: "#F26C4F",
+              })
+            }
+          })
+        }
+        else {
+          Swal.fire({
+            title:
+              "<h5 style='color:white'>" +
+              "Already liked" +
+              "</h5>",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 3000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          })
+        }
+      }
+    })
+  }
+  const likemaster = (id) => {
+    var paramss = {
+      TableName: "UsersTable",
+      Key: { UserID: props.auth.user.username },
+      ProjectionExpression: "MasterclassesLiked",
+    };
+    docClient.get(paramss, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var flag = 0;
+        data.Item.MasterclassesLiked.forEach((ele) => {
+          if (ele === id) {
+            flag = 1;
+          }
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "UsersTable",
+            Key: { UserID: props.auth.user.username },
+            UpdateExpression:
+              "set MasterclassesLiked[" +
+              data.Item.MasterclassesLiked.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": id,
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+            else {
+
+            }
+          })
+        }
+      }
+    })
+
+  }
   return (
     <div style={{ marginTop: "2%", marginLeft: "2%" }}>
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Popular</h4>
@@ -331,6 +503,14 @@ function Page2(props) {
 
                   )
                 }
+              </div>
+              <div className="connect_follow_box">
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
+                </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => likemaster(ele.id)} >&nbsp; &nbsp;Like</p>
+                </div>
               </div>
             </div>
           }
@@ -371,6 +551,9 @@ function Page2(props) {
             <div className="connect_follow_box">
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
               </div>
             </div>
             <br />
@@ -413,6 +596,9 @@ function Page2(props) {
                 <div>
                   <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
                 </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(ele.id)} >&nbsp; &nbsp;Like</p>
+                </div>
               </div>
             </div>
           }
@@ -448,6 +634,9 @@ function Page2(props) {
             <div className="connect_follow_box">
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
               </div>
             </div>
           </div>
@@ -489,6 +678,9 @@ function Page2(props) {
                 <div>
                   <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
                 </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(ele.id)} >&nbsp; &nbsp;Like</p>
+                </div>
               </div>
             </div>
 
@@ -525,6 +717,9 @@ function Page2(props) {
             <div className="connect_follow_box">
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
               </div>
             </div>
           </div>
@@ -566,6 +761,9 @@ function Page2(props) {
                 <div>
                   <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
                 </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(ele.id)} >&nbsp; &nbsp;Like</p>
+                </div>
               </div>
             </div>
 
@@ -603,6 +801,9 @@ function Page2(props) {
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
               </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
+              </div>
             </div>
           </div>
 
@@ -638,6 +839,9 @@ function Page2(props) {
             <div className="connect_follow_box">
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
               </div>
             </div>
             <br />
@@ -678,6 +882,9 @@ function Page2(props) {
             <div className="connect_follow_box">
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
               </div>
             </div>
             <br />
