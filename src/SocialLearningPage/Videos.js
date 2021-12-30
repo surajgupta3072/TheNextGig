@@ -5,13 +5,16 @@ import MyVerticallyCenteredModal from './ContactPopUp'
 import { useState, useEffect } from "react";
 import './SocialLearningPage.css'
 import { GiShare } from "react-icons/gi";
-
+import Popup from '../HomePage/Page2/Videopopup'
 function Videos(props) {
+  const [modalShow3, setModalShow3] = useState(false);
+  const [videodata, setvideodata] = useState({});
   const [modalShow, setModalShow] = useState(false);
   const [reward, setReward] = useState("");
   const [videoid, setvideoid] = useState("");
   const [videolink, setvideolink] = useState("");
   const [videotopic, setvideotopic] = useState("");
+  console.log(props)
   useEffect(() => {
     if (props.auth.isAuthenticated === true) {
       var paramss = {
@@ -223,7 +226,7 @@ function Videos(props) {
                 <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
               </figure>
               :
-              <img onClick={() => window.location.href = "../Video/" + vid.VideoID} className="video_thumbnail_social" src={vid.VideoThumbnail} />
+              <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
             <div style={{ marginTop: "7%", marginLeft: "2%", width: "250px", cursor: "pointer" }} >
               {(vid.VideoTopic.length < 30) ?
@@ -265,10 +268,10 @@ function Videos(props) {
           <div style={{ cursor: "pointer" }} className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
               <figure className="tag figurex" data-content={vid.VideoDuration}>
-                <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
+                <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} />
               </figure>
               :
-              <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
+              <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
             <div style={{ marginTop: "7%", marginLeft: "2%", width: "240px", cursor: "pointer" }} >
               {(vid.VideoTopic.length < 30) ?
@@ -303,6 +306,9 @@ function Videos(props) {
         )
         }
       </div >
+      {modalShow3 === true ?
+        <Popup data={videodata} username={props.auth.user.username} show={modalShow3}
+          onHide={() => setModalShow3(false)} /> : null}
     </div >
   );
 }

@@ -3,16 +3,15 @@ import { ArrowLeft } from "react-bootstrap-icons";
 import Swal from "sweetalert2";
 
 function MyVerticallyPopUp(props) {
-
   function getNotified() {
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
     // We use JSON.stringify here so the data can be sent as a string via HTTP
     const body = JSON.stringify({
-      feedback: `Uid:${props.uid}`,
+      feedback: `Uid:${props.id}`,
       user: props.email,
       title: "Reach Out For Minutes",
       feedback1: props.name,
-      feedback2: props.cname,
+      feedback2: props.course_name,
     });
     const requestOptions = {
       method: "POST",
@@ -40,6 +39,7 @@ function MyVerticallyPopUp(props) {
       .catch((error) => {
         console.error("Failed to send feedback. Error: ", error);
       });
+    props.onHide()
   }
 
   return (
@@ -59,7 +59,7 @@ function MyVerticallyPopUp(props) {
           <div style={{ textAlign: "center" }}>
             <p style={{ fontSize: "20px" }}>Sorry! You don't have enough minute balance!</p>
             <button
-              onClick={getNotified}
+              onClick={() => getNotified()}
               className="button_slide slide_right"
             >
               Reach out to us!

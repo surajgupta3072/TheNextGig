@@ -198,9 +198,6 @@ div.heading > div:nth-child(4) > p {
     margin-top: -100px;
     margin-left: 15px;
   }
-  .small_white_text {
-    color: rgba(0, 0, 0, 0.85);
-  }
   .subheading {
     font-size: 30px;
     margin-left: 20px;

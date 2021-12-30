@@ -7,6 +7,23 @@
 .reward_mins_mobile {
   display: none !important;
 }
+.profile_icon_text {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  color: black;
+  padding: 3px;
+  background-color: rgba(242, 108, 79);
+  border: 2px solid white;
+}
+.navdrop_profile {
+  padding-right: 35px;
+}
+.profile_box {
+  text-align: center;
+  padding-left: 35px;
+  margin-top: 4px;
+}
 @media screen and (max-width: 786px) {
   .reward_mins {
     display: none !important;
@@ -16,5 +33,11 @@
   }
   .reward_mins_mobile {
     display: block !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  .navdrop_profile {
+    padding-right: 0px;
+    padding-left: 35px;
   }
 }

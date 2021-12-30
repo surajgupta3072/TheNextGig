@@ -6,23 +6,27 @@ import { useState, useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
 import './Header.css';
 import NotALearnerModal from './NotALearnerPageModal';
-
+import Referalpopup from "./Referralpopup"
 function Header(props) {
     const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("__");
     const [refcode, setRefCode] = useState("_______");
-
+    const [modalShow2, setModalShow2] = useState(false);
+    const [Dp, setDp] = useState("")
     useEffect(() => {
         if (props.auth.isAuthenticated === true) {
             var paramss = {
                 TableName: "UsersTable",
                 Key: { UserID: props.auth.user.username },
-                ProjectionExpression: "TotalRewards, ReferralCode",
+                ProjectionExpression: "TotalRewards, ReferralCode, DPlink",
             };
             docClient.get(paramss, function (err, data) {
                 if (err) {
                     console.log(err);
                 } else {
+                    if (data.Item.DPlink !== undefined) {
+                        setDp(data.Item.DPlink)
+                    }
                     setReward(data.Item.TotalRewards);
                     setRefCode(data.Item.ReferralCode);
                 }
@@ -110,20 +114,32 @@ function Header(props) {
                         </Nav.Link>
                     }
                     {props.auth.isAuthenticated === true &&
-                        <Nav.Link className='referral_code' href="/profile" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px" }}>
-                            {props.auth.user.attributes.name.split(" ")[0]}<br />(Ref Code: {refcode})
-                        </Nav.Link>
+                        <div style={{ display: "flex" }}>
+                            {Dp === "" ? <span className='profile_box'><h6 className="profile_icon_text">{props.auth.user.attributes.name.split(" ")[0][0]}</h6></span> : <img style={{ height: "30px", width: "30px", borderRadius: "50%" }} src={Dp} />}
+                            <NavDropdown className='navdrop_profile' style={{ color: "white", fontWeight: "700", fontSize: "15px" }} title={props.auth.user.attributes.name.split(" ")[0]}>
+                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => setModalShow2(true)}>Referral Code</NavDropdown.Item>
+                                <Referalpopup
+                                    show={modalShow2}
+                                    refcode={refcode}
+                                    onHide={() => setModalShow2(false)}
+                                />
+                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/profile">My profile</NavDropdown.Item>
+                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SkillsVideo">Skills & Videos</NavDropdown.Item>
+                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/follow">Following</NavDropdown.Item>
+                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={LogOutFunc}>Logout</NavDropdown.Item>
+                            </NavDropdown>
+                        </div>
                     }
                     {props.auth.isAuthenticated === false &&
                         <Nav.Link href="/login" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             Login
                         </Nav.Link>
                     }
-                    {props.auth.isAuthenticated === true &&
+                    {/* {props.auth.isAuthenticated === true &&
                         <Nav.Link onClick={LogOutFunc} style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             Logout
                         </Nav.Link>
-                    }
+                    } */}
                     {/* <Nav.Link onClick={doRewardChange} style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                         FIRE
                     </Nav.Link> */}

@@ -33,6 +33,8 @@ import LearnCoins from "./LearnCoins/LearnCoins";
 import ReferralPage from "./AuthPage/ReferralPage";
 import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 import Follow from "./Follow/Follow";
+import SkillsVideopage from "./Skills&Videopage/SkillsVideopage";
+import Followvideos from "./Followvideos/Followvideos";
 // import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 // import Comet from "../src/SocialLearningPage/Comet";
 
@@ -149,9 +151,15 @@ function App() {
               <Route exact path="/register">
                 <RegisterPage auth={authProps} />
               </Route>
-              {/* <Route exact path="/follow">
+              <Route exact path="/follow">
                 <Follow auth={authProps} />
-              </Route> */}
+              </Route>
+              <Route exact path="/followvideos">
+                <Followvideos auth={authProps} />
+              </Route>
+              <Route exact path="/SkillsVideo">
+                <SkillsVideopage auth={authProps} />
+              </Route>
               <Route exact path="/SocialLearning">
                 <SocialLearningPage auth={authProps} />
               </Route>
@@ -180,7 +188,7 @@ function App() {
                 <GigsPage auth={authProps.user} />
               </ProtectedRoute>
               <Route exact path="/TNGoriginals/:id">
-                <MasterClassDetails auth={authProps.user} />
+                <MasterClassDetails auth={authProps} />
               </Route>
               <Route exact path="/TNGoriginals">
                 <MasterClassPage />
@@ -204,6 +212,9 @@ function App() {
                 <TC />
               </Route>
               <Route exact path="/">
+                <HomePage auth={authProps} />
+              </Route>
+              <Route exact path="/:id">
                 <HomePage auth={authProps} />
               </Route>
               <Route exact path="/Redirecting">

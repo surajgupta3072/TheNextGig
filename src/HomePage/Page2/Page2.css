@@ -4,18 +4,38 @@
 .figurex1.tag1 {
   position: relative;
 }
+.connect_follow_box {
+  display: flex;
+  justify-content: flex-start;
+}
 .textbox {
   width: 40px;
   background-color: transparent;
   color: #f26c4f;
   border: 0px;
 }
+.modal-dialog {
+  align-items: center;
+}
+.text_video_popup {
+  margin-left: 10px;
+}
+.modal-dialog-custom {
+  width: fit-content !important;
+  max-width: 100vw !important;
+}
+.modal-content-custom {
+  width: fit-content !important;
+}
+.modal-content {
+  background-color: transparent !important;
+}
 .boxtextarea {
   width: 100%;
 }
 .connect_text {
   color: #f26c4f;
-  font-size: 12px;
+  font-size: 14px;
 }
 .figurex1::before {
   position: absolute;
@@ -67,6 +87,28 @@
 }
 .btn_div_homepage_new {
   flex-direction: row;
+}
+@media screen and (min-width: 516px) and (max-width: 927px) {
+  .div_video {
+    width: fit-content !important;
+    max-width: 60vw !important;
+  }
+  .popup_video {
+    width: 60vw;
+    height: fit-content !important;
+  }
+}
+@media screen and (max-width: 515px) {
+  .div_video {
+    width: fit-content !important;
+    max-width: 100% !important;
+  }
+  .popup_video {
+    width: 80vw;
+    min-height: 300px;
+    height: fit-content !important;
+    max-height: 500px;
+  }
 }
 @media screen and (max-width: 768px) {
   .page2_mobile_view {

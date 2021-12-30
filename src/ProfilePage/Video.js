@@ -2,8 +2,11 @@ import React from 'react'
 import ReactTooltip from 'react-tooltip';
 import { ArrowRight } from "react-bootstrap-icons";
 import data from "../../src/MasterClassPage/Masterclass.json";
+import Popup from '../HomePage/Page2/Videopopup'
 function Video(props) {
-    console.log(props.videoswatch)
+    const [modalShow3, setModalShow3] = React.useState(false);
+    const [videodata, setvideodata] = React.useState({});
+    console.log(props)
     return (
         <div style={{ marginTop: "20px" }}>
             {props.videospur.length !== 0 || props.videoswatch.length !== 0 ?
@@ -48,7 +51,7 @@ function Video(props) {
                             }
                         })}
                         {props.videoswatch.map((vid, index) => {
-                            return <div style={{ width: "260px" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }}>
+                            return <div style={{ width: "260px" }} onClick={() => { if (props.userid !== null) { setModalShow3(true); setvideodata(vid) } else { window.location.href = "/login" } }}>
                                 <figure className="tag1 figurex1" data-content={vid.VideoDuration}>
                                     <img src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
                                 </figure>
@@ -89,6 +92,9 @@ function Video(props) {
                 <div><a href="/TNGOriginals"><button style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All TNG Originals<ArrowRight className="button_arrow" /></button></a></div>
                 <div><a href="/SocialLearning"><button id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} className="button_slide slide_right orange_button_page3">All bite-sized videos<ArrowRight className="button_arrow" /></button></a></div>
             </div>
+            {modalShow3 === true ?
+                <Popup data={videodata} username={props.userid} show={modalShow3}
+                    onHide={() => setModalShow3(false)} /> : null}
         </div>
     )
 }
