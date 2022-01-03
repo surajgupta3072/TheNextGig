@@ -5,20 +5,25 @@ import {useState, useEffect} from 'react';
 import docClient from '../../GigsPage/GigsAWS';
 
 function Page1(props) {
-  console.log(props.Eid)
-  const [expert, setExpert] = useState({"ExpertCompaniesLogo": []});
-  var paramss = {
-    TableName: "ExpertsTable",
-    Key: { "ExpertID": props.Eid }
-  };
+  const [expert, setExpert] = useState("");
+
   useEffect(() => {
-    docClient.get(paramss, function (err, data) {
+    let paramss = {
+      TableName: "ExpertsTable",
+      KeyConditionExpression: "#Eid = :ExpertID",
+      ExpressionAttributeNames: {
+        "#Eid": "ExpertID",
+      },
+      ExpressionAttributeValues: {
+        ":ExpertID": props.Eid,
+      },
+    };
+    docClient.query(paramss, function (err, data) {
       if (err) {
         console.log(err);
       } 
       else {
-        console.log(data.Items)
-        setExpert(data.Items)
+        setExpert(data.Items[0]);
       }
     });
   }, []);
@@ -54,15 +59,17 @@ function Page1(props) {
               <h3 style={{color:"#f26c4f"}}>Skills experienced in:</h3>
               <p className="subtitle_expertcard">{expert.ExpertSkills}</p>   
             </div>
+            {expert.ExpertCompaniesLogo!==undefined &&
             <div className="img_arr">
               {expert.ExpertCompaniesLogo.map(companyLogo=>
                 <img alt="..." className="img_company" src={companyLogo}/>
               )}
             </div>
+            }
           </div>
         </div>
         </Container>
-        {/* <div className="header_masterclass">
+        <div className="header_masterclass">
             <Container>
               <div className="top_masterclass">
                 <h1>MORE FROM THE EXPERT</h1>
@@ -71,8 +78,8 @@ function Page1(props) {
                 </p>
               </div>
             </Container>
-        </div> */}
-        {/* <MasterSessions Eid={props.Eid}/> */}
+        </div>
+        {/* SHOW ALL VIDEOS LOGIC - ANURAG */}
     </div>
   );
 }
