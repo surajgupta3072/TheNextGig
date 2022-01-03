@@ -12,7 +12,6 @@ import MyVerticallyCenteredModal from './ModalPosted.js';
 import Modalx from './Contactinstructorpopup';
 import { ArrowRight } from "react-bootstrap-icons";
 import ReactTooltip from 'react-tooltip';
-import { RiUserFollowLine } from "react-icons/ri"
 function Page2(props) {
   const [uid, setuid] = useState("")
   const [show_no, setshowno] = useState(5);

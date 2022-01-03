@@ -111,7 +111,7 @@ function App() {
     catch (error) {
       if (window.location.href != "http://localhost:3000/login" && window.location.href != "http://localhost:3000/register" && window.location.href != "http://localhost:3000/Referral" && window.location.href != "https://www.thenextgig.net/login" && window.location.href != "https://www.thenextgig.net/register" && window.location.href != "https://www.thenextgig.net/Referral")
         localStorage.setItem('lastURL', window.location.href);
-      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/") || (window.location.href.split("/")[3]!==undefined && window.location.href.split("/")[3].length===16)) {
+      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/") || (window.location.href.split("/")[3] !== undefined && window.location.href.split("/")[3].length === 16)) {
         localStorage.setItem('lastLastURL', window.location.href);
         localStorage.setItem('lastURL', "https://www.thenextgig.net/Redirecting");
       }
@@ -176,7 +176,7 @@ function App() {
                 <CompanyPage />
               </Route> */}
               <Route exact path="/expert/:id">
-                <ExpertPage />
+                <ExpertPage auth={authProps} />
               </Route>
               <Route exact path="/expert">
                 <Page2 />
