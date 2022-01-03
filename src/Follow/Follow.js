@@ -71,11 +71,36 @@ function Follow(props) {
             }
         })
     }
+    var list = []
     function value(x) {
         if (x.length === list1.length) {
-            setyourfollowdata(x)
+            x.forEach((ele, index) => {
+                let params = {
+                    TableName: "ExpertsTable",
+                    KeyConditionExpression: "#Uid = :ExpertID",
+                    ExpressionAttributeNames: {
+                        "#Uid": "ExpertID",
+                    },
+                    ExpressionAttributeValues: {
+                        ":ExpertID": ele.FullName,
+                    },
+                };
+                docClient.query(params, function (err, data) {
+                    if (err) {
+                        console.log(err)
+                    }
+                    else {
+                        ele["ExpertDesignation"] = data.Items[0].ExpertDesignation;
+                        ele["ExpertEducational"] = data.Items[0].ExpertEducational;
+                    }
+                    list.push(ele)
+                });
+                if (x.length === index + 1)
+                    setyourfollowdata(list)
+            })
         }
     }
+    console.log(yourfollowdata)
     return (
         <div>
             <br />
@@ -83,7 +108,7 @@ function Follow(props) {
             <br />
             <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row" }}>{yourfollowdata.map((ele, index) => {
                 return <div onClick={() => { fetchvideos(ele.UserID); }}
-                    key={index}><img style={{ height: "134px", width: "240px" }} src={ele.Followpagepic} /><br />{ele.FullName}</div>
+                    key={index}><img style={{ height: "134px", width: "240px" }} src={ele.Followpagepic} /><br />{ele.FullName}<br />{console.log(ele.ExpertEducational)}<br />{ele.ExpertDesignation}</div>
             })}
             </div>
         </div >
