@@ -1,4 +1,3 @@
-import expertData from './../Experts.json';
 import Container from 'react-bootstrap/Container';
 import { MDBCard, MDBCardBody, MDBCardImage } from 'mdb-react-ui-kit';
 import Carousel from "react-elastic-carousel";
@@ -6,7 +5,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {ArrowLeft,Linkedin,Whatsapp,Instagram, Discord} from 'react-bootstrap-icons';
 import MyVerticallyPopUp  from './popup';
-import {useState} from 'react'
+import {useState, useEffect} from 'react';
+import docClient from '../../GigsPage/GigsAWS';
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -15,8 +15,21 @@ const breakPoints = [
     { width: 1080, itemsToShow: 3 }
   ];
 
-function Page2(props) {
+function Page2() {
   const [modalShow, setModalShow] = useState(false);
+  const [expertData, setExpertData] = useState([]);
+
+  useEffect(() => {
+    docClient.scan({TableName: "ExpertsTable"}, function (err, data) {
+      if (err) {
+        console.log(err);
+      } 
+      else {
+        setExpertData(data.Items)
+      }
+    });
+  }, []);
+
     return (
       <div>
         <div className="header_masterclass">
@@ -31,7 +44,7 @@ function Page2(props) {
         </div>
         <div className="Mastercards">
           {expertData.map(expertDetails=>(
-               <MDBCard onClick={()=>window.location.href='/expert/'+expertDetails.ExpertId}  className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"30rem",width:""}}>
+               <MDBCard onClick={()=>window.location.href='/expert/'+expertDetails.ExpertID}  className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312",height:"30rem",width:""}}>
                     <div className="image_card"><MDBCardImage style={{marginLeft:"1px",width:"100%",height:"22rem",borderRadius:"15px"}} src={expertDetails.ExpertPic}  alt='...' /></div>
                     <MDBCardBody>
                     <div className="Course_name">{expertDetails.ExpertName}</div>
@@ -39,7 +52,7 @@ function Page2(props) {
                     {expertDetails.ExpertDesignation}
                     </p>
                     <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
-                    <div className="img_arr" style={{ display: "flex", justifyContent: "space-evenly"}}>
+                    <div className="img_arr_expert_page" style={{ display: "flex", justifyContent: "space-evenly"}}>
                     {expertDetails.ExpertCompaniesLogo.map((
                       companyLogo, index)=>{ 
                       if(index<3){
@@ -58,8 +71,8 @@ function Page2(props) {
             </div>
             <div className="slider_mobile">
             <Carousel breakPoints={breakPoints}>
-          {expertData.map(expertDetails=>(
-               <MDBCard onClick={()=>window.location.href='/expert/'+expertDetails.ExpertId} className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
+              {expertData.map(expertDetails=>(
+               <MDBCard onClick={()=>window.location.href='/expert/'+expertDetails.ExpertID} className="mbd_card card_mastercard" style={{borderRadius:"0px", margin:"4%", border:"2px solid rgba(242, 108, 79, 0.6)", backgroundColor:"#020312"}}>
                     <div className="image_card"><MDBCardImage style={{width:"100%",height:"14rem",borderRadius:"14px"}} src={expertDetails.ExpertPic} alt='...' /></div>
                     <MDBCardBody>
                     <div className="Course_name">{expertDetails.ExpertName}</div>
@@ -82,7 +95,7 @@ function Page2(props) {
                     </div>
                     </MDBCardBody>
                 </MDBCard>
-            ))}
+              ))}
             </Carousel>
             </div>
             <Container className="rectangle-box2" style={{marginTop:"5%"}}>

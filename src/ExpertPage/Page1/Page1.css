@@ -47,15 +47,20 @@
   object-fit: contain;
 }
 .img_company {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 10px;
+}
+.img_arr_expert_page {
+  display: flex;
+  align-items: center;
+  margin-top: 1%;
 }
 .img_arr {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 2%;
+  justify-content: space-evenly;
+  margin-top: 1%;
+  width: 500px;
 }
 .para {
   padding-top: 3em;
@@ -73,7 +78,7 @@ h3 {
 }
 .subtitle_expertcard {
   text-align: center;
-  color: #f26c4f;
+  color: white;
 }
 .subtitle2_expertcard {
   text-align: left;

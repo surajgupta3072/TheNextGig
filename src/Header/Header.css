@@ -11,10 +11,10 @@
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  color: black;
+  color: rgba(242, 108, 79);
   padding: 3px;
-  background-color: rgba(242, 108, 79);
-  border: 2px solid white;
+  background-color: transparent;
+  border: 2px solid rgba(242, 108, 79);
 }
 .navdrop_profile {
   padding-right: 35px;

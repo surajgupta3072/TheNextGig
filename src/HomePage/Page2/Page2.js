@@ -236,7 +236,7 @@ function Page2(props) {
                 "<h5 style='color:white'>" +
                 "You Already follow him" +
                 "</h5>",
-              icon: "success",
+              icon: "warning",
               showConfirmButton: false,
               timer: 3000,
               background: "#020312",
@@ -282,7 +282,7 @@ function Page2(props) {
                 "<h5 style='color:white'>" +
                 "You already follow this person" +
                 "</h5>",
-              icon: "success",
+              icon: "warning",
               showConfirmButton: false,
               timer: 3000,
               background: "#020312",
@@ -349,7 +349,7 @@ function Page2(props) {
               "<h5 style='color:white'>" +
               "Already Liked" +
               "</h5>",
-            icon: "success",
+            icon: "warning",
             showConfirmButton: false,
             timer: 3000,
             background: "#020312",
@@ -413,7 +413,7 @@ function Page2(props) {
               "<h5 style='color:white'>" +
               "Already liked" +
               "</h5>",
-            icon: "success",
+            icon: "warning",
             showConfirmButton: false,
             timer: 3000,
             background: "#020312",
@@ -458,8 +458,33 @@ function Page2(props) {
               console.log(err);
             }
             else {
-
+              Swal.fire({
+                title:
+                  "<h5 style='color:white'>" +
+                  "Creator want to say to thank you for liking this video" +
+                  "</h5>",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 3000,
+                background: "#020312",
+                color: "white",
+                iconColor: "#F26C4F",
+              })
             }
+          })
+        }
+        else {
+          Swal.fire({
+            title:
+              "<h5 style='color:white'>" +
+              "Already liked" +
+              "</h5>",
+            icon: "warning",
+            showConfirmButton: false,
+            timer: 3000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
           })
         }
       }

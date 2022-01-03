@@ -6,9 +6,9 @@ import docClient from "../../GigsPage/GigsAWS";
 function Page1() {
   return (
     <div className='videoframe'>
-      <img className='videoTag' style={{ height: "70vh", width: "100vw" }} src="https://master-sessions.s3.ap-south-1.amazonaws.com/Mobile+homepage+2.jpg" />
+      <img className='videoTag' style={{ height: "70vh", width: "100vw" }} src="https://d1r2s60cmj6qme.cloudfront.net/Mobile+homepage+2.jpg" />
       <video className='videoTag1' autoPlay playsInline loop muted width="100%" height="400vh">
-        <source src="https://master-sessions.s3.ap-south-1.amazonaws.com/home+page+video.mp4" type='video/mp4' />
+        <source src="https://d1r2s60cmj6qme.cloudfront.net/home+page+video.mp4" type='video/mp4' />
       </video>
       <div className="overlay_page1">
         <Row style={{ height: "50vh" }}>
