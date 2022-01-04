@@ -47,10 +47,10 @@ function Page2(props) {
           return <div onClick={() => window.location.href = '/expert/' + vid.ExpertID} key={index} style={{ width: "260px", cursor: "pointer" }} >
             <img src={vid.ExpertPic} width="240px" />
             <div width="240px" style={{ marginLeft: "2%", width: "260px" }} >
-              {(vid.ExpertDesignation.length < 26) ?
+              {(vid.ExpertID.length < 26) ?
                 (
                   (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
-                    {vid.ExpertDesignation}
+                    {vid.ExpertID}
                   </h8>)
                 ) :
                 (
@@ -63,15 +63,22 @@ function Page2(props) {
                   </h8>)
                 )
               }
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertID}</p>
-              {((vid.ExpertEducational.length) < 27) ?
+              <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertDesignation}</p>
+              {((vid.ExpertCompany.length) < 27) ?
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertEducational}</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertCompany}</p>)
                 ) :
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertEducational.substring(0, 27)}...</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertCompany.substring(0, 40)}...</p>)
                 )
               }
+              <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start" }}>
+                {vid.ExpertSkills.map((ele) => {
+                  return <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>
+                    {ele}
+                  </p>
+                })}
+              </div>
             </div>
             <br />
           </div>

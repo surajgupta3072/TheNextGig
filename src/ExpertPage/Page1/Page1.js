@@ -233,16 +233,16 @@ function Page1(props) {
               <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(expert.AccountID)} >&nbsp;Follow</p>
             </div>
             <div>
-              <h3 style={{ color: "#f26c4f" }}>Skills experienced in:</h3>
+              <h3 style={{ color: "#f26c4f" }}>Skilled at:</h3>
               <p className="subtitle_expertcard">{expert.ExpertSkills}</p>
             </div>
-            {expert.ExpertCompaniesLogo !== undefined &&
+            {/* {expert.ExpertCompaniesLogo !== undefined &&
               <div className="img_arr">
                 {expert.ExpertCompaniesLogo.map(companyLogo =>
                   <img alt="..." className="img_company" src={companyLogo} />
                 )}
               </div>
-            }
+            } */}
           </div>
         </div>
       </Container>
