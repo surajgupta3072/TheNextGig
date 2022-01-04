@@ -28,6 +28,9 @@
   .reward_mins {
     display: none !important;
   }
+  .rewards_min_mobile_free {
+    padding-left: 0px !important;
+  }
   .referral_code {
     text-align: left;
   }
