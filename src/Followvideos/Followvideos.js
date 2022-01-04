@@ -19,39 +19,76 @@ function Followvideos(props) {
                     <Col>
                         <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap", marginTop: "40px" }}>
                             {location.state.data.map((vid, index) => {
-                                return (<div key={index} style={{ width: "260px", cursor: "pointer" }} >
-                                    <figure className="tag1 figurex1" data-content={vid.VideoDuration} >
-                                        <img onClick={() => { if (props.auth) { setModalShow3(true); setvideodata(vid) } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
-                                    </figure>
-                                    <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }} >
-                                        {(vid.VideoTopic.length < 26) ?
-                                            (
-                                                (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
-                                                    {vid.VideoTopic}
-                                                </h8>)
-                                            ) :
-                                            (
-                                                (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
-                                                    {vid.VideoTopic.substring(0, 26)}...
-                                                    <sup data-tip data-for={index + "729g"} >&#9432;</sup>
-                                                    <ReactTooltip id={index + "729g"} place="top" effect="solid">
+                                if (vid.id === undefined) {
+                                    return (<div key={index} style={{ width: "260px", cursor: "pointer" }} >
+                                        <figure className="tag1 figurex1" data-content={vid.VideoDuration} >
+                                            <img onClick={() => { if (props.auth) { setModalShow3(true); setvideodata(vid) } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />
+                                        </figure>
+                                        <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }} >
+                                            {(vid.VideoTopic.length < 26) ?
+                                                (
+                                                    (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
                                                         {vid.VideoTopic}
-                                                    </ReactTooltip>
-                                                </h8>)
-                                            )
-                                        }
-                                        <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
-                                        {((vid.VideoCreds.length) < 27) ?
-                                            (
-                                                (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds}</p>)
-                                            ) :
-                                            (
-                                                (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
-                                            )
-                                        }
+                                                    </h8>)
+                                                ) :
+                                                (
+                                                    (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
+                                                        {vid.VideoTopic.substring(0, 26)}...
+                                                        <sup data-tip data-for={index + "729g"} >&#9432;</sup>
+                                                        <ReactTooltip id={index + "729g"} place="top" effect="solid">
+                                                            {vid.VideoTopic}
+                                                        </ReactTooltip>
+                                                    </h8>)
+                                                )
+                                            }
+                                            <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
+                                            {((vid.VideoCreds.length) < 27) ?
+                                                (
+                                                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds}</p>)
+                                                ) :
+                                                (
+                                                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                                                )
+                                            }
+                                        </div>
+                                        <br />
+                                    </div>)
+                                }
+                                else {
+                                    return <div style={{ height: "300px", width: "260px" }} >
+                                        <figure style={{ cursor: "pointer" }} onClick={() => { if (vid.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${vid.id}`; }} className="tag1 figurex1" data-content={vid.course_episode_HomePage} >
+                                            <img width="240px" src={vid.course_image} style={{ cursor: "pointer" }} />
+                                        </figure>
+                                        <div width="240px" src={vid.course_image} style={{ marginLeft: "2%", width: "260px" }}>
+                                            {(vid.course_name.length < 25) ?
+                                                (
+                                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
+                                                        {vid.course_name}
+                                                    </p>)
+                                                ) :
+                                                (
+                                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
+                                                        {vid.course_name.substring(0, 25)}...
+                                                        <sup data-tip data-for={vid.id + "gx23"} >&#9432;</sup>
+                                                        <ReactTooltip id={vid.id + "gx23"} place="top" effect="solid">
+                                                            {vid.course_name}
+                                                        </ReactTooltip>
+                                                    </p>)
+                                                )
+                                            }
+                                            <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.course_instructor}</p>
+                                            {((vid.course_instructor_post.length) < 27) ?
+                                                (
+                                                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.course_instructor_post}</p>)
+                                                ) :
+                                                (
+                                                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.course_instructor_post.substring(0, 27)}...</p>)
+
+                                                )
+                                            }
+                                        </div>
                                     </div>
-                                    <br />
-                                </div>)
+                                }
                             })}
                         </div>
                     </Col>
