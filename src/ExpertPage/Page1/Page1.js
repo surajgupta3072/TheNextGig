@@ -248,7 +248,7 @@ function Page1(props) {
       </Container>
       <br /><br />
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", marginLeft: "2%" }}>Videos</h4>
-      <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row" }}>
+      <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap" }}>
         {masterclasses.map((ele) => {
           return <div style={{ width: "260px" }} >
             <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
