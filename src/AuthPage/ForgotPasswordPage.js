@@ -19,7 +19,7 @@ function ForgotPasswordPage(){
           console.log(err);
         } 
         else {
-          console.log(data.Items)
+          // console.log(data.Items);
           for(var i=0; i<data.Items.length; i++) {
             if(data.Items[i].Email==email && data.Items[i].Gflag==false) {
               await Auth.forgotPassword(email);

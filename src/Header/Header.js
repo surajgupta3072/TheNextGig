@@ -6,19 +6,22 @@ import { useState, useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
 import './Header.css';
 import NotALearnerModal from './NotALearnerPageModal';
-import Referalpopup from "./Referralpopup"
+import Referalpopup from "./Referralpopup";
+
 function Header(props) {
     const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("__");
     const [refcode, setRefCode] = useState("_______");
     const [modalShow2, setModalShow2] = useState(false);
-    const [Dp, setDp] = useState("")
+    const [Dp, setDp] = useState("");
+    const [showrdmbutton, setShowRDMButton] = useState(false);
+
     useEffect(() => {
         if (props.auth.isAuthenticated === true) {
             var paramss = {
                 TableName: "UsersTable",
                 Key: { UserID: props.auth.user.username },
-                ProjectionExpression: "TotalRewards, ReferralCode, DPlink",
+                ProjectionExpression: "TotalRewards, DPlink, RedeemDailyMinutesButtonClickedAt",
             };
             docClient.get(paramss, function (err, data) {
                 if (err) {
@@ -28,11 +31,28 @@ function Header(props) {
                         setDp(data.Item.DPlink)
                     }
                     setReward(data.Item.TotalRewards);
-                    setRefCode(data.Item.ReferralCode);
+                    if(data.Item.RedeemDailyMinutesButtonClickedAt===undefined || Date.now()-data.Item.RedeemDailyMinutesButtonClickedAt>=86400000){
+                        setShowRDMButton(true);
+                    }
                 }
             });
         }
     }, []);
+
+    function getRefCode() {
+        var paramss = {
+            TableName: "UsersTable",
+            Key: { UserID: props.auth.user.username },
+            ProjectionExpression: "ReferralCode",
+        };
+        docClient.get(paramss, function (err, data) {
+            if (err) {
+                console.log(err);
+            } else {
+                setRefCode(data.Item.ReferralCode);
+            }
+        });
+    }
 
     async function LogOutFunc() {
         try {
@@ -43,40 +63,53 @@ function Header(props) {
         }
     }
 
-    // function doRewardChange() {
-    //     var params = {
-    //         TableName: "UsersTable",
-    //         ProjectionExpression: "UserID, TotalRewards"
-    //     };
-    //     docClient.scan(params, async function (err, data) {
-    //         if (err) {
-    //           console.log(err);
-    //         } 
-    //         else {
-    //             console.log(data);
-    //             for(var i=0; i<data.Count; i++) {
-    //                 var paramss = {
-    //                     TableName: "UsersTable",
-    //                     Key: { "UserID": data.Items[i].UserID },
-    //                     UpdateExpression: "set TotalRewards = :tr",
-    //                     ExpressionAttributeValues:{
-    //                     ":tr": Number(data.Items[i].TotalRewards) + 10,
-    //                     },
-    //                     ReturnValues:"UPDATED_NEW"
-    //                 }
-    //                 docClient.update(paramss, function (err, data) {
-    //                     if (err) {
-    //                         console.log(err);
-    //                     } 
-    //                     else {
-    //                         console.log(data);
-    //                     }
-    //                 });
-    //                 await new Promise(r => setTimeout(r, 500));
-    //             }
-    //         }
-    //     });
-    // }
+    function RedeemDailyMinutes() {
+        var params = {
+            TableName: "UsersTable",
+            Key: { "UserID": props.auth.user.username },
+            ProjectionExpression: "TotalRewards",
+        };
+        docClient.get(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            } 
+            else {
+                var paramss = {
+                    TableName: "UsersTable",
+                    Key: { "UserID": props.auth.user.username },
+                    UpdateExpression: "set TotalRewards = :tr",
+                    ExpressionAttributeValues:{
+                        ":tr": data.Item.TotalRewards + 5,
+                    },
+                    ReturnValues:"UPDATED_NEW"
+                }
+                docClient.update(paramss, function (err, data) {
+                    if (err) {
+                        console.log(err);
+                    } 
+                    else {
+                        var paramss = {
+                            TableName: "UsersTable",
+                            Key: { "UserID": props.auth.user.username },
+                            UpdateExpression: "set RedeemDailyMinutesButtonClickedAt = :rdm",
+                            ExpressionAttributeValues:{
+                                ":rdm": Date.now(),
+                            },
+                            ReturnValues:"UPDATED_NEW"
+                        }
+                        docClient.update(paramss, function (err, data) {
+                            if (err) {
+                                console.log(err);
+                            } 
+                            else {
+                                window.location.reload();
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
 
     return (<div>
         <Navbar style={{ backgroundColor: "black", padding: "0px", width: "100%", position: "sticky", top: "0", zIndex: "100" }} expand="lg" variant="dark" >
@@ -107,17 +140,22 @@ function Header(props) {
                         Opportunities
                     </Nav.Link>
                 </Nav>
+                {(props.auth.isAuthenticated === true && showrdmbutton===true) &&
+                    <Nav.Link onClick={RedeemDailyMinutes} style={{ color: "white", fontWeight: "700", fontSize: "15px", display: "flex", flexDirection: "column", justifyContent: "center", background:"#f26c4f" }}>
+                        Redeem Daily Minutes
+                    </Nav.Link>
+                }
                 <Nav style={{ paddingRight: "50px" }}>
                     {props.auth.isAuthenticated === true &&
-                        <Nav.Link className="reward_mins" href="/LearnCoins" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                        <Nav.Link className="reward_mins" href="/LearnCoins" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             {reward} mins free
                         </Nav.Link>
                     }
                     {props.auth.isAuthenticated === true &&
-                        <div className='prof_img' style={{ display: "flex" }}>
+                        <div className='prof_img' style={{ display: "flex", paddingLeft: "30px" }}>
                             {Dp === "" ? <span className='profile_box'><h6 className="profile_icon_text">{props.auth.user.attributes.name.split(" ")[0][0]}</h6></span> : <img style={{ height: "30px", width: "30px", borderRadius: "50%", marginTop: "4px" }} src={Dp} />}
                             <NavDropdown className='navdrop_profile' style={{ color: "white", fontWeight: "700", fontSize: "15px" }} title={props.auth.user.attributes.name.split(" ")[0]}>
-                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => setModalShow2(true)}>Referral Code</NavDropdown.Item>
+                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => {getRefCode(); setModalShow2(true)}}>Referral Code</NavDropdown.Item>
                                 <Referalpopup
                                     show={modalShow2}
                                     refcode={refcode}
@@ -135,14 +173,6 @@ function Header(props) {
                             Login
                         </Nav.Link>
                     }
-                    {/* {props.auth.isAuthenticated === true &&
-                        <Nav.Link onClick={LogOutFunc} style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                            Logout
-                        </Nav.Link>
-                    } */}
-                    {/* <Nav.Link onClick={doRewardChange} style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                        FIRE
-                    </Nav.Link> */}
                 </Nav>
             </Navbar.Collapse>
         </Navbar >

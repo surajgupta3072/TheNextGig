@@ -6,7 +6,6 @@ import Popup from '../HomePage/Page2/Videopopup'
 function Video(props) {
     const [modalShow3, setModalShow3] = React.useState(false);
     const [videodata, setvideodata] = React.useState({});
-    console.log(props)
     return (
         <div style={{ marginTop: "20px" }}>
             {props.videospur.length !== 0 || props.videoswatch.length !== 0 ?

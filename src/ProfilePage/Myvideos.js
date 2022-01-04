@@ -2,16 +2,17 @@ import React from 'react'
 import ReactTooltip from 'react-tooltip';
 import { ArrowRight } from "react-bootstrap-icons";
 import docClient from '../GigsPage/GigsAWS';
-import Collaborate from "../Header/NotALearnerPageModal"
-import AddVideo from "../SocialLearningPage/popupVideo"
-import Popup from '../HomePage/Page2/Videopopup'
+import Collaborate from "../Header/NotALearnerPageModal";
+import AddVideo from "../SocialLearningPage/popupVideo";
+import Popup from '../HomePage/Page2/Videopopup';
+
 function Myvideo(props) {
     const [myvideo, setmyvideo] = React.useState([])
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
     const [modalShow3, setModalShow3] = React.useState(false);
     const [videodata, setvideodata] = React.useState({});
-    console.log(props.userid)
+
     React.useEffect(async () => {
         let paramss = {
             TableName: "VideosTable",

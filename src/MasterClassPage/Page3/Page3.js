@@ -215,7 +215,7 @@ function Page3(props) {
   }
   function getNotified() {
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
-    { console.log(session.course_name) }
+    // console.log(session.course_name)
     // We use JSON.stringify here so the data can be sent as a string via HTTP
     const body = JSON.stringify({
       feedback: `Uid:${props.prop.user.username}`,
