@@ -5,12 +5,11 @@ import Container from 'react-bootstrap/Container';
 import "./Follow.css"
 import ReactTooltip from 'react-tooltip';
 import masterdata from "../MasterClassPage/Masterclass.json"
-import { useHistory } from "react-router-dom"
-let list1 = [];
+import { useHistory } from "react-router-dom";
+
 function Follow(props) {
+    let list1 = [];
     const history = useHistory();
-    if (props.auth.isAuthenticated === false)
-        window.location.href = "../login";
     const [yourfollowid, setyourfollowid] = useState([])
     const [yourfollowdata, setyourfollowdata] = useState([])
     const [followvideo, setfollowvideo] = useState([])
@@ -120,7 +119,7 @@ function Follow(props) {
                                 </p>)
                             )
                         }
-                        {((ele.ExpertDesignation.length) < 27) ?
+                        {/* {((ele.ExpertDesignation.length) < 27) ?
                             (
                                 (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertDesignation}</p>)
                             ) :
@@ -128,8 +127,16 @@ function Follow(props) {
                                 (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertDesignation.substring(0, 27)}...</p>)
 
                             )
+                        } */}
+                        <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertDesignation}</p>
+                        {((ele.ExpertCompany.length) < 27) ?
+                            (
+                            (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertCompany}</p>)
+                            ) :
+                            (
+                            (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertCompany.substring(0, 40)}...</p>)
+                            )
                         }
-                        <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertEducational}</p>
                     </div>
 
                 </div>

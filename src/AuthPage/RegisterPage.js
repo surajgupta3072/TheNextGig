@@ -54,7 +54,7 @@ function RegisterPage(props) {
             "UserID": userLogin.username, "FullName": name, "Email": email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 180,
             "MasterclassesPurchased": [], "gigsApplications": [], "SocialLearningVideosUploaded": [], "SocialLearningBlogsUploaded": [], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "Follower": [], "Following": [], "UnsubscribeEmail": false,
             "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": email.split("@")[0] + String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "",
-            "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": false
+            "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": false, "MasterclassesLiked": [], "SocialLearningVideosLiked": []
           }
         }
         docClient.put(params, function (err, data) {

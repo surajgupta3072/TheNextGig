@@ -4,14 +4,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ReactTooltip from 'react-tooltip';
 import Popup from '../HomePage/Page2/Videopopup';
-import { useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom";
+
 function Followvideos(props) {
     const location = useLocation();
     const [modalShow3, setModalShow3] = React.useState(false);
     const [videodata, setvideodata] = React.useState({});
-    if (!props.auth.isAuthenticated) {
-        window.location.href = "../login";
-    }
     return (
         <div>
             <Container>

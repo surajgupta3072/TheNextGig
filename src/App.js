@@ -69,7 +69,7 @@ function App() {
           if (data.Item === undefined) {
             var paramss = {
               TableName: "UsersTable",
-              Item: { "UserID": decoded.sub, "FullName": decoded.name, "Email": decoded.email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 180, "MasterclassesPurchased": [], "gigsApplications": [], "SocialLearningVideosUploaded": [], "SocialLearningBlogsUploaded": [], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0] + String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": true }
+              Item: { "UserID": decoded.sub, "FullName": decoded.name, "Email": decoded.email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 180, "MasterclassesPurchased": [], "gigsApplications": [], "SocialLearningVideosUploaded": [], "SocialLearningBlogsUploaded": [], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0] + String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": true, "MasterclassesLiked": [], "SocialLearningVideosLiked": [] }
             }
             docClient.put(paramss, function (err, data) {
               if (err) {
@@ -111,7 +111,7 @@ function App() {
     catch (error) {
       if (window.location.href != "http://localhost:3000/login" && window.location.href != "http://localhost:3000/register" && window.location.href != "http://localhost:3000/Referral" && window.location.href != "https://www.thenextgig.net/login" && window.location.href != "https://www.thenextgig.net/register" && window.location.href != "https://www.thenextgig.net/Referral")
         localStorage.setItem('lastURL', window.location.href);
-      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/") || (window.location.href.split("/")[3] !== undefined && window.location.href.split("/")[3].length === 16)) {
+      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/") || (window.location.href.split("/")[3] !== undefined && window.location.href.split("/")[3].length === 16) || (window.location.href.split("/")[4]!==undefined && window.location.href.split("/")[4].includes("%20"))) {
         localStorage.setItem('lastLastURL', window.location.href);
         localStorage.setItem('lastURL', "https://www.thenextgig.net/Redirecting");
       }
@@ -151,12 +151,12 @@ function App() {
               <Route exact path="/register">
                 <RegisterPage auth={authProps} />
               </Route>
-              <Route exact path="/follow">
+              <ProtectedRoute exact path="/follow" auth={authProps}>
                 <Follow auth={authProps} />
-              </Route>
-              <Route exact path="/followvideos">
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/followvideos" auth={authProps}>
                 <Followvideos auth={authProps} />
-              </Route>
+              </ProtectedRoute>
               <Route exact path="/SkillsVideo">
                 <SkillsVideopage auth={authProps} />
               </Route>
