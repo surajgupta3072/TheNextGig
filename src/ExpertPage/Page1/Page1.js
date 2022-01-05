@@ -7,6 +7,7 @@ import docClient from '../../GigsPage/GigsAWS';
 import ReactTooltip from 'react-tooltip';
 import Videopopup from "../../HomePage/Page2/Videopopup"
 import Swal from "sweetalert2";
+
 function Page1(props) {
   const [expert, setExpert] = useState("");
   const [modalShow3, setModalShow3] = useState(false);
@@ -221,19 +222,17 @@ function Page1(props) {
               <img alt="..." className="img_experttop" src={expert.ExpertPic} />
             </div>
             <div class="para">
-              <h3 style={{ color: "#f26c4f" }}>{expert.ExpertName}</h3>
+              <h3 style={{ color: "#f26c4f", margin:0 }}>{expert.ExpertName}</h3>
               <p className="subtitle_expertcard">{expert.ExpertDesignation}</p>
+              <p className="subtitle_expertcard">{expert.ExpertCompany}</p>
               <p className="subtitle_expertcard">{expert.ExpertEducational}</p>
             </div>
             <div class="logo_para">
-              <a href={expert.ExpertLinkedIn} target="_blank" rel="noreferrer"><Linkedin style={{ color: "white", cursor: "pointer" }} size={34} /></a>
+              <a href={expert.ExpertLinkedIn} target="_blank" rel="noreferrer"><Linkedin style={{ background:"white", border:"0.1px solid white", color: "black", cursor: "pointer" }} size={34} /></a>
             </div>
-            <br />
+            <p className="connect_text" style={{ cursor: "pointer", margin:0 }} onClick={() => follow(expert.AccountID)} >&nbsp;Follow</p>
             <div>
-              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(expert.AccountID)} >&nbsp;Follow</p>
-            </div>
-            <div>
-              <h3 style={{ color: "#f26c4f" }}>Skilled at:</h3>
+              <h3 style={{ color: "#f26c4f", margin:0 }}>Skilled at:</h3>
               <p className="subtitle_expertcard">{expert.ExpertSkills}</p>
             </div>
             {/* {expert.ExpertCompaniesLogo !== undefined &&
@@ -247,7 +246,7 @@ function Page1(props) {
         </div>
       </Container>
       <br /><br />
-      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", marginLeft: "2%" }}>Videos</h4>
+      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", marginLeft: "4.5%" }}>Videos</h4>
       <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap" }}>
         {masterclasses.map((ele) => {
           return <div style={{ width: "260px" }} >

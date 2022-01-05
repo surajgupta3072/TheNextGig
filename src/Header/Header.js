@@ -141,10 +141,10 @@ function Header(props) {
                         />
                         <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SocialLearning">Add Bite-Sized Video</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="/expert" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
+                    <Nav.Link href="/expert" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "25px" }}>
                         Our experts
                     </Nav.Link>
-                    <Nav.Link href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
+                    <Nav.Link href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "25px" }}>
                         Opportunities
                     </Nav.Link>
                 </Nav>
