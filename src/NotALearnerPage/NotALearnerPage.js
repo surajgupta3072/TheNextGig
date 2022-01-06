@@ -6,9 +6,46 @@ import Card from 'react-bootstrap/Card';
 import {ArrowLeft,Linkedin,Whatsapp,Instagram, Discord} from 'react-bootstrap-icons';
 import NotALearnerModal from './NotALearnerPageModal';
 import {useState} from 'react';
+// import docClient from "../../GigsPage/GigsAWS";
 
 function NotALearnerPage() {
     const [modalShow, setModalShow] = useState(false);
+
+        // function demoUpdateFunc() {
+        //   var paramss = {
+        //     TableName: "UsersTable",
+        //   };
+        //   docClient.scan(paramss, function (err, data) {
+        //     if (err) {
+        //       console.log(err);
+        //     } 
+        //     else {
+        //       console.log(data.Items);
+        //       data.Items.forEach((ele) => {
+        //         if(ele.MasterclassesLiked===undefined || ele.SocialLearningVideosLiked===undefined) {
+        //           var params = {
+        //             TableName: "UsersTable",
+        //             Key: {
+        //               "UserID": ele.UserID
+        //             },
+        //             UpdateExpression: "set  MasterclassesLiked= :r, SocialLearningVideosLiked=:a",
+        //             ExpressionAttributeValues: {
+        //               ":r": [],
+        //               ":a": []
+        //             },
+        //             ReturnValues:"UPDATED_NEW"
+        //           };
+        //           docClient.update(params, function (err, data) {
+        //             if (err)
+        //               console.log(err);
+        //             else
+        //               console.log(data.Attributes);
+        //           });
+        //         }
+        //       });
+        //     }
+        //   });
+        // }
 
     return (
         <div >
@@ -19,6 +56,7 @@ function NotALearnerPage() {
                             <span>
                                 <span>
                                     <span className="border_box">IF YOU’RE NOT A LEARNER</span>
+                                    {/* <button onClick={demoUpdateFunc}>FIRE</button> */}
                                 </span>
                             </span>
                         </p>

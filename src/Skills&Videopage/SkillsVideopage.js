@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
 import Skills from '../ProfilePage/Skills';
-// import FeedBack  from './Feedback';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import ProgressBar from 'react-bootstrap/ProgressBar';
 import docClient from '../GigsPage/GigsAWS';
 import S3 from 'react-aws-s3';
 import '../ProfilePage/ProfilePage.css';
 import Video from '../ProfilePage/Video';
 import Myvideo from '../ProfilePage/Myvideos';
-import Popup from '../../src/HomePage/Page2/Videopopup'
+
 const config = { bucketName: "usersdp", region: process.env.REACT_APP_REGION, accessKeyId: process.env.REACT_APP_ACCESS_ID, secretAccessKey: process.env.REACT_APP_ACCESS_KEY };
 const ReactS3Client = new S3(config);
 
@@ -161,8 +159,6 @@ function SkillsVideopage(props) {
         <Container>
             <Row>
                 <Col xs={3} style={{ backgroundColor: "#1B1C2A", height: "100%" }} className="Profile_list_laptop">
-                    <ProgressBar style={{ marginTop: "10%", backgroundColor: "white", marginBottom: "1%" }} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`} />
-                    <p style={{ fontSize: "14px", textAlign: "center" }}>(Complete the profile to earn TNG Minutes)</p>
                     <Row style={{ marginTop: "7%", marginLeft: "22%" }}>
                         <label>
                             <input type="file" onChange={(e) => onChangePicture(e)} style={{ display: "none" }} />
@@ -180,8 +176,6 @@ function SkillsVideopage(props) {
                     <Row onClick={() => whichColor("My Videos")} style={color3}><p style={{ fontSize: "20px", textAlign: "center", cursor: "pointer" }}>My Videos</p></Row>
                 </Col>
                 <Col xs={12} className="Profile_list_mobile">
-                    <ProgressBar style={{ marginTop: "10%", backgroundColor: "white", marginBottom: "1%" }} min={0} max={100} variant="success" now={percentage} label={`${percentage}%`} />
-                    <p style={{ fontSize: "14px", textAlign: "center" }}>(Complete the profile to earn Reward points)</p>
                     <div >
                         <input type="file" onChange={(e) => onChangePicture(e)} style={{ display: "none" }} />
                         <div className="profile_logo_text_mobile"><div><img alt="dp" src={dplink} style={{ height: "100px", width: "100px", borderRadius: "50%" }} /></div>

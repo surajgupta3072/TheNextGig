@@ -25,18 +25,18 @@ function Followvideos(props) {
                                         <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }} >
                                             {(vid.VideoTopic.length < 26) ?
                                                 (
-                                                    (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
+                                                    (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
                                                         {vid.VideoTopic}
-                                                    </h8>)
+                                                    </h6>)
                                                 ) :
                                                 (
-                                                    (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
+                                                    (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
                                                         {vid.VideoTopic.substring(0, 26)}...
                                                         <sup data-tip data-for={index + "729g"} >&#9432;</sup>
                                                         <ReactTooltip id={index + "729g"} place="top" effect="solid">
                                                             {vid.VideoTopic}
                                                         </ReactTooltip>
-                                                    </h8>)
+                                                    </h6>)
                                                 )
                                             }
                                             <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
@@ -60,12 +60,12 @@ function Followvideos(props) {
                                         <div width="240px" src={vid.course_image} style={{ marginLeft: "2%", width: "260px" }}>
                                             {(vid.course_name.length < 25) ?
                                                 (
-                                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
+                                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
                                                         {vid.course_name}
                                                     </p>)
                                                 ) :
                                                 (
-                                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
+                                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
                                                         {vid.course_name.substring(0, 25)}...
                                                         <sup data-tip data-for={vid.id + "gx23"} >&#9432;</sup>
                                                         <ReactTooltip id={vid.id + "gx23"} place="top" effect="solid">

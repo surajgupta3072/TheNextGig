@@ -1,17 +1,13 @@
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
-import { GiShare } from "react-icons/gi";
-import MyVerticallyCenteredModal1 from './Modal1'
 import { AiFillCloseCircle } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { ArrowLeft } from "react-bootstrap-icons";
+
 function MyVerticallyCenteredModal(props) {
-    const [modalShow, setModalShow] = useState(false);
-    const [popupsharelinkid, setpopupsharelinkid] = useState("");
     const [userEmail, setUserEmail] = useState("");
     const [question, setquestion] = useState("");
     const [session, setsession] = useState("");
-    const [questioncheck, setquestioncheck] = useState("")
     const [caution, setcaution] = useState("")
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
     // We use JSON.stringify here so the data can be sent as a string via HTTP

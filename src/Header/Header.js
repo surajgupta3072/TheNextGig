@@ -141,10 +141,10 @@ function Header(props) {
                         />
                         <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SocialLearning">Add Bite-Sized Video</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="/expert" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "25px" }}>
+                    {/* <Nav.Link href="/expert" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "25px" }}>
                         Our experts
-                    </Nav.Link>
-                    <Nav.Link href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "25px" }}>
+                    </Nav.Link> */}
+                    <Nav.Link href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
                         Opportunities
                     </Nav.Link>
                 </Nav>
@@ -160,7 +160,7 @@ function Header(props) {
                         </Nav.Link>
                     }
                     {props.auth.isAuthenticated === true &&
-                        <div className='prof_img' style={{ display: "flex", paddingLeft: "30px" }}>
+                        <div className='prof_img' style={{ display: "flex", paddingLeft: "15px" }}>
                             {Dp === "" ? <span className='profile_box'><h6 className="profile_icon_text">{props.auth.user.attributes.name.split(" ")[0][0]}</h6></span> : <img style={{ height: "30px", width: "30px", borderRadius: "50%", marginTop: "4px" }} src={Dp} />}
                             <NavDropdown className='navdrop_profile' style={{ color: "white", fontWeight: "700", fontSize: "15px" }} title={props.auth.user.attributes.name.split(" ")[0]}>
                                 <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => { getRefCode(); setModalShow2(true) }}>Referral Code</NavDropdown.Item>

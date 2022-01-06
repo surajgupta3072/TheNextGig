@@ -257,14 +257,14 @@ function Page1(props) {
             <div width="240px" src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
               {(ele.course_name.length < 25) ?
                 (
-                  (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{ele.course_name}</h8>)
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{ele.course_name}</h6>)
                 ) :
                 (
-                  (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{ele.course_name.substring(0, 25)}...
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{ele.course_name.substring(0, 25)}...
                     <sup data-tip data-for={ele.id + "finance"} >&#9432;</sup>
                     <ReactTooltip id={ele.id + "finance"} place="top" effect="solid">
                       {ele.course_name}
-                    </ReactTooltip></h8>)
+                    </ReactTooltip></h6>)
                 )
               }
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {ele.course_instructor}</p>
@@ -287,14 +287,14 @@ function Page1(props) {
             <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 27) ?
                 (
-                  (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic}</h6>)
                 ) :
                 (
-                  (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic.substring(0, 27)}...
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic.substring(0, 27)}...
                     <sup data-tip data-for={index + "ga9"} >&#9432;</sup>
                     <ReactTooltip id={index + "ga9"} place="top" effect="solid">
                       {vid.VideoTopic}
-                    </ReactTooltip></h8>)
+                    </ReactTooltip></h6>)
                 )
               }
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>

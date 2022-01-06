@@ -17,9 +17,8 @@ const breakPoints = [
 function Page1() {
   const [modalShow, setModalShow] = useState(false);
   const [cardslist, setcardsList] = useState(master);
-  const [filternumber, setfilternumber] = useState([])
   function searchfilter(e) {
-    var filterword = filternumber;
+    var filterword = [];
     if (filterword.includes(e.target.value) === false) {
       filterword.push(e.target.value)
     }

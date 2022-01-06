@@ -1,18 +1,16 @@
 import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 import { GiShare } from "react-icons/gi";
-import MyVerticallyCenteredModal1 from './Modal1'
-import { FiPlay } from "react-icons/fi";
+import MyVerticallyCenteredModal1 from './Modal1';
 import Swal from "sweetalert2";
 import Modalx from './Contactinstructorpopup';
 import docClient from '../../GigsPage/GigsAWS';
+
 function MyVerticallyCenteredModal(props) {
-    const [modalShow2, setModalShow2] = useState({
-        data: "", check: false
-    });
+    const [modalShow2, setModalShow2] = useState({data: "", check: false});
     const [modalShow, setModalShow] = useState(false);
-    const [popupsharelinkid, setpopupsharelinkid] = useState("");
     const [reward, setReward] = useState("");
+
     useEffect(() => {
         document.getElementsByClassName("modal-dialog")[0].classList.add("modal-dialog-custom")
         document.getElementsByClassName("modal-content")[0].classList.add("modal-content-custom")
@@ -33,7 +31,8 @@ function MyVerticallyCenteredModal(props) {
                 }
             });
         }
-    }, [])
+    }, []);
+    
     const like = (id) => {
         var paramss = {
             TableName: "UsersTable",

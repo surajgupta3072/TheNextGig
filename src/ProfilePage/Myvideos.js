@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactTooltip from 'react-tooltip';
-import { ArrowRight } from "react-bootstrap-icons";
 import docClient from '../GigsPage/GigsAWS';
 import Collaborate from "../Header/NotALearnerPageModal";
 import AddVideo from "../SocialLearningPage/popupVideo";
@@ -45,14 +44,14 @@ function Myvideo(props) {
                                 <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                                     {(vid.VideoTopic.length < 27) ?
                                         (
-                                            (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
+                                            (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic}</h6>)
                                         ) :
                                         (
-                                            (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic.substring(0, 27)}...
+                                            (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic.substring(0, 27)}...
                                                 <sup data-tip data-for={index + "ga9"} >&#9432;</sup>
                                                 <ReactTooltip id={index + "ga9"} place="top" effect="solid">
                                                     {vid.VideoTopic}
-                                                </ReactTooltip></h8>)
+                                                </ReactTooltip></h6>)
                                         )
                                     }
                                     <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
@@ -76,8 +75,8 @@ function Myvideo(props) {
                 </div>
             }
             <div className="btn_div_homepage_new" style={{ display: "flex", justifyContent: "space-evenly" }}>
-                <div><button onClick={() => setModalShow(true)} style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">Collaborate for Session<ArrowRight className="button_arrow" /></button></div>
-                <div><button onClick={() => setModalShow2(true)} id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} className="button_slide slide_right orange_button_page3">Add bite-sized videos<ArrowRight className="button_arrow" /></button></div>
+                <div><button onClick={() => setModalShow(true)} style={{ marginTop: "0px", marginLeft: "0px", width: "280px" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">Collaborate for Session</button></div>
+                <div><button onClick={() => setModalShow2(true)} id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "280px" }} className="button_slide slide_right orange_button_page3">Add bite-sized videos</button></div>
             </div>
             <Collaborate
                 show={modalShow}

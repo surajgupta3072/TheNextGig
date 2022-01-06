@@ -11,8 +11,9 @@ import ReactTooltip from 'react-tooltip';
 import docClient from '../../GigsPage/GigsAWS';
 import MyVerticallyPopUp from './popup';
 import Swal from "sweetalert2";
-import Connectpopup from "../../HomePage/Page2/Contactinstructorpopup";
-import Connect from "../../HomePage/Page2/Contactinstructorpopup"
+// import Connectpopup from "../../HomePage/Page2/Contactinstructorpopup";
+import Connect from "../../HomePage/Page2/Contactinstructorpopup";
+
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -25,7 +26,7 @@ function Page3(props) {
   const [modalShow, setModalShow] = useState(false);
   const [des, setDes] = useState(session["episodes"][0]["description"]);
   const [masterid, setmasterid] = useState(session["VideoUploaderID"]);
-  const [videotopic, setvideotopic] = useState(session["course_name"]);
+  // const [videotopic, setvideotopic] = useState(session["course_name"]);
   const [epivid, setEpiVideo] = useState(session["episodes"][0]["epi_video"]);
   const [paymentshow, setPaymentShow] = useState(false);
   const [coursePurchased, setCoursePurchased] = useState(false);
@@ -530,7 +531,7 @@ function Page3(props) {
                   <div className="menu_card">
                     <h1 className="epi" style={{ marginTop: "2%", marginLeft: "2%" }}>Episodes</h1>
                     <div className="vertical-menu">
-                      {session["episodes"].map((topic, i) => (
+                      {session["episodes"].map(topic => (
                         <div className="menu_list" style={{ cursor: "pointer" }} onClick={() => { showDescription(topic.id) }}>
                           <span >
                             <div style={{ display: "flex", justifyContent: "flex-start", fontSize: "18px" }}><div>&nbsp;&nbsp;</div><div style={{ marginTop: "4%", marginBottom: "-2%" }}> {topic.title}</div></div><br />
@@ -592,7 +593,7 @@ function Page3(props) {
         </div>
       </Container>
       <div className="btn_div_homepage_new" style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <div><button onClick={() => setModalShow2({ data: { VideoTopic: session["course_name"], VideoUsername: session["course_instructor"] }, check: true })} style={{ marginTop: "0px", marginLeft: "0px", width: "240px", marginBottom: "8%" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">Connect<ArrowRight className="button_arrow" style={{ marginLeft: "62px" }} /></button></div>
+        <div><button onClick={() => setModalShow2({ data: { VideoTopic: session["course_name"], VideoUsername: session["course_instructor"] }, check: true })} style={{ marginTop: "0px", marginLeft: "0px", width: "240px", marginBottom: "8%" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">Connect<ArrowRight className="button_arrow" style={{ marginLeft: "65px" }} /></button></div>
         <div><button onClick={() => follow(masterid)} id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "240px", marginBottom: "8%" }} className="button_slide slide_right orange_button_page3">Follow Expert<ArrowRight className="button_arrow" style={{ marginLeft: "40px" }} /></button></div>
       </div>
       <div className="header_masterclass">
@@ -610,13 +611,6 @@ function Page3(props) {
             <div style={{ height: "100px", width: "80px", backgroundColor: "rgba(242, 108, 79, 0.3)", border: "1px solid #F26C4F", paddingTop: "38px" }}>1</div>
             <h3 style={{ marginTop: "-70px", marginLeft: "8%", fontSize: "20px", textAlign: "left" }}>{session.WhatsInForYou[0]}<br /><span style={{ color: "#F26C4F" }}>{session.WhatsInForYou[1]}</span></h3>
           </Col>
-          {/* <div className="night">
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-          <div className="star"></div>
-        </div> */}
         </Row>
         <br /><br />
         <Row>

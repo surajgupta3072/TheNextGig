@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactTooltip from 'react-tooltip';
-import { ArrowRight } from "react-bootstrap-icons";
 import data from "../../src/MasterClassPage/Masterclass.json";
-import Popup from '../HomePage/Page2/Videopopup'
+import Popup from '../HomePage/Page2/Videopopup';
+
 function Video(props) {
     const [modalShow3, setModalShow3] = React.useState(false);
     const [videodata, setvideodata] = React.useState({});
@@ -57,14 +57,14 @@ function Video(props) {
                                 <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                                     {(vid.VideoTopic.length < 27) ?
                                         (
-                                            (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic}</h8>)
+                                            (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic}</h6>)
                                         ) :
                                         (
-                                            (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic.substring(0, 27)}...
+                                            (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic.substring(0, 27)}...
                                                 <sup data-tip data-for={index + "ga9"} >&#9432;</sup>
                                                 <ReactTooltip id={index + "ga9"} place="top" effect="solid">
                                                     {vid.VideoTopic}
-                                                </ReactTooltip></h8>)
+                                                </ReactTooltip></h6>)
                                         )
                                     }
                                     <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
@@ -88,8 +88,8 @@ function Video(props) {
                 </div>
             }
             <div className="btn_div_homepage_new" style={{ display: "flex", justifyContent: "space-evenly" }}>
-                <div><a href="/TNGOriginals"><button style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All TNG Originals<ArrowRight className="button_arrow" /></button></a></div>
-                <div><a href="/SocialLearning"><button id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} className="button_slide slide_right orange_button_page3">All bite-sized videos<ArrowRight className="button_arrow" /></button></a></div>
+                <div><a href="/TNGOriginals"><button style={{ marginTop: "0px", marginLeft: "0px", width: "250px" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All TNG Originals</button></a></div>
+                <div><a href="/SocialLearning"><button id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "250px" }} className="button_slide slide_right orange_button_page3">All bite-sized videos</button></a></div>
             </div>
             {modalShow3 === true ?
                 <Popup data={videodata} username={props.userid} show={modalShow3}
