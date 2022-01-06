@@ -17,7 +17,7 @@ function Followvideos(props) {
                     <Col>
                         <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap", marginTop: "40px" }}>
                             {location.state.data.map((vid, index) => {
-                                if (vid.id === undefined) {
+                                if (vid.VideoID !== undefined) {
                                     return (<div key={index} style={{ width: "260px", cursor: "pointer" }} >
                                         <figure className="tag1 figurex1" data-content={vid.VideoDuration} >
                                             <img onClick={() => { if (props.auth) { setModalShow3(true); setvideodata(vid) } else { window.location.href = "/login" } }} src={vid.VideoThumbnail} width="240px" style={{ cursor: "pointer" }} />

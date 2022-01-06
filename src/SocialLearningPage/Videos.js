@@ -4,16 +4,17 @@ import Row from 'react-bootstrap/Row';
 import MyVerticallyCenteredModal from './ContactPopUp'
 import { useState, useEffect } from "react";
 import './SocialLearningPage.css'
-import { GiShare } from "react-icons/gi";
+import Swal from "sweetalert2";
 import ReactTooltip from 'react-tooltip';
-
+import Videopopup from "../HomePage/Page2/Videopopup"
 function Videos(props) {
   const [modalShow, setModalShow] = useState(false);
   const [reward, setReward] = useState("");
+  const [modalShow3, setModalShow3] = useState(false);
   const [videoid, setvideoid] = useState("");
   const [videolink, setvideolink] = useState("");
   const [videotopic, setvideotopic] = useState("");
-  
+  const [videodata, setvideodata] = useState([])
   useEffect(() => {
     if (props.auth.isAuthenticated === true) {
       var paramss = {
@@ -30,6 +31,269 @@ function Videos(props) {
       });
     }
   }, []);
+  const follow = (createrid) => {
+    if (!props.auth.isAuthenticated) {
+      window.location.href = "../login";
+    }
+    if (createrid === "") {
+      Swal.fire({
+        title:
+          "<h5 style='color:white'>" +
+          "Sorry you can't follow this person as this session is posted by admin!" +
+          "</h5>",
+        icon: "warning",
+        showConfirmButton: false,
+        timer: 3000,
+        background: "#020312",
+        color: "white",
+        iconColor: "#F26C4F",
+      })
+    }
+    else {
+      var params = {
+        TableName: "UsersTable",
+        Key: { UserID: createrid },
+        ProjectionExpression: "Follower",
+      };
+      docClient.get(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          var flag = 0;
+          data.Item.Follower.forEach(ele => {
+            if (ele.id === props.auth.user.username)
+              flag = 1
+          });
+          if (flag === 0) {
+            var params = {
+              TableName: "UsersTable",
+              Key: { UserID: createrid },
+              UpdateExpression:
+                "set Follower[" +
+                data.Item.Follower.length.toString() +
+                "] = :ms",
+              ExpressionAttributeValues: {
+                ":ms": { "id": props.auth.user.username, "date": Date.now() },
+              },
+              ReturnValues: "UPDATED_NEW",
+            };
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+              }
+            })
+          }
+        }
+      })
+      var paramss = {
+        TableName: "UsersTable",
+        Key: { UserID: props.auth.user.username },
+        ProjectionExpression: "Following",
+      };
+      docClient.get(paramss, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          var flag1 = 0;
+          data.Item.Following.forEach(ele => {
+            if (ele.id === createrid)
+              flag1 = 1
+          });
+          if (flag1 === 1) {
+            Swal.fire({
+              title:
+                "<h5 style='color:white'>" +
+                "You Already follow him" +
+                "</h5>",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 3000,
+              background: "#020312",
+              color: "white",
+              iconColor: "#F26C4F",
+            })
+          }
+          if (flag1 === 0) {
+            var params = {
+              TableName: "UsersTable",
+              Key: { UserID: props.auth.user.username },
+              UpdateExpression:
+                "set Following[" +
+                data.Item.Following.length.toString() +
+                "] = :ms",
+              ExpressionAttributeValues: {
+                ":ms": { "id": createrid, "date": Date.now() },
+              },
+              ReturnValues: "UPDATED_NEW",
+            };
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                Swal.fire({
+                  title:
+                    "<h5 style='color:white'>" +
+                    "Creator want to say to thank you for following him" +
+                    "</h5>",
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 3000,
+                  background: "#020312",
+                  color: "white",
+                  iconColor: "#F26C4F",
+                })
+              }
+            })
+          }
+          else {
+            Swal.fire({
+              title:
+                "<h5 style='color:white'>" +
+                "You already follow this person" +
+                "</h5>",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 3000,
+              background: "#020312",
+              color: "white",
+              iconColor: "#F26C4F",
+            })
+          }
+        }
+      })
+    }
+  }
+  const like = (id) => {
+    var paramss = {
+      TableName: "UsersTable",
+      Key: { UserID: props.auth.user.username },
+      ProjectionExpression: "SocialLearningVideosLiked",
+    };
+    docClient.get(paramss, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var flag = 0;
+        data.Item.SocialLearningVideosLiked.forEach((ele) => {
+          if (ele.vid === id) {
+            flag = 1;
+          }
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "UsersTable",
+            Key: { UserID: props.auth.user.username },
+            UpdateExpression:
+              "set SocialLearningVideosLiked[" +
+              data.Item.SocialLearningVideosLiked.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": { vid: id, date: Date.now },
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+            else {
+              Swal.fire({
+                title:
+                  "<h5 style='color:white'>" +
+                  "Creator want to say to thank you for liking this video" +
+                  "</h5>",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 3000,
+                background: "#020312",
+                color: "white",
+                iconColor: "#F26C4F",
+              })
+            }
+          })
+        }
+        else {
+          Swal.fire({
+            title:
+              "<h5 style='color:white'>" +
+              "Already Liked" +
+              "</h5>",
+            icon: "warning",
+            showConfirmButton: false,
+            timer: 3000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          })
+        }
+      }
+    })
+    var params1 = {
+      TableName: "VideosTable",
+      Key: { VideoID: id },
+      ProjectionExpression: "Likes",
+    };
+    docClient.get(params1, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var flag = 0;
+        data.Item.Likes.forEach((ele) => {
+          if (ele.uid === props.auth.user.username) {
+            flag = 1;
+          }
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "VideosTable",
+            Key: { VideoID: id },
+            UpdateExpression:
+              "set Likes[" +
+              data.Item.Likes.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": { uid: props.auth.user.username, date: Date.now() },
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+            else {
+              Swal.fire({
+                title:
+                  "<h5 style='color:white'>" +
+                  "Creator want to say to thank you for liking this video" +
+                  "</h5>",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 3000,
+                background: "#020312",
+                color: "white",
+                iconColor: "#F26C4F",
+              })
+            }
+          })
+        }
+        else {
+          Swal.fire({
+            title:
+              "<h5 style='color:white'>" +
+              "Already liked" +
+              "</h5>",
+            icon: "warning",
+            showConfirmButton: false,
+            timer: 3000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          })
+        }
+      }
+    })
+  }
   // const [videoslist, setVideosList] = useState(false);
   /*   const [searchterm, setSearchTerm] = useState(""); */
   // const [filter,setfilter]=useState([]);
@@ -78,139 +342,6 @@ function Videos(props) {
       setVideosList(searchvids);
     }
   } */
-
-  function VideoEnded(hashtags) {
-    var paramss = {
-      TableName: "UsersTable",
-      Key: { "UserID": props.userid },
-      ProjectionExpression: "SkillsAcquiredVideos",
-    };
-    docClient.get(paramss, function (err, data) {
-      if (err) {
-        console.log(err);
-      }
-      else {
-        var params = {
-          TableName: "UsersTable",
-          Key: { "UserID": props.userid },
-          UpdateExpression: "set SkillsAcquiredVideos[" + data.Item.SkillsAcquiredVideos.length.toString() + "] = :sav",
-          ExpressionAttributeValues: {
-            ":sav": hashtags.split("--")
-          },
-          ReturnValues: "UPDATED_NEW"
-        }
-        docClient.update(params, function (err, data) {
-          if (err) {
-            console.log(err);
-          }
-        });
-      }
-    });
-  }
-
-  function VideoStarted(vid, ct, vidDuration) {
-    if (reward >= vidDuration) {
-      if (ct <= 0.1) {
-        var params = {
-          TableName: "UsersTable",
-          Key: { "UserID": props.userid },
-          ProjectionExpression: "SocialLearningVideosWatched",
-        };
-        docClient.get(params, function (err, data) {
-          if (err) {
-            console.log(err);
-          }
-          else {
-            var flag = 0;
-            for (var i = 0; i < data.Item.SocialLearningVideosWatched.length; i++) {
-              if (data.Item.SocialLearningVideosWatched[i].vid === vid)
-                var flag = 1;
-            }
-            if (flag === 0) {
-              var params = {
-                TableName: "UsersTable",
-                Key: { "UserID": props.userid },
-                UpdateExpression: "set SocialLearningVideosWatched[" + data.Item.SocialLearningVideosWatched.length.toString() + "] = :slvw",
-                ExpressionAttributeValues: {
-                  ":slvw": { "timestamp": `${Date.now()}`, "vid": vid }
-                },
-                ReturnValues: "UPDATED_NEW"
-              }
-              docClient.update(params, function (err, data) {
-                if (err) {
-                  console.log(err);
-                }
-              });
-              var paramss = {
-                TableName: "VideosTable",
-                Key: { "VideoID": vid },
-                ProjectionExpression: "VideoViews",
-              };
-              docClient.get(paramss, function (err, data) {
-                if (err) {
-                  console.log(err);
-                }
-                else {
-                  var params = {
-                    TableName: "VideosTable",
-                    Key: { "VideoID": vid },
-                    UpdateExpression: "set VideoViews = :slvv",
-                    ExpressionAttributeValues: {
-                      ":slvv": data.Item.VideoViews + 1
-                    },
-                    ReturnValues: "UPDATED_NEW"
-                  }
-                  docClient.update(params, function (err, data) {
-                    if (err) {
-                      console.log(err);
-                    }
-                    else {
-                      var params = {
-                        TableName: "UsersTable",
-                        Key: { "UserID": props.userid },
-                        ProjectionExpression: "TotalRewards",
-                      };
-                      docClient.get(params, function (err, data) {
-                        if (err) {
-                          console.log(err);
-                        }
-                        else {
-                          var params = {
-                            TableName: "UsersTable",
-                            Key: { "UserID": props.userid },
-                            UpdateExpression: "set TotalRewards = :tr",
-                            ExpressionAttributeValues: {
-                              ":tr": data.Item.TotalRewards - vidDuration
-                            },
-                            ReturnValues: "UPDATED_NEW"
-                          }
-                          docClient.update(params, function (err, data) {
-                            if (err) {
-                              console.log(err);
-                            }
-                            else {
-                              //TRANSACTIONS HISTORY CODE
-                            }
-                          });
-                        }
-                      });
-                    }
-                  });
-                }
-              });
-            }
-          }
-        });
-      }
-    }
-    else {
-      console.log("MINUTES NOT SUFFICIENT");
-      // setModalShow1(true);
-      window.location.href = "/SocialLearning";
-    }
-  }
-
-
   return (
 
     <div>
@@ -225,21 +356,21 @@ function Videos(props) {
                 <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
               </figure>
               :
-              <img onClick={() => window.location.href = "../Video/" + vid.VideoID} className="video_thumbnail_social" src={vid.VideoThumbnail} />
+              <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
             <div style={{ marginTop: "7%", marginLeft: "2%", width: "250px", cursor: "pointer" }} >
               {(vid.VideoTopic.length < 25) ?
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"  }}>{vid.VideoTopic}</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
                 ) :
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
                     {vid.VideoTopic.substring(0, 25)}...
-                    <sup data-tip data-for={index +  "gxyzq23"} >&#9432;</sup>
-                      <ReactTooltip id={index + "gxyzq23"} place="top" effect="solid">
-                        {vid.VideoTopic}
-                      </ReactTooltip>
-                    </p>
+                    <sup data-tip data-for={index + "gxyzq23"} >&#9432;</sup>
+                    <ReactTooltip id={index + "gxyzq23"} place="top" effect="solid">
+                      {vid.VideoTopic}
+                    </ReactTooltip>
+                  </p>
                   )
                 )
               }
@@ -252,24 +383,19 @@ function Videos(props) {
                   (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 25)}...</p>)
                 )
               }
-              <Row>
-                {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
-                <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft: "7px" }}>
-                  <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => { setvideoid(vid.VideoID); setvideolink(vid.VideoLink); setvideotopic(vid.VideoTopic); setModalShow(true) }}>
-                    Share <GiShare style={{ width: "15px", height: "15px" }} /></button>
-                </Col>
-              </Row>
+
+              <div className="connect_follow_box">
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >Follow</p>
+                </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.id)} >&nbsp; &nbsp;Like</p>
+                </div>
+              </div>
             </div>
             <br />
           </div>
         )}
-        <MyVerticallyCenteredModal
-          show={modalShow}
-          VideoID={videoid}
-          VideoLink={videolink}
-          VideoTopic={videotopic}
-          onHide={() => setModalShow(false)}
-        />
         {props.filter !== false && props.filter.map((vid, index) =>
           <div style={{ cursor: "pointer" }} className="video_div" key={vid.VideoID} onClick={() => { if (props.redirlog) window.location.href = "/login"; }}>
             {props.redirlog ?
@@ -282,16 +408,16 @@ function Videos(props) {
             <div style={{ marginTop: "7%", marginLeft: "2%", width: "240px", cursor: "pointer" }} >
               {(vid.VideoTopic.length < 25) ?
                 (
-                  (<p className="text" style={{padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"  }}>{vid.VideoTopic}</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
                 ) :
                 (
-                  (<p className="text" style={{padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"  }}>
+                  (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
                     {vid.VideoTopic.substring(0, 25)}...
-                    <sup data-tip data-for={index } >&#9432;</sup>
-                      <ReactTooltip id={index } place="top" effect="solid">
-                        {vid.VideoTopic}
-                      </ReactTooltip>
-                    </p>)
+                    <sup data-tip data-for={"sddsc" + index} >&#9432;</sup>
+                    <ReactTooltip id={"bsasc" + index} place="top" effect="solid">
+                      {vid.VideoTopic}
+                    </ReactTooltip>
+                  </p>)
                 )
               }
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
@@ -303,21 +429,31 @@ function Videos(props) {
                   (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 25)}...</p>)
                 )
               }
-              {/* <p className="text" style={{ padding: "0", margin: "0", color: "grey", fontSize: "12px" }}>{vid.VideoHashtags.replaceAll("--", "  ")}</p> */}
-              <Row>
-                {/* <Col md={9} className="text" style={{ padding: "0", color: "rgb(242, 108, 79)", fontSize: "10px" }}>&nbsp;&nbsp;&nbsp;&nbsp;{vid.VideoViews} views</Col> */}
-                <Col md={3} className="text" style={{ padding: "0", color: "#000", fontSize: "12px", cursor: "pointer", paddingLeft: "7px" }}>
-                  <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "10px" }} onClick={() => { setvideoid(vid.VideoID); setvideolink(vid.VideoLink); setvideotopic(vid.VideoTopic); setModalShow(true) }}>
-                    Share <GiShare style={{ width: "15px", height: "15px" }} />
-                  </button>
-                </Col>
-              </Row>
+              <div className="connect_follow_box">
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >Follow</p>
+                </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.id)} >&nbsp; &nbsp;Like</p>
+                </div>
+              </div>
             </div>
             <br />
           </div>
         )
         }
       </div >
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        VideoID={videoid}
+        VideoLink={videolink}
+        VideoTopic={videotopic}
+        onHide={() => setModalShow(false)}
+      />
+      {modalShow3 === true ? <Videopopup show={modalShow3}
+        data={videodata}
+        username={props.auth.user !== null ? props.auth.user.username : ""}
+        onHide={() => { setModalShow3(false) }} /> : null}
     </div >
   );
 }
