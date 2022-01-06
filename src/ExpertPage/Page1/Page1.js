@@ -217,7 +217,7 @@ function Page1(props) {
       </div>
       <Container>
         <div className="pack">
-          <div style={{ lineHeight: "1.8" }} className="testimonial">
+          <div className="testimonial">
             <div className="imag">
               <img alt="..." className="img_experttop" src={expert.ExpertPic} />
             </div>
@@ -228,9 +228,10 @@ function Page1(props) {
               <p className="subtitle_expertcard">{expert.ExpertEducational}</p>
             </div>
             <div class="logo_para">
-              <a href={expert.ExpertLinkedIn} target="_blank" rel="noreferrer"><Linkedin style={{ background: "white", border: "0.1px solid white", color: "black", cursor: "pointer" }} size={34} /></a>
+              <a href={expert.ExpertLinkedIn} target="_blank" rel="noreferrer"><Linkedin style={{ background: "white", border: "0.1px solid white", color: "black", cursor: "pointer", marginTop:"5px" }} size={34} /></a>
             </div>
             {/* <p className="connect_text" style={{ cursor: "pointer", margin: 0 }} onClick={() => follow(expert.AccountID)} >&nbsp;Follow</p> */}
+            <br/>
             <div>
               <h3 style={{ color: "#f26c4f", margin: 0 }}>Skilled at:</h3>
               <p className="subtitle_expertcard skillsptag">{expert.ExpertSkills}</p>
@@ -247,7 +248,7 @@ function Page1(props) {
       </Container>
       <br /><br />
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", marginLeft: "4.5%" }}>Videos</h4>
-      <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap", marginLeft:"4%", marginRight:"3%" }}>
         {masterclasses.map((ele) => {
           return <div style={{ width: "260px" }} >
             <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
