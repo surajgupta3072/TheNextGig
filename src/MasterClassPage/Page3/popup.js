@@ -1,6 +1,7 @@
 import Modal from "react-bootstrap/Modal";
 import { ArrowLeft } from "react-bootstrap-icons";
 import Swal from "sweetalert2";
+import './Page3.css'
 
 function MyVerticallyPopUp(props) {
   function getNotified() {
@@ -39,7 +40,7 @@ function MyVerticallyPopUp(props) {
       .catch((error) => {
         console.error("Failed to send feedback. Error: ", error);
       });
-    props.onHide()
+    props.onHide();
   }
 
   return (
@@ -59,7 +60,7 @@ function MyVerticallyPopUp(props) {
           <div style={{ textAlign: "center" }}>
             <p style={{ fontSize: "20px" }}>Sorry! You don't have enough minute balance!</p>
             <button
-              onClick={() => getNotified()}
+              onClick={getNotified}
               className="button_slide slide_right"
             >
               Reach out to us!

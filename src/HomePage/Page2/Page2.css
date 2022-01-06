@@ -127,4 +127,7 @@
   .page2_laptop_view {
     display: none;
   }
+  .Heading_aling{
+    text-align: center;
+  }
 }

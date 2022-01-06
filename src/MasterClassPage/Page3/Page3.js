@@ -499,7 +499,7 @@ function Page3(props) {
         </Row>
       </Container>
       <Container className="container2_page3 masterclass_video_laptop" style={{ padding: "0%", maxWidth: "94.25%", marginBottom: "0%" }}>
-        <br /><br /><br /><br />
+        <br />
         <Row className="main_cardbody_row" style={{ margin: "auto" }}>
           <div className="main_card" >
             <div className="main_cardbody">

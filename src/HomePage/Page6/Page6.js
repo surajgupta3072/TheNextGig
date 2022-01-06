@@ -13,9 +13,9 @@ function Page6() {
                     <h1 className="experience_number"><span className="number4"></span><h5 style={{ fontSize: "1.1rem", color: "white", marginTop: "4px", textAlign: "center", marginLeft: "-40%" }}>Connections made<br />for opportunities</h5></h1>
                 </div>
                 <div className="numbers_page6_mobile">
-                    <h1 className="client_number"><span>3200</span><div className="slasher"><BsSlash className="liner_page6 liner_1" /></div><h5 style={{ fontSize: "1rem", color: "white" }}>Minutes<br />spent</h5></h1>
+                    <h1 className="client_number"><span>6500+</span><div className="slasher"><BsSlash className="liner_page6 liner_1" /></div><h5 style={{ fontSize: "1rem", color: "white" }}>Minutes<br />spent</h5></h1>
                     <h1 className="projects_number"><span >172</span><div className="slasher"><BsSlash className="liner_page6 liner_2" /></div><h5 style={{ fontSize: "1rem", color: "white" }}>Months of experiential learning</h5></h1>
-                    <h1 className="awards_number" ><span>450</span><div className="slasher"><BsSlash className="liner_page6 liner_3" /></div>
+                    <h1 className="awards_number" ><span>550+</span><div className="slasher"><BsSlash className="liner_page6 liner_3" /></div>
                         <h5 style={{ fontSize: "1rem", color: "white" }}> Minutes of available content</h5></h1>
                     <h1 className="experience_number"><span>30</span><h5 style={{ fontSize: "1rem", color: "white" }}>Connections made<br />for opportunities</h5></h1>
                 </div>
