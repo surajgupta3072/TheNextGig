@@ -65,7 +65,6 @@ video {
 }
 .small_white_text {
   font-size: 18px;
-  color:white;
 }
 .heading > div > p {
   width: -webkit-max-content;
@@ -200,7 +199,7 @@ div.heading > div:nth-child(4) > p {
     margin-left: 15px;
   }
   .small_white_text {
-    color: rgba(0, 0, 0, 0.85);
+    color: white;
   }
   .subheading {
     font-size: 30px;
