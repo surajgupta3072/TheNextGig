@@ -6,11 +6,33 @@
   height: 90%;
   width: 100%;
 }
-.vertical-menu {
-  margin-left: 8%;
-  height: 80%;
-  overflow-y: auto;
+.vertical-menu::-webkit-scrollbar {
+  width: 10px;
 }
+
+.vertical-menu::-webkit-scrollbar-track {
+  background-color: rgba(167, 161, 161, 0.3);
+  border-radius: 100px;
+}
+
+.vertical-menu::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  border-left: 0;
+  border-right: 0;
+  background-color: white;
+}
+
+.vertical-menu {
+  overflow-y: auto;
+  direction: ltr;
+  scrollbar-color: white;
+  scrollbar-width: thin;
+  justify-content: space-around !important;
+  flex-flow: row wrap;
+  height: 100%;
+  column-gap: em !important;
+}
+
 .mbd_image {
   height: 250px;
 }
@@ -192,6 +214,9 @@
 @media screen and (max-width: 768px) {
   .info {
     display: none;
+  }
+  .img_letsgo {
+    height: 200px !important;
   }
   .appreciation {
     display: block;
