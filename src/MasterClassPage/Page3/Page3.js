@@ -11,7 +11,7 @@ import ReactTooltip from 'react-tooltip';
 import docClient from '../../GigsPage/GigsAWS';
 import MyVerticallyPopUp from './popup';
 import Swal from "sweetalert2";
-import Connectpopup from "../../HomePage/Page2/Contactinstructorpopup"
+import Connectpopup from "../../HomePage/Page2/Contactinstructorpopup";
 import Connect from "../../HomePage/Page2/Contactinstructorpopup"
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -36,9 +36,10 @@ function Page3(props) {
   const [modalShow2, setModalShow2] = useState({ data: { VideoTopic: session["course_name"], VideoUsername: session["course_instructor"] }, check: false });
   const [name, setname] = useState("")
   const [coursename, setcoursename] = useState("")
-  const [email, setemail] = useState("")
+  const [email, setemail] = useState("");
+
   useEffect(() => {
-    if (props.prop !== null) {
+    if (props.prop.isAuthenticated===true) {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID": props.prop.user.username },
@@ -442,7 +443,7 @@ function Page3(props) {
                   </button>
                 </a>
               </Col> */}
-              {props.prop !== null ?
+              {props.prop.isAuthenticated===true ?
                 coursePurchased === false &&
                 <Col style={{ textAlign: "center" }}>
                   <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
@@ -476,7 +477,7 @@ function Page3(props) {
                   Get to know<br /> your expert
                 </button></a>
               </div> */}
-              {props.prop !== null ?
+              {props.prop.isAuthenticated===true ?
                 coursePurchased === false &&
                 <div style={{ textAlign: "center" }}>
                   <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
@@ -511,7 +512,7 @@ function Page3(props) {
                     <p className="twoline_desc">{des}</p>
                   }
                   {paymentshow === true && (
-                    props.prop !== null ? (
+                    props.prop.isAuthenticated===true ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
@@ -557,7 +558,7 @@ function Page3(props) {
                     <p className="twoline_desc">{des}</p>
                   }
                   {paymentshow === true && (
-                    props.prop !== null ? (
+                    props.prop.isAuthenticated===true ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />

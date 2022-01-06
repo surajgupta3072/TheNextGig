@@ -20,12 +20,12 @@ function Video(props) {
                                     <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                                         {(vpurchased.course_name.length < 25) ?
                                             (
-                                                (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
+                                                (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
                                                     {vpurchased.course_name}
                                                 </p>)
                                             ) :
                                             (
-                                                (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>
+                                                (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
                                                     {vpurchased.course_name.substring(0, 25)}...
                                                     <sup data-tip data-for={vpurchased.id + "gx23"} >&#9432;</sup>
                                                     <ReactTooltip id={vpurchased.id + "gx23"} place="top" effect="solid">
@@ -57,10 +57,10 @@ function Video(props) {
                                 <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                                     {(vid.VideoTopic.length < 27) ?
                                         (
-                                            (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic}</h8>)
+                                            (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic}</h8>)
                                         ) :
                                         (
-                                            (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px", fontSize: "15px" }}>{vid.VideoTopic.substring(0, 27)}...
+                                            (<h8 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic.substring(0, 27)}...
                                                 <sup data-tip data-for={index + "ga9"} >&#9432;</sup>
                                                 <ReactTooltip id={index + "ga9"} place="top" effect="solid">
                                                     {vid.VideoTopic}
