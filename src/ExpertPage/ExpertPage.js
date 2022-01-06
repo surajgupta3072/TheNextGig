@@ -1,11 +1,11 @@
 import Page1 from './Page1/Page1';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-function ExpertPage() {
+function ExpertPage(props) {
   let { id } = useParams();
   return (
     <div>
-      <Page1 Eid={id}/>
+      <Page1 auth={props.auth} Eid={id} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import Swal from "sweetalert2";
 
 function MyVerticallyCenteredModal(props) {
-  console.log(props);
+  // console.log(props);
   const [modalShow, setModalShow] = useState(false);
   const [popupsharelinkid, setpopupsharelinkid] = useState("");
 

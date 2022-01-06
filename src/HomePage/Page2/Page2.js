@@ -7,12 +7,13 @@ import "slick-carousel/slick/slick-theme.css";
 import './Page2.css';
 import Swal from "sweetalert2";
 import './../Page3/Page3.css';
+import Videopopup from "../Page2/Videopopup"
 import MyVerticallyCenteredModal from './ModalPosted.js';
 import Modalx from './Contactinstructorpopup';
 import { ArrowRight } from "react-bootstrap-icons";
 import ReactTooltip from 'react-tooltip';
-import { RiUserFollowLine } from "react-icons/ri"
 function Page2(props) {
+  const [uid, setuid] = useState("")
   const [show_no, setshowno] = useState(5);
   const [show_no1, setshowno1] = useState(2);
   const [data_finance, setdatafinance] = useState([])
@@ -22,6 +23,10 @@ function Page2(props) {
   const [data_markstra, setdatamark] = useState([])
   const [data_other, setother] = useState([]);
   const [modalShow, setModalShow] = useState(false);
+  const [modalShow3, setModalShow3] = useState(false);
+  const [modalShow4, setModalShow4] = useState({ check: false, data: "" });
+  const [videodata, setvideodata] = useState([])
+  const [username, setusername] = useState("")
   var [j, setj] = useState(0);
   var [k, setk] = useState(1);
   const [modalShow2, setModalShow2] = useState({
@@ -48,6 +53,46 @@ function Page2(props) {
     autoplaySpeed: 4000
   };
   useEffect(() => {
+    var list = [], flag = 0;
+    setuid(window.location.href.split("/")[3])
+    let params = {
+      TableName: "VideosTable",
+    };
+    docClient.scan(params, function (err, data) {
+      if (err) {
+        console.log(err)
+      }
+      else {
+        data.Items.forEach((ele) => {
+          list.push(ele.VideoID)
+        })
+      }
+      if (list.includes(window.location.href.split("/")[3])) {
+        flag = 1;
+      }
+      if (window.location.href.split("/")[3] !== "" && flag === 1) {
+        let paramss = {
+          TableName: "VideosTable",
+          KeyConditionExpression: "#Uid = :VideoID",
+          ExpressionAttributeNames: {
+            "#Uid": "VideoID",
+          },
+          ExpressionAttributeValues: {
+            ":VideoID": window.location.href.split("/")[3],
+          },
+        };
+        docClient.query(paramss, function (err, data) {
+          if (err) {
+            console.log(err)
+          }
+          else {
+            data.Items[0].VideoLink = data.Items[0].VideoLink.split(" ").join("%20")
+            setModalShow4({ check: true, data: data.Items[0] });
+          }
+        })
+      }
+    })
+
     var paramss = {
       TableName: "VideosTable"
     };
@@ -190,7 +235,7 @@ function Page2(props) {
                 "<h5 style='color:white'>" +
                 "You Already follow him" +
                 "</h5>",
-              icon: "success",
+              icon: "warning",
               showConfirmButton: false,
               timer: 3000,
               background: "#020312",
@@ -236,7 +281,7 @@ function Page2(props) {
                 "<h5 style='color:white'>" +
                 "You already follow this person" +
                 "</h5>",
-              icon: "success",
+              icon: "warning",
               showConfirmButton: false,
               timer: 3000,
               background: "#020312",
@@ -247,6 +292,203 @@ function Page2(props) {
         }
       })
     }
+  }
+  const like = (id) => {
+    var paramss = {
+      TableName: "UsersTable",
+      Key: { UserID: props.auth.user.username },
+      ProjectionExpression: "SocialLearningVideosLiked",
+    };
+    docClient.get(paramss, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var flag = 0;
+        data.Item.SocialLearningVideosLiked.forEach((ele) => {
+          if (ele.vid === id) {
+            flag = 1;
+          }
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "UsersTable",
+            Key: { UserID: props.auth.user.username },
+            UpdateExpression:
+              "set SocialLearningVideosLiked[" +
+              data.Item.SocialLearningVideosLiked.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": { vid: id, date: Date.now },
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+            else {
+              Swal.fire({
+                title:
+                  "<h5 style='color:white'>" +
+                  "Creator want to say to thank you for liking this video" +
+                  "</h5>",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 3000,
+                background: "#020312",
+                color: "white",
+                iconColor: "#F26C4F",
+              })
+            }
+          })
+        }
+        else {
+          Swal.fire({
+            title:
+              "<h5 style='color:white'>" +
+              "Already Liked" +
+              "</h5>",
+            icon: "warning",
+            showConfirmButton: false,
+            timer: 3000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          })
+        }
+      }
+    })
+    var params1 = {
+      TableName: "VideosTable",
+      Key: { VideoID: id },
+      ProjectionExpression: "Likes",
+    };
+    docClient.get(params1, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var flag = 0;
+        data.Item.Likes.forEach((ele) => {
+          if (ele.uid === props.auth.user.username) {
+            flag = 1;
+          }
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "VideosTable",
+            Key: { VideoID: id },
+            UpdateExpression:
+              "set Likes[" +
+              data.Item.Likes.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": { uid: props.auth.user.username, date: Date.now() },
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+            else {
+              Swal.fire({
+                title:
+                  "<h5 style='color:white'>" +
+                  "Creator want to say to thank you for liking this video" +
+                  "</h5>",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 3000,
+                background: "#020312",
+                color: "white",
+                iconColor: "#F26C4F",
+              })
+            }
+          })
+        }
+        else {
+          Swal.fire({
+            title:
+              "<h5 style='color:white'>" +
+              "Already liked" +
+              "</h5>",
+            icon: "warning",
+            showConfirmButton: false,
+            timer: 3000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          })
+        }
+      }
+    })
+  }
+  const likemaster = (id) => {
+    var paramss = {
+      TableName: "UsersTable",
+      Key: { UserID: props.auth.user.username },
+      ProjectionExpression: "MasterclassesLiked",
+    };
+    docClient.get(paramss, function (err, data) {
+      if (err) {
+        console.log(err);
+      } else {
+        var flag = 0;
+        data.Item.MasterclassesLiked.forEach((ele) => {
+          if (ele === id) {
+            flag = 1;
+          }
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "UsersTable",
+            Key: { UserID: props.auth.user.username },
+            UpdateExpression:
+              "set MasterclassesLiked[" +
+              data.Item.MasterclassesLiked.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": id,
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            }
+            else {
+              Swal.fire({
+                title:
+                  "<h5 style='color:white'>" +
+                  "Creator want to say to thank you for liking this video" +
+                  "</h5>",
+                icon: "success",
+                showConfirmButton: false,
+                timer: 3000,
+                background: "#020312",
+                color: "white",
+                iconColor: "#F26C4F",
+              })
+            }
+          })
+        }
+        else {
+          Swal.fire({
+            title:
+              "<h5 style='color:white'>" +
+              "Already liked" +
+              "</h5>",
+            icon: "warning",
+            showConfirmButton: false,
+            timer: 3000,
+            background: "#020312",
+            color: "white",
+            iconColor: "#F26C4F",
+          })
+        }
+      }
+    })
+
   }
   return (
     <div style={{ marginTop: "2%", marginLeft: "2%" }}>
@@ -285,11 +527,13 @@ function Page2(props) {
 
                   )
                 }
-                {/* <div>
-                  <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-                </div> */}
+              </div>
+              <div className="connect_follow_box">
                 <div>
-                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} >Connect</p>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
+                </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => likemaster(ele.id)} >&nbsp; &nbsp;Like</p>
                 </div>
               </div>
             </div>
@@ -298,7 +542,7 @@ function Page2(props) {
         )}
         {data_pop.map((vid, index) => {
           return <div key={index} style={{ width: "260px", cursor: "pointer" }} >
-            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration} >
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration} >
               <img src={vid.VideoThumbnail} width="240px" />
             </figure>
             <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }} >
@@ -328,11 +572,13 @@ function Page2(props) {
                 )
               }
             </div>
-            {/* <div>
-              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-            </div> */}
-            <div>
-              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            <div className="connect_follow_box">
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
+              </div>
             </div>
             <br />
           </div>
@@ -370,18 +616,20 @@ function Page2(props) {
                   )
                 }
               </div>
-              {/* <div>
-                <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-              </div> */}
-              <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} >&nbsp;Connect</p>
+              <div className="connect_follow_box">
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
+                </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(ele.id)} >&nbsp; &nbsp;Like</p>
+                </div>
               </div>
             </div>
           }
         })}
         {data_finance.map((vid, index) => {
           return <div style={{ width: "260px" }} >
-            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img src={vid.VideoThumbnail} width="240px" />
             </figure>
             <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }}>
@@ -407,13 +655,14 @@ function Page2(props) {
                 )
               }
             </div>
-            {/*  <div>
-              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-            </div> */}
-            <div>
-              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            <div className="connect_follow_box">
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
+              </div>
             </div>
-            <br />
           </div>
         })}
       </Slider>
@@ -449,11 +698,13 @@ function Page2(props) {
                   )
                 }
               </div>
-              {/* <div>
-                <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-              </div> */}
-              <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} >&nbsp;Connect</p>
+              <div className="connect_follow_box">
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
+                </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(ele.id)} >&nbsp; &nbsp;Like</p>
+                </div>
               </div>
             </div>
 
@@ -461,7 +712,7 @@ function Page2(props) {
         })}
         {data_prod.map((vid, index) => {
           return <div style={{ height: "300px", width: "200px" }} >
-            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} />
             </figure>
             <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
@@ -487,13 +738,14 @@ function Page2(props) {
                 )
               }
             </div>
-            {/* <div>
-              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-            </div> */}
-            <div>
-              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            <div className="connect_follow_box">
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
+              </div>
             </div>
-            <br />
           </div>
         })}
       </Slider>
@@ -529,11 +781,13 @@ function Page2(props) {
                   )
                 }
               </div>
-              {/* <div>
-                <RiUserFollowLine onClick={() => follow(ele.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-              </div> */}
-              <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": ele, "check": true }) }} >&nbsp;Connect</p>
+              <div className="connect_follow_box">
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
+                </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(ele.id)} >&nbsp; &nbsp;Like</p>
+                </div>
               </div>
             </div>
 
@@ -541,7 +795,7 @@ function Page2(props) {
         })}
         {data_markstra.map((vid, index) => {
           return <div style={{ height: "300px", width: "200px" }} >
-            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} />
             </figure>
             <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
@@ -567,18 +821,20 @@ function Page2(props) {
                 )
               }
             </div>
-            {/* <div>
-              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-            </div> */}
-            <div>
-              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            <div className="connect_follow_box">
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
+              </div>
             </div>
           </div>
 
         })}
         {data_consult.map((vid, index) => {
           return <div style={{ height: "300px", width: "200px" }}>
-            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} />
             </figure>
             <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
@@ -604,11 +860,13 @@ function Page2(props) {
                 )
               }
             </div>
-            {/* <div>
-              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-            </div> */}
-            <div>
-              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            <div className="connect_follow_box">
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
+              </div>
             </div>
             <br />
           </div>
@@ -619,7 +877,7 @@ function Page2(props) {
       <Slider {...settings}>
         {data_other.map((vid, index) => {
           return <div style={{ width: "260px" }} >
-            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { window.location.href = "/Video/" + vid.VideoID } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} />
             </figure>
             <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
@@ -645,18 +903,20 @@ function Page2(props) {
                 )
               }
             </div>
-            {/* <div>
-              <RiUserFollowLine onClick={() => follow(vid.VideoUploaderID)} style={{ color: "rgb(242, 108, 79)", cursor: "pointer" }} />
-            </div> */}
-            <div>
-              <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": vid, "check": true }) }} >&nbsp;Connect</p>
+            <div className="connect_follow_box">
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+              </div>
+              <div>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
+              </div>
             </div>
             <br />
           </div>
         })}
       </Slider>
       <br /><br />
-      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", display: "inline" }}>Upcoming</h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", display: "inline" }}>Upcoming</h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <button style={{ height: "40px" }} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
         Keep me posted
       </button>
@@ -700,6 +960,15 @@ function Page2(props) {
           }
         })}
       </Slider>
+      {modalShow3 === true ? <Videopopup show={modalShow3}
+        data={videodata}
+        username={props.auth.user !== null ? props.auth.user.username : ""}
+        onHide={() => { setModalShow3(false) }} /> : null}
+      {modalShow4.check === true ? <Videopopup show={modalShow4.check}
+        data={modalShow4.data}
+        uid={uid}
+        username={props.auth.user !== null ? props.auth.user.username : ""}
+        onHide={() => { setModalShow4({ check: false, data: "" }) }} /> : null}
       < Modalx
         data={modalShow2.data}
         show={modalShow2.check}

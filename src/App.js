@@ -33,6 +33,8 @@ import LearnCoins from "./LearnCoins/LearnCoins";
 import ReferralPage from "./AuthPage/ReferralPage";
 import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 import Follow from "./Follow/Follow";
+import SkillsVideopage from "./Skills&Videopage/SkillsVideopage";
+import Followvideos from "./Followvideos/Followvideos";
 // import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 // import Comet from "../src/SocialLearningPage/Comet";
 
@@ -47,7 +49,7 @@ function App() {
       await Auth.currentSession();
       setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
-      console.log(window.location.href.includes("/Video/"));
+      // console.log(window.location.href.includes("/Video/"));
       if (window.location.href.includes("/Video/") != true) {
         localStorage.setItem('LoginlastURL', window.location.href);
       }
@@ -67,7 +69,7 @@ function App() {
           if (data.Item === undefined) {
             var paramss = {
               TableName: "UsersTable",
-              Item: { "UserID": decoded.sub, "FullName": decoded.name, "Email": decoded.email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 180, "MasterclassesPurchased": [], "gigsApplications": [], "SocialLearningVideosUploaded": [], "SocialLearningBlogsUploaded": [], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0] + String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": true, "Follower": [], "Following": [], "UnsubscribeEmail": false}
+              Item: { "UserID": decoded.sub, "FullName": decoded.name, "Email": decoded.email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 180, "MasterclassesPurchased": [], "gigsApplications": [], "SocialLearningVideosUploaded": [], "SocialLearningBlogsUploaded": [], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0] + String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": true, "MasterclassesLiked": [], "SocialLearningVideosLiked": [] }
             }
             docClient.put(paramss, function (err, data) {
               if (err) {
@@ -109,7 +111,7 @@ function App() {
     catch (error) {
       if (window.location.href != "http://localhost:3000/login" && window.location.href != "http://localhost:3000/register" && window.location.href != "http://localhost:3000/Referral" && window.location.href != "https://www.thenextgig.net/login" && window.location.href != "https://www.thenextgig.net/register" && window.location.href != "https://www.thenextgig.net/Referral")
         localStorage.setItem('lastURL', window.location.href);
-      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/")) {
+      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/") || (window.location.href.split("/")[3] !== undefined && window.location.href.split("/")[3].length === 16) || (window.location.href.split("/")[4]!==undefined && window.location.href.split("/")[4].includes("%20"))) {
         localStorage.setItem('lastLastURL', window.location.href);
         localStorage.setItem('lastURL', "https://www.thenextgig.net/Redirecting");
       }
@@ -149,9 +151,15 @@ function App() {
               <Route exact path="/register">
                 <RegisterPage auth={authProps} />
               </Route>
-              {/* <Route exact path="/follow">
+              <ProtectedRoute exact path="/follow" auth={authProps}>
                 <Follow auth={authProps} />
-              </Route> */}
+              </ProtectedRoute>
+              <ProtectedRoute exact path="/followvideos" auth={authProps}>
+                <Followvideos auth={authProps} />
+              </ProtectedRoute>
+              <Route exact path="/SkillsVideo">
+                <SkillsVideopage auth={authProps} />
+              </Route>
               <Route exact path="/SocialLearning">
                 <SocialLearningPage auth={authProps} />
               </Route>
@@ -168,7 +176,7 @@ function App() {
                 <CompanyPage />
               </Route> */}
               <Route exact path="/expert/:id">
-                <ExpertPage />
+                <ExpertPage auth={authProps} />
               </Route>
               <Route exact path="/expert">
                 <Page2 />
@@ -180,7 +188,7 @@ function App() {
                 <GigsPage auth={authProps.user} />
               </ProtectedRoute>
               <Route exact path="/TNGoriginals/:id">
-                <MasterClassDetails auth={authProps.user} />
+                <MasterClassDetails auth={authProps} />
               </Route>
               <Route exact path="/TNGoriginals">
                 <MasterClassPage />
@@ -204,6 +212,9 @@ function App() {
                 <TC />
               </Route>
               <Route exact path="/">
+                <HomePage auth={authProps} />
+              </Route>
+              <Route exact path="/:id">
                 <HomePage auth={authProps} />
               </Route>
               <Route exact path="/Redirecting">

@@ -11,7 +11,8 @@ import ReactTooltip from 'react-tooltip';
 import docClient from '../../GigsPage/GigsAWS';
 import MyVerticallyPopUp from './popup';
 import Swal from "sweetalert2";
-
+import Connectpopup from "../../HomePage/Page2/Contactinstructorpopup";
+import Connect from "../../HomePage/Page2/Contactinstructorpopup"
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
   { width: 500, itemsToShow: 1 },
@@ -23,6 +24,8 @@ function Page3(props) {
   const session = master[props.id - 1];
   const [modalShow, setModalShow] = useState(false);
   const [des, setDes] = useState(session["episodes"][0]["description"]);
+  const [masterid, setmasterid] = useState(session["VideoUploaderID"]);
+  const [videotopic, setvideotopic] = useState(session["course_name"]);
   const [epivid, setEpiVideo] = useState(session["episodes"][0]["epi_video"]);
   const [paymentshow, setPaymentShow] = useState(false);
   const [coursePurchased, setCoursePurchased] = useState(false);
@@ -30,22 +33,16 @@ function Page3(props) {
   const [relatedgigs, setDataRelatedGigs] = useState([]);
   const [reward, setReward] = useState("");
   const [id, setid] = useState("")
+  const [modalShow2, setModalShow2] = useState({ data: { VideoTopic: session["course_name"], VideoUsername: session["course_instructor"] }, check: false });
   const [name, setname] = useState("")
   const [coursename, setcoursename] = useState("")
-  const [email, setemail] = useState("")
+  const [email, setemail] = useState("");
+
   useEffect(() => {
-//     if (window.location.href.split("/")[4] === "6") {
-//       if (window.innerWidth < 786) {
-//         window.scrollTo(0, document.getElementsByClassName("masterclass_video_mobile container")[0].getBoundingClientRect().top)
-//       }
-//       else {
-//         window.scrollTo(0, document.getElementsByClassName("container2_page3")[0].getBoundingClientRect().top)
-//       }
-//     }
-    if (props.prop !== null) {
+    if (props.prop.isAuthenticated===true) {
       var params = {
         TableName: "UsersTable",
-        Key: { "UserID": props.prop.username },
+        Key: { "UserID": props.prop.user.username },
         ProjectionExpression: "MasterclassesPurchased",
       };
       docClient.get(params, function (err, data) {
@@ -59,7 +56,7 @@ function Page3(props) {
       });
       var paramss = {
         TableName: "UsersTable",
-        Key: { UserID: props.prop.username },
+        Key: { UserID: props.prop.user.username },
         ProjectionExpression: "TotalRewards",
       };
       docClient.get(paramss, function (err, data) {
@@ -86,120 +83,127 @@ function Page3(props) {
       }
     });
   }, []);
-
   function paymentFlowCase(deduct) {
     var paramss = {
       TableName: "UsersTable",
-      Key: { UserID: props.prop.username },
+      Key: { UserID: props.prop.user.username },
       ProjectionExpression: "MasterclassesPurchased",
     };
     docClient.get(paramss, function (err, data) {
       if (err) {
         console.log(err);
       } else {
-        var params = {
-          TableName: "UsersTable",
-          Key: { UserID: props.prop.username },
-          UpdateExpression:
-            "set MasterclassesPurchased[" +
-            data.Item.MasterclassesPurchased.length.toString() +
-            "] = :ms",
-          ExpressionAttributeValues: {
-            ":ms": session.id,
-          },
-          ReturnValues: "UPDATED_NEW",
-        };
-        docClient.update(params, function (err, data) {
-          if (err) {
-            console.log(err);
-          } else {
-            var params = {
-              TableName: "UsersTable",
-              Key: { UserID: props.prop.username },
-              UpdateExpression: "set TotalRewards = :tr",
-              ExpressionAttributeValues: {
-                ":tr": reward - deduct,
-              },
-              ReturnValues: "UPDATED_NEW",
-            };
-            docClient.update(params, function (err, data) {
-              const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
-              // We use JSON.stringify here so the data can be sent as a string via HTTP
-              const body = JSON.stringify({
-                feedback: `Uid:${props.prop.username}`,
-                user: props.prop.attributes.email,
-                title: "Congratulations! You've purchased a TNG Original!",
-                feedback1: props.prop.attributes.name,
-                feedback2: session.course_name
-              });
-              const requestOptions = {
-                method: "POST",
-                body,
+        var flag = 0;
+        data.Item.MasterclassesPurchased.forEach((ele) => {
+          if (ele === session.id)
+            flag = 1;
+        })
+        if (flag === 0) {
+          var params = {
+            TableName: "UsersTable",
+            Key: { UserID: props.prop.user.username },
+            UpdateExpression:
+              "set MasterclassesPurchased[" +
+              data.Item.MasterclassesPurchased.length.toString() +
+              "] = :ms",
+            ExpressionAttributeValues: {
+              ":ms": session.id,
+            },
+            ReturnValues: "UPDATED_NEW",
+          };
+          docClient.update(params, function (err, data) {
+            if (err) {
+              console.log(err);
+            } else {
+              var params = {
+                TableName: "UsersTable",
+                Key: { UserID: props.prop.user.username },
+                UpdateExpression: "set TotalRewards = :tr",
+                ExpressionAttributeValues: {
+                  ":tr": reward - deduct,
+                },
+                ReturnValues: "UPDATED_NEW",
               };
-              fetch(endpoint, requestOptions)
-                .then((response) => {
-                  if (!response.ok) {
-                    throw new Error("Error in fetch");
-                  } else {
-                    Swal.fire({
-                      title:
-                        "<h5 style='color:white'>" +
-                        "PAYMENT SUCCESSFUL!" +
-                        "</h5>",
-                      icon: "success",
-                      showConfirmButton: false,
-                      timer: 3000,
-                      background: "#020312",
-                      color: "white",
-                      iconColor: "#F26C4F",
-                    }).then(() => {
-                      var paramss = {
-                        TableName: "UsersTable",
-                        Key: { UserID: props.prop.username },
-                        ProjectionExpression: "SkillsAcquiredMastersessions",
-                      };
-                      docClient.get(paramss, function (err, data) {
-                        if (err) {
-                          console.log(err);
-                        } else {
-                          var params = {
-                            TableName: "UsersTable",
-                            Key: { UserID: props.prop.username },
-                            UpdateExpression:
-                              "set SkillsAcquiredMastersessions[" +
-                              data.Item.SkillsAcquiredMastersessions.length.toString() +
-                              "] = :sam",
-                            ExpressionAttributeValues: {
-                              ":sam": session.course_role,
-                            },
-                            ReturnValues: "UPDATED_NEW",
-                          };
-                          docClient.update(params, function (err, data) {
-                            if (err) {
-                              console.log(err);
-                            } else {
-                              window.location.reload();
-                            }
-                          });
-                        }
-                      });
-                    });
-                  }
-                })
-                .catch((error) => {
-                  console.error("Failed to send feedback. Error: ", error);
+              docClient.update(params, function (err, data) {
+                const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+                // We use JSON.stringify here so the data can be sent as a string via HTTP
+                const body = JSON.stringify({
+                  feedback: `Uid:${props.prop.user.username}`,
+                  user: props.prop.user.attributes.email,
+                  title: "Congratulations! You've purchased a TNG Original!",
+                  feedback1: props.prop.user.attributes.name,
+                  feedback2: session.course_name
                 });
-            });
-          }
-        });
+
+                const requestOptions = {
+                  method: "POST",
+                  body,
+                };
+                fetch(endpoint, requestOptions)
+                  .then((response) => {
+                    if (!response.ok) {
+                      throw new Error("Error in fetch");
+                    } else {
+                      Swal.fire({
+                        title:
+                          "<h5 style='color:white'>" +
+                          "PAYMENT SUCCESSFUL!" +
+                          "</h5>",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        background: "#020312",
+                        color: "white",
+                        iconColor: "#F26C4F",
+                      }).then(() => {
+                        var paramss = {
+                          TableName: "UsersTable",
+                          Key: { UserID: props.prop.user.username },
+                          ProjectionExpression: "SkillsAcquiredMastersessions",
+                        };
+                        docClient.get(paramss, function (err, data) {
+                          if (err) {
+                            console.log(err);
+                          } else {
+                            var params = {
+                              TableName: "UsersTable",
+                              Key: { UserID: props.prop.user.username },
+                              UpdateExpression:
+                                "set SkillsAcquiredMastersessions[" +
+                                data.Item.SkillsAcquiredMastersessions.length.toString() +
+                                "] = :sam",
+                              ExpressionAttributeValues: {
+                                ":sam": session.course_role,
+                              },
+                              ReturnValues: "UPDATED_NEW",
+                            };
+                            docClient.update(params, function (err, data) {
+                              if (err) {
+                                console.log(err);
+                              } else {
+                                window.location.reload();
+                              }
+                            });
+                          }
+                        });
+                      });
+                    }
+                  })
+                  .catch((error) => {
+                    console.error("Failed to send feedback. Error: ", error);
+                  });
+              });
+            }
+          });
+        }
       }
     });
   }
 
   function handlePayment(x) {
-    setname(props.prop.attributes.name)
-    setid(props.prop.username)
-    setemail(props.prop.attributes.email)
+    setname(props.prop.user.attributes.name)
+    setid(props.prop.user.username)
+    setemail(props.prop.user.attributes.email)
     setcoursename(session.course_name)
     if (reward >= parseInt(x)) {
       // console.log("REWARD EXCESS", reward);
@@ -212,12 +216,13 @@ function Page3(props) {
   }
   function getNotified() {
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
+    // console.log(session.course_name)
     // We use JSON.stringify here so the data can be sent as a string via HTTP
     const body = JSON.stringify({
-      feedback: `Uid:${props.prop.username}`,
-      user: props.prop.attributes.email,
+      feedback: `Uid:${props.prop.user.username}`,
+      user: props.prop.user.attributes.email,
       title: "Reach Out For Minutes",
-      feedback1: props.prop.attributes.name,
+      feedback1: props.prop.user.attributes.name,
       feedback2: session.course_name
     });
     const requestOptions = {
@@ -259,6 +264,139 @@ function Page3(props) {
       setPaymentShow(true);
     }
   };
+  const follow = (createrid) => {
+    if (!props.prop.isAuthenticated) {
+      window.location.href = "../login";
+    }
+    if (createrid === "") {
+      Swal.fire({
+        title:
+          "<h5 style='color:white'>" +
+          "Sorry you can't follow this person as this session is posted by admin!" +
+          "</h5>",
+        icon: "warning",
+        showConfirmButton: false,
+        timer: 3000,
+        background: "#020312",
+        color: "white",
+        iconColor: "#F26C4F",
+      })
+    }
+    else {
+      var params = {
+        TableName: "UsersTable",
+        Key: { UserID: createrid },
+        ProjectionExpression: "Follower",
+      };
+      docClient.get(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          var flag = 0;
+          data.Item.Follower.forEach(ele => {
+            if (ele.id === props.prop.user.username)
+              flag = 1
+          });
+          if (flag === 0) {
+            var params = {
+              TableName: "UsersTable",
+              Key: { UserID: createrid },
+              UpdateExpression:
+                "set Follower[" +
+                data.Item.Follower.length.toString() +
+                "] = :ms",
+              ExpressionAttributeValues: {
+                ":ms": { "id": props.prop.user.username, "date": Date.now() },
+              },
+              ReturnValues: "UPDATED_NEW",
+            };
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+              }
+            })
+          }
+        }
+      })
+      var paramss = {
+        TableName: "UsersTable",
+        Key: { UserID: props.prop.user.username },
+        ProjectionExpression: "Following",
+      };
+      docClient.get(paramss, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          var flag1 = 0;
+          data.Item.Following.forEach(ele => {
+            if (ele.id === createrid)
+              flag1 = 1
+          });
+          if (flag1 === 1) {
+            Swal.fire({
+              title:
+                "<h5 style='color:white'>" +
+                "You Already follow him" +
+                "</h5>",
+              icon: "success",
+              showConfirmButton: false,
+              timer: 3000,
+              background: "#020312",
+              color: "white",
+              iconColor: "#F26C4F",
+            })
+          }
+          if (flag1 === 0) {
+            var params = {
+              TableName: "UsersTable",
+              Key: { UserID: props.prop.user.username },
+              UpdateExpression:
+                "set Following[" +
+                data.Item.Following.length.toString() +
+                "] = :ms",
+              ExpressionAttributeValues: {
+                ":ms": { "id": createrid, "date": Date.now() },
+              },
+              ReturnValues: "UPDATED_NEW",
+            };
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                Swal.fire({
+                  title:
+                    "<h5 style='color:white'>" +
+                    "Creator want to say to thank you for following him" +
+                    "</h5>",
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 3000,
+                  background: "#020312",
+                  color: "white",
+                  iconColor: "#F26C4F",
+                })
+              }
+            })
+          }
+          else {
+            Swal.fire({
+              title:
+                "<h5 style='color:white'>" +
+                "You already follow this person" +
+                "</h5>",
+              icon: "success",
+              showConfirmButton: false,
+              timer: 3000,
+              background: "#020312",
+              color: "white",
+              iconColor: "#F26C4F",
+            })
+          }
+        }
+      })
+    }
+  }
   return (
     <div>
       <div className="header_masterclass">
@@ -305,7 +443,7 @@ function Page3(props) {
                   </button>
                 </a>
               </Col> */}
-              {props.prop !== null ?
+              {props.prop.isAuthenticated===true ?
                 coursePurchased === false &&
                 <Col style={{ textAlign: "center" }}>
                   <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
@@ -328,13 +466,18 @@ function Page3(props) {
               course_name={coursename}
               onHide={() => setModalShow(false)}
             />
+            <Connect
+              data={modalShow2.data}
+              show={modalShow2.check}
+              onHide={() => { setModalShow2(false) }}
+            />
             <div className="mobile_view_video_master">
               {/* <div>
                 <a href={"/expert/" + session.ExpertId}><button className="button_slide_page3 slide_right">
                   Get to know<br /> your expert
                 </button></a>
               </div> */}
-              {props.prop !== null ?
+              {props.prop.isAuthenticated===true ?
                 coursePurchased === false &&
                 <div style={{ textAlign: "center" }}>
                   <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
@@ -369,7 +512,7 @@ function Page3(props) {
                     <p className="twoline_desc">{des}</p>
                   }
                   {paymentshow === true && (
-                    props.prop !== null ? (
+                    props.prop.isAuthenticated===true ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
@@ -383,7 +526,7 @@ function Page3(props) {
                   )
                   }
                 </Col >
-                <Col md={4}>
+                <Col className='col_epi' md={4}>
                   <div className="menu_card">
                     <h1 className="epi" style={{ marginTop: "2%", marginLeft: "2%" }}>Episodes</h1>
                     <div className="vertical-menu">
@@ -415,7 +558,7 @@ function Page3(props) {
                     <p className="twoline_desc">{des}</p>
                   }
                   {paymentshow === true && (
-                    props.prop !== null ? (
+                    props.prop.isAuthenticated===true ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
@@ -447,8 +590,11 @@ function Page3(props) {
             </div>
           </div>
         </div>
-
       </Container>
+      <div className="btn_div_homepage_new" style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <div><button onClick={() => setModalShow2({ data: { VideoTopic: session["course_name"], VideoUsername: session["course_instructor"] }, check: true })} style={{ marginTop: "0px", marginLeft: "0px", width: "240px", marginBottom: "8%" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">Connect<ArrowRight className="button_arrow" style={{ marginLeft: "62px" }} /></button></div>
+        <div><button onClick={() => follow(masterid)} id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "240px", marginBottom: "8%" }} className="button_slide slide_right orange_button_page3">Follow Expert<ArrowRight className="button_arrow" style={{ marginLeft: "40px" }} /></button></div>
+      </div>
       <div className="header_masterclass">
         <Container>
           <div className="top_masterclass"><h1>WHAT’S IN IT FOR YOU?</h1>

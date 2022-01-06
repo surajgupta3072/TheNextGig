@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import './Page3.css'
 
 function MyVerticallyPopUp(props) {
-
   function getNotified() {
     const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
     // We use JSON.stringify here so the data can be sent as a string via HTTP
@@ -13,7 +12,7 @@ function MyVerticallyPopUp(props) {
       user: props.email,
       title: "Reach Out For Minutes",
       feedback1: props.name,
-      feedback2: props.cname,
+      feedback2: props.course_name,
     });
     const requestOptions = {
       method: "POST",
@@ -62,7 +61,7 @@ function MyVerticallyPopUp(props) {
             <p style={{ fontSize: "20px" }}>Sorry! You don't have enough minute balance!</p>
             <button
               onClick={getNotified}
-              className="button_slide_popuppage3 slide_right"
+              className="button_slide slide_right"
             >
               Reach out to us!
               <ArrowLeft className="button_arrow" />
