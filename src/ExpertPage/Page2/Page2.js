@@ -25,6 +25,7 @@ function Page2(props) {
         console.log(err);
       }
       else {
+        data.Items.sort((a, b) => (a.ExpertID.toUpperCase() > b.ExpertID.toUpperCase()) ? 1 : -1)
         setExpertData(data.Items)
       }
     });
@@ -64,7 +65,7 @@ function Page2(props) {
                 )
               }
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertDesignation}</p>
-              {((vid.ExpertCompany.length) < 27) ?
+              {((vid.ExpertCompany.length) < 40) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertCompany}</p>)
                 ) :
@@ -73,11 +74,14 @@ function Page2(props) {
                 )
               }
               <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start" }}>
-                {vid.ExpertSkills.map((ele) => {
-                  return <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>
-                    {ele}
-                  </p>
-                })}
+                {((vid.ExpertSkills.join(",")) < 40) ?
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertSkills.join(",")}</p>)
+                  ) :
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertSkills.join(",").substring(0, 40)}...</p>)
+                  )
+                }
               </div>
             </div>
             <br />

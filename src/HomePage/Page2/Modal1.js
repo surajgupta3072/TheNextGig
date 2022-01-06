@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Swal from "sweetalert2";
 
 function MyVerticallyCenteredModal(props) {
-
   function myClipboard(vidlink) {
     Swal.fire({
       title: "<h6 style='color:white'>" + "Link Copied!" + "</h6>",
@@ -48,11 +47,16 @@ function MyVerticallyCenteredModal(props) {
               <br />
               <div style={{ display: "flex", justifyContent: "space-between", flexDirection: "row" }}>
                 <div>
-                  <a style={{ textDecoration: "none", color: "white" }} href={"mailto:?" + "subject=Shared Link Of Social Learning Videos" + "&body=Social Learning Video Link From" + "https://www.thenextgig.net/" + " is " + `https://www.thenextgig.net/SocialLearning` + `${props.VideoID}`}
+                  <a style={{ textDecoration: "none", color: "white" }} href={"mailto:?" + "subject=Shared Link Of Social Learning Videos" + "&body=Social Learning Video Link From" + "https://www.thenextgig.net/" + " is " + `https://www.thenextgig.net/` + `${props.VideoID}`}
                     target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="/Gmail_Homepage.png" height="45px"></img>
                     <p>&nbsp; Gmail</p></a>
                 </div>
-                <div onClick={() => myClipboard(window.location.href)}>
+                <div onClick={() => {
+                  if (window.location.href.split("/")[3] === "") { myClipboard(window.location.href + props.VideoID) }
+                  else if (window.location.href.split("/")[3] !== props.VideoID) { myClipboard(window.location.href.split("/")[0] + window.location.href.split("/")[1] + window.location.href.split("/")[2] + "/" + props.VideoID) }
+                  else
+                    myClipboard(window.location.href)
+                }}>
                   <img style={{ cursor: "pointer", alignItems: "center" }} src="/copylink_homepage.png" height="45px"></img>
                   <p style={{ marginLeft: "-5px" }}>Copy Link</p>
                 </div>

@@ -36,15 +36,14 @@
   position: absolute;
   height: auto;
   width: 120px;
-  left: 49%;
+  left: 52%;
   top: 0%;
   margin: -110px;
 }
 .img_experttop {
-  clip-path: circle(34% at 50% 45%);
-  height: 240px;
-  width: 240px;
-  object-fit: contain;
+  border-radius: 50%;
+  height: 190px;
+  width: 190px;
 }
 .img_company {
   height: 60px;
@@ -80,6 +79,9 @@ h3 {
   margin: 0px;
   text-align: center;
   color: rgba(255, 255, 255, 0.75);
+}
+.skillsptag {
+  font-size: 15px;
 }
 .subtitle2_expertcard {
   text-align: left;

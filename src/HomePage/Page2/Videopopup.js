@@ -34,6 +34,136 @@ function MyVerticallyCenteredModal(props) {
             });
         }
     }, [])
+    const like = (id) => {
+        var paramss = {
+            TableName: "UsersTable",
+            Key: { UserID: props.username },
+            ProjectionExpression: "SocialLearningVideosLiked",
+        };
+        docClient.get(paramss, function (err, data) {
+            if (err) {
+                console.log(err);
+            } else {
+                var flag = 0;
+                data.Item.SocialLearningVideosLiked.forEach((ele) => {
+                    if (ele.vid === id) {
+                        flag = 1;
+                    }
+                })
+                if (flag === 0) {
+                    var params = {
+                        TableName: "UsersTable",
+                        Key: { UserID: props.username },
+                        UpdateExpression:
+                            "set SocialLearningVideosLiked[" +
+                            data.Item.SocialLearningVideosLiked.length.toString() +
+                            "] = :ms",
+                        ExpressionAttributeValues: {
+                            ":ms": { vid: id, date: Date.now },
+                        },
+                        ReturnValues: "UPDATED_NEW",
+                    };
+                    docClient.update(params, function (err, data) {
+                        if (err) {
+                            console.log(err);
+                        }
+                        else {
+                            Swal.fire({
+                                title:
+                                    "<h5 style='color:white'>" +
+                                    "Creator want to say to thank you for liking this video" +
+                                    "</h5>",
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 3000,
+                                background: "#020312",
+                                color: "white",
+                                iconColor: "#F26C4F",
+                            })
+                        }
+                    })
+                }
+                else {
+                    Swal.fire({
+                        title:
+                            "<h5 style='color:white'>" +
+                            "Already Liked" +
+                            "</h5>",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        background: "#020312",
+                        color: "white",
+                        iconColor: "#F26C4F",
+                    })
+                }
+            }
+        })
+        var params1 = {
+            TableName: "VideosTable",
+            Key: { VideoID: id },
+            ProjectionExpression: "Likes",
+        };
+        docClient.get(params1, function (err, data) {
+            if (err) {
+                console.log(err);
+            } else {
+                var flag = 0;
+                data.Item.Likes.forEach((ele) => {
+                    if (ele.uid === props.username) {
+                        flag = 1;
+                    }
+                })
+                if (flag === 0) {
+                    var params = {
+                        TableName: "VideosTable",
+                        Key: { VideoID: id },
+                        UpdateExpression:
+                            "set Likes[" +
+                            data.Item.Likes.length.toString() +
+                            "] = :ms",
+                        ExpressionAttributeValues: {
+                            ":ms": { uid: props.username, date: Date.now() },
+                        },
+                        ReturnValues: "UPDATED_NEW",
+                    };
+                    docClient.update(params, function (err, data) {
+                        if (err) {
+                            console.log(err);
+                        }
+                        else {
+                            Swal.fire({
+                                title:
+                                    "<h5 style='color:white'>" +
+                                    "Creator want to say to thank you for liking this video" +
+                                    "</h5>",
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 3000,
+                                background: "#020312",
+                                color: "white",
+                                iconColor: "#F26C4F",
+                            })
+                        }
+                    })
+                }
+                else {
+                    Swal.fire({
+                        title:
+                            "<h5 style='color:white'>" +
+                            "Already liked" +
+                            "</h5>",
+                        icon: "warning",
+                        showConfirmButton: false,
+                        timer: 3000,
+                        background: "#020312",
+                        color: "white",
+                        iconColor: "#F26C4F",
+                    })
+                }
+            }
+        })
+    }
     function VideoStarted(vid, ct, vidDuration) {
         if (reward >= vidDuration) {
             if (ct <= 0.1) {
@@ -315,22 +445,25 @@ function MyVerticallyCenteredModal(props) {
                                     <div>
                                         <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(props.data.VideoUploaderID)} >&nbsp; &nbsp;&nbsp;&nbsp;Follow</p>
                                     </div>
+                                    <div>
+                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(props.data.VideoID)} >&nbsp; &nbsp;&nbsp;&nbsp;Like</p>
+                                    </div>
+                                    <div>
+                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)}>
+                                            &nbsp; &nbsp;&nbsp;&nbsp;Share <GiShare style={{ width: "20px", height: "20px" }} />
+                                        </p>
+                                        <MyVerticallyCenteredModal1
+                                            show={modalShow}
+                                            VideoID={props.data.VideoID}
+                                            onHide={() => setModalShow(false)}
+                                        />
+                                        < Modalx
+                                            data={modalShow2.data}
+                                            show={modalShow2.check}
+                                            onHide={() => { setModalShow2(false) }}
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="text1" style={{ padding: "0", margin: "0", color: "#000", fontSize: "18px", cursor: "pointer" }}>
-                                <button style={{ marginLeft: "0%", border: "0px", color: "rgb(242, 108, 79)", backgroundColor: "transparent", borderRadius: "3px", fontSize: "18px" }} onClick={() => setModalShow(true)}>
-                                    Share <GiShare style={{ width: "20px", height: "20px" }} />
-                                </button>
-                                <MyVerticallyCenteredModal1
-                                    show={modalShow}
-                                    VideoID={window.location.href.split("/")[3]}
-                                    onHide={() => setModalShow(false)}
-                                />
-                                < Modalx
-                                    data={modalShow2.data}
-                                    show={modalShow2.check}
-                                    onHide={() => { setModalShow2(false) }}
-                                />
                             </div>
                         </div>
                     </div>

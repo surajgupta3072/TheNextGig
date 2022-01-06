@@ -129,12 +129,20 @@ function Follow(props) {
                             )
                         } */}
                         <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertDesignation}</p>
-                        {((ele.ExpertCompany.length) < 27) ?
+                        {((ele.ExpertCompany.length) < 40) ?
                             (
-                            (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertCompany}</p>)
+                                (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertCompany}</p>)
                             ) :
                             (
-                            (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertCompany.substring(0, 40)}...</p>)
+                                (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertCompany.substring(0, 40)}...</p>)
+                            )
+                        }
+                        {((ele.ExpertSkills.join(",").length) < 40) ?
+                            (
+                                (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertSkills.join(",")}</p>)
+                            ) :
+                            (
+                                (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertSkills.join(",").substring(0, 40)}...</p>)
                             )
                         }
                     </div>

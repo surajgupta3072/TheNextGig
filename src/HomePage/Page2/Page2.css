@@ -88,6 +88,9 @@
 .btn_div_homepage_new {
   flex-direction: row;
 }
+.popup_video {
+  width: -webkit-fill-available;
+}
 @media screen and (min-width: 516px) and (max-width: 927px) {
   .div_video {
     width: fit-content !important;
@@ -107,7 +110,7 @@
     width: 80vw;
     min-height: 300px;
     height: fit-content !important;
-    max-height: 500px;
+    max-height: 400px;
   }
 }
 @media screen and (max-width: 768px) {

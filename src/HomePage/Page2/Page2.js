@@ -877,7 +877,7 @@ function Page2(props) {
       <Slider {...settings}>
         {data_other.map((vid, index) => {
           return <div style={{ width: "260px" }} >
-            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img width="240px" src={vid.VideoThumbnail} />
             </figure>
             <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
