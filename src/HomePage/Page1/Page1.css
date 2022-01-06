@@ -65,6 +65,7 @@ video {
 }
 .small_white_text {
   font-size: 18px;
+  color:white;
 }
 .heading > div > p {
   width: -webkit-max-content;
