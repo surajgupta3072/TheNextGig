@@ -22,7 +22,7 @@
   width: 100%;
   height: 180px;
   background-size: cover;
-  background-image: url("../../masterclass_head.png");
+  background-image: url("https://master-sessions.s3.ap-south-1.amazonaws.com/masterclass_head.png");
   background-position-y: -40px;
   padding-top: 25px;
 }
@@ -195,6 +195,9 @@ pre {
   .button_masterclass {
     display: flex;
     justify-self: center;
+  }
+  .masterclass_top_image {
+    padding-top: 5px;
   }
 }
 @media only screen and (max-width: 500px) {

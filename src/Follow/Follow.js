@@ -3,12 +3,8 @@ import docClient from "../GigsPage/GigsAWS";
 import { useState, useEffect } from "react";
 import "./Follow.css"
 import ReactTooltip from 'react-tooltip';
-import masterdata from "../MasterClassPage/Masterclass.json"
-import { useHistory } from "react-router-dom";
-
 function Follow(props) {
     var list = [], list2 = [], list3 = []
-    const history = useHistory();
     const [yourfollowdata, setyourfollowdata] = useState([]);
     useEffect(() => {
         var params = {
@@ -50,41 +46,7 @@ function Follow(props) {
         })
 
     }, [])
-    var list4 = [], list3 = []
-    function fetchvideos(idm, ids) {
-        idm.forEach((ele) => {
-            masterdata.forEach((ele2) => {
-                if (ele2.id === ele) {
-                    list3.push(ele2)
-                }
-            });
-        })
-        if (ids.length === 0) {
-            history.push({ pathname: "../followvideos", state: { data: list3 } })
-        }
-        ids.forEach((ele) => {
-            var params = {
-                TableName: "VideosTable",
-                KeyConditionExpression: "#Vid = :VideoID",
-                ExpressionAttributeNames: {
-                    "#Vid": "VideoID",
-                },
-                ExpressionAttributeValues: {
-                    ":VideoID": ele,
-                },
-            }
-            docClient.query(params, function (err, data) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    list4.push(data.Items[0])
-                    if (list4.length === ids.length) {
-                        history.push({ pathname: "../followvideos", state: { data: list4.concat(list3) } });
-                    }
-                }
-            })
-        })
-    }
+    var list3 = []
     return (
         <div>
             <br />
@@ -92,17 +54,17 @@ function Follow(props) {
             <br />
             <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row" }}>
                 {yourfollowdata.map(ele => {
-                    return < div onClick={() => { fetchvideos(ele.MastersessionsVideoUploadId, ele.SocialLearningVideoUploadedId); }} style={{ height: "300px", width: "260px" }} >
+                    return < div onClick={() => window.location.href = "/expert/" + ele.ExpertID} style={{ height: "300px", width: "260px" }} >
                         <img width="240px" src={ele.ExpertPic} style={{ cursor: "pointer" }} />
                         <div width="240px" style={{ marginLeft: "2%", width: "260px" }}>
                             {(ele.ExpertName.length < 25) ?
                                 (
-                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
+                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
                                         {ele.ExpertName}
                                     </p>)
                                 ) :
                                 (
-                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
+                                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
                                         {ele.ExpertName.substring(0, 25)}...
                                         <sup data-tip data-for={ele.id + "gx23"} >&#9432;</sup>
                                         <ReactTooltip id={ele.id + "gx23"} place="top" effect="solid">
@@ -111,15 +73,6 @@ function Follow(props) {
                                     </p>)
                                 )
                             }
-                            {/* {((ele.ExpertDesignation.length) < 27) ?
-                            (
-                                (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertDesignation}</p>)
-                            ) :
-                            (
-                                (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertDesignation.substring(0, 27)}...</p>)
-
-                            )
-                        } */}
                             <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{ele.ExpertDesignation}</p>
                             {((ele.ExpertCompany.length) < 40) ?
                                 (

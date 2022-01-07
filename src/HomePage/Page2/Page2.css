@@ -120,6 +120,10 @@
   .slick-dots {
     display: none !important;
   }
+  .btn_popup {
+    margin-bottom: 0% !important;
+    margin-top: 0% !important;
+  }
   .btn_div_homepage_new {
     flex-direction: column;
     margin-left: 15%;
@@ -127,7 +131,7 @@
   .page2_laptop_view {
     display: none;
   }
-  .Heading_aling{
+  .Heading_aling {
     text-align: center;
   }
 }

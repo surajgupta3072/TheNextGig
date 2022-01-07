@@ -35,12 +35,12 @@ function MyVerticallyCenteredModal(props) {
               <div style={{ display: "flex", justifyContent: "space-between", flexDirection: "row" }}>
                 <div>
                   <a style={{ textDecoration: "none", color: "white" }} href={'whatsapp://send?text=' + `https://www.thenextgig.net/` + `${props.VideoID}`} data-action="share/whatsapp/share"
-                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="/WhatsApp_homepage.png" height="60px" href="" />
+                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/WhatsApp_homepage.png" height="60px" href="" />
                     <p style={{ marginLeft: "-8px" }}>Whatsapp</p></a>
                 </div>
                 <div>
                   <a style={{ textDecoration: "none", color: "white" }} href={"https://www.linkedin.com/sharing/share-offsite/?url=" + `https://www.thenextgig.net/` + `${props.VideoID}`}
-                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="/LinkedIn_Homepage.png" height="60px"></img>
+                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/LinkedIn_Homepage.png" height="60px"></img>
                     <p>LinkedIn &nbsp; </p></a>
                 </div>
               </div>
@@ -48,7 +48,7 @@ function MyVerticallyCenteredModal(props) {
               <div style={{ display: "flex", justifyContent: "space-between", flexDirection: "row" }}>
                 <div>
                   <a style={{ textDecoration: "none", color: "white" }} href={"mailto:?" + "subject=Shared Link Of Social Learning Videos" + "&body=Social Learning Video Link From" + "https://www.thenextgig.net/" + " is " + `https://www.thenextgig.net/` + `${props.VideoID}`}
-                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="/Gmail_Homepage.png" height="45px"></img>
+                    target="_blank"><img style={{ cursor: "pointer", alignItems: "center" }} src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/Gmail_Homepage.png" height="45px"></img>
                     <p>&nbsp; Gmail</p></a>
                 </div>
                 <div onClick={() => {

@@ -8,7 +8,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 function Page4() {
   return (
     <div>
-      <br/><br/>
+      <br /><br />
       <div className="page4_maindiv laptop_view">
         <div className="heading_box">
           <div>
@@ -39,18 +39,18 @@ function Page4() {
                 <Row className="row1">
                   <Col style={{ width: "20" }}>
                     <div class="grid_imgs">
-                      <img src="./captzack.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/captzack.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                   <Col style={{ width: "20" }}>
                     <div class="grid_imgs">
-                      <img src="./superpro.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/superpro.png" alt="..." class="myimg" />
                     </div>
                   </Col>
 
                   <Col style={{ width: "20" }}>
                     <div class="grid_imgs">
-                      <img src="./orangewood.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/orangewood.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                 </Row >
@@ -59,12 +59,12 @@ function Page4() {
 
                   <Col>
                     <div class="grid_imgs">
-                      <img src="./scalenut.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/scalenut.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                   <Col>
                     <div class="grid_imgs">
-                      <img src="./fish.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/fish.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                 </Row>
@@ -74,7 +74,7 @@ function Page4() {
                   <Col></Col>
                   <Col>
                     <div class="grid_imgs">
-                      <img src="./synapisca.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/synapisca.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                 </Row>
@@ -121,17 +121,17 @@ function Page4() {
                   <Col></Col>
                   <Col >
                     <div style={{ width: "70px", height: "70px" }} class="grid_imgs">
-                      <img src="./captzack.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/captzack.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                   <Col >
                     <div style={{ width: "70px", height: "70px" }} class="grid_imgs">
-                      <img src="./superpro.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/superpro.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                   <Col >
                     <div style={{ width: "70px", height: "70px" }} class="grid_imgs">
-                      <img src="./orangewood.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/orangewood.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                 </Row >
@@ -140,12 +140,12 @@ function Page4() {
                   <Col></Col>
                   <Col >
                     <div style={{ width: "70px", height: "70px" }} class="grid_imgs">
-                      <img src="./scalenut.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/scalenut.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                   <Col>
                     <div style={{ width: "70px", height: "70px" }} class="grid_imgs">
-                      <img src="./fish.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/fish.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                 </Row>
@@ -155,7 +155,7 @@ function Page4() {
                   <Col></Col>
                   <Col>
                     <div style={{ width: "70px", height: "70px" }} class="grid_imgs">
-                      <img src="./synapisca.png" alt="..." class="myimg" />
+                      <img src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/synapisca.png" alt="..." class="myimg" />
                     </div>
                   </Col>
                 </Row>
@@ -169,7 +169,7 @@ function Page4() {
       </div>
 
       {/*TNG Learn Coins Page*/}
-      <br/><br/><br/>
+      <br /><br /><br />
       <div className="page5_maindiv" >
         <div className="heading_box" style={{ marginBottom: "6%" }}>
           <div>
@@ -191,11 +191,11 @@ function Page4() {
             <Container>
               <Row style={{ display: "flex", flexDirection: "row" }}>
                 <Card id="Tng_learn_Coin_Earn_Card" onClick={() => window.location.href = "/SocialLearning"} className="page2card" style={{ width: "29.9%", marginLeft: "2.5%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)", borderRadius: "12px", cursor: 'pointer' }}>
-                  <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/earn.jpg" />
+                  <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/earn.jpg" />
                   <Card.Body style={{ marginTop: "30px" }}>
                     <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >EARN</Card.Title>
                     <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                      Signup! Get 180 minutes of content free <br /> Upload a video! Get additional 10 minutes 
+                      Signup! Get 180 minutes of content free <br /> Upload a video! Get additional 10 minutes
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -204,18 +204,18 @@ function Page4() {
                   <Card.Body style={{ marginTop: "30px" }}>
                     <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >ACCUMULATE</Card.Title>
                     <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                    Check your minutes balance in the <br /> <i>navigation bar</i> at the top
+                      Check your minutes balance in the <br /> <i>navigation bar</i> at the top
                     </Card.Text>
                   </Card.Body>
-                  <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/accumulate.jpg" />
+                  <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/accumulate.jpg" />
                 </Card>
 
                 <Card id="Tng_learn_Coin_Redeem_Card" onClick={() => window.location.href = "/TNGoriginals"} className="page2card3" style={{ width: "29.9%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgb(86, 150, 112,0.6)", borderRadius: "12px", cursor: 'pointer' }}>
-                  <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/redeem.jpg" />
+                  <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/redeem.jpg" />
                   <Card.Body style={{ marginTop: "30px" }}>
                     <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >REDEEM</Card.Title>
                     <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                     Redeem minutes to access TNG Originals and Bite-Sized Videos
+                      Redeem minutes to access TNG Originals and Bite-Sized Videos
                     </Card.Text>
                   </Card.Body >
                 </Card>
@@ -231,12 +231,12 @@ function Page4() {
                   <Card.Body>
                     <div style={{ display: "flex", flexDirection: "row" }}>
                       <Col >
-                        <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/earn.jpg" />
+                        <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/earn.jpg" />
                       </Col>
                       <Col style={{ marginLeft: "-20%" }}>
                         <Card.Title style={{ fontSize: "20px" }}>EARN</Card.Title>
                         <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                        Signup! Get 180 minutes of content free <br /> Upload a video! Get additional 10 minutes 
+                          Signup! Get 180 minutes of content free <br /> Upload a video! Get additional 10 minutes
                         </Card.Text>
                       </Col>
                     </div>
@@ -247,7 +247,7 @@ function Page4() {
                   <Card.Body>
                     <div style={{ display: "flex", flexDirection: "row" }}>
                       <Col>
-                        <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/accumulate.jpg" />
+                        <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/accumulate.jpg" />
                       </Col>
                       <Col style={{ marginLeft: "-20%" }}>
                         <Card.Title style={{ fontSize: "20px" }}>ACCUMULATE</Card.Title>
@@ -263,12 +263,12 @@ function Page4() {
                   <Card.Body>
                     <div style={{ display: "flex", flexDirection: "row" }}>
                       <Col>
-                        <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/redeem.jpg" />
+                        <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/redeem.jpg" />
                       </Col>
                       <Col style={{ marginLeft: "-20%" }}>
                         <Card.Title style={{ fontSize: "20px" }}>REDEEM</Card.Title>
                         <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                        Redeem minutes to access TNG Originals and Bite-Sized Videos
+                          Redeem minutes to access TNG Originals and Bite-Sized Videos
                         </Card.Text>
                       </Col>
                     </div>

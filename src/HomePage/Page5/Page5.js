@@ -33,7 +33,7 @@ function Page5() {
                       <Card.Body>
                         <div style={{ display: "flex", flexDirection: "row" }}>
                           <Col >
-                            <Card.Img style={{ margin: "auto", height: "130px", width: "130px", borderRadius: "50%" }} variant="top" src="/Social Learning - Learn.png" />
+                            <Card.Img style={{ margin: "auto", height: "130px", width: "130px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/Social+Learning+-+Learn.png" />
                           </Col>
                           <Col style={{ marginLeft: "0%" }}>
                             <Card.Title style={{ fontSize: "40px" }}>LEARN...</Card.Title>
@@ -49,7 +49,7 @@ function Page5() {
                       <Card.Body>
                         <div style={{ display: "flex", flexDirection: "row" }}>
                           <Col>
-                            <Card.Img style={{ margin: "auto", height: "130px", width: "130px", borderRadius: "50%" }} variant="top" src="/Social Learning - Share.png" />
+                            <Card.Img style={{ margin: "auto", height: "130px", width: "130px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/Social+Learning+-+Share.png" />
                           </Col>
                           <Col style={{ marginLeft: "0%" }}>
                             <Card.Title style={{ fontSize: "40px" }}>SHARE...</Card.Title>
@@ -80,7 +80,7 @@ function Page5() {
                 <Card.Body>
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <Col >
-                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/Social Learning - Learn.png" />
+                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/Social+Learning+-+Learn.png" />
                     </Col>
                     <Col style={{ marginLeft: "-20%" }}>
                       <Card.Title style={{ fontSize: "20px" }}>LEARN...</Card.Title>
@@ -96,7 +96,7 @@ function Page5() {
                 <Card.Body>
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <Col>
-                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/Social Learning - Share.png" />
+                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/Social+Learning+-+Share.png" />
                     </Col>
                     <Col style={{ marginLeft: "-20%" }}>
                       <Card.Title style={{ fontSize: "20px" }}>SHARE...</Card.Title>

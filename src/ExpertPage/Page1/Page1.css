@@ -35,15 +35,13 @@
 .imag {
   position: absolute;
   height: auto;
-  width: 120px;
-  left: 52%;
+  width: 240px;
   top: 0%;
-  margin: -110px;
+  margin: -50px auto;
 }
 .img_experttop {
-  border-radius: 50%;
-  height: 190px;
-  width: 190px;
+  height: 134.91px;
+  width: 240px;
 }
 .img_company {
   height: 60px;

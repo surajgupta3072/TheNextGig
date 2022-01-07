@@ -15,7 +15,6 @@ import { useEffect, useState } from "react";
 import Auth from "@aws-amplify/auth";
 import ProtectedRoute from "./GuardedRoute";
 import SocialLearningPage from "./SocialLearningPage/SocialLearningPage";
-import SocialVideoPage from "./SocialLearningPage/SocialVideoPage";
 // import SocialBlogPage from "./SocialLearningPage/SocialBlogPage";
 import jwt_decode from "jwt-decode";
 import docClient from './GigsPage/GigsAWS';
@@ -31,11 +30,8 @@ import RedirectPage from './RedirectPage';
 import "./App.css";
 import LearnCoins from "./LearnCoins/LearnCoins";
 import ReferralPage from "./AuthPage/ReferralPage";
-import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 import Follow from "./Follow/Follow";
 import SkillsVideopage from "./Skills&Videopage/SkillsVideopage";
-import Followvideos from "./Followvideos/Followvideos";
-// import HomeVideoPage from "./HomePage/Page2/HomeVideoPage";
 // import Comet from "../src/SocialLearningPage/Comet";
 
 function App() {
@@ -111,7 +107,7 @@ function App() {
     catch (error) {
       if (window.location.href != "http://localhost:3000/login" && window.location.href != "http://localhost:3000/register" && window.location.href != "http://localhost:3000/Referral" && window.location.href != "https://www.thenextgig.net/login" && window.location.href != "https://www.thenextgig.net/register" && window.location.href != "https://www.thenextgig.net/Referral")
         localStorage.setItem('lastURL', window.location.href);
-      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/") || (window.location.href.split("/")[3] !== undefined && window.location.href.split("/")[3].length === 16) || (window.location.href.split("/")[4]!==undefined && window.location.href.split("/")[4].includes("%20"))) {
+      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/") || (window.location.href.split("/")[3] !== undefined && window.location.href.split("/")[3].length === 16) || (window.location.href.split("/")[4] !== undefined && window.location.href.split("/")[4].includes("%20"))) {
         localStorage.setItem('lastLastURL', window.location.href);
         localStorage.setItem('lastURL', "https://www.thenextgig.net/Redirecting");
       }
@@ -133,9 +129,6 @@ function App() {
           <Header auth={authProps} />
           <Router>
             <Switch>
-              <Route exact path="/Video/:vidId">
-                <HomeVideoPage auth={authProps.user} />
-              </Route>
               <Route exact path="/login">
                 <LoginPage auth={authProps} />
               </Route>
@@ -154,17 +147,11 @@ function App() {
               <ProtectedRoute exact path="/follow" auth={authProps}>
                 <Follow auth={authProps} />
               </ProtectedRoute>
-              <ProtectedRoute exact path="/followvideos" auth={authProps}>
-                <Followvideos auth={authProps} />
-              </ProtectedRoute>
               <Route exact path="/SkillsVideo">
                 <SkillsVideopage auth={authProps} />
               </Route>
               <Route exact path="/SocialLearning">
                 <SocialLearningPage auth={authProps} />
-              </Route>
-              <Route exact path="/SocialLearning/Video/:id">
-                <SocialVideoPage auth={authProps} />
               </Route>
               {/* <Route exact path="/SocialLearning/Blog/:id">
                 <SocialBlogPage auth={authProps}/>

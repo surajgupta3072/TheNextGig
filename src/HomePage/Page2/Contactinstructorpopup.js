@@ -1,5 +1,5 @@
 import Modal from "react-bootstrap/Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { ArrowLeft } from "react-bootstrap-icons";
@@ -101,13 +101,13 @@ function MyVerticallyCenteredModal(props) {
                 style={{ padding: "0%", backgroundColor: "#020312", border: "1px solid #f26c4f" }}
             >
                 <div style={{ marginLeft: "5%", marginTop: "10px", marginBottom: "20px", marginRight: "5%" }}><AiFillCloseCircle style={{ color: "#f26c4f", width: "30px", height: "30px", position: "absolute", right: "5px" }} onClick={() => props.onHide()} />
-                    <h4 style={{ justifyContent: "center" }}>Connect with expert</h4>
+                    <p style={{ justifyContent: "center", fontSize: "18px" }}>Connect with expert</p>
                     <select required={true} value={session} onChange={handlesession} style={{ width: "100%" }}>
                         <option selected >Please select an option</option>
                         <option>Ask a specific question</option>
                         <option>Request for 30 mins 1-1 session</option>
                     </select>
-                    <p style={{ fontSize: "18px" }}>
+                    <p style={{ fontSize: "18px", marginTop: "10px" }}>
                         Your Email ID
                         <text style={{ color: "#f26c4f" }}>*</text>
                     </p>
@@ -122,12 +122,11 @@ function MyVerticallyCenteredModal(props) {
                             <span>Question&nbsp;</span>
                         </label>
                             <textarea onChange={handlequestion} className="boxtextarea" placeholder="Type Your Questions" ></textarea></> : null}
-                    <br />
                     <p style={{ color: "red" }}>{caution}</p>
                     <button
                         onClick={submit}
-                        className="button_slide slide_right"
-                        style={{ marginTop: "10%", marginLeft: "35%" }}
+                        className="button_slide slide_right btn_popup"
+                        style={{ marginLeft: "35%" }}
                     >
                         Submit
                         <ArrowLeft className="button_arrow" />

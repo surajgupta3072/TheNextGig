@@ -17,10 +17,12 @@ const breakPoints = [
 function Page1() {
   const [modalShow, setModalShow] = useState(false);
   const [cardslist, setcardsList] = useState(master);
+  const [filterwordglobal, setfilterwordglobal] = useState([]);
   function searchfilter(e) {
-    var filterword = [];
+    var filterword = filterwordglobal;
     if (filterword.includes(e.target.value) === false) {
       filterword.push(e.target.value)
+      setfilterwordglobal(filterword)
     }
     else {
       filterword.splice(filterword.indexOf(e.target.value), 1)
@@ -30,7 +32,6 @@ function Page1() {
       setcardsList(master)
     }
     else {
-      console.log(filterword)
       for (var i = 0; i < filterword.length; i++) {
         for (var j = 0; j < master.length; j++) {
           if (master[j].course_domain === filterword[i] && videofilterlist.includes(master[j]) === false) {

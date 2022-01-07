@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import docClient from '../../GigsPage/GigsAWS';
 import ReactTooltip from 'react-tooltip';
 import Videopopup from "../../HomePage/Page2/Videopopup"
-import Swal from "sweetalert2";
 
 function Page1(props) {
   const [expert, setExpert] = useState("");
@@ -228,10 +227,10 @@ function Page1(props) {
               <p className="subtitle_expertcard">{expert.ExpertEducational}</p>
             </div>
             <div class="logo_para">
-              <a href={expert.ExpertLinkedIn} target="_blank" rel="noreferrer"><Linkedin style={{ background: "white", border: "0.1px solid white", color: "black", cursor: "pointer", marginTop:"5px" }} size={34} /></a>
+              <a href={expert.ExpertLinkedIn} target="_blank" rel="noreferrer"><Linkedin style={{ background: "white", border: "0.1px solid white", color: "black", cursor: "pointer", marginTop: "5px" }} size={34} /></a>
             </div>
             {/* <p className="connect_text" style={{ cursor: "pointer", margin: 0 }} onClick={() => follow(expert.AccountID)} >&nbsp;Follow</p> */}
-            <br/>
+            <br />
             <div>
               <h3 style={{ color: "#f26c4f", margin: 0 }}>Skilled at:</h3>
               <p className="subtitle_expertcard skillsptag">{expert.ExpertSkills}</p>
@@ -248,7 +247,7 @@ function Page1(props) {
       </Container>
       <br /><br />
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", marginLeft: "4.5%" }}>Videos</h4>
-      <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap", marginLeft:"4%", marginRight:"3%" }}>
+      <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap", marginLeft: "4%", marginRight: "3%" }}>
         {masterclasses.map((ele) => {
           return <div style={{ width: "260px" }} >
             <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
@@ -257,10 +256,10 @@ function Page1(props) {
             <div width="240px" src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
               {(ele.course_name.length < 25) ?
                 (
-                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{ele.course_name}</h6>)
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{ele.course_name}</h6>)
                 ) :
                 (
-                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{ele.course_name.substring(0, 25)}...
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{ele.course_name.substring(0, 25)}...
                     <sup data-tip data-for={ele.id + "finance"} >&#9432;</sup>
                     <ReactTooltip id={ele.id + "finance"} place="top" effect="solid">
                       {ele.course_name}
@@ -287,10 +286,10 @@ function Page1(props) {
             <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 27) ?
                 (
-                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic}</h6>)
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</h6>)
                 ) :
                 (
-                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>{vid.VideoTopic.substring(0, 27)}...
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic.substring(0, 27)}...
                     <sup data-tip data-for={index + "ga9"} >&#9432;</sup>
                     <ReactTooltip id={index + "ga9"} place="top" effect="solid">
                       {vid.VideoTopic}

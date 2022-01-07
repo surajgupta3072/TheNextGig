@@ -7,7 +7,7 @@ import Modalx from './Contactinstructorpopup';
 import docClient from '../../GigsPage/GigsAWS';
 
 function MyVerticallyCenteredModal(props) {
-    const [modalShow2, setModalShow2] = useState({data: "", check: false});
+    const [modalShow2, setModalShow2] = useState({ data: "", check: false });
     const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("");
 
@@ -32,7 +32,7 @@ function MyVerticallyCenteredModal(props) {
             });
         }
     }, []);
-    
+
     const like = (id) => {
         var paramss = {
             TableName: "UsersTable",
@@ -439,7 +439,7 @@ function MyVerticallyCenteredModal(props) {
                                 <p className="text1" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{props.data.VideoCreds}</p>
                                 <div style={{ display: "flex" }}>
                                     <div>
-                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": props.data, "check": true }) }} >Connect</p>
+                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": props.data, "check": true, email: props.email }) }} >Connect</p>
                                     </div>
                                     <div>
                                         <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(props.data.VideoUploaderID)} >&nbsp; &nbsp;&nbsp;&nbsp;Follow</p>
@@ -451,16 +451,19 @@ function MyVerticallyCenteredModal(props) {
                                         <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)}>
                                             &nbsp; &nbsp;&nbsp;&nbsp;Share <GiShare style={{ width: "20px", height: "20px" }} />
                                         </p>
-                                        <MyVerticallyCenteredModal1
-                                            show={modalShow}
-                                            VideoID={props.data.VideoID}
-                                            onHide={() => setModalShow(false)}
-                                        />
-                                        < Modalx
-                                            data={modalShow2.data}
-                                            show={modalShow2.check}
-                                            onHide={() => { setModalShow2(false) }}
-                                        />
+                                        {modalShow !== false ?
+                                            <MyVerticallyCenteredModal1
+                                                show={modalShow}
+                                                VideoID={props.data.VideoID}
+                                                onHide={() => setModalShow(false)}
+                                            /> : null}
+                                        {modalShow2 !== false ?
+                                            < Modalx
+                                                email={modalShow2.email}
+                                                data={modalShow2.data}
+                                                show={modalShow2.check}
+                                                onHide={() => { setModalShow2(false) }}
+                                            /> : null}
                                     </div>
                                 </div>
                             </div>

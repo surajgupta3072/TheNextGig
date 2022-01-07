@@ -2,19 +2,19 @@
   width: 100%;
   height: 180px;
   background-size: cover;
-  background-image: url("../../src/TNG Learn Coins.jpg");
+  background-image: url("https://socialvideoslearn.s3.ap-south-1.amazonaws.com/TNG+Learn+Coins.jpg");
   background-repeat: no-repeat;
   background-position-y: -40px;
   padding-top: 25px;
 }
 
-.Learncoins_headings{
+.Learncoins_headings {
   margin-bottom: 2%;
   margin-left: 0%;
 }
 
 @media screen and (max-width: 768px) {
-  .Learncoins_headings{
+  .Learncoins_headings {
     margin-bottom: 7%;
     margin-left: 0%;
   }

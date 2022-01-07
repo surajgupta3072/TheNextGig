@@ -40,7 +40,7 @@ function TNGCoins() {
           <Container>
             <Row style={{ display: "flex", flexDirection: "row" }}>
               <Card id="tng_learn_coin_signup_card" onClick={() => window.location.href = "/login"} className="page2card" style={{ width: "29.9%", marginLeft: "2.5%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)", borderRadius: "12px", cursor: 'pointer' }}>
-                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/videohome.jpg" />
+                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/videohome.jpg" />
                 <Card.Body style={{ marginTop: "30px" }}>
                   <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >LOGIN DAILY</Card.Title>
                   <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
@@ -56,11 +56,11 @@ function TNGCoins() {
                     Upload bite-sized videos sharing knowledge gained from your experience to earn 10 minutes of free content
                   </Card.Text>
                 </Card.Body>
-                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/bloghome.jpg" />
+                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/bloghome.jpg" />
               </Card>
 
               <Card id="tng_learn_coin_profile_card" onClick={() => window.location.href = "/profile"} className="page2card3" style={{ width: "29.9%", marginLeft: "3%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgb(86, 150, 112,0.6)", borderRadius: "12px", cursor: 'pointer' }}>
-                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/TNG Learn Coins - Profile picture card.png" />
+                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/TNG+Learn+Coins+-+Profile+picture+card.png" />
                 <Card.Body style={{ marginTop: "30px" }}>
                   <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >COMPLETE YOUR PROFILE</Card.Title>
                   <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
@@ -80,12 +80,12 @@ function TNGCoins() {
                 <Card.Body>
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <Col >
-                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/videohome.jpg" />
+                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/videohome.jpg" />
                     </Col>
                     <Col style={{ marginLeft: "-20%" }}>
                       <Card.Title style={{ fontSize: "20px" }}>LOGIN DAILY</Card.Title>
                       <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                      Login daily to earn 5 minutes of free content
+                        Login daily to earn 5 minutes of free content
                       </Card.Text>
                     </Col>
                   </div>
@@ -96,12 +96,12 @@ function TNGCoins() {
                 <Card.Body>
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <Col>
-                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/bloghome.jpg" />
+                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/bloghome.jpg" />
                     </Col>
                     <Col style={{ marginLeft: "-20%" }}>
                       <Card.Title style={{ fontSize: "20px" }}>UPLOAD BITE-SIZED VIDEOS</Card.Title>
                       <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                      Upload bite-sized videos sharing knowledge gained from your experience to earn 10 minutes of free content
+                        Upload bite-sized videos sharing knowledge gained from your experience to earn 10 minutes of free content
                       </Card.Text>
                     </Col>
                   </div>
@@ -117,7 +117,7 @@ function TNGCoins() {
                     <Col style={{ marginLeft: "-20%" }}>
                       <Card.Title style={{ fontSize: "20px" }}>COMPLETE YOUR PROFILE</Card.Title>
                       <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                      Complete your profile to earn 20 minutes of free content
+                        Complete your profile to earn 20 minutes of free content
                       </Card.Text>
                     </Col>
                   </div>
@@ -150,11 +150,11 @@ function TNGCoins() {
       </div>
       <div>
         <div className="page2_laptop_view">
-          <br/><br/><br/>
+          <br /><br /><br />
           <Container>
-            <Row style={{ display: "flex", justifyContent:"space-around" }}>
+            <Row style={{ display: "flex", justifyContent: "space-around" }}>
               <Card id="tng_learn_coin_signup_card" onClick={() => window.location.href = "/TNGOriginals"} className="page2card" style={{ width: "29.9%", marginLeft: "2.5%", backgroundColor: "rgba(242, 108, 79, 0.07)", border: "2px solid rgba(242, 108, 79, 0.6)", borderRadius: "12px", cursor: 'pointer' }}>
-                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/videohome.jpg" />
+                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginTop: "40px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/videohome.jpg" />
                 <Card.Body style={{ marginTop: "30px" }}>
                   <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >TNG ORIGINALS</Card.Title>
                   <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
@@ -166,10 +166,10 @@ function TNGCoins() {
                 <Card.Body style={{ marginTop: "30px" }}>
                   <Card.Title style={{ textAlign: "center", fontSize: "33px", fontWeight: "600" }} >BITE-SIZED VIDEOS</Card.Title>
                   <Card.Text class="opensans_text" style={{ fontSize: "16px", textAlign: "center" }}>
-                  Acquire a skill in less than 10 minutes
+                    Acquire a skill in less than 10 minutes
                   </Card.Text>
                 </Card.Body>
-                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="/bloghome.jpg" />
+                <Card.Img style={{ margin: "auto", height: "170px", width: "170px", marginBottom: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/bloghome.jpg" />
               </Card>
             </Row>
           </Container>
@@ -181,12 +181,12 @@ function TNGCoins() {
                 <Card.Body>
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <Col >
-                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/videohome.jpg" />
+                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/videohome.jpg" />
                     </Col>
                     <Col style={{ marginLeft: "-20%" }}>
                       <Card.Title style={{ fontSize: "20px" }}>TNG ORIGINALS</Card.Title>
                       <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                      Specially curated - they’re short, binge-able and based on real-life experiences.
+                        Specially curated - they’re short, binge-able and based on real-life experiences.
                       </Card.Text>
                     </Col>
                   </div>
@@ -196,12 +196,12 @@ function TNGCoins() {
                 <Card.Body>
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <Col>
-                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="/bloghome.jpg" />
+                      <Card.Img style={{ margin: "auto", height: "80px", width: "80px", borderRadius: "50%" }} variant="top" src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/bloghome.jpg" />
                     </Col>
                     <Col style={{ marginLeft: "-20%" }}>
                       <Card.Title style={{ fontSize: "20px" }}>BITE-SIZED VIDEOS</Card.Title>
                       <Card.Text style={{ fontSize: "12px", whiteSpace: "normal", width: "100%" }}>
-                      Acquire a skill in less than 10 minutes
+                        Acquire a skill in less than 10 minutes
                       </Card.Text>
                     </Col>
                   </div>

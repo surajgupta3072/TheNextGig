@@ -31,7 +31,7 @@ function NotALearnerModal(props) {
                 <div>
                     Referral Code: {props.refcode}
                     <span onClick={() => myClipboard(props.refcode)}>
-                        < img style={{ cursor: "pointer", marginLeft: "20px" }} src="copylink_homepage.png" height="15px"></img>
+                        < img style={{ cursor: "pointer", marginLeft: "20px" }} src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/copylink_homepage.png" height="15px"></img>
                     </span>
                 </div>
             </Modal.Body>

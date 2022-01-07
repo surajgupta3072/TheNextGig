@@ -40,7 +40,7 @@ function Page3(props) {
   const [email, setemail] = useState("");
 
   useEffect(() => {
-    if (props.prop.isAuthenticated===true) {
+    if (props.prop.isAuthenticated === true) {
       var params = {
         TableName: "UsersTable",
         Key: { "UserID": props.prop.user.username },
@@ -419,10 +419,10 @@ function Page3(props) {
                   <h1 className="text_page3_card">What you’ll learn:</h1>
                 </div>
                 <br />
-                <p className="img_text"><img alt="..." src="/tick.png" />&nbsp;{session.WhatYouLearn[0]}</p>
-                <p className="img_text"><img alt="..." src="/tick.png" />&nbsp;{session.WhatYouLearn[1]}</p>
-                <p className="img_text"><img alt="..." src="/tick.png" />&nbsp;{session.WhatYouLearn[2]}</p>
-                <p className="img_text"><img alt="..." src="/tick.png" />&nbsp;{session.WhatYouLearn[3]}</p>
+                <p className="img_text"><img alt="..." src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/tick.png" />&nbsp;{session.WhatYouLearn[0]}</p>
+                <p className="img_text"><img alt="..." src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/tick.png" />&nbsp;{session.WhatYouLearn[1]}</p>
+                <p className="img_text"><img alt="..." src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/tick.png" />&nbsp;{session.WhatYouLearn[2]}</p>
+                <p className="img_text"><img alt="..." src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/tick.png" />&nbsp;{session.WhatYouLearn[3]}</p>
               </div>
               <div>
                 <div>
@@ -431,9 +431,9 @@ function Page3(props) {
                   </div>
                 </div>
                 <br />
-                <p className="img_text"><img alt="..." src="/tick.png" />&nbsp;{session.PreparesYouFor[0]}</p>
-                <p className="img_text"><img alt="..." src="/tick.png" />&nbsp;{session.PreparesYouFor[1]}</p>
-                <p className="img_text"><img alt="..." src="/tick.png" />&nbsp;{session.PreparesYouFor[2]}</p>
+                <p className="img_text"><img alt="..." src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/tick.png" />&nbsp;{session.PreparesYouFor[0]}</p>
+                <p className="img_text"><img alt="..." src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/tick.png" />&nbsp;{session.PreparesYouFor[1]}</p>
+                <p className="img_text"><img alt="..." src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/tick.png" />&nbsp;{session.PreparesYouFor[2]}</p>
               </div>
             </div>
             <Row className="laptop_view_video_master">
@@ -444,7 +444,7 @@ function Page3(props) {
                   </button>
                 </a>
               </Col> */}
-              {props.prop.isAuthenticated===true ?
+              {props.prop.isAuthenticated === true ?
                 coursePurchased === false &&
                 <Col style={{ textAlign: "center" }}>
                   <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
@@ -478,7 +478,7 @@ function Page3(props) {
                   Get to know<br /> your expert
                 </button></a>
               </div> */}
-              {props.prop.isAuthenticated===true ?
+              {props.prop.isAuthenticated === true ?
                 coursePurchased === false &&
                 <div style={{ textAlign: "center" }}>
                   <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
@@ -513,7 +513,7 @@ function Page3(props) {
                     <p className="twoline_desc">{des}</p>
                   }
                   {paymentshow === true && (
-                    props.prop.isAuthenticated===true ? (
+                    props.prop.isAuthenticated === true ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
@@ -559,7 +559,7 @@ function Page3(props) {
                     <p className="twoline_desc">{des}</p>
                   }
                   {paymentshow === true && (
-                    props.prop.isAuthenticated===true ? (
+                    props.prop.isAuthenticated === true ? (
                       <div style={{ display: "flex", justifyContent: "center", marginTop: "15%" }}>
                         <button className="button_slide_page3 slide_right" onClick={() => handlePayment(session.course_duration)}>
                           Redeem {session.course_duration} free minutes<ArrowLeft className="button_arrow_Letsgo_Page3" />
