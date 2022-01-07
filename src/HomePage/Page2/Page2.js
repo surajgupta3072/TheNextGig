@@ -968,12 +968,12 @@ function Page2(props) {
         uid={uid}
         username={props.auth.user !== null ? props.auth.user.username : ""}
         onHide={() => { setModalShow4({ check: false, data: "" }) }} /> : null}
-      < Modalx
-        email={props.auth.user.attributes.email}
+      {modalShow2 !== false ? < Modalx
+        /* email={props.auth.user.attributes.email} */
         data={modalShow2.data}
         show={modalShow2.check}
         onHide={() => { setModalShow2(false) }}
-      />
+      /> : null}
       <br /><br /><br />
       <div className="btn_div_homepage_new" style={{ display: "flex", justifyContent: "space-evenly" }}>
         <div><a href="/TNGOriginals"><button style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All TNG Originals<ArrowRight className="button_arrow" /></button></a></div>
