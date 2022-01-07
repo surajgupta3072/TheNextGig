@@ -293,6 +293,9 @@ function Page2(props) {
     }
   }
   const like = (id) => {
+    if (props.auth.user === null) {
+      window.location.href = "/login"
+    }
     var paramss = {
       TableName: "UsersTable",
       Key: { UserID: props.auth.user.username },
