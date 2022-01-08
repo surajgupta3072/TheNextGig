@@ -5,11 +5,11 @@ import Auth from "@aws-amplify/auth";
 import { useState, useEffect } from 'react';
 import docClient from '../GigsPage/GigsAWS';
 import './Header.css';
-import NotALearnerModal from './NotALearnerPageModal';
+// import NotALearnerModal from './NotALearnerPageModal';
 import Referalpopup from "./Referralpopup";
 
 function Header(props) {
-    const [modalShow, setModalShow] = useState(false);
+    // const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("__");
     const [refcode, setRefCode] = useState("_______");
     const [modalShow2, setModalShow2] = useState(false);
@@ -30,8 +30,13 @@ function Header(props) {
                     if (data.Item.DPlink !== undefined) {
                         setDp(data.Item.DPlink)
                     }
+                    let today = new Date();
+                    let dateRDM = new Date(data.Item.RedeemDailyMinutesButtonClickedAt);
                     setReward(data.Item.TotalRewards);
-                    if (data.Item.RedeemDailyMinutesButtonClickedAt === undefined || Date.now() - data.Item.RedeemDailyMinutesButtonClickedAt >= 86400000) {
+                    if (data.Item.RedeemDailyMinutesButtonClickedAt === undefined) {
+                        setShowRDMButton(true);
+                    }
+                    else if(today.getDate()>dateRDM.getDate() && today.getMonth()>=dateRDM.getMonth()) {
                         setShowRDMButton(true);
                     }
                 }
@@ -117,8 +122,8 @@ function Header(props) {
                 <img style={{ height: "48px", width: "72px" }} src="/TNG_logo_tab.png" alt="logo" />
             </Navbar.Brand>
             {(props.auth.isAuthenticated === true && showrdmbutton === true) &&
-                <Nav.Link className="reward_mins_mobile" onClick={RedeemDailyMinutes} style={{ color: "white", fontWeight: "700", fontSize: "9px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
-                    Redeem Daily <br /> Minutes
+                <Nav.Link className="reward_mins_mobile" onClick={RedeemDailyMinutes} style={{ boxShadow:"2px 2px white", color: "white", fontWeight: "700", fontSize: "9px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
+                    Claim Daily<br />&nbsp;&nbsp;Minutes
                 </Nav.Link>
             }
             {props.auth.isAuthenticated === true &&
@@ -149,8 +154,8 @@ function Header(props) {
                     </Nav.Link>
                 </Nav>
                 {(props.auth.isAuthenticated === true && showrdmbutton === true) &&
-                    <Nav.Link className="reward_mins" onClick={RedeemDailyMinutes} style={{ color: "white", fontWeight: "700", fontSize: "15px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
-                        Redeem Daily Minutes
+                    <Nav.Link className="reward_mins" onClick={RedeemDailyMinutes} style={{ boxShadow:"2px 2px white", color: "white", fontWeight: "700", fontSize: "15px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
+                        Claim Daily Minutes
                     </Nav.Link>
                 }
                 <Nav style={{ paddingRight: "50px" }}>

@@ -7,14 +7,15 @@ import { useState, useEffect } from 'react';
 import docClient from '../../GigsPage/GigsAWS';
 import ReactTooltip from 'react-tooltip';
 import Videopopup from "../../HomePage/Page2/Videopopup"
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
 function Page1(props) {
   const [expert, setExpert] = useState("");
   const [modalShow3, setModalShow3] = useState(false);
   const [socialdata, setsocialdata] = useState([]);
-  const [videodata, setvideodata] = useState([])
-  const [username, setusername] = useState("")
-  const [masterclasses, setmasterclasses] = useState([])
+  const [videodata, setvideodata] = useState([]);
+  const [masterclasses, setmasterclasses] = useState([]);
+
   useEffect(() => {
     let paramss = {
       TableName: "ExpertsTable",
@@ -281,7 +282,7 @@ function Page1(props) {
         })}
         {socialdata.map((vid, index) => {
           return <div style={{ width: "260px" }} >
-            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img src={vid.VideoThumbnail} width="240px" />
             </figure>
             <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }}>
