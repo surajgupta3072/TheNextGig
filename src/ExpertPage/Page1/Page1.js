@@ -44,7 +44,7 @@ function Page1(props) {
           })
           setmasterclasses(list2)
         })
-        data.Items[0].SocialLearningVideoUploadedId.forEach((ele) => {
+        data.Items[0].SocialLearningVideoUploadedId.forEach((ele, index) => {
           let params = {
             TableName: "VideosTable",
             KeyConditionExpression: "#Vid = :VideoID",
@@ -60,7 +60,14 @@ function Page1(props) {
               console.log(err);
             }
             else {
-              list.push(data.Items[0])
+              if (data.Items[0] !== undefined) {
+                if (data.Items[0].isApproved === true) {
+                  list.push(data.Items[0])
+                }
+                else {
+                  dataexp.SocialLearningVideoUploadedId.splice(index, 1)
+                }
+              }
             }
             if (dataexp.SocialLearningVideoUploadedId !== undefined) {
               if (dataexp.SocialLearningVideoUploadedId.length === list.length)
