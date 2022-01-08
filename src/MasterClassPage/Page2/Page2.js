@@ -37,7 +37,7 @@ function Page2() {
                   <img alt="..." style={{ height: "50px", width: "50px", marginLeft: "140%" }} src="https://i.ibb.co/b1qqr1J/KK.jpg" />
                 </Col>
                 <Col>
-                  <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the experts!</p></Row>
+                  <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the creators!</p></Row>
                   <Row style={{ paddingLeft: "19%", marginBottom: "0%" }}><p style={{ marginBottom: "0%" }} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
                   <Row className="mast_page2_row1" ><p style={{ color: "rgb(243, 123, 97)" }} className="mast_page2_p5"><a href="/expert" style={{ textDecoration: "none", color: "#f26c4f" }}>Stalk them.</a></p></Row>
                   <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2" /></a>
@@ -50,7 +50,7 @@ function Page2() {
           <Row >
             <Col style={{ padding: "2%" }} md={7}>
               <p style={{ marginBottom: "0%" }} className="mast_page2_p3">Want to learn something cool?</p>
-              <p className="mast_page2_p3">From a specific expert / company?</p>
+              <p className="mast_page2_p3">From a specific creator / company?</p>
             </Col>
             <Col style={{ paddingLeft: "12%" }} className="col-button">
               <button style={{ marginLeft: "20%" }} className="button_slide_MC_Page2_2 slide_right" onClick={() => setModalShow(true)}>Recommend <br /> a session
