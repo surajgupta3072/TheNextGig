@@ -596,7 +596,7 @@ function Page2(props) {
           if (ele.course_domain === "Finance") {
             return <div style={{ width: "260px" }} >
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} />
+                <img style={{ width: "240px", height: "134.91px" }} src={ele.course_image} />
               </figure>
               <div width="240px" src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
                 {(ele.course_name.length < 25) ?
@@ -678,9 +678,9 @@ function Page2(props) {
           if (ele.course_domain === "ProdMan") {
             return <div style={{ width: "260px" }}>
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} />
+                <img style={{ width: "240px", height: "135.91px" }} src={ele.course_image} />
               </figure>
-              <div width="240px" src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
+              <div style={{ width: "240px", height: "134.91px" }} src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{ele.course_name}</p>)
@@ -715,45 +715,47 @@ function Page2(props) {
 
           }
         })}
-        {data_prod.map((vid, index) => {
-          return <div style={{ height: "300px", width: "200px" }} >
-            <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} />
-            </figure>
-            <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
-              {(vid.VideoTopic.length < 26) ?
-                (
-                  (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
-                ) :
-                (
-                  (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic.substring(0, 26)}...
-                    <sup data-tip data-for={index + "g2f"} >&#9432;</sup>
-                    <ReactTooltip id={index + "g2f"} place="top" effect="solid">
-                      {vid.VideoTopic}
-                    </ReactTooltip></p>)
-                )
-              }
-              <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
-              {((vid.VideoCreds.length) < 27) ?
-                (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds}</p>)
-                ) :
-                (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
-                )
-              }
-            </div>
-            <div className="connect_follow_box">
-              <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+        {
+          data_prod.map((vid, index) => {
+            return <div style={{ height: "300px", width: "200px" }} >
+              <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
+                <img width="240px" src={vid.VideoThumbnail} />
+              </figure>
+              <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
+                {(vid.VideoTopic.length < 26) ?
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
+                  ) :
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic.substring(0, 26)}...
+                      <sup data-tip data-for={index + "g2f"} >&#9432;</sup>
+                      <ReactTooltip id={index + "g2f"} place="top" effect="solid">
+                        {vid.VideoTopic}
+                      </ReactTooltip></p>)
+                  )
+                }
+                <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
+                {((vid.VideoCreds.length) < 27) ?
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds}</p>)
+                  ) :
+                  (
+                    (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 27)}...</p>)
+                  )
+                }
               </div>
-              <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
+              <div className="connect_follow_box">
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+                </div>
+                <div>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
+                </div>
               </div>
             </div>
-          </div>
-        })}
-      </Slider>
+          })
+        }
+      </Slider >
       <br /><br />
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Marketing & Strategy</h4>
       <Slider {...settings}>
@@ -761,7 +763,7 @@ function Page2(props) {
           if (ele.course_domain === "Marketing" || ele.course_domain === "Strategy") {
             return <div style={{ width: "260px" }} >
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} />
+                <img style={{ height: "134.91px", width: "240px" }} src={ele.course_image} />
               </figure>
               <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
@@ -935,7 +937,7 @@ function Page2(props) {
           if (ele.course_timing === "...Coming Soon") {
             return <div style={{ width: "260px" }} >
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
-                <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
+                <img width="240px" height="134.91px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
               <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
@@ -965,20 +967,26 @@ function Page2(props) {
           }
         })}
       </Slider>
-      {modalShow3 === true ? <Videopopup show={modalShow3}
-        data={videodata}
-        username={props.auth.user !== null ? props.auth.user.username : ""}
-        onHide={() => { setModalShow3(false) }} /> : null}
-      {modalShow4.check === true ? <Videopopup show={modalShow4.check}
-        data={modalShow4.data}
-        uid={uid}
-        username={props.auth.user !== null ? props.auth.user.username : ""}
-        onHide={() => { setModalShow4({ check: false, data: "" }) }} /> : null}
-      {modalShow2.check !== false ? < Modalx
-        data={modalShow2.data}
-        show={modalShow2.check}
-        onHide={() => { setModalShow2(false) }}
-      /> : null}
+      {
+        modalShow3 === true ? <Videopopup show={modalShow3}
+          data={videodata}
+          username={props.auth.user !== null ? props.auth.user.username : ""}
+          onHide={() => { setModalShow3(false) }} /> : null
+      }
+      {
+        modalShow4.check === true ? <Videopopup show={modalShow4.check}
+          data={modalShow4.data}
+          uid={uid}
+          username={props.auth.user !== null ? props.auth.user.username : ""}
+          onHide={() => { setModalShow4({ check: false, data: "" }) }} /> : null
+      }
+      {
+        modalShow2.check !== false ? < Modalx
+          data={modalShow2.data}
+          show={modalShow2.check}
+          onHide={() => { setModalShow2(false) }}
+        /> : null
+      }
       <br /><br /><br />
       <div className="btn_div_homepage_new" style={{ display: "flex", justifyContent: "space-evenly" }}>
         <div><a href="/TNGOriginals"><button style={{ marginTop: "0px", marginLeft: "0px", width: "240px" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">All TNG Originals<ArrowRight className="button_arrow" /></button></a></div>
