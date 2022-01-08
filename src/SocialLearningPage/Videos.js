@@ -84,7 +84,7 @@ function Videos(props) {
             Swal.fire({
               title:
                 "<h5 style='color:white'>" +
-                "You Already follow him" +
+                "You’ve already followed" +
                 "</h5>",
               icon: "warning",
               showConfirmButton: false,
@@ -114,7 +114,7 @@ function Videos(props) {
                 Swal.fire({
                   title:
                     "<h5 style='color:white'>" +
-                    "Creator want to say to thank you for following him" +
+                    "Thank you for following!" +
                     "</h5>",
                   icon: "success",
                   showConfirmButton: false,
@@ -130,7 +130,7 @@ function Videos(props) {
             Swal.fire({
               title:
                 "<h5 style='color:white'>" +
-                "You already follow this person" +
+                "You’ve already followed" +
                 "</h5>",
               icon: "warning",
               showConfirmButton: false,
@@ -181,7 +181,7 @@ function Videos(props) {
               Swal.fire({
                 title:
                   "<h5 style='color:white'>" +
-                  "Creator want to say to thank you for liking this video" +
+                  "You have liked this video" +
                   "</h5>",
                 icon: "success",
                 showConfirmButton: false,
@@ -197,7 +197,7 @@ function Videos(props) {
           Swal.fire({
             title:
               "<h5 style='color:white'>" +
-              "Already Liked" +
+              "You’ve already liked" +
               "</h5>",
             icon: "warning",
             showConfirmButton: false,
@@ -245,7 +245,7 @@ function Videos(props) {
               Swal.fire({
                 title:
                   "<h5 style='color:white'>" +
-                  "Creator want to say to thank you for liking this video" +
+                  "You have liked this video" +
                   "</h5>",
                 icon: "success",
                 showConfirmButton: false,
@@ -261,7 +261,7 @@ function Videos(props) {
           Swal.fire({
             title:
               "<h5 style='color:white'>" +
-              "Already liked" +
+              "You’ve already liked" +
               "</h5>",
             icon: "warning",
             showConfirmButton: false,

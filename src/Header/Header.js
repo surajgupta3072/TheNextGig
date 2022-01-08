@@ -139,9 +139,9 @@ function Header(props) {
                             show={modalShow}
                             onHide={() => setModalShow(false)}
                         /> */}
-                    <Nav.Link style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SocialLearning">Add Bite-Sized Video</Nav.Link>
+                    <Nav.Link style={{ color: "black", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} href="/SocialLearning">Add Bite-Sized Video</Nav.Link>
                     {/* </NavDropdown> */}
-                    <Nav.Link href="/expert" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "25px" }}>
+                    <Nav.Link href="/expert" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
                         Creators
                     </Nav.Link>
                     <Nav.Link href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
@@ -184,7 +184,7 @@ function Header(props) {
                 </Nav>
             </Navbar.Collapse>
         </Navbar >
-    </div>
+    </div >
     );
 }
 

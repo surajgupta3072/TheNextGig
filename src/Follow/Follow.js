@@ -52,7 +52,7 @@ function Follow(props) {
             <br />
             <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", marginLeft: "2%" }}>Following</h4>
             <br />
-            <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row" }}>
+            <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap" }}>
                 {yourfollowdata.map(ele => {
                     return < div onClick={() => window.location.href = "/expert/" + ele.ExpertID} style={{ height: "300px", width: "260px" }} >
                         <img width="240px" src={ele.ExpertPic} style={{ cursor: "pointer" }} />

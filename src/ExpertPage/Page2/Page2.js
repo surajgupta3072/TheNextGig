@@ -28,7 +28,7 @@ function Page2() {
       <div className="header_masterclass">
         <Container>
           <div className="top_masterclass">
-            <h1>OUR EXPERTS</h1>
+            <h1>OUR CREATORS</h1>
             <p className="subtitle_masterclass">
               Experienced, smart and witty
             </p>
@@ -42,12 +42,12 @@ function Page2() {
             <div width="240px" style={{ marginLeft: "2%", width: "260px" }} >
               {(vid.ExpertID.length < 26) ?
                 (
-                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
                     {vid.ExpertID}
                   </h6>)
                 ) :
                 (
-                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px"}}>
+                  (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
                     {vid.ExpertDesignation.substring(0, 26)}...
                     <sup data-tip data-for={index + "729g"} >&#9432;</sup>
                     <ReactTooltip id={index + "729g"} place="top" effect="solid">
@@ -83,8 +83,8 @@ function Page2() {
       <Container className="rectangle-box2" style={{ marginTop: "5%" }}>
         <Row >
           <Col style={{ paddingLeft: "2%", paddingTop: "0.5%" }} md={8}>
-            <p style={{ marginBottom: "0%" }} className="mast_page2_p3">Want to learn from a specific expert?</p>
-            <p className="mast_page2_p3">Want to provide feedback about an expert?</p>
+            <p style={{ marginBottom: "0%" }} className="mast_page2_p3">Want to learn from a specific creator?</p>
+            <p className="mast_page2_p3">Want to provide feedback about an creator?</p>
           </Col>
           <Col style={{ paddingLeft: "12%" }} className="col-button">
             <button style={{ marginLeft: "20%", marginTop: "5%" }} className="button_slide slide_right" onClick={() => setModalShow(true)}>Talk to us
