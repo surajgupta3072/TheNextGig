@@ -117,6 +117,10 @@
   .page2_mobile_view {
     display: block;
   }
+  .connect_follow_box {
+    display: flex;
+    justify-content: center;
+  }
   .slick-dots {
     display: none !important;
   }

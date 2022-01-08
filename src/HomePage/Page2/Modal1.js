@@ -57,7 +57,7 @@ function MyVerticallyCenteredModal(props) {
                   else
                     myClipboard(window.location.href)
                 }}>
-                  <img style={{ cursor: "pointer", alignItems: "center" }} src="/copylink_homepage.png" height="45px"></img>
+                  <img style={{ cursor: "pointer", alignItems: "center" }} src="https://websitestaticimages.s3.ap-south-1.amazonaws.com/copylink_homepage.png" height="45px"></img>
                   <p style={{ marginLeft: "-5px" }}>Copy Link</p>
                 </div>
               </div>

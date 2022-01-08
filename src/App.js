@@ -18,7 +18,6 @@ import SocialLearningPage from "./SocialLearningPage/SocialLearningPage";
 // import SocialBlogPage from "./SocialLearningPage/SocialBlogPage";
 import jwt_decode from "jwt-decode";
 import docClient from './GigsPage/GigsAWS';
-// import Community from "./SocialLearningPage/Community";
 import ForgotPasswordPage from "./AuthPage/ForgotPasswordPage";
 import ChangePasswordPage from "./AuthPage/ChangePasswordPage";
 import NotALearnerPage from "./NotALearnerPage/NotALearnerPage";
@@ -138,9 +137,6 @@ function App() {
               <Route exact path="/changepassword/:emailid">
                 <ChangePasswordPage />
               </Route>
-              {/* <Route exact path="/TheNextGigCommunity">
-                <Community auth={authProps} />
-              </Route> */}
               <Route exact path="/register">
                 <RegisterPage auth={authProps} />
               </Route>

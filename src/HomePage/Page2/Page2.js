@@ -30,7 +30,7 @@ function Page2(props) {
   const [username, setusername] = useState("");
   const [modalShow2, setModalShow2] = useState({
     data: "", check: false
-  });
+  })
   const settings = {
     dots: true,
     row: 1,
@@ -974,8 +974,7 @@ function Page2(props) {
         uid={uid}
         username={props.auth.user !== null ? props.auth.user.username : ""}
         onHide={() => { setModalShow4({ check: false, data: "" }) }} /> : null}
-      {modalShow2 !== false ? < Modalx
-        /* email={props.auth.user.attributes.email} */
+      {modalShow2.check !== false ? < Modalx
         data={modalShow2.data}
         show={modalShow2.check}
         onHide={() => { setModalShow2(false) }}

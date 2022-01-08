@@ -7,7 +7,9 @@ import Modalx from './Contactinstructorpopup';
 import docClient from '../../GigsPage/GigsAWS';
 
 function MyVerticallyCenteredModal(props) {
-    const [modalShow2, setModalShow2] = useState({ data: "", check: false });
+    const [modalShow2, setModalShow2] = useState({
+        data: "", check: false
+    });
     const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("");
 
@@ -439,7 +441,7 @@ function MyVerticallyCenteredModal(props) {
                                 <p className="text1" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{props.data.VideoCreds}</p>
                                 <div style={{ display: "flex" }}>
                                     <div>
-                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": props.data, "check": true, email: props.email }) }} >Connect</p>
+                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": props.data, "check": true }) }} >Connect</p>
                                     </div>
                                     <div>
                                         <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(props.data.VideoUploaderID)} >&nbsp; &nbsp;&nbsp;&nbsp;Follow</p>
@@ -459,7 +461,6 @@ function MyVerticallyCenteredModal(props) {
                                             /> : null}
                                         {modalShow2 !== false ?
                                             < Modalx
-                                                email={modalShow2.email}
                                                 data={modalShow2.data}
                                                 show={modalShow2.check}
                                                 onHide={() => { setModalShow2(false) }}

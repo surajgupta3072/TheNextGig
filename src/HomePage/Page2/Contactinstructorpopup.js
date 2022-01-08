@@ -1,5 +1,5 @@
 import Modal from "react-bootstrap/Modal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { ArrowLeft } from "react-bootstrap-icons";

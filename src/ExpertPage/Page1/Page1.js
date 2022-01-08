@@ -1,12 +1,13 @@
 import Container from 'react-bootstrap/Container';
 import './Page1.css';
+import { Plus } from 'react-bootstrap-icons';
 import masterdata from "../../MasterClassPage/Masterclass.json";
 import { Linkedin } from 'react-bootstrap-icons';
 import { useState, useEffect } from 'react';
 import docClient from '../../GigsPage/GigsAWS';
 import ReactTooltip from 'react-tooltip';
 import Videopopup from "../../HomePage/Page2/Videopopup"
-
+import Swal from 'sweetalert2'
 function Page1(props) {
   const [expert, setExpert] = useState("");
   const [modalShow3, setModalShow3] = useState(false);
@@ -69,139 +70,139 @@ function Page1(props) {
       }
     });
   }, []);
-  // const follow = (createrid) => {
-  //   if (!props.auth.isAuthenticated) {
-  //     window.location.href = "../login";
-  //   }
-  //   if (createrid === "") {
-  //     Swal.fire({
-  //       title:
-  //         "<h5 style='color:white'>" +
-  //         "Sorry you can't follow this person as this session is posted by admin!" +
-  //         "</h5>",
-  //       icon: "warning",
-  //       showConfirmButton: false,
-  //       timer: 3000,
-  //       background: "#020312",
-  //       color: "white",
-  //       iconColor: "#F26C4F",
-  //     })
-  //   }
-  //   else {
-  //     var params = {
-  //       TableName: "UsersTable",
-  //       Key: { UserID: createrid },
-  //       ProjectionExpression: "Follower",
-  //     };
-  //     docClient.get(params, function (err, data) {
-  //       if (err) {
-  //         console.log(err);
-  //       } else {
-  //         var flag = 0;
-  //         data.Item.Follower.forEach(ele => {
-  //           if (ele.id === props.auth.user.username)
-  //             flag = 1
-  //         });
-  //         if (flag === 0) {
-  //           var params = {
-  //             TableName: "UsersTable",
-  //             Key: { UserID: createrid },
-  //             UpdateExpression:
-  //               "set Follower[" +
-  //               data.Item.Follower.length.toString() +
-  //               "] = :ms",
-  //             ExpressionAttributeValues: {
-  //               ":ms": { "id": props.auth.user.username, "date": Date.now() },
-  //             },
-  //             ReturnValues: "UPDATED_NEW",
-  //           };
-  //           docClient.update(params, function (err, data) {
-  //             if (err) {
-  //               console.log(err);
-  //             } else {
-  //             }
-  //           })
-  //         }
-  //       }
-  //     })
-  //     var paramss = {
-  //       TableName: "UsersTable",
-  //       Key: { UserID: props.auth.user.username },
-  //       ProjectionExpression: "Following",
-  //     };
-  //     docClient.get(paramss, function (err, data) {
-  //       if (err) {
-  //         console.log(err);
-  //       } else {
-  //         var flag1 = 0;
-  //         data.Item.Following.forEach(ele => {
-  //           if (ele.id === createrid)
-  //             flag1 = 1
-  //         });
-  //         if (flag1 === 1) {
-  //           Swal.fire({
-  //             title:
-  //               "<h5 style='color:white'>" +
-  //               "You Already follow him" +
-  //               "</h5>",
-  //             icon: "warning",
-  //             showConfirmButton: false,
-  //             timer: 3000,
-  //             background: "#020312",
-  //             color: "white",
-  //             iconColor: "#F26C4F",
-  //           })
-  //         }
-  //         if (flag1 === 0) {
-  //           var params = {
-  //             TableName: "UsersTable",
-  //             Key: { UserID: props.auth.user.username },
-  //             UpdateExpression:
-  //               "set Following[" +
-  //               data.Item.Following.length.toString() +
-  //               "] = :ms",
-  //             ExpressionAttributeValues: {
-  //               ":ms": { "id": createrid, "date": Date.now() },
-  //             },
-  //             ReturnValues: "UPDATED_NEW",
-  //           };
-  //           docClient.update(params, function (err, data) {
-  //             if (err) {
-  //               console.log(err);
-  //             } else {
-  //               Swal.fire({
-  //                 title:
-  //                   "<h5 style='color:white'>" +
-  //                   "Creator want to say to thank you for following him" +
-  //                   "</h5>",
-  //                 icon: "success",
-  //                 showConfirmButton: false,
-  //                 timer: 3000,
-  //                 background: "#020312",
-  //                 color: "white",
-  //                 iconColor: "#F26C4F",
-  //               })
-  //             }
-  //           })
-  //         }
-  //         else {
-  //           Swal.fire({
-  //             title:
-  //               "<h5 style='color:white'>" +
-  //               "You already follow this person" +
-  //               "</h5>",
-  //             icon: "warning",
-  //             showConfirmButton: false,
-  //             timer: 3000,
-  //             background: "#020312",
-  //             color: "white",
-  //             iconColor: "#F26C4F",
-  //           })
-  //         }
-  //       }
-  //     })
-  //   }
-  // }
+  const follow = (createrid) => {
+    if (!props.auth.isAuthenticated) {
+      window.location.href = "../login";
+    }
+    if (createrid === "") {
+      Swal.fire({
+        title:
+          "<h5 style='color:white'>" +
+          "Sorry you can't follow this person as this session is posted by admin!" +
+          "</h5>",
+        icon: "warning",
+        showConfirmButton: false,
+        timer: 3000,
+        background: "#020312",
+        color: "white",
+        iconColor: "#F26C4F",
+      })
+    }
+    else {
+      var params = {
+        TableName: "UsersTable",
+        Key: { UserID: createrid },
+        ProjectionExpression: "Follower",
+      };
+      docClient.get(params, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          var flag = 0;
+          data.Item.Follower.forEach(ele => {
+            if (ele.id === props.auth.user.username)
+              flag = 1
+          });
+          if (flag === 0) {
+            var params = {
+              TableName: "UsersTable",
+              Key: { UserID: createrid },
+              UpdateExpression:
+                "set Follower[" +
+                data.Item.Follower.length.toString() +
+                "] = :ms",
+              ExpressionAttributeValues: {
+                ":ms": { "id": props.auth.user.username, "date": Date.now() },
+              },
+              ReturnValues: "UPDATED_NEW",
+            };
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+              }
+            })
+          }
+        }
+      })
+      var paramss = {
+        TableName: "UsersTable",
+        Key: { UserID: props.auth.user.username },
+        ProjectionExpression: "Following",
+      };
+      docClient.get(paramss, function (err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          var flag1 = 0;
+          data.Item.Following.forEach(ele => {
+            if (ele.id === createrid)
+              flag1 = 1
+          });
+          if (flag1 === 1) {
+            Swal.fire({
+              title:
+                "<h5 style='color:white'>" +
+                "You Already follow him" +
+                "</h5>",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 3000,
+              background: "#020312",
+              color: "white",
+              iconColor: "#F26C4F",
+            })
+          }
+          if (flag1 === 0) {
+            var params = {
+              TableName: "UsersTable",
+              Key: { UserID: props.auth.user.username },
+              UpdateExpression:
+                "set Following[" +
+                data.Item.Following.length.toString() +
+                "] = :ms",
+              ExpressionAttributeValues: {
+                ":ms": { "id": createrid, "date": Date.now() },
+              },
+              ReturnValues: "UPDATED_NEW",
+            };
+            docClient.update(params, function (err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                Swal.fire({
+                  title:
+                    "<h5 style='color:white'>" +
+                    "Creator want to say to thank you for following him" +
+                    "</h5>",
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 3000,
+                  background: "#020312",
+                  color: "white",
+                  iconColor: "#F26C4F",
+                })
+              }
+            })
+          }
+          else {
+            Swal.fire({
+              title:
+                "<h5 style='color:white'>" +
+                "You already follow this person" +
+                "</h5>",
+              icon: "warning",
+              showConfirmButton: false,
+              timer: 3000,
+              background: "#020312",
+              color: "white",
+              iconColor: "#F26C4F",
+            })
+          }
+        }
+      })
+    }
+  }
   return (
     <div>
       <div className="header_masterclass">
@@ -229,7 +230,6 @@ function Page1(props) {
             <div class="logo_para">
               <a href={expert.ExpertLinkedIn} target="_blank" rel="noreferrer"><Linkedin style={{ background: "white", border: "0.1px solid white", color: "black", cursor: "pointer", marginTop: "5px" }} size={34} /></a>
             </div>
-            {/* <p className="connect_text" style={{ cursor: "pointer", margin: 0 }} onClick={() => follow(expert.AccountID)} >&nbsp;Follow</p> */}
             <br />
             <div>
               <h3 style={{ color: "#f26c4f", margin: 0 }}>Skilled at:</h3>
@@ -242,6 +242,7 @@ function Page1(props) {
                 )}
               </div>
             } */}
+            <button style={{ position: "absolute" }} onClick={() => follow(expert.AccountID)} className=" btn_follow button_slide slide_right">Follow<Plus style={{ marginTop: "-7px" }} className='button_arrow' /></button>
           </div>
         </div>
       </Container>
