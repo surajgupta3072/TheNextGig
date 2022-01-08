@@ -65,8 +65,10 @@ function MyVerticallyPopUp(props) {
         });
         props.onHide();
         ReactS3Client.uploadFile(vfile, vfile.name).then((data) => {
+          console.log(data);
+          var randomVidID = crypto.randomBytes(8).toString("hex");
           const adata = {
-            VideoID: crypto.randomBytes(8).toString("hex"),
+            VideoID: randomVidID,
             VideoTopic: topic,
             VideoCreds: creds,
             VideoUsername: props.userid.attributes.name,
@@ -124,6 +126,62 @@ function MyVerticallyPopUp(props) {
                         background: "#020312",
                         color: "white",
                         iconColor: "#F26C4F",
+                      });
+                      var params = {
+                        TableName: "ExpertsTable",
+                        Key: { "ExpertID": props.userid.attributes.name },
+                        ProjectionExpression: "SocialLearningVideoUploadedId",
+                      };
+                      docClient.get(params, function (err, data) {
+                        console.log(data);
+                        if (data.Item === undefined) {
+                          const expertData = {
+                            "ExpertID": props.userid.attributes.name,
+                            "MastersessionsVideoUploadId": [],
+                            "ExpertEducational": "",
+                            "ExpertDesignation": creds,
+                            "ExpertSkills": hash.split("--").join(", ").replaceAll("#",""),
+                            "ExpertPic": "./dpavtar.png",
+                            "ExpertLinkedIn": "",
+                            "ExpertCompany": "",
+                            "AccountID": props.userid.username,
+                            "SocialLearningVideoUploadedId": [randomVidID],
+                            "ExpertName": props.userid.attributes.name,
+                          }
+                          var paramss = {
+                            TableName: "ExpertsTable",
+                            Item: expertData,
+                          };
+                          docClient.put(paramss, function (err, data) {
+                            if (err) {
+                              console.log(err);
+                            } else {
+                              console.log(data);
+                            }
+                          });
+                        }
+                        else {
+                          console.log(data.Item.SocialLearningVideoUploadedId);
+                          var params = {
+                            TableName: "ExpertsTable",
+                            Key: { ExpertID: props.userid.attributes.name },
+                            UpdateExpression:
+                              "set SocialLearningVideoUploadedId[" +
+                              data.Item.SocialLearningVideoUploadedId.length.toString() +
+                              "] = :slvupi",
+                            ExpressionAttributeValues: {
+                              ":slvupi": randomVidID,
+                            },
+                            ReturnValues: "UPDATED_NEW",
+                          };
+                          docClient.update(params, function (err, data) {
+                            if (err) {
+                              console.log(err);
+                            } else {
+                              console.log(data);
+                            }
+                          });
+                        }
                       });
                       const body = JSON.stringify({
                         feedback: `Topic:${topic}`,
