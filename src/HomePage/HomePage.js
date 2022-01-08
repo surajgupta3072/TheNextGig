@@ -1,6 +1,5 @@
 import Page1 from './Page1/Page1';
 import Page2 from './Page2/Page2';
-import Page4 from './Page4/Page4';
 import Page6 from './Page6/Page6';
 import Page7 from './Page7/Page7';
 import Footer from '../Footer/Footer';
@@ -14,7 +13,6 @@ function HomePage(props) {
         <Page1 />
         {id !== "" ?
           <Page2 auth={props.auth} id={id} /> : <Page2 auth={props.auth} />}
-        <Page4 />
         <Page6 />
         <Page7 />
         <Footer /></div>

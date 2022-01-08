@@ -133,17 +133,17 @@ function Header(props) {
                         <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/TNGOriginals">TNG Originals</NavDropdown.Item>
                         <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SocialLearning">Bite-Sized Videos</NavDropdown.Item>
                     </NavDropdown>
-                    <NavDropdown style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} title="Become an expert">
-                        <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => setModalShow(true)}>Collaborate for Session</NavDropdown.Item>
+                    {/* <NavDropdown style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} title="Become an expert"> */}
+                    {/*  <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => setModalShow(true)}>Collaborate for Session</NavDropdown.Item>
                         <NotALearnerModal
                             show={modalShow}
                             onHide={() => setModalShow(false)}
-                        />
-                        <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SocialLearning">Add Bite-Sized Video</NavDropdown.Item>
-                    </NavDropdown>
-                    {/* <Nav.Link href="/expert" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "25px" }}>
-                        Our experts
-                    </Nav.Link> */}
+                        /> */}
+                    <Nav.Link style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SocialLearning">Add Bite-Sized Video</Nav.Link>
+                    {/* </NavDropdown> */}
+                    <Nav.Link href="/expert" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "25px" }}>
+                        Creators
+                    </Nav.Link>
                     <Nav.Link href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
                         Opportunities
                     </Nav.Link>
