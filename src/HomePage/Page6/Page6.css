@@ -17,12 +17,12 @@
   color: rgba(255, 255, 255, 0.5);
   font-size: 4rem;
 }
-.client_number,
+/* .client_number,
 .projects_number,
 .awards_number,
 .experience_number {
   font-size: 3.3rem;
-}
+} */
 .numbers_page6:nth-child(1) {
   color: #f26c4f;
 }

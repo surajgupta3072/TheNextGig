@@ -21,11 +21,11 @@ function Page6() {
                 </div>
                 <div className="numbers_page6_tab">
                     <div className="first_two">
-                        <h1 className="client_number"><span className="number1"></span><BsSlash className="liner_page6 liner_1" /><h5 style={{ fontSize: "1rem", color: "white" }}>Minutes<br />spent</h5></h1>
-                        <h1 className="projects_number"><span className="number2"></span><BsSlash className="liner_page6 liner_2" /><h5 style={{ fontSize: "1rem", color: "white" }}>Videos</h5></h1>
+                        <h1 className="client_number"><span className="number1">7800+</span><BsSlash className="liner_page6 liner_1" /><h5 style={{ fontSize: "1rem", color: "white" }}>Minutes<br />spent</h5></h1>
+                        <h1 className="projects_number"><span className="number2">120+</span><BsSlash className="liner_page6 liner_2" /><h5 style={{ fontSize: "1rem", color: "white" }}>Videos</h5></h1>
                     </div>
-                    <div className="last_two"> <h1 className="awards_number" ><span className="number3"></span><BsSlash className="liner_page6 liner_3" /><h5 style={{ fontSize: "1rem", color: "white" }}> Minutes of available content</h5></h1>
-                        <h1 className="experience_number"><span className="number4"></span><h5 style={{ fontSize: "1rem", marginLeft: "-35px", color: "white" }}>Connections made<br />for opportunities</h5></h1>
+                    <div className="last_two"> <h1 className="awards_number" ><span className="number3">550+</span><BsSlash className="liner_page6 liner_3" /><h5 style={{ fontSize: "1rem", color: "white" }}> Minutes of available content</h5></h1>
+                        <h1 className="experience_number"><span className="number4">90+</span><h5 style={{ fontSize: "1rem", marginLeft: "-35px", color: "white" }}>Connections made<br />for opportunities</h5></h1>
                     </div>
                 </div>
             </div>
