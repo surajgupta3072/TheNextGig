@@ -30,7 +30,7 @@ function Page2() {
           <div className="top_masterclass">
             <h1>OUR CREATORS</h1>
             <p className="subtitle_masterclass">
-              Experienced, smart and witty
+              You can be one too
             </p>
           </div>
         </Container>
