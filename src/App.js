@@ -45,9 +45,9 @@ function App() {
       setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
       // console.log(window.location.href.includes("/Video/"));
-      if (window.location.href.includes("/Video/") != true) {
-        localStorage.setItem('LoginlastURL', window.location.href);
-      }
+      // if (window.location.href.includes("/Video/") != true) {
+      //   localStorage.setItem('LoginlastURL', window.location.href);
+      // }
       if (user.username.includes("google")) {
         var decoded = jwt_decode(user.signInUserSession.idToken.jwtToken);
         let guser = {
@@ -194,12 +194,6 @@ function App() {
               <Route exact path="/terms">
                 <TC />
               </Route>
-              <Route exact path="/">
-                <HomePage auth={authProps} />
-              </Route>
-              <Route exact path="/:id">
-                <HomePage auth={authProps} />
-              </Route>
               <Route exact path="/Redirecting">
                 <RedirectPage />
               </Route>
@@ -209,6 +203,12 @@ function App() {
               {/* <Route exact path="/SocialLearning/Community">
                 <Comet props={authProps} />
               </Route> */}
+              <Route exact path="/">
+                <HomePage auth={authProps} />
+              </Route>
+              <Route exact path="/:id">
+                <HomePage auth={authProps} />
+              </Route>
             </Switch>
           </Router>
         </div>

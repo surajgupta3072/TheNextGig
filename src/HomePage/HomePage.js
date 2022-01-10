@@ -6,7 +6,10 @@ import Footer from '../Footer/Footer';
 import { useParams } from "react-router-dom";
 
 function HomePage(props) {
+  console.log(props)
   const { id } = useParams();
+  console.log(id);
+
   return (
     <div>
       <div>

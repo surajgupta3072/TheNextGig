@@ -5,7 +5,7 @@ import { ArrowLeft } from 'react-bootstrap-icons';
 import './AuthPage.css';
 import { FaGoogle } from 'react-icons/fa';
 // import MyVerticallyCenteredModal from "./RegisterPageModal";
-import docClient from '../GigsPage/GigsAWS';
+// import docClient from '../GigsPage/GigsAWS';
 
 function LoginPage(props) {
   // const [modalShow, setModalShow] = useState(false);
@@ -20,31 +20,32 @@ function LoginPage(props) {
       props.auth.setUser(userLogin);
       props.auth.setAuthStatus(true);
       setShowErr(false);
-      let paramss = {
-        TableName: "UsersTable",
-        KeyConditionExpression: "#Uid = :UserID",
-        ExpressionAttributeNames: {
-          "#Uid": "UserID",
-        },
-        ExpressionAttributeValues: {
-          ":UserID": userLogin.username,
-        },
-      };
-      docClient.query(paramss, function (err, data) {
-        if (err) {
-          setShowErr(err.message)
-        }
-        else {
-          const per = data.Items[0].RewardP + data.Items[0].RewardE + data.Items[0].RewardW + data.Items[0].RewardS + data.Items[0].RewardC;
-          if (per === 100) {
-            window.location.href = localStorage.getItem("lastURL");
-          }
-          else {
-            window.location.href = localStorage.getItem("lastURL");
-            // setModalShow(true);
-          }
-        }
-      });
+      window.location.href = localStorage.getItem("lastURL");
+      // let paramss = {
+      //   TableName: "UsersTable",
+      //   KeyConditionExpression: "#Uid = :UserID",
+      //   ExpressionAttributeNames: {
+      //     "#Uid": "UserID",
+      //   },
+      //   ExpressionAttributeValues: {
+      //     ":UserID": userLogin.username,
+      //   },
+      // };
+      // docClient.query(paramss, function (err, data) {
+      //   if (err) {
+      //     setShowErr(err.message)
+      //   }
+      //   else {
+      //     const per = data.Items[0].RewardP + data.Items[0].RewardE + data.Items[0].RewardW + data.Items[0].RewardS + data.Items[0].RewardC;
+      //     if (per === 100) {
+      //       window.location.href = localStorage.getItem("lastURL");
+      //     }
+      //     else {
+      //       window.location.href = localStorage.getItem("lastURL");
+      //       // setModalShow(true);
+      //     }
+      //   }
+      // });
     }
     catch (error) {
       setShowErr(error.message);
