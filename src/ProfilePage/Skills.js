@@ -116,10 +116,10 @@ function Skills(props) {
           props.p.setWholedata(props.p.wholedata);
           props.p.setPercentage(
             props.p.wholedata.RewardP +
-              props.p.wholedata.RewardE +
-              props.p.wholedata.RewardW +
-              props.p.wholedata.RewardS +
-              props.p.wholedata.RewardC
+            props.p.wholedata.RewardE +
+            props.p.wholedata.RewardW +
+            props.p.wholedata.RewardS +
+            props.p.wholedata.RewardC
           );
           var paramss = {
             TableName: "UsersTable",
@@ -254,11 +254,9 @@ function Skills(props) {
               <u>Through TNG Originals:</u>
               <br />
               <em>
-                {props.p.wholedata.SkillsAcquiredMastersessions.map((msk) => (
-                  <span style={{ fontSize: "16px" }}>
-                    {msk}&nbsp;&nbsp;&nbsp;&nbsp;
-                  </span>
-                ))}
+                <span style={{ fontSize: "16px" }}>
+                  {props.p.wholedata.SkillsAcquiredMastersessions.join(", ")}
+                </span>
               </em>
             </p>
           </Col>
@@ -281,16 +279,7 @@ function Skills(props) {
             </p>
             <em>
               <div style={{ wordBreak: "break-all", wordWrap: "break-word" }}>
-                {Array.from(
-                  new Map(
-                    props.p.wholedata.SkillsAcquiredVideos.map((p) => [
-                      p.join(),
-                      p,
-                    ])
-                  ).values()
-                ).map((vsk) => (
-                  <span>{vsk}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                ))}
+                <span>{props.p.wholedata.SkillsAcquiredVideos.join(" ").split("#").join(" ")}</span>
               </div>
             </em>
           </Col>

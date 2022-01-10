@@ -166,6 +166,13 @@ function Page3(props) {
                           if (err) {
                             console.log(err);
                           } else {
+                            var unique_skills = []
+                            var course_role_array = session.course_role.split(", ")
+                            course_role_array.forEach(ele => {
+                              if (data.Item.SkillsAcquiredMastersessions.join(", ").indexOf(ele) === -1) {
+                                unique_skills.push(ele)
+                              }
+                            })
                             var params = {
                               TableName: "UsersTable",
                               Key: { UserID: props.prop.user.username },
@@ -174,7 +181,7 @@ function Page3(props) {
                                 data.Item.SkillsAcquiredMastersessions.length.toString() +
                                 "] = :sam",
                               ExpressionAttributeValues: {
-                                ":sam": session.course_role,
+                                ":sam": unique_skills.join(", "),
                               },
                               ReturnValues: "UPDATED_NEW",
                             };

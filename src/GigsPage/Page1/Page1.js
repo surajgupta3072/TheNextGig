@@ -29,6 +29,12 @@ function Page1(props) {
         console.log(err);
       }
       else {
+        data.Items.forEach((ele) => {
+          ele.GigBackendDate = new Date(ele.GigBackendDate)
+        })
+        data.Items.sort(function (a, b) {
+          return b.GigBackendDate - a.GigBackendDate;
+        })
         setGigs(data.Items);
       }
     });
@@ -72,6 +78,12 @@ function Page1(props) {
         if (vid.GigDomain.toLowerCase().includes(searchterm.toLowerCase()) || vid.GigName.toLowerCase().includes(searchterm.toLowerCase()) || vid.CompanyName.toLowerCase().includes(searchterm.toLowerCase())) {
           return vid;
         }
+      })
+      searchvids.forEach((ele) => {
+        ele.GigBackendDate = new Date(ele.GigBackendDate)
+      })
+      searchvids.sort(function (a, b) {
+        return b.GigBackendDate - a.GigBackendDate;
       })
       setVideosList(searchvids);
     }
@@ -156,7 +168,7 @@ function Page1(props) {
                     alt="..."
                   />
                   <figure data-content={props.course_domain} className="figure tag">
-                    <img src={props.card}  className=" card-image" />
+                    <img src={props.card} className=" card-image" />
                   </figure>
                 </div>
               </figure>

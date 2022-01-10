@@ -266,20 +266,30 @@ function MyVerticallyCenteredModal(props) {
                 console.log(err);
             }
             else {
-                var params = {
-                    TableName: "UsersTable",
-                    Key: { "UserID": props.username },
-                    UpdateExpression: "set SkillsAcquiredVideos[" + data.Item.SkillsAcquiredVideos.length.toString() + "] = :sav",
-                    ExpressionAttributeValues: {
-                        ":sav": hashtags.split("--")
-                    },
-                    ReturnValues: "UPDATED_NEW"
-                }
-                docClient.update(params, function (err, data) {
-                    if (err) {
-                        console.log(err);
+                var flag = 0;
+                data.Item.SkillsAcquiredVideos.forEach((ele, index) => {
+                    if (ele.join("") === hashtags.split("--").join("")) {
+                        flag = 1;
+
                     }
-                });
+                })
+                if (flag === 0) {
+                    hashtags = hashtags.substr(0, hashtags.length - 1)
+                    var params = {
+                        TableName: "UsersTable",
+                        Key: { "UserID": props.username },
+                        UpdateExpression: "set SkillsAcquiredVideos[" + data.Item.SkillsAcquiredVideos.length.toString() + "] = :sav",
+                        ExpressionAttributeValues: {
+                            ":sav": hashtags.split("--")
+                        },
+                        ReturnValues: "UPDATED_NEW"
+                    }
+                    docClient.update(params, function (err, data) {
+                        if (err) {
+                            console.log(err);
+                        }
+                    });
+                }
             }
         });
     }
