@@ -54,7 +54,7 @@ function Follow(props) {
             <br />
             <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "row", flexWrap: "wrap" }}>
                 {yourfollowdata.map(ele => {
-                    return < div onClick={() => window.location.href = "/expert/" + ele.ExpertID} style={{ height: "300px", width: "260px" }} >
+                    return < div onClick={() => window.location.href = "/creator/" + (ele.ExpertID).split(" ").join("_")} style={{ height: "300px", width: "260px" }} >
                         <img width="240px" src={ele.ExpertPic} style={{ cursor: "pointer" }} />
                         <div width="240px" style={{ marginLeft: "2%", width: "260px" }}>
                             {(ele.ExpertName.length < 25) ?
