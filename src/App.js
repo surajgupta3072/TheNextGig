@@ -31,6 +31,7 @@ import LearnCoins from "./LearnCoins/LearnCoins";
 import ReferralPage from "./AuthPage/ReferralPage";
 import Follow from "./Follow/Follow";
 import SkillsVideopage from "./Skills&Videopage/SkillsVideopage";
+import PastHistoryPage from "./PastHistoryPage/PastHistoryPage";
 // import Comet from "../src/SocialLearningPage/Comet";
 
 function App() {
@@ -196,6 +197,9 @@ function App() {
               </Route>
               <Route exact path="/Redirecting">
                 <RedirectPage />
+              </Route>
+              <Route exact path="/MyActivity">
+                <PastHistoryPage />
               </Route>
               <ProtectedRoute exact path="/Referral" auth={authProps}>
                 <ReferralPage auth={authProps.user} />

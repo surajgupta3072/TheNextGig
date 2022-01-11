@@ -158,6 +158,7 @@ function ProfilePage(props) {
           <br />
           <Row><p style={{ fontSize: "16px", textAlign: "center", color: "#F26C4F" }}>TNG Minutes: <b>{rew}</b></p></Row>
           <Row style={{ marginBottom: "1%", textAlign: "center" }}><p style={{ margin: "0" }}>Your Referral Code:</p><p style={{ color: "#F26C4F" }}><b>{wholedata.ReferralCode}</b></p></Row>
+          {/* <Row style={{ marginBottom: "1%", textAlign: "center" }}><Col><p style={{ margin: "0" }}>Followers</p><p style={{ color: "#F26C4F" }}><b>{wholedata.Follower !== undefined ? wholedata.Follower.length : null}</b></p></Col><Col><p style={{ margin: "0" }}>Following</p><p style={{ color: "#F26C4F" }}><b>{wholedata.Following !== undefined ? wholedata.Following.length : null}</b></p></Col></Row> */}
           <hr style={{ color: "#F26C4F", margin: "2px 0px" }} />
           <Row onClick={() => whichColor("Personal")} style={color1}><p style={{ fontSize: "20px", textAlign: "center", cursor: "pointer" }}>Personal</p></Row>
           <hr style={{ color: "#F26C4F", margin: "2px 0px" }} />
