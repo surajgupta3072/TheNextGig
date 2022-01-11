@@ -16,7 +16,7 @@ import ReactTooltip from 'react-tooltip';
 function Page2(props) {
   const [uid, setuid] = useState("")
   const [show_no, setshowno] = useState(5);
-  const [show_no1, setshowno1] = useState(2);
+  const [show_no1, setshowno1] = useState(1);
   const [data_finance, setdatafinance] = useState([])
   const [data_pop, setdatapop] = useState([])
   const [data_prod, setdataprod] = useState([])
