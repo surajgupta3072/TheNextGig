@@ -38,7 +38,7 @@ function Page2() {
       <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
         {expertData.map((vid, index) => {
           return <div onClick={() => window.location.href = '/creator/' + (vid.ExpertID).split(" ").join("_")} key={index} style={{ width: "260px", cursor: "pointer" }} >
-            <img src={vid.ExpertPic} width="240px" />
+            <img src={vid.ExpertPic} style={{ height: "134.91px", width: "240px" }} />
             <div className="experts_div_content" >
               {(vid.ExpertID.length < 26) ?
                 (
