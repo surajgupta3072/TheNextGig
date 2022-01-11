@@ -250,7 +250,7 @@ function Page1(props) {
                 )}
               </div>
             } */}
-            <button style={{ position: "absolute" }} onClick={() => follow(expert.AccountID)} className=" btn_follow button_slide slide_right">Follow<Plus style={{ marginTop: "-7px" }} className='button_arrow' /></button>
+            <button style={{ position: "absolute", padding: "7px 15px" }} onClick={() => follow(expert.AccountID)} className=" btn_follow button_slide slide_right">Follow<Plus style={{ marginTop: "-4px", width: "32px", height: "32px" }} className='button_arrow' /></button>
           </div>
         </div>
       </Container>

@@ -36,7 +36,7 @@ function Header(props) {
                     if (data.Item.RedeemDailyMinutesButtonClickedAt === undefined) {
                         setShowRDMButton(true);
                     }
-                    else if(today.getDate()>dateRDM.getDate() && today.getMonth()>=dateRDM.getMonth()) {
+                    else if (today.getDate() > dateRDM.getDate() && today.getMonth() >= dateRDM.getMonth()) {
                         setShowRDMButton(true);
                     }
                 }
@@ -122,7 +122,7 @@ function Header(props) {
                 <img style={{ height: "48px", width: "72px" }} src="/TNG_logo_tab.png" alt="logo" />
             </Navbar.Brand>
             {(props.auth.isAuthenticated === true && showrdmbutton === true) &&
-                <Nav.Link className="reward_mins_mobile" onClick={RedeemDailyMinutes} style={{ boxShadow:"2px 2px white", color: "white", fontWeight: "700", fontSize: "9px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
+                <Nav.Link className="reward_mins_mobile" onClick={RedeemDailyMinutes} style={{ boxShadow: "2px 2px white", color: "white", fontWeight: "700", fontSize: "9px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
                     Claim Daily<br />&nbsp;&nbsp;Minutes
                 </Nav.Link>
             }
@@ -136,7 +136,7 @@ function Header(props) {
                 <Nav className="me-auto">
                     <NavDropdown style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} title="Access all videos">
                         <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/TNGOriginals">TNG Originals</NavDropdown.Item>
-                        <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SocialLearning">Bite-Sized Videos</NavDropdown.Item>
+                        <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/BiteSizedVideos">Bite-Sized Videos</NavDropdown.Item>
                     </NavDropdown>
                     {/* <NavDropdown style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} title="Become an expert"> */}
                     {/*  <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => setModalShow(true)}>Collaborate for Session</NavDropdown.Item>
@@ -144,9 +144,9 @@ function Header(props) {
                             show={modalShow}
                             onHide={() => setModalShow(false)}
                         /> */}
-                    <Nav.Link style={{ color: "black", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} href="/SocialLearning">Add Bite-Sized Video</Nav.Link>
+                    <Nav.Link style={{ color: "black", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} href="/BiteSizedVideos">Add Bite-Sized Video</Nav.Link>
                     {/* </NavDropdown> */}
-                    <Nav.Link href="/expert" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
+                    <Nav.Link href="/creators" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
                         Creators
                     </Nav.Link>
                     <Nav.Link href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
@@ -154,7 +154,7 @@ function Header(props) {
                     </Nav.Link>
                 </Nav>
                 {(props.auth.isAuthenticated === true && showrdmbutton === true) &&
-                    <Nav.Link className="reward_mins" onClick={RedeemDailyMinutes} style={{ boxShadow:"2px 2px white", color: "white", fontWeight: "700", fontSize: "15px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
+                    <Nav.Link className="reward_mins" onClick={RedeemDailyMinutes} style={{ boxShadow: "2px 2px white", color: "white", fontWeight: "700", fontSize: "15px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
                         Claim Daily Minutes
                     </Nav.Link>
                 }
@@ -182,7 +182,7 @@ function Header(props) {
                         </div>
                     }
                     {props.auth.isAuthenticated === false &&
-                        <Nav.Link href="/login" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "35px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                        <Nav.Link href="/login" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             Login
                         </Nav.Link>
                     }

@@ -5,7 +5,7 @@ function ExpertPage(props) {
   let { id } = useParams();
   return (
     <div>
-      <Page1 auth={props.auth} Eid={id} />
+      <Page1 auth={props.auth} Eid={id.split("_").join(" ")} />
     </div>
   );
 }

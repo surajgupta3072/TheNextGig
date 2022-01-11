@@ -39,8 +39,8 @@ function Page2() {
                 <Col>
                   <Row className="mast_page2_row"><p className="mast_page2_p4">Meet the creators!</p></Row>
                   <Row style={{ paddingLeft: "19%", marginBottom: "0%" }}><p style={{ marginBottom: "0%" }} className="mast_page2_p5">Superwomen. Supermen.</p></Row>
-                  <Row className="mast_page2_row1" ><p style={{ color: "rgb(243, 123, 97)" }} className="mast_page2_p5"><a href="/expert" style={{ textDecoration: "none", color: "#f26c4f" }}>Stalk them.</a></p></Row>
-                  <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2" /></a>
+                  <Row className="mast_page2_row1" ><p style={{ color: "rgb(243, 123, 97)" }} className="mast_page2_p5"><a href="/creators" style={{ textDecoration: "none", color: "#f26c4f" }}>Stalk them.</a></p></Row>
+                  <a href="/creators" ><ArrowRight className="button_arrow_MC_Page2_2" /></a>
                 </Col>
               </Row>
             </Container>
@@ -107,9 +107,9 @@ function Page2() {
                 <div style={{ display: "flex", justifyContent: "space-evenly", flexDirection: "column" }}>
                   <div>Meet the experts!</div>
                   <div ><p className="mast_page2_p5">Superwomen. Supermen.</p></div>
-                  <div style={{ color: "rgb(243, 123, 97)" }}><a href="/expert" style={{ textDecoration: "none", color: "#f26c4f" }}>Stalk them.</a></div>
+                  <div style={{ color: "rgb(243, 123, 97)" }}><a href="/creators" style={{ textDecoration: "none", color: "#f26c4f" }}>Stalk them.</a></div>
                   <div>
-                    <a href="/expert" ><ArrowRight className="button_arrow_MC_Page2_2" /></a>
+                    <a href="/creators" ><ArrowRight className="button_arrow_MC_Page2_2" /></a>
                   </div>
                 </div>
               </div>

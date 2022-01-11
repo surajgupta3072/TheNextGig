@@ -37,9 +37,9 @@ function Page2() {
       </div>
       <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
         {expertData.map((vid, index) => {
-          return <div onClick={() => window.location.href = '/expert/' + vid.ExpertID} key={index} style={{ width: "260px", cursor: "pointer" }} >
+          return <div onClick={() => window.location.href = '/creator/' + (vid.ExpertID).split(" ").join("_")} key={index} style={{ width: "260px", cursor: "pointer" }} >
             <img src={vid.ExpertPic} width="240px" />
-            <div width="240px" style={{ marginLeft: "2%", width: "260px" }} >
+            <div className="experts_div_content" >
               {(vid.ExpertID.length < 26) ?
                 (
                   (<h6 className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
@@ -65,7 +65,7 @@ function Page2() {
                   <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertCompany.substring(0, 40)}...</p>
                 )
               }
-              <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start" }}>
+              <div className="expert_skills" >
                 {(vid.ExpertSkills.length < 40) ?
                   (
                     <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.ExpertSkills}</p>

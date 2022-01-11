@@ -98,9 +98,25 @@ h3 {
 .btn_follow {
   margin-top: 340px;
 }
+.expert_skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.experts_div_content {
+  margin-left: 2%;
+  width: 260px;
+  margin-top: 1rem;
+}
 @media screen and (max-width: 768px) {
   .pack {
     padding-top: 16%;
+  }
+  .experts_div_content {
+    margin-left: 0%;
+  }
+  .expert_skills {
+    display: block !important;
   }
   .btn_follow {
     margin-left: 0%;

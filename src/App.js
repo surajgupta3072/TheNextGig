@@ -106,7 +106,7 @@ function App() {
     catch (error) {
       if (window.location.href != "http://localhost:3000/login" && window.location.href != "http://localhost:3000/register" && window.location.href != "http://localhost:3000/Referral" && window.location.href != "https://www.thenextgig.net/login" && window.location.href != "https://www.thenextgig.net/register" && window.location.href != "https://www.thenextgig.net/Referral")
         localStorage.setItem('lastURL', window.location.href);
-      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/") || (window.location.href.split("/")[3] !== undefined && window.location.href.split("/")[3].length === 16) || (window.location.href.split("/")[4] !== undefined && window.location.href.split("/")[4].includes("%20"))) {
+      if (window.location.href.includes("/SocialLearning/CometChat/") || window.location.href.includes("/SocialLearning/Video/") || window.location.href.includes("http://localhost:3000/Video/") || window.location.href.includes("https://www.thenextgig.net/Video/") || (window.location.href.split("/")[3] !== undefined && window.location.href.split("/")[3].length === 16) || (window.location.href.split("/")[4] !== undefined && window.location.href.split("/")[4].includes("_"))) {
         localStorage.setItem('lastLastURL', window.location.href);
         localStorage.setItem('lastURL', "https://www.thenextgig.net/Redirecting");
       }
@@ -146,7 +146,7 @@ function App() {
               <Route exact path="/SkillsVideo">
                 <SkillsVideopage auth={authProps} />
               </Route>
-              <Route exact path="/SocialLearning">
+              <Route exact path="/BiteSizedVideos">
                 <SocialLearningPage auth={authProps} />
               </Route>
               {/* <Route exact path="/SocialLearning/Blog/:id">
@@ -158,10 +158,10 @@ function App() {
               {/* <Route exact path="/company/:id">
                 <CompanyPage />
               </Route> */}
-              <Route exact path="/expert/:id">
+              <Route exact path="/creator/:id">
                 <ExpertPage auth={authProps} />
               </Route>
-              <Route exact path="/expert">
+              <Route exact path="/creators">
                 <Page2 />
               </Route>
               <ProtectedRoute auth={authProps} exact path="/ExperientialLearning/:id">

@@ -755,23 +755,127 @@
     "gigs":[]
   },
   {
-    "id": 97,
-    "course_name": "Product Management in detail: \n New feature rollouts",
-    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Arun+homepage.jpg",
-    "course_domain": "ProdMan",
-    "course_id": 4,
+    "id": 7,
+    "course_name": "Product Management in detail:\n New Feature Rollouts",
+    "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Arun+homepage+Cropped.jpg",
     "course_instructor": "Arun Sreelalan Iyer",
-    "VideoUploaderID": "74bb77c3-7ce7-4f1d-8b73-5180f645a65e",
     "course_instructor_post": "Product @ Bajaj Finserv, Ex-Ola, McKinsey",
-    "instructor_creds": "8+ years of ProdMan experience, IIM Calcutta",
-    "course_timing": "...Coming Soon",
-    "course_episode": "",
-    "course_episode_HomePage": "Coming Soon",
-    "course_description": "This has to be filled in properly once the session is completely recorded",
-    "WhatYouLearn": ["A", "B", "C", "D"],
-    "PreparesYouFor": ["A", "B", "C"],
-    "WhatsInForYou": ["A", "B", "C", "D", "E", "F"],
-    "fees": ""
+    "instructor_creds": "IIM Calcutta | RV College of Engineering",
+    "course_timing": "1hr 4min",
+    "course_domain":"ProdMan",
+    "course_episode": "14 episodes",
+    "course_description": "Swiggy’s Instamart, Netflix’s match %, Ola’s queued allotment - want to know how each of these features was brainstormed, developed, launched and improved further? Watch Arun take you through this journey based on his experience at Ola!!",
+    "course_role": "Product Management, Product",
+    "WhatYouLearn": [
+      "Product Management - features - in detail",
+      "How to brainstorm on new features to a product",
+      "Rolling out MVPs",
+      "Skills required to get into PM"
+    ],
+    "PreparesYouFor": [
+      "Product Roles",
+      "Product Management Roles",
+      "Strategy & Managerial roles"
+    ],
+    "WhatsInForYou": [
+      "Lifetime access to 'inside information' in the PM space",
+      "compressed into 1 hour of learning",
+      "Preference for experiential learning opportunities that we",
+      "source for you in this domain",
+      "A certificate of completion and a chance to get your",
+      "in-session case/project reviewed by the expert"
+    ],
+    "VideoUploaderID": "74bb77c3-7ce7-4f1d-8b73-5180f645a65e",
+    "fees": "",
+    "ExpertId": 7,
+    "trailer_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Arun+Trailer.mp4",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "1. Introducing you to PM",
+        "description": "Let us dive into the world of product management by debunking misconceptions and discussing good product management practices in real life using examples of UPI/UPI-based apps and Netflix",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+1.mp4"
+      },
+      {
+        "id": 2,
+        "title": "2. What are ‘Requirements’?",
+        "description": "Let’s understand what is a requirement and how to classify them. You have probably heard one or more of these words - Epic, feature, user stories, and tasks but do you know what the word entails?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+2.mp4"
+      },
+      {
+        "id": 3,
+        "title": "3. Identifying ‘requirements’ and a Swiggy example",
+        "description": "We have understood what requirements are and how they are classified. Now, let’s learn how you identify requirements, what sources they can arise from, and how Swiggy nailed this concept!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+3.mp4"
+      },
+      {
+        "id": 4,
+        "title": "4. Ola Cabs - a Case Study - introduction",
+        "description": "Let’s take a look at the problem which was pestering one of the biggest startups of this country - Ola Cabs. Does this problem bother other companies and industries as well? Let’s find out.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+4.mp4"
+      },
+      {
+        "id": 5,
+        "title": "5. Coming up with product solutions",
+        "description": "Should we spend hundreds of hours pondering trying to come up with the perfect solution to cover all bases and calculate every possible outcome? Should we just execute the first idea we think of and see what happens? Or maybe something in between? Let’s figure it out!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+5.mp4"
+      },
+      {
+        "id": 6,
+        "title": "6. Brainstorming solutions and iterations (Case)",
+        "description": "We discussed the problem. Now, let’s discuss the solution and the metrics we need to evaluate to conclude whether the solution was a success or a bust!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+6.mp4"
+      },
+      {
+        "id": 7,
+        "title": "7. Designing an MVP (Case)",
+        "description": "We brainstormed and came up with an innovative solution, problem solved!.... Right? Well, that was actually the easy part. Now we need to effectively and tactfully execute the said solution. Let’s get started!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+7.mp4"
+      },
+      {
+        "id": 8,
+        "title": "8. Rolling out MVP and observing outcomes (Case)",
+        "description": "Was our execution method correct? What is the logic behind it? Is it always the right method to implement solutions? Let’s understand why we did what we did.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+8.mp4"
+      },
+      {
+        "id": 9,
+        "title": "9. Iterating on execution and stakeholder management (Case)",
+        "description": "We successfully executed the solution for the customers but we are still missing a key piece to complete the puzzle, the drivers! Let’s make sure the execution is copacetic for the drivers as well and we have them on board smoothly.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+9.mp4"
+      },
+      {
+        "id": 10,
+        "title": "10. Seeking and incorporating feedback (Case)",
+        "description": "Let’s hear what feedback drivers and users have for our solution, come up with necessary updates and scale up the execution!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+10.mp4"
+      },
+      {
+        "id": 11,
+        "title": "11. Monitoring outcomes (Case)",
+        "description": "We did it! Let’s see how we dealt with the problem and how successful our solution was!",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+11.mp4"
+      },
+      {
+        "id": 12,
+        "title": "12. Defining and tracking success metrics (Case)",
+        "description": "How did we come to the conclusion that our project was a success? Let’s learn how to properly define and track these metrics.",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+12.mp4"
+      },
+      {
+        "id": 13,
+        "title": "13. The Scaling paradox",
+        "description": "We worked very hard to come up with a foolproof solution and it worked perfectly. We will obviously stick to our guns when we scale up because it is a tried and tested method. Wrong?",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+13.mp4"
+      },
+      {
+        "id": 14,
+        "title": "14. Summary and conclusion",
+        "description": "Let’s quickly recap everything we have learnt and discussed. 13 episodes in 1? ",
+        "epi_video": "https://master-sessions.s3.ap-south-1.amazonaws.com/TNGOriginals-Arun/Episode+14.mp4"
+      }
+    ],
+    "gigs":[]
   },
   {
     "id": 8,
