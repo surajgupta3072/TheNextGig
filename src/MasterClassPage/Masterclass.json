@@ -764,6 +764,7 @@
     "instructor_creds": "IIM Calcutta | RV College of Engineering",
     "course_timing": "1hr 4min",
     "course_domain":"ProdMan",
+    "course_duration":64,
     "course_episode": "14 episodes",
     "course_description": "Swiggy’s Instamart, Netflix’s match %, Ola’s queued allotment - want to know how each of these features was brainstormed, developed, launched and improved further? Watch Arun take you through this journey based on his experience at Ola!!",
     "course_role": "Product Management, Product",
