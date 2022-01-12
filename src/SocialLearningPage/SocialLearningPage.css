@@ -167,6 +167,12 @@ label > input[type="checkbox"] + * {
   height: 135px;
   width: 240px;
 }
+.sociallearning_div{
+  margin-top: 7%;
+  margin-left: 2%;
+  width: 250px;
+  cursor: pointer;
+}
 @media screen and (max-width: 768px) {
   .SocialLearn_laptop {
     display: none;
@@ -244,5 +250,8 @@ label > input[type="checkbox"] + * {
   .button_div_page5 {
     margin-top: -15%;
     margin-left: 50%;
+  }
+  .sociallearning_div{
+    margin-left: 16%;
   }
 }

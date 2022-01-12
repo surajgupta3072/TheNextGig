@@ -338,7 +338,7 @@ function Videos(props) {
               :
               <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
-            <div style={{ marginTop: "7%", marginLeft: "2%", width: "250px", cursor: "pointer" }} >
+            <div className='sociallearning_div' >
               {(vid.VideoTopic.length < 25) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
@@ -385,7 +385,7 @@ function Videos(props) {
               :
               <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
-            <div style={{ marginTop: "7%", marginLeft: "2%", width: "240px", cursor: "pointer" }} >
+            <div className='sociallearning_div' >
               {(vid.VideoTopic.length < 25) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
