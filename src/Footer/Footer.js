@@ -1,7 +1,7 @@
 import { useState }  from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Linkedin, Instagram, Whatsapp, Discord } from 'react-bootstrap-icons';
+import {Linkedin, Instagram, Whatsapp, Youtube } from 'react-bootstrap-icons';
 import './Footer.css';
 import MyVerticallyCenteredModal from './Modal.js'
 import { ArrowLeft } from "react-bootstrap-icons";
@@ -54,7 +54,7 @@ function Footer(){
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin   style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                     <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                     <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
-                    <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/EEVcU7ZzAQ"><Discord  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCls4liz2wuWH6FOrX_dARKw"><Youtube  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </Col>
             </Row>
             </div>
@@ -105,7 +105,7 @@ function Footer(){
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/thenextgig/"><Linkedin  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                     <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tng_thenextgig/"><Instagram style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                     <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=919920891546"><Whatsapp  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
-                    <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/EEVcU7ZzAQ"><Discord  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCls4liz2wuWH6FOrX_dARKw"><Youtube  style={{color: "white", cursor: "pointer"}} size={34}/></a>&nbsp;&nbsp;
                 </div>
             </Row>
             </div>
