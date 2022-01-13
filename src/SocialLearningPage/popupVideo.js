@@ -230,7 +230,7 @@ function MyVerticallyPopUp(props) {
       centered
       contentClassName="custom-modal-style"
       dialogClassName="modal-40w"
-      className="mobile_view"
+      className="mobile_view_video"
       transparent={true}
     >
       <Modal.Body
