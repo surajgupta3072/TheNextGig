@@ -601,7 +601,7 @@ function Page3(props) {
       </Container>
       <div className="btn_div_homepage_new" style={{ display: "flex", justifyContent: "space-evenly" }}>
         <div><button onClick={() => setModalShow2({ data: { VideoTopic: session["course_name"], VideoUsername: session["course_instructor"] }, check: true })} style={{ marginTop: "0px", marginLeft: "0px", width: "240px", marginBottom: "8%" }} id="start_doing_homepage" className="button_slide slide_right orange_button_page3">Connect<ArrowRight className="button_arrow" style={{ marginLeft: "65px" }} /></button></div>
-        <div><button onClick={() => follow(masterid)} id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "240px", marginBottom: "8%" }} className="button_slide slide_right orange_button_page3">Follow Expert<ArrowRight className="button_arrow" style={{ marginLeft: "40px" }} /></button></div>
+        <div><button onClick={() => window.location.href = "../creator/" + session.course_instructor.split(" ").join("_")} id="start_doing_homepage" style={{ marginTop: "0px", marginLeft: "0px", width: "240px", marginBottom: "8%" }} className="button_slide slide_right orange_button_page3">Expert Profile<ArrowRight className="button_arrow" style={{ marginLeft: "40px" }} /></button></div>
       </div>
       <div className="header_masterclass">
         <Container>
