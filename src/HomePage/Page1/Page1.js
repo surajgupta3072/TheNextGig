@@ -1,10 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Page1.css';
-
-
 function Page1() {
-
   return (
     <div className='videoframe'>
       <img className='videoTag' style={{ height: "70vh", width: "100vw" }} src="https://d1r2s60cmj6qme.cloudfront.net/Mobile+homepage+2.jpg" />

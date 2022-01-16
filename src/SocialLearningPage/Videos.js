@@ -383,7 +383,7 @@ function Videos(props) {
                 <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
               </figure>
               :
-              <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
+              <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} />
             }
             <div className='sociallearning_div' >
               {(vid.VideoTopic.length < 25) ?

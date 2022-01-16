@@ -91,11 +91,18 @@
 .popup_video {
   width: -webkit-fill-available;
 }
+.div_video {
+  width: 60vw;
+}
+
+.vimeo_video {
+  padding: 55.25% 0% 0 0%;
+}
 @media screen and (min-width: 516px) and (max-width: 927px) {
-  .div_video {
+  /* .div_video {
     width: fit-content !important;
     max-width: 60vw !important;
-  }
+  } */
   .popup_video {
     width: 60vw;
     height: fit-content !important;
@@ -107,10 +114,10 @@
     max-width: 100% !important;
   }
   .popup_video {
-    width: 80vw;
-    min-height: 300px;
+    width: 90vw;
+    min-height: 400px;
     height: fit-content !important;
-    max-height: 400px;
+    max-height: 500px;
   }
 }
 @media screen and (max-width: 768px) {
