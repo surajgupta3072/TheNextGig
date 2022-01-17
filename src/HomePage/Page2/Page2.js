@@ -104,7 +104,7 @@ function Page2(props) {
       }
       var datax1 = [], datax2 = [], datax3 = [], datax4 = [], datax5 = [], datapopular = [];
       for (var i = 0; i < list_data[0].length; i++) {
-        if (list_data[0][i].VideoViews >= 10) {
+        if (list_data[0][i].VideoDomains.includes(100) === true) {
           datapopular.push(list_data[0][i]);
         }
         if (list_data[0][i].VideoDomains.includes(1) === true) {
@@ -497,10 +497,10 @@ function Page2(props) {
   }
   return (
     <div style={{ marginTop: "2%", marginLeft: "2%" }}>
-      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Popular</h4>
+      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Trending</h4>
       <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele, i) => {
-          if (ele.id === 2 || ele.id === 4 || ele.id === 6) {
+          if (ele.id === 2 || ele.id === 7 || ele.id === 6) {
             return <div style={{ height: "300px", width: "260px" }} >
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
                 <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
