@@ -349,7 +349,7 @@ function Videos(props) {
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
                     {vid.VideoTopic.substring(0, 25)}...
                     <sup data-tip data-for={index + "gxyzq23"} >&#9432;</sup>
-                    <ReactTooltip id={index + "gxyzq23"} place="top" effect="solid">
+                    <ReactTooltip id={index + "gxyz23"} place="top" effect="solid">
                       {vid.VideoTopic}
                     </ReactTooltip>
                   </p>
