@@ -385,7 +385,7 @@ function Videos(props) {
                 <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
               </figure>
               :
-              <img className="video_thumbnail_social" src={vid.VideoThumbnail} />
+              <figure className="tag figurex" data-content={vid.VideoDuration}>
               <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} />
               </figure>
             }
