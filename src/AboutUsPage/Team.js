@@ -47,7 +47,7 @@ function Team(){
                             </Card.Body>
                         </Card>
                         <Card  style={{ width: "22%",minHeight:"25%", marginLeft: "3%", backgroundColor: "rgba(86, 150, 112, 0.07)", border: "2px solid rgba(86, 150, 112, 0.6)" }}>
-                            <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_800_800/0/1611408696050?e=1640822400&v=beta&t=nZ5uPQniKEvYqhaoV9Hxyj92J1CQP-CDU9Mdg0PM-OI" />
+                            <Card.Img style={{ margin: "auto", height: "140px", width: "140px", marginTop: "30px", background: "white", borderRadius: "50%", border: "0px" }} variant="top" src="https://usersdp.s3.ap-south-1.amazonaws.com/Nikhil+Agarwal.jpg" />
                             <Card.Body style={{ marginTop: "10%" }}>
                             <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"22px"}}>Nikhil Agarwal</Card.Title>
                                 <Card.Subtitle style={{textAlign:"center",marginBottom:"10px",color:"rgba(86, 150, 112,1)"}} >Head of Engineering</Card.Subtitle>
@@ -163,7 +163,7 @@ function Team(){
                             <Card.Body>
                             <div style={{display: "flex", flexDirection: "row"}}>
                                 <Col style={{marginTop:"8px"}}>
-                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"50%"}} variant="top" src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZZD6xn4hJg/profile-displayphoto-shrink_800_800/0/1611408696050?e=1640822400&v=beta&t=nZ5uPQniKEvYqhaoV9Hxyj92J1CQP-CDU9Mdg0PM-OI"/>
+                                <Card.Img style={{margin: "auto", height:"70px", width:"70px",borderRadius:"50%"}} variant="top" src="https://usersdp.s3.ap-south-1.amazonaws.com/Nikhil+Agarwal.jpg"/>
                                 </Col>
                                 <Col>
                                 <Card.Title style={{textAlign:"center",fontWeight:"normal",fontSize:"12px"}}>Nikhil Agarwal</Card.Title>
