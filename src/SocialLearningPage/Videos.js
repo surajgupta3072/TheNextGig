@@ -337,7 +337,8 @@ function Videos(props) {
               </figure>
               :
               <figure className="tag figurex" data-content={vid.VideoDuration}>
-                <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} /></figure>
+                <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} />
+              </figure>
             }
             <div className='sociallearning_div' >
               {(vid.VideoTopic.length < 25) ?
@@ -386,7 +387,7 @@ function Videos(props) {
               :
               <figure className="tag figurex" data-content={vid.VideoDuration}>
                 <img onClick={() => { setModalShow3(true); setvideodata(vid) }} className="video_thumbnail_social" src={vid.VideoThumbnail} />
-              </figure>
+              </figure >
             }
             <div className='sociallearning_div' >
               {(vid.VideoTopic.length < 25) ?
@@ -422,7 +423,7 @@ function Videos(props) {
               </div>
             </div>
             <br />
-          </div>
+          </div >
         )
         }
       </div >

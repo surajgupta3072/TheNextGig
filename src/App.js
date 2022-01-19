@@ -32,8 +32,8 @@ import ReferralPage from "./AuthPage/ReferralPage";
 import Follow from "./Follow/Follow";
 import SkillsVideopage from "./Skills&Videopage/SkillsVideopage";
 import PastHistoryPage from "./PastHistoryPage/PastHistoryPage";
+import ReactPixel from 'react-facebook-pixel';
 // import Comet from "../src/SocialLearningPage/Comet";
-
 function App() {
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   const [user, setUser] = useState(null);
@@ -42,6 +42,8 @@ function App() {
 
   useEffect(async () => {
     try {
+      ReactPixel.init('1060386841408854'); // facebookPixelId
+      ReactPixel.pageView();
       await Auth.currentSession();
       setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
@@ -65,13 +67,14 @@ function App() {
           if (data.Item === undefined) {
             var paramss = {
               TableName: "UsersTable",
-              Item: { "UserID": decoded.sub, "FullName": decoded.name, "Email": decoded.email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 180, "MasterclassesPurchased": [], "gigsApplications": [], "SocialLearningVideosUploaded": [], "UnsubscribeEmail": false, "SocialLearningBlogsUploaded": [], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0] + String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": true, "MasterclassesLiked": [], "SocialLearningVideosLiked": [] }
+              Item: { "UserID": decoded.sub, "FullName": decoded.name, "Email": decoded.email, "RewardP": 0, "RewardE": 0, "RewardW": 0, "RewardS": 0, "RewardC": 0, "TotalRewards": 180, "MasterclassesPurchased": [], "gigsApplications": [], "SocialLearningVideosUploaded": [], "UnsubscribeEmail": false, "SocialLearningBlogsUploaded": [], "SocialLearningVideosWatched": [], "SocialLearningBlogsRead": [], "VideosSearchHistory": [], "BlogsSearchHistory": [], "SkillsPossessed": [], "SkillsWantToAcquire": [], "ReferralCode": decoded.email.split("@")[0] + String(Math.floor((Math.random() * 1000) + 1)), "ReferredBy": "", "SkillsAcquiredMastersessions": [], "SkillsAcquiredGigs": [], "SkillsAcquiredVideos": [], "SkillsAcquiredBlogs": [], "GigsSearchHistory": [], "Gflag": true, "MasterclassesLiked": [], "SocialLearningVideosLiked": [], "Follower": [], "Following": [] }
             }
             docClient.put(paramss, function (err, data) {
               if (err) {
                 console.log('Error', err)
               }
               else {
+                ReactPixel.track("COMPLETED REGISTRATION", { currency: "USD", value: 1 });
                 const body = JSON.stringify({
                   feedback: "",
                   feedback1: paramss.Item.FullName,
@@ -89,6 +92,7 @@ function App() {
                       throw new Error("Error in fetch");
                     }
                     else {
+
                       window.location.href = "/Referral";
                     }
                   })
