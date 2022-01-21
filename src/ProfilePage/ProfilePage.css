@@ -2,6 +2,18 @@
   background-color: #ebecf0;
   color: #172b4d;
 } */
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.button_profile{
+  margin-top: 5%;
+}
 .Profile_list_mobile {
   display: none;
 }
@@ -47,6 +59,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .button_profile{
+    margin-left: 35%;
+  }
   .Profile_list_laptop {
     display: none;
   }

@@ -113,12 +113,17 @@ function CvPitch(props) {
        <Row>
           <Col md={7}>
            <p style={{fontSize:"25px",fontWeight:"bold"}}>CV</p>
-           {cvlink!=="" && <a target="_blank" rel="noreferrer" href={cvlink} style={{fontSize:"14px", color:"#F26C4F"}}>Previous Updated Resume</a>}
+           {/* {cvlink!=="" && <a target="_blank" rel="noreferrer" href={cvlink} style={{fontSize:"14px", color:"#F26C4F"}}>Previous Updated Resume</a>} */}
           </Col>
-         <Col><input accept=".doc, .docx, .pdf, .pages" onChange={(e)=>setCV(e.target.files[0])} type="file" style={{height:"35px"}}/></Col>
+          <Col>
+            <label for="file-upload" class="custom-file-upload">
+                <i class="fa fa-cloud-upload"></i> Upload your CV
+            </label>
+            <input accept=".doc, .docx, .pdf, .pages" onChange={(e)=>setCV(e.target.files[0])} id="file-upload" type="file"/>
+          </Col>
        </Row>
        {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
-       <button style={{marginLeft:"5%",marginTop:"5%"}} onClick={handleSubmit} className="button_slide">Save</button>
+       <button onClick={handleSubmit} className="button_slide button_profile">Save</button>
        <br/><br/><br/>
        <p style={{fontSize:"25px",fontWeight:"bold"}}>Past Applications</p>
        {prevgigs.map(single=>
