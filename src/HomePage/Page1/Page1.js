@@ -1,8 +1,6 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './Page1.css';
-
-
 function Page1() {
 
   return (

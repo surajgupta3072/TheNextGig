@@ -7,7 +7,7 @@ import docClient from '../GigsPage/GigsAWS';
 import './Header.css';
 // import NotALearnerModal from './NotALearnerPageModal';
 import Referalpopup from "./Referralpopup";
-
+import LeaderBoard from "../LeaderBoard/LeaderBoard"
 function Header(props) {
     // const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("__");
@@ -152,6 +152,9 @@ function Header(props) {
                     <Nav.Link id="opportunities" href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
                         Opportunities
                     </Nav.Link>
+                    {/* <NavDropdown className='leaderboard_dropdown' title="Leaderboard" id="Leaderboard" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
+                        <LeaderBoard />
+                    </NavDropdown> */}
                 </Nav>
                 {(props.auth.isAuthenticated === true && showrdmbutton === true) &&
                     <Nav.Link id="claim_daily_minutes_btn" className="reward_mins" onClick={RedeemDailyMinutes} style={{ boxShadow: "2px 2px white", color: "white", fontWeight: "700", fontSize: "15px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
