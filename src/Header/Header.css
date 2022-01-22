@@ -16,6 +16,10 @@
   background-color: transparent;
   border: 2px solid rgba(242, 108, 79);
 }
+.show {
+  border: 0px !important;
+  min-width: 0px !important;
+}
 .navdrop_profile {
   padding-right: 35px;
 }

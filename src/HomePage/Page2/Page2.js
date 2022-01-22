@@ -548,7 +548,7 @@ function Page2(props) {
         {data_pop.map((vid, index) => {
           return <div key={index} style={{ width: "260px", cursor: "pointer" }} >
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration} >
-              <img src={vid.VideoThumbnail} width="240px" />
+              <img height="135px" src={vid.VideoThumbnail} width="240px" />
             </figure>
             <div height="135px" src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }} >
               {(vid.VideoTopic.length < 26) ?

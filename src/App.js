@@ -217,6 +217,7 @@ function App() {
               <Route exact path="/:id">
                 <HomePage auth={authProps} />
               </Route>
+
             </Switch>
           </Router>
         </div>

@@ -7,7 +7,7 @@ import docClient from '../GigsPage/GigsAWS';
 import './Header.css';
 // import NotALearnerModal from './NotALearnerPageModal';
 import Referalpopup from "./Referralpopup";
-
+import LeaderBoard from "../LeaderBoard/LeaderBoard"
 function Header(props) {
     // const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("__");
@@ -135,8 +135,8 @@ function Header(props) {
             <Navbar.Collapse>
                 <Nav className="me-auto">
                     <NavDropdown style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} title="Access all videos">
-                        <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/TNGOriginals">TNG Originals</NavDropdown.Item>
-                        <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/BiteSizedVideos">Bite-Sized Videos</NavDropdown.Item>
+                        <NavDropdown.Item id="tng_originals_dropdown" style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/TNGOriginals">TNG Originals</NavDropdown.Item>
+                        <NavDropdown.Item id="bite_sized_videos_dropdown" style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/BiteSizedVideos">Bite-Sized Videos</NavDropdown.Item>
                     </NavDropdown>
                     {/* <NavDropdown style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} title="Become an expert"> */}
                     {/*  <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => setModalShow(true)}>Collaborate for Session</NavDropdown.Item>
@@ -144,23 +144,26 @@ function Header(props) {
                             show={modalShow}
                             onHide={() => setModalShow(false)}
                         /> */}
-                    <Nav.Link style={{ color: "black", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} href="/BiteSizedVideos">Add Bite-Sized Video</Nav.Link>
+                    <Nav.Link id="add_bite_sized_videos" style={{ color: "black", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }} href="/BiteSizedVideos">Add Bite-Sized Video</Nav.Link>
                     {/* </NavDropdown> */}
-                    <Nav.Link href="/creators" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
+                    <Nav.Link id="creators" href="/creators" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
                         Creators
                     </Nav.Link>
-                    <Nav.Link href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
+                    <Nav.Link id="opportunities" href="/ExperientialLearning" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
                         Opportunities
                     </Nav.Link>
+                    {/* <NavDropdown className='leaderboard_dropdown' title="Leaderboard" id="Leaderboard" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px" }}>
+                        <LeaderBoard />
+                    </NavDropdown> */}
                 </Nav>
                 {(props.auth.isAuthenticated === true && showrdmbutton === true) &&
-                    <Nav.Link className="reward_mins" onClick={RedeemDailyMinutes} style={{ boxShadow: "2px 2px white", color: "white", fontWeight: "700", fontSize: "15px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
+                    <Nav.Link id="claim_daily_minutes_btn" className="reward_mins" onClick={RedeemDailyMinutes} style={{ boxShadow: "2px 2px white", color: "white", fontWeight: "700", fontSize: "15px", display: "flex", flexDirection: "column", justifyContent: "center", background: "#f26c4f" }}>
                         Claim Daily Minutes
                     </Nav.Link>
                 }
                 <Nav style={{ paddingRight: "50px" }}>
                     {props.auth.isAuthenticated === true &&
-                        <Nav.Link className="reward_mins" href="/LearnCoins" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                        <Nav.Link id="mins_page_btn_homepage" className="reward_mins" href="/LearnCoins" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             {reward} mins free
                         </Nav.Link>
                     }
@@ -168,21 +171,21 @@ function Header(props) {
                         <div className='prof_img' style={{ display: "flex", paddingLeft: "15px" }}>
                             {Dp === "" ? <span className='profile_box'><h6 className="profile_icon_text">{props.auth.user.attributes.name.split(" ")[0][0]}</h6></span> : <img style={{ height: "30px", width: "30px", borderRadius: "50%", marginTop: "4px" }} src={Dp} />}
                             <NavDropdown className='navdrop_profile' style={{ color: "white", fontWeight: "700", fontSize: "15px" }} title={props.auth.user.attributes.name.split(" ")[0]}>
-                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => { getRefCode(); setModalShow2(true) }}>Referral Code</NavDropdown.Item>
+                                <NavDropdown.Item id="referral_code_dropdown" style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={() => { getRefCode(); setModalShow2(true) }}>Referral Code</NavDropdown.Item>
                                 <Referalpopup
                                     show={modalShow2}
                                     refcode={refcode}
                                     onHide={() => setModalShow2(false)}
                                 />
-                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/profile">My profile</NavDropdown.Item>
-                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SkillsVideo">Skills & Videos</NavDropdown.Item>
-                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/follow">Following</NavDropdown.Item>
-                                <NavDropdown.Item style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={LogOutFunc}>Logout</NavDropdown.Item>
+                                <NavDropdown.Item id="my_profile_dropdown" style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/profile">My profile</NavDropdown.Item>
+                                <NavDropdown.Item id="skills_dropdown" style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/SkillsVideo">Skills & Videos</NavDropdown.Item>
+                                <NavDropdown.Item id="following_dropdown" style={{ color: "black", fontWeight: "700", fontSize: "15px" }} href="/follow">Following</NavDropdown.Item>
+                                <NavDropdown.Item id="logout_dropdown" style={{ color: "black", fontWeight: "700", fontSize: "15px" }} onClick={LogOutFunc}>Logout</NavDropdown.Item>
                             </NavDropdown>
                         </div>
                     }
                     {props.auth.isAuthenticated === false &&
-                        <Nav.Link href="/login" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                        <Nav.Link id="login_button_homepage" href="/login" style={{ color: "white", fontWeight: "700", fontSize: "15px", paddingLeft: "15px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                             Login
                         </Nav.Link>
                     }
