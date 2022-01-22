@@ -502,7 +502,7 @@ function Page3(props) {
             </div>
           </Col>
           <Col style={{ padding: "1px" }} md={6}>
-            <video className="anim_img" src={session.trailer_video} playsInline autoPlay controls loop controlsList="nodownload" onContextMenu={e => e.preventDefault()} />
+            <div id="vimeo" className="vimeo_video" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" src={session.trailer_video} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }} title="trim837D9961-CD3E-4CB3-9366-D2AD7C65E005"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
           </Col>
         </Row>
       </Container>
@@ -514,7 +514,7 @@ function Page3(props) {
               <Row >
                 <Col md={8} className="col1_cardbody">
                   {paymentshow === false &&
-                    <video src={epivid} className="img_letsgo" controls controlsList="nodownload" onContextMenu={e => e.preventDefault()} />
+                    <><div id="vimeo" className="vimeo_video" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" src={epivid} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }} title="trim837D9961-CD3E-4CB3-9366-D2AD7C65E005"></iframe></div></>
                   }
                   {paymentshow === false &&
                     <p className="twoline_desc">{des}</p>
@@ -560,7 +560,7 @@ function Page3(props) {
               <div >
                 <div className="col1_cardbody">
                   {paymentshow === false &&
-                    <video src={epivid} className="img_letsgo" controls controlsList="nodownload" onContextMenu={e => e.preventDefault()} />
+                    <><div id="vimeo" className="vimeo_video" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" src={epivid} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }} title="trim837D9961-CD3E-4CB3-9366-D2AD7C65E005"></iframe></div></>
                   }
                   {paymentshow === false &&
                     <p className="twoline_desc">{des}</p>

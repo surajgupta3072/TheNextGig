@@ -54,7 +54,7 @@ function MyVerticallyPopUp(props) {
         Swal.fire({
           title:
             "<h5 style='color:white'>" +
-            "We have received your submission. Please stay on this page for a few seconds until your video has been uploaded - we'll let you know as soon as it is done!" +
+            `We have received your submission. Please stay on this page for a few seconds until your video has been uploaded - we'll let you know as soon as it is done!` +
             "</h5>",
           icon: "info",
           showConfirmButton: false,
@@ -64,9 +64,9 @@ function MyVerticallyPopUp(props) {
           iconColor: "#00A000",
         });
         props.onHide();
-        var url = "", percentage
+        var url = "", percentage;
         let Vimeo = require('vimeo').Vimeo;
-        let client = new Vimeo("7c0d8e175e40374a47ee70c87e40b3dea8deae83", "2poKMMrugLtNuOJZ7YRkbOZmnFexJgHpNKwOmJnxFHN3fX+7AMAQ8hka7afuUR7I2slqPUMGn8Gj1tyTuyh0kERbVg6VElSn7XGKeYjMaBUhudbEWzniOk80RluzuI7o", "5bdb3e590aae70bba9db80120f701f13");
+        let client = new Vimeo("f2c5afca1012cf6a0c311319ae38bbd03cacbd4e", "YUOkBUrEDR8R9bVYZg4BHq1eID0D3cco2/OFfyYdAX0KGguBHIbE6OvSChlTNpzkCRmDHzJN8uDWLi49LE22MydfnLUY8e820RTMxjx2nJYNLcXLOlsXemISii5F4Ggv", "45263f267f0f24d45bea90d6346d747c");
         client.upload(
           vfile,
           {
@@ -91,9 +91,12 @@ function MyVerticallyPopUp(props) {
                   VideoCreds: creds,
                   VideoUsername: props.userid.attributes.name,
                   VideoHashtags: hash,
-                  VideoLink: link + "&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+                  VideoLink: "",
+                  VimeoVideoLink: link + "& amp; badge=0 & amp; autopause=0 & amp; player_id=0 & amp; app_id=58479",
                   isApproved: false,
                   VideoViews: 0,
+                  VideoDuration: "",
+                  Likes: [],
                   VideoDomains: [],
                   VideoThumbnail: "",
                   VideoUploaderID: props.userid.username

@@ -341,13 +341,13 @@ function Videos(props) {
               </figure>
             }
             <div className='sociallearning_div' >
-              {(vid.VideoTopic.length < 25) ?
+              {(vid.VideoTopic.length < 40) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
                 ) :
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
-                    {vid.VideoTopic.substring(0, 25)}...
+                    {vid.VideoTopic.substring(0, 40)}...
                     <sup data-tip data-for={index + "gxyzq23"} >&#9432;</sup>
                     <ReactTooltip id={index + "gxyzq23"} place="top" effect="solid">
                       {vid.VideoTopic}
@@ -357,12 +357,12 @@ function Videos(props) {
                 )
               }
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
-              {((vid.VideoCreds.length) < 25) ?
+              {((vid.VideoCreds.length) < 40) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds}</p>)
                 ) :
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 25)}...</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 40)}...</p>)
                 )
               }
 
@@ -390,13 +390,13 @@ function Videos(props) {
               </figure >
             }
             <div className='sociallearning_div' >
-              {(vid.VideoTopic.length < 25) ?
+              {(vid.VideoTopic.length < 40) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
                 ) :
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
-                    {vid.VideoTopic.substring(0, 25)}...
+                    {vid.VideoTopic.substring(0, 40)}...
                     <sup data-tip data-for={"sddsc" + index} >&#9432;</sup>
                     <ReactTooltip id={"bsasc" + index} place="top" effect="solid">
                       {vid.VideoTopic}
@@ -405,12 +405,12 @@ function Videos(props) {
                 )
               }
               <p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>by {vid.VideoUsername}</p>
-              {((vid.VideoCreds.length) < 25) ?
+              {((vid.VideoCreds.length) < 40) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds}</p>)
                 ) :
                 (
-                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 25)}...</p>)
+                  (<p className="text" style={{ padding: "0", margin: "0", fontSize: "11px", color: "grey" }}>{vid.VideoCreds.substring(0, 40)}...</p>)
                 )
               }
               <div className="connect_follow_box">

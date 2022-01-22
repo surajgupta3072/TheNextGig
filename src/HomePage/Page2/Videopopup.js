@@ -13,12 +13,12 @@ function MyVerticallyCenteredModal(props) {
     const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("");
     var iframe1 = document.getElementsByClassName("vimeo_video")[0];
+    console.log(iframe1)
     if (iframe1 !== undefined) {
         var options = {
-            id: 666433815,
+            id: 668956893,
             width: 640
-        };
-
+        }
         var videoPlayer = new Player(iframe1, options);
         var currentPos = 0, vdoEndTym, percentage;
         videoPlayer.on('timeupdate', function (getAll) {
@@ -470,13 +470,10 @@ function MyVerticallyCenteredModal(props) {
         >
             <Modal.Body
                 style={{ padding: "0%", backgroundColor: "#020312", border: "1px solid #f26c4f" }}
-            ><script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+            >
                 <div style={{ display: "flex", justifyContent: "center" }}>
-                    <div className="div_video" style={{ height: "fit-content", marginLeft: "10px", marginRight: "10px", marginTop: "20px" }}>
-                        <div id="vimeo" className="vimeo_video" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" onClick={() => console.log("hii")} src="https://player.vimeo.com/video/666433815?h=5b50d32034&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }} title="trim837D9961-CD3E-4CB3-9366-D2AD7C65E005"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-                        {/* <video className="popup_video" controlsList="nodownload" onContextMenu={e => e.preventDefault()} onEnded={() => VideoEnded(props.data.VideoHashtags)} onPlay={(e) => { VideoStarted(props.data.VideoID, e.target.currentTime, (Number(props.data.VideoDuration.split(":")[0]))); }} controls style={{ height: "100%" }}>
-                            <source src={props.data.VideoLink} />
-                        </video> */}
+                    <div className="div_video" style={{ height: "fit-content", marginLeft: "10px", marginRight: "10px", marginTop: "10px" }}>
+                        <div id="vimeo" className="vimeo_video" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" src={props.data.VimeoVideoLink} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }}></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                         <div className="text_video_popup" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", }}>
                             <div>
                                 <h6 className="text1" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{props.data.VideoTopic}</h6>
