@@ -548,7 +548,7 @@ function Page2(props) {
         {data_pop.map((vid, index) => {
           return <div key={index} style={{ width: "260px", cursor: "pointer" }} >
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration} >
-              <img src={vid.VideoThumbnail} width="240px" />
+              <img height="135px" src={vid.VideoThumbnail} width="240px" />
             </figure>
             <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }} >
               {(vid.VideoTopic.length < 26) ?
@@ -635,7 +635,7 @@ function Page2(props) {
         {data_finance.map((vid, index) => {
           return <div style={{ width: "260px" }} >
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img src={vid.VideoThumbnail} width="240px" />
+              <img height="135px" src={vid.VideoThumbnail} width="240px" />
             </figure>
             <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 27) ?
@@ -719,7 +719,7 @@ function Page2(props) {
           data_prod.map((vid, index) => {
             return <div style={{ height: "300px", width: "200px" }} >
               <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
-                <img width="240px" src={vid.VideoThumbnail} />
+                <img height="135px" width="240px" src={vid.VideoThumbnail} />
               </figure>
               <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
                 {(vid.VideoTopic.length < 26) ?
@@ -803,7 +803,7 @@ function Page2(props) {
         {data_markstra.map((vid, index) => {
           return <div style={{ height: "300px", width: "200px" }} >
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} />
+              <img height="135px" width="240px" src={vid.VideoThumbnail} />
             </figure>
             <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 30) ?
@@ -842,7 +842,7 @@ function Page2(props) {
         {data_consult.map((vid, index) => {
           return <div style={{ height: "300px", width: "200px" }}>
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} />
+              <img height="135px" width="240px" src={vid.VideoThumbnail} />
             </figure>
             <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 30) ?
@@ -885,7 +885,7 @@ function Page2(props) {
         {data_other.map((vid, index) => {
           return <div style={{ width: "260px" }} >
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
-              <img width="240px" src={vid.VideoThumbnail} />
+              <img height="135px" width="240px" src={vid.VideoThumbnail} />
             </figure>
             <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
               {(vid.VideoTopic.length < 30) ?
