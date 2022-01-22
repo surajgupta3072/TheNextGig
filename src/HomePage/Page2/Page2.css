@@ -125,6 +125,7 @@
     display: block;
   }
   .connect_follow_box {
+    width: 240px;
     display: flex;
     justify-content: center;
   }

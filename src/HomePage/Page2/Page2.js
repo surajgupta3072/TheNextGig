@@ -501,11 +501,11 @@ function Page2(props) {
       <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele, i) => {
           if (ele.id === 7 || ele.id === 2 || ele.id === 6) {
-            return <div style={{ height: "300px", width: "260px" }} >
+            return <div style={{ height: "300px", width: "240px" }} >
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
                 <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div width="240px" src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }} >
+              <div src={ele.course_image} style={{ marginLeft: "2%", width: "240px" }} >
                 {(ele.course_name.length < 25) ?
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
@@ -535,7 +535,7 @@ function Page2(props) {
               </div>
               <div className="connect_follow_box">
                 <div>
-                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
                 </div>
                 <div>
                   <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => likemaster(ele.id)} >&nbsp; &nbsp;Like</p>
@@ -546,11 +546,11 @@ function Page2(props) {
         }
         )}
         {data_pop.map((vid, index) => {
-          return <div key={index} style={{ width: "260px", cursor: "pointer" }} >
+          return <div key={index} style={{ width: "240px", cursor: "pointer" }} >
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration} >
               <img height="135px" src={vid.VideoThumbnail} width="240px" />
             </figure>
-            <div height="135px" src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }} >
+            <div height="135px" src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "240px" }} >
               {(vid.VideoTopic.length < 26) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
@@ -579,7 +579,7 @@ function Page2(props) {
             </div>
             <div className="connect_follow_box">
               <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
               </div>
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
@@ -598,7 +598,7 @@ function Page2(props) {
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img style={{ width: "240px", height: "134.91px" }} src={ele.course_image} />
               </figure>
-              <div width="240px" src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
+              <div src={ele.course_image} style={{ marginLeft: "2%", width: "240px" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{ele.course_name}</p>)
@@ -623,7 +623,7 @@ function Page2(props) {
               </div>
               <div className="connect_follow_box">
                 <div>
-                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
                 </div>
                 <div>
                   <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(ele.id)} >&nbsp; &nbsp;Like</p>
@@ -637,7 +637,7 @@ function Page2(props) {
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img height="135px" src={vid.VideoThumbnail} width="240px" />
             </figure>
-            <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }}>
+            <div src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "240px" }}>
               {(vid.VideoTopic.length < 27) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
@@ -662,7 +662,7 @@ function Page2(props) {
             </div>
             <div className="connect_follow_box">
               <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
               </div>
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
@@ -680,7 +680,7 @@ function Page2(props) {
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img style={{ width: "240px", height: "135.91px" }} src={ele.course_image} />
               </figure>
-              <div style={{ width: "240px", height: "134.91px" }} src={ele.course_image} style={{ marginLeft: "2%", width: "260px" }}>
+              <div src={ele.course_image} style={{ marginLeft: "2%", width: "240px" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{ele.course_name}</p>)
@@ -705,7 +705,7 @@ function Page2(props) {
               </div>
               <div className="connect_follow_box">
                 <div>
-                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
                 </div>
                 <div>
                   <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(ele.id)} >&nbsp; &nbsp;Like</p>
@@ -721,7 +721,7 @@ function Page2(props) {
               <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
                 <img height="135px" width="240px" src={vid.VideoThumbnail} />
               </figure>
-              <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
+              <div src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "240px" }}>
                 {(vid.VideoTopic.length < 26) ?
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
@@ -746,7 +746,7 @@ function Page2(props) {
               </div>
               <div className="connect_follow_box">
                 <div>
-                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
                 </div>
                 <div>
                   <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
@@ -765,7 +765,7 @@ function Page2(props) {
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}` }} className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img style={{ height: "134.91px", width: "240px" }} src={ele.course_image} />
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+              <div style={{ marginLeft: "2%", width: "240px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{ele.course_name}</p>)
@@ -790,7 +790,7 @@ function Page2(props) {
               </div>
               <div className="connect_follow_box">
                 <div>
-                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;Follow</p>
+                  <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(ele.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
                 </div>
                 <div>
                   <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(ele.id)} >&nbsp; &nbsp;Like</p>
@@ -805,7 +805,7 @@ function Page2(props) {
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img height="135px" width="240px" src={vid.VideoThumbnail} />
             </figure>
-            <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
+            <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "240px" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
@@ -830,7 +830,7 @@ function Page2(props) {
             </div>
             <div className="connect_follow_box">
               <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
               </div>
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
@@ -844,7 +844,7 @@ function Page2(props) {
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img height="135px" width="240px" src={vid.VideoThumbnail} />
             </figure>
-            <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
+            <div src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "240px" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
@@ -869,7 +869,7 @@ function Page2(props) {
             </div>
             <div className="connect_follow_box">
               <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
               </div>
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
@@ -887,7 +887,7 @@ function Page2(props) {
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration}>
               <img height="135px" width="240px" src={vid.VideoThumbnail} />
             </figure>
-            <div width="240px" src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "260px" }}>
+            <div src={vid.VideoThumbnail} style={{ marginLeft: "2%", width: "240px" }}>
               {(vid.VideoTopic.length < 30) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{vid.VideoTopic}</p>)
@@ -912,7 +912,7 @@ function Page2(props) {
             </div>
             <div className="connect_follow_box">
               <div>
-                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;Follow</p>
+                <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >&nbsp;&nbsp;Follow</p>
               </div>
               <div>
                 <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(vid.VideoID)} >&nbsp; &nbsp;Like</p>
@@ -939,7 +939,7 @@ function Page2(props) {
               <figure className="tag1 figurex1" data-content={ele.course_episode_HomePage}>
                 <img width="240px" height="134.91px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
-              <div style={{ marginLeft: "2%", width: "260px", cursor: "pointer" }}>
+              <div style={{ marginLeft: "2%", width: "240px", cursor: "pointer" }}>
                 {(ele.course_name.length < 25) ?
                   (
                     (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>{ele.course_name}</p>)
