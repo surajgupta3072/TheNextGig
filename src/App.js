@@ -32,8 +32,8 @@ import ReferralPage from "./AuthPage/ReferralPage";
 import Follow from "./Follow/Follow";
 import SkillsVideopage from "./Skills&Videopage/SkillsVideopage";
 import PastHistoryPage from "./PastHistoryPage/PastHistoryPage";
-// import Comet from "../src/SocialLearningPage/Comet";
 import ReactPixel from 'react-facebook-pixel';
+// import Comet from "../src/SocialLearningPage/Comet";
 function App() {
   const endpoint = "https://yruyprez2g.execute-api.ap-south-1.amazonaws.com/default/TNGMail";
   const [user, setUser] = useState(null);
@@ -92,6 +92,7 @@ function App() {
                       throw new Error("Error in fetch");
                     }
                     else {
+
                       window.location.href = "/Referral";
                     }
                   })

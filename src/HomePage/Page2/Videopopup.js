@@ -5,13 +5,45 @@ import MyVerticallyCenteredModal1 from './Modal1';
 import Swal from "sweetalert2";
 import Modalx from './Contactinstructorpopup';
 import docClient from '../../GigsPage/GigsAWS';
-
+import Player from '@vimeo/player';
 function MyVerticallyCenteredModal(props) {
     const [modalShow2, setModalShow2] = useState({
         data: "", check: false
     });
     const [modalShow, setModalShow] = useState(false);
     const [reward, setReward] = useState("");
+    var iframe1 = document.getElementsByClassName("vimeo_video")[0];
+    console.log(iframe1)
+    if (iframe1 !== undefined) {
+        var options = {
+            id: 668956893,
+            width: 640
+        }
+        var videoPlayer = new Player(iframe1, options);
+        var currentPos = 0, vdoEndTym, percentage;
+        videoPlayer.on('timeupdate', function (getAll) {
+            currentPos = getAll.seconds; //get currentime
+            vdoEndTym = getAll.duration; //get video duration
+            percentage = (getAll.percent * 100) + "%";
+            /* console.log('currentPos: ' + currentPos);
+            console.log('percentage: ' + percentage); */
+            VideoStarted(props.data.VideoID, currentPos, (Number(props.data.VideoDuration.split(":")[0])));
+        });
+        videoPlayer.on('play', function () {
+            VideoStarted(props.data.VideoID, currentPos, (Number(props.data.VideoDuration.split(":")[0])));
+        });
+        videoPlayer.on('ended', function () {
+            VideoEnded(props.data.VideoHashtags);
+        });
+    }
+    /* player.addEvent('ready', function () {
+        player.addEvent('pause', onFinish);
+    }); */
+
+    function onFinish(id) {
+        alert('video has paused');
+        console.log('video has paused');
+    }
 
     useEffect(() => {
         document.getElementsByClassName("modal-dialog")[0].classList.add("modal-dialog-custom")
@@ -441,9 +473,7 @@ function MyVerticallyCenteredModal(props) {
             >
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <div className="div_video" style={{ height: "fit-content", marginLeft: "10px", marginRight: "10px", marginTop: "10px" }}>
-                        <video className="popup_video" controlsList="nodownload" onContextMenu={e => e.preventDefault()} onEnded={() => VideoEnded(props.data.VideoHashtags)} onPlay={(e) => VideoStarted(props.data.VideoID, e.target.currentTime, (Number(props.data.VideoDuration.split(":")[0])))} controls style={{ height: "100%" }}>
-                            <source src={props.data.VideoLink} />
-                        </video>
+                        <div id="vimeo" className="vimeo_video" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" src={props.data.VimeoVideoLink} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }}></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                         <div className="text_video_popup" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", }}>
                             <div>
                                 <h6 className="text1" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{props.data.VideoTopic}</h6>
@@ -482,7 +512,7 @@ function MyVerticallyCenteredModal(props) {
                     </div>
                 </div>
             </Modal.Body>
-        </Modal>
+        </Modal >
     );
 }
 

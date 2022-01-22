@@ -167,7 +167,7 @@ label > input[type="checkbox"] + * {
   height: 135px;
   width: 240px;
 }
-.sociallearning_div{
+.sociallearning_div {
   margin-top: 7%;
   margin-left: 2%;
   width: 250px;
@@ -251,7 +251,8 @@ label > input[type="checkbox"] + * {
     margin-top: -15%;
     margin-left: 50%;
   }
-  .sociallearning_div{
-    margin-left: 16%;
+  .sociallearning_div {
+    margin-left: 0%;
+    width: 296px;
   }
 }

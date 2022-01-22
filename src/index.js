@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Amplify from "aws-amplify";
 import config from "./config.json";
 import 'font-awesome/css/font-awesome.min.css';
-
 const isLocalhost = Boolean(
   window.location.hostname === "localhost" ||
   // [::1] is the IPv6 localhost address.

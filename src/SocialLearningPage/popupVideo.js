@@ -54,7 +54,7 @@ function MyVerticallyPopUp(props) {
         Swal.fire({
           title:
             "<h5 style='color:white'>" +
-            "We have received your submission. Please stay on this page for a few seconds until your video has been uploaded - we'll let you know as soon as it is done!" +
+            `We have received your submission. Please stay on this page for a few seconds until your video has been uploaded - we'll let you know as soon as it is done!` +
             "</h5>",
           icon: "info",
           showConfirmButton: false,
@@ -64,159 +64,189 @@ function MyVerticallyPopUp(props) {
           iconColor: "#00A000",
         });
         props.onHide();
-        ReactS3Client.uploadFile(vfile, vfile.name).then((data) => {
-          console.log(data);
-          var randomVidID = crypto.randomBytes(8).toString("hex");
-          const adata = {
-            VideoID: randomVidID,
-            VideoTopic: topic,
-            VideoCreds: creds,
-            VideoUsername: props.userid.attributes.name,
-            VideoHashtags: hash,
-            VideoLink: "https://dty09xroi0av3.cloudfront.net" + "/" + vfile.name,
-            isApproved: false,
-            VideoViews: 0,
-            VideoDomains: [],
-            VideoThumbnail: "",
-            VideoUploaderID: props.userid.username
-          };
-          var paramss = {
-            TableName: "VideosTable",
-            Item: adata,
-          };
-          docClient.put(paramss, function (err, data) {
-            if (err) {
-              console.log(err);
-            } else {
-              var params = {
-                TableName: "UsersTable",
-                Key: { UserID: props.userid.username },
-                ProjectionExpression: "SocialLearningVideosUploaded",
-              };
-              docClient.get(params, function (err, data) {
-                if (err) {
-                  console.log(err);
-                } else {
-                  var params = {
-                    TableName: "UsersTable",
-                    Key: { UserID: props.userid.username },
-                    UpdateExpression:
-                      "set SocialLearningVideosUploaded[" +
-                      data.Item.SocialLearningVideosUploaded.length.toString() +
-                      "] = :slv",
-                    ExpressionAttributeValues: {
-                      ":slv": adata["VideoID"],
-                    },
-                    ReturnValues: "UPDATED_NEW",
-                  };
-                  docClient.update(params, function (err, data) {
-                    if (err) {
-                      console.log(err);
-                    } else {
-                      Swal.fire({
-                        title:
-                          "<h5 style='color:white'>" +
-                          "Congratulations! Your video has been uploaded! You will see it on the platform shortly." +
-                          "</h5>",
-                        icon: "success",
-                        showCloseButton: true,
-                        focusConfirm: true,
-                        confirmButtonText: 'Great!',
-                        timer: 20000,
-                        background: "#020312",
-                        color: "white",
-                        iconColor: "#F26C4F",
-                      });
-                      var params = {
-                        TableName: "ExpertsTable",
-                        Key: { "ExpertID": props.userid.attributes.name },
-                        ProjectionExpression: "SocialLearningVideoUploadedId",
-                      };
-                      docClient.get(params, function (err, data) {
-                        console.log(data);
-                        if (data.Item === undefined) {
-                          const expertData = {
-                            "ExpertID": props.userid.attributes.name,
-                            "MastersessionsVideoUploadId": [],
-                            "ExpertEducational": "",
-                            "ExpertDesignation": creds,
-                            "ExpertSkills": hash.split("--").join(", ").replaceAll("#",""),
-                            "ExpertPic": "./dpavtar.png",
-                            "ExpertLinkedIn": "",
-                            "ExpertCompany": "",
-                            "AccountID": props.userid.username,
-                            "SocialLearningVideoUploadedId": [randomVidID],
-                            "ExpertName": props.userid.attributes.name,
-                          }
-                          var paramss = {
-                            TableName: "ExpertsTable",
-                            Item: expertData,
-                          };
-                          docClient.put(paramss, function (err, data) {
-                            if (err) {
-                              console.log(err);
-                            } else {
-                              console.log(data);
-                            }
-                          });
-                        }
-                        else {
-                          console.log(data.Item.SocialLearningVideoUploadedId);
-                          var params = {
-                            TableName: "ExpertsTable",
-                            Key: { ExpertID: props.userid.attributes.name },
-                            UpdateExpression:
-                              "set SocialLearningVideoUploadedId[" +
-                              data.Item.SocialLearningVideoUploadedId.length.toString() +
-                              "] = :slvupi",
-                            ExpressionAttributeValues: {
-                              ":slvupi": randomVidID,
-                            },
-                            ReturnValues: "UPDATED_NEW",
-                          };
-                          docClient.update(params, function (err, data) {
-                            if (err) {
-                              console.log(err);
-                            } else {
-                              console.log(data);
-                            }
-                          });
-                        }
-                      });
-                      const body = JSON.stringify({
-                        feedback: `Topic:${topic}`,
-                        feedback1: `Hastags:${hash}`,
-                        feedback2: adata.VideoLink,
-                        title: "Video",
-                        user: props.userid.attributes.name,
-                      });
-                      const requestOptions = {
-                        method: "POST",
-                        body,
-                      };
-                      fetch(endpoint, requestOptions)
-                        .then((response) => {
-                          if (!response.ok) {
-                            throw new Error("Error in fetch");
-                          } else {
-                            setTopic("");
-                            setCreds("");
-                            setSkillsPos("");
-                          }
-                        })
-                        .catch((error) => {
-                          console.error(
-                            "Failed to send feedback. Error: ",
-                            error
-                          );
-                        });
-                    }
-                  });
+        var url = "", percentage;
+        let Vimeo = require('vimeo').Vimeo;
+        let client = new Vimeo("f2c5afca1012cf6a0c311319ae38bbd03cacbd4e", "YUOkBUrEDR8R9bVYZg4BHq1eID0D3cco2/OFfyYdAX0KGguBHIbE6OvSChlTNpzkCRmDHzJN8uDWLi49LE22MydfnLUY8e820RTMxjx2nJYNLcXLOlsXemISii5F4Ggv", "45263f267f0f24d45bea90d6346d747c");
+        client.upload(
+          vfile,
+          {
+            'name': topic,
+            'description': ''
+          },
+          function (uri) {
+            console.log('Your video URI is: ' + uri);
+            if (uri !== "") {
+              var link = ""
+              client.request(uri + '?fields=player_embed_url', function (error, body, statusCode, headers) {
+                if (error) {
+                  console.log('There was an error making the request.')
+                  console.log('Server reported: ' + error)
+                  return
                 }
-              });
+                link = body.player_embed_url;
+                var randomVidID = crypto.randomBytes(8).toString("hex");
+                const adata = {
+                  VideoID: randomVidID,
+                  VideoTopic: topic,
+                  VideoCreds: creds,
+                  VideoUsername: props.userid.attributes.name,
+                  VideoHashtags: hash,
+                  VideoLink: "",
+                  VimeoVideoLink: link + "& amp; badge=0 & amp; autopause=0 & amp; player_id=0 & amp; app_id=58479",
+                  isApproved: false,
+                  VideoViews: 0,
+                  VideoDuration: "",
+                  Likes: [],
+                  VideoDomains: [],
+                  VideoThumbnail: "",
+                  VideoUploaderID: props.userid.username
+                };
+                var paramss = {
+                  TableName: "VideosTable",
+                  Item: adata,
+                };
+                docClient.put(paramss, function (err, data) {
+                  if (err) {
+                    console.log(err);
+                  } else {
+                    var params = {
+                      TableName: "UsersTable",
+                      Key: { UserID: props.userid.username },
+                      ProjectionExpression: "SocialLearningVideosUploaded",
+                    };
+                    docClient.get(params, function (err, data) {
+                      if (err) {
+                        console.log(err);
+                      } else {
+                        var params = {
+                          TableName: "UsersTable",
+                          Key: { UserID: props.userid.username },
+                          UpdateExpression:
+                            "set SocialLearningVideosUploaded[" +
+                            data.Item.SocialLearningVideosUploaded.length.toString() +
+                            "] = :slv",
+                          ExpressionAttributeValues: {
+                            ":slv": adata["VideoID"],
+                          },
+                          ReturnValues: "UPDATED_NEW",
+                        };
+                        docClient.update(params, function (err, data) {
+                          if (err) {
+                            console.log(err);
+                          } else {
+                            Swal.fire({
+                              title:
+                                "<h5 style='color:white'>" +
+                                "Congratulations! Your video has been uploaded! You will see it on the platform shortly." +
+                                "</h5>",
+                              icon: "success",
+                              showCloseButton: true,
+                              focusConfirm: true,
+                              confirmButtonText: 'Great!',
+                              timer: 20000,
+                              background: "#020312",
+                              color: "white",
+                              iconColor: "#F26C4F",
+                            });
+                            var params = {
+                              TableName: "ExpertsTable",
+                              Key: { "ExpertID": props.userid.attributes.name },
+                              ProjectionExpression: "SocialLearningVideoUploadedId",
+                            };
+                            docClient.get(params, function (err, data) {
+                              console.log(data);
+                              if (data.Item === undefined) {
+                                const expertData = {
+                                  "ExpertID": props.userid.attributes.name,
+                                  "MastersessionsVideoUploadId": [],
+                                  "ExpertEducational": "",
+                                  "ExpertDesignation": creds,
+                                  "ExpertSkills": hash.split("--").join(", ").replaceAll("#", ""),
+                                  "ExpertPic": "./dpavtar.png",
+                                  "ExpertLinkedIn": "",
+                                  "ExpertCompany": "",
+                                  "AccountID": props.userid.username,
+                                  "SocialLearningVideoUploadedId": [randomVidID],
+                                  "ExpertName": props.userid.attributes.name,
+                                }
+                                var paramss = {
+                                  TableName: "ExpertsTable",
+                                  Item: expertData,
+                                };
+                                docClient.put(paramss, function (err, data) {
+                                  if (err) {
+                                    console.log(err);
+                                  } else {
+                                    console.log(data);
+                                  }
+                                });
+                              }
+                              else {
+                                console.log(data.Item.SocialLearningVideoUploadedId);
+                                var params = {
+                                  TableName: "ExpertsTable",
+                                  Key: { ExpertID: props.userid.attributes.name },
+                                  UpdateExpression:
+                                    "set SocialLearningVideoUploadedId[" +
+                                    data.Item.SocialLearningVideoUploadedId.length.toString() +
+                                    "] = :slvupi",
+                                  ExpressionAttributeValues: {
+                                    ":slvupi": randomVidID,
+                                  },
+                                  ReturnValues: "UPDATED_NEW",
+                                };
+                                docClient.update(params, function (err, data) {
+                                  if (err) {
+                                    console.log(err);
+                                  } else {
+                                    console.log(data);
+                                  }
+                                });
+                              }
+                            });
+                            const body = JSON.stringify({
+                              feedback: `Topic:${topic}`,
+                              feedback1: `Hastags:${hash}`,
+                              feedback2: adata.VideoLink,
+                              title: "Video",
+                              user: props.userid.attributes.name,
+                            });
+                            const requestOptions = {
+                              method: "POST",
+                              body,
+                            };
+                            fetch(endpoint, requestOptions)
+                              .then((response) => {
+                                if (!response.ok) {
+                                  throw new Error("Error in fetch");
+                                } else {
+                                  setTopic("");
+                                  setCreds("");
+                                  setSkillsPos("");
+                                }
+                              })
+                              .catch((error) => {
+                                console.error(
+                                  "Failed to send feedback. Error: ",
+                                  error
+                                );
+                              });
+                          }
+                        });
+                      }
+                    });
+                  }
+                });
+              })
             }
-          });
-        });
+          },
+          function (bytes_uploaded, bytes_total) {
+            percentage = (bytes_uploaded / bytes_total * 100).toFixed(2)
+            console.log(bytes_uploaded, bytes_total, percentage + '%')
+          },
+          function (error) {
+            console.log('Failed because: ' + error)
+          })
       }
     } else {
       setShowErr("All Fields are mandatory");

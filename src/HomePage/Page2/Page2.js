@@ -500,7 +500,7 @@ function Page2(props) {
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Trending</h4>
       <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele, i) => {
-          if (ele.id === 2 || ele.id === 7 || ele.id === 6) {
+          if (ele.id === 7 || ele.id === 2 || ele.id === 6) {
             return <div style={{ height: "300px", width: "260px" }} >
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
                 <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
@@ -550,7 +550,7 @@ function Page2(props) {
             <figure style={{ cursor: "pointer" }} onClick={() => { if (props.auth) { setModalShow3(true); setusername(props.auth.username); setvideodata(vid) } else { window.location.href = "/login" } }} className="tag1 figurex1" data-content={vid.VideoDuration} >
               <img height="135px" src={vid.VideoThumbnail} width="240px" />
             </figure>
-            <div src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }} >
+            <div height="135px" src={vid.VideoThumbnail} width="240px" style={{ marginLeft: "2%", width: "260px" }} >
               {(vid.VideoTopic.length < 26) ?
                 (
                   (<p className="text" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)", fontSize: "15px" }}>
