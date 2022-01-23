@@ -93,6 +93,9 @@
 }
 .div_video {
   width: 60vw;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .vimeo_video {
@@ -112,6 +115,8 @@
   .div_video {
     width: fit-content !important;
     max-width: 100% !important;
+    margin-left: 10px;
+    margin-top: 10px;
   }
   .popup_video {
     width: 90vw;
@@ -119,15 +124,50 @@
     height: fit-content !important;
     max-height: 500px;
   }
+  .vimeo_video {
+    width: 88vw !important;
+    height: 120% !important;
+  }
+  iframe {
+    width: 279px !important;
+    height: 150px !important;
+  }
+}
+.mobile_viewx {
+  display: flex;
+  justify-content: space-evenly;
+}
+iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+.connect_box_mobile {
+  display: none;
+}
+.laptop_connect_box {
+  display: flex;
 }
 @media screen and (max-width: 768px) {
   .page2_mobile_view {
     display: block;
   }
+  .modal-w {
+    max-width: 89% !important;
+  }
+  .laptop_connect_box {
+    display: none;
+  }
   .connect_follow_box {
     width: 240px;
     display: flex;
     justify-content: center;
+  }
+  .connect_box_mobile {
+    display: flex;
+    justify-content: space-between;
+  }
+  .text_video_popup {
+    margin-top: 20px;
   }
   .slick-dots {
     display: none !important;

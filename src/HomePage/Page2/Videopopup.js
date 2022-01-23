@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import Modalx from './Contactinstructorpopup';
 import docClient from '../../GigsPage/GigsAWS';
 import Player from '@vimeo/player';
+import "./Page2.css"
 function MyVerticallyCenteredModal(props) {
     const [modalShow2, setModalShow2] = useState({
         data: "", check: false
@@ -464,22 +465,22 @@ function MyVerticallyCenteredModal(props) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
             contentClassName="custom-modal-style"
-            dialogClassName="modal-w"
-            className="mobile_view"
+            dialogClassName="modal-h"
+            className="mobile_viewx"
             transparent={true}
         >
             <Modal.Body
                 style={{ padding: "0%", backgroundColor: "#020312", border: "1px solid #f26c4f" }}
             >
                 <div style={{ display: "flex", justifyContent: "center" }}>
-                    <div className="div_video" style={{ height: "fit-content", marginLeft: "10px", marginRight: "10px", marginTop: "10px" }}>
-                        <div id="vimeo" className="vimeo_video" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" src={props.data.VimeoVideoLink} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }}></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                    <div className="div_video" style={{ height: "fit-content" }}>
+                        <div id="vimeo" className="vimeo_video" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" src={props.data.VimeoVideoLink} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0" }}></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                         <div className="text_video_popup" style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", }}>
-                            <div>
+                            <div >
                                 <h6 className="text1" style={{ padding: "0", margin: "0", color: "rgb(242, 108, 79)" }}>{props.data.VideoTopic}</h6>
                                 <p className="text1" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{props.data.VideoUsername}</p>
                                 <p className="text1" style={{ padding: "0", margin: "0", fontSize: "14px" }}>{props.data.VideoCreds}</p>
-                                <div style={{ display: "flex" }}>
+                                <div className="laptop_connect_box" >
                                     <div>
                                         <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": props.data, "check": true }) }} >Connect</p>
                                     </div>
@@ -492,6 +493,34 @@ function MyVerticallyCenteredModal(props) {
                                     <div>
                                         <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)}>
                                             &nbsp; &nbsp;&nbsp;&nbsp;Share <GiShare style={{ width: "20px", height: "20px" }} />
+                                        </p>
+                                        {modalShow !== false ?
+                                            <MyVerticallyCenteredModal1
+                                                show={modalShow}
+                                                VideoID={props.data.VideoID}
+                                                onHide={() => setModalShow(false)}
+                                            /> : null}
+                                        {modalShow2 !== false ?
+                                            < Modalx
+                                                data={modalShow2.data}
+                                                show={modalShow2.check}
+                                                onHide={() => { setModalShow2(false) }}
+                                            /> : null}
+                                    </div>
+                                </div>
+                                <div className="connect_box_mobile" >
+                                    <div>
+                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => { setModalShow2({ "data": props.data, "check": true }) }} >Connect</p>
+                                    </div>
+                                    <div>
+                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(props.data.VideoUploaderID)} >Follow</p>
+                                    </div>
+                                    <div>
+                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => like(props.data.VideoID)} >Like</p>
+                                    </div>
+                                    <div>
+                                        <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => setModalShow(true)}>
+                                            Share <GiShare style={{ width: "20px", height: "20px" }} />
                                         </p>
                                         {modalShow !== false ?
                                             <MyVerticallyCenteredModal1

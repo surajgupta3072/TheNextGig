@@ -366,7 +366,7 @@ function Videos(props) {
                 )
               }
 
-              <div className="connect_follow_box">
+              <div style={{ width: "100%" }} className="connect_follow_box">
                 <div>
                   <p className="connect_text" style={{ cursor: "pointer" }} onClick={() => follow(vid.VideoUploaderID)} >Follow</p>
                 </div>
