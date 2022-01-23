@@ -503,7 +503,7 @@ function Page2(props) {
           if (ele.id === 7 || ele.id === 2 || ele.id === 6) {
             return <div style={{ height: "300px", width: "240px" }} >
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
-                <img width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
+                <img height="135px" width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
               </figure>
               <div src={ele.course_image} style={{ marginLeft: "2%", width: "240px" }} >
                 {(ele.course_name.length < 25) ?
