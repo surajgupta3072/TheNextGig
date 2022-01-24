@@ -2,9 +2,7 @@
   background-color: #ebecf0;
   color: #172b4d;
 } */
-input[type="file"] {
-  display: none;
-}
+
 .custom-file-upload {
   border: 1px solid #ccc;
   display: inline-block;

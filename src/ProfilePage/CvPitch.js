@@ -119,7 +119,7 @@ function CvPitch(props) {
             <label for="file-upload" class="custom-file-upload">
                 <i class="fa fa-cloud-upload"></i> Upload your CV
             </label>
-            <input accept=".doc, .docx, .pdf, .pages" onChange={(e)=>setCV(e.target.files[0])} id="file-upload" type="file"/>
+            <input accept=".doc, .docx, .pdf, .pages" onChange={(e)=>setCV(e.target.files[0])} id="file-upload" type="file" style={{display: "none"}}/>
           </Col>
        </Row>
        {showerr!==false && <p style={{color:"red"}}><br/>*{showerr}</p>}
