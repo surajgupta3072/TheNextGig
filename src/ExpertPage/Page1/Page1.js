@@ -213,24 +213,17 @@ function Page1(props) {
   }
   return (
     <div>
-      <div className="header_masterclass">
-        <Container>
-          <div className="top_masterclass">
-            <h1>HERE ARE OUR CREATORS</h1>
-            <p className="subtitle_masterclass">
-              and what they’ve done in the past
-            </p>
-          </div>
-        </Container>
-      </div>
       <Container>
         <div className="pack">
           <div className="testimonial">
             <div className="imag">
               <img alt="..." className="img_experttop" src={expert.ExpertPic} />
             </div>
+            
             <div className="para">
+            <hr className="course_line" style={{height:"0.13rem",color:"#f26c4f"}} />
               <h3 style={{ color: "#f26c4f", margin: 0 }}>{expert.ExpertName}</h3>
+              <br />
               <p className="subtitle_expertcard">{expert.ExpertDesignation}</p>
               <p className="subtitle_expertcard">{expert.ExpertCompany}</p>
               <p className="subtitle_expertcard">{expert.ExpertEducational}</p>
