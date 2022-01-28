@@ -500,7 +500,7 @@ function Page2(props) {
       <h4 style={{ fontFamily: "Open Sans", fontWeight: "800" }}>Trending</h4>
       <Slider /* style={{ marginLeft: "20%" }} */ {...settings}>
         {masterdata.map((ele, i) => {
-          if (ele.id === 7 || ele.id === 2 || ele.id === 6) {
+          if (ele.id === 7 || ele.id === 2 || ele.id === 6 || ele.id === 9) {
             return <div style={{ height: "300px", width: "240px" }} >
               <figure style={{ cursor: "pointer" }} onClick={() => { if (ele.course_timing !== "...Coming Soon") window.location.href = "/TNGoriginals/" + `${ele.id}`; }} className="tag1 figurex1" data-content={ele.course_episode_HomePage} >
                 <img height="135px" width="240px" src={ele.course_image} style={{ cursor: "pointer" }} />
