@@ -923,7 +923,7 @@ function Page2(props) {
         })}
       </Slider>
       <br /><br />
-      <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", display: "inline" }}>Upcoming</h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {/* <h4 style={{ fontFamily: "Open Sans", fontWeight: "800", display: "inline" }}>Upcoming</h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <button style={{ height: "40px" }} className="button_slide_tngorig slide_right" onClick={() => setModalShow(true)}>
         Keep me posted
       </button>
@@ -931,7 +931,7 @@ function Page2(props) {
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-      />
+      /> */}
       <Slider {...settings1}>
         {masterdata.map((ele) => {
           if (ele.course_timing === "...Coming Soon") {

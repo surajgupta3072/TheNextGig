@@ -980,21 +980,121 @@
     "gigs":[]
   },
   {
-    "id": 99,
-    "course_name": "Climate Finance: \nMaking finance sustainable",
+    "id": 9,
+    "course_name": "Climate Finance:/n Making Finance Sustainable",
     "course_image": "https://mastersession-images.s3.ap-south-1.amazonaws.com/Simmi%2B-%2BNewhomepage%2Bthumbnail+-+Compressed.jpeg",
     "course_instructor": "Simmi Sareen",
-    "VideoUploaderID": "609de45f-2256-45e1-8f22-d8a2920caa52",
-    "course_domain": "Finance",
-    "course_timing": "...Coming Soon",
-    "course_id": 1,
-    "course_episode": "",
-    "course_episode_HomePage": "Coming Soon",
-    "course_instructor_post": "Director - Unitus Capital, Founder - Climake",
-    "instructor_creds": "London Business School, Chartered Accountant",
-    "WhatYouLearn": ["A", "B", "C", "D"],
-    "PreparesYouFor": ["A", "B", "C"],
-    "WhatsInForYou": ["A", "B", "C", "D", "E", "F"],
-    "fees": ""
+    "course_instructor_post": "Director - Unitus Capital, Founder - Climake, Ex-Morgan Stanley, Ex-ICRA, Ex-IDBI",
+    "instructor_creds": "London Business School | Chartered Accountant",
+    "course_timing": "48min",
+    "course_domain":"Finance",
+    "course_episode": "13 episodes",
+    "course_episode_HomePage":"13 episodes",
+    "course_duration":48,
+    "course_description": "Climate Change is one of the most pressing problems of the decade! India alone needs US$100 billion per year to combat climate change! Watch Simmi decode Climate Finance - one of the biggest economic opportunity of the decade!!",
+    "course_role": "Climate Finance, Investing, Investment Banking",
+    "WhatYouLearn": [
+      "What is Climate Finance",
+      "Financing Avenues for Green / Climate startups",
+      "Financing across lifecycle of Green startup",
+      "Skills required to get into Climate Finance roles"
+    ],
+    "PreparesYouFor": [
+      "Climate Finance",
+      "Investment Banking Roles",
+      "Finance role in Green startup"
+    ],
+    "WhatsInForYou": [
+      "Lifetime access to ‘mechanics’ of Climate Finance",
+      "compressed into 1 hour of learning",
+      "Preference for experiential learning opportunities that we",
+      "source for you in this domain",
+      "A certificate of completion and a chance to get your",
+      "in-session case/project reviewed by the expert"
+    ],
+    "fees": "",
+    "ExpertId": 8,
+    "trailer_video": "https://player.vimeo.com/video/671035740?h=acd008d6df",
+    "episodes": [
+      {
+        "id": 1,
+        "title": "1. Introduction to climate finance" ,
+        "description": "Before we dive into the world of climate finance, let us understand what climate change is and how it inspired the creation of climate finance.",
+        "epi_video": "https://player.vimeo.com/video/671027298?h=12d817620c"
+      },
+      {
+        "id": 2,
+        "title": "2. Climate Finance - need of the hour",
+        "description": "History of climate change, where we are headed and why does climate finance come into play, let’s answer these questions!",
+        "epi_video": "https://player.vimeo.com/video/671028038?h=9ed9fc66ff"
+      },
+      {
+        "id": 3,
+        "title": "3. Dive into the world of climate finance",
+        "description": "We have learnt what climate finance is but now, let us try and understand the industries which are the biggest culprits of climate change and thereby susceptible to climate finance revolution.",
+        "epi_video": "https://player.vimeo.com/video/671029245?h=2ffc42dadd"
+      },
+      {
+        "id": 4,
+        "title": "4. Startups of the future",
+        "description": "Climate success stories? Yes! Let’s discuss how these startups are grabbing climate change by the neck and creating a green future.",
+        "epi_video": "https://player.vimeo.com/video/671030408?h=3fdcfd3dae"
+      },
+      {
+        "id": 5,
+        "title": "5. Financing avenues for a green startup",
+        "description": "Equity financing, debt financing and ? …. What’s special for green startups?",
+        "epi_video": "https://player.vimeo.com/video/671030755?h=e4a9c97e0c"
+      },
+      {
+        "id": 6,
+        "title": "6. What do equity investors look for in a green startup?",
+        "description": "Scalability of business, strong founders, genuine problem solving idea, these are just some of the things which investors look for in ALL startups, what sets green startups apart?",
+        "epi_video": "https://player.vimeo.com/video/671031415?h=678c50bbaa"
+      },
+      {
+        "id": 7,
+        "title": "7. Debt financing",
+        "description": "Do green startups require debt? Why not just equity? Where and how are the funds used? Let’s discuss.",
+        "epi_video": "https://player.vimeo.com/video/671032404?h=ce0eb70e91"
+      },
+      {
+        "id": 8,
+        "title": "8. Financing across the lifecycle of a green startup",
+        "description": "It all started with a small seed funding from a college, where are they now? How did they get here? Let’s take a trip down their financing lane.",
+        "epi_video": "https://player.vimeo.com/video/671033115?h=cf3f0f0758"
+      },
+      {
+        "id": 9,
+        "title": "9. Unique metrics for green startups",
+        "description": "Amount of C02 or equivalent emission saved, number of women beneficiaries, number of farmers benefited, quality of life improvement. These are just some metrics which green startups take care of, let’s discuss these in more detail.",
+        "epi_video": "https://player.vimeo.com/video/671034157?h=a743cfb518"
+      },
+      {
+        "id": 10,
+        "title": "10. Trends in the climate finance markets",
+        "description": "Let’s take a look at the historic trends which changed the shape of the climate finance industry and the new and upcoming trends.",
+        "epi_video": "https://player.vimeo.com/video/671034392?h=4a2775ade8"
+      },
+      {
+        "id": 11,
+        "title": "11. What does it take to have a career in climate finance?",
+        "description": "Do you think you have what it takes to make it as a climate investor? Let’s discuss the skills required to have a successful career in climate finance.",
+        "epi_video": "https://player.vimeo.com/video/671035232?h=2215be3b32"
+      },
+      {
+        "id": 12,
+        "title": "12. Case study - Do it yourself",
+        "description": "Put your knowledge to the test. We gained the skills, so now, let’s put them to work!",
+        "epi_video": "https://player.vimeo.com/video/671035488?h=e93aadeedc"
+      },
+      {
+        "id": 13,
+        "title": "13. Summary and conclusion",
+        "description": "Let’s conclude our session by answering one of the most important questions surrounding any industry - What does the future have in store for this industry?",
+      "epi_video": "https://player.vimeo.com/video/671035594?h=9cd22a77e3"
+      }
+    ],
+    "gigs":[]
   }
-]
+  ]
