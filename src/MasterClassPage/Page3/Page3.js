@@ -414,7 +414,7 @@ function Page3(props) {
           </div>
         </Container>
       </div>
-      <Container style={{ padding: "0%", maxWidth: "94%", marginBottom: "0%" }} className="container1">
+      <Container style={{ padding: "0%", maxWidth: "94%", marginBottom: "2%" }} className="container1">
         <Row>
           <Col md={6} >
             <div style={{ marginTop: "3%" }}>
@@ -502,7 +502,7 @@ function Page3(props) {
             </div>
           </Col>
           <Col style={{ padding: "1px" }} md={6}>
-            <div id="vimeo" className="vimeo_video" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" src={session.trailer_video} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }} title="trim837D9961-CD3E-4CB3-9366-D2AD7C65E005"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+            <div id="vimeo" className="vimeo_video vimeo_video1" style={{ padding: "56.25% 0 0 0", position: "relative" }}><iframe id="iframe_vimeo" src={session.trailer_video} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%" }} title="trim837D9961-CD3E-4CB3-9366-D2AD7C65E005"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
           </Col>
         </Row>
       </Container>

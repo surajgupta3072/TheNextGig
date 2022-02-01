@@ -127,6 +127,11 @@
   .vimeo_video {
     width: 88vw !important;
     height: 120% !important;
+    margin-left: 2% !important;
+  }
+  .vimeo_video1{
+    margin-left: 7% !important;
+    height: 100% !important;
   }
   iframe {
     width: 279px !important;
